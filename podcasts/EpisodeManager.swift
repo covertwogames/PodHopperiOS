@@ -16,6 +16,10 @@ class EpisodeManager: NSObject {
 
         DataManager.sharedManager.saveEpisode(playingStatus: .completed, episode: episode, updateSyncFlag: SyncManager.isUserLoggedIn())
 
+        // PodHopper: push the completion across devices. Echo-guarded, so a completion that is itself
+        // a remote apply (via the sync bridge) is not bounced back.
+        PodHopperPositionSync.shared.pushCompletion(episode: episode)
+
         #if !APPCLIP
         if shouldArchiveOnCompletion(episode: episode) {
             if let episode = episode as? Episode {

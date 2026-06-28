@@ -303,6 +303,12 @@ class PlaybackManager: ServerPlaybackDelegate {
 
         recordPlaybackPosition(sendToServerImmediately: playing(), fireNotifications: true)
 
+        // PodHopper: immediate position push on pause so other devices resume exactly here.
+        let pausePositionMs = Int(currentTime() * 1000)
+        if pausePositionMs > 0 {
+            PodHopperPositionSync.shared.pushPosition(episode: episode, positionMs: pausePositionMs, durationMs: Int(duration() * 1000), immediate: true)
+        }
+
         if let player {
             player.pause()
         }
@@ -1234,6 +1240,10 @@ class PlaybackManager: ServerPlaybackDelegate {
             }
             DataManager.sharedManager.save(episode: episode)
 
+            // PodHopper: push the completion across devices so finishing here removes it elsewhere
+            // too. Echo-guarded, so a remote-applied completion is a no-op.
+            PodHopperPositionSync.shared.pushCompletion(episode: episode)
+
             if SyncManager.isUserLoggedIn() {
                 FileLog.shared.addMessage("Sending playback completed to API server")
                 ApiServerHandler.shared.saveCompleted(episode: episode)
@@ -1625,6 +1635,12 @@ class PlaybackManager: ServerPlaybackDelegate {
                 episode.playedUpTo = upTo
             }
             updateCount += 1
+        }
+
+        // PodHopper: periodic cross-device position push while playing. The engine throttles to one
+        // network write every few seconds, so pushing on every tick is fine.
+        if playing() {
+            PodHopperPositionSync.shared.pushPosition(episode: episode, positionMs: Int(currentTime() * 1000), durationMs: Int(duration() * 1000), immediate: false)
         }
 
         // here (as above) we're assuming that in general the timer fires around once a second. Might have to investigate this though as it might not always be the case
