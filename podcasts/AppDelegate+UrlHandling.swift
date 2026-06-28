@@ -187,25 +187,17 @@ extension AppDelegate {
             strongSelf.progressDialog = ShiftyLoadingAlert(title: L10n.podcastLoading)
             rootController.dismiss(animated: false, completion: nil)
             strongSelf.progressDialog?.showAlert(rootController, hasProgress: false, completion: {
-                MainServerHandler.shared.podcastSearch(searchTerm: searchTerm) { response in
-                    guard let uuid = response?.result?.podcast?.uuid else {
-                        DispatchQueue.main.async {
-                            self?.hideProgressDialog()
+                // PodHopper: parse and store the feed on device, then open its page. No Pocket Casts
+                // search or server fetch.
+                DispatchQueue.global().async {
+                    let uuid = PodHopperFeedManager.shared.addFeedUrlAsUnsubscribed(searchTerm)
+                    DispatchQueue.main.async {
+                        self?.hideProgressDialog()
 
+                        if let uuid {
+                            NavigationManager.sharedManager.navigateTo(NavigationManager.podcastPageKey, data: [NavigationManager.podcastKey: uuid])
+                        } else {
                             SJUIUtils.showAlert(title: L10n.error, message: L10n.errorGeneralPodcastNotFound, from: SceneHelper.rootViewController())
-                        }
-
-                        return
-                    }
-                    ServerPodcastManager.shared.addFromUuidWithRetries(podcastUuid: uuid, subscribe: false) { success in
-                        DispatchQueue.main.async {
-                            self?.hideProgressDialog()
-
-                            if success {
-                                NavigationManager.sharedManager.navigateTo(NavigationManager.podcastPageKey, data: [NavigationManager.podcastKey: uuid])
-                            } else {
-                                SJUIUtils.showAlert(title: L10n.error, message: L10n.errorGeneralPodcastNotFound, from: SceneHelper.rootViewController())
-                            }
                         }
                     }
                 }

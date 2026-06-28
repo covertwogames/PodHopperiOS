@@ -411,8 +411,48 @@ class PodcastListViewController: PCViewController, ShareListDelegate {
         foldersCoordinator.startFolderCreationFlow(from: self)
     }
 
+    private func presentAddPodcastByUrl() {
+        let alert = UIAlertController(title: "Add podcast by URL", message: "Paste the RSS feed URL of the podcast.", preferredStyle: .alert)
+        alert.addTextField { textField in
+            textField.placeholder = "https://example.com/feed.rss"
+            textField.keyboardType = .URL
+            textField.autocapitalizationType = .none
+            textField.autocorrectionType = .no
+        }
+        alert.addAction(UIAlertAction(title: L10n.cancel, style: .cancel))
+        alert.addAction(UIAlertAction(title: "Add", style: .default) { [weak self, weak alert] _ in
+            guard let self else { return }
+            let raw = (alert?.textFields?.first?.text ?? "").trimmingCharacters(in: .whitespacesAndNewlines)
+            guard !raw.isEmpty else { return }
+            let feedUrl = (raw.hasPrefix("http://") || raw.hasPrefix("https://")) ? raw : "https://\(raw)"
+
+            let progress = ShiftyLoadingAlert(title: L10n.podcastLoading)
+            progress.showAlert(self, hasProgress: false) {
+                DispatchQueue.global().async {
+                    PodHopperFeedManager.shared.subscribeToFeedUrl(feedUrl)
+                    let uuid = PodHopperFeedManager.shared.podcastUuid(forFeed: feedUrl)
+                    let added = DataManager.sharedManager.findPodcast(uuid: uuid, includeUnsubscribed: true) != nil
+                    DispatchQueue.main.async {
+                        progress.hideAlert(false)
+                        if added {
+                            NavigationManager.sharedManager.navigateTo(NavigationManager.podcastPageKey, data: [NavigationManager.podcastKey: uuid])
+                        } else {
+                            SJUIUtils.showAlert(title: L10n.error, message: L10n.errorGeneralPodcastNotFound, from: self)
+                        }
+                    }
+                }
+            }
+        })
+        present(alert, animated: true)
+    }
+
     @objc private func podcastOptionsTapped(_ sender: UIBarButtonItem) {
         let optionsPicker = OptionsPicker(title: nil)
+
+        let addByUrlAction = OptionAction(label: "Add podcast by URL", icon: "add") { [weak self] in
+            self?.presentAddPodcastByUrl()
+        }
+        optionsPicker.addAction(action: addByUrlAction)
 
         let sortOption: LibrarySort = if !FeatureFlag.podcastsSortChanges.enabled, Settings.homeFolderSortOrder() == .recentlyPlayed {
             .dateAddedNewestToOldest

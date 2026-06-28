@@ -15,6 +15,14 @@ extension PodcastViewController {
 
     func loadPodcastInfoFromUuid(_ uuid: String) {
         loadingStarted()
+
+        // PodHopper: if the podcast is already stored locally (for example added by the client feed
+        // engine), open it straight from the database with no Pocket Casts server fetch.
+        if DataManager.sharedManager.findPodcast(uuid: uuid, includeUnsubscribed: true) != nil {
+            processPodcastAdded(added: true, uuid: uuid)
+            return
+        }
+
         ServerPodcastManager.shared.addFromUuid(podcastUuid: uuid, subscribe: false) { [weak self] added in
             guard let strongSelf = self else { return }
 
