@@ -222,6 +222,28 @@ class PlaybackManager: ServerPlaybackDelegate {
         }
     }
 
+    /// PodHopper: switch the player to an episode synced from another device, paused at its synced
+    /// position. Never interrupts active playback and never wipes the user's Up Next queue. Mirrors
+    /// the Android adoptCurrentEpisodeFromSync. Must be called on the main thread.
+    func adoptCurrentEpisodeFromSync(episode: BaseEpisode) {
+        if playing() {
+            return
+        }
+        if currentEpisode()?.uuid == episode.uuid {
+            return
+        }
+        FileLog.shared.addMessage("PodHopper adopting synced episode into player: \(episode.uuid)")
+        if let podcastEpisode = episode as? Episode, podcastEpisode.archived {
+            EpisodeManager.unarchiveEpisode(episode: podcastEpisode, fireNotification: true)
+        }
+        // Make this the current episode while preserving Up Next (the old current drops into the
+        // queue), then prepare the player paused at the synced position. After the push the episode
+        // is already current, so load sees episodeIsChanging == false and neither auto-plays nor
+        // clears the queue.
+        queue.pushNewCurrentlyPlaying(episode: episode)
+        load(episode: episode, autoPlay: false, overrideUpNext: false)
+    }
+
     func play(completion: (() -> Void)? = nil, userInitiated: Bool = true) {
         guard let currEpisode = currentEpisode() else { return }
 

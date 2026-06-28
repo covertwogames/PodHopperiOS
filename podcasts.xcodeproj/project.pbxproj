@@ -3011,6 +3011,7 @@
 		3F26BF082F4FC7C40007119B /* Pocket Casts Watch App */ = {isa = PBXFileSystemSynchronizedRootGroup; exceptions = (3F26BF582F4FC7C40007119B /* PBXFileSystemSynchronizedBuildFileExceptionSet */, ); explicitFileTypes = {}; explicitFolders = (); path = "Pocket Casts Watch App"; sourceTree = "<group>"; };
 		3F584D1D2F567E4A005A3593 /* Episode Info Coordinator */ = {isa = PBXFileSystemSynchronizedRootGroup; exceptions = (FF8FFE672FAA8E650086A867 /* PBXFileSystemSynchronizedBuildFileExceptionSet */, ); explicitFileTypes = {}; explicitFolders = (); path = "Episode Info Coordinator"; sourceTree = "<group>"; };
 		3F584D242F567E73005A3593 /* InAppPurchases */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = InAppPurchases; sourceTree = "<group>"; };
+		FAB1E0001C0DEBA5E0000001 /* PodHopper */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = PodHopper; sourceTree = "<group>"; };
 		3F584D252F567EA6005A3593 /* Watch Communication */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = "Watch Communication"; sourceTree = "<group>"; };
 		3F584D262F567EE1005A3593 /* Lists */ = {isa = PBXFileSystemSynchronizedRootGroup; exceptions = (FF603BAA2FAB4F7100EB3AD5 /* PBXFileSystemSynchronizedBuildFileExceptionSet */, ); explicitFileTypes = {}; explicitFolders = (); path = Lists; sourceTree = "<group>"; };
 		3F584DED2F56811B005A3593 /* End of Year */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = "End of Year"; sourceTree = "<group>"; };
@@ -4349,6 +4350,7 @@
 				3F584D262F567EE1005A3593 /* Lists */,
 				3F584D252F567EA6005A3593 /* Watch Communication */,
 				3F584D242F567E73005A3593 /* InAppPurchases */,
+				FAB1E0001C0DEBA5E0000001 /* PodHopper */,
 				3F747A5A2F559925004C7FF6 /* Notifications */,
 				3F584D1D2F567E4A005A3593 /* Episode Info Coordinator */,
 				BD3334531FC680E20017C3A8 /* Lists */,
@@ -5867,6 +5869,7 @@
 				371E0318452B7C751D0C5611 /* Fingerprint */,
 				3F584D1D2F567E4A005A3593 /* Episode Info Coordinator */,
 				3F584D242F567E73005A3593 /* InAppPurchases */,
+				FAB1E0001C0DEBA5E0000001 /* PodHopper */,
 				3F584D252F567EA6005A3593 /* Watch Communication */,
 				3F584D262F567EE1005A3593 /* Lists */,
 				3F584DED2F56811B005A3593 /* End of Year */,

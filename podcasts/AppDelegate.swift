@@ -132,6 +132,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             FileLog.shared.addMessage("Reload subscription status early as the app updated")
         }
 
+        PodHopperSyncSetup.configure()
+
         return true
     }
 
