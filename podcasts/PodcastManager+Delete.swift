@@ -5,6 +5,11 @@ import PocketCastsUtils
 
 extension PodcastManager {
     func unsubscribe(podcast: Podcast) {
+        // PodHopper: push the unsubscribe across devices so removing a show here removes it elsewhere
+        // too. Read the feed url before any cleanup. Echo-guarded in the engine, so a remote-applied
+        // unsubscribe (which routes back through here via the sync bridge) is not bounced back.
+        PodHopperSubscriptionSync.shared.pushSubscription(feedUrl: podcast.podcastUrl ?? "", subscribed: false)
+
         let savedFolderUuid = podcast.folderUuid
 
         if SyncManager.isUserLoggedIn() {

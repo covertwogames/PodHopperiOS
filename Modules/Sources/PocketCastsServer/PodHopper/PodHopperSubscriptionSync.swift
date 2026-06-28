@@ -100,6 +100,12 @@ public final class PodHopperSubscriptionSync {
         if trimmed.isEmpty {
             return
         }
+        // Suppress echo: a remote-applied change routes through the host's unsubscribe path, which
+        // calls back into here while applyingRemote is held. The subscribe observer guards the same
+        // way; this covers the explicit unsubscribe push.
+        if isApplyingRemote() {
+            return
+        }
         workQueue.async {
             if subscribed {
                 self.queueAdd(trimmed)
