@@ -1,4 +1,5 @@
 import Foundation
+import UIKit
 import PocketCastsDataModel
 import PocketCastsServer
 import PocketCastsUtils
@@ -17,6 +18,8 @@ import PocketCastsUtils
 /// - adoptEpisodeIntoPlayer changes the now-playing episode, so it is dispatched to the main thread.
 final class PodHopperPlaybackBridge: PodHopperPositionSyncDelegate {
     static let shared = PodHopperPlaybackBridge()
+
+    private var lifecycleObserversRegistered = false
 
     private init() {}
 
@@ -66,6 +69,39 @@ final class PodHopperPlaybackBridge: PodHopperPositionSyncDelegate {
         Settings.autoSwitchPlayerToCurrentPodcast
     }
 
+    // MARK: - App lifecycle
+
+    /// Registers foreground/background observers. Idempotent. Called once from configure().
+    func startObservingLifecycle() {
+        if lifecycleObserversRegistered { return }
+        lifecycleObserversRegistered = true
+        // willEnterForeground (not didBecomeActive) so a transient interruption such as a phone call
+        // or Control Center does not trigger a pull-and-adopt. Cold launch does not fire this, so the
+        // initial foreground sync is run directly from configure().
+        NotificationCenter.default.addObserver(self, selector: #selector(appWillEnterForeground), name: UIApplication.willEnterForegroundNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(appDidEnterBackground), name: UIApplication.didEnterBackgroundNotification, object: nil)
+    }
+
+    /// Pull cross-device positions (switching to the most recent episode when the setting is on) and
+    /// run the subscription poll loop while the app is in the foreground. Safe to call when signed
+    /// out: every engine call self-guards on the login state. startPeriodicSync is idempotent.
+    func foregroundSync() {
+        PodHopperPositionSync.shared.pullLatestPositions(adoptCurrentEpisode: true)
+        PodHopperSubscriptionSync.shared.startPeriodicSync()
+    }
+
+    @objc private func appWillEnterForeground() {
+        foregroundSync()
+    }
+
+    @objc private func appDidEnterBackground() {
+        // Push the latest position so other devices resume exactly where this one left off, then stop
+        // the foreground poll loop. The push is best-effort: the periodic and pause pushes already
+        // keep the server fresh, so this is a last-position safety net.
+        PodHopperPositionSync.shared.pushCurrentPosition(immediate: true)
+        PodHopperSubscriptionSync.shared.stopPeriodicSync()
+    }
+
     // MARK: - Helpers
 
     private func runOnMainSync(_ block: () -> Void) {
@@ -89,5 +125,10 @@ enum PodHopperSyncSetup {
                 PodcastManager.shared.unsubscribe(podcast: podcast)
             }
         }
+
+        PodHopperPlaybackBridge.shared.startObservingLifecycle()
+        // Cold launch counts as entering the foreground, but willEnterForeground does not fire on
+        // launch, so run the initial foreground sync here.
+        PodHopperPlaybackBridge.shared.foregroundSync()
     }
 }
