@@ -11,18 +11,13 @@ class ProfileHeaderViewModel: ProfileDataViewModel {
         self.navigationController = navigationController
     }
 
-    /// Opens the login or account details depending on the users logged in state
+    /// Opens PodHopper's auth/account screen: the login flow when signed out, or the account view
+    /// (email + logout) when signed in.
     func accountTapped() {
         Analytics.track(.profileAccountButtonTapped)
 
-        guard profile.isLoggedIn else {
-            // Show the login flow
-            NavigationManager.sharedManager.navigateTo(NavigationManager.onboardingFlow,
-                                                       data: ["flow": OnboardingFlow.Flow.loggedOut])
-            return
-        }
-
-        navigationController?.pushViewController(AccountViewController(), animated: true)
+        let authController = PodHopperAuthHostingController()
+        navigationController?.present(authController, animated: true)
     }
 
     func shareTapped() {
