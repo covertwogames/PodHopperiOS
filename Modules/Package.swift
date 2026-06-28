@@ -6,7 +6,7 @@ import CompilerPluginSupport
 let package = Package(
     name: "Modules",
     platforms: [
-        .iOS(.v16), .watchOS(.v9), .macOS(.v10_15), .tvOS(.v17)
+        .iOS(.v16), .watchOS(.v9), .macOS(.v12), .tvOS(.v17)
     ],
     products: XcodeSupport.products + [
         .library(
@@ -58,6 +58,7 @@ let package = Package(
         .package(url: "https://github.com/ksemianov/WrappingHStack", from: "0.2.0"),
         .package(url: "https://github.com/Automattic/pocket-casts-ios-fingerprint", branch: "trunk"),
         .package(url: "https://github.com/scinfu/SwiftSoup.git", from: "2.7.0"),
+        .package(url: "https://github.com/nmdias/FeedKit.git", from: "10.4.0"),
     ],
     targets: XcodeSupport.targets + [
         .target(
@@ -129,6 +130,7 @@ let package = Package(
                 .product(name: "SwiftProtobuf", package: "swift-protobuf"),
                 .product(name: "Swime", package: "Swime"),
                 .product(name: "SwiftSoup", package: "SwiftSoup"),
+                .product(name: "FeedKit", package: "FeedKit"),
                 "PocketCastsDataModel",
                 "PocketCastsUtils",
             ],
