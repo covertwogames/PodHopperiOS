@@ -191,7 +191,7 @@ class GoogleCastManager: NSObject, GCKRemoteMediaClientListener, GCKSessionManag
         let episodeMetadata = GCKMediaMetadata(metadataType: episode.videoPodcast() ? .movie : .musicTrack)
 
         if let episode = episode as? Episode, let uuid = episode.parentPodcast()?.uuid {
-            let episodeImage = GCKImage(url: ServerHelper.imageUrl(podcastUuid: uuid, size: 680), width: 680, height: 680)
+            let episodeImage = GCKImage(url: ImageManager.podcastImageURL(uuid: uuid, size: 680), width: 680, height: 680)
             episodeMetadata.addImage(episodeImage)
         } else if let episode = episode as? UserEpisode {
             let url = episode.urlForImage(size: 960)

@@ -560,9 +560,17 @@ class ImageManager {
     }
 
     func podcastUrl(imageSize: PodcastThumbnailSize, uuid: String) -> URL {
-        // PodHopper: feed podcasts carry their own artwork url from the RSS feed. Use it directly
-        // instead of the Pocket Casts image server, which has no entry for feed podcasts. Mirrors the
-        // Android PocketCastsImageRequestFactory override.
+        let sizeRequired = ImageManager.sizeFor(imageSize: imageSize)
+        let closestSize = closestImageSize(sizeRequired: sizeRequired)
+
+        return ImageManager.podcastImageURL(uuid: uuid, size: closestSize)
+    }
+
+    /// Single source of truth for a podcast's artwork URL. PodHopper feed podcasts carry their own
+    /// artwork url from the RSS feed, so use it directly instead of the Pocket Casts image server,
+    /// which has no entry for feed podcasts. Falls back to the Pocket Casts server only when a
+    /// podcast has no feed artwork. Mirrors the Android PocketCastsImageRequestFactory override.
+    static func podcastImageURL(uuid: String, size: Int) -> URL {
         if let podcast = DataManager.sharedManager.findPodcast(uuid: uuid, includeUnsubscribed: true),
            let feedArtwork = podcast.imageURL,
            !feedArtwork.isEmpty,
@@ -570,10 +578,7 @@ class ImageManager {
             return feedArtworkUrl
         }
 
-        let sizeRequired = ImageManager.sizeFor(imageSize: imageSize)
-        let closestSize = closestImageSize(sizeRequired: sizeRequired)
-
-        return ServerHelper.imageUrl(podcastUuid: uuid, size: closestSize)
+        return ServerHelper.imageUrl(podcastUuid: uuid, size: size)
     }
 
     private func closestImageSize(sizeRequired: Int) -> Int {

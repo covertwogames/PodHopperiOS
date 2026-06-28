@@ -11,7 +11,7 @@ struct PodcastPickerRow: View {
     @Binding var selectedPodcasts: [String]
     var body: some View {
         HStack {
-            KFImage(ServerHelper.imageUrl(podcastUuid: podcast.uuid, size: 280))
+            KFImage(ImageManager.podcastImageURL(uuid: podcast.uuid, size: 280))
                 .resizable()
                 .frame(width: 56, height: 56)
                 .aspectRatio(1, contentMode: .fit)
