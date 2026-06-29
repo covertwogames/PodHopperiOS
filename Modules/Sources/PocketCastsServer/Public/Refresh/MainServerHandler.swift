@@ -340,70 +340,33 @@ public class MainServerHandler {
     }
 
     public func updatePodcast(uuid: String, lastEpisodeUuid: String?) async throws -> Bool {
-        var query = "podcast_uuid=\(uuid)"
-        if let lastEpisodeUuid {
-            query += "&last_episode_uuid=\(lastEpisodeUuid)"
+        // PodHopper checks for new episodes by parsing the podcast's feed on device rather than asking
+        // the Pocket Casts update endpoint, which does not know PodHopper's feed derived podcast uuids.
+        // Returns whether the feed contains an episode that is not already stored locally. The caller
+        // then runs the normal on-device refresh to insert them, which dedups by episode uuid.
+        guard
+            let podcast = DataManager.sharedManager.findPodcast(uuid: uuid, includeUnsubscribed: true),
+            let feedUrl = podcast.podcastUrl,
+            !feedUrl.isEmpty
+        else {
+            return false
         }
-        let url = ServerHelper.asUrl(ServerConstants.Urls.main() + "api/v1/update_podcast?\(query)")
-        var request = URLRequest(url: url)
-        request.httpMethod = "GET"
-        request.cachePolicy = .reloadIgnoringLocalCacheData
-
-        FileLog.shared.console("Update Podcast API start request \(url.absoluteString)")
 
         if Task.isCancelled {
             return false
         }
 
-        let response = try await URLSession.shared.data(for: request)
-        guard let urlResponse = response.1 as? HTTPURLResponse else {
-            return false
-        }
+        return await withCheckedContinuation { continuation in
+            DispatchQueue.global(qos: .utility).async {
+                guard let parsed = PodHopperFeedParser().parse(feedUrl: feedUrl) else {
+                    continuation.resume(returning: false)
+                    return
+                }
 
-        FileLog.shared.console("Update Podcast API response status code \(urlResponse.statusCode)")
-
-        var statusCode = urlResponse.statusCode
-        let allHeaderFields = urlResponse.allHeaderFields
-        while statusCode == 202 {
-            guard
-                let location = allHeaderFields["Location"] as? String,
-                let retry = allHeaderFields["retry-after"] as? String,
-                let interval = UInt(retry) else {
-                FileLog.shared.console("Update Podcast API response incorrect header")
-                return false
+                let hasNewEpisode = parsed.episodes.contains { DataManager.sharedManager.findEpisode(uuid: $0.uuid) == nil }
+                continuation.resume(returning: hasNewEpisode)
             }
-            FileLog.shared.console("Poll Podcast API with delay of \(interval) sec")
-            let delay = UInt64(interval * 1_000_000_000)
-            try await Task<Never, Never>.sleep(nanoseconds: delay)
-            if Task.isCancelled {
-                return false
-            }
-            guard let newUrlResponse = try await pollUpdatePodcast(url: location) else {
-                FileLog.shared.console("Poll Podcast API no response")
-                return false
-            }
-            statusCode = newUrlResponse.statusCode
-            FileLog.shared.console("Poll Podcast API new status code \(statusCode)")
         }
-
-        if statusCode == 200 {
-            return true
-        }
-        return false
-    }
-
-    private func pollUpdatePodcast(url: String) async throws -> HTTPURLResponse? {
-        guard let url = URL(string: url) else {
-            FileLog.shared.console("Poll Podcast API anavailable url: \(url)")
-            return nil
-        }
-        FileLog.shared.console("Poll Podcast API start fetching \(url)")
-        var request = URLRequest(url: url)
-        request.httpMethod = "GET"
-        request.cachePolicy = .reloadIgnoringLocalCacheData
-
-        let response = try await URLSession.shared.data(for: request)
-        return response.1 as? HTTPURLResponse
     }
 
     private func jsonWithStandardParams(uniqueId: String) -> [String: Any] {
