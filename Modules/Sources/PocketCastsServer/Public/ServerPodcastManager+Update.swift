@@ -11,17 +11,12 @@ extension ServerPodcastManager {
     ///   Latest ones are handled by a refresh (due to auto-download/up next)
     ///   - completion: a completion block that receives a `Bool`
     public func updatePodcastIfRequired(podcast: Podcast, addMissingEpisodes: Bool = false, completion: ((Bool) -> Void)?) {
-        CacheServerHandler.shared.loadPodcastIfModified(podcast: podcast) { [weak self] podcastInfo, lastModified in
-            if let podcastInfo {
-                self?.updatePodcast(podcast: podcast, lastModified: lastModified, podcastInfo: podcastInfo, addMissingEpisodes: addMissingEpisodes, completion: {
-                    FileLog.shared.addMessage("\(podcast.title ?? "") updated from cache server")
-                    completion?(true)
-                })
-            } else {
-                FileLog.shared.addMessage("\(podcast.title ?? "") didn't need to be updated from cache server")
-                completion?(false)
-            }
-        }
+        // PodHopper does not refresh podcast metadata from the Pocket Casts cache server, which has no
+        // record of feed derived podcasts. A podcast's metadata and full back catalogue are populated
+        // from its feed when it is added, and new episodes are kept current by the on-device feed
+        // refresh, so there is nothing to fetch here. Reports no update, the same result this returned
+        // for feed podcasts when it still called the server (which always missed).
+        completion?(false)
     }
 
     private func updatePodcast(podcast: Podcast, lastModified: String?, podcastInfo: [String: Any], addMissingEpisodes: Bool, completion: (() -> Void)?) {

@@ -275,35 +275,39 @@ public class MainServerHandler {
     }
 
     public func refreshPodcastFeed(podcast: Podcast, completion: @escaping (Bool) -> Void) {
-        guard let uniqueId = ServerConfig.shared.syncDelegate?.uniqueAppId() else {
+        // PodHopper re-fetches and re-parses the feed on device instead of asking the Pocket Casts
+        // server to refresh it, which has no record of feed derived podcasts. Any episodes the feed
+        // contains that are not already stored are inserted (dedup by episode uuid). Reports success
+        // when the feed could be fetched and parsed.
+        guard let feedUrl = podcast.podcastUrl, !feedUrl.isEmpty else {
             completion(false)
 
             return
         }
 
-        var jsonRequest = jsonWithStandardParams(uniqueId: uniqueId)
-        jsonRequest["podcast_uuid"] = podcast.uuid
-        guard let data = try? JSONSerialization.data(withJSONObject: jsonRequest) else {
-            FileLog.shared.addMessage("Failed to create refreshPodcastFeed request")
-            completion(false)
-
-            return
-        }
-
-        let url = ServerHelper.asUrl(ServerConstants.Urls.main() + "podcasts/refresh")
-        let request = ServerHelper.createJsonRequest(url: url, data: data, timeout: MainServerHandler.callTimeout, cachePolicy: .reloadIgnoringCacheData)
-        FileLog.shared.addMessage("Attempting to refresh podcast feed for \(podcast.uuid)")
-        URLSession.shared.dataTask(with: request) { _, response, error in
-            guard let response = response as? HTTPURLResponse, response.statusCode == ServerConstants.HttpConstants.ok else {
-                FileLog.shared.addMessage("Feed refresh failed: \(error?.localizedDescription ?? "No error")")
+        FileLog.shared.addMessage("Attempting on-device feed refresh for \(podcast.uuid)")
+        DispatchQueue.global(qos: .utility).async {
+            guard let parsed = PodHopperFeedParser().parse(feedUrl: feedUrl) else {
+                FileLog.shared.addMessage("Feed refresh failed: could not fetch or parse feed for \(podcast.uuid)")
                 completion(false)
 
                 return
             }
 
-            FileLog.shared.addMessage("Server indicated podcast refresh was successful")
+            let newEpisodes = parsed.episodes.filter { DataManager.sharedManager.findEpisode(uuid: $0.uuid) == nil }
+            for episode in newEpisodes {
+                episode.podcast_id = podcast.id
+                episode.podcastUuid = podcast.uuid
+            }
+
+            if !newEpisodes.isEmpty {
+                DataManager.sharedManager.bulkSave(episodes: newEpisodes)
+                ServerPodcastManager.shared.updateLatestEpisodeInfo(podcast: podcast, setDefaults: false)
+            }
+
+            FileLog.shared.addMessage("On-device feed refresh complete for \(podcast.uuid), added \(newEpisodes.count) episode(s)")
             completion(true)
-        }.resume()
+        }
     }
 
     public func findPodcastByiTunesId(_ iTunesId: Int, completion: @escaping (String?) -> Void) {
