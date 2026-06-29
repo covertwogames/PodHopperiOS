@@ -198,27 +198,18 @@ public class MainServerHandler {
     }
 
     public func refresh(podcasts: [Podcast], completion: @escaping (PodcastRefreshResponse?) -> Void) {
-        FileLog.shared.addMessage("Refresh - Started)")
-        guard let request = createRefreshRequest(podcasts: podcasts) else {
-            completion(PodcastRefreshResponse.failedResponse())
-            return
-        }
+        // PodHopper refreshes by re-fetching each podcast's RSS feed on device rather than asking the
+        // Pocket Casts refresh server, which does not know PodHopper's feed derived podcast uuids. The
+        // response shape is identical, so everything downstream (RefreshOperation, which dedups by
+        // episode uuid and inserts only new episodes) is unchanged. Runs off the calling thread so this
+        // method stays non blocking, the same as the previous network call.
+        FileLog.shared.addMessage("Refresh - Started (on-device feeds)")
 
-        tokenHelper.callSecureUrl(request: request) { response, data, error in
-            let statusCode = response?.statusCode ?? 0
-
-            guard statusCode == ServerConstants.HttpConstants.ok, let data else {
-                if let error {
-                    FileLog.shared.addMessage("Refresh failed: with error \(error.localizedDescription), status code \(statusCode)")
-                } else {
-                    FileLog.shared.addMessage("Refresh failed: response returned no data, status code \(statusCode)")
-                }
-                completion(PodcastRefreshResponse.failedResponse())
-                return
-            }
-            FileLog.shared.addMessage("Decoding Refresh Response)")
-            let refreshResponse = ServerHelper.decodeRefreshResponse(from: data)
-            completion(refreshResponse)
+        DispatchQueue.global(qos: .utility).async {
+            let response = PodHopperRefresh.refreshResponse(for: podcasts)
+            let updatedCount = response.result?.podcastUpdates?.count ?? 0
+            FileLog.shared.addMessage("Refresh - Parsed feeds, \(updatedCount) podcast(s) returned episodes")
+            completion(response)
         }
     }
 
