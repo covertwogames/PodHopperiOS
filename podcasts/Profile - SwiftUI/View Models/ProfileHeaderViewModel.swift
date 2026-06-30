@@ -1,6 +1,7 @@
 import Foundation
 import PocketCastsServer
 import SwiftUI
+import UIKit
 
 /// View model for the header view that appears on the Profile tab view
 class ProfileHeaderViewModel: ProfileDataViewModel {
@@ -38,6 +39,24 @@ class ProfileHeaderViewModel: ProfileDataViewModel {
     func logout() {
         PodHopperSupabaseClient.shared.logout()
         update()
+    }
+
+    /// Confirms before signing out, then signs out. The confirmation is presented through the
+    /// navigation controller because the header is a SwiftUI view embedded as a table header view
+    /// (via themedUIView), so it has no SwiftUI presentation context and a SwiftUI alert cannot show.
+    func logoutTapped() {
+        let alert = UIAlertController(
+            title: nil,
+            message: "Are you sure you want to logout of your PodHopper account?",
+            preferredStyle: .alert
+        )
+        alert.addAction(UIAlertAction(title: "No", style: .cancel))
+        alert.addAction(UIAlertAction(title: "Yes", style: .destructive) { [weak self] _ in
+            self?.logout()
+        })
+
+        let presenter = navigationController?.topViewController ?? navigationController
+        presenter?.present(alert, animated: true)
     }
 
     func shareTapped() {

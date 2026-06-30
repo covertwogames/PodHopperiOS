@@ -10,8 +10,6 @@ struct ProfileHeaderView: View {
     /// Update the UI depending on the size of the screen
     @Environment(\.horizontalSizeClass) private var sizeClass
 
-    @State private var showLogoutConfirm = false
-
     private var isShowingVertically: Bool {
         sizeClass == .compact
     }
@@ -44,7 +42,7 @@ struct ProfileHeaderView: View {
                 }
 
                 Button("Logout") {
-                    showLogoutConfirm = true
+                    viewModel.logoutTapped()
                 }
                 .buttonStyle(ProfileStrokeButtonStyle())
             } else {
@@ -52,12 +50,6 @@ struct ProfileHeaderView: View {
                     viewModel.accountTapped()
                 }
                 .buttonStyle(ProfileStrokeButtonStyle())
-            }
-        }
-        .alert("Are you sure you want to logout of your PodHopper account?", isPresented: $showLogoutConfirm) {
-            Button("No", role: .cancel) {}
-            Button("Yes", role: .destructive) {
-                viewModel.logout()
             }
         }
     }
