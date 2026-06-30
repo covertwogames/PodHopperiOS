@@ -410,7 +410,11 @@ public enum FeatureFlag: String, CaseIterable {
         case .libroFm:
             false
         case .encourageAccountCreation:
-            true
+            // PodHopper: never nag to create or sign into a Pocket Casts account. This flag gates the
+            // whole "encourage account creation" system, the banners on Profile, Filters, and
+            // Listening History, and the full-screen modal shown at launch, so disabling it removes
+            // all of them. PodHopper's own account lives in the Profile header instead.
+            false
         case .refreshAndSaveWatchLogsOnSend:
             true
         case .avoidReplaceOnEpisodeSwap:
