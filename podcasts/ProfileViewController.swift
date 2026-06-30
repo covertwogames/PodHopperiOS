@@ -72,7 +72,9 @@ class ProfileViewController: PCViewController, UITableViewDataSource, UITableVie
 
     @IBOutlet var plusInfoView: PlusLockedInfoView! {
         didSet {
-            plusInfoView.isHidden = Settings.plusInfoDismissedOnProfile() || SubscriptionHelper.hasActiveSubscription()
+            // PodHopper: the Pocket Casts Plus billboard is removed. Keep it always hidden. It is an
+            // arranged subview of a vertical stack view, so hiding collapses it with no leftover gap.
+            plusInfoView.isHidden = true
             plusInfoView.delegate = self
         }
     }
@@ -265,7 +267,8 @@ class ProfileViewController: PCViewController, UITableViewDataSource, UITableVie
         headerViewModel.update()
 
         updateLastRefreshDetails()
-        plusInfoView.isHidden = Settings.plusInfoDismissedOnProfile() || SubscriptionHelper.hasActiveSubscription()
+        // PodHopper: Pocket Casts Plus billboard removed, stays hidden.
+        plusInfoView.isHidden = true
         updateFooterFrame()
         refreshTableData()
     }
