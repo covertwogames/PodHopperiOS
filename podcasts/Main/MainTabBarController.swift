@@ -235,14 +235,12 @@ class MainTabBarController: UITabBarController, NavigationProtocol {
             return
         }
 
-        if FeatureFlag.encourageAccountCreation.enabled,
-           !Settings.hasShownInformationalViewModal,
-           Settings.hasSeenInitialOnboardingBefore,
-           (UIApplication.shared.delegate as? AppDelegate)?.appInstallState == .updated {
-            NavigationManager.sharedManager.navigateTo(NavigationManager.onboardingFlow, data: ["flow": OnboardingFlow.Flow.encourageAccountCreation])
-        } else {
-            NavigationManager.sharedManager.navigateTo(NavigationManager.onboardingFlow, data: ["flow": OnboardingFlow.Flow.initialOnboarding])
-        }
+        // PodHopper: present the PodHopper onboarding (welcome, then login or sign up, then
+        // notifications) instead of the Pocket Casts intro, interests, and recommendations flow.
+        let onboarding = PodHopperOnboardingHostingController()
+        onboarding.modalPresentationStyle = .fullScreen
+        onboarding.isModalInPresentation = true
+        present(onboarding, animated: true)
 
         // Set the flag so the user won't see the on launch flow again
         Settings.shouldShowInitialOnboardingFlow = false
