@@ -384,6 +384,13 @@ public final class PodHopperPositionSync {
                         result = .none
                     } else {
                         self.delegate?.updatePlayedUpTo(episode: episode, positionSec: Double(positionSec))
+                        // requiredStartingPosition only honors playedUpTo when the episode is in
+                        // progress. An episode played only on another device is notPlayed locally, so
+                        // mark it in progress here, exactly as the page pull does when it applies a
+                        // position, otherwise the resume point is ignored and play starts from zero.
+                        if episode.playingStatus == PlayingStatus.notPlayed.rawValue {
+                            self.delegate?.markInProgress(episode: episode)
+                        }
                         result = .applied
                     }
                 }

@@ -247,13 +247,26 @@ class PlaybackManager: ServerPlaybackDelegate {
     func play(completion: (() -> Void)? = nil, userInitiated: Bool = true) {
         guard let currEpisode = currentEpisode() else { return }
 
+        // Mark the play intent right away so the play button reflects the tap immediately, before the
+        // network check below runs.
+        aboutToPlay.value = true
+
+        // PodHopper: apply this episode's freshest cross-device position before the player reads its
+        // resume point, so every play path (player screen, mini player, lock screen, headset, resume)
+        // starts where another device left off instead of from the stale local position. The pull
+        // runs off the main thread and is time bounded; the real play then runs on the main thread.
+        // This mirrors Android, which applies the position at the top of its own play().
+        PodHopperPositionSync.shared.applyRemotePositionBeforePlay(episode: currEpisode) {
+            self.performPlayAfterRemoteSync(currEpisode: currEpisode, completion: completion, userInitiated: userInitiated)
+        }
+    }
+
+    private func performPlayAfterRemoteSync(currEpisode: BaseEpisode, completion: (() -> Void)?, userInitiated: Bool) {
         FileLog.shared.addMessage("PlaybackManager Play \(currentEpisode()?.title ?? "unknown episode") userInitiated: \(userInitiated)")
 
         if userInitiated {
             analyticsPlaybackHelper.play()
         }
-
-        aboutToPlay.value = true
 
         if playerSwitchRequired() {
             load(episode: currEpisode, autoPlay: false, overrideUpNext: false)
