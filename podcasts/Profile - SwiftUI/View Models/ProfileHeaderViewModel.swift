@@ -1,4 +1,5 @@
 import Foundation
+import PocketCastsServer
 import SwiftUI
 
 /// View model for the header view that appears on the Profile tab view
@@ -11,13 +12,32 @@ class ProfileHeaderViewModel: ProfileDataViewModel {
         self.navigationController = navigationController
     }
 
+    /// Whether a PodHopper account is currently signed in.
+    var isSignedIn: Bool {
+        PodHopperSupabaseClient.shared.isLoggedIn()
+    }
+
+    /// The signed-in PodHopper account email, or an empty string when signed out.
+    var accountEmail: String {
+        PodHopperSupabaseClient.shared.signedInEmail ?? ""
+    }
+
     /// Opens PodHopper's auth/account screen: the login flow when signed out, or the account view
-    /// (email + logout) when signed in.
+    /// (email + logout) when signed in. Refreshes the header when the screen finishes so the account
+    /// section reflects the new state.
     func accountTapped() {
         Analytics.track(.profileAccountButtonTapped)
 
-        let authController = PodHopperAuthHostingController()
+        let authController = PodHopperAuthHostingController(onFinished: { [weak self] in
+            self?.update()
+        })
         navigationController?.present(authController, animated: true)
+    }
+
+    /// Signs out of the PodHopper account and refreshes the header.
+    func logout() {
+        PodHopperSupabaseClient.shared.logout()
+        update()
     }
 
     func shareTapped() {

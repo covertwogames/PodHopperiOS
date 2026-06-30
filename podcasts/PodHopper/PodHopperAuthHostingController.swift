@@ -4,17 +4,27 @@ import SwiftUI
 /// and the login flow when signed out. Dismisses on successful sign-in, on logout, and on close.
 class PodHopperAuthHostingController: ThemedHostingController<PodHopperAuthRootView> {
     private let viewModel: PodHopperAuthViewModel
+    private let onFinished: (() -> Void)?
 
-    init() {
+    init(onFinished: (() -> Void)? = nil) {
         let viewModel = PodHopperAuthViewModel()
         self.viewModel = viewModel
+        self.onFinished = onFinished
         super.init(rootView: PodHopperAuthRootView(viewModel: viewModel))
 
         viewModel.onAuthenticated = { [weak self] in
-            self?.dismiss(animated: true)
+            guard let self else { return }
+            let finished = self.onFinished
+            self.dismiss(animated: true) {
+                finished?()
+            }
         }
         viewModel.onClose = { [weak self] in
-            self?.dismiss(animated: true)
+            guard let self else { return }
+            let finished = self.onFinished
+            self.dismiss(animated: true) {
+                finished?()
+            }
         }
     }
 

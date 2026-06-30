@@ -10,117 +10,56 @@ struct ProfileHeaderView: View {
     /// Update the UI depending on the size of the screen
     @Environment(\.horizontalSizeClass) private var sizeClass
 
+    @State private var showLogoutConfirm = false
+
     private var isShowingVertically: Bool {
         sizeClass == .compact
     }
 
     var body: some View {
-        container { geometryProxy in
-            profileImage(geometryProxy)
-            profileInfo()
+        container { _ in
+            accountSection()
             stats()
         }
     }
 
     // MARK: - Private: Views
 
-    /// Shows the profile image with subscription information
+    /// PodHopper account section. Signed out, it shows a single login / create-account button that
+    /// opens the PodHopper auth screen. Signed in, it shows the account email and a logout button
+    /// that confirms before signing out. Mirrors the Android PodHopperProfileHeader.
     @ViewBuilder
-    private func profileImage(_ proxy: GeometryProxy) -> some View {
-        VStack(spacing: 0) {
-            SubscriptionProfileImage(viewModel: viewModel)
-                .frame(width: Constants.imageSize, height: Constants.imageSize)
+    private func accountSection() -> some View {
+        VStack(spacing: Constants.spacing) {
+            if viewModel.isSignedIn {
+                VStack(spacing: 4) {
+                    Text("Logged in as")
+                        .font(style: .subheadline, weight: .medium)
+                        .foregroundColor(theme.primaryText02)
 
-            // Show the patron badge
-            if let subscription = viewModel.subscription {
-                if subscription.tier == .patron {
-                    SubscriptionBadge(tier: subscription.tier)
-                        .padding(.top, -10)
+                    Text(viewModel.accountEmail)
+                        .font(size: 18, style: .body, weight: .bold)
+                        .foregroundColor(theme.primaryText01)
+                        .multilineTextAlignment(.center)
                 }
 
-                // Display the expiration date if needed
-                if subscription.expirationProgress < 1, let expirationDate = subscription.expirationDate {
-                    let time = TimeFormatter.shared.appleStyleTillString(date: expirationDate) ?? L10n.timeFormatNever
-                    let message = L10n.subscriptionExpiresIn(time)
-
-                    Text(message.localizedUppercase)
-                        .font(style: .caption, weight: .semibold)
-                        .foregroundColor(theme.red)
-                        .padding(.top, Constants.spacing)
+                Button("Logout") {
+                    showLogoutConfirm = true
                 }
-            }
-        }
-    }
-
-    /// Shows the display name, email, and account/share buttons
-    @ViewBuilder
-    private func profileInfo() -> some View {
-        let alignment: HorizontalAlignment = isShowingVertically ? .center : .leading
-
-        VStack(alignment: alignment, spacing: Constants.spacing) {
-            ProfileInfoLabels(profile: viewModel.profile, alignment: alignment, spacing: Constants.spacing)
-
-            if viewModel.profile.isLoggedIn {
-                if FeatureFlag.shareProfile.enabled {
-                    HStack(spacing: 12) {
-                        Button {
-                            viewModel.accountTapped()
-                        } label: {
-                            Label {
-                                Text(L10n.account)
-                            } icon: {
-                                Image("settings-avatar")
-                                    .renderingMode(.template)
-                                    .resizable()
-                                    .aspectRatio(contentMode: .fit)
-                                    .frame(width: 17, height: 17)
-                            }
-                            .frame(maxWidth: .infinity)
-                        }
-                        .buttonStyle(ProfileStrokeButtonStyle())
-
-                        Button {
-                            viewModel.shareTapped()
-                        } label: {
-                            Label {
-                                Text(L10n.share)
-                            } icon: {
-                                Image("podcast-share")
-                                    .renderingMode(.template)
-                                    .resizable()
-                                    .aspectRatio(contentMode: .fit)
-                                    .frame(width: 17, height: 17)
-                            }
-                            .frame(maxWidth: .infinity)
-                        }
-                        .buttonStyle(ProfileStrokeButtonStyle())
-                    }
-                    .padding(.bottom, 8)
-                } else {
-                    Button(L10n.account) {
-                        viewModel.accountTapped()
-                    }
-                    .buttonStyle(ProfileStrokeButtonStyle())
-                }
+                .buttonStyle(ProfileStrokeButtonStyle())
             } else {
-                Button(L10n.setupAccount) {
+                Button("Login / Create Account") {
                     viewModel.accountTapped()
                 }
                 .buttonStyle(ProfileStrokeButtonStyle())
             }
         }
-        // The top spacing appears too high when showing the badge or exp date for some reason so we'll offset it a bit to balance it out
-        .padding(.top, {
-            guard
-                let subscription = viewModel.subscription,
-                subscription.tier == .patron,
-                subscription.expirationDate != nil
-            else {
-                return 0
+        .alert("Are you sure you want to logout of your PodHopper account?", isPresented: $showLogoutConfirm) {
+            Button("No", role: .cancel) {}
+            Button("Yes", role: .destructive) {
+                viewModel.logout()
             }
-
-            return -5
-        }())
+        }
     }
 
     /// Renders the podcast, listening, and saved time stats
