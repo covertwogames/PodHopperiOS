@@ -20,6 +20,7 @@ final class PodHopperPlaybackBridge: PodHopperPositionSyncDelegate {
     static let shared = PodHopperPlaybackBridge()
 
     private var lifecycleObserversRegistered = false
+    private var reconcileTimer: Timer?
 
     private init() {}
 
@@ -82,12 +83,14 @@ final class PodHopperPlaybackBridge: PodHopperPositionSyncDelegate {
         NotificationCenter.default.addObserver(self, selector: #selector(appDidEnterBackground), name: UIApplication.didEnterBackgroundNotification, object: nil)
     }
 
-    /// Pull cross-device positions (switching to the most recent episode when the setting is on) and
-    /// run the subscription poll loop while the app is in the foreground. Safe to call when signed
-    /// out: every engine call self-guards on the login state. startPeriodicSync is idempotent.
+    /// Reconcile cross-device positions (switching to the most recent episode when the setting is on)
+    /// and run the subscription poll loop while the app is in the foreground, and start the 30s
+    /// reconcile timer so progress made on another device keeps appearing while the app stays open.
+    /// Safe to call when signed out: every engine call self-guards on the login state.
     func foregroundSync() {
-        PodHopperPositionSync.shared.pullLatestPositions(adoptCurrentEpisode: true)
+        PodHopperPositionSync.shared.reconcileNowPlaying()
         PodHopperSubscriptionSync.shared.startPeriodicSync()
+        startReconcileTimer()
     }
 
     @objc private func appWillEnterForeground() {
@@ -96,13 +99,32 @@ final class PodHopperPlaybackBridge: PodHopperPositionSyncDelegate {
 
     @objc private func appDidEnterBackground() {
         // Push the latest position so other devices resume exactly where this one left off, then stop
-        // the foreground poll loop. The push is best-effort: the periodic and pause pushes already
-        // keep the server fresh, so this is a last-position safety net.
+        // the foreground poll loop and the reconcile timer. The push is best-effort: the periodic and
+        // pause pushes already keep the server fresh, so this is a last-position safety net.
         PodHopperPositionSync.shared.pushCurrentPosition(immediate: true)
         PodHopperSubscriptionSync.shared.stopPeriodicSync()
+        stopReconcileTimer()
     }
 
     // MARK: - Helpers
+
+    /// Starts (or restarts) the foreground reconcile timer: every 30 seconds while the app is open,
+    /// reconcile the now-playing window with the freshest cross-device state. Mirrors the Android
+    /// RECONCILE_INTERVAL_MS timer. The engine self-throttles and self-guards on login, so a tick is
+    /// cheap when there is nothing to do. Cancelled when the app backgrounds. Main thread only.
+    private func startReconcileTimer() {
+        stopReconcileTimer()
+        let timer = Timer(timeInterval: 30, repeats: true) { _ in
+            PodHopperPositionSync.shared.reconcileNowPlaying()
+        }
+        RunLoop.main.add(timer, forMode: .common)
+        reconcileTimer = timer
+    }
+
+    private func stopReconcileTimer() {
+        reconcileTimer?.invalidate()
+        reconcileTimer = nil
+    }
 
     private func runOnMainSync(_ block: () -> Void) {
         if Thread.isMainThread {

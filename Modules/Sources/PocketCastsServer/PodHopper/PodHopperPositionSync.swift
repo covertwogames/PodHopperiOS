@@ -11,8 +11,8 @@ import UIKit
 /// The playback effects the position sync needs from its host (the phone app or the Watch app).
 /// Everything else (the network, the cursor, parked rows, and the staleness guard) lives in the
 /// engine; these are the parts that must go through the host's real playback machinery so the player
-/// and UI stay consistent. Implementations must bump the relevant modified timestamp when they change
-/// played-up-to or playing status, or the staleness guard cannot protect against replays.
+/// and UI stay consistent. Implementations should bump the relevant modified timestamp when they
+/// change played-up-to or playing status so the rest of the data model stays consistent.
 public protocol PodHopperPositionSyncDelegate: AnyObject {
     /// Apply a synced position. Must set playedUpTo and bump playedUpToModified.
     func updatePlayedUpTo(episode: BaseEpisode, positionSec: Double)
@@ -42,11 +42,14 @@ public protocol PodHopperPositionSyncDelegate: AnyObject {
 /// the receiver runs a real local mark-as-played, so finishing on one device removes the episode on
 /// the other.
 ///
-/// Two protections, both about never destroying newer local state: a remote change older than this
-/// device's own last change to the episode is ignored, and the episode actively playing here is
-/// never overwritten. The pull drains every page in one open, advances its cursor only after a page
-/// is accounted for, and parks rows for episodes not in the local database yet so a position is
-/// never lost because a feed had not refreshed. A fresh sign-in starts from "now".
+/// Conflict resolution is freshest-writer-wins on a server-stamped timestamp. There is one
+/// playback_state row per episode, overwritten by whoever played it last, and updated_at_ms is
+/// stamped by Supabase, so a row from another device is the latest state by the one clock every
+/// device shares. The only thing a remote row will not overwrite is the episode actively playing
+/// here right now. The pull drains every page in one open, advances its cursor only after a page is
+/// accounted for, and parks rows for episodes not in the local database yet so a position is never
+/// lost because a feed had not refreshed. A fresh sign-in starts watching from the database's newest
+/// timestamp in server time.
 ///
 /// The engine is in the shared module so the phone, CarPlay (same process), and the Watch app can
 /// drive it; the host supplies the playback effects through `delegate`.
@@ -64,6 +67,7 @@ public final class PodHopperPositionSync {
     private let workQueue = DispatchQueue(label: "au.com.podhopper.positionsync", qos: .utility)
     private let stateLock = NSLock()
     private var _lastPushAttemptMs: Int64 = 0
+    private var _lastReconcileMs: Int64 = 0
     private var _applyingUuids = Set<String>()
     private var cachedInstallId: String?
 
@@ -221,9 +225,8 @@ public final class PodHopperPositionSync {
         workQueue.async {
             do {
                 let installId = self.installId()
-                var cursor = self.cursorOrStartFresh()
+                var cursor = try self.cursorOrStartFresh()
 
-                var adoptCandidate: AdoptCandidate?
                 while true {
                     let query = "select=episode_key,position_sec,total_sec,completed,updated_at_ms,device_id,feed_url"
                         + "&updated_at_ms=gt.\(cursor)"
@@ -236,10 +239,6 @@ public final class PodHopperPositionSync {
                         break
                     }
                     let result = self.applyRows(rows)
-                    if let candidate = result.latestInProgress,
-                       adoptCandidate == nil || candidate.updatedAtMs > adoptCandidate!.updatedAtMs {
-                        adoptCandidate = candidate
-                    }
                     if result.maxTs > cursor {
                         cursor = result.maxTs
                         self.setCursor(cursor)
@@ -253,13 +252,40 @@ public final class PodHopperPositionSync {
 
                 self.retryParkedRows()
 
-                if adoptCurrentEpisode, let candidate = adoptCandidate {
-                    self.maybeAdoptLatest(candidate)
+                // Resume the now-playing window from the freshest cross-device state. This uses a
+                // direct "most recent in-progress across other devices" query, not the cursor page,
+                // so it finds a position written before the cursor (the common cross-device resume
+                // case the page pull can never see). Guarded so it never changes what is playing
+                // while this device is actively playing.
+                if adoptCurrentEpisode, self.delegate?.currentlyPlayingEpisodeUuid() == nil {
+                    try self.adoptLatestForResume()
                 }
             } catch {
                 FileLog.shared.addMessage("PodHopper position pull failed: \(error)")
             }
         }
+    }
+
+    /// Reconcile the now-playing window with the freshest cross-device state: refresh saved positions
+    /// and, when this device is not actively playing, switch the current episode to the most recently
+    /// played one from another device and apply its synced position. Throttled by [reconcileMinIntervalMs]
+    /// so a burst of triggers (foreground immediately followed by the timer, for instance) collapses
+    /// into one pull. Called by every "the user is engaging now" trigger: app foreground and the 30s
+    /// in-app timer.
+    public func reconcileNowPlaying() {
+        if !supabase.isLoggedIn() {
+            return
+        }
+        let now = nowMs()
+        stateLock.lock()
+        let throttled = now - _lastReconcileMs < Self.reconcileMinIntervalMs
+        if throttled {
+            stateLock.unlock()
+            return
+        }
+        _lastReconcileMs = now
+        stateLock.unlock()
+        pullLatestPositions(adoptCurrentEpisode: true)
     }
 
     private struct AdoptCandidate {
@@ -270,14 +296,33 @@ public final class PodHopperPositionSync {
 
     private struct ApplyResult {
         let maxTs: Int64
-        let latestInProgress: AdoptCandidate?
     }
 
-    /// Switches the player to [candidate] if the setting is on. If the episode is not on this device
-    /// yet, its podcast is fetched and added (as not subscribed) from the feed url the row carried,
-    /// which makes the episode exist locally so it can be loaded.
-    private func maybeAdoptLatest(_ candidate: AdoptCandidate) {
+    /// Finds the most recently played in-progress episode written by another device and, when the
+    /// auto-switch setting is on and that row is newer than this device's own latest write, applies
+    /// its synced position to the local episode and switches the player to it (paused). This is a
+    /// direct "freshest across other devices" query, not the cursor page, so it resumes a position
+    /// written before the cursor. Mirrors the Android adoptLatestForResume + applyRemotePositionBeforePlay
+    /// resume path. Throws on a network error so the enclosing pull logs and retries. Blocking; runs
+    /// on the calling background queue.
+    private func adoptLatestForResume() throws {
         guard delegate?.autoSwitchToCurrentEpisodeEnabled() == true else {
+            return
+        }
+        let installId = self.installId()
+        let query = "select=episode_key,feed_url,position_sec,total_sec,completed,updated_at_ms"
+            + "&device_id=neq.\(installId)"
+            + "&order=updated_at_ms.desc"
+            + "&limit=\(Self.adoptScanLimit)"
+        let rows = try supabase.select(table: Self.table, query: query)
+        guard let candidate = latestInProgressFrom(rows) else {
+            return
+        }
+        // Core guard, in server time: only switch to another device's episode when that row is newer
+        // than this device's own most recent write. Both timestamps are stamped by Supabase, so this
+        // compares one clock to itself, never two device clocks.
+        let myLatest = try latestServerTs(onlyThisDevice: true)
+        if candidate.updatedAtMs <= myLatest {
             return
         }
         var episode = dataManager.findEpisode(uuid: candidate.episodeKey)
@@ -285,8 +330,32 @@ public final class PodHopperPositionSync {
             _ = feedManager.addFeedUrlAsUnsubscribed(feedUrl)
             episode = dataManager.findEpisode(uuid: candidate.episodeKey)
         }
-        guard let target = episode else { return }
+        guard let target = episode else {
+            return
+        }
+        // Apply the synced position to the local episode first, so when the player loads the adopted
+        // episode it prepares paused at the right spot rather than at the stale local position.
+        _ = applyRemotePositionBeforePlay(episode: target)
         delegate?.adoptEpisodeIntoPlayer(episode: target)
+    }
+
+    /// The most recently played still-in-progress episode in a desc-ordered page of rows. Completions
+    /// are skipped so a finished episode never becomes a now-playing.
+    private func latestInProgressFrom(_ rows: [[String: Any]]) -> AdoptCandidate? {
+        for row in rows {
+            guard let episodeKey = row["episode_key"] as? String, !episodeKey.isEmpty else {
+                continue
+            }
+            let positionSec = (row["position_sec"] as? NSNumber)?.intValue ?? -1
+            let totalSec = (row["total_sec"] as? NSNumber)?.intValue ?? 0
+            let completed = (row["completed"] as? Bool) ?? ((row["completed"] as? NSNumber)?.boolValue ?? false)
+            if Self.isCompletionRow(positionSec: positionSec, totalSec: totalSec, completed: completed) {
+                continue
+            }
+            let feedUrl = (row["feed_url"] as? String).flatMap { $0.isEmpty ? nil : $0 }
+            return AdoptCandidate(episodeKey: episodeKey, feedUrl: feedUrl, updatedAtMs: (row["updated_at_ms"] as? NSNumber)?.int64Value ?? 0)
+        }
+        return nil
     }
 
     /// Pulls this episode's latest cross-device position and applies it BEFORE playback reads the
@@ -304,6 +373,7 @@ public final class PodHopperPositionSync {
                 let query = "select=position_sec,total_sec,updated_at_ms,device_id"
                     + "&episode_key=eq.\(episode.uuid)"
                     + "&device_id=neq.\(installId)"
+                    + "&order=updated_at_ms.desc"
                     + "&limit=1"
                 let rows = try self.supabase.select(table: Self.table, query: query)
                 if rows.isEmpty {
@@ -335,14 +405,31 @@ public final class PodHopperPositionSync {
         case failed
     }
 
+    /// Async variant for the main-thread play path. Runs the bounded at-play pull on a background
+    /// queue and then calls [completion] on the main thread, so playback can start from the synced
+    /// position without ever blocking the main thread. The completion is always called exactly once,
+    /// including when signed out or when the pull times out, so the play flow never stalls.
+    public func applyRemotePositionBeforePlay(episode: BaseEpisode, completion: @escaping () -> Void) {
+        if !supabase.isLoggedIn() {
+            DispatchQueue.main.async {
+                completion()
+            }
+            return
+        }
+        DispatchQueue.global(qos: .userInitiated).async {
+            _ = self.applyRemotePositionBeforePlay(episode: episode)
+            DispatchQueue.main.async {
+                completion()
+            }
+        }
+    }
+
     // MARK: Apply
 
     /// Applies every row in a page, parking those whose episode is not local yet. Returns the highest
-    /// updated_at_ms seen so the caller can advance the cursor past the whole page, and the most
-    /// recent in-progress episode as the adopt candidate (completions are not now-playing).
+    /// updated_at_ms seen so the caller can advance the cursor past the whole page.
     private func applyRows(_ rows: [[String: Any]]) -> ApplyResult {
         var maxTs: Int64 = 0
-        var latestInProgress: AdoptCandidate?
         for row in rows {
             let updatedAtMs = (row["updated_at_ms"] as? NSNumber)?.int64Value ?? 0
             if updatedAtMs > maxTs {
@@ -355,14 +442,8 @@ public final class PodHopperPositionSync {
             let totalSec = (row["total_sec"] as? NSNumber)?.intValue ?? 0
             let completed = (row["completed"] as? Bool) ?? ((row["completed"] as? NSNumber)?.boolValue ?? false)
             applyOrPark(episodeKey: episodeKey, positionSec: positionSec, totalSec: totalSec, completed: completed, remoteTs: updatedAtMs)
-
-            if !Self.isCompletionRow(positionSec: positionSec, totalSec: totalSec, completed: completed),
-               latestInProgress == nil || updatedAtMs > latestInProgress!.updatedAtMs {
-                let feedUrl = (row["feed_url"] as? String).flatMap { $0.isEmpty ? nil : $0 }
-                latestInProgress = AdoptCandidate(episodeKey: episodeKey, feedUrl: feedUrl, updatedAtMs: updatedAtMs)
-            }
         }
-        return ApplyResult(maxTs: maxTs, latestInProgress: latestInProgress)
+        return ApplyResult(maxTs: maxTs)
     }
 
     private func applyOrPark(episodeKey: String, positionSec: Int, totalSec: Int, completed: Bool, remoteTs: Int64) {
@@ -370,21 +451,18 @@ public final class PodHopperPositionSync {
             parkRow(episodeKey: episodeKey, positionSec: positionSec, totalSec: totalSec, completed: completed, remoteTs: remoteTs)
             return
         }
-        applyOne(episode: episode, positionSec: positionSec, totalSec: totalSec, completed: completed, remoteTs: remoteTs)
+        applyOne(episode: episode, positionSec: positionSec, totalSec: totalSec, completed: completed)
     }
 
-    private func applyOne(episode: Episode, positionSec: Int, totalSec: Int, completed: Bool, remoteTs: Int64) {
-        let localModified = max(episode.playedUpToModified, episode.playingStatusModified)
+    private func applyOne(episode: Episode, positionSec: Int, totalSec: Int, completed: Bool) {
         let isCurrentlyPlayingThis = delegate?.currentlyPlayingEpisodeUuid() == episode.uuid
         let playingStatusIsNotPlayed = episode.playingStatus == PlayingStatus.notPlayed.rawValue
 
         let decision = Self.decideApply(
-            localModifiedMs: localModified,
             isCurrentlyPlayingThisEpisode: isCurrentlyPlayingThis,
             positionSec: positionSec,
             totalSec: totalSec,
             completed: completed,
-            remoteTs: remoteTs,
             playingStatusIsNotPlayed: playingStatusIsNotPlayed
         )
 
@@ -403,21 +481,17 @@ public final class PodHopperPositionSync {
         }
     }
 
-    /// The pure apply decision: Guard 1 (never apply a remote change older than this device's own
-    /// last change), Guard 2 (never overwrite the episode actively playing here), then completion
+    /// The pure apply decision. Freshest writer wins: the row came from another device's write to the
+    /// episode's single shared row, so it is the latest state by the server's own clock; the one thing
+    /// it will not stomp is the episode actively playing on this device right now. Then completion
     /// versus position. Tested directly with no database or player.
     static func decideApply(
-        localModifiedMs: Int64,
         isCurrentlyPlayingThisEpisode: Bool,
         positionSec: Int,
         totalSec: Int,
         completed: Bool,
-        remoteTs: Int64,
         playingStatusIsNotPlayed: Bool
     ) -> ApplyDecision {
-        if localModifiedMs > remoteTs {
-            return .skip
-        }
         if isCurrentlyPlayingThisEpisode {
             return .skip
         }
@@ -470,8 +544,7 @@ public final class PodHopperPositionSync {
                 episode: episode,
                 positionSec: (entry["p"] as? NSNumber)?.intValue ?? -1,
                 totalSec: (entry["t"] as? NSNumber)?.intValue ?? 0,
-                completed: (entry["c"] as? Bool) ?? ((entry["c"] as? NSNumber)?.boolValue ?? false),
-                remoteTs: (entry["u"] as? NSNumber)?.int64Value ?? 0
+                completed: (entry["c"] as? Bool) ?? ((entry["c"] as? NSNumber)?.boolValue ?? false)
             )
             parked.removeValue(forKey: episodeKey)
             changed = true
@@ -495,20 +568,35 @@ public final class PodHopperPositionSync {
 
     // MARK: Cursor and install id
 
-    private func cursorOrStartFresh() -> Int64 {
+    private func cursorOrStartFresh() throws -> Int64 {
         let stored = defaults.object(forKey: Self.lastPullMsKey) as? NSNumber
         if let stored, stored.int64Value != Self.firstSyncSentinel {
             return stored.int64Value
         }
-        // First sync on this device: adopt "now" so we resume current state instead of replaying
-        // the entire history oldest-first over many opens.
-        let now = nowMs()
-        setCursor(now)
-        return now
+        // First sync on this device: seed from the database's own newest timestamp, which is server
+        // time, the one clock every device shares, rather than this device's clock. A device whose
+        // clock runs ahead would otherwise seed the cursor past rows it has never seen and skip them
+        // forever. We begin watching from now in server time; we do not replay the whole history.
+        let seed = try latestServerTs(onlyThisDevice: false)
+        setCursor(seed)
+        return seed
     }
 
     private func setCursor(_ value: Int64) {
         defaults.set(NSNumber(value: value), forKey: Self.lastPullMsKey)
+    }
+
+    /// The newest updated_at_ms the database holds for this user, optionally limited to this device's
+    /// own writes. These timestamps are stamped by Supabase, so they are the one clock every device
+    /// shares. Returns 0 when there is no matching row. Blocking; call from a background queue.
+    private func latestServerTs(onlyThisDevice: Bool) throws -> Int64 {
+        let deviceClause = onlyThisDevice ? "&device_id=eq.\(installId())" : ""
+        let query = "select=updated_at_ms" + deviceClause + "&order=updated_at_ms.desc&limit=1"
+        let rows = try supabase.select(table: Self.table, query: query)
+        guard let first = rows.first else {
+            return 0
+        }
+        return (first["updated_at_ms"] as? NSNumber)?.int64Value ?? 0
     }
 
     private func installId() -> String {
@@ -573,6 +661,8 @@ public final class PodHopperPositionSync {
     private static let parkedKey = "parked_rows"
     private static let minPushIntervalMs: Int64 = 4000
     private static let playPullTimeoutMs: Int64 = 5000
+    private static let reconcileMinIntervalMs: Int64 = 5000
+    private static let adoptScanLimit = 10
     private static let firstSyncSentinel: Int64 = -1
     private static let maxParked = 500
 }

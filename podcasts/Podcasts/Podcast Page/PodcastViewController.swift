@@ -446,6 +446,10 @@ class PodcastViewController: PCViewController, PodcastActionsDelegate, SyncSigni
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
 
+        // PodHopper: pull the latest cross-device playback positions when a podcast's episode list is
+        // opened, so its episodes reflect progress made on other devices.
+        PodHopperPositionSync.shared.pullLatestPositions()
+
         // Load the ratings even if we've already started loading them to cover all other potential view states
         // The view model will ignore extra calls
         if let _ = [podcast?.uuid, podcastInfo?.uuid].compactMap({ $0 }).first {

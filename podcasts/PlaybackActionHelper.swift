@@ -9,6 +9,16 @@ class PlaybackActionHelper {
 
         AutoplayHelper.shared.playedFrom(playlist: playlist)
 
+        // PodHopper: apply the freshest cross-device position before playback reads the resume point,
+        // so playing here resumes where another device left off instead of from the local position.
+        // The pull runs off the main thread and is time bounded, then continues the normal play flow
+        // on the main thread.
+        PodHopperPositionSync.shared.applyRemotePositionBeforePlay(episode: episode) {
+            startPlayback(episode: episode, playlistUuid: playlistUuid, podcastUuid: podcastUuid)
+        }
+    }
+
+    private class func startPlayback(episode: BaseEpisode, playlistUuid: String?, podcastUuid: String?) {
         #if !os(tvOS)
         if GoogleCastManager.sharedManager.connectedOrConnectingToDevice() {
             PlaybackManager.shared.load(episode: episode, autoPlay: true, overrideUpNext: false)
