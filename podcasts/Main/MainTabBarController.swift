@@ -105,7 +105,7 @@ class MainTabBarController: UITabBarController, NavigationProtocol {
         let filtersViewController = PlaylistsViewController()
         filtersViewController.tabBarItem = UITabBarItem(title: L10n.playlists, image: UIImage(named: "playlists_tab"), tag: pcTabs.firstIndex(of: .filter)!)
 
-        let discoverViewController = DiscoverCollectionViewController(coordinator: DiscoverCoordinator())
+        let discoverViewController = PodHopperDiscoverViewController(mode: .landing)
 
         discoverViewController.tabBarItem = UITabBarItem(title: L10n.discover, image: UIImage(named: "discover_tab"), tag: pcTabs.firstIndex(of: .discover)!)
 

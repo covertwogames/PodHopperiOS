@@ -47,3 +47,6 @@ artifacts/*
 # Claude Code ignored personal preferences
 .claude/settings.local.json
 .claude/worktrees
+
+# PodHopper discover blocklist (local only, never committed - mirrors Android app/src/main/assets/discover_blocklist.txt)
+podcasts/PodHopper/discover_blocklist.txt
