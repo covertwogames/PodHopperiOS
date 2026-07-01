@@ -3,7 +3,7 @@ import PocketCastsUtils
 import UIKit
 
 class CommonWidgetHelper {
-    static let appGroupId = "group.au.com.shiftyjelly.pocketcasts"
+    static let appGroupId = "group.com.covertwogames.podhopper"
     static let iconSize: CGFloat = 28
 
     class func loadAppIconName() -> String {
