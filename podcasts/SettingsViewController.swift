@@ -9,7 +9,7 @@ class SettingsViewController: PCViewController, UITableViewDataSource, UITableVi
         case general, notifications, appearance, storageAndDataUse
         case autoArchive, autoDownload, autoAddToUpNext, siriShortcuts
         case watch, customFiles, importSteps, opml
-        case about, pocketCastsPlus, privacy, syncAccountToCar
+        case about, pocketCastsPlus, privacy, syncAccountToCar, deleteAccount
         case upNextHistory, foldersHistory
         case headphoneControls
         case developer, beta
@@ -22,6 +22,9 @@ class SettingsViewController: PCViewController, UITableViewDataSource, UITableVi
 
             case .pocketCastsPlus:
                 return !SubscriptionHelper.hasActiveSubscription()
+
+            case .deleteAccount:
+                return PodHopperSupabaseClient.shared.isLoggedIn()
 
             default:
                 return true
@@ -62,6 +65,8 @@ class SettingsViewController: PCViewController, UITableViewDataSource, UITableVi
                 return (L10n.settingsPrivacy, UIImage(named: "privacy"))
             case .syncAccountToCar:
                 return ("Sync Account to Car App", UIImage(systemName: "car"))
+            case .deleteAccount:
+                return ("Delete Account", UIImage(systemName: "trash"))
             case .developer:
                 return ("Developer", UIImage(systemName: "ladybug.fill"))
             case .beta:
@@ -93,7 +98,7 @@ class SettingsViewController: PCViewController, UITableViewDataSource, UITableVi
             [.storageAndDataUse, .siriShortcuts, .headphoneControls, .watch],
             [.importSteps, .opml],
             [.upNextHistory, .foldersHistory],
-            [.syncAccountToCar, .privacy, .about]
+            [.syncAccountToCar, .privacy, .about, .deleteAccount]
         ]
     }()
 
@@ -200,6 +205,17 @@ class SettingsViewController: PCViewController, UITableViewDataSource, UITableVi
             let controller = ThemedHostingController(rootView: PodHopperCarSyncView())
             controller.title = "Sync Account to Car App"
             navigationController?.pushViewController(controller, animated: true)
+        case .deleteAccount:
+            let alert = UIAlertController(
+                title: "Delete Account",
+                message: "This permanently deletes your PodHopper account and cannot be undone. The podcasts already on this device will stay.",
+                preferredStyle: .alert
+            )
+            alert.addAction(UIAlertAction(title: "Cancel", style: .cancel))
+            alert.addAction(UIAlertAction(title: "Delete Account", style: .destructive) { [weak self] _ in
+                self?.performAccountDeletion()
+            })
+            present(alert, animated: true)
         case .developer:
             let hostingController = UIHostingController(rootView: DeveloperMenu().setupDefaultEnvironment())
             navigationController?.pushViewController(hostingController, animated: true)
@@ -228,5 +244,26 @@ class SettingsViewController: PCViewController, UITableViewDataSource, UITableVi
         }
 
         settingsTable.reloadData()
+    }
+
+    private func performAccountDeletion() {
+        DispatchQueue.global(qos: .userInitiated).async { [weak self] in
+            do {
+                try PodHopperSupabaseClient.shared.deleteAccount()
+                PodHopperSupabaseClient.shared.logout()
+                DispatchQueue.main.async {
+                    self?.reloadTable()
+                    let done = UIAlertController(title: "Account Deleted", message: "Your PodHopper account has been deleted.", preferredStyle: .alert)
+                    done.addAction(UIAlertAction(title: "OK", style: .default))
+                    self?.present(done, animated: true)
+                }
+            } catch {
+                DispatchQueue.main.async {
+                    let failed = UIAlertController(title: "Could Not Delete Account", message: "Something went wrong. Please check your connection and try again.", preferredStyle: .alert)
+                    failed.addAction(UIAlertAction(title: "OK", style: .default))
+                    self?.present(failed, animated: true)
+                }
+            }
+        }
     }
 }
