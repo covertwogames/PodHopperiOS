@@ -9,7 +9,7 @@ class SettingsViewController: PCViewController, UITableViewDataSource, UITableVi
         case general, notifications, appearance, storageAndDataUse
         case autoArchive, autoDownload, autoAddToUpNext, siriShortcuts
         case watch, customFiles, importSteps, opml
-        case about, pocketCastsPlus, privacy
+        case about, pocketCastsPlus, privacy, syncAccountToCar
         case upNextHistory, foldersHistory
         case headphoneControls
         case developer, beta
@@ -60,6 +60,8 @@ class SettingsViewController: PCViewController, UITableViewDataSource, UITableVi
                 return (L10n.pocketCastsPlus, UIImage(named: "plusGold24"))
             case .privacy:
                 return (L10n.settingsPrivacy, UIImage(named: "privacy"))
+            case .syncAccountToCar:
+                return ("Sync Account to Car App", UIImage(systemName: "car"))
             case .developer:
                 return ("Developer", UIImage(systemName: "ladybug.fill"))
             case .beta:
@@ -91,7 +93,7 @@ class SettingsViewController: PCViewController, UITableViewDataSource, UITableVi
             [.storageAndDataUse, .siriShortcuts, .headphoneControls, .watch],
             [.importSteps, .opml],
             [.upNextHistory, .foldersHistory],
-            [.privacy, .about]
+            [.syncAccountToCar, .privacy, .about]
         ]
     }()
 
@@ -193,6 +195,10 @@ class SettingsViewController: PCViewController, UITableViewDataSource, UITableVi
         case .privacy:
             let controller = ThemedHostingController(rootView: PodHopperPrivacyView())
             controller.title = L10n.settingsPrivacy
+            navigationController?.pushViewController(controller, animated: true)
+        case .syncAccountToCar:
+            let controller = ThemedHostingController(rootView: PodHopperCarSyncView())
+            controller.title = "Sync Account to Car App"
             navigationController?.pushViewController(controller, animated: true)
         case .developer:
             let hostingController = UIHostingController(rootView: DeveloperMenu().setupDefaultEnvironment())
