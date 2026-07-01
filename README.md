@@ -1,97 +1,51 @@
-<p align="center">
-    <!-- Pocket Casts brand image -->
-    <img src="https://user-images.githubusercontent.com/308331/194037473-41ad7eba-8602-4be5-be73-49e3c0c48c12.svg#gh-light-mode-only" />
-    <img src="https://user-images.githubusercontent.com/308331/194041226-4c6d8181-cafa-4ea8-8735-1d8106f5e5f6.svg#gh-dark-mode-only" />
-</p>
+# PodHopper
 
-<p align="center">
-    <!-- Badge: "build: {trunk CI status}" -->
-    <a href="https://buildkite.com/automattic/pocket-casts-ios"><img src="https://badge.buildkite.com/6c995de3d1584006341cc4dfda1312619f375385f5c0319dfe.svg?branch=trunk" /></a>
-    <!-- Badge: "license: MPL" -->
-    <a href="https://github.com/Automattic/pocket-casts-ios/blob/trunk/LICENSE.md"><img src="https://img.shields.io/badge/license-MPL-black" /></a>
-    <!-- Badge: "platform: ios|watchos" -->
-    <img src="https://img.shields.io/badge/platform-ios%20%7C%20watchos-lightgrey" />
-    <!-- Badge: "Xcode: {version}+" -->
-    <img src="https://img.shields.io/badge/Xcode-v26.1.1%2B-informational" />
-</p>
+A privacy-first podcast player for iOS and Apple Watch.
 
-<p align="center">
-    Pocket Casts is the world's most powerful podcast platform, an app by listeners, for listeners.
-</p>
+PodHopper is an independent fork of [Pocket Casts](https://github.com/Automattic/pocket-casts-ios), the podcast app open-sourced by Automattic. It keeps the parts that make a great listening app and strips out the parts that watch you. No ads, no analytics, no usage tracking. It is built and maintained by Cover Two Strategies LLC, doing business as Cover Two Games.
 
-## Setup
+## What makes it different
 
-If you don't already have it, you need to install Bundler:
+- **No tracking.** The inherited third-party analytics trackers have been removed. Nothing about how you use the app is transmitted anywhere.
+- **No ads.** There is no advertising and no ad tracking.
+- **Local by default.** Your listening stats are calculated and kept on your device.
+- **Sync that stays out of your way.** Sign in once and your subscriptions, your queue, and the exact spot you paused follow you from device to device. Start an episode on your phone, pick it up on your watch, and it is right where you left it. That synced information is used for one thing only, keeping your devices in step.
 
-`gem install bundler`
+See the in-app privacy policy or [podhopper.app](https://podhopper.app) for the full details.
 
-Next you'll need to install all the dependencies needed for [_fastlane_](https://docs.fastlane.tools/) using this script:
+## Building
 
-`make install_dependencies`
+PodHopper is a standard Xcode project written in Swift. Its shared code is organized as a local Swift Package in `Modules/`.
 
-## External contributors
+Requirements:
 
-If you're an external contributor run `make external_contributor`. After that you should be able to build and run the project.
+- Xcode (latest stable)
+- iOS deployment target 17.0
 
-## Swift Formatting
+To build:
 
-We use [SwiftLint](https://github.com/realm/SwiftLint) to ensure code is spaced and formatted the same way and follows the same [general conventions](https://github.com/Automattic/swiftlint-config). We have a script that will run it over the whole project.
+1. Clone the repository.
+2. Open `podcasts.xcodeproj` in Xcode.
+3. Let Xcode resolve the Swift Package dependencies.
+4. Select the `podcasts` scheme and press Run. The `Pocket Casts Watch App` scheme builds the companion Apple Watch app.
 
-Once the required dependencies are installed via `bundle exec pod install`, you can run:
+## Roadmap
 
-`make format`
+- **Apple Watch.** Sign the watch into your account with a pairing code and it pulls your library and plays on its own, no phone needed.
+- **CarPlay.** Carrying that same effortless handoff straight into your dashboard, so the episode you started in the kitchen is already cued up when you start the car. CarPlay support is built into the app and is pending Apple's CarPlay audio entitlement approval.
 
-You should do this before making a pull request.
+## Privacy
 
-## Running
+PodHopper is built to collect as little as possible. The short version: it does not track you, show ads, run analytics, or sell or share your information. The only information it handles is what is needed to sync your podcasts between your own devices. Full policy: [podhopper.app](https://podhopper.app).
 
-Open the `.xcodeproj` file, select the Pocket Casts project and the Simulator Device you want to run on, and hit the play button.
+## License
 
-## Localization
+PodHopper is based on Pocket Casts by Automattic and is distributed under the Mozilla Public License 2.0 (MPL-2.0). The full license text is in [LICENSE.md](LICENSE.md).
 
-You can learn more about localization at [docs/Localization.md](./docs/localization.md)
+Original Pocket Casts code is Copyright Automattic, Inc. New PodHopper code is Copyright Cover Two Strategies LLC.
 
-## Protocol Buffers
+Pocket Casts is a trademark of Automattic, Inc. PodHopper is an independent project and is not affiliated with, sponsored by, or endorsed by Automattic.
 
-The app uses [Google Protocol Buffers](https://developers.google.com/protocol-buffers) to define our server objects.
+## Contact
 
-To update server objects you'll need to install the protobuf command line tool as well as the [Swift Protobuf](https://github.com/apple/swift-protobuf) translators. This can be done via Homebrew with:
-
-```
-brew install protobuf
-brew install swift-protobuf
-```
-
-To update the protobuf files you can then run:
-
-Replace the `{API_PATH}` with the full path to the `pocketcasts-api/api/modules/protobuf/src/main/proto` folder
-
-```
-make update_proto API_PATH={API_PATH}
-```
-
-## Debugging
-
-### Logs
-
-Logs can be found in the app as a view and shared from there through the system sheet or mail:
-* Profile > Help & Feedback > ⋯ > Logs
-
-When debugging analytics, the `tracksLogging` feature flag will enable logging for these events.
-
-### Export Files
-
-An export can be created with the database, settings plist, and logs for debugging purposes:
-* Profile > Help & Feedback > ⋯ > Export Database - the export will include all log files and settings
-* Profile > Settings > Developer > Export Bundle
-
-These exports can also be imported to the app, replacing the database and settings with the ones from the file. This will prompt the user before replacement.
-* Open the file with Pocket Casts directly from Files
-* Drag and drop the file on the Simulator
-* Profile > Settings > Developer > Import Bundle
-
-### Crash Log Symbolication
-
-All [releases](https://github.com/Automattic/pocket-casts-ios/releases) include dSYMs inside of the `xcarchive` file.
-
-These can be used along with the [MacSymbolicator](https://github.com/inket/MacSymbolicator) app to symbolicate any crash logs.
+Questions or feedback: info@covertwogames.com
