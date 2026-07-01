@@ -402,7 +402,10 @@ public enum FeatureFlag: String, CaseIterable {
         case .downloadsThreadSafeCache:
             true
         case .suggestedFolders:
-            true
+            // PodHopper: never show the "Smart Folders" suggestion popup or its upsell. This flag
+            // gates every entry point (the launch popup, the podcasts-list prompt, and the upsell),
+            // so disabling it removes all of them. Manual folder creation still works.
+            false
         case .generatedTranscripts:
             true
         case .syncedTranscripts:
