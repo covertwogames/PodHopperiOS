@@ -13,7 +13,7 @@ extension BaseEpisode {
             return userEpisode.urlForImage(size: 280)
         }
 
-        return ServerHelper.imageUrl(podcastUuid: parentIdentifier(), size: 130)
+        return WatchImageHelper.podcastImageURL(podcastUuid: parentIdentifier(), size: 130)
     }
 
     var subTitleColor: Color {

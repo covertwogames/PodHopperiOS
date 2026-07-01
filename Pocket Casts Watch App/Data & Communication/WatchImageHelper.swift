@@ -23,8 +23,23 @@ class WatchImageHelper {
         }
     }
 
+    /// Single source of truth for a podcast's artwork URL on the watch. PodHopper feed podcasts carry
+    /// their own artwork url from the RSS feed, so use it directly instead of the Pocket Casts image
+    /// server, which has no entry for feed podcasts. Falls back to the Pocket Casts server only when a
+    /// podcast has no feed artwork. Mirrors the phone's ImageManager.podcastImageURL.
+    class func podcastImageURL(podcastUuid: String, size: Int) -> URL {
+        if let podcast = DataManager.sharedManager.findPodcast(uuid: podcastUuid, includeUnsubscribed: true),
+           let feedArtwork = podcast.imageURL,
+           !feedArtwork.isEmpty,
+           let feedArtworkUrl = URL(string: feedArtwork) {
+            return feedArtworkUrl
+        }
+
+        return ServerHelper.imageUrl(podcastUuid: podcastUuid, size: size)
+    }
+
     class func imageUrl(size: Int, podcastUuid: String) -> String {
-        ServerHelper.image(podcastUuid: podcastUuid, size: size)
+        podcastImageURL(podcastUuid: podcastUuid, size: size).absoluteString
     }
 
     class func largeImageUrl(episode: BaseEpisode) -> URL {
@@ -32,6 +47,6 @@ class WatchImageHelper {
             return userEpisode.urlForImage(size: 960)
         }
 
-        return ServerHelper.imageUrl(podcastUuid: episode.parentIdentifier(), size: 340)
+        return podcastImageURL(podcastUuid: episode.parentIdentifier(), size: 340)
     }
 }
