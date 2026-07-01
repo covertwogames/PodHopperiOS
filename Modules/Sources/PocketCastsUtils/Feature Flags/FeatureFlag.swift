@@ -453,7 +453,10 @@ public enum FeatureFlag: String, CaseIterable {
         case .retryWithoutUserAgent:
             true
         case .userSatisfactionSurvey:
-            true
+            // PodHopper: the custom "Are you enjoying?" survey is replaced by a standard App Store
+            // rating request driven purely by total listening time (see PodHopperReviewManager),
+            // mirroring the Android logic. Disabling this flag stops the survey from ever showing.
+            false
         case .concurrentDatabaseReads:
             true
         case .limitPlaybackPositionChanges:

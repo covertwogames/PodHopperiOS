@@ -159,6 +159,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         setupSignOutListener()
         appLifecycleAnalytics.didBecomeActive()
 
+        // PodHopper: consider showing the App Store rating prompt based on total listening time.
+        PodHopperReviewManager.shared.requestReviewIfEligible()
+
         // give the network a few seconds to come up before refreshing, also only refresh if the last refresh was more than 5 minutes ago
         let lastUpdateTime = ServerSettings.lastRefreshEndTime()
         if DateUtil.hasEnoughTimePassed(since: lastUpdateTime, time: AppDelegate.minTimeBetweenRefreshes) {

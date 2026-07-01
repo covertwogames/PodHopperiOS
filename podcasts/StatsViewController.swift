@@ -263,14 +263,8 @@ class StatsViewController: UIViewController, UITableViewDelegate, UITableViewDat
     }
 
     private func requestReviewIfPossible() {
-        // If the user has listened to more than 2.5 hours the past 7 days
-        // And has been using the app for more than a week
-        // we kindly request them to review the app
-        if playbackTimeHelper.playedUpToSumInLastSevenDays() > 2.5.hours,
-           StatsManager.shared.statsStartedAt() > 0,
-           let lastWeek = Date().sevenDaysAgo(),
-           Date(timeIntervalSince1970: TimeInterval(StatsManager.shared.statsStartedAt())) < lastWeek {
-            requestReview(delay: 1)
-        }
+        // PodHopper: rating requests are driven solely by total listening time (see
+        // PodHopperReviewManager), mirroring the Android logic, so the stats screen no longer
+        // triggers its own review prompt.
     }
 }
