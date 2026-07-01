@@ -19,9 +19,12 @@ class SharingHelper: NSObject {
     }
 
     func shareLinkToApp(fromController: UIViewController) {
-        guard let sharingUrl = URL(string: ServerConstants.Urls.pocketcastsDotCom) else { return }
+        guard let sharingUrl = URL(string: ServerConstants.Urls.appStore) else { return }
 
-        activityController = UIActivityViewController(activityItems: [L10n.appShareText, sharingUrl], applicationActivities: nil)
+        // PodHopper: share the App Store link to PodHopper with PodHopper copy, not the old Pocket
+        // Casts website and share text.
+        let shareText = "Hey! Here is a link to download PodHopper. I'm really enjoying it and thought you might too."
+        activityController = UIActivityViewController(activityItems: [shareText, sharingUrl], applicationActivities: nil)
         guard let activityController else { return }
 
         activityController.completionWithItemsHandler = nil
