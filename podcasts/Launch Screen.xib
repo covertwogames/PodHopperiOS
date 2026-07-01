@@ -15,11 +15,11 @@
             <rect key="frame" x="0.0" y="0.0" width="480" height="480"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.10000000000000001" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="splashlogo" translatesAutoresizingMaskIntoConstraints="NO" id="SJ5-Av-rqP">
-                    <rect key="frame" x="196" y="196" width="89" height="89"/>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="podhopper-splash-frog" translatesAutoresizingMaskIntoConstraints="NO" id="SJ5-Av-rqP">
+                    <rect key="frame" x="170" y="170" width="140" height="140"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="89" id="3te-q8-rWj"/>
-                        <constraint firstAttribute="width" constant="89" id="yZj-vk-ug8"/>
+                        <constraint firstAttribute="height" constant="140" id="3te-q8-rWj"/>
+                        <constraint firstAttribute="width" constant="140" id="yZj-vk-ug8"/>
                     </constraints>
                 </imageView>
             </subviews>
@@ -34,6 +34,6 @@
         </view>
     </objects>
     <resources>
-        <image name="splashlogo" width="89" height="89"/>
+        <image name="podhopper-splash-frog" width="267" height="232"/>
     </resources>
 </document>
