@@ -1,3 +1,4 @@
+import Combine
 import PocketCastsServer
 import PocketCastsUtils
 import WatchKit
@@ -8,8 +9,6 @@ class SourceInterfaceModel: ObservableObject {
 
     @Published var lastRefreshLabel: String = L10n.profileLastAppRefresh(L10n.timeFormatNever)
 
-    @Published var isPlusUser: Bool = false
-
     @Published var isLoggedIn: Bool = false
 
     @Published var profileImage: String = "profile-free"
@@ -17,6 +16,8 @@ class SourceInterfaceModel: ObservableObject {
     @Published var usernameLabel: String = L10n.signedOut
 
     private var refreshTimedActionHelper = TimedActionHelper()
+
+    private var cancellables = Set<AnyCancellable>()
 
     func willActivate() {
         addObservers()
@@ -75,36 +76,29 @@ class SourceInterfaceModel: ObservableObject {
 
     func addObservers() {
         addCustomObserver(WatchConstants.Notifications.dataUpdated, selector: #selector(dataDidUpdate))
-        addCustomObserver(WatchConstants.Notifications.loginStatusUpdated, selector: #selector(handleStatusChangeFromNotification))
-        addCustomObserver(ServerNotifications.subscriptionStatusChanged, selector: #selector(handleStatusChangeFromNotification))
         addCustomObserver(ServerNotifications.syncFailed, selector: #selector(updateLastRefreshDetails))
         addCustomObserver(ServerNotifications.syncStarted, selector: #selector(updateLastRefreshDetails))
         addCustomObserver(ServerNotifications.syncCompleted, selector: #selector(updateLastRefreshDetails))
-    }
 
-    @objc private func handleStatusChangeFromNotification() {
-        DispatchQueue.main.async { [weak self] in
-            guard let self else { return }
-
-            self.reload()
-        }
+        // PodHopper login state drives the screen: signed in unlocks the Watch source.
+        PodHopperSupabaseClient.shared.loginState
+            .receive(on: DispatchQueue.main)
+            .sink { [weak self] _ in
+                self?.reload()
+            }
+            .store(in: &cancellables)
     }
 
     private func reload() {
-        isPlusUser = SubscriptionHelper.hasActiveSubscription()
-        isLoggedIn = SyncManager.isUserLoggedIn()
+        isLoggedIn = PodHopperSupabaseClient.shared.isLoggedIn()
         activeSource = SourceManager.shared.currentSource()
 
-        if isLoggedIn, isPlusUser {
-            usernameLabel = ServerSettings.syncingEmail() ?? ""
+        if isLoggedIn {
+            usernameLabel = PodHopperSupabaseClient.shared.signedInEmail ?? ""
             profileImage = "profile-plus"
             updateLastRefreshDetails()
         } else {
-            if isLoggedIn {
-                usernameLabel = ServerSettings.syncingEmail() ?? ""
-            } else {
-                usernameLabel = L10n.signedOut
-            }
+            usernameLabel = L10n.signedOut
             profileImage = "profile-free"
         }
     }
@@ -118,7 +112,7 @@ class SourceInterfaceModel: ObservableObject {
     }
 
     func watchTapped() {
-        guard SubscriptionHelper.hasActiveSubscription() else { return }
+        guard PodHopperSupabaseClient.shared.isLoggedIn() else { return }
 
         if SourceManager.shared.isPhone(), !nowPlayingEpisodesMatchOnBothSources() {
             RefreshManager.shared.refreshPodcasts(forceEvenIfRefreshedRecently: false)
@@ -148,18 +142,18 @@ class SourceInterfaceModel: ObservableObject {
         lastRefreshLabel = L10n.refreshing
     }
 
-    func refreshAccountTapped() {
+    func logout() {
         WKInterfaceDevice.current().play(.success)
-        SyncManager.signout()
-        WatchSyncManager.shared.loginAndRefreshIfRequired()
+        PodHopperSubscriptionSync.shared.stopPeriodicSync()
+        PodHopperSupabaseClient.shared.logout()
+        SourceManager.shared.setSource(newSource: .phone)
+        reload()
     }
 
     @objc private func updateLastRefreshDetails() {
         var lastRefreshText = String()
-        if !ServerSettings.lastRefreshSucceeded() || !ServerSettings.lastSyncSucceeded() {
-            lastRefreshText = !ServerSettings.lastRefreshSucceeded() ? L10n.refreshFailed : L10n.syncFailed
-        } else if SyncManager.isFirstSyncInProgress() {
-            lastRefreshText = L10n.syncing
+        if !ServerSettings.lastRefreshSucceeded() {
+            lastRefreshText = L10n.refreshFailed
         } else if SyncManager.isRefreshInProgress() {
             lastRefreshText = L10n.refreshing
         } else if let lastUpdateTime = ServerSettings.lastRefreshEndTime() {

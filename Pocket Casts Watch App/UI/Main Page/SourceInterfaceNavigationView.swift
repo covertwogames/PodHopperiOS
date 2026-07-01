@@ -1,26 +1,18 @@
-import SwiftUI
+import Combine
 import PocketCastsServer
 import PocketCastsUtils
+import SwiftUI
 
 struct SourceRow: View {
     let sourceSymbol: String
     let label: String
-    let showPlusOnly: Bool
     let active: Bool
 
     var body: some View {
         HStack {
             Text(sourceSymbol)
                 .font(.title2)
-            VStack {
-                Text(label)
-                if showPlusOnly {
-                    HStack {
-                        Image("gold-plus")
-                        Image("plus-only")
-                    }
-                }
-            }
+            Text(label)
             Spacer()
             if active {
                 Image("now-playing-small")
@@ -60,13 +52,13 @@ struct SourceInterfaceNavigationView: View {
     var sourceSection: some View {
         Section {
             NavigationLink(destination: InterfaceView(source: .phone), tag: Source.phone.rawValue, selection: $activeSource) {
-                SourceRow(sourceSymbol: L10n.phone.sourceUnicode(isWatch: false), label: L10n.phone, showPlusOnly: false, active: model.activeSource == .phone)
+                SourceRow(sourceSymbol: L10n.phone.sourceUnicode(isWatch: false), label: L10n.phone, active: model.activeSource == .phone)
             }
             NavigationLink(destination: InterfaceView(source: .watch), tag: Source.watch.rawValue, selection: $activeSource) {
-                SourceRow(sourceSymbol: L10n.watch.sourceUnicode(isWatch: true), label: L10n.watch, showPlusOnly: !model.isLoggedIn || !model.isPlusUser, active: model.activeSource == .watch)
-            }.disabled(!model.isPlusUser)
+                SourceRow(sourceSymbol: L10n.watch.sourceUnicode(isWatch: true), label: L10n.watch, active: model.activeSource == .watch)
+            }.disabled(!model.isLoggedIn)
         } footer: {
-            if model.isPlusUser {
+            if model.isLoggedIn {
                 Text(L10n.watchSourceMsg)
                     .font(.footnote)
                     .multilineTextAlignment(.leading)
@@ -77,7 +69,7 @@ struct SourceInterfaceNavigationView: View {
 
     @ViewBuilder
     var dataRefreshSection: some View {
-        if model.isPlusUser {
+        if model.isLoggedIn {
             Section {
                 Button(action: {
                     model.refreshDataTapped()
@@ -97,33 +89,27 @@ struct SourceInterfaceNavigationView: View {
         Section {
             UserRow(username: model.usernameLabel, profileImage: model.profileImage, isLoggedIn: model.isLoggedIn)
                 .listRowBackground(Color.clear)
-        } footer: {
-            if !model.isLoggedIn {
-                Text(L10n.watchSourceSignInInfo)
-                    .font(.footnote)
-            }
         }
     }
 
     @ViewBuilder
-    var refreshAccountSection: some View {
-        if !model.isLoggedIn {
+    var accountSection: some View {
+        if model.isLoggedIn {
             Section {
                 Button(action: {
-                    model.refreshAccountTapped()
+                    model.logout()
                 }, label: {
-                    MenuRow(label: L10n.watchSourceRefreshAccount, icon: "profile-refresh")
+                    MenuRow(label: "Sign out", icon: "profile-refresh")
                 })
-            } footer: {
-                if !model.isPlusUser {
-                    VStack {
-                        Text(L10n.watchSourceRefreshAccountInfo)
-                        Divider()
-                        Image("plus-logo")
-                        Divider()
-                        Text(L10n.watchSourcePlusInfo)
-                    }
+            }
+        } else {
+            Section {
+                NavigationLink(destination: WatchPairingView()) {
+                    MenuRow(label: "Sign in", icon: "profile-refresh")
                 }
+            } footer: {
+                Text("Sign in to sync your podcasts to this watch and listen without your phone.")
+                    .font(.footnote)
             }
         }
     }
@@ -134,7 +120,7 @@ struct SourceInterfaceNavigationView: View {
                 sourceSection
                 dataRefreshSection
                 userSection
-                refreshAccountSection
+                accountSection
             }.onAppear {
                 model.willActivate()
             }.onChange(of: activeSource) { newValue in
@@ -151,17 +137,6 @@ struct SourceInterfaceNavigationView: View {
             .navigationTitle(L10n.watchPlaySource)
         }
         .environmentObject(NavigationManager.shared)
-    }
-
-    private func nowPlayingEpisodesMatchOnBothSources() -> Bool {
-        let watchCurrentEpisode = PlaybackManager.shared.currentEpisode()
-        let phoneCurrentEpisode = WatchDataManager.playingEpisode()
-        if watchCurrentEpisode?.uuid == phoneCurrentEpisode?.uuid {
-            if watchCurrentEpisode?.playedUpTo == phoneCurrentEpisode?.playedUpTo {
-                return true
-            }
-        }
-        return false
     }
 }
 
