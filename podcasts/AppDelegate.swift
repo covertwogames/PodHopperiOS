@@ -384,7 +384,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
         if role == .carTemplateApplication {
             FileLog.shared.addMessage("AppDelegate: CarPlay isConnected")
-            return UISceneConfiguration(name: "Pocket Casts Car", sessionRole: UISceneSession.Role.carTemplateApplication)
+            return UISceneConfiguration(name: "PodHopper Car", sessionRole: UISceneSession.Role.carTemplateApplication)
         }
 
         return UISceneConfiguration(name: "Default Configuration", sessionRole: role)

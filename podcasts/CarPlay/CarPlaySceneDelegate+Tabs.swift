@@ -28,7 +28,7 @@ extension CarPlaySceneDelegate {
         }
 
         // the podcast tab is always what CarPlay opens first, however it doesn't show the Now Playing tab unless something is actively playing
-        // so with that in mind if the user has something in Up Next and Pocket Casts is paused, help them find their now playing stuff by adding that as a section here
+        // so with that in mind if the user has something in Up Next and PodHopper is paused, help them find their now playing stuff by adding that as a section here
         let upNextEpisodes = PlaybackManager.shared.allEpisodesInQueue(includeNowPlaying: true)
         if !upNextEpisodes.isEmpty {
             let truncatedList = Array(upNextEpisodes.prefix(8))

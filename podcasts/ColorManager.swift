@@ -207,7 +207,7 @@ enum PodHopperArtworkColor {
     /// call it replaces, so the caller needs no other changes. The completion runs on a background
     /// thread, the same as the previous network completion.
     static func loadColors(forPodcastUuid uuid: String, completion: @escaping ((String?, String?, String?) -> Void)) {
-        let url = ImageManager.podcastImageURL(uuid: uuid, size: 280)
+        let url = artworkURL(forPodcast: uuid)
 
         URLSession.shared.dataTask(with: url) { data, _, _ in
             guard let data, let image = UIImage(data: data), let colors = deriveColors(from: image) else {
@@ -217,6 +217,21 @@ enum PodHopperArtworkColor {
 
             completion(colors.background, colors.lightTint, colors.darkTint)
         }.resume()
+    }
+
+    /// Resolve a podcast's artwork URL the same way the main image path does: the feed's own artwork
+    /// when present, falling back to the Pocket Casts image server only when a podcast has none. This
+    /// resolver is duplicated here on purpose, because ColorManager also compiles into the Watch app
+    /// target, where the app side image helper does not exist but DataManager and ServerHelper do.
+    private static func artworkURL(forPodcast uuid: String) -> URL {
+        if let podcast = DataManager.sharedManager.findPodcast(uuid: uuid, includeUnsubscribed: true),
+           let feedArtwork = podcast.imageURL,
+           !feedArtwork.isEmpty,
+           let feedArtworkUrl = URL(string: feedArtwork) {
+            return feedArtworkUrl
+        }
+
+        return ServerHelper.imageUrl(podcastUuid: uuid, size: 280)
     }
 
     /// Turns a representative artwork color into the three stored colors. Saturation is only injected
