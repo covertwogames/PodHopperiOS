@@ -10,7 +10,7 @@ class NotificationsViewController: PCViewController, UITableViewDataSource, UITa
     private let soundOff = 0
 
     private var sections: [Section] = [.episodes]
-    private var rows: [[Row]] = [[.newEpisodes, .podcastsChosen, .appBadges], [.trendingRecommendations, .dailyReminders], [.newFeaturesAndTips, .pocketCastsOffers]]
+    private var rows: [[Row]] = [[.newEpisodes, .podcastsChosen, .appBadges]]
 
     private var notificationsDenied = false
 
@@ -20,8 +20,6 @@ class NotificationsViewController: PCViewController, UITableViewDataSource, UITa
 
     enum Section: Int, CaseIterable {
         case episodes = 0
-        case recommendationsAndReminders
-        case featuresAndOffers
     }
 
     enum Row: Int {
@@ -153,8 +151,6 @@ class NotificationsViewController: PCViewController, UITableViewDataSource, UITa
         switch sectionType {
         case .episodes:
             return NotificationsGroup.newEpisodes.isEnabled ? 3 : 1
-        case .featuresAndOffers, .recommendationsAndReminders:
-            return rows[section].count
         }
     }
 
@@ -218,8 +214,6 @@ class NotificationsViewController: PCViewController, UITableViewDataSource, UITa
             default:
                 return
             }
-        default:
-            return
         }
     }
 
@@ -237,8 +231,6 @@ class NotificationsViewController: PCViewController, UITableViewDataSource, UITa
         switch sectionType {
         case .episodes:
             return NotificationsHelper.shared.pushEnabled() ? nil : L10n.settingsNotificationsSubtitle
-        default:
-            return nil
         }
     }
 

@@ -45,24 +45,15 @@ class WatchSettingsViewController: PCViewController, UITableViewDelegate, UITabl
     }
 
     private func tableSections() -> [TableSections] {
-        var sections: [TableSections] = [.upNext]
-        if !SubscriptionHelper.hasActiveSubscription(), !Settings.plusInfoDismissedOnWatch() {
-            sections.append(.lockedInfo)
-        }
-
-        return sections
+        // PodHopper: no Pocket Casts Plus gate, so no locked-info banner.
+        [.upNext]
     }
 
     private func tableRows() -> [[TableRows]] {
-        let hasSubscription = SubscriptionHelper.hasActiveSubscription()
-
         var rows: [[TableRows]] = [[.autoDownloadUpNext]]
-        if hasSubscription, Settings.watchAutoDownloadUpNextEnabled() {
+        if Settings.watchAutoDownloadUpNextEnabled() {
             rows[0].append(.numUpNextEpisodes)
             rows[0].append(.autoDeleteUpNext)
-        }
-        if !hasSubscription, !Settings.plusInfoDismissedOnWatch() {
-            rows.append([.lockedInfo])
         }
 
         return rows
@@ -88,7 +79,7 @@ class WatchSettingsViewController: PCViewController, UITableViewDelegate, UITabl
             cell.cellLabel?.text = L10n.settingsWatchAutoDownload
             cell.cellSwitch.isOn = Settings.watchAutoDownloadUpNextEnabled()
             cell.cellSwitch.addTarget(self, action: #selector(upNextToggled(_:)), for: .valueChanged)
-            cell.isLocked = SubscriptionHelper.hasActiveSubscription()
+            cell.isLocked = false
             cell.imageView?.isHidden = true
             return cell
         case .lockedInfo:
@@ -106,7 +97,7 @@ class WatchSettingsViewController: PCViewController, UITableViewDelegate, UITabl
             cell.cellLabel?.text = L10n.settingsWatchDeleteDownloads
             cell.cellSwitch.isOn = Settings.watchAutoDeleteUpNext()
             cell.cellSwitch.addTarget(self, action: #selector(upNextAutoDeleteToggled(_:)), for: .valueChanged)
-            cell.isLocked = SubscriptionHelper.hasActiveSubscription()
+            cell.isLocked = false
             cell.imageView?.isHidden = true
             return cell
         }
@@ -161,13 +152,12 @@ class WatchSettingsViewController: PCViewController, UITableViewDelegate, UITabl
         let section = tableSections()[section]
         switch section {
         case .upNext:
-            title = L10n.plusFeatures
+            title = "Up Next"
         default:
             return nil
         }
 
-        let showLockIcon = (!SubscriptionHelper.hasActiveSubscription() && section == .upNext)
-        let headerView = SettingsTableHeader(frame: headerFrame, title: title, showLockedImage: showLockIcon, lockedSelector: #selector(showSubscriptionRequired), target: self)
+        let headerView = SettingsTableHeader(frame: headerFrame, title: title, showLockedImage: false, lockedSelector: #selector(showSubscriptionRequired), target: self)
 
         return headerView
     }
@@ -181,12 +171,6 @@ class WatchSettingsViewController: PCViewController, UITableViewDelegate, UITabl
     }
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let section = tableSections()[indexPath.section]
-
-        if !SubscriptionHelper.hasActiveSubscription(), section == .upNext {
-            showSubscriptionRequired()
-            return
-        }
         let row = tableRows()[indexPath.section][indexPath.row]
 
         switch row {
