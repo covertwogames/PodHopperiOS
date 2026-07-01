@@ -41,7 +41,7 @@
 "accessibility_patron_only" = "Locked, Patron Feature";
 
 /* Accessibility label fir the profile settings icon in the app. 'Pocket Casts' is treated as a proper noun and hasn't been localized in other places of the app. */
-"accessibility_profile_settings" = "Pocket Casts Settings";
+"accessibility_profile_settings" = "PodHopper Settings";
 
 /* A common string used throughout the app. Accessibility hint to inform the user that this control will select the episode. */
 "accessibility_select_episode" = "Select Episode";
@@ -227,7 +227,7 @@
 "appearance_embedded_artwork" = "Use Episode Artwork";
 
 /* Subtitle explaining episode artwork. */
-"appearance_embedded_artwork_subtitle" = "Some shows have custom artwork for certain episodes. Enable this option and Pocket Casts will display them instead of the show’s artwork.";
+"appearance_embedded_artwork_subtitle" = "Some shows have custom artwork for certain episodes. Enable this option and PodHopper will display them instead of the show’s artwork.";
 
 /* Prompt to toggle whether the theme will match the device theme or not. */
 "appearance_match_device_theme" = "Use iOS Light/Dark Mode";
@@ -1208,10 +1208,10 @@
 "how_to_upload_summary" = "That's it, you're done. Change any details you want, hit save and play!";
 
 /* Describes the process about how to import podcasts to Pocket Casts. '\\n\\n' Is a line break format to separate the description from the following note. */
-"import_podcasts_description" = "You can import your podcasts subscriptions to Pocket Casts using the widely supported OPML format. Export the file from another app and choose open in Pocket Casts.\n\nNote: You may need to email the OPML file to yourself, long press on the attachment and select Pocket Casts.";
+"import_podcasts_description" = "You can import your podcasts subscriptions to PodHopper using the widely supported OPML format. Export the file from another app and choose open in PodHopper.\n\nNote: You may need to email the OPML file to yourself, long press on the attachment and select PodHopper.";
 
 /* Describes the process about how to import podcasts to Pocket Casts. '\\n\\n' Is a line break format to separate the description from the following note. */
-"import_podcasts_description_new" = "You can import your podcasts to Pocket Casts using the widely supported OPML format. Export the file from another app and choose open in Pocket Casts.\n\nNote: You may need to email the OPML file to yourself, long press on the attachment and select Pocket Casts.";
+"import_podcasts_description_new" = "You can import your podcasts to PodHopper using the widely supported OPML format. Export the file from another app and choose open in PodHopper.\n\nNote: You may need to email the OPML file to yourself, long press on the attachment and select PodHopper.";
 
 /* Description for importing opml from URL*/
 "import_opml_from_url" = "Import your podcasts from an OPML file using a URL";
@@ -2645,7 +2645,7 @@
 "settings_general_legacy_bluetooth" = "Legacy Bluetooth Support";
 
 /* Subtitle explaining the toggle to modify which bluetooth protocol to use. */
-"settings_general_legacy_bluetooth_subtitle" = "If you have a Bluetooth Device or Car Stereo that seems to be pausing Pocket Casts while it's playing, or resetting the playback position to 0, try turning this setting on to fix it.";
+"settings_general_legacy_bluetooth_subtitle" = "If you have a Bluetooth Device or Car Stereo that seems to be pausing PodHopper while it's playing, or resetting the playback position to 0, try turning this setting on to fix it.";
 
 /* Setting toggle to enable the gesture for multi-select. */
 "settings_general_multi_select_gesture" = "Multi-select Gesture";
@@ -2696,7 +2696,7 @@
 "settings_general_smart_playback" = "Intelligent Playback Resumption";
 
 /* Subtitle explaining the feature that adjusts the playback position when resuming. */
-"settings_general_smart_playback_subtitle" = "If on, Pocket Casts will go back a little in episodes you resume so you can catch up more comfortably.";
+"settings_general_smart_playback_subtitle" = "If on, PodHopper will go back a little in episodes you resume so you can catch up more comfortably.";
 
 /* Setting toggle to enable the feature that disables the lock screen scrubber. */
 "settings_general_lock_screen_disabled" = "Enable Lock Screen Scrubbing";
@@ -2882,7 +2882,7 @@
 "settings_watch_auto_download" = "Auto Download Up Next";
 
 /* Subtitle for the toggle that explains the behavior for the auto download feature for the Apple Watch app. */
-"settings_watch_auto_download_off_subtitle" = "Set the number of episodes from your Up Next queue Pocket Casts will download to your watch for offline playback.";
+"settings_watch_auto_download_off_subtitle" = "Set the number of episodes from your Up Next queue PodHopper will download to your watch for offline playback.";
 
 /* Prompt for the toggle that enables the feature to delete auto downloads that fall outside episode limit for the Apple Watch app. */
 "settings_watch_delete_downloads" = "Delete Downloads Outside Limit";
@@ -2897,7 +2897,7 @@
 "settings_watch_episode_limit" = "Number of Episodes";
 
 /* Subtitle explaining for the option to select the number of episodes to auto downloads for the Apple Watch app. '%1$@' is a placeholder for the number of items to download. */
-"settings_watch_episode_limit_subtitle" = "Pocket Casts will download the top %1$@ episodes of your Up Next queue to your watch for offline playback.";
+"settings_watch_episode_limit_subtitle" = "PodHopper will download the top %1$@ episodes of your Up Next queue to your watch for offline playback.";
 
 /* Prompt for the option format to select the number of episodes to auto downloads for the Apple Watch app. '%1$@' is a placeholder for the number of items to download */
 "settings_watch_episode_number_option_format" = "Top %1$@";
@@ -2978,10 +2978,10 @@
 "settings_status_host" = "Common Podcast Hosts";
 
 /* Description for the podcast host check. */
-"settings_status_host_description" = "Podcast authors host episode files in various hosting providers not managed by Pocket Casts.";
+"settings_status_host_description" = "Podcast authors host episode files in various hosting providers not managed by PodHopper.";
 
 /* Failure message for the podcast host check. */
-"settings_status_host_failure_message" = "The most common cause is that you have an ad-blocker configured on your phone or network. You’ll need to unblock this domain to download podcasts. Please note Pocket Casts doesn’t host or choose where podcasts are hosted, that’s up to the author of the show and is out of our control.";
+"settings_status_host_failure_message" = "The most common cause is that you have an ad-blocker configured on your phone or network. You’ll need to unblock this domain to download podcasts. Please note PodHopper doesn’t host or choose where podcasts are hosted, that’s up to the author of the show and is out of our control.";
 
 /* Title for the options for the user to configure their account. */
 "setup_account" = "Set Up Account";
@@ -4208,19 +4208,19 @@
 "plus_upgrade_no_internet_message" = "Please check your internet connection and try again.";
 
 /* Step by Step instructions on how to import from the app Overcast. \n are new lines and Overcast is a proper noun and should not be translated. */
-"import_instructions_overcast" = "1. Tap the button below to open Overcast\n2. Tap the Cog icon in the top corner of the app\n3. Swipe down until you see Export OPML, then tap on it\n4. When the dialog opens locate the Pocket Casts icon, and tap on it";
+"import_instructions_overcast" = "1. Tap the button below to open Overcast\n2. Tap the Cog icon in the top corner of the app\n3. Swipe down until you see Export OPML, then tap on it\n4. When the dialog opens locate the PodHopper icon, and tap on it";
 
 /* Step by Step instructions on how to import from the app Breaker. \n are new lines and Breaker is a proper noun and should not be translated. */
-"import_instructions_breaker" = "1. Tap the Open Breaker button below\n2. Tap on Settings in the bottom tab bar\n3. Tap on Connection\n4. Tap on Export subscriptions\n5. When the dialog opens locate the Pocket Casts icon, and tap on it";
+"import_instructions_breaker" = "1. Tap the Open Breaker button below\n2. Tap on Settings in the bottom tab bar\n3. Tap on Connection\n4. Tap on Export subscriptions\n5. When the dialog opens locate the PodHopper icon, and tap on it";
 
 /* Step by Step instructions on how to import from the app Castro. \n are new lines and Castro is a proper noun and should not be translated. */
-"import_instructions_castro" = "1. Tap the Open Castro button below\n2. Tap the Cog icon in the top corner of the app\n3. Swipe down until you see the User Data option, then tap on it\n4. Tap the Export Subscriptions item\n5. When the share dialog opens, locate the Pocket Casts icon, then tap on it";
+"import_instructions_castro" = "1. Tap the Open Castro button below\n2. Tap the Cog icon in the top corner of the app\n3. Swipe down until you see the User Data option, then tap on it\n4. Tap the Export Subscriptions item\n5. When the share dialog opens, locate the PodHopper icon, then tap on it";
 
 /* Step by Step instructions on how to import from the app Castbox. \n are new lines and Castbox is a proper noun and should not be translated. */
-"import_instructions_castbox" = "1. Tap the Open Castbox button below\n2. Tap the Personal tab\n3. Swipe down until you see the Settings option, then tap on it\n4. Swipe down until you see the OPML Export option, then tap on it\n5. If prompted, tap \"Open in Pocket Casts\"\n6. If the file opens in Safari, tap the Download button\n7. Once the download is complete, tap the download icon in the URL bar\n8. Tap the Downloads item\n9. Tap the castbox_opml file \n10. If needed, tap the Share icon, then open the file using Pocket Casts\n11. When the share dialog opens, locate the Pocket Casts icon, then tap on it";
+"import_instructions_castbox" = "1. Tap the Open Castbox button below\n2. Tap the Personal tab\n3. Swipe down until you see the Settings option, then tap on it\n4. Swipe down until you see the OPML Export option, then tap on it\n5. If prompted, tap \"Open in PodHopper\"\n6. If the file opens in Safari, tap the Download button\n7. Once the download is complete, tap the download icon in the URL bar\n8. Tap the Downloads item\n9. Tap the castbox_opml file \n10. If needed, tap the Share icon, then open the file using PodHopper\n11. When the share dialog opens, locate the PodHopper icon, then tap on it";
 
 /* Step by Step instructions on how to import from the app Apple Podcasts. \n are new lines and Apple Podcasts is a proper noun and should not be translated. */
-"import_instructions_apple_podcasts_steps" = "We can import your podcasts from Apple Podcasts by using the built-in Shortcuts app.\nNote: If you previously deleted the shortcuts app you will be prompted to reinstall it.\n\n1. Tap the Install Shortcut button below.\n2. When prompted tap the Add Shortcut button.\n3. Tap on the Shortcuts tab.\n4. Locate the \"Apple Podcasts to Pocket Casts\" shortcut in the list.\n5. Tap it to start the import process.\n6. Once the shortcut is done running Pocket Casts will reopen and finish the import process.";
+"import_instructions_apple_podcasts_steps" = "We can import your podcasts from Apple Podcasts by using the built-in Shortcuts app.\nNote: If you previously deleted the shortcuts app you will be prompted to reinstall it.\n\n1. Tap the Install Shortcut button below.\n2. When prompted tap the Add Shortcut button.\n3. Tap on the Shortcuts tab.\n4. Locate the \"Apple Podcasts to PodHopper\" shortcut in the list.\n5. Tap it to start the import process.\n6. Once the shortcut is done running PodHopper will reopen and finish the import process.";
 
 /* Title of an option to import from other apps */
 "import_instructions_other_apps_title" = "other apps";
@@ -5298,7 +5298,7 @@
 "notifications_new_features_tips" = "New Features & Tips";
 
 /* Settings to control sending of pocket casts offers notifications */
-"notifications_pocket_cast_offers" = "Pocket Casts Offers";
+"notifications_pocket_cast_offers" = "PodHopper Offers";
 
 /* Notification title for signup onboarding message */
 "notifications_onboarding_signup_title" = "Your shows, on any device!";
@@ -5359,7 +5359,7 @@
 "notitifications_permission_banner_title" = "Allow Push Notifications";
 
 /* Notification permission banner message*/
-"notitifications_permission_banner_message" = "To get notifications from Pocket Casts, you’ll need to turn them on in your device settings.";
+"notitifications_permission_banner_message" = "To get notifications from PodHopper, you’ll need to turn them on in your device settings.";
 
 /* Notification permission banner action*/
 "notitifications_permission_banner_action" = "Go to device settings";
@@ -5458,7 +5458,7 @@
 "notitifications_permission_banner_title" = "Allow Push Notifications";
 
 /* Notification permission banner message*/
-"notitifications_permission_banner_message" = "To get notifications from Pocket Casts, you’ll need to turn them on in your device settings.";
+"notitifications_permission_banner_message" = "To get notifications from PodHopper, you’ll need to turn them on in your device settings.";
 
 /* Notification permission banner action*/
 "notitifications_permission_banner_action" = "Go to device settings";
@@ -5503,7 +5503,7 @@
 "notifications_permissions_title" = "Stay up to date!";
 
 /* Notifications permissions screen body text*/
-"notifications_permissions_body" = "Notifications are the best way to keep track of new episodes, get recommendations of new shows and tips about Pocket Casts.";
+"notifications_permissions_body" = "Notifications are the best way to keep track of new episodes, get recommendations of new shows and tips about PodHopper.";
 
 /* Notifications permissions screen action button text*/
 "notifications_permissions_action" = "Allow Notifications";
