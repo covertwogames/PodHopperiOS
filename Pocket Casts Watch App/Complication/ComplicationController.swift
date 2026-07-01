@@ -29,7 +29,7 @@ class ComplicationController: NSObject, CLKComplicationDataSource {
     }
 
     func getComplicationDescriptors(handler: @escaping ([CLKComplicationDescriptor]) -> Void) {
-        let descriptors = [CLKComplicationDescriptor(identifier: "complication", displayName: "Pocket Casts", supportedFamilies: [.circularSmall,
+        let descriptors = [CLKComplicationDescriptor(identifier: "complication", displayName: "PodHopper", supportedFamilies: [.circularSmall,
                                                                                                                                   .extraLarge,
                                                                                                                                   .graphicBezel,
                                                                                                                                   .graphicCircular,

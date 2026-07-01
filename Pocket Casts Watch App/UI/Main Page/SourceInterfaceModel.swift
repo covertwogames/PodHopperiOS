@@ -95,7 +95,7 @@ class SourceInterfaceModel: ObservableObject {
 
         if isLoggedIn {
             usernameLabel = PodHopperSupabaseClient.shared.signedInEmail ?? ""
-            profileImage = "profile-plus"
+            profileImage = "profile-free"
             updateLastRefreshDetails()
         } else {
             usernameLabel = L10n.signedOut

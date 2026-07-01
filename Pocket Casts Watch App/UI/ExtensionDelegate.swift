@@ -93,11 +93,11 @@ class ExtensionDelegate: NSObject, WKApplicationDelegate {
     // MARK: - Background Refresh
 
     private func beginRefreshTask() {
-        if SyncManager.isFirstSyncInProgress() { return }
-
+        // PodHopper background refresh runs on-device: pull the latest library from Supabase and
+        // refresh feeds directly, rather than the Pocket Casts background sync.
         FileLog.shared.addMessage("Starting a background refresh")
-        let subscribedPodcasts = DataManager.sharedManager.allPodcasts(includeUnsubscribed: false)
-        BackgroundSyncManager.shared.performBackgroundRefresh(subscribedPodcasts: subscribedPodcasts)
+        PodHopperSubscriptionSync.shared.pollSubscriptions()
+        RefreshManager.shared.refreshPodcasts(forceEvenIfRefreshedRecently: false)
     }
 
     private func scheduleNextRefresh() {
