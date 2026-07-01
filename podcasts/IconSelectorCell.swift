@@ -18,27 +18,27 @@ enum IconType: Int, CaseIterable, AnalyticsDescribable {
     }
 
     static var availableIcons: [IconType] {
-        Self.allCases.filter {
-            $0.subscription <= .patron
-        }
+        // PodHopper: the seven PodHopper icons, all free (no Plus lock). These are the first seven
+        // enum cases (raw values 0-6), so the selector's rawValue-based indexing stays correct.
+        [.primary, .dark, .roundLight, .roundDark, .indigo, .rose, .pocketCats]
     }
 
     var description: String {
         switch self {
         case .primary:
-            return L10n.appIconDefault
+            return "Green"
         case .dark:
-            return L10n.appIconDark
+            return "Midnight"
         case .roundLight:
-            return L10n.appIconRoundLight
+            return "Light"
         case .roundDark:
-            return L10n.appIconRoundDark
+            return "Ink"
         case .indigo:
-            return L10n.appIconIndigo
+            return "Slate"
         case .rose:
-            return L10n.appIconRose
+            return "Cosmic"
         case .pocketCats:
-            return L10n.appIconPocketCats
+            return "Cosmic Noir"
         case .redVelvet:
             return L10n.appIconRedVelvet
         case .plus:

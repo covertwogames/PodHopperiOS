@@ -284,9 +284,7 @@ class AppearanceViewController: PCViewController, UITableViewDataSource, UITable
             newTableData.append([.tabBarMinimizing])
         }
 
-        if !SubscriptionHelper.hasActiveSubscription(), !Settings.plusInfoDismissedOnAppearance() {
-            newTableData.append([.plusCallout])
-        }
+        // PodHopper: no Pocket Casts Plus upsell. App icons are all free.
 
         tableData = newTableData
         settingsTable.reloadData()
