@@ -37,13 +37,6 @@ struct AboutView: View {
                     }
                     .padding(.top, 30)
                     Form {
-                        if model.shouldShowWhatsNew, let whatsNewInfo = model.whatsNewInfo {
-                            Section {
-                                AboutRow(mainText: model.whatsNewText) {
-                                    NavigationManager.sharedManager.navigateTo(NavigationManager.showWhatsNewPageKey, data: [NavigationManager.whatsNewInfoKey: whatsNewInfo])
-                                }
-                            }
-                        }
                         Section {
                             AboutRow(mainText: L10n.aboutRateUs) {
                                 model.track(action: .rateUs)
@@ -55,17 +48,9 @@ struct AboutView: View {
                             }
                         }
                         Section {
-                            AboutRow(mainText: L10n.aboutWebsite, secondaryText: L10n.websiteShort) {
+                            AboutRow(mainText: L10n.aboutWebsite, secondaryText: "podhopper.app") {
                                 model.track(action: .website)
-                                openUrl(ServerConstants.Urls.pocketcastsDotCom)
-                            }
-                            AboutRow(mainText: L10n.instagram, secondaryText: L10n.socialHandle) {
-                                model.track(action: .instagram)
-                                SocialsHelper.openInstagram()
-                            }
-                            AboutRow(mainText: L10n.xCom, secondaryText: L10n.socialHandle) {
-                                model.track(action: .twitter)
-                                SocialsHelper.openTwitter()
+                                openUrl("https://podhopper.app")
                             }
                         }
                         Section {
@@ -73,51 +58,6 @@ struct AboutView: View {
                                 showLegalAndMore = true
                             }
                         }
-                        Section {
-                            VStack(alignment: .leading) {
-                                Text(L10n.aboutA8cFamily)
-                                    .textStyle(PrimaryText())
-                                    .padding(.top, familyCellTopPadding)
-                                GeometryReader { geometry in
-                                    HStack(alignment: .bottom) {
-                                        ForEach(Array(AboutLogo.allCases.enumerated()), id: \.element) { index, logo in
-                                            LogoView(logo: logo, index: index, logoSize: calculateLogoSize(geometry: geometry), logoOffset: logoOffsetAmount)
-                                        }
-                                    }
-                                    .offset(y: logoCellHeight - logoOffsetAmount - calculateLogoSize(geometry: geometry) + familyCellTopPadding)
-                                }
-                                .frame(height: logoCellHeight)
-                            }
-                            .frame(height: familyCellHeight)
-                            .onTapGesture {
-                                model.track(action: .automatticFamily)
-                                openUrl(ServerConstants.Urls.automatticDotCom)
-                            }
-                        }
-                        .listRowBackground(ThemeColor.primaryUi02(for: theme.activeTheme).color)
-                        Section {
-                            VStack(alignment: .leading) {
-                                Text(L10n.aboutWorkWithUs)
-                                    .textStyle(PrimaryText())
-                                Text(L10n.aboutJoinFromAnywhere)
-                                    .textStyle(SecondaryText())
-                                    .font(.subheadline)
-                            }
-                            .onTapGesture {
-                                model.track(action: .workWithUs)
-                                openUrl(ServerConstants.Urls.automatticWorkWithUs)
-                            }
-                        }
-                        .listRowBackground(ThemeColor.primaryUi02(for: theme.activeTheme).color)
-                        Section {
-                            HStack {
-                                Spacer()
-                                Image("automattic-logo")
-                                    .tint(theme.activeTheme.isDark ? .white : .black)
-                                Spacer()
-                            }
-                        }
-                        .listRowBackground(Color.clear)
                     }
                     .colorScheme(theme.activeTheme.isDark ? .dark : .light)
                     .scrollContentBackground(.hidden)

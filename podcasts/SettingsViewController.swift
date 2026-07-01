@@ -86,10 +86,9 @@ class SettingsViewController: PCViewController, UITableViewDataSource, UITableVi
 
         return [
             developerSection,
-            [.pocketCastsPlus],
             [.general, .notifications, .appearance],
             [.autoArchive, .autoDownload, .autoAddToUpNext],
-            [.storageAndDataUse, .siriShortcuts, .headphoneControls, .watch, .customFiles],
+            [.storageAndDataUse, .siriShortcuts, .headphoneControls, .watch],
             [.importSteps, .opml],
             [.upNextHistory, .foldersHistory],
             [.privacy, .about]
@@ -141,12 +140,7 @@ class SettingsViewController: PCViewController, UITableViewDataSource, UITableVi
         cell.settingsLabel.accessibilityIdentifier = tableRow.rawValue
         cell.settingsImage.image = tableRow.display.image
 
-        switch tableRow {
-        case .appearance, .customFiles, .watch:
-            cell.plusIndicator.isHidden = SubscriptionHelper.hasActiveSubscription()
-        default:
-            break
-        }
+        // PodHopper: no Pocket Casts Plus badges. The indicator stays hidden for every row.
 
         return cell
     }
@@ -197,7 +191,9 @@ class SettingsViewController: PCViewController, UITableViewDataSource, UITableVi
         case .pocketCastsPlus:
                 navigationController?.present(OnboardingFlow.shared.begin(flow: .plusUpsell, source: .settings), animated: true)
         case .privacy:
-            navigationController?.pushViewController(PrivacySettingsViewController(), animated: true)
+            let controller = ThemedHostingController(rootView: PodHopperPrivacyView())
+            controller.title = L10n.settingsPrivacy
+            navigationController?.pushViewController(controller, animated: true)
         case .developer:
             let hostingController = UIHostingController(rootView: DeveloperMenu().setupDefaultEnvironment())
             navigationController?.pushViewController(hostingController, animated: true)
