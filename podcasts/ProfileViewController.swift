@@ -241,6 +241,14 @@ class ProfileViewController: PCViewController, UITableViewDataSource, UITableVie
         isRefreshAnimating = true
         lastRefreshTime.text = L10n.refreshing
         RefreshManager.shared.refreshPodcasts()
+
+        // PodHopper: also run PodHopper's cross-device sync so a manual refresh pulls the latest
+        // playback positions and subscriptions from the user's other devices, not just new episodes.
+        // These run in the background and no-op when signed out; the visible "refreshing" state
+        // tracks the on-device feed refresh, which posts the completion that stops the spinner.
+        PodHopperPositionSync.shared.pushCurrentPosition(immediate: true)
+        PodHopperPositionSync.shared.pullLatestPositions(adoptCurrentEpisode: true)
+        PodHopperSubscriptionSync.shared.pullSubscriptions()
     }
 
     // MARK: - Data Updates
@@ -280,8 +288,11 @@ class ProfileViewController: PCViewController, UITableViewDataSource, UITableVie
             navigationItem.leftBarButtonItem = nil
         }
 
-        if !ServerSettings.lastRefreshSucceeded() || !ServerSettings.lastSyncSucceeded() {
-            lastRefreshTime.text = !ServerSettings.lastRefreshSucceeded() ? L10n.refreshFailed : L10n.syncFailed
+        // PodHopper: the status reflects PodHopper's on-device feed refresh only. The old
+        // "sync failed" state came from Pocket Casts account sync, which PodHopper does not use, so
+        // it is no longer checked here.
+        if !ServerSettings.lastRefreshSucceeded() {
+            lastRefreshTime.text = L10n.refreshFailed
             refreshButtonTitle = L10n.tryAgain
             alertIcon.isHidden = false
         } else if let lastUpdateTime = ServerSettings.lastRefreshEndTime() {
