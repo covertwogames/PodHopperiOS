@@ -1,8 +1,8 @@
 import SwiftUI
 
 extension Color {
-    static let widgetRedDark = Color(red: 217, green: 32, blue: 28)
-    static let widgetRedLight = Color(red: 244, green: 62, blue: 55)
+    static let widgetGreenDark = Color(red: 38, green: 120, blue: 78)
+    static let widgetGreenLight = Color(red: 60, green: 170, blue: 110)
     static let widgetBlack = Color(red: 22, green: 23, blue: 24)
     static let widgetCoolGrey = Color(red: 41, green: 43, blue: 46)
 }
@@ -22,28 +22,28 @@ struct PCWidgetColorScheme {
     let filterViewIconAssetName: String
 
     static let bold = PCWidgetColorScheme(
-        topBackgroundColor: .widgetRedLight,
-        bottomBackgroundColor: .widgetRedDark,
+        topBackgroundColor: .widgetGreenLight,
+        bottomBackgroundColor: .widgetGreenDark,
         topButtonBackgroundColor: .white,
         bottomButtonBackgroundColor: .white.opacity(0.2),
         topTextColor: .white,
         bottomTextColor: .white,
-        topButtonTextColor: .widgetRedLight,
+        topButtonTextColor: .widgetGreenLight,
         bottomButtonTextColor: .white,
         iconAssetName: "logo_white_small_transparent",
-        filterViewBackgroundColor: .widgetRedLight,
+        filterViewBackgroundColor: .widgetGreenLight,
         filterViewTextColor: .white,
         filterViewIconAssetName: "logo_white_small_transparent"
     )
 
     static let contrast = PCWidgetColorScheme(
-        topBackgroundColor: .widgetRedDark,
+        topBackgroundColor: .widgetGreenDark,
         bottomBackgroundColor: .white,
         topButtonBackgroundColor: .white,
-        bottomButtonBackgroundColor: .widgetRedDark,
+        bottomButtonBackgroundColor: .widgetGreenDark,
         topTextColor: .white,
         bottomTextColor: .widgetBlack,
-        topButtonTextColor: .widgetRedDark,
+        topButtonTextColor: .widgetGreenDark,
         bottomButtonTextColor: .white,
         iconAssetName: "logo_white_small_transparent",
         filterViewBackgroundColor: .white,

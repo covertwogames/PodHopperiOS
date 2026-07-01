@@ -69,6 +69,7 @@ struct LargeArtworkView: View {
             } else {
                 Image(uiImage: widgetPlaceholderImage(accented: isAccentedRenderingMode))
                     .resizable()
+                    .unredacted()
                     .backwardWidgetAccentedRenderingMode(isAccentedRenderingMode)
                     .aspectRatio(1, contentMode: .fit)
                     .frame(maxHeight: size)
@@ -108,6 +109,7 @@ struct SmallArtworkView: View {
             } else {
                 Image(uiImage: widgetPlaceholderImage(accented: isAccentedRenderingMode))
                     .resizable()
+                    .unredacted()
                     .backwardWidgetAccentedRenderingMode(isAccentedRenderingMode)
                     .aspectRatio(1, contentMode: .fit)
                     .cornerRadius(4)
