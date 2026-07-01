@@ -28,7 +28,10 @@ struct AboutView: View {
                 VStack {
                     VStack {
                         ModalCloseButton(action: dismissAction)
-                        Image(AppTheme.pcLogoVerticalImageName())
+                        Image(theme.activeTheme.isDark ? "podhopper-lockup-stacked-ondark" : "podhopper-lockup-stacked-onlight")
+                            .resizable()
+                            .scaledToFit()
+                            .frame(maxWidth: 220)
                             .accessibilityHidden(true)
                         Text(Settings.displayableVersion())
                             .font(.subheadline)
