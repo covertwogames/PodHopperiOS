@@ -1,7 +1,5 @@
 import BackgroundTasks
 import AutomatticRemoteLogging
-import Firebase
-import FirebasePerformance
 import Foundation
 import PocketCastsDataModel
 import PocketCastsServer
@@ -34,7 +32,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     // MARK: - App Lifecycle
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]? = nil) -> Bool {
-        configureFirebase()
+        updateEndOfYearRemoteValue()
+        updateRemoteFeatureFlags()
         TraceManager.shared.setup(handler: traceHandler)
 
         setupSecrets()
@@ -293,15 +292,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         badgeHelper.updateBadge()
     }
 
-    private func configureFirebase() {
-        FirebaseApp.configure()
-
-        FirebaseManager.refreshRemoteConfig() { [weak self] _ in
-            self?.updateEndOfYearRemoteValue()
-            self?.updateRemoteFeatureFlags()
-        }
-    }
-
     func updateRemoteFeatureFlags(forceReload: Bool = false) {
         guard BuildEnvironment.current != .debug || forceReload else { return }
 
@@ -314,19 +304,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
         try? FeatureFlagOverrideStore().override(FeatureFlag.slumber, withValue: Settings.slumberPromoCode?.isEmpty == false)
 
-        FeatureFlag.allCases.forEach { flag in
-            if let remoteKey = flag.remoteKey {
-                let remoteValue = RemoteConfig.remoteConfig().configValue(forKey: remoteKey)
-                if remoteValue.source == .remote {
-                    do {
-                        FileLog.shared.console("Override \(flag): \(remoteValue.boolValue)")
-                        try FeatureFlagOverrideStore().override(flag, withValue: remoteValue.boolValue)
-                    } catch {
-                        FileLog.shared.addMessage("Failed to set remote feature flag \(flag): \(error)")
-                    }
-                }
-            }
-        }
+        // PodHopper: Firebase Remote Config removed. Feature flags run on their built-in
+        // defaults, so there are no remote overrides to apply here anymore.
     }
 
     private func updateEndOfYearRemoteValue() {

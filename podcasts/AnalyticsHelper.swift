@@ -1,7 +1,3 @@
-#if !os(watchOS) && !os(tvOS)
-    import Firebase
-#endif
-
 import Foundation
 import os
 import PocketCastsUtils
@@ -326,66 +322,18 @@ class AnalyticsHelper {
     extension AnalyticsHelper {
         static func plusUpgradeViewed(source: PlusUpgradeViewSource) {
             Analytics.track(.plusPromotionShown, properties: ["source": source.rawValue])
-
-            logPromotionEvent(AnalyticsEventViewPromotion,
-                              promotionId: source.promotionId(),
-                              promotionName: source.promotionName())
         }
 
         static func plusUpgradeConfirmed(source: PlusUpgradeViewSource) {
             Analytics.track(.plusPromotionUpgradeButtonTapped, properties: ["source": source.rawValue])
-
-            logPromotionEvent(AnalyticsEventSelectPromotion,
-                              promotionId: source.promotionId(),
-                              promotionName: source.promotionName())
         }
 
         static func plusUpgradeDismissed(source: PlusUpgradeViewSource) {
             Analytics.track(.plusPromotionDismissed, properties: ["source": source.rawValue])
-
-            logPromotionEvent("close_promotion",
-                              promotionId: source.promotionId(),
-                              promotionName: source.promotionName())
         }
-
-        #if !APPCLIP
-        static func plusAddToCart(identifier: IAPProductID) {
-            guard let product = IAPHelper.shared.getProduct(for: identifier) else {
-                return
-            }
-
-            let price = product.price
-            let currency = product.priceLocale.currency?.identifier ?? ""
-            let name = product.localizedTitle
-
-            let item: [String: Any] = [
-                AnalyticsParameterItemID: identifier,
-                AnalyticsParameterItemName: name,
-                AnalyticsParameterPrice: price,
-                AnalyticsParameterQuantity: 1
-            ]
-
-            var parameters: [String: Any] = [
-                AnalyticsParameterCurrency: currency,
-                AnalyticsParameterValue: price,
-                AnalyticsParameterItems: [item]
-            ]
-
-            // Log that a free trial was used
-            if IAPHelper.shared.isEligibleForOffer, let offerType = product.introductoryPrice?.paymentMode {
-                if offerType == .freeTrial {
-                    parameters[AnalyticsParameterCoupon] = "FREE_TRIAL"
-                } else if offerType == .payAsYouGo {
-                    parameters[AnalyticsParameterCoupon] = "INTRO_OFFER"
-                }
-            }
-
-            logEvent(AnalyticsEventAddToCart, parameters: parameters)
-        }
-        #endif
 
         static func plusPlanPurchased() {
-            logEvent(AnalyticsEventPurchase)
+            // PodHopper: Firebase purchase event removed; no third party logging.
         }
     }
 
@@ -413,19 +361,6 @@ class AnalyticsHelper {
         }
     }
 
-    // MARK: - Promotion Events
-
-    private extension AnalyticsHelper {
-        // Helper method to log a Firebase promotion event
-        static func logPromotionEvent(_ name: String, promotionId: String, promotionName: String) {
-            let parameters = [
-                AnalyticsParameterPromotionID: promotionId,
-                AnalyticsParameterPromotionName: promotionName
-            ]
-
-            logEvent(name, parameters: parameters)
-        }
-    }
 #endif // End iOS Only Check
 
 // MARK: - Private
@@ -440,11 +375,9 @@ private extension AnalyticsHelper {
     class func logEvent(_ name: String, parameters: [String: Any]? = nil) {
         guard optedOut == false else { return }
 
-        // assuming for now we don't want analytics on a watch
+        // PodHopper: Firebase Analytics removed; events only reach the local debug log.
         #if !os(watchOS) && !os(tvOS)
-            Firebase.Analytics.logEvent(name, parameters: parameters)
-
-        if FeatureFlag.firebaseLogging.enabled {
+            if FeatureFlag.firebaseLogging.enabled {
                 if let parameters {
                     logger.debug("🟢 Tracked: \(name) \(parameters)")
                 } else {

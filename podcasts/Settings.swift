@@ -1,7 +1,4 @@
 import PocketCastsDataModel
-#if !os(watchOS)
-import Firebase
-#endif
 import PocketCastsServer
 import UIKit
 import SwiftUI
@@ -1706,39 +1703,47 @@ class Settings: NSObject {
         }
 
         static var endOfYearRequireAccount: Bool {
-            let remote = RemoteConfig.remoteConfig().configValue(forKey: Constants.RemoteParams.endOfYearRequireAccount)
-            return remote.boolValue
+            Constants.RemoteParams.endOfYearRequireAccountDefault
         }
 
         static var addMissingEpisodes: Bool {
-            let remote = RemoteConfig.remoteConfig().configValue(forKey: Constants.RemoteParams.addMissingEpisodes)
-            return remote.boolValue
+            Constants.RemoteParams.addMissingEpisodesDefault
         }
 
         static var plusCloudStorageLimit: Int {
-            RemoteConfig.remoteConfig().configValue(forKey: Constants.RemoteParams.customStorageLimitGB).numberValue.intValue
+            Constants.RemoteParams.customStorageLimitGBDefault
         }
 
         static var patronCloudStorageLimit: Int {
-            RemoteConfig.remoteConfig().configValue(forKey: Constants.RemoteParams.patronCloudStorageGB).numberValue.intValue
+            Constants.RemoteParams.patronCloudStorageGBDefault
         }
 
         static var errorLogoutHandling: Bool {
-            return RemoteConfig.remoteConfig().configValue(forKey: Constants.RemoteParams.errorLogoutHandling).boolValue
+            Constants.RemoteParams.errorLogoutHandlingDefault
         }
 
     static var slumberPromoCode: String? {
-        RemoteConfig.remoteConfig().configValue(forKey: Constants.RemoteParams.slumberStudiosPromoCode).stringValue
+        Constants.RemoteParams.slumberStudiosPromoCodeDefault
     }
 
         private class func remoteMsToTime(key: String) -> TimeInterval {
-            let remoteMs = RemoteConfig.remoteConfig().configValue(forKey: key)
-
-            return TimeInterval(remoteMs.numberValue.doubleValue / 1000)
+            // PodHopper: Firebase removed; each key resolves to its built-in default.
+            let defaultMs: Double
+            switch key {
+            case Constants.RemoteParams.periodicSaveTimeMs:
+                defaultMs = Constants.RemoteParams.periodicSaveTimeMsDefault
+            case Constants.RemoteParams.podcastSearchDebounceMs:
+                defaultMs = Constants.RemoteParams.podcastSearchDebounceMsDefault
+            case Constants.RemoteParams.episodeSearchDebounceMs:
+                defaultMs = Constants.RemoteParams.episodeSearchDebounceMsDefault
+            default:
+                defaultMs = 0
+            }
+            return TimeInterval(defaultMs / 1000)
         }
 
         static var newSettingsStorage: Bool {
-            RemoteConfig.remoteConfig().configValue(forKey: FeatureFlag.newSettingsStorage.remoteKey).boolValue
+            FeatureFlag.newSettingsStorage.default
         }
     #endif
 }

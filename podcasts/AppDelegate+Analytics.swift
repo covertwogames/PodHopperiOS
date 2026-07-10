@@ -12,24 +12,15 @@ extension AppDelegate {
             return
         }
 
-        var adapters: [AnalyticsAdapter] = []
-
-        // Only setup if protected data is available, the user hasn't opted out, and we aren't already registered
-        if !Settings.analyticsOptOut() {
-            adapters = [AnalyticsLoggingAdapter(), TracksAdapter(), CrashLoggingAdapter()]
+        // PodHopper: no third party analytics, ever. Tracks, crash logging, the live event
+        // streamer, and the survey manager are never registered. Events only reach the local
+        // debug log and the in-app notifications coordinator that uses them for scheduling.
+        var adapters: [AnalyticsAdapter] = [AnalyticsLoggingAdapter()]
 #if DEBUG
-            adapters.append(AnalyticsOSLogAdapter())
+        adapters.append(AnalyticsOSLogAdapter())
 #endif
-        }
-
-        // LiveAnalyticsStreamer buffers events for all builds, sends when server enables liveAnalyticsUrl
-        adapters.append(LiveAnalyticsStreamer())
 
         adapters.append(NotificationsCoordinator.shared)
-
-        if FeatureFlag.userSatisfactionSurvey.enabled {
-            adapters.append(UserSatisfactionSurveyManager.shared)
-        }
 
         Analytics.register(adapters: adapters)
         Analytics.add(analyticsAppThemeProvider: AnalyticsAppThemeProvider())
