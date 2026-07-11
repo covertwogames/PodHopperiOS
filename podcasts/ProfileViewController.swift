@@ -197,11 +197,6 @@ class ProfileViewController: PCViewController, UITableViewDataSource, UITableVie
         removeAllCustomObservers()
     }
 
-    override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(animated)
-        hideReferralsHint(dontShowAgain: false)
-    }
-
     override func handleThemeChanged() {
         updateRefreshFooterColors()
     }
