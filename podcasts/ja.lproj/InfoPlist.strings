@@ -4,16 +4,16 @@
 <plist version="1.0">
   <dict>
     <key>NSBluetoothAlwaysUsageDescription</key>
-    <string>Pocket Casts は近くの Google Cast 端末を検出するために Bluetooth にアクセスする必要があります。</string>
+    <string>PodHopper は近くの Google Cast 端末を検出するために Bluetooth にアクセスする必要があります。</string>
     <key>NSCameraUsageDescription</key>
     <string>これによりファイルにカスタム画像を追加できます</string>
     <key>NSLocalNetworkUsageDescription</key>
-    <string>Pocket Casts はこれを使ってネットワークの Google Cast 端末を探します。 この機能を使わない場合は、オフにしてください。</string>
+    <string>PodHopper はこれを使ってネットワークの Google Cast 端末を探します。 この機能を使わない場合は、オフにしてください。</string>
     <key>NSMicrophoneUsageDescription</key>
-    <string>Pocket Casts は近くの Google Cast 端末を検出するためにマイクにアクセスする必要があります。</string>
+    <string>PodHopper は近くの Google Cast 端末を検出するためにマイクにアクセスする必要があります。</string>
     <key>NSPhotoLibraryAddUsageDescription</key>
-    <string>Pocket Casts でこの画像をフォトライブラリに保存するには権限が必要です。</string>
+    <string>PodHopper でこの画像をフォトライブラリに保存するには権限が必要です。</string>
     <key>NSPhotoLibraryUsageDescription</key>
-    <string>Pocket Casts でこの画像をフォトライブラリに保存するには権限が必要です。</string>
+    <string>PodHopper でこの画像をフォトライブラリに保存するには権限が必要です。</string>
   </dict>
 </plist>

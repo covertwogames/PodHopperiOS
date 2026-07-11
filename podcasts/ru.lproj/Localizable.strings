@@ -64,7 +64,7 @@
     <key>accessibility_plus_only</key>
     <string>Заблокировано, функция Plus</string>
     <key>accessibility_profile_settings</key>
-    <string>Настройки Pocket Casts</string>
+    <string>Настройки PodHopper</string>
     <key>accessibility_select_episode</key>
     <string>Выбрать выпуск</string>
     <key>accessibility_show_filter_details</key>
@@ -130,19 +130,19 @@
     <key>account_signed_out_alert_message</key>
     <string>Оказывается, если в Google ввести текст Google, можно сломать Интернет. 🫢 
 
-Коснитесь кнопки ниже, чтобы повторно войти в учётную запись Pocket Casts.</string>
+Коснитесь кнопки ниже, чтобы повторно войти в учётную запись PodHopper.</string>
     <key>account_signed_out_alert_title</key>
     <string>Вы вышли из системы.</string>
     <key>account_sso_failed</key>
     <string>Вход не выполнен. Повторите попытку.</string>
     <key>account_title</key>
-    <string>Учетная запись Pocket Casts</string>
+    <string>Учетная запись PodHopper</string>
     <key>account_upgraded</key>
     <string>Учетная запись повышена</string>
     <key>account_welcome</key>
-    <string>Добро пожаловать в Pocket Casts!</string>
+    <string>Добро пожаловать в PodHopper!</string>
     <key>account_welcome_plus</key>
-    <string>Добро пожаловать в Pocket Casts Plus!</string>
+    <string>Добро пожаловать в PodHopper Plus!</string>
     <key>add_bookmark</key>
     <string>Добавить закладку</string>
     <key>add_bookmark_subtitle</key>
@@ -185,7 +185,7 @@
     <string>Значок приложения</string>
     <key>app_clip_placholder_message</key>
     <string>Возможно, он удалён или ссылка не работает.
-Но в Pocket Casts есть ещё много интересного.
+Но в PodHopper есть ещё много интересного.
 Загрузите приложение, чтобы получить всё!</string>
     <key>app_clip_placholder_title</key>
     <string>К сожалению, не удалось найти этот выпуск</string>
@@ -226,7 +226,7 @@
     <key>app_icon_round_light</key>
     <string>Round Light</string>
     <key>app_share_text</key>
-    <string>Привет! Вот ссылка для загрузки приложения Pocket Casts. Мне оно нравится, рекомендую.</string>
+    <string>Привет! Вот ссылка для загрузки приложения PodHopper. Мне оно нравится, рекомендую.</string>
     <key>app_version</key>
     <string>Версия %1$@ (%2$@)</string>
     <key>appearance_app_icon_header</key>
@@ -238,7 +238,7 @@
     <key>appearance_embedded_artwork</key>
     <string>Отображать оформление выпусков</string>
     <key>appearance_embedded_artwork_subtitle</key>
-    <string>В некоторых шоу есть специальное оформление отдельных выпусков. Включите эту опцию, и Pocket Casts будет отображать его вместо общего оформления шоу.</string>
+    <string>В некоторых шоу есть специальное оформление отдельных выпусков. Включите эту опцию, и PodHopper будет отображать его вместо общего оформления шоу.</string>
     <key>appearance_light_theme</key>
     <string>Светлая тема</string>
     <key>appearance_match_device_theme</key>
@@ -322,7 +322,7 @@
     <key>banner_ads_report_too_often</key>
     <string>Я вижу эту рекламу слишком часто</string>
     <key>beta_purchase_disabled</key>
-    <string>Загрузите Pocket Casts из App Store, чтобы приобрести %1$@.</string>
+    <string>Загрузите PodHopper из App Store, чтобы приобрести %1$@.</string>
     <key>beta_thank_you</key>
     <string>Благодарим за участие в бета-тестировании!</string>
     <key>bookmark_added</key>
@@ -350,9 +350,9 @@
     <key>bookmarks_count_singular</key>
     <string>1 закладка</string>
     <key>bookmarks_early_access_locked_message</key>
-    <string>Разблокируйте эту и многие другие функции с Pocket Casts %1$@ и сохраняйте отметки времени для понравившихся вам эпизодов. Скоро станет доступно для подписчиков %2$@.</string>
+    <string>Разблокируйте эту и многие другие функции с PodHopper %1$@ и сохраняйте отметки времени для понравившихся вам эпизодов. Скоро станет доступно для подписчиков %2$@.</string>
     <key>bookmarks_locked_message</key>
-    <string>Разблокируйте эту и многие другие функции с Pocket Casts %1$@ и сохраняйте отметки времени для понравившихся вам эпизодов.</string>
+    <string>Разблокируйте эту и многие другие функции с PodHopper %1$@ и сохраняйте отметки времени для понравившихся вам эпизодов.</string>
     <key>bottom</key>
     <string>Низ</string>
     <key>bulk_download_max_format</key>
@@ -398,17 +398,17 @@
     <key>cancel_subscription_help_description</key>
     <string>Проблемы с определёнными функциями или неполадки?</string>
     <key>cancel_subscription_help_title</key>
-    <string>Вам требуется помощь в работе с Pocket Casts?</string>
+    <string>Вам требуется помощь в работе с PodHopper?</string>
     <key>cancel_subscription_new_plan_description</key>
     <string>Выберите оптимальный тарифный план.</string>
     <key>cancel_subscription_new_plan_title</key>
     <string>Хотите перейти на другой тарифный план?</string>
     <key>cancel_subscription_offer_success_view_description</key>
-    <string>Благодарим за то, что вы выбрали Pocket Casts. Бесплатный месяц будет добавлен к вашей текущей подписке.</string>
+    <string>Благодарим за то, что вы выбрали PodHopper. Бесплатный месяц будет добавлен к вашей текущей подписке.</string>
     <key>cancel_subscription_offer_success_view_title</key>
     <string>Пользуйтесь весь месяц бесплатно!</string>
     <key>cancel_subscription_offer_yearly_success_view_description</key>
-    <string>Благодарим за то, что вы выбрали Pocket Casts. Ваш годовой тарифный план со скидкой начнёт действовать по истечении срока текущего тарифного плана.</string>
+    <string>Благодарим за то, что вы выбрали PodHopper. Ваш годовой тарифный план со скидкой начнёт действовать по истечении срока текущего тарифного плана.</string>
     <key>cancel_subscription_offer_yearly_success_view_title</key>
     <string>Скидка 50 %% на следующий год!</string>
     <key>cancel_subscription_promotion_description_monthly</key>
@@ -433,7 +433,7 @@
     <string>Отправить отзыв</string>
     <key>cancel_subscription_survey_title</key>
     <string>Спасибо, что попробовали
-Pocket Casts Plus</string>
+PodHopper Plus</string>
     <key>cancel_subscription_survey_toast_fail</key>
     <string>Что-то пошло не так.</string>
     <key>cancel_subscription_survey_toast_success</key>
@@ -446,9 +446,9 @@ Pocket Casts Plus</string>
     <key>cancel_subscription_winback_view_continue_cancellation_button</key>
     <string>Отменить и продолжить</string>
     <key>cancel_subscription_winback_view_description_montly</key>
-    <string>Пользуйтесь Pocket Casts Plus бесплатно в течение месяца! Предложение будет добавлено к вашей текущей подписке.</string>
+    <string>Пользуйтесь PodHopper Plus бесплатно в течение месяца! Предложение будет добавлено к вашей текущей подписке.</string>
     <key>cancel_subscription_winback_view_description_yearly</key>
-    <string>Заплатите %@ сейчас, чтобы в течение года пользоваться Pocket Casts Plus за полцены. Ваш годовой тарифный план со скидкой начнёт действовать по истечении срока текущего тарифного плана.</string>
+    <string>Заплатите %@ сейчас, чтобы в течение года пользоваться PodHopper Plus за полцены. Ваш годовой тарифный план со скидкой начнёт действовать по истечении срока текущего тарифного плана.</string>
     <key>cancel_subscription_winback_view_title_montly</key>
     <string>Пользуйтесь весь следующий месяц бесплатно и сэкономьте %@</string>
     <key>cancel_subscription_winback_view_title_yearly</key>
@@ -468,7 +468,7 @@ Pocket Casts Plus</string>
     <key>champion_description</key>
     <string>Благодарим за то, что вы с нами с самого начала! Если вам нравится наше приложение, мы будем рады получить ваш отзыв.</string>
     <key>champion_title</key>
-    <string>Вы просто чемпион Pocket Casts!</string>
+    <string>Вы просто чемпион PodHopper!</string>
     <key>change_app_icon</key>
     <string>Изменить значок приложения</string>
     <key>change_bookmark_subtitle</key>
@@ -558,11 +558,11 @@ Pocket Casts Plus</string>
     <key>create_account</key>
     <string>Создать учётную запись</string>
     <key>create_account_app_store_error_message</key>
-    <string>Проблемы при подключении Pocket Casts к App Store. Проверьте подключение и повторите попытку.</string>
+    <string>Проблемы при подключении PodHopper к App Store. Проверьте подключение и повторите попытку.</string>
     <key>create_account_app_store_error_title</key>
     <string>Не удается подключиться к App Store</string>
     <key>create_account_find_out_more_plus</key>
-    <string>Узнать больше о Pocket Casts Plus</string>
+    <string>Узнать больше о PodHopper Plus</string>
     <key>create_account_free_account_type</key>
     <string>Обычный</string>
     <key>create_account_free_details</key>
@@ -915,7 +915,7 @@ Pocket Casts Plus</string>
     <string>Синхронизация на всех устройствах</string>
     <key>eac_informational_view_modal_description</key>
     <string>Создайте учётную запись или выполните вход
-Pocket Casts на полную мощность.</string>
+PodHopper на полную мощность.</string>
     <key>eac_informational_view_modal_get_started_button</key>
     <string>Начать</string>
     <key>eac_informational_view_modal_title</key>
@@ -1161,7 +1161,7 @@ Pocket Casts на полную мощность.</string>
     <key>file_upload_name_required</key>
     <string>Необходимо указать имя</string>
     <key>file_upload_no_files_description</key>
-    <string>Загружайте свои файлы в Pocket Casts и прослушивайте или просматривайте их в любое время.</string>
+    <string>Загружайте свои файлы в PodHopper и прослушивайте или просматривайте их в любое время.</string>
     <key>file_upload_no_files_helper</key>
     <string>Как это сделать?</string>
     <key>file_upload_no_files_title</key>
@@ -1421,11 +1421,11 @@ Pocket Casts на полную мощность.</string>
     <key>how_to_upload_explanation</key>
     <string>Сначала откройте приложение, содержащее аудиофайлы, которые вы хотите сохранить.</string>
     <key>how_to_upload_share_action_image_center_text</key>
-    <string>Копировать в Pocket Casts</string>
+    <string>Копировать в PodHopper</string>
     <key>how_to_upload_share_action_image_sides_text</key>
     <string>Прочее</string>
     <key>how_to_upload_share_action_instruction</key>
-    <string>В меню нажмите «Копировать в Pocket Casts».</string>
+    <string>В меню нажмите «Копировать в PodHopper».</string>
     <key>how_to_upload_share_menu_image_background_button_text</key>
     <string>Аудиофайл</string>
     <key>how_to_upload_share_menu_image_foreground_menu_option_text</key>
@@ -1490,13 +1490,13 @@ Pocket Casts на полную мощность.</string>
     <key>import_opml_from_url</key>
     <string>Импортируйте подкасты из файла OPML с помощью URL-адреса</string>
     <key>import_podcasts_description</key>
-    <string>Вы можете импортировать свои подписки на подкасты в Pocket Casts, воспользовавшись распространенным форматом OPML. Экспортируйте файл из другого приложения и откройте его в Pocket Casts.
+    <string>Вы можете импортировать свои подписки на подкасты в PodHopper, воспользовавшись распространенным форматом OPML. Экспортируйте файл из другого приложения и откройте его в PodHopper.
 
-Примечание. Вам может потребоваться отправить файл OPML самому себе по электронной почте, для этого нажмите и удерживайте вложение и выберите Pocket Casts.</string>
+Примечание. Вам может потребоваться отправить файл OPML самому себе по электронной почте, для этого нажмите и удерживайте вложение и выберите PodHopper.</string>
     <key>import_podcasts_description_new</key>
-    <string>Вы можете импортировать свои подкасты в Pocket Casts, воспользовавшись распространённым форматом OPML. Экспортируйте файл из другого приложения и откройте его в Pocket Casts.
+    <string>Вы можете импортировать свои подкасты в PodHopper, воспользовавшись распространённым форматом OPML. Экспортируйте файл из другого приложения и откройте его в PodHopper.
 
-Примечание. Вам может потребоваться отправить файл OPML самому себе по электронной почте, для этого нажмите и удерживайте вложение, а затем выберите Pocket Casts.</string>
+Примечание. Вам может потребоваться отправить файл OPML самому себе по электронной почте, для этого нажмите и удерживайте вложение, а затем выберите PodHopper.</string>
     <key>import_podcasts_title</key>
     <string>ИМПОРТ В POCKET CASTS</string>
     <key>import_subtitle</key>
@@ -1537,7 +1537,7 @@ Pocket Casts на полную мощность.</string>
     <key>kids_profile_submit_feedback_send_button</key>
     <string>Отправить</string>
     <key>kids_profile_submit_feedback_title</key>
-    <string>Что бы вы хотели видеть в профиле «Дети» Pocket Casts?</string>
+    <string>Что бы вы хотели видеть в профиле «Дети» PodHopper?</string>
     <key>kids_profile_submit_success</key>
     <string>Спасибо за ваш отзыв!</string>
     <key>kids_profile_thankyou_button_close</key>
@@ -1563,9 +1563,9 @@ Pocket Casts на полную мощность.</string>
     <key>loading</key>
     <string>Загрузка…</string>
     <key>login_landing_subtitle</key>
-    <string>Ваши подкасты всегда будут синхронизированы. Защитите свою библиотеку и пользуйтесь Pocket Casts в Интернете и на ПК.</string>
+    <string>Ваши подкасты всегда будут синхронизированы. Защитите свою библиотеку и пользуйтесь PodHopper в Интернете и на ПК.</string>
     <key>login_landing_title</key>
-    <string>Создать учётную запись Pocket Casts</string>
+    <string>Создать учётную запись PodHopper</string>
     <key>login_subtitle</key>
     <string>Создайте учётную запись, чтобы синхронизировать и слушать любимый контент на всех устройствах.</string>
     <key>login_title</key>
@@ -1575,7 +1575,7 @@ Pocket Casts на полную мощность.</string>
     <key>logs_no_email_account_configured</key>
     <string>Для отправки журналов необходимо настроить учётную запись электронной почты на устройстве.</string>
     <key>logs_watch_os_not_available</key>
-    <string>Нет доступных журналов watchOS. Убедитесь, что установлены сопряжённые часы Apple Watch и приложение для часов Pocket Casts.</string>
+    <string>Нет доступных журналов watchOS. Убедитесь, что установлены сопряжённые часы Apple Watch и приложение для часов PodHopper.</string>
     <key>manage_downloads_action</key>
     <string>Управлять скачиваниями</string>
     <key>manage_downloads_detail</key>
@@ -1695,7 +1695,7 @@ Pocket Casts на полную мощность.</string>
     <key>not_on_wifi</key>
     <string>Вы не подключены к WiFi</string>
     <key>notifications_app_clip_body</key>
-    <string>Установите Pocket Casts, чтобы пользоваться всеми возможностями мощных инструментов воспроизведения и настройки.</string>
+    <string>Установите PodHopper, чтобы пользоваться всеми возможностями мощных инструментов воспроизведения и настройки.</string>
     <key>notifications_app_clip_title</key>
     <string>Готовы слушать новые подкасты?</string>
     <key>notifications_daily_reminders</key>
@@ -1721,7 +1721,7 @@ Pocket Casts на полную мощность.</string>
     <key>notifications_onboarding_filters_title</key>
     <string>Упорядочивайте выпуски</string>
     <key>notifications_onboarding_import_body</key>
-    <string>Переходите из другого приложения? Перенесите все любимые шоу в Pocket Casts.</string>
+    <string>Переходите из другого приложения? Перенесите все любимые шоу в PodHopper.</string>
     <key>notifications_onboarding_import_title</key>
     <string>Импортируйте подкасты без проблем</string>
     <key>notifications_onboarding_newsletter_subtitle</key>
@@ -1755,7 +1755,7 @@ Pocket Casts на полную мощность.</string>
     <key>notifications_permissions_action</key>
     <string>Разрешить уведомления</string>
     <key>notifications_permissions_body</key>
-    <string>Уведомления — лучший способ отслеживать новые выпуски, получать рекомендации новых шоу и советы по Pocket Casts.</string>
+    <string>Уведомления — лучший способ отслеживать новые выпуски, получать рекомендации новых шоу и советы по PodHopper.</string>
     <key>notifications_permissions_needs_action</key>
     <string>Разрешите уведомления в настройках устройства</string>
     <key>notifications_permissions_open_settings</key>
@@ -1767,7 +1767,7 @@ Pocket Casts на полную мощность.</string>
     <key>notifications_play_now</key>
     <string>Воспроизвести</string>
     <key>notifications_pocket_cast_offers</key>
-    <string>Предложения Pocket Casts</string>
+    <string>Предложения PodHopper</string>
     <key>notifications_recommendations_trending_body</key>
     <string>Посмотрите, что популярно на этой неделе.</string>
     <key>notifications_recommendations_trending_title</key>
@@ -1789,7 +1789,7 @@ Pocket Casts на полную мощность.</string>
     <key>notitifications_permission_banner_action</key>
     <string>Открыть настройки устройства</string>
     <key>notitifications_permission_banner_message</key>
-    <string>Чтобы получать уведомления от Pocket Casts, необходимо включить их в настройках устройства.</string>
+    <string>Чтобы получать уведомления от PodHopper, необходимо включить их в настройках устройства.</string>
     <key>notitifications_permission_banner_title</key>
     <string>Разрешить push-уведомления</string>
     <key>now_playing</key>
@@ -1809,7 +1809,7 @@ Pocket Casts на полную мощность.</string>
     <key>on</key>
     <string>На</string>
     <key>onboarding_quote_author</key>
-    <string>Пользователь Pocket Casts</string>
+    <string>Пользователь PodHopper</string>
     <key>onboarding_quote_best</key>
     <string>Это лучшее приложение для подкастов. Безусловно</string>
     <key>onboarding_quote_customization</key>
@@ -1874,7 +1874,7 @@ Pocket Casts на полную мощность.</string>
     <key>patron_callout</key>
     <string>Нравится то, что мы делаем, и хочется нас поддержать?</string>
     <key>patron_description</key>
-    <string>Станьте пользователем Patron в Pocket Casts и помогите нам развивать лучшую платформу для подкастов.</string>
+    <string>Станьте пользователем Patron в PodHopper и помогите нам развивать лучшую платформу для подкастов.</string>
     <key>patron_feature_early_access</key>
     <string>Ранний доступ к новым возможностям</string>
     <key>patron_feature_everything_in_plus</key>
@@ -1882,7 +1882,7 @@ Pocket Casts на полную мощность.</string>
     <key>patron_feature_profile_badge</key>
     <string>Значок профиля для спонсоров</string>
     <key>patron_feature_profile_icons</key>
-    <string>Специальные значки приложения Pocket Casts</string>
+    <string>Специальные значки приложения PodHopper</string>
     <key>patron_purchase_promo_title</key>
     <string>Станьте пользователем Patron и получите доступ ко всем возможностям Pocket Casts</string>
     <key>patron_subscribe_to</key>
@@ -1910,9 +1910,9 @@ Pocket Casts на полную мощность.</string>
     <key>paywall_dynamic_headline_themes</key>
     <string>Получайте эксклюзивные темы с Pocket Casts Plus и многое другое</string>
     <key>paywall_dynamic_headline_up_next_shuffle</key>
-    <string>При помощи Pocket Casts Plus можно воспроизводить выпуски в случайном порядке и делать ещё много интересного</string>
+    <string>При помощи PodHopper Plus можно воспроизводить выпуски в случайном порядке и делать ещё много интересного</string>
     <key>paywall_dynamic_headline_watch</key>
-    <string>Прослушивайте подкасты через наручные часы при помощи Pocket Casts Plus и многое другое</string>
+    <string>Прослушивайте подкасты через наручные часы при помощи PodHopper Plus и многое другое</string>
     <key>phone</key>
     <string>Телефон</string>
     <key>play</key>
@@ -1944,9 +1944,9 @@ Pocket Casts на полную мощность.</string>
     <key>playback_2024_longest_episode_title</key>
     <string>Самым длинным выпуском, который вы прослушали, стал %1$@</string>
     <key>playback_2024_plus_upsell_button_title</key>
-    <string>Попробуйте Pocket Casts Plus</string>
+    <string>Попробуйте PodHopper Plus</string>
     <key>playback_2024_plus_upsell_description</key>
-    <string>Поддержите Pocket Casts, подписавшись на Plus, и пользуйтесь развёрнутой статистикой и премиум-функциями, например: закладками, папками и предварительным выбором глав!</string>
+    <string>Поддержите PodHopper, подписавшись на Plus, и пользуйтесь развёрнутой статистикой и премиум-функциями, например: закладками, папками и предварительным выбором глав!</string>
     <key>playback_2024_plus_upsell_title</key>
     <string>И это ещё не всё!</string>
     <key>playback_2024_ratings_description_1_to_3</key>
@@ -1994,7 +1994,7 @@ Pocket Casts на полную мощность.</string>
     <key>playback_2025_end_story_description</key>
     <string>Поделитесь своей статистикой с друзьями и покажите подкастерам, с которыми вы провели весь этот год, как вы их любите</string>
     <key>playback_2025_end_story_title</key>
-    <string>Спасибо, что провели весь год с Pocket Casts</string>
+    <string>Спасибо, что провели весь год с PodHopper</string>
     <key>playback_2025_failed_to_load</key>
     <string>Не удалось загрузить ваш год в подкастах</string>
     <key>playback_2025_feature_description</key>
@@ -2016,11 +2016,11 @@ Pocket Casts на полную мощность.</string>
     <key>playback_2025_plus_thanks_description</key>
     <string>Преимущества %1$@ дают возможность пользоваться дополнительной статистикой и возможностями</string>
     <key>playback_2025_plus_thanks_title</key>
-    <string>Благодарим за поддержку Pocket Casts!</string>
+    <string>Благодарим за поддержку PodHopper!</string>
     <key>playback_2025_plus_upsell_button_title</key>
-    <string>Приобретайте Pocket Casts Plus</string>
+    <string>Приобретайте PodHopper Plus</string>
     <key>playback_2025_plus_upsell_description</key>
-    <string>Подписывайтесь на Pocket Casts Plus и пользуйтесь расширенной статистикой, закладками, папками, выбором глав и множеством других инструментов для прослушивания</string>
+    <string>Подписывайтесь на PodHopper Plus и пользуйтесь расширенной статистикой, закладками, папками, выбором глав и множеством других инструментов для прослушивания</string>
     <key>playback_2025_plus_upsell_title</key>
     <string>Хотите больше возможностей?</string>
     <key>playback_2025_ratings_description_1_to_3</key>
@@ -2303,9 +2303,9 @@ Pocket Casts на полную мощность.</string>
     <key>please_try_again_later</key>
     <string>Повторите попытку позже.</string>
     <key>plus_account_required_prompt</key>
-    <string>Для Pocket Casts Plus требуется учетная запись Pocket Casts. Это позволяет беспрепятственно слушать подкасты на всех ваших устройствах.</string>
+    <string>Для PodHopper Plus требуется учетная запись PodHopper. Это позволяет беспрепятственно слушать подкасты на всех ваших устройствах.</string>
     <key>plus_account_required_prompt_details</key>
-    <string>Создайте учетную запись или войдите в систему, чтобы получить доступ к Pocket Casts Plus.</string>
+    <string>Создайте учетную запись или войдите в систему, чтобы получить доступ к PodHopper Plus.</string>
     <key>plus_account_trial_details</key>
     <string>По окончании пробного периода вы по-прежнему сможете пользоваться всеми преимуществами своей обычной учетной записи. Удачных подкастов!</string>
     <key>plus_button_title_unlock_all</key>
@@ -2313,15 +2313,15 @@ Pocket Casts на полную мощность.</string>
     <key>plus_cancel_terms</key>
     <string>Можно отменить в любое время</string>
     <key>plus_champion</key>
-    <string>Чемпион Pocket Casts</string>
+    <string>Чемпион PodHopper</string>
     <key>plus_champion_message</key>
-    <string>Благодарим за то, что вы с Pocket Casts с самого начала! Вы настоящий чемпион!</string>
+    <string>Благодарим за то, что вы с PodHopper с самого начала! Вы настоящий чемпион!</string>
     <key>plus_cloud_storage_limit_format</key>
     <string>Облачное хранилище %1$@ ГБ</string>
     <key>plus_discount_yearly_membership</key>
     <string>Скидка 50%% на первый год</string>
     <key>plus_error_already_registered</key>
-    <string>У вас уже есть учетная запись Pocket Casts Plus</string>
+    <string>У вас уже есть учетная запись PodHopper Plus</string>
     <key>plus_error_already_registered_details</key>
     <string>Спасибо за вашу поддержку, но, к сожалению, это означает, что вы не можете участвовать в этой акции.</string>
     <key>plus_expiration_format</key>
@@ -2385,7 +2385,7 @@ Pocket Casts на полную мощность.</string>
     <key>plus_marketing_hide_ads_title</key>
     <string>Скрыть рекламу</string>
     <key>plus_marketing_learn_more_button</key>
-    <string>Подробнее о Pocket Casts Plus</string>
+    <string>Подробнее о PodHopper Plus</string>
     <key>plus_marketing_main_description</key>
     <string>Личное пространство в открытом мире. Загрузите свои личные аудиофайлы на наши облачные серверы, зайдите в свою учетную запись через веб-плеер и пользуйтесь приложением.</string>
     <key>plus_marketing_no_banner_ads</key>
@@ -2417,11 +2417,11 @@ Pocket Casts на полную мощность.</string>
     <key>plus_price_per_month</key>
     <string>%1$@ в месяц</string>
     <key>plus_promo_paragraph</key>
-    <string>Приобретите Pocket Casts Plus, чтобы разблокировать эту и множество других функций!</string>
+    <string>Приобретите PodHopper Plus, чтобы разблокировать эту и множество других функций!</string>
     <key>plus_promotion_expired</key>
     <string>Срок промокода истек, или он недействителен</string>
     <key>plus_promotion_expired_nudge</key>
-    <string>Вы все равно можете зарегистрироваться на Pocket Casts Plus, создать обычную учетную запись или просто погрузиться в прослушивание.</string>
+    <string>Вы все равно можете зарегистрироваться на PodHopper Plus, создать обычную учетную запись или просто погрузиться в прослушивание.</string>
     <key>plus_promotion_used</key>
     <string>Код уже использован</string>
     <key>plus_purchase_failed</key>
@@ -2429,7 +2429,7 @@ Pocket Casts на полную мощность.</string>
     <key>plus_purchase_promo_title</key>
     <string>Станьте пользователем Plus и получите доступ ко всем возможностям Pocket Casts</string>
     <key>plus_required_feature</key>
-    <string>Для работы этой функции требуется Pocket Casts Plus</string>
+    <string>Для работы этой функции требуется PodHopper Plus</string>
     <key>plus_select_payment_frequency</key>
     <string>Выбрать срок оплаты</string>
     <key>plus_skip</key>
@@ -2447,11 +2447,11 @@ Pocket Casts на полную мощность.</string>
     <key>plus_subscription_expiration</key>
     <string>PLUS ИСТЕКАЕТ %1$@</string>
     <key>plus_subscription_google</key>
-    <string>Похоже, вы подписались на Pocket Casts Plus на устройстве Android</string>
+    <string>Похоже, вы подписались на PodHopper Plus на устройстве Android</string>
     <key>plus_subscription_google_details</key>
     <string>Чтобы аннулировать подписку, вам нужно отменить ее в настройках.</string>
     <key>plus_subscription_web</key>
-    <string>Похоже, вы подписались на Pocket Casts Plus через Интернет</string>
+    <string>Похоже, вы подписались на PodHopper Plus через Интернет</string>
     <key>plus_subscription_web_details</key>
     <string>Чтобы аннулировать подписку, вам нужно отменить ее на сайте Pocketcasts.com.</string>
     <key>plus_upgrade_no_internet_message</key>
@@ -2461,13 +2461,13 @@ Pocket Casts на полную мощность.</string>
     <key>plus_yearly_frequency_pricing_format</key>
     <string>%1$@ в год</string>
     <key>pocket_casts_logo</key>
-    <string>Логотип Pocket Casts</string>
+    <string>Логотип PodHopper</string>
     <key>pocket_casts_newsletter</key>
-    <string>Новостная рассылка Pocket Casts</string>
+    <string>Новостная рассылка PodHopper</string>
     <key>pocket_casts_newsletter_description</key>
     <string>Получайте новости, обновления приложения, тематические плейлисты, интервью и многое другое.</string>
     <key>pocket_casts_plus</key>
-    <string>Pocket Casts Plus</string>
+    <string>PodHopper Plus</string>
     <key>pocket_casts_plus_short</key>
     <string>Plus</string>
     <key>pocket_casts_welcome_newsletter_title</key>
@@ -2706,7 +2706,7 @@ Pocket Casts на полную мощность.</string>
     <key>profile</key>
     <string>Профиль</string>
     <key>profile_help_support</key>
-    <string>Поддержите Pocket Casts, перейдя на платную версию учётной записи</string>
+    <string>Поддержите PodHopper, перейдя на платную версию учётной записи</string>
     <key>profile_last_app_refresh</key>
     <string>Последнее обновление %1$@</string>
     <key>profile_listening_history_empty_description</key>
@@ -2752,7 +2752,7 @@ Pocket Casts на полную мощность.</string>
     <key>rate</key>
     <string>Оценить</string>
     <key>rate_pocket_casts</key>
-    <string>Оценить Pocket Casts</string>
+    <string>Оценить PodHopper</string>
     <key>rating_error</key>
     <string>Ой! Произошла ошибка.</string>
     <key>rating_listen_to_this_podcast_message</key>
@@ -2798,7 +2798,7 @@ Pocket Casts на полную мощность.</string>
     <key>referrals_share_guest_pass</key>
     <string>Поделиться гостевым пропуском</string>
     <key>referrals_share_no_guest_pass_message</key>
-    <string>Спасибо, что поделились пропуском Pocket Casts! Мы сообщим, когда у вас появятся новые пропуска.</string>
+    <string>Спасибо, что поделились пропуском PodHopper! Мы сообщим, когда у вас появятся новые пропуска.</string>
     <key>referrals_share_no_guest_pass_title</key>
     <string>Вы потратили все гостевые пропуска!</string>
     <key>referrals_share_pass_long_message</key>
@@ -2811,7 +2811,7 @@ Pocket Casts на полную мощность.</string>
     <key>referrals_share_pass_subject</key>
     <string>Гостевой пропуск Pocket Casts Plus на %1$@</string>
     <key>referrals_tip_message</key>
-    <string>%1$@ пользования Pocket Casts Plus в подарок!</string>
+    <string>%1$@ пользования PodHopper Plus в подарок!</string>
     <key>referrals_tip_title</key>
     <string>Вы можете поделиться пропусками (%1$@)</string>
     <key>refresh_control_fetching_episodes</key>
@@ -2971,7 +2971,7 @@ Pocket Casts на полную мощность.</string>
     <key>server_error_login_user_register_failed</key>
     <string>Не удается создать учетную запись, повторите попытку позже</string>
     <key>server_error_promo_already_plus</key>
-    <string>Вы уже подписчик Pocket Casts Plus, поэтому вам не нужно использовать какие-либо коды.</string>
+    <string>Вы уже подписчик PodHopper Plus, поэтому вам не нужно использовать какие-либо коды.</string>
     <key>server_error_promo_already_redeemed</key>
     <string>Вы уже воспользовались этим промокодом. Но попытаться все-таки стоило!</string>
     <key>server_error_promo_code_expired_or_invalid</key>
@@ -3093,7 +3093,7 @@ Pocket Casts на полную мощность.</string>
     <key>settings_custom_auto_archive_msg</key>
     <string>Требуется более детальное управление? Включить настройки автоматического архивирования для этого подкаста</string>
     <key>settings_custom_msg</key>
-    <string>Pocket Casts запомнит последние эффекты воспроизведения и будет использовать их во всех подкастах. Вы можете включить эту опцию, если хотите создать собственные настройки только для этого подкаста.</string>
+    <string>PodHopper запомнит последние эффекты воспроизведения и будет использовать их во всех подкастах. Вы можете включить эту опцию, если хотите создать собственные настройки только для этого подкаста.</string>
     <key>settings_episode_limit</key>
     <string>Порог выпусков</string>
     <key>settings_episode_limit_format</key>
@@ -3211,7 +3211,7 @@ Pocket Casts на полную мощность.</string>
     <key>settings_general_smart_playback</key>
     <string>Умное возобновление воспроизведения</string>
     <key>settings_general_smart_playback_subtitle</key>
-    <string>Если опция включена, Pocket Casts вернется немного назад в возобновляемых выпусках, чтобы вам было удобнее наверстать упущенное.</string>
+    <string>Если опция включена, PodHopper вернется немного назад в возобновляемых выпусках, чтобы вам было удобнее наверстать упущенное.</string>
     <key>settings_general_up_next_swipe</key>
     <string>Смахнуть следующий</string>
     <key>settings_general_up_next_tap</key>
@@ -3335,9 +3335,9 @@ Pocket Casts на полную мощность.</string>
     <key>settings_status_host</key>
     <string>Распространённые хостинги подкастов</string>
     <key>settings_status_host_description</key>
-    <string>Авторы подкастов размещают файлы выпусков у различных хостинг-провайдеров, которые не контролируются Pocket Casts.</string>
+    <string>Авторы подкастов размещают файлы выпусков у различных хостинг-провайдеров, которые не контролируются PodHopper.</string>
     <key>settings_status_host_failure_message</key>
-    <string>Чаще всего это связано с тем, что на вашем телефоне или в сети настроен блокировщик рекламы. Для скачивания подкастов вам потребуется разблокировать этот домен. Обратите внимание, что Pocket Casts не размещает подкасты на своих серверах и не выбирает место их размещения. Этим занимаются авторы программ, и мы не можем это контролировать.</string>
+    <string>Чаще всего это связано с тем, что на вашем телефоне или в сети настроен блокировщик рекламы. Для скачивания подкастов вам потребуется разблокировать этот домен. Обратите внимание, что PodHopper не размещает подкасты на своих серверах и не выбирает место их размещения. Этим занимаются авторы программ, и мы не можем это контролировать.</string>
     <key>settings_status_internet</key>
     <string>Интернет</string>
     <key>settings_status_internet_description</key>
@@ -3395,7 +3395,7 @@ Pocket Casts на полную мощность.</string>
     <key>settings_watch_episode_limit</key>
     <string>Количество выпусков</string>
     <key>settings_watch_episode_limit_subtitle</key>
-    <string>Pocket Casts скачает в Watch первые %1$@ выпусков из вашей очереди «Следующие» для автономного прослушивания.</string>
+    <string>PodHopper скачает в Watch первые %1$@ выпусков из вашей очереди «Следующие» для автономного прослушивания.</string>
     <key>settings_watch_episode_number_option_format</key>
     <string>Первые %1$@</string>
     <key>setup_account</key>
@@ -3571,9 +3571,9 @@ Pocket Casts на полную мощность.</string>
     <key>skip_chapters</key>
     <string>Предварительный выбор глав</string>
     <key>skip_chapters_patron_prompt</key>
-    <string>Возможность предварительно выбирать главы и множество других функций с Pocket Casts Patron</string>
+    <string>Возможность предварительно выбирать главы и множество других функций с PodHopper Patron</string>
     <key>skip_chapters_plus_prompt</key>
-    <string>Возможность предварительно выбирать главы и множество других функций с Pocket Casts Plus</string>
+    <string>Возможность предварительно выбирать главы и множество других функций с PodHopper Plus</string>
     <key>skip_forward</key>
     <string>Перейти дальше</string>
     <key>sleep_timer</key>
@@ -3623,7 +3623,7 @@ Pocket Casts на полную мощность.</string>
 
 Ваш адрес электронной почты, пароль и другие конфиденциальные данные никогда не разглашаются.</string>
     <key>sonos_connection_sign_in_prompt</key>
-    <string>Для подключения к Sonos нужна учетная запись Pocket Casts.</string>
+    <string>Для подключения к Sonos нужна учетная запись PodHopper.</string>
     <key>sort_by</key>
     <string>Приоритет сортировки</string>
     <key>sort_episodes</key>
@@ -3865,7 +3865,7 @@ Pocket Casts на полную мощность.</string>
     <key>tv_home_browse_categories_section_title</key>
     <string>Просмотр рубрик</string>
     <key>tv_home_featured_section_title</key>
-    <string>Популярное в Pocket Casts</string>
+    <string>Популярное в PodHopper</string>
     <key>tv_home_keep_listening_title</key>
     <string>Продолжаем с того места, где вы остановились</string>
     <key>tv_home_new_releases</key>
@@ -4009,7 +4009,7 @@ Pocket Casts на полную мощность.</string>
     <key>tv_welcome_subtitle</key>
     <string>Ваши подкасты. На большом экране. Очевидно.</string>
     <key>tv_welcome_title</key>
-    <string>Добро пожаловать в Pocket Casts TV!</string>
+    <string>Добро пожаловать в PodHopper TV!</string>
     <key>unarchive</key>
     <string>Из&amp;nbsp;архива</string>
     <key>unfollow</key>
@@ -4057,7 +4057,7 @@ Pocket Casts на полную мощность.</string>
     <key>upgrade_experiment_free_membership_format</key>
     <string>Бесплатный пробный период Plus: %1$@</string>
     <key>upgrade_experiment_paywall_button</key>
-    <string>Получите Pocket Casts Plus</string>
+    <string>Получите PodHopper Plus</string>
     <key>upgrade_experiment_reviews_app_store_button</key>
     <string>Читать другие отзывы в App Store</string>
     <key>upgrade_experiment_reviews_app_store_info</key>
@@ -4067,7 +4067,7 @@ Pocket Casts на полную мощность.</string>
     <key>upgrade_experiment_reviews_review_text_1</key>
     <string>Пользуюсь 8 лет, и за это время отличное приложение стало ещё лучше.</string>
     <key>upgrade_experiment_reviews_review_text_2</key>
-    <string>Я пользуюсь Pocket Casts с 2017 года.
+    <string>Я пользуюсь PodHopper с 2017 года.
 
 Могу поклясться, что это лучшее приложение для прослушивания подкастов. В нём много полезных функций, и оно активно развивается. Были жалобы на то, что изменился интерфейс, но я не заметил никаких серьёзных изменений.
 
@@ -4113,7 +4113,7 @@ Pocket Casts на полную мощность.</string>
     <key>user_satisfaction_survey_subtitle</key>
     <string>Здравствуйте! Мы хотели бы узнать, нравится ли вам наше приложение.</string>
     <key>user_satisfaction_survey_title</key>
-    <string>Вам нравится Pocket Casts?</string>
+    <string>Вам нравится PodHopper?</string>
     <key>user_satisfaction_survey_yes_response</key>
     <string>Да!</string>
     <key>view_transcript</key>
@@ -4159,11 +4159,11 @@ Pocket Casts на полную мощность.</string>
     <key>watch_source_msg</key>
     <string>Подкасты будут воспроизводиться из динамика, к которому подключено выбранное устройство</string>
     <key>watch_source_plus_info</key>
-    <string>Загрузите приложение на часы и слушайте без телефона. Попробуйте Pocket Casts Plus на телефоне или в веб-приложении.</string>
+    <string>Загрузите приложение на часы и слушайте без телефона. Попробуйте PodHopper Plus на телефоне или в веб-приложении.</string>
     <key>watch_source_refresh_account</key>
     <string>Обновить учетную запись</string>
     <key>watch_source_refresh_account_info</key>
-    <string>Если у вас учетная запись Pocket Casts Plus, обновите ее, чтобы включить все возможности</string>
+    <string>Если у вас учетная запись PodHopper Plus, обновите ее, чтобы включить все возможности</string>
     <key>watch_source_refresh_data</key>
     <string>Обновить данные</string>
     <key>watch_source_sign_in_info</key>
@@ -4199,7 +4199,7 @@ Pocket Casts на полную мощность.</string>
     <key>whats_new_in_version</key>
     <string>Новые возможности %1$@</string>
     <key>whats_new_page_one_7_20</key>
-    <string>Если вы любите подкасты так же, как мы, то у вас их должно быть много. Теперь подписчики Pocket Casts Plus могут сортировать их по папкам и делить на удобные группы.
+    <string>Если вы любите подкасты так же, как мы, то у вас их должно быть много. Теперь подписчики PodHopper Plus могут сортировать их по папкам и делить на удобные группы.
 
 Благодаря вашей поддержке ваш главный экран выглядит существенно лучше!</string>
     <key>whats_new_page_one_title_7_20</key>
@@ -4211,7 +4211,7 @@ Pocket Casts на полную мощность.</string>
     <key>whats_new_page_two_title_7_20</key>
     <string>Синхронизация структуры домашней страницы</string>
     <key>widgets_app_icon_description</key>
-    <string>Быстрый запуск Pocket Casts</string>
+    <string>Быстрый запуск PodHopper</string>
     <key>widgets_app_icon_name</key>
     <string>Иконка</string>
     <key>widgets_discover_prompt_msg</key>

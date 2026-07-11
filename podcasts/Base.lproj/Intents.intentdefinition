@@ -573,7 +573,7 @@
 					<key>INIntentParameterCombinationSupportsBackgroundExecution</key>
 					<true/>
 					<key>INIntentParameterCombinationTitle</key>
-					<string>${resumePlayback} Pocket Casts</string>
+					<string>${resumePlayback} PodHopper</string>
 					<key>INIntentParameterCombinationTitleID</key>
 					<string>E6Nzn4</string>
 				</dict>

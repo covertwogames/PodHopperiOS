@@ -64,7 +64,7 @@
     <key>accessibility_plus_only</key>
     <string>Bloquejat, és una funció Plus</string>
     <key>accessibility_profile_settings</key>
-    <string>Configuració de Pocket Casts</string>
+    <string>Configuració de PodHopper</string>
     <key>accessibility_select_episode</key>
     <string>Tria l'episodi</string>
     <key>accessibility_show_filter_details</key>
@@ -130,19 +130,19 @@
     <key>account_signed_out_alert_message</key>
     <string>Si escrius Google a Google, pots trencar Internet.
 
- Prem el botó de baix per a tornar a accedir al teu compte de Pocket Casts.</string>
+ Prem el botó de baix per a tornar a accedir al teu compte de PodHopper.</string>
     <key>account_signed_out_alert_title</key>
     <string>La teva sessió s'ha tancat.</string>
     <key>account_sso_failed</key>
     <string>Ha fallat l'accés amb Apple. Prova-ho de nou.</string>
     <key>account_title</key>
-    <string>Compte del Pocket Casts</string>
+    <string>Compte del PodHopper</string>
     <key>account_upgraded</key>
     <string>Compte actualitzat</string>
     <key>account_welcome</key>
-    <string>Us donem la benvinguda a Pocket Casts!</string>
+    <string>Us donem la benvinguda a PodHopper!</string>
     <key>account_welcome_plus</key>
-    <string>Us donem la benvinguda a Pocket Casts Plus!</string>
+    <string>Us donem la benvinguda a PodHopper Plus!</string>
     <key>add_bookmark</key>
     <string>Afegeix un marcador</string>
     <key>add_bookmark_subtitle</key>
@@ -185,7 +185,7 @@
     <string>Insígnia de l'aplicació</string>
     <key>app_clip_placholder_message</key>
     <string>Potser s'ha eliminat o l'enllaç està trencat. 
-Però hi ha molt més a Pocket Casts. 
+Però hi ha molt més a PodHopper. 
 Descarrega l'app per a una experiència completa!</string>
     <key>app_clip_placholder_title</key>
     <string>Ho sentim, no hem pogut trobar aquest episodi</string>
@@ -226,7 +226,7 @@ Descarrega l'app per a una experiència completa!</string>
     <key>app_icon_round_light</key>
     <string>Arrodonit clar</string>
     <key>app_share_text</key>
-    <string>Hola! A continuació trobaràs un enllaç per a descarregar Pocket Casts. Aquesta aplicació m'està agradant molt i crec que a tu també et pot interessar.</string>
+    <string>Hola! A continuació trobaràs un enllaç per a descarregar PodHopper. Aquesta aplicació m'està agradant molt i crec que a tu també et pot interessar.</string>
     <key>app_version</key>
     <string>Versió %1$@ (%2$@)</string>
     <key>appearance_app_icon_header</key>
@@ -238,7 +238,7 @@ Descarrega l'app per a una experiència completa!</string>
     <key>appearance_embedded_artwork</key>
     <string>Empra les caràtules integrades</string>
     <key>appearance_embedded_artwork_subtitle</key>
-    <string>Alguns pòdcasts tenen il·lustracions personalitzades per a certs episodis. Activa aquesta opció i Pocket Casts les mostrarà en lloc de la il·lustració del pòdcast.</string>
+    <string>Alguns pòdcasts tenen il·lustracions personalitzades per a certs episodis. Activa aquesta opció i PodHopper les mostrarà en lloc de la il·lustració del pòdcast.</string>
     <key>appearance_light_theme</key>
     <string>Tema clar</string>
     <key>appearance_match_device_theme</key>
@@ -322,7 +322,7 @@ Descarrega l'app per a una experiència completa!</string>
     <key>banner_ads_report_too_often</key>
     <string>Veig aquest anunci massa sovint</string>
     <key>beta_purchase_disabled</key>
-    <string>Per favor, descarrega Pocket Casts des de l'App Store per a comprar  %1$@.</string>
+    <string>Per favor, descarrega PodHopper des de l'App Store per a comprar  %1$@.</string>
     <key>beta_thank_you</key>
     <string>Gràcies per ser betatester!</string>
     <key>bookmark_added</key>
@@ -350,9 +350,9 @@ Descarrega l'app per a una experiència completa!</string>
     <key>bookmarks_count_singular</key>
     <string>1 marcador</string>
     <key>bookmarks_early_access_locked_message</key>
-    <string>Desbloqueja aquesta funció i moltes més amb Pocket Casts %1$@ i desa les marques de temps dels teus episodis preferits.  Prest disponible per a %2$@ subscriptors.</string>
+    <string>Desbloqueja aquesta funció i moltes més amb PodHopper %1$@ i desa les marques de temps dels teus episodis preferits.  Prest disponible per a %2$@ subscriptors.</string>
     <key>bookmarks_locked_message</key>
-    <string>Desbloqueja aquesta funció i moltes més amb Pocket Casts %1$@ i desa els marcadors dels teus episodis preferits.</string>
+    <string>Desbloqueja aquesta funció i moltes més amb PodHopper %1$@ i desa els marcadors dels teus episodis preferits.</string>
     <key>bottom</key>
     <string>Darrer de la cua</string>
     <key>bulk_download_max_format</key>
@@ -366,7 +366,7 @@ Descarrega l'app per a una experiència completa!</string>
     <key>cancel_confirm_item_plus</key>
     <string>Després d'aquesta data, s'eliminarà l'accés a les funcions Plus com ara els marcadors, la reproducció aleatòria, els dispositius portables i més.</string>
     <key>cancel_confirm_item_uploads</key>
-    <string>Tots els fitxers pujats al teu compte de Pocket Casts s'eliminaran (però els fitxers que has baixat al dispositiu mòbil es mantindran).</string>
+    <string>Tots els fitxers pujats al teu compte de PodHopper s'eliminaran (però els fitxers que has baixat al dispositiu mòbil es mantindran).</string>
     <key>cancel_confirm_sub_expiry</key>
     <string>La teva subscripció actual estarà activa fins al %1$@.</string>
     <key>cancel_confirm_sub_expiry_date_fallback</key>
@@ -398,17 +398,17 @@ Descarrega l'app per a una experiència completa!</string>
     <key>cancel_subscription_help_description</key>
     <string>Tenim problemes amb alguna funcionalitat o  dificultats.</string>
     <key>cancel_subscription_help_title</key>
-    <string>Necessites ajuda amb Pocket Casts?</string>
+    <string>Necessites ajuda amb PodHopper?</string>
     <key>cancel_subscription_new_plan_description</key>
     <string>Troba el pla que s'adequa per a tu.</string>
     <key>cancel_subscription_new_plan_title</key>
     <string>Busques un pla diferent?</string>
     <key>cancel_subscription_offer_success_view_description</key>
-    <string>Gràcies per triar Pocket Casts. El mes gratuït s'afegirà a la teva subscripció actual.</string>
+    <string>Gràcies per triar PodHopper. El mes gratuït s'afegirà a la teva subscripció actual.</string>
     <key>cancel_subscription_offer_success_view_title</key>
     <string>Gaudeix del teu mes gratuït!</string>
     <key>cancel_subscription_offer_yearly_success_view_description</key>
-    <string>Gràcies per triar Pocket Casts. El teu pla amb descompte comença després del teu període de facturació actual.</string>
+    <string>Gràcies per triar PodHopper. El teu pla amb descompte comença després del teu període de facturació actual.</string>
     <key>cancel_subscription_offer_yearly_success_view_title</key>
     <string>50%% de descompte en el teu any vinent!</string>
     <key>cancel_subscription_promotion_description_monthly</key>
@@ -433,7 +433,7 @@ Descarrega l'app per a una experiència completa!</string>
     <string>Envia</string>
     <key>cancel_subscription_survey_title</key>
     <string>Gràcies per provar
-Pocket Casts Plus</string>
+PodHopper Plus</string>
     <key>cancel_subscription_survey_toast_fail</key>
     <string>Alguna cosa ha anat malament.</string>
     <key>cancel_subscription_survey_toast_success</key>
@@ -446,9 +446,9 @@ Deixa'ns ajudar-te primer</string>
     <key>cancel_subscription_winback_view_continue_cancellation_button</key>
     <string>Continua amb la cancel·lació</string>
     <key>cancel_subscription_winback_view_description_montly</key>
-    <string>Gaudeix d'un mes de Pocket Casts Plus! L'oferta s'afegirà a la teva subscripció actual.</string>
+    <string>Gaudeix d'un mes de PodHopper Plus! L'oferta s'afegirà a la teva subscripció actual.</string>
     <key>cancel_subscription_winback_view_description_yearly</key>
-    <string>Paga %@ ara per assegurar un any de Pocket Casts Plus a meitat de preu. El teu any amb descompte comença després que acabi el teu pla actual.</string>
+    <string>Paga %@ ara per assegurar un any de PodHopper Plus a meitat de preu. El teu any amb descompte comença després que acabi el teu pla actual.</string>
     <key>cancel_subscription_winback_view_title_montly</key>
     <string>Aconsegueix el teu pròxim mes gratis i estalvia %@</string>
     <key>cancel_subscription_winback_view_title_yearly</key>
@@ -468,7 +468,7 @@ Deixa'ns ajudar-te primer</string>
     <key>champion_description</key>
     <string>Gràcies per estar amb nosaltres des del principi! Si t'agrada fer servir la nostra app, ens encantaria saber la teva opinió.</string>
     <key>champion_title</key>
-    <string>Ets un veritable campió de Pocket Casts!</string>
+    <string>Ets un veritable campió de PodHopper!</string>
     <key>change_app_icon</key>
     <string>Canvia la icona de l'app</string>
     <key>change_bookmark_subtitle</key>
@@ -558,11 +558,11 @@ Deixa'ns ajudar-te primer</string>
     <key>create_account</key>
     <string>Crea un compte</string>
     <key>create_account_app_store_error_message</key>
-    <string>Pocket Casts té problemes per a connectar-se a l'App Store. Comprova la connexió i torna-ho a provar.</string>
+    <string>PodHopper té problemes per a connectar-se a l'App Store. Comprova la connexió i torna-ho a provar.</string>
     <key>create_account_app_store_error_title</key>
     <string>No es pot contactar amb l'App Store</string>
     <key>create_account_find_out_more_plus</key>
-    <string>Més informació sobre Pocket Casts Plus</string>
+    <string>Més informació sobre PodHopper Plus</string>
     <key>create_account_free_account_type</key>
     <string>Normal</string>
     <key>create_account_free_details</key>
@@ -914,7 +914,7 @@ Deixa'ns ajudar-te primer</string>
     <key>eac_informational_card_sync_title</key>
     <string>Sincronitza entre els dispositius</string>
     <key>eac_informational_view_modal_description</key>
-    <string>Crea un compte o inicia sessió per gaudir de Pocket Casts al màxim.</string>
+    <string>Crea un compte o inicia sessió per gaudir de PodHopper al màxim.</string>
     <key>eac_informational_view_modal_get_started_button</key>
     <string>Comença</string>
     <key>eac_informational_view_modal_title</key>
@@ -1157,7 +1157,7 @@ Ens veiem el 2024!</string>
     <key>file_upload_name_required</key>
     <string>El nom és necessari</string>
     <key>file_upload_no_files_description</key>
-    <string>Puja els teus propis arxius a Pocket Casts, i escolta'ls quan vulguis.</string>
+    <string>Puja els teus propis arxius a PodHopper, i escolta'ls quan vulguis.</string>
     <key>file_upload_no_files_helper</key>
     <string>Com ho faig?</string>
     <key>file_upload_no_files_title</key>
@@ -1385,7 +1385,7 @@ Ens veiem el 2024!</string>
     <key>generated_transcripts_overlay_description</key>
     <string>Subscriu-te a Plus per accedir a aquesta funció i a altres Prèmium, com ara els marcadors i les carpetes.</string>
     <key>generated_transcripts_overlay_title</key>
-    <string>Pocket Casts genera automàticament aquesta transcripció.</string>
+    <string>PodHopper genera automàticament aquesta transcripció.</string>
     <key>go_to_discover</key>
     <string>Ves a Descobreix</string>
     <key>go_to_podcast</key>
@@ -1417,11 +1417,11 @@ Ens veiem el 2024!</string>
     <key>how_to_upload_explanation</key>
     <string>Primer, obre una aplicació que tingui els arxius d'àudio que vols desar</string>
     <key>how_to_upload_share_action_image_center_text</key>
-    <string>Copiar a Pocket Casts</string>
+    <string>Copiar a PodHopper</string>
     <key>how_to_upload_share_action_image_sides_text</key>
     <string>Una altra cosa</string>
     <key>how_to_upload_share_action_instruction</key>
-    <string>Al menú, toca 'Copiar a Pocket Casts'</string>
+    <string>Al menú, toca 'Copiar a PodHopper's</string>
     <key>how_to_upload_share_menu_image_background_button_text</key>
     <string>Fitxer d'àudio</string>
     <key>how_to_upload_share_menu_image_foreground_menu_option_text</key>
@@ -1442,33 +1442,33 @@ Nota: En cas que hagis eliminat l'aplicació Dreceres, se't demanarà que la tor
 1. Toca el botó Instal·lar drecera que apareix a continuació.
 2. Quan se't demani, toca el botó Afegeix drecera.
 3. Ves a la pestanya Dreceres. 
-4. A la llista, localitza la drecera "Apple Podcasts a Pocket Casts". 
+4. A la llista, localitza la drecera "Apple Podcasts a PodHopper". 
 5. Toca aquesta opció per a iniciar el procés d'importació. 
-6. Quan la drecera estigui feta, en executar Pocket Casts es tornarà a obrir i es finalitzarà el procés d'importació.</string>
+6. Quan la drecera estigui feta, en executar PodHopper es tornarà a obrir i es finalitzarà el procés d'importació.</string>
     <key>import_instructions_breaker</key>
     <string>1. Toca el botó Obrir a Breaker que apareix a sota. 
 2. Ves a Paràmetres a la barra de pestanyes inferior. 
 3. Ves a Connexió 
 4. Ves a Exportar subscripcions. 
-5. Quan obris el diàleg, cerca la icona de Pocket Casts i ves-hi</string>
+5. Quan obris el diàleg, cerca la icona de PodHopper i ves-hi</string>
     <key>import_instructions_castbox</key>
     <string>1. Toca el botó Obrir a Castbox que apareix a sota. 
 2. Ves a la pestanya Personal. 
 3. Feu lliscar cap avall fins que veieu l'opció Configuració i toca-la. 
 4. Fes lliscar cap avall fins que vegis l'opció Exportació d'OPML i prem-la
- 5. Si apareix, toca "Obrir a Pocket Casts". 
+ 5. Si apareix, toca "Obrir a PodHopper". 
 6. Si el fitxer s'obre a Safari, toca el botó Descarregar. 
 7. Quan la baixada hagi acabat, toca la icona de baixada que apareix a la barra d'URL. 
 8. Ves a l'element a Descàrregues.
 9. Selecciona el fitxer castbox_opml. 
-10. Si cal, toca la icona Compartir i, a continuació, obre el fitxer amb Pocket Casts. 
-11. Quan obris el diàleg de compartir, cerca la icona de Pocket Casts i prem-la</string>
+10. Si cal, toca la icona Compartir i, a continuació, obre el fitxer amb PodHopper. 
+11. Quan obris el diàleg de compartir, cerca la icona de PodHopper i prem-la</string>
     <key>import_instructions_castro</key>
     <string>1. Toca el botó Obrir a Castro que surt a sota.
 2. Toca la icona d'engranatge que apareix a la part superior de l'aplicació. 
 3. Fes lliscar cap avall fins que vegis l'opció Dades d'usuari i llavors pica-hi.
 4. Pitja l'element Exportar subscripcions. 
-5. Quan obriu el diàleg de compartir, cerqueu la icona de Pocket Casts i pitja-la</string>
+5. Quan obriu el diàleg de compartir, cerqueu la icona de PodHopper i pitja-la</string>
     <key>import_instructions_import_from</key>
     <string>Importa des de %1$@</string>
     <key>import_instructions_install_shortcut</key>
@@ -1481,17 +1481,17 @@ Nota: En cas que hagis eliminat l'aplicació Dreceres, se't demanarà que la tor
     <string>1. Toca el botó de sota per a obrir a Overcast. 
 2. Toca la icona d'engranatge que apareix a la part superior de l'aplicació. 
 3. Fes lliscar cap avall fins que vegis l'opció Exportar OPML i ves-hi. 
-4. Quan obriu el diàleg, cerca la icona de Pocket Casts i ves-hi</string>
+4. Quan obriu el diàleg, cerca la icona de PodHopper i ves-hi</string>
     <key>import_opml_from_url</key>
     <string>Importa els teus pòdcasts des d'un arxiu OPML emprant un URL</string>
     <key>import_podcasts_description</key>
-    <string>Pots importar les subscripcions de pòdcasts a Pocket Casts amb el format OPML, que s'admet en moltes aplicacions. Exporta el fitxer a l'altra aplicació i tria obrir-lo a Pocket Casts.
+    <string>Pots importar les subscripcions de pòdcasts a PodHopper amb el format OPML, que s'admet en moltes aplicacions. Exporta el fitxer a l'altra aplicació i tria obrir-lo a PodHopper.
 
-Nota: És possible que t'hagis d'enviar el fitxer OPML a tu mateix per correu electrònic, mantingues premut el fitxer adjunt i seleccioneu Pocket Casts.</string>
+Nota: És possible que t'hagis d'enviar el fitxer OPML a tu mateix per correu electrònic, mantingues premut el fitxer adjunt i seleccioneu PodHopper.</string>
     <key>import_podcasts_description_new</key>
-    <string>Pots importar els teus pòdcasts a Pocket Casts utilitzant el format OPML, que és un format àmpliament suportat. Exporta el fitxer d'una altra aplicació i tria obrir-lo a Pocket Casts.
+    <string>Pots importar els teus pòdcasts a PodHopper utilitzant el format OPML, que és un format àmpliament suportat. Exporta el fitxer d'una altra aplicació i tria obrir-lo a PodHopper.
 
-Nota: Potser necessitaràs enviar-te per correu electrònic el fitxer OPML, mantingues premut l'adjunt i selecciona Pocket Casts.</string>
+Nota: Potser necessitaràs enviar-te per correu electrònic el fitxer OPML, mantingues premut l'adjunt i selecciona PodHopper.</string>
     <key>import_podcasts_title</key>
     <string>IMPORTAR A POCKET CASTS</string>
     <key>import_subtitle</key>
@@ -1531,7 +1531,7 @@ Nota: Potser necessitaràs enviar-te per correu electrònic el fitxer OPML, mant
     <key>kids_profile_submit_feedback_send_button</key>
     <string>Envia</string>
     <key>kids_profile_submit_feedback_title</key>
-    <string>Què t'agradaria veure en un perfil d'infants per a Pocket Casts?</string>
+    <string>Què t'agradaria veure en un perfil d'infants per a PodHopper?</string>
     <key>kids_profile_submit_success</key>
     <string>Gràcies per la teva aportació!</string>
     <key>kids_profile_thankyou_button_close</key>
@@ -1557,9 +1557,9 @@ Nota: Potser necessitaràs enviar-te per correu electrònic el fitxer OPML, mant
     <key>loading</key>
     <string>Carregant...</string>
     <key>login_landing_subtitle</key>
-    <string>Els teus pòdcasts, sempre sincronitzats. Mantingues la teva biblioteca segura i gaudeix de Pocket Casts a la web i escriptori.</string>
+    <string>Els teus pòdcasts, sempre sincronitzats. Mantingues la teva biblioteca segura i gaudeix de PodHopper a la web i escriptori.</string>
     <key>login_landing_title</key>
-    <string>Crea un compte de Pocket Casts</string>
+    <string>Crea un compte de PodHopper</string>
     <key>login_subtitle</key>
     <string>Crea un compte per a sincronitzar la teva experiència auditiva en tots els teus dispositius.</string>
     <key>login_title</key>
@@ -1569,7 +1569,7 @@ Nota: Potser necessitaràs enviar-te per correu electrònic el fitxer OPML, mant
     <key>logs_no_email_account_configured</key>
     <string>Has de configurar un compte de correu electrònic al dispositiu per poder enviar els registres</string>
     <key>logs_watch_os_not_available</key>
-    <string>No hi ha registres de watchOS disponibles. Assegura't que tens un Apple Watch emparellat i l'aplicació de rellotge Pocket Casts instal·lada.</string>
+    <string>No hi ha registres de watchOS disponibles. Assegura't que tens un Apple Watch emparellat i l'aplicació de rellotge PodHopper instal·lada.</string>
     <key>manage_downloads_action</key>
     <string>Gestiona les descàrregues</string>
     <key>manage_downloads_detail</key>
@@ -1689,7 +1689,7 @@ Nota: Potser necessitaràs enviar-te per correu electrònic el fitxer OPML, mant
     <key>not_on_wifi</key>
     <string>No estàs connectat a una Wi-Fi</string>
     <key>notifications_app_clip_body</key>
-    <string>Instal·la Pocket Casts per gaudir de l'experiència completa amb potents eines de reproducció i personalització.</string>
+    <string>Instal·la PodHopper per gaudir de l'experiència completa amb potents eines de reproducció i personalització.</string>
     <key>notifications_app_clip_title</key>
     <string>Preparat per a més pòdcasts?</string>
     <key>notifications_daily_reminders</key>
@@ -1715,7 +1715,7 @@ Nota: Potser necessitaràs enviar-te per correu electrònic el fitxer OPML, mant
     <key>notifications_onboarding_filters_title</key>
     <string>Organitza els teus episodis</string>
     <key>notifications_onboarding_import_body</key>
-    <string>Vens des d'una altra app? Porta tots els teus pòdcasts favorits a Pocket Casts.</string>
+    <string>Vens des d'una altra app? Porta tots els teus pòdcasts favorits a PodHopper.</string>
     <key>notifications_onboarding_import_title</key>
     <string>Importa els teus pòdcasts fàcilment</string>
     <key>notifications_onboarding_newsletter_subtitle</key>
@@ -1749,7 +1749,7 @@ Nota: Potser necessitaràs enviar-te per correu electrònic el fitxer OPML, mant
     <key>notifications_permissions_action</key>
     <string>Permet notificacions</string>
     <key>notifications_permissions_body</key>
-    <string>Les notificacions són la millor manera de fer un seguiment dels nous episodis, obtenir recomanacions de nous programes i consells sobre Pocket Casts.</string>
+    <string>Les notificacions són la millor manera de fer un seguiment dels nous episodis, obtenir recomanacions de nous programes i consells sobre PodHopper.</string>
     <key>notifications_permissions_needs_action</key>
     <string>Permet les notificacions a la configuració del dispositiu</string>
     <key>notifications_permissions_open_settings</key>
@@ -1761,7 +1761,7 @@ Nota: Potser necessitaràs enviar-te per correu electrònic el fitxer OPML, mant
     <key>notifications_play_now</key>
     <string>Reprodueix ara</string>
     <key>notifications_pocket_cast_offers</key>
-    <string>Ofertes de Pocket Casts</string>
+    <string>Ofertes de PodHopper</string>
     <key>notifications_recommendations_trending_body</key>
     <string>Mira el que tothom està escoltant aquesta setmana.</string>
     <key>notifications_recommendations_trending_title</key>
@@ -1783,7 +1783,7 @@ Nota: Potser necessitaràs enviar-te per correu electrònic el fitxer OPML, mant
     <key>notitifications_permission_banner_action</key>
     <string>Ves a la configuració del dispositiu</string>
     <key>notitifications_permission_banner_message</key>
-    <string>Per rebre notificacions de Pocket Casts, hauràs d'activar-les a la configuració del dispositiu.</string>
+    <string>Per rebre notificacions de PodHopper, hauràs d'activar-les a la configuració del dispositiu.</string>
     <key>notitifications_permission_banner_title</key>
     <string>Permet notificacions push</string>
     <key>now_playing</key>
@@ -1803,7 +1803,7 @@ Nota: Potser necessitaràs enviar-te per correu electrònic el fitxer OPML, mant
     <key>on</key>
     <string>Activat</string>
     <key>onboarding_quote_author</key>
-    <string>Usuari de Pocket Casts</string>
+    <string>Usuari de PodHopper</string>
     <key>onboarding_quote_best</key>
     <string>La millor aplicació de pòdcasts. Amb diferència</string>
     <key>onboarding_quote_customization</key>
@@ -1868,7 +1868,7 @@ ACTUALITZACIONS</string>
     <key>patron_callout</key>
     <string>Confies en la nostra feina i vols mostrar-nos el teu suport?</string>
     <key>patron_description</key>
-    <string>Converteix-te en membre Patron de Pocket Casts i ajuda'ns a continuar oferint la millor experiència de pòdcast possible.</string>
+    <string>Converteix-te en membre Patron de PodHopper i ajuda'ns a continuar oferint la millor experiència de pòdcast possible.</string>
     <key>patron_feature_early_access</key>
     <string>Accés anticipat a les funcions</string>
     <key>patron_feature_everything_in_plus</key>
@@ -1876,9 +1876,9 @@ ACTUALITZACIONS</string>
     <key>patron_feature_profile_badge</key>
     <string>Els subscriptors tenen una insígnia de perfil</string>
     <key>patron_feature_profile_icons</key>
-    <string>Icones especials de l'aplicació Pocket Casts</string>
+    <string>Icones especials de l'aplicació PodHopper</string>
     <key>patron_purchase_promo_title</key>
-    <string>Converteix-te en membre Patron i gaudeix de totes les funcions de Pocket Casts</string>
+    <string>Converteix-te en membre Patron i gaudeix de totes les funcions de PodHopper</string>
     <key>patron_subscribe_to</key>
     <string>Subscriu-te a Patron</string>
     <key>patron_thank_you</key>
@@ -1894,19 +1894,19 @@ ACTUALITZACIONS</string>
     <key>pause</key>
     <string>Pausa</string>
     <key>paywall_dynamic_headline_banner_ad</key>
-    <string>Digues adeu als anuncis publicitaris i més amb Pocket Casts Plus</string>
+    <string>Digues adeu als anuncis publicitaris i més amb PodHopper Plus</string>
     <key>paywall_dynamic_headline_files</key>
-    <string>Carrega els teus arxius amb Pocket Casts Plus, i més</string>
+    <string>Carrega els teus arxius amb PodHopper Plus, i més</string>
     <key>paywall_dynamic_headline_folder</key>
-    <string>Organitza els teus pòdcasts amb Pocket Casts Plus, i més</string>
+    <string>Organitza els teus pòdcasts amb PodHopper Plus, i més</string>
     <key>paywall_dynamic_headline_icons</key>
-    <string>Aconsegueix icones de l'app exclusives amb Pocket Casts Plus, i més</string>
+    <string>Aconsegueix icones de l'app exclusives amb PodHopper Plus, i més</string>
     <key>paywall_dynamic_headline_themes</key>
-    <string>Aconsegueix temes exclusius amb Pocket Casts Plus, i més</string>
+    <string>Aconsegueix temes exclusius amb PodHopper Plus, i més</string>
     <key>paywall_dynamic_headline_up_next_shuffle</key>
-    <string>Barreja els teus episodis amb Pocket Casts Plus, i més</string>
+    <string>Barreja els teus episodis amb PodHopper Plus, i més</string>
     <key>paywall_dynamic_headline_watch</key>
-    <string>Escolta des del teu rellotge amb Pocket Casts Plus, i més</string>
+    <string>Escolta des del teu rellotge amb PodHopper Plus, i més</string>
     <key>phone</key>
     <string>Telèfon</string>
     <key>play</key>
@@ -1938,9 +1938,9 @@ ACTUALITZACIONS</string>
     <key>playback_2024_longest_episode_title</key>
     <string>L'episodi més llarg que has escoltat ha estat %1$@</string>
     <key>playback_2024_plus_upsell_button_title</key>
-    <string>Consulta Pocket Casts Plus</string>
+    <string>Consulta PodHopper Plus</string>
     <key>playback_2024_plus_upsell_description</key>
-    <string>Ajuda Pocket Casts subscrivint-te a Plus i obtén més estadístiques, a més de funcions Prèmium com ara marcadors, carpetes o capítols preseleccionats!</string>
+    <string>Ajuda PodHopper subscrivint-te a Plus i obtén més estadístiques, a més de funcions Prèmium com ara marcadors, carpetes o capítols preseleccionats!</string>
     <key>playback_2024_plus_upsell_title</key>
     <string>Encara hi ha més!</string>
     <key>playback_2024_ratings_description_1_to_3</key>
@@ -1988,7 +1988,7 @@ ACTUALITZACIONS</string>
     <key>playback_2025_end_story_description</key>
     <string>Comparteix la teva reproducció amb els amics i mostra afecte als podcasters que t’han acompanyat durant tot l’any</string>
     <key>playback_2025_end_story_title</key>
-    <string>Gràcies per passar l'any amb Pocket Casts</string>
+    <string>Gràcies per passar l'any amb PodHopper</string>
     <key>playback_2025_failed_to_load</key>
     <string>No s'ha pogut carregar el repàs</string>
     <key>playback_2025_feature_description</key>
@@ -2010,11 +2010,11 @@ ACTUALITZACIONS</string>
     <key>playback_2025_plus_thanks_description</key>
     <string>Els teus avantatges de %1$@ activen estadístiques addicionals i funcions avançades</string>
     <key>playback_2025_plus_thanks_title</key>
-    <string>Gràcies per donar suport a Pocket Casts!</string>
+    <string>Gràcies per donar suport a PodHopper!</string>
     <key>playback_2025_plus_upsell_button_title</key>
-    <string>Aconsegueix Pocket Casts Plus</string>
+    <string>Aconsegueix PodHopper Plus</string>
     <key>playback_2025_plus_upsell_description</key>
-    <string>Subscriu-te a Pocket Casts Plus per a estadístiques ampliades, marcadors, carpetes, selecció de capítols i més maneres de millorar els teus hàbits d'escolta</string>
+    <string>Subscriu-te a PodHopper Plus per a estadístiques ampliades, marcadors, carpetes, selecció de capítols i més maneres de millorar els teus hàbits d'escolta</string>
     <key>playback_2025_plus_upsell_title</key>
     <string>Vols aprofundir més?</string>
     <key>playback_2025_ratings_description_1_to_3</key>
@@ -2297,9 +2297,9 @@ Prova d'ajustar les regles, o desa aquesta llista de reproducció per a futurs e
     <key>please_try_again_later</key>
     <string>Intenta-ho més tard.</string>
     <key>plus_account_required_prompt</key>
-    <string>Es necessita un compte de Pocket Casts per a entrar a Pocket Casts Plus. Això garanteix una escolta perfecta a tots els dispositius.</string>
+    <string>Es necessita un compte de PodHopper per a entrar a PodHopper Plus. Això garanteix una escolta perfecta a tots els dispositius.</string>
     <key>plus_account_required_prompt_details</key>
-    <string>Crea un compte o inicia sessió per a canviar el teu accés a Pocket Casts Plus.</string>
+    <string>Crea un compte o inicia sessió per a canviar el teu accés a PodHopper Plus.</string>
     <key>plus_account_trial_details</key>
     <string>Quan acabi la prova, podràs continuar gaudint de tots els avantatges del teu compte de sempre. Gaudeix dels pòdcasts!</string>
     <key>plus_button_title_unlock_all</key>
@@ -2307,15 +2307,15 @@ Prova d'ajustar les regles, o desa aquesta llista de reproducció per a futurs e
     <key>plus_cancel_terms</key>
     <string>Es pot cancel·lar en qualsevol moment</string>
     <key>plus_champion</key>
-    <string>Campió de Pocket Casts</string>
+    <string>Campió de PodHopper</string>
     <key>plus_champion_message</key>
-    <string>Gràcies per estar amb Pocket Casts des del principi. Ets un veritable campió!</string>
+    <string>Gràcies per estar amb PodHopper des del principi. Ets un veritable campió!</string>
     <key>plus_cloud_storage_limit_format</key>
     <string>%1$@ GB d'emmagatzematge al núvol</string>
     <key>plus_discount_yearly_membership</key>
     <string>50%% de descompte el primer any</string>
     <key>plus_error_already_registered</key>
-    <string>Ja tens un compte de Pocket Casts Plus</string>
+    <string>Ja tens un compte de PodHopper Plus</string>
     <key>plus_error_already_registered_details</key>
     <string>Gràcies pel teu suport, però lamentablement això significa que no pots participar en aquesta promoció.</string>
     <key>plus_expiration_format</key>
@@ -2349,7 +2349,7 @@ Prova d'ajustar les regles, o desa aquesta llista de reproducció per a futurs e
     <key>plus_feature_card_title_wear_os</key>
     <string>Reproducció d'Apple Watch i Wear OS</string>
     <key>plus_feature_gratitude</key>
-    <string>L'etern agraïment de l'equip de Pocket Casts</string>
+    <string>L'etern agraïment de l'equip de PodHopper</string>
     <key>plus_feature_librofm</key>
     <string>Audiollibres gratuïts des de Libro.fm</string>
     <key>plus_feature_slumber</key>
@@ -2379,7 +2379,7 @@ Prova d'ajustar les regles, o desa aquesta llista de reproducció per a futurs e
     <key>plus_marketing_hide_ads_title</key>
     <string>Amaga els anuncis</string>
     <key>plus_marketing_learn_more_button</key>
-    <string>Més informació sobre Pocket Casts Plus</string>
+    <string>Més informació sobre PodHopper Plus</string>
     <key>plus_marketing_main_description</key>
     <string>Personal i organitzat, tot a la vegada. Puja els teus arxius d'àudio personals als nostres servidors al núvol, accedeix al teu compte a través del nostre reproductor web i personalitza l'aplicació.</string>
     <key>plus_marketing_no_banner_ads</key>
@@ -2389,7 +2389,7 @@ Prova d'ajustar les regles, o desa aquesta llista de reproducció per a futurs e
     <key>plus_marketing_themes_icons_title</key>
     <string>Temes i icones</string>
     <key>plus_marketing_title</key>
-    <string>Tot el que t'agrada de Pocket Casts, i molt més</string>
+    <string>Tot el que t'agrada de PodHopper, i molt més</string>
     <key>plus_marketing_up_next_shuffle</key>
     <string>Reproducció aleatòria</string>
     <key>plus_marketing_updated_cloud_storage_description</key>
@@ -2411,19 +2411,19 @@ Prova d'ajustar les regles, o desa aquesta llista de reproducció per a futurs e
     <key>plus_price_per_month</key>
     <string>%1$@ / al mes</string>
     <key>plus_promo_paragraph</key>
-    <string>Aconsegueix Pocket Casts Plus per a desbloquejar aquesta funció i moltes més!</string>
+    <string>Aconsegueix PodHopper Plus per a desbloquejar aquesta funció i moltes més!</string>
     <key>plus_promotion_expired</key>
     <string>Promoció caducada o no vàlida</string>
     <key>plus_promotion_expired_nudge</key>
-    <string>De tota manera, pots registrar-te a Pocket Casts Plus, crear un compte normal o simplement començar a emprar-ho ara mateix.</string>
+    <string>De tota manera, pots registrar-te a PodHopper Plus, crear un compte normal o simplement començar a emprar-ho ara mateix.</string>
     <key>plus_promotion_used</key>
     <string>Aquest codi ja s'ha emprat</string>
     <key>plus_purchase_failed</key>
     <string>Sembla que s'ha produït un error en processar el pagament. Torneu-ho a provar.</string>
     <key>plus_purchase_promo_title</key>
-    <string>Passa't a membre Plus i gaudeix de totes les funcions de Pocket Casts</string>
+    <string>Passa't a membre Plus i gaudeix de totes les funcions de PodHopper</string>
     <key>plus_required_feature</key>
-    <string>Aquesta funció necessita Pocket Casts Plus</string>
+    <string>Aquesta funció necessita PodHopper Plus</string>
     <key>plus_select_payment_frequency</key>
     <string>Selecciona la freqüència de pagament</string>
     <key>plus_skip</key>
@@ -2441,11 +2441,11 @@ Prova d'ajustar les regles, o desa aquesta llista de reproducció per a futurs e
     <key>plus_subscription_expiration</key>
     <string>PLUS CADUCA EL %1$@</string>
     <key>plus_subscription_google</key>
-    <string>Sembla que t'has subscrit a Pocket Casts Plus des d'un dispositiu Android</string>
+    <string>Sembla que t'has subscrit a PodHopper Plus des d'un dispositiu Android</string>
     <key>plus_subscription_google_details</key>
     <string>Per a cancel·lar la subscripció, ho hauràs de fer anant a Configuració.</string>
     <key>plus_subscription_web</key>
-    <string>Sembla que t'has subscrit a Pocket Casts Plus des de la web</string>
+    <string>Sembla que t'has subscrit a PodHopper Plus des de la web</string>
     <key>plus_subscription_web_details</key>
     <string>Per a cancel·lar la subscripció, ho hauràs de fer anant a  Pocketcasts.com.</string>
     <key>plus_upgrade_no_internet_message</key>
@@ -2455,13 +2455,13 @@ Prova d'ajustar les regles, o desa aquesta llista de reproducció per a futurs e
     <key>plus_yearly_frequency_pricing_format</key>
     <string>%1$@ a l'any</string>
     <key>pocket_casts_logo</key>
-    <string>Logotip de Pocket Casts</string>
+    <string>Logotip de PodHopper</string>
     <key>pocket_casts_newsletter</key>
-    <string>Butlletí de Pocket Casts</string>
+    <string>Butlletí de PodHopper</string>
     <key>pocket_casts_newsletter_description</key>
     <string>Rep notícies, actualitzacions de l'aplicació, llistes de reproducció per tema, entrevistes i més.</string>
     <key>pocket_casts_plus</key>
-    <string>Pocket Casts Plus</string>
+    <string>PodHopper Plus</string>
     <key>pocket_casts_plus_short</key>
     <string>Plus</string>
     <key>pocket_casts_welcome_newsletter_title</key>
@@ -2699,7 +2699,7 @@ Si vols noves idees, ves a la pestanya Descobreix.</string>
     <key>profile</key>
     <string>Perfil</string>
     <key>profile_help_support</key>
-    <string>Millora el teu compte i ajuda a la compatibilitat de Pocket Casts</string>
+    <string>Millora el teu compte i ajuda a la compatibilitat de PodHopper</string>
     <key>profile_last_app_refresh</key>
     <string>Darrera actualització de l'aplicació: %1$@</string>
     <key>profile_listening_history_empty_description</key>
@@ -2745,7 +2745,7 @@ Si vols noves idees, ves a la pestanya Descobreix.</string>
     <key>rate</key>
     <string>Valora</string>
     <key>rate_pocket_casts</key>
-    <string>Valora Pocket Casts</string>
+    <string>Valora PodHopper</string>
     <key>rating_error</key>
     <string>Ep! Hi ha hagut un error.</string>
     <key>rating_listen_to_this_podcast_message</key>
@@ -2791,20 +2791,20 @@ Si vols noves idees, ves a la pestanya Descobreix.</string>
     <key>referrals_share_guest_pass</key>
     <string>Comparteix les invitacions per a convidats</string>
     <key>referrals_share_no_guest_pass_message</key>
-    <string>Gràcies per a compartir Pocket Casts! Et farem saber quan tinguis més invitacions per a donar.</string>
+    <string>Gràcies per a compartir PodHopper! Et farem saber quan tinguis més invitacions per a donar.</string>
     <key>referrals_share_no_guest_pass_title</key>
     <string>Has compartit totes les teves invitacions!</string>
     <key>referrals_share_pass_long_message</key>
     <string>Hola!
 
-Aquí tens una invitació de  %1$@ per a Pocket Casts Plus, el meu reproductor de pòdcasts favorit. Està ple de funcions úniques com ara marcadors, carpetes i molt més que no trobaràs enlloc més. Crec que també t'encantarà!
+Aquí tens una invitació de  %1$@ per a PodHopper Plus, el meu reproductor de pòdcasts favorit. Està ple de funcions úniques com ara marcadors, carpetes i molt més que no trobaràs enlloc més. Crec que també t'encantarà!
 </string>
     <key>referrals_share_pass_message</key>
-    <string>Ei! Utilitza l'enllaç a continuació per a reclamar la teva %1$@ invitació per a Pocket Casts Plus i gaudeix de pòdcasts a tots els teus dispositius!</string>
+    <string>Ei! Utilitza l'enllaç a continuació per a reclamar la teva %1$@ invitació per a PodHopper Plus i gaudeix de pòdcasts a tots els teus dispositius!</string>
     <key>referrals_share_pass_subject</key>
-    <string>%1$@ accés convidat a Pocket Casts Plus!</string>
+    <string>%1$@ accés convidat a PodHopper Plus!</string>
     <key>referrals_tip_message</key>
-    <string>Regala %1$@ de Pocket Casts Plus!</string>
+    <string>Regala %1$@ de PodHopper Plus!</string>
     <key>referrals_tip_title</key>
     <string>Tens %1$@ invitacions per a compartir</string>
     <key>refresh_control_fetching_episodes</key>
@@ -2964,7 +2964,7 @@ Aquí tens una invitació de  %1$@ per a Pocket Casts Plus, el meu reproductor d
     <key>server_error_login_user_register_failed</key>
     <string>No s'ha pogut crear el compte. Prova-ho més tard</string>
     <key>server_error_promo_already_plus</key>
-    <string>Ja estàs subscrit a Pocket Casts Plus. No és necessari  bescanviar cap codi més.</string>
+    <string>Ja estàs subscrit a PodHopper Plus. No és necessari  bescanviar cap codi més.</string>
     <key>server_error_promo_already_redeemed</key>
     <string>Ja has emprat aquest codi promocional. Però ha valgut la pena intentar-ho!</string>
     <key>server_error_promo_code_expired_or_invalid</key>
@@ -3086,7 +3086,7 @@ Aquí tens una invitació de  %1$@ per a Pocket Casts Plus, el meu reproductor d
     <key>settings_custom_auto_archive_msg</key>
     <string>Necessites un control més precís? Activa els paràmetres d'arxiu automàtic per a aquest pòdcast</string>
     <key>settings_custom_msg</key>
-    <string>Pocket Casts recordarà els últims efectes de reproducció i els utilitzarà a tots els pòdcasts. Per a crear efectes personalitzats exclusius per a aquest pòdcast, pots activar aquesta opció.</string>
+    <string>PodHopper recordarà els últims efectes de reproducció i els utilitzarà a tots els pòdcasts. Per a crear efectes personalitzats exclusius per a aquest pòdcast, pots activar aquesta opció.</string>
     <key>settings_episode_limit</key>
     <string>Límit d'episodis</string>
     <key>settings_episode_limit_format</key>
@@ -3168,7 +3168,7 @@ Aquí tens una invitació de  %1$@ per a Pocket Casts Plus, el meu reproductor d
     <key>settings_general_legacy_bluetooth</key>
     <string>Compatibilitat amb la tecnologia Bluetooth heretada</string>
     <key>settings_general_legacy_bluetooth_subtitle</key>
-    <string>Si tens un dispositiu amb Bluetooth o un estèreo d'automòbil que posa en pausa Pocket Casts mentre es reprodueix o restableix la posició de reproducció a 0, intenta activar aquesta configuració per a solucionar-ho.</string>
+    <string>Si tens un dispositiu amb Bluetooth o un estèreo d'automòbil que posa en pausa PodHopper mentre es reprodueix o restableix la posició de reproducció a 0, intenta activar aquesta configuració per a solucionar-ho.</string>
     <key>settings_general_lock_screen_disabled</key>
     <string>Impedir moure la barra de reproducció a la pantalla de bloqueig</string>
     <key>settings_general_multi_select_gesture</key>
@@ -3204,7 +3204,7 @@ Aquí tens una invitació de  %1$@ per a Pocket Casts Plus, el meu reproductor d
     <key>settings_general_smart_playback</key>
     <string>Represa intel·ligent de la reproducció</string>
     <key>settings_general_smart_playback_subtitle</key>
-    <string>Si està activat, Pocket Casts retrocedirà una mica els episodis que reprenguis perquè puguis posar-te al dia fàcilment.</string>
+    <string>Si està activat, PodHopper retrocedirà una mica els episodis que reprenguis perquè puguis posar-te al dia fàcilment.</string>
     <key>settings_general_up_next_swipe</key>
     <string>Si es llisca per a posar a la cua</string>
     <key>settings_general_up_next_tap</key>
@@ -3328,9 +3328,9 @@ Aquí tens una invitació de  %1$@ per a Pocket Casts Plus, el meu reproductor d
     <key>settings_status_host</key>
     <string>Proveïdors d'allotjament més comuns de pòdcasts</string>
     <key>settings_status_host_description</key>
-    <string>Els autors de pòdcast allotgen fitxers d'episodi en diversos proveïdors d'allotjament no gestionats per Pocket Casts.</string>
+    <string>Els autors de pòdcast allotgen fitxers d'episodi en diversos proveïdors d'allotjament no gestionats per PodHopper.</string>
     <key>settings_status_host_failure_message</key>
-    <string>La causa més comuna és que tens un bloquejador d'anuncis configurat al teu telèfon o xarxa. Has de desbloquejar aquest domini per a baixar pòdcasts. Tingues en compte que Pocket Casts no allotja ni tria on s'allotgen els pòdcasts, això depèn de l'autor del programa i està fora del nostre control.</string>
+    <string>La causa més comuna és que tens un bloquejador d'anuncis configurat al teu telèfon o xarxa. Has de desbloquejar aquest domini per a baixar pòdcasts. Tingues en compte que PodHopper no allotja ni tria on s'allotgen els pòdcasts, això depèn de l'autor del programa i està fora del nostre control.</string>
     <key>settings_status_internet</key>
     <string>Internet</string>
     <key>settings_status_internet_description</key>
@@ -3378,7 +3378,7 @@ Aquí tens una invitació de  %1$@ per a Pocket Casts Plus, el meu reproductor d
     <key>settings_watch_auto_download</key>
     <string>Descàrrega automàtica de la llista «Tot seguit»</string>
     <key>settings_watch_auto_download_off_subtitle</key>
-    <string>Estableix el nombre d'episodis de la llista «Tot seguit» que Pocket Casts descarregarà al teu rellotge perquè els puguis reproduir sense connexió.</string>
+    <string>Estableix el nombre d'episodis de la llista «Tot seguit» que PodHopper descarregarà al teu rellotge perquè els puguis reproduir sense connexió.</string>
     <key>settings_watch_delete_downloads</key>
     <string>Esborra les descàrregues que superin el límit</string>
     <key>settings_watch_delete_downloads_off_subtitle</key>
@@ -3388,7 +3388,7 @@ Aquí tens una invitació de  %1$@ per a Pocket Casts Plus, el meu reproductor d
     <key>settings_watch_episode_limit</key>
     <string>Nombre d'episodis</string>
     <key>settings_watch_episode_limit_subtitle</key>
-    <string>Pocket Casts descarregarà al teu rellotge els %1$@ principals episodis de la llista «Tot seguit» perquè puguis reproduir-los sense connexió.</string>
+    <string>PodHopper descarregarà al teu rellotge els %1$@ principals episodis de la llista «Tot seguit» perquè puguis reproduir-los sense connexió.</string>
     <key>settings_watch_episode_number_option_format</key>
     <string>Els  %1$@ principals</string>
     <key>setup_account</key>
@@ -3564,9 +3564,9 @@ Aquí tens una invitació de  %1$@ per a Pocket Casts Plus, el meu reproductor d
     <key>skip_chapters</key>
     <string>Capítols preseleccionats</string>
     <key>skip_chapters_patron_prompt</key>
-    <string>Salta capítols i més amb Pocket Casts Patron</string>
+    <string>Salta capítols i més amb PodHopper Patron</string>
     <key>skip_chapters_plus_prompt</key>
-    <string>Salta capítols i més amb Pocket Casts Plus</string>
+    <string>Salta capítols i més amb PodHopper Plus</string>
     <key>skip_forward</key>
     <string>Avançar</string>
     <key>sleep_timer</key>
@@ -3606,7 +3606,7 @@ Aquí tens una invitació de  %1$@ per a Pocket Casts Plus, el meu reproductor d
     <key>sonos_connecting</key>
     <string>CONNECTANT...</string>
     <key>sonos_connection_failed_account_link</key>
-    <string>Ara mateix no es pot vincular el compte de Pocket Casts. Torna-ho a provar més tard.</string>
+    <string>Ara mateix no es pot vincular el compte de PodHopper. Torna-ho a provar més tard.</string>
     <key>sonos_connection_failed_app_missing</key>
     <string>No s'ha pogut obrir l'aplicació Sonos per a completar el procés de vinculació.</string>
     <key>sonos_connection_failed_title</key>
@@ -3615,7 +3615,7 @@ Aquí tens una invitació de  %1$@ per a Pocket Casts Plus, el meu reproductor d
     <string>En connectar-te a Sonos, permetràs que l'aplicació accedeixi a la informació de l'episodi. 
 Mai es compartirà la teva adreça de correu electrònic, ni la contrasenya ni cap altra informació confidencial.</string>
     <key>sonos_connection_sign_in_prompt</key>
-    <string>Per a poder connectar-ne amb Sonos, necessites un compte de Pocket Casts.</string>
+    <string>Per a poder connectar-ne amb Sonos, necessites un compte de PodHopper.</string>
     <key>sort_by</key>
     <string>Ordena per</string>
     <key>sort_episodes</key>
@@ -3739,7 +3739,7 @@ Mai es compartirà la teva adreça de correu electrònic, ni la contrasenya ni c
     <key>suggested_folders_use_suggested_folders</key>
     <string>Utilitza aquestes carpetes</string>
     <key>support_watch_help_message</key>
-    <string>Si tens problemes amb l'aplicació Pocket Casts Watch, podem enviar-te els teus registres del rellotge per a ajudar-te millor. Per a fer-ho, obre Pocket Casts al teu rellotge.</string>
+    <string>Si tens problemes amb l'aplicació PodHopper Watch, podem enviar-te els teus registres del rellotge per a ajudar-te millor. Per a fer-ho, obre PodHopper al teu rellotge.</string>
     <key>support_watch_help_opened_app</key>
     <string>He obert l'app al Watch</string>
     <key>support_watch_help_send_without_log</key>
@@ -3857,7 +3857,7 @@ Mai es compartirà la teva adreça de correu electrònic, ni la contrasenya ni c
     <key>tv_home_browse_categories_section_title</key>
     <string>Explora les categories</string>
     <key>tv_home_featured_section_title</key>
-    <string>Destacats a Pocket Casts</string>
+    <string>Destacats a PodHopper</string>
     <key>tv_home_keep_listening_title</key>
     <string>Continuem on ho vau deixar</string>
     <key>tv_home_new_releases</key>
@@ -3965,7 +3965,7 @@ Mai es compartirà la teva adreça de correu electrònic, ni la contrasenya ni c
     <key>tv_sign_in_subtitle</key>
     <string>Obre la càmera i apunta-la a aquest codi QR</string>
     <key>tv_sign_in_title</key>
-    <string>Inicia sessió a Pocket Casts</string>
+    <string>Inicia sessió a PodHopper</string>
     <key>tv_signing_in_subtitle</key>
     <string>Carregant els teus pòdcasts.</string>
     <key>tv_signing_in_title</key>
@@ -4001,7 +4001,7 @@ Mai es compartirà la teva adreça de correu electrònic, ni la contrasenya ni c
     <key>tv_welcome_subtitle</key>
     <string>Els teus pòdcasts. A la pantalla gran. És clar.</string>
     <key>tv_welcome_title</key>
-    <string>Us donem la benvinguda a Pocket Casts TV</string>
+    <string>Us donem la benvinguda a PodHopper TV</string>
     <key>unarchive</key>
     <string>Desarxiva</string>
     <key>unfollow</key>
@@ -4049,7 +4049,7 @@ Mai es compartirà la teva adreça de correu electrònic, ni la contrasenya ni c
     <key>upgrade_experiment_free_membership_format</key>
     <string>Prova gratuïta de %1$@ Plus</string>
     <key>upgrade_experiment_paywall_button</key>
-    <string>Aconsegueix Pocket Casts Plus</string>
+    <string>Aconsegueix PodHopper Plus</string>
     <key>upgrade_experiment_reviews_app_store_button</key>
     <string>Mostra totes les ressenyes a l'App Store</string>
     <key>upgrade_experiment_reviews_app_store_info</key>
@@ -4059,7 +4059,7 @@ Mai es compartirà la teva adreça de correu electrònic, ni la contrasenya ni c
     <key>upgrade_experiment_reviews_review_text_1</key>
     <string>8 anys d'excel·lència i millora contínua</string>
     <key>upgrade_experiment_reviews_review_text_2</key>
-    <string>He estat usuari de Pocket Casts des del 2017.
+    <string>He estat usuari de PodHopper des del 2017.
 
 Aquesta és, sense dubte, la millor app per a escoltar pòdcasts. Té moltes funcions i es desenvolupa activament. Hi ha hagut algunes queixes sobre el canvi d'interfície, però jo no ho he notat massa.
 
@@ -4105,7 +4105,7 @@ Aquesta app pot ser tan senzilla o difícil d'utilitzar com tu vulguis. Així qu
     <key>user_satisfaction_survey_subtitle</key>
     <string>Hola! Ens encantaria saber si estàs gaudint de la nostra app.</string>
     <key>user_satisfaction_survey_title</key>
-    <string>Gaudeixes de Pocket Casts?</string>
+    <string>Gaudeixes de PodHopper?</string>
     <key>user_satisfaction_survey_yes_response</key>
     <string>Sí!</string>
     <key>view_transcript</key>
@@ -4151,11 +4151,11 @@ Sincerament, totes dues són bones decisions. 🙂</string>
     <key>watch_source_msg</key>
     <string>Els pòdcasts es reproduiran a través de l'altaveu en el qual està connectat el dispositiu triat</string>
     <key>watch_source_plus_info</key>
-    <string>Descarrega el contingut directament al rellotge i escolta'l sense el mòbil. Fes una ullada a Pocket Casts Plus a l'aplicació mòbil o a la web.</string>
+    <string>Descarrega el contingut directament al rellotge i escolta'l sense el mòbil. Fes una ullada a PodHopper Plus a l'aplicació mòbil o a la web.</string>
     <key>watch_source_refresh_account</key>
     <string>Actualitza el compte</string>
     <key>watch_source_refresh_account_info</key>
-    <string>Si tens un compte de Pocket Casts Plus, actualitza per a intentar activar-la</string>
+    <string>Si tens un compte de PodHopper Plus, actualitza per a intentar activar-la</string>
     <key>watch_source_refresh_data</key>
     <string>Actualitza les dades</string>
     <key>watch_source_sign_in_info</key>
@@ -4191,7 +4191,7 @@ Sincerament, totes dues són bones decisions. 🙂</string>
     <key>whats_new_in_version</key>
     <string>Què hi ha de nou a %1$@</string>
     <key>whats_new_page_one_7_20</key>
-    <string>Si t'agraden els pòdcasts la meitat del que ens agraden a nosaltres, probablement en segueixes molts. Ara, amb la subscripció a Pocket Casts Plus, pots classificar-los en carpetes i arxivar-los en grups ordenats. 
+    <string>Si t'agraden els pòdcasts la meitat del que ens agraden a nosaltres, probablement en segueixes molts. Ara, amb la subscripció a PodHopper Plus, pots classificar-los en carpetes i arxivar-los en grups ordenats. 
 
 Gràcies al teu suport, la teva pantalla d'inici té un aspecte fantàstic!</string>
     <key>whats_new_page_one_title_7_20</key>
@@ -4203,7 +4203,7 @@ Amb aquesta funció, la feina que has fet per a organitzar la teva pàgina de p�
     <key>whats_new_page_two_title_7_20</key>
     <string>Sincronització de la pantalla d'inici</string>
     <key>widgets_app_icon_description</key>
-    <string>Inicia ràpidament Pocket Casts</string>
+    <string>Inicia ràpidament PodHopper</string>
     <key>widgets_app_icon_name</key>
     <string>Icona</string>
     <key>widgets_discover_prompt_msg</key>

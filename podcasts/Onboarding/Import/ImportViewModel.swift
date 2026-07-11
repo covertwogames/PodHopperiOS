@@ -29,7 +29,6 @@ class ImportViewModel: OnboardingModel {
 
     // MARK: - Import apps
     let supportedSources: [ImportSource] = [
-        .init(id: .applePodcasts, displayName: "Apple Podcasts", steps: L10n.importInstructionsApplePodcastsSteps),
         .init(id: .breaker, displayName: "Breaker", steps: L10n.importInstructionsBreaker),
         .init(id: .castro, displayName: "Castro", steps: L10n.importInstructionsCastro),
         .init(id: .castbox, displayName: "Castbox", steps: L10n.importInstructionsCastbox),

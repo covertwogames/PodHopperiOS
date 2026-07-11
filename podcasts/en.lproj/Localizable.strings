@@ -34,13 +34,13 @@
 /* Accessibility hint to inform the user which filter color flag is being used. '%1$@' is a placeholder for the filter color number. */
 "accessibility_playlist_color" = "Playlist color %1$@";
 
-/* A common string used throughout the app. An accessibility label to inform the user that the selected item is locked behind Pocket Casts Plus subscription. */
+/* A common string used throughout the app. An accessibility label to inform the user that the selected item is locked behind PodHopper Plus subscription. */
 "accessibility_plus_only" = "Locked, Plus Feature";
 
 /* A common string used throughout the app. An accessibility label to inform the user that the selected item is locked behind Patron subscription. */
 "accessibility_patron_only" = "Locked, Patron Feature";
 
-/* Accessibility label fir the profile settings icon in the app. 'Pocket Casts' is treated as a proper noun and hasn't been localized in other places of the app. */
+/* Accessibility label fir the profile settings icon in the app. 'PodHopper's is treated as a proper noun and hasn't been localized in other places of the app. */
 "accessibility_profile_settings" = "PodHopper Settings";
 
 /* A common string used throughout the app. Accessibility hint to inform the user that this control will select the episode. */
@@ -133,23 +133,23 @@
 /* Error message for when the account registration request has failed. */
 "account_sso_failed" = "Sign in failed. Please try again.";
 
-/* Title for the account screen for the user's Pocket Casts Account. 'Pocket Casts' refers to the app name and is treated as a proper noun so it shouldn't be localized. */
-"account_title" = "Pocket Casts Account";
+/* Title for the account screen for the user's PodHopper Account. 'PodHopper's refers to the app name and is treated as a proper noun so it shouldn't be localized. */
+"account_title" = "PodHopper Account";
 
-/* Title informing the user that their account has been successfully upgraded to Pocket Casts Plus */
+/* Title informing the user that their account has been successfully upgraded to PodHopper Plus */
 "account_upgraded" = "Account Upgraded";
 
-/* Welcome message presented after a user has signed up for Pocket Casts */
-"account_welcome" = "Welcome to Pocket Casts!";
+/* Welcome message presented after a user has signed up for PodHopper */
+"account_welcome" = "Welcome to PodHopper!";
 
-/* Welcome message presented after a user has signed up for Pocket Casts Plus */
-"account_welcome_plus" = "Welcome to Pocket Casts Plus!";
+/* Welcome message presented after a user has signed up for PodHopper Plus */
+"account_welcome_plus" = "Welcome to PodHopper Plus!";
 
 /* Title of an alert that informs the user that they have been signed out of their account */
 "account_signed_out_alert_title" = "You've been signed out.";
 
 /* Message/Body of an alert that explains that the user should tap a button and sign in again */
-"account_signed_out_alert_message" = "Turns out, if you type Google into Google, you can break the internet. 🫢 \n\nTap the button below to sign into your Pocket Casts account again.";
+"account_signed_out_alert_message" = "Turns out, if you type Google into Google, you can break the internet. 🫢 \n\nTap the button below to sign into your PodHopper account again.";
 
 /* A common string used throughout the app. Title for the prompt to add an episode to the up next queue. */
 "add_to_up_next" = "Add to Up Next";
@@ -178,10 +178,10 @@
 /* The name for the Indigo App Icon */
 "app_icon_indigo" = "Indigo";
 
-/* The name for the Pocket Casts Plus App Icon */
+/* The name for the PodHopper Plus App Icon */
 "app_icon_plus" = "Plus";
 
-/* The name for the Pocket Cats App Icon. The name for this one is meant to be a play on the App name Pocket Casts and the icon includes a cat image. */
+/* The name for the Pocket Cats App Icon. The name for this one is meant to be a play on the App name PodHopper and the icon includes a cat image. */
 "app_icon_pocket_cats" = "Pocket Cats";
 
 /* The name for the Radioactivity App Icon */
@@ -322,7 +322,7 @@
 /* Message title indicating that the cancel process has failed. */
 "cancel_failed" = "Unable To Cancel";
 
-/* Prompt to allow the user to cancel their Pocket Casts Plus subscription. */
+/* Prompt to allow the user to cancel their PodHopper Plus subscription. */
 "cancel_subscription" = "Cancel Subscription";
 
 /* CarPlay subtitle information label that includes the current chapter and total chapter count and the current chapter length. '%1$@' is a placeholder for the current chapter. '%2$@' is a placeholder for the total chapters. '%3$@' is a placeholder for the length of the current chapter. */
@@ -409,11 +409,11 @@
 /* Prompt to open the create account options. */
 "create_account" = "Create Account";
 
-/* Error title shown when Pocket Casts can't connect to the App Store to retrieve in app purchase details */
+/* Error title shown when PodHopper can't connect to the App Store to retrieve in app purchase details */
 "create_account_app_store_error_title" = "Unable to contact App Store";
 
-/* Error message shown when Pocket Casts can't connect to the App Store to retrieve in app purchase details */
-"create_account_app_store_error_message" = "Pocket Casts is having trouble connecting to the App Store. Please check your connection and try again.";
+/* Error message shown when PodHopper can't connect to the App Store to retrieve in app purchase details */
+"create_account_app_store_error_message" = "PodHopper is having trouble connecting to the App Store. Please check your connection and try again.";
 
 /* Price shown for the free tier. "Free" in this case meaning the cost is free */
 "create_account_free_price" = "Free";
@@ -421,14 +421,14 @@
 /* Account type shown on the select account page. Regular as in the normal or default option */
 "create_account_free_account_type" = "Regular";
 
-/* Shown under the create account type to indicate what you get with a free Pocket Casts account */
+/* Shown under the create account type to indicate what you get with a free PodHopper account */
 "create_account_free_details" = "Almost everything";
 
-/* Shown under the create account type to indicate what you get in Pocket Casts Plus */
+/* Shown under the create account type to indicate what you get in PodHopper Plus */
 "create_account_plus_details" = "Everything unlocked";
 
-/* Button title to find out more about Pocket Casts Plus. Note that "Pocket Casts Plus" shouldn't be translated as it's a product name */
-"create_account_find_out_more_plus" = "Find out more about Pocket Casts Plus";
+/* Button title to find out more about PodHopper Plus. Note that "PodHopper Plus" shouldn't be translated as it's a product name */
+"create_account_find_out_more_plus" = "Find out more about PodHopper Plus";
 
 /* Title for the screen where a user starts creating a filter */
 "create_filter" = "Create Filter";
@@ -880,13 +880,13 @@
 /* A common string used throughout the app. Generic title informing the user of an Error. General error message used when the app is unable to locate the podcast that was selected. This usually comes from a sharing or import feature. */
 "error_general_podcast_not_found" = "Unable to find podcast. Please contact the podcast author.";
 
-/* Describes how the process to export podcasts from Pocket Casts works. */
+/* Describes how the process to export podcasts from PodHopper works. */
 "export_podcasts_description" = "Exports all your podcasts as an OPML file, which you can import into other podcast apps.";
 
-/* Title for the button that allows the user to export podcasts from Pocket Casts */
+/* Title for the button that allows the user to export podcasts from PodHopper */
 "export_podcasts_option" = "Export Podcasts";
 
-/* Title for the section that provides information on how to export podcasts from Pocket Casts */
+/* Title for the section that provides information on how to export podcasts from PodHopper */
 "export_podcasts_title" = "EXPORT";
 
 /* Indicator during the new feature tour serves as a prompt to end the tour. */
@@ -935,9 +935,9 @@
 "file_upload_name_required" = "Name required";
 
 /* The description for the screen when there are no files currently uploaded. '\n' is a line break format to allow a clean wrapping of text */
-"file_upload_no_files_description" = "Upload your own files to Pocket Casts, and listen or watch them anytime.";
+"file_upload_no_files_description" = "Upload your own files to PodHopper, and listen or watch them anytime.";
 
-/* The helper link describing how to add files to Pocket Casts. */
+/* The helper link describing how to add files to PodHopper. */
 "file_upload_no_files_helper" = "How do I do that?";
 
 /* Title for the screen when there are no files currently uploaded */
@@ -958,7 +958,7 @@
 /* Prompt to open a menu to allow sorting of manually added files. */
 "files_sort" = "Sort Files";
 
-/* Title for the screen that details how to add a file to Pocket Casts. */
+/* Title for the screen that details how to add a file to PodHopper. */
 "files_how_to_title" = "How to save a file";
 
 /* Subtitle informing the user that new podcasts will be automatically added to this filter. */
@@ -1196,27 +1196,27 @@
 "how_to_upload_share_menu_image_foreground_menu_option_text" = "Menu Option";
 
 /* The title for the second instructional image that explains how to upload a file by selecting the share action option for the app */
-"how_to_upload_share_action_instruction" = "In the menu tap \"Copy to Pocket Casts\"";
+"how_to_upload_share_action_instruction" = "In the menu tap \"Copy to PodHopper\"";
 
-/* The text for copying a file to Pocket Casts */
-"how_to_upload_share_action_image_center_text" = "Copy to Pocket Casts";
+/* The text for copying a file to PodHopper */
+"how_to_upload_share_action_image_center_text" = "Copy to PodHopper";
 
-/* The text for copying a file to Pocket Casts */
+/* The text for copying a file to PodHopper */
 "how_to_upload_share_action_image_sides_text" = "Something Else";
 
 /* The summary text at the end of the screen explaining how to upload a file */
 "how_to_upload_summary" = "That's it, you're done. Change any details you want, hit save and play!";
 
-/* Describes the process about how to import podcasts to Pocket Casts. '\\n\\n' Is a line break format to separate the description from the following note. */
+/* Describes the process about how to import podcasts to PodHopper. '\\n\\n' Is a line break format to separate the description from the following note. */
 "import_podcasts_description" = "You can import your podcasts subscriptions to PodHopper using the widely supported OPML format. Export the file from another app and choose open in PodHopper.\n\nNote: You may need to email the OPML file to yourself, long press on the attachment and select PodHopper.";
 
-/* Describes the process about how to import podcasts to Pocket Casts. '\\n\\n' Is a line break format to separate the description from the following note. */
+/* Describes the process about how to import podcasts to PodHopper. '\\n\\n' Is a line break format to separate the description from the following note. */
 "import_podcasts_description_new" = "You can import your podcasts to PodHopper using the widely supported OPML format. Export the file from another app and choose open in PodHopper.\n\nNote: You may need to email the OPML file to yourself, long press on the attachment and select PodHopper.";
 
 /* Description for importing opml from URL*/
 "import_opml_from_url" = "Import your podcasts from an OPML file using a URL";
 
-/* Title for the section that provides information on how to import podcasts to Pocket Casts */
+/* Title for the section that provides information on how to import podcasts to PodHopper */
 "import_podcasts_title" = "IMPORT TO POCKET CASTS";
 
 /* A common string used throughout the app. Status message informing the user that the episode has been started but not finished. */
@@ -1663,23 +1663,23 @@
 /* A common string used throughout the app. Catch all prompt to suggest to the user to try the task again later. */
 "please_try_again_later" = "Please try again later.";
 
-/* Prompt informing the user that an account is required in order to sign up for Pocket Casts Plus */
-"plus_account_required_prompt" = "A Pocket Casts account is required for Pocket Casts Plus. This ensures seamless listening across all your devices.";
+/* Prompt informing the user that an account is required in order to sign up for PodHopper Plus */
+"plus_account_required_prompt" = "A PodHopper account is required for PodHopper Plus. This ensures seamless listening across all your devices.";
 
-/* Details prompt informing the user that an account is required in order to sign up for Pocket Casts Plus */
-"plus_account_required_prompt_details" = "Create an account or sign in to redeem your access to Pocket Casts Plus.";
+/* Details prompt informing the user that an account is required in order to sign up for PodHopper Plus */
+"plus_account_required_prompt_details" = "Create an account or sign in to redeem your access to PodHopper Plus.";
 
 /* Details message informing the user that they'll return to a free account at the end of their trial */
 "plus_account_trial_details" = "When your trial is over you’ll still have all the great benefits of your regular account. Happy podcasting!";
 
-/* The available cloud storage limit available to Pocket Casts Plus Subscribers. '%1$@' is a placeholder for the available storage. */
+/* The available cloud storage limit available to PodHopper Plus Subscribers. '%1$@' is a placeholder for the available storage. */
 "plus_cloud_storage_limit_format" = "%1$@ GB Cloud Storage";
 
 /* Account detail message informing the user that they have been granted 50% discount. */
 "plus_discount_yearly_membership" = "50%% off your first year";
 
 /* Error message informing the user that they have already signed up for plus with this account. */
-"plus_error_already_registered" = "You already have a Pocket Casts Plus account";
+"plus_error_already_registered" = "You already have a PodHopper Plus account";
 
 /* Error message details informing the user that they have already signed up for plus with this account so they can't take advantage of the entered promotion. */
 "plus_error_already_registered_details" = "Thanks for your support, but unfortunately this means you can’t take part in this promotion.";
@@ -1687,67 +1687,67 @@
 /* Account detail message informing the user when their Plus account will expire. '%1$@' is a placeholder for when the account will expire. */
 "plus_expiration_format" = "Expires %1$@";
 
-/* A common string used throughout the app. often used as a section header to divide settings related to Pocket Casts Plus vs free features. 'PLUS' refers to Pocket Casts Plus. */
+/* A common string used throughout the app. often used as a section header to divide settings related to PodHopper Plus vs free features. 'PLUS' refers to PodHopper Plus. */
 "plus_features" = "PLUS FEATURES";
 
 /* Account detail message informing the user that they have been granted a limited free membership. '%1$@' is a placeholder for a localized string for the free time period. */
 "plus_free_membership_format" = "%1$@ Free Trial";
 
-/* Account detail message informing the user that they have been granted a lifetime membership, don't translate "Pocket Casts Champion" */
-"plus_champion" = "Pocket Casts Champion";
+/* Account detail message informing the user that they have been granted a lifetime membership, don't translate "PodHopper Champion" */
+"plus_champion" = "PodHopper Champion";
 
-/* Message displayed when the user taps "Pocket Casts Champion" button */
-"plus_champion_message" = "Thanks for being with Pocket Casts from the start. You're a real champion!";
+/* Message displayed when the user taps "PodHopper Champion" button */
+"plus_champion_message" = "Thanks for being with PodHopper from the start. You're a real champion!";
 
-/* Pocket Casts Plus marketing page, description of generated transcriptsg */
+/* PodHopper Plus marketing page, description of generated transcriptsg */
 "plus_marketing_generated_transcripts" = "Generated Transcripts";
 
-/* Pocket Casts Plus marketing page, description of removing banner ads */
+/* PodHopper Plus marketing page, description of removing banner ads */
 "plus_marketing_no_banner_ads" = "No Banner Ads";
 
-/* Pocket Casts Plus marketing page, description of the Cloud Storage feature */
+/* PodHopper Plus marketing page, description of the Cloud Storage feature */
 "plus_marketing_updated_cloud_storage_description" = "Upload your files to cloud storage and have it available everywhere";
 
-/* Pocket Casts Plus marketing page, description of the Desktop Apps feature */
+/* PodHopper Plus marketing page, description of the Desktop Apps feature */
 "plus_marketing_updated_desktop_apps_description" = "Listen in more places with our Windows, macOS and Web apps";
 
-/* Pocket Casts Plus marketing page, title of the Desktop and web apps feature */
+/* PodHopper Plus marketing page, title of the Desktop and web apps feature */
 "plus_marketing_desktop_apps_title" = "Desktop & web apps";
 
-/* Pocket Casts Plus marketing page, learn more button. Note that Pocket Casts is a proper noun and shouldn't be translated */
-"plus_marketing_learn_more_button" = "Learn more about Pocket Casts Plus";
+/* PodHopper Plus marketing page, learn more button. Note that PodHopper is a proper noun and shouldn't be translated */
+"plus_marketing_learn_more_button" = "Learn more about PodHopper Plus";
 
-/* Pocket Casts Plus marketing page, the main description of Pocket Casts Plus */
+/* PodHopper Plus marketing page, the main description of PodHopper Plus */
 "plus_marketing_main_description" = "Get personal, and get distributed, all at once. Upload your personal audio files to our cloud servers, access your account via our web player, and make the app yours.";
 
-/* Pocket Casts Plus marketing page, title of the Themes & Icons feature */
+/* PodHopper Plus marketing page, title of the Themes & Icons feature */
 "plus_marketing_themes_icons_title" = "Themes & Icons";
 
-/* Pocket Casts Plus marketing page, title of the Apple Watch & Wear OS apps feature */
+/* PodHopper Plus marketing page, title of the Apple Watch & Wear OS apps feature */
 "plus_marketing_watch_playback_title" = "Apple Watch & Wear OS apps";
 
-/* Pocket Casts Plus marketing page, title of the Folders and Bookmarks feature */
+/* PodHopper Plus marketing page, title of the Folders and Bookmarks feature */
 "plus_marketing_folders_and_bookmarks_title" = "Folders & Bookmarks";
 
-/* Pocket Casts Plus marketing page, title of the Bookmarks feature */
+/* PodHopper Plus marketing page, title of the Bookmarks feature */
 "plus_marketing_bookmarks_title" = "Bookmarks";
 
-/* Pocket Casts Plus marketing page, title of the Folders feature */
+/* PodHopper Plus marketing page, title of the Folders feature */
 "plus_marketing_folders_title" = "Folders";
 
-/* Pocket Casts Plus marketing page, description of the Folders feature */
+/* PodHopper Plus marketing page, description of the Folders feature */
 "plus_marketing_folders_description" = "Create folders to organise your podcast collection.";
 
-/* Pocket Casts Plus marketing page, description of the Folders feature */
+/* PodHopper Plus marketing page, description of the Folders feature */
 "plus_marketing_updated_folders_description" = "Organise your podcasts in folders, and keep them in sync across all your devices.";
 
-/* Pocket Casts Plus marketing page, title of the hide ads feature */
+/* PodHopper Plus marketing page, title of the hide ads feature */
 "plus_marketing_hide_ads_title" = "Hide Ads";
 
-/* Pocket Casts Plus marketing page, description of the hide ads feature */
+/* PodHopper Plus marketing page, description of the hide ads feature */
 "plus_marketing_hide_ads_description" = "Ad-free experience which gives you more of what you love and less of what you don't";
 
-/* Pocket Casts Plus marketing page, description of the Up Next Shuffle feature */
+/* PodHopper Plus marketing page, description of the Up Next Shuffle feature */
 "plus_marketing_up_next_shuffle" = "Up Next Shuffle";
 
 /* Informational message informing the user that their recurring payments for Plus have been canceled. */
@@ -1756,17 +1756,17 @@
 /* Label that goes along with the yearly subscription used to indicate that the yearly plan is the best overall value. */
 "plus_payment_frequency_best_value" = "Best Value";
 
-/* Informational label that's below the monthly price of Pocket Casts Plus. This label sits below a localized price. */
+/* Informational label that's below the monthly price of PodHopper Plus. This label sits below a localized price. */
 "plus_per_month" = "per month";
 
-/* The price of Pocket Casts Plus per month. '%1$@' is a localized monthly price. */
+/* The price of PodHopper Plus per month. '%1$@' is a localized monthly price. */
 "plus_price_per_month" = "%1$@ / monthly";
 
 /* Error message informing the user the promotion code has expired */
 "plus_promotion_expired" = "Promotion Expired or Invalid";
 
 /* A nudge to ask the user to continue the sign up process even though they encountered an error. */
-"plus_promotion_expired_nudge" = "You’re welcome to sign up for Pocket Casts Plus anyway, create a regular account, or just dive right in.";
+"plus_promotion_expired_nudge" = "You’re welcome to sign up for PodHopper Plus anyway, create a regular account, or just dive right in.";
 
 /* Error message informing the user the promotion code has already been used */
 "plus_promotion_used" = "Code already used";
@@ -1774,34 +1774,34 @@
 /* Title for the screen to allow the user to choose between a monthly or yearly subscription. */
 "plus_select_payment_frequency" = "Select Payment Frequency";
 
-/* Message informing the user that their Pocket Casts Plus subscription is managed by Apple's system and needs to be managed there. */
+/* Message informing the user that their PodHopper Plus subscription is managed by Apple's system and needs to be managed there. */
 "plus_subscription_apple" = "Your subscription is managed by the Apple App Store";
 
-/* Message informing the user where to manage their Pocket Casts Plus subscription managed by Apple. */
+/* Message informing the user where to manage their PodHopper Plus subscription managed by Apple. */
 "plus_subscription_apple_details" = "To cancel your subscription, you’ll need to cancel via Settings.";
 
-/* Message informing the user when their Pocket Casts Plus subscription will expire. %1$@ is a placeholder for the expiration date. */
+/* Message informing the user when their PodHopper Plus subscription will expire. %1$@ is a placeholder for the expiration date. */
 "plus_subscription_expiration" = "PLUS EXPIRES IN %1$@";
 
 "subscription_expires_in" = "Expires in %1$@";
 
-/* Message informing the user that their Pocket Casts Plus subscription is managed by Google's system and needs to be managed there. */
-"plus_subscription_google" = "It looks like you subscribed to Pocket Casts Plus from an Android device";
+/* Message informing the user that their PodHopper Plus subscription is managed by Google's system and needs to be managed there. */
+"plus_subscription_google" = "It looks like you subscribed to PodHopper Plus from an Android device";
 
-/* Message informing the user where to manage their Pocket Casts Plus subscription managed by Google. */
+/* Message informing the user where to manage their PodHopper Plus subscription managed by Google. */
 "plus_subscription_google_details" = "To cancel your subscription, you’ll need to cancel via Settings.";
 
-/* Message informing the user that their Pocket Casts Plus subscription is managed by Web's system and needs to be managed there. */
-"plus_subscription_web" = "It looks like you subscribed to Pocket Casts Plus from the web";
+/* Message informing the user that their PodHopper Plus subscription is managed by Web's system and needs to be managed there. */
+"plus_subscription_web" = "It looks like you subscribed to PodHopper Plus from the web";
 
-/* Message informing the user where to manage their Pocket Casts Plus subscription managed by Web. */
+/* Message informing the user where to manage their PodHopper Plus subscription managed by Web. */
 "plus_subscription_web_details" = "To cancel your subscription, you’ll need to cancel via Pocketcasts.com.";
 
-/* Feature of Pocket Casts plus, Themes and icons. Themes for changing the way the app looks, icons to change the icon shown on your home screen */
+/* Feature of PodHopper plus, Themes and icons. Themes for changing the way the app looks, icons to change the icon shown on your home screen */
 "plus_feature_themes_icons" = "Extra themes & icons";
 
 /* Message about our gratitude when an user subscribe to Plus */
-"plus_feature_gratitude" = "The undying gratitude of everyone here at Pocket Casts";
+"plus_feature_gratitude" = "The undying gratitude of everyone here at PodHopper";
 
 /* Message about the exclusive content from Slumber Studios. Please don't translate "Slumber Studios". */
 "plus_feature_slumber" = "1 year of exclusive content from Slumber Studios";
@@ -1825,7 +1825,7 @@
 "plus_start_trial_duration_price" = "Try %1$@, then %2$@";
 
 /* Description of the Patron plan. Do not translate "Patron". */
-"patron_description" = "Become a Pocket Casts Patron and help us continue to deliver the best podcasting experience available.";
+"patron_description" = "Become a PodHopper Patron and help us continue to deliver the best podcasting experience available.";
 
 /* Name of the Patron plan. Do not translate "Patron". */
 "patron" = "Patron";
@@ -1840,7 +1840,7 @@
 "patron_feature_profile_badge" = "Supporters profile badge";
 
 /* Description of a Patron feature that gives users special app icons. */
-"patron_feature_profile_icons" = "Special Pocket Casts app icons";
+"patron_feature_profile_icons" = "Special PodHopper app icons";
 
 /* Label of a button to subscribe to Patron. Do not translate "Patron". */
 "patron_subscribe_to" = "Subscribe to Patron";
@@ -1851,10 +1851,10 @@
 /* Label of a button that informs the user they can upgrade their account. . */
 "upgrade_account" = "Upgrade Account";
 
-/* A common string used throughout the app. Refers to the subscription program Pocket Casts Plus subscription. 'Pocket Casts' as a proper noun should not be localized. */
-"pocket_casts_plus" = "Pocket Casts Plus";
+/* A common string used throughout the app. Refers to the subscription program PodHopper Plus subscription. 'PodHopper's as a proper noun should not be localized. */
+"pocket_casts_plus" = "PodHopper Plus";
 
-/* A shortened version of the common string used throughout the app. Refers to the subscription program Pocket Casts Plus subscription. */
+/* A shortened version of the common string used throughout the app. Refers to the subscription program PodHopper Plus subscription. */
 "pocket_casts_plus_short" = "Plus";
 
 /* Indicates that the access to the podcast has ended on the specified date. '%1$@' is a placeholder for date that the access expired. */
@@ -2369,7 +2369,7 @@
 "server_error_login_unable_to_create_account" = "We couldn't set up that account, sorry.";
 
 /* Server error message for when the user tries to redeem a promo when they are already a plus subscriber. */
-"server_error_promo_already_plus" = "You are already a Pocket Casts Plus subscriber, there's no need to redeem any codes.";
+"server_error_promo_already_plus" = "You are already a PodHopper Plus subscriber, there's no need to redeem any codes.";
 
 /* Server error message for when the user tries to redeem a promo code that has already been used. */
 "server_error_promo_already_redeemed" = "You have already claimed this promo code. It was worth a shot though!";
@@ -2528,7 +2528,7 @@
 "settings_custom_auto_archive_msg" = "Need more fine grained control? Enable auto-archive settings for this podcast";
 
 /* A message accompanying the toggle to set custom settings for a particular podcast. */
-"settings_custom_msg" = "Pocket Casts will remember your last playback effects and use them on all podcasts. You can enable this if you want to create custom ones for just this podcast.";
+"settings_custom_msg" = "PodHopper will remember your last playback effects and use them on all podcasts. You can enable this if you want to create custom ones for just this podcast.";
 
 /* Provides a prompt for the user to configure the settings related to episode limits. This controls how many episodes will be preserved before auto archiving them. */
 "settings_episode_limit" = "Episode Limit";
@@ -2554,10 +2554,10 @@
 /* Alert title informing the user that the OPML export is processing. 'OPML' refers to the file type that will be exported. */
 "settings_export_opml" = "Exporting OPML";
 
-/* Informs the user that Pocket Casts has dedicated an issue with this podcasts feed. */
+/* Informs the user that PodHopper has dedicated an issue with this podcasts feed. */
 "settings_feed_error" = "Feed Error";
 
-/* Informs the user that Pocket Casts has stopped updating this feed due to too many errors. Provides a prompt to tap the refresh button that is presented above this message box. */
+/* Informs the user that PodHopper has stopped updating this feed due to too many errors. Provides a prompt to tap the refresh button that is presented above this message box. */
 "settings_feed_error_msg" = "The feed for this podcast stopped updating because it had too many errors. Tap above to fix this.";
 
 /* Title used in a dialog box. Prompt user to try refreshing the feed after encountering an error. */
@@ -2575,10 +2575,10 @@
 /* The title for a dialog box used to inform the user that the an update to the feed has been queued. */
 "settings_feed_fix_refresh_success_title" = "Update Queued";
 
-/* Informs the user that Pocket Casts has dedicated an issue with this podcasts feed. */
+/* Informs the user that PodHopper has dedicated an issue with this podcasts feed. */
 "settings_feed_issue" = "Feed Issue";
 
-/* Informs the user that Pocket Casts has stopped updating this feed due to too many errors. */
+/* Informs the user that PodHopper has stopped updating this feed due to too many errors. */
 "settings_feed_issue_msg" = "The feed for this podcast stopped updating because it had too many errors.";
 
 /* Prompt to navigate the user to the files setting screen. */
@@ -2770,7 +2770,7 @@
 /* Provides a prompt for the user to configure the playback speed options. */
 "settings_play_speed" = "Play Speed";
 
-/* Informational label breaking down the pricing structure for Pocket Casts Plus. '%1$@' is a placeholder for the localized price if paid per month, '%2$@' is a placeholder for the localized price if paid per year */
+/* Informational label breaking down the pricing structure for PodHopper Plus. '%1$@' is a placeholder for the localized price if paid per month, '%2$@' is a placeholder for the localized price if paid per year */
 "settings_plus_pricing_format" = "%1$@ per month / %2$@ per year";
 
 /* Title for the options to configure the queue position when a podcast is set to be auto added to the up next queue. */
@@ -3248,7 +3248,7 @@
 "sonos_connecting" = "CONNECTING...";
 
 /* Notice indicating that the app failed to make a connection to a Sonos device because the accounts weren't successfully linked. 'Sonos' refers the the speaker manufacturer. */
-"sonos_connection_failed_account_link" = "Unable to link Pocket Casts account at this time. Please try again later.";
+"sonos_connection_failed_account_link" = "Unable to link PodHopper account at this time. Please try again later.";
 
 /* Notice indicating that the app failed to make a connection to a Sonos device because because it couldn't detect the Sonos App. 'Sonos' refers the the speaker manufacturer. */
 "sonos_connection_failed_app_missing" = "Unable to open Sonos app to complete linking process.";
@@ -3259,8 +3259,8 @@
 /* Notice informing the users about what data will be provided to the Sonos speaker upon connection. 'Sonos' refers the the speaker manufacturer. */
 "sonos_connection_privacy_notice" = "Connecting to Sonos will allow the Sonos app to access your episode information.\n\nYour email address, password and other sensitive items are never shared.";
 
-/* Notice informing the users they need Pocket Casts account and need to sign in before connecting to the Sonos speaker. 'Sonos' refers the the speaker manufacturer. */
-"sonos_connection_sign_in_prompt" = "You need to have a Pocket Casts account before you can connect with Sonos.";
+/* Notice informing the users they need PodHopper account and need to sign in before connecting to the Sonos speaker. 'Sonos' refers the the speaker manufacturer. */
+"sonos_connection_sign_in_prompt" = "You need to have a PodHopper account before you can connect with Sonos.";
 
 /* A common string used throughout the app. Prompt for the sort option menus. */
 "sort_by" = "Sort By";
@@ -3274,7 +3274,7 @@
 /* A common string used throughout the app. Prompt to mark an episode(s) as favorited. Similar to 'Star Episode' but more concise. */
 "star_episode_short" = "Star";
 
-/* Accessibility message for the cell displaying the time for how long they've listened to Pocket Casts. '%1$@' is a placeholder for how long they've listened and '%2$@' is a placeholder for a localized funny stat related to their listening history. */
+/* Accessibility message for the cell displaying the time for how long they've listened to PodHopper. '%1$@' is a placeholder for how long they've listened and '%2$@' is a placeholder for a localized funny stat related to their listening history. */
 "stats_accessibility_listen_history_format" = "You've listened for %1$@. %2$@";
 
 /* Row header that displays the amount of time saved from Auto skipping episode parts. */
@@ -3289,7 +3289,7 @@
 /* Loading message displayed while stats are being pulled. */
 "stats_listen_history_loading" = "You’ve listened for";
 
-/* Header for the cell displaying the time for how long they've listened to Pocket Casts. */
+/* Header for the cell displaying the time for how long they've listened to PodHopper. */
 "stats_listen_history_no_date" = "You’ve listened for";
 
 /* Row header that displays the amount of time saved from the Skip forward feature. */
@@ -3361,7 +3361,7 @@
 /* Message on the subscription details page informing the users when the canceled subscription will officially end. '%1$@' is a placeholder for the date in which the subscription expires. */
 "subscription_cancelled_msg" = "Subscription Cancelled %1$@ ";
 
-/* A common string used throughout the app. Thanks the user for their support. Used for paid feeds and Pocket Casts Plus. */
+/* A common string used throughout the app. Thanks the user for their support. Used for paid feeds and PodHopper Plus. */
 "subscriptions_thank_you" = "Thanks for your support!";
 
 /* A label used to identify that a user is a supporter of the selected podcast. */
@@ -3529,8 +3529,8 @@
 /* Subtitle text used on the now playing screen in the Watch App. Indicates there is nothing palying or paused in the app. Please leave the "\\n\\n" part in there, that's a new line indicator. */
 "watch_nothing_playing_subtitle" = "Enjoy the silence, or find something new to play.\n\nHonestly both are solid choices. 🙂";
 
-/* Information label providing a brief explanation of Pocket Casts Plus. */
-"watch_source_plus_info" = "Download direct to your watch and listen without your phone. Check out Pocket Casts Plus on your phone app, or on the web.";
+/* Information label providing a brief explanation of PodHopper Plus. */
+"watch_source_plus_info" = "Download direct to your watch and listen without your phone. Check out PodHopper Plus on your phone app, or on the web.";
 
 /* Message detailing where the audio will play from when selecting the source on the Apple Watch */
 "watch_source_msg" = "Podcasts will play from the speaker that the chosen device is connected to";
@@ -3539,7 +3539,7 @@
 "watch_source_refresh_account" = "Refresh Account";
 
 /* Information label accompanying the Refresh Account button. */
-"watch_source_refresh_account_info" = "If you have a Pocket Casts Plus account, refresh account to attempt to enable it";
+"watch_source_refresh_account_info" = "If you have a PodHopper Plus account, refresh account to attempt to enable it";
 
 /* Button that allows the user to manually trigger a refresh of their data from the watch app. */
 "watch_source_refresh_data" = "Refresh Data";
@@ -3581,7 +3581,7 @@
 "widgets_app_icon_name" = "Icon";
 
 /* Description of a widget to launch the app */
-"widgets_app_icon_description" = "Quickly Launch Pocket Casts";
+"widgets_app_icon_description" = "Quickly Launch PodHopper";
 
 /* Up Next Lock Screen Widget description */
 "widgets_up_next_description" = "See the number of items in your Up Next queue or details about the next episode.";
@@ -3634,20 +3634,20 @@
 /* Label shown for days saved when it's singular, eg: 2 days saved. */
 "days_saved" = "Days saved";
 
-/* The heading shown for the Pocket Casts Newsletter */
-"pocket_casts_newsletter" = "Pocket Casts Newsletter";
+/* The heading shown for the PodHopper Newsletter */
+"pocket_casts_newsletter" = "PodHopper Newsletter";
 
-/* The description for the Pocket Casts Newsletter */
+/* The description for the PodHopper Newsletter */
 "pocket_casts_newsletter_description" = "Receive news, app updates, themed playlists, interviews, and more.";
 
-/* The heading shown for the Pocket Casts Newsletter */
+/* The heading shown for the PodHopper Newsletter */
 "pocket_casts_welcome_newsletter_title" = "Get the Newsletter";
 
 /* Title for page one of the 7.20 what's new dialog. */
 "whats_new_page_one_title_7_20" = "Folders";
 
 /* What's new for 7.20 description for page one. Please leave the "\\n\\n" part in there, these are new line indicator. */
-"whats_new_page_one_7_20" = "If you love podcasts half as much as we do, you probably have a lot of them. If you're a Pocket Casts Plus subscriber, you can now sort these into folders and file them into neat groups.\n\nThanks to your support, your Home Screen has never looked better!";
+"whats_new_page_one_7_20" = "If you love podcasts half as much as we do, you probably have a lot of them. If you're a PodHopper Plus subscriber, you can now sort these into folders and file them into neat groups.\n\nThanks to your support, your Home Screen has never looked better!";
 
 /* Title for page two of the 7.20 what's new dialog. */
 "whats_new_page_two_title_7_20" = "Home Grid Syncing";
@@ -3658,18 +3658,18 @@
 /* Text for a link that goes to our blog where people can read more about the current update */
 "whats_new_blog_more_link_text" = "Read more about this update on our blog";
 
-/* Promotional information for Pocket Casts Plus. Please note that "Pocket Casts Plus" should not be translated because it's a product name */
-"plus_promo_paragraph" = "Get Pocket Casts Plus to unlock this feature, plus lots more!";
+/* Promotional information for PodHopper Plus. Please note that "PodHopper Plus" should not be translated because it's a product name */
+"plus_promo_paragraph" = "Get PodHopper Plus to unlock this feature, plus lots more!";
 
 /* Body of Plus promotional section
  */
-"profile_help_support" = "Help support Pocket Casts by upgrading your account";
+"profile_help_support" = "Help support PodHopper by upgrading your account";
 
 /* Text for a button where you learn more about a feature */
 "learn_more" = "Learn More";
 
-/* Heading for things that require Pocket Casts Plus to work. Please note that "Pocket Casts Plus" should not be translated because it's a product name */
-"plus_required_feature" = "This feature requires Pocket Casts Plus";
+/* Heading for things that require PodHopper Plus to work. Please note that "PodHopper Plus" should not be translated because it's a product name */
+"plus_required_feature" = "This feature requires PodHopper Plus";
 
 /* About page text to ask the user to rate our app in the App Store */
 "about_rate_us" = "Rate Us";
@@ -3702,7 +3702,7 @@
 "about_acknowledgements" = "Acknowledgements";
 
 /* Text sent when sharing a link to our app with other people */
-"app_share_text" = "Hey! Here is a link to download the Pocket Casts app. I'm really enjoying it and thought you might too.";
+"app_share_text" = "Hey! Here is a link to download the PodHopper app. I'm really enjoying it and thought you might too.";
 
 /* Email change form current email label */
 "current_email_prompt" = "Current Email";
@@ -3873,10 +3873,10 @@
 "plus_purchase_failed" = "It looks like there was a problem processing your payment. Please try again.";
 
 /* The title of the purchase promo */
-"plus_purchase_promo_title" = "Become a Plus member and unlock all Pocket Casts features";
+"plus_purchase_promo_title" = "Become a Plus member and unlock all PodHopper features";
 
 /* The title of the purchase promo for Patron. Do not translate Patron. */
-"patron_purchase_promo_title" = "Become a Patron member and unlock all Pocket Casts features";
+"patron_purchase_promo_title" = "Become a Patron member and unlock all PodHopper features";
 
 /* The purchase agreement terms, the %1$@, %2$@ are intended to be "Privacy Policy" and "Terms of Use" */
 "purchase_terms" = "By continuing, you agree to our %1$@ and %2$@";
@@ -3914,14 +3914,14 @@
 /* A description shown on the Longest Episode screen of Playback 2024 with the episode title and podcast title */
 "playback_2024_longest_episode_description" = "It was \"%1$@\" from \"%2$@\".";
 
-/* A title shown in the button on the upsell screen to check out Pocket Casts Plus */
-"playback_2024_plus_upsell_button_title" = "Check out Pocket Casts Plus";
+/* A title shown in the button on the upsell screen to check out PodHopper Plus */
+"playback_2024_plus_upsell_button_title" = "Check out PodHopper Plus";
 
-/* A title shown in the upsell screen for Pocket Casts Plus subscription */
+/* A title shown in the upsell screen for PodHopper Plus subscription */
 "playback_2024_plus_upsell_title" = "There's more!";
 
-/* A description shown in the upsell screen for Pocket Casts Plus subscription */
-"playback_2024_plus_upsell_description" = "Support Pocket Casts subscribing to Plus and get more stats, plus Premium features like bookmarks, folders or preselect chapters!";
+/* A description shown in the upsell screen for PodHopper Plus subscription */
+"playback_2024_plus_upsell_description" = "Support PodHopper subscribing to Plus and get more stats, plus Premium features like bookmarks, folders or preselect chapters!";
 
 /* A title shown in the Completion Rate screen for Playback 2024 */
 "playback_2024_completion_rate_title" = "You completion rate this year was %1$@";
@@ -3988,7 +3988,7 @@
 /* End of Year card description that appears under Profile */
 "eoy_card_description" = "See your listening stats, top podcasts, and more.";
 
-/* Description that appears on the first story of the 2022 Pocket Casts wrap up (End of Year) */
+/* Description that appears on the first story of the 2022 PodHopper wrap up (End of Year) */
 "eoy_story_intro_title" = "Let's celebrate your year of listening...";
 
 /* String telling the user how much time they listened to podcasts in 2022, %1$@ is a placeholder for the amount of time. */
@@ -4247,13 +4247,13 @@
 "login_subtitle" = "Create an account to sync your listening experience across all your devices.";
 
 /* Title of the login view */
-"login_landing_title" = "Create your Pocket Casts account";
+"login_landing_title" = "Create your PodHopper account";
 
 /* Subtitle of the login view */
-"login_landing_subtitle" = "Your podcasts, always in sync. Keep your library safe, and enjoy Pocket Casts on web and desktop.";
+"login_landing_subtitle" = "Your podcasts, always in sync. Keep your library safe, and enjoy PodHopper on web and desktop.";
 
 /* Title of the plus marketing view */
-"plus_marketing_title" = "Everything you love about Pocket Casts, plus more";
+"plus_marketing_title" = "Everything you love about PodHopper, plus more";
 
 /* Subtitle of the plus marketing view */
 "plus_marketing_subtitle" = "Get access to exclusive features and customisation options";
@@ -4283,10 +4283,10 @@
 "cancel_confirm_item_folders" = "Your folders will be removed and their contents will move back to the Podcasts screen.";
 
 /* Title of a list item that informs the user uploaded files will be removed if they cancel */
-"cancel_confirm_item_uploads" = "All files uploaded to your Pocket Casts account will be deleted, but downloads on your mobile devices will remain.";
+"cancel_confirm_item_uploads" = "All files uploaded to your PodHopper account will be deleted, but downloads on your mobile devices will remain.";
 
 /* Title of a list item that informs the user they will no longer be able to access plus on the web if they cancel */
-"cancel_confirm_item_web_player" =  "You will no longer be able to access Pocket Casts using your web browser, or desktop computer.";
+"cancel_confirm_item_web_player" =  "You will no longer be able to access PodHopper using your web browser, or desktop computer.";
 
 /* Title of a list item that informs the user will continue access listening history and podcasts */
 "cancel_confirm_item_history" = "Your podcasts and listening history will continue to be accessible. ";
@@ -4337,7 +4337,7 @@
 "support_watch_help_title" = "Looking for Watch app help?";
 
 /* Description of an alert shown to the user */
-"support_watch_help_message" = "If you're having issues with the Pocket Casts Watch app we can send your wearable logs to better assist you. In order to do so, please open Pocket Casts on your Watch.";
+"support_watch_help_message" = "If you're having issues with the PodHopper Watch app we can send your wearable logs to better assist you. In order to do so, please open PodHopper on your Watch.";
 
 /* Button that the user can press if they opened the Watch app */
 "support_watch_help_opened_app" = "I've opened the Watch app";
@@ -4490,10 +4490,10 @@
 "episode_description_title" = "Episode Description";
 
 /* A message informing the user a feature is locked. %1$@ is the name of the tier (Plus or Patron) */
-"bookmarks_locked_message" = "Unlock this feature and many more with Pocket Casts %1$@ and save timestamps of your favorite episodes.";
+"bookmarks_locked_message" = "Unlock this feature and many more with PodHopper %1$@ and save timestamps of your favorite episodes.";
 
 /* A message informing the user a feature is locked while in early access. %1$@ and %2$@ are the names of the tier (Plus or Patron) */
-"bookmarks_early_access_locked_message" = "Unlock this feature and many more with Pocket Casts %1$@ and save timestamps of your favorite episodes. Available for %2$@ subscribers soon.";
+"bookmarks_early_access_locked_message" = "Unlock this feature and many more with PodHopper %1$@ and save timestamps of your favorite episodes. Available for %2$@ subscribers soon.";
 
 /* A button title that prompts the user to upgrade their plan. %1$@ is the name of the tier (Plus or Patron) */
 "upgrade_to_plan" = "Upgrade to %1$@";
@@ -4504,8 +4504,8 @@
 /* Title of a message thanking the user for being a beta tester */
 "beta_thank_you" = "Thank you for beta testing!";
 
-/* Message of an alert that informs the user purchasing is disabled in the beta. 'Pocket Casts' is treated as a proper noun and hasn't been localized in other places of the app. %1$@ is the name of the tier (Plus or Patron)*/
-"beta_purchase_disabled" = "Please download Pocket Casts from the App Store to purchase %1$@.";
+/* Message of an alert that informs the user purchasing is disabled in the beta. 'PodHopper's is treated as a proper noun and hasn't been localized in other places of the app. %1$@ is the name of the tier (Plus or Patron)*/
+"beta_purchase_disabled" = "Please download PodHopper from the App Store to purchase %1$@.";
 
 /* Title displayed when an user want to rate a podcast but hasn't listened enough to it */
 "rating_listen_to_this_podcast_title" = "Please listen to this podcast first";
@@ -4573,11 +4573,11 @@
 /* Indicates the number of hidden chapters in a podcast episode. %1$@ is the number of hidden chapters. */
 "number_of_hidden_chapters" = "%1$@ hidden";
 
-/* Prompt for Plus mentioning Pre selecting Chapters, don't translate Pocket Casts Plus */
-"skip_chapters_plus_prompt" = "Preselect chapters and more with Pocket Casts Plus";
+/* Prompt for Plus mentioning Pre selecting Chapters, don't translate PodHopper Plus */
+"skip_chapters_plus_prompt" = "Preselect chapters and more with PodHopper Plus";
 
-/* Prompt for Plus mentioning Pre selecting Chapters, don't translate Pocket Casts Patron */
-"skip_chapters_patron_prompt" = "Preselect chapters and more with Pocket Casts Patron";
+/* Prompt for Plus mentioning Pre selecting Chapters, don't translate PodHopper Patron */
+"skip_chapters_patron_prompt" = "Preselect chapters and more with PodHopper Patron";
 
 /* Slumber Studios partnership feature announcement title */
 "announcement_slumber_title" = "Dream big";
@@ -4733,14 +4733,14 @@
 /* A label shown while the clip is being created */
 "clip_loading_label" = "Creating Clip...";
 
-/* Title of the Pocket Casts champion screen, greeting an user that has been using Pocket Casts for a long time */
-"champion_title" = "You’re a true champion of Pocket Casts!";
+/* Title of the PodHopper champion screen, greeting an user that has been using PodHopper for a long time */
+"champion_title" = "You’re a true champion of PodHopper!";
 
-/* Subtitle of the Pocket Casts champion screen */
+/* Subtitle of the PodHopper champion screen */
 "champion_description" = "Thanks for being with us since the beginning! If you enjoy using our app, we’d love to hear your feedback.";
 
 /* Title of a button that allows the user to rate the app */
-"rate_pocket_casts" = "Rate Pocket Casts";
+"rate_pocket_casts" = "Rate PodHopper";
 
 /* Kids Profile banner title */
 "kids_profile_banner_title" = "Kids Profile";
@@ -4767,7 +4767,7 @@
 "kids_profile_thankyou_button_close" = "No, thank you";
 
 /* Kids Profile Submit screen title */
-"kids_profile_submit_feedback_title" = "What would you like to see in a Kids profile for Pocket Casts?";
+"kids_profile_submit_feedback_title" = "What would you like to see in a Kids profile for PodHopper?";
 
 /* Kids Profile Submit screen send button title */
 "kids_profile_submit_feedback_send_button" = "Send";
@@ -4809,7 +4809,7 @@
 "view_transcript" = "View Transcript";
 
 /* Upgrade Experiment Paywall button title */
-"upgrade_experiment_paywall_button" = "Get Pocket Casts Plus";
+"upgrade_experiment_paywall_button" = "Get PodHopper Plus";
 
 /* Upgrade Experiment message informing the user that they have been granted a limited free membership. '%1$@' is a placeholder for a localized string for the free time period. */
 "upgrade_experiment_free_membership_format" = "Free %1$@ Plus trial";
@@ -4887,7 +4887,7 @@
 "upgrade_experiment_reviews_review_title_2" = "Best podcasat app out there";
 
 /* Upgrade Experiment - Reviews Variation: text for Review card 2 */
-"upgrade_experiment_reviews_review_text_2" = "I've been a Pocket Casts user since 2017.\n\nThis is hands down the best app to listen to podcasts. It's feature rich and actively developed. There have been some complaints about the Ul change but I haven't really noticed it too much.\n\nThis app can be as simple or difficult to use as you'd like it to be. So either let it be a plug and play or set up skip outro and intro timers and any other little feature you want to enable.";
+"upgrade_experiment_reviews_review_text_2" = "I've been a PodHopper user since 2017.\n\nThis is hands down the best app to listen to podcasts. It's feature rich and actively developed. There have been some complaints about the Ul change but I haven't really noticed it too much.\n\nThis app can be as simple or difficult to use as you'd like it to be. So either let it be a plug and play or set up skip outro and intro timers and any other little feature you want to enable.";
 
 /* Upgrade Experiment - Reviews Variation: title for Review card 3 */
 "upgrade_experiment_reviews_review_title_3" = "Fantastic app";
@@ -4922,8 +4922,8 @@
 /* Clips - A label used for Voice Over to indicate the end time of a clip. The time will be read as a localized version of "20 minutes 30 seconds" after this label */
 "clips_end_time_accessibility_label" = "Clip end";
 
-/* A Voice Over label for element which represents the Pocket Casts Logo */
-"pocket_casts_logo" = "Pocket Casts logo";
+/* A Voice Over label for element which represents the PodHopper Logo */
+"pocket_casts_logo" = "PodHopper logo";
 
 /* A Voice Over label used to identify a shareable media. This represents different image and video sizes such as "large, medium, small" as well as the "audio" format */
 "clips_shareable_media_a11y_label" = "Shareable media options";
@@ -4935,7 +4935,7 @@
 "referrals_tip_title" = "You have %1$@ passes to share";
 
 /* Referrals - Tip Message '%1$@' is a placeholder for the duration of free period on the Plus subscription*/
-"referrals_tip_message" = "Gift %1$@ of Pocket Casts Plus!";
+"referrals_tip_message" = "Gift %1$@ of PodHopper Plus!";
 
 /* Referrals - Guest Pass Offer Message '%1$@' is a placeholder for the duration of free days on the Plus subscription. Ex: 2-Month Guest Pass*/
 "referrals_guest_pass_offer" = "%1$@ Guest Pass";
@@ -4947,7 +4947,7 @@
 "referrals_share_no_guest_pass_title" = "You've shared all yours guest passes!";
 
 /* Referrals - Share Guest Pass no more passes message*/
-"referrals_share_no_guest_pass_message" = "Thanks for sharing Pocket Casts! We'll let you know when you have more passes to give.";
+"referrals_share_no_guest_pass_message" = "Thanks for sharing PodHopper! We'll let you know when you have more passes to give.";
 
 /* Referrals - Claim Guest Pass screen title. `%1$@' is a placeholder for the offer duration on the Plus subscription*/
 "referrals_claim_guest_pass_title" = "Claim your %1$@ Guest Pass";
@@ -4965,10 +4965,10 @@
 "referrals_claim_guest_pass_banner_detail" = "Unlock the full listening experience";
 
 /* Referrals - Share Pass message. `%1$@' is a placeholder for the duration of free period offered on the Plus subscription*/
-"referrals_share_pass_message" = "Hey! Use the link below to claim your %1$@ guest pass for Pocket Casts Plus and enjoy podcasts across all your devices!";
+"referrals_share_pass_message" = "Hey! Use the link below to claim your %1$@ guest pass for PodHopper Plus and enjoy podcasts across all your devices!";
 
 /* Referrals - Share Pass subject title for sharing to email. `%1$@' is a placeholder for the duration of free period offered on the Plus subscription*/
-"referrals_share_pass_subject" = "%1$@ Guest Pass for Pocket Casts Plus!";
+"referrals_share_pass_subject" = "%1$@ Guest Pass for PodHopper Plus!";
 
 /* Referrals - Title for screen saying that referral offer isn't available for user*/
 "referrals_offer_not_available_title" = "This offer isn’t available";
@@ -5019,25 +5019,25 @@
 "learn_about_ratings" = "Learn about ratings";
 
 /* Paywall header for when the view is presented from the folder source */
-"paywall_dynamic_headline_folder" = "Organize your podcasts with Pocket Casts Plus, and more";
+"paywall_dynamic_headline_folder" = "Organize your podcasts with PodHopper Plus, and more";
 
 /* Paywall header for when the view is presented from the Up Next Shuffle source */
-"paywall_dynamic_headline_up_next_shuffle" = "Shuffle your episodes with Pocket Casts Plus, and more";
+"paywall_dynamic_headline_up_next_shuffle" = "Shuffle your episodes with PodHopper Plus, and more";
 
 /* Paywall header for when the view is presented from the themes source */
-"paywall_dynamic_headline_themes" = "Get exclusive themes with Pocket Casts Plus, and more";
+"paywall_dynamic_headline_themes" = "Get exclusive themes with PodHopper Plus, and more";
 
 /* Paywall header for when the view is presented from the watch source */
-"paywall_dynamic_headline_watch" = "Listen from your watch with Pocket Casts Plus, and more";
+"paywall_dynamic_headline_watch" = "Listen from your watch with PodHopper Plus, and more";
 
 /* Paywall header for when the view is presented from the icons source */
-"paywall_dynamic_headline_icons" = "Get exclusive app icons with Pocket Casts Plus, and more";
+"paywall_dynamic_headline_icons" = "Get exclusive app icons with PodHopper Plus, and more";
 
 /* Paywall header for when the view is presented from the files source */
-"paywall_dynamic_headline_files" = "Upload your files with Pocket Casts Plus, and more";
+"paywall_dynamic_headline_files" = "Upload your files with PodHopper Plus, and more";
 
 /* Paywall header for when the view is presented from the banner ad source */
-"paywall_dynamic_headline_banner_ad" = "Say goodbye to banner ads and more with Pocket Casts Plus";
+"paywall_dynamic_headline_banner_ad" = "Say goodbye to banner ads and more with PodHopper Plus";
 
 /* Up Next Shuffle Announcement sheet title*/
 "up_next_shuffle_announcement_title" = "Introducing Shuffle";
@@ -5103,7 +5103,7 @@
 "cancel_subscription_new_plan_description" = "Find the plan that’s right for you.";
 
 /* Cancel subscription: title for the help row */
-"cancel_subscription_help_title" = "Need help with Pocket Casts?";
+"cancel_subscription_help_title" = "Need help with PodHopper?";
 
 /* Cancel subscription: description for the help row */
 "cancel_subscription_help_description" = "Struggling with any features or having issues.";
@@ -5118,10 +5118,10 @@
 "cancel_subscription_winback_view_title_montly" = "Get your next month free and save %@";
 
 /* Offer view: description for the yearly promotion. The %@ represents the price. */
-"cancel_subscription_winback_view_description_yearly" = "Pay %@ now to lock in a year of Pocket Casts Plus at half price. Your discounted year begins after your current plan ends.";
+"cancel_subscription_winback_view_description_yearly" = "Pay %@ now to lock in a year of PodHopper Plus at half price. Your discounted year begins after your current plan ends.";
 
 /* Offer view: description for the monthly promotion. */
-"cancel_subscription_winback_view_description_montly" = "Enjoy one month of Pocket Casts Plus on us! The offer will be added to your current subscription.";
+"cancel_subscription_winback_view_description_montly" = "Enjoy one month of PodHopper Plus on us! The offer will be added to your current subscription.";
 
 /* Offer view: button used to accept the offer */
 "cancel_subscription_winback_view_accept_offer_button" = "Accept offer";
@@ -5138,8 +5138,8 @@
 /* Badge that appears over the best value plan in the available plans list */
 "cancel_subscription_available_plans_best_value_badge" = "Best Value";
 
-/* Title of the survey screen that appears when a user cancels the subscription. \n forces Pocket Casts to be on a new line */
-"cancel_subscription_survey_title" = "Thanks for trying\nPocket Casts Plus";
+/* Title of the survey screen that appears when a user cancels the subscription. \n forces PodHopper to be on a new line */
+"cancel_subscription_survey_title" = "Thanks for trying\nPodHopper Plus";
 
 /* Description of the survey screen that appears when a user cancels the subscription */
 "cancel_subscription_survey_description" = "We'd love to know why you canceled. Your feedback helps us improve.";
@@ -5184,13 +5184,13 @@
 "cancel_subscription_offer_yearly_success_view_title" = "50%% off your next year!";
 
 /* Description of the success screen when the cancel subscription offer is applied */
-"cancel_subscription_offer_success_view_description" = "Thanks for choosing Pocket Casts. Your free month will be added to your current subscription.";
+"cancel_subscription_offer_success_view_description" = "Thanks for choosing PodHopper. Your free month will be added to your current subscription.";
 
 /* Description of the success screen when the cancel yearly subscription offer is applied */
-"cancel_subscription_offer_yearly_success_view_description" = "Thanks for choosing Pocket Casts. Your discounted year begins after your current plan ends.";
+"cancel_subscription_offer_yearly_success_view_description" = "Thanks for choosing PodHopper. Your discounted year begins after your current plan ends.";
 
 /* Referrals - Share Pass message. `%1$@' is a placeholder for the duration of free period offered on the Plus subscription*/
-"referrals_share_pass_long_message" = "Hi there!\n\nHere is a %1$@ guest pass for Pocket Casts Plus - my favorite podcast player. It's packed with unique features like bookmarks, folders, and more that you won't find anywhere else. I think you'll love it too!\n";
+"referrals_share_pass_long_message" = "Hi there!\n\nHere is a %1$@ guest pass for PodHopper Plus - my favorite podcast player. It's packed with unique features like bookmarks, folders, and more that you won't find anywhere else. I think you'll love it too!\n";
 
 /* Auto Downloads Setting - Auto download on follow of a blog*/
 "settings_auto_downloads_on_follow" = "On Follow";
@@ -5202,7 +5202,7 @@
 "logs_no_email_account_configured" = "You need to configure an email account on the device in order to send the logs";
 
 /* Message shown when watchOS logs are not available */
-"logs_watch_os_not_available" = "No watchOS logs available. Make sure you have an Apple Watch paired and the Pocket Casts watch app installed.";
+"logs_watch_os_not_available" = "No watchOS logs available. Make sure you have an Apple Watch paired and the PodHopper watch app installed.";
 
 /* Title for action to remove episode from listening history */
 "listening_history_remove" = "Remove from history";
@@ -5253,7 +5253,7 @@
 "app_clip_placholder_title" = "Sorry, we couldn't find that episode";
 
 /* App Clip Placeholder view message for when the episode link parsing fails */
-"app_clip_placholder_message" = "It may have been removed or the link is broken.\nBut there's plenty more on Pocket Casts.\nDownload the app for the full experience!";
+"app_clip_placholder_message" = "It may have been removed or the link is broken.\nBut there's plenty more on PodHopper.\nDownload the app for the full experience!";
 
 /* Notifications On*/
 "notifications_on" = "Notifications On";
@@ -5274,7 +5274,7 @@
 "generated_transcripts_banner" = "This transcript is automatically generated and available to Plus subscribers only";
 
 /* Title showed in the upsell overlay when a free user access the generated transcripts */
-"generated_transcripts_overlay_title" = "This transcript is automatically generated by Pocket Casts.";
+"generated_transcripts_overlay_title" = "This transcript is automatically generated by PodHopper.";
 
 /* Description showed in the upsell overlay when a free user access the generated transcripts */
 "generated_transcripts_overlay_description" = "Subscribe to Plus to get access to it and other Premium features like bookmarks and folders.";
@@ -5325,7 +5325,7 @@
 "notifications_onboarding_signup_body" = "Create a free account to sync your shows and listen anywhere.";
 
 /* Notification body for import onboarding message */
-"notifications_onboarding_import_body" = "Switching from another app? Bring all your favorite shows to Pocket Casts.";
+"notifications_onboarding_import_body" = "Switching from another app? Bring all your favorite shows to PodHopper.";
 
 /* Notification body for themes onboarding message */
 "notifications_onboarding_themes_body" = "Browse our themes and find the one that suits your style.";
@@ -5383,7 +5383,7 @@
 "onboarding_quote_folders" = "Organizing my podcasts by folders is genius";
 
 /* A generic label representing the authour of the onboarding quotes describing users of the app */
-"onboarding_quote_author" = "Pocket Casts user";
+"onboarding_quote_author" = "PodHopper user";
 
 /* Notification body for weekly reengagement message */
 "notifications_reengagement_weekly_body" = "It’s been awhile since you’ve listened. Jump back in and enjoy!";
@@ -5392,7 +5392,7 @@
 "eac_informational_view_modal_title" = "We noticed you’re not logged in";
 
 /* Encourage Account Creation: modal description */
-"eac_informational_view_modal_description" = "Create an account or log in to enjoy\nPocket Casts to the fullest.";
+"eac_informational_view_modal_description" = "Create an account or log in to enjoy\nPodHopper to the fullest.";
 
 /* Encourage Account Creation: Get Started button */
 "eac_informational_view_modal_get_started_button" = "Get Started";
@@ -5497,7 +5497,7 @@
 "notifications_app_clip_title" = "Ready for more podcasts?";
 
 /* Notification body for App Clip reminder*/
-"notifications_app_clip_body" = "Install Pocket Casts to get the full experience with powerful playback and customization tools.";
+"notifications_app_clip_body" = "Install PodHopper to get the full experience with powerful playback and customization tools.";
 
 /* Notifications permissions screen title text*/
 "notifications_permissions_title" = "Stay up to date!";
@@ -5838,7 +5838,7 @@
 "playlist_play_all_sheet_button_title" = "Replace and play";
 
 /* A title shown for the user satisfaction survey to ask whether a user enjoys the app */
-"user_satisfaction_survey_title" = "Enjoying Pocket Casts?";
+"user_satisfaction_survey_title" = "Enjoying PodHopper?";
 
 /* A subtitle shown for the user satisfaction survey to ask whether a user enjoys the app */
 "user_satisfaction_survey_subtitle" = "Hi there! We'd love to know if you're enjoying our app.";
@@ -5907,7 +5907,7 @@
 "playback_2025_listened_to_numbers" = "You tuned in to %1$@ podcasts and %2$@ episodes";
 
 /* Playback 2025: Title for the last story */
-"playback_2025_end_story_title" = "Thanks for spending your year with Pocket Casts";
+"playback_2025_end_story_title" = "Thanks for spending your year with PodHopper";
 
 /* Playback 2025: Description for the last story */
 "playback_2025_end_story_description" = "Share your Playback with friends and show some love to the podcasters who kept you company all year";
@@ -5981,14 +5981,14 @@
 /// Search results screen: action for doing full search on term. %1$@ argument is the term being searched. Ex: "View all results for "cautionary" "
 "search_results_view_all" = "View all results for \"%1$@\"";
 
-/* A title shown in the button on the upsell screen to get  Pocket Casts Plus */
-"playback_2025_plus_upsell_button_title" = "Get Pocket Casts Plus";
+/* A title shown in the button on the upsell screen to get  PodHopper Plus */
+"playback_2025_plus_upsell_button_title" = "Get PodHopper Plus";
 
-/* A title shown in the upsell screen for Pocket Casts Plus subscription */
+/* A title shown in the upsell screen for PodHopper Plus subscription */
 "playback_2025_plus_upsell_title" = "Want the deep dive?";
 
-/* A description shown in the upsell screen for Pocket Casts Plus subscription */
-"playback_2025_plus_upsell_description" = "Subscribe to Pocket Casts Plus for extended stats, bookmarks, folders, chapter selection, and more ways to dig into your listening habits";
+/* A description shown in the upsell screen for PodHopper Plus subscription */
+"playback_2025_plus_upsell_description" = "Subscribe to PodHopper Plus for extended stats, bookmarks, folders, chapter selection, and more ways to dig into your listening habits";
 
 /* A title shown on the Ratings Playback 2025 screen showing a bar chart of your ratings */
 "playback_2025_ratings_description_4_to_5" = "Creators everywhere appreciate the love";
@@ -6007,10 +6007,10 @@
 /* A description shown in Playback 2025 to describe the new Podcast Ratings feature */
 "playback_2025_ratings_empty_description" = "Help your favorite creators get discovered by sharing what you love";
 
-/* A title shown in the Playback thanks screen for Pocket Casts Plus subscription */
-"playback_2025_plus_thanks_title" = "Thanks for supporting Pocket Casts!";
+/* A title shown in the Playback thanks screen for PodHopper Plus subscription */
+"playback_2025_plus_thanks_title" = "Thanks for supporting PodHopper!";
 
-/* A description shown in the Playback thanks screen for Pocket Casts Plus subscribers. %1$@ argument is your subscription Tier. Ex:  Your Plus perks unlock extra stats and power features" */
+/* A description shown in the Playback thanks screen for PodHopper Plus subscribers. %1$@ argument is your subscription Tier. Ex:  Your Plus perks unlock extra stats and power features" */
 "playback_2025_plus_thanks_description" = "Your %1$@ perks unlock extra stats and power features";
 
 /* Message to shown when playback 2025 failed to load */
@@ -6044,7 +6044,7 @@
 "tv_tab_up_next" = "Up Next";
 
 /* tv welcome title */
-"tv_welcome_title" = "Welcome to Pocket Casts TV";
+"tv_welcome_title" = "Welcome to PodHopper TV";
 
 /* tv welcome subtitle */
 "tv_welcome_subtitle" = "Your podcasts. On the big screen. Obviously.";
@@ -6059,7 +6059,7 @@
 "tv_welcome_browse_without_account" = "Browse without an account";
 
 /* tv sign in title */
-"tv_sign_in_title" = "Log in to Pocket Casts";
+"tv_sign_in_title" = "Log in to PodHopper";
 
 /* tv sign in subtitle */
 "tv_sign_in_subtitle" = "Open your camera and point to this QR code";
@@ -6359,7 +6359,7 @@
 "tv_home_trending_section_title" = "What everyone's on this week";
 
 /* tv home Featured section title */
-"tv_home_featured_section_title" = "Featured on Pocket Casts";
+"tv_home_featured_section_title" = "Featured on PodHopper";
 
 /* tv home Browse Categories section title */
 "tv_home_browse_categories_section_title" = "Browse categories";
@@ -6395,7 +6395,7 @@
 "tv_home_video_section_title" = "Made for TV";
 
 /* tv Sponsored Podcast Title */
-"tv_sponsored_podcast_section_title" = "Pocket Casts recommends";
+"tv_sponsored_podcast_section_title" = "PodHopper recommends";
 
 /* tv Discover failed to load title*/
 "tv_discover_failed_to_load_title" = "Discover failed to load.";
@@ -6443,7 +6443,7 @@
 "tv_account_signed_out_alert_title" = "You've been logged out.";
 
 /* Message/Body of an alert that explains that the user should tap a button and sign in again */
-"tv_account_signed_out_alert_message" = "There was a problem and you've been logged out.\nTap the button below to log in to your Pocket Casts account again.";
+"tv_account_signed_out_alert_message" = "There was a problem and you've been logged out.\nTap the button below to log in to your PodHopper account again.";
 
 /* Message shown on the empty folder view in the TV app, directing the user to add podcasts to the folder using the mobile app */
 "tv_folder_empty_message" = "Edit your folder in the mobile app, they'll be waiting here when you're done.";

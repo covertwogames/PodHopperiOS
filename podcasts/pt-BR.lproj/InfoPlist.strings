@@ -4,16 +4,16 @@
 <plist version="1.0">
   <dict>
     <key>NSBluetoothAlwaysUsageDescription</key>
-    <string>O Pocket Casts precisa acessar seu Bluetooth para detectar dispositivos Google Cast próximos.</string>
+    <string>O PodHopper precisa acessar seu Bluetooth para detectar dispositivos Google Cast próximos.</string>
     <key>NSCameraUsageDescription</key>
     <string>Isso permite que você adicione imagens personalizadas aos seus arquivos</string>
     <key>NSLocalNetworkUsageDescription</key>
-    <string>O Pocket Casts usa isso para encontrar dispositivos Google Cast em sua rede. Se você não usa essa funcionalidade, sinta-se à vontade para dizer não.</string>
+    <string>O PodHopper usa isso para encontrar dispositivos Google Cast em sua rede. Se você não usa essa funcionalidade, sinta-se à vontade para dizer não.</string>
     <key>NSMicrophoneUsageDescription</key>
-    <string>O Pocket Casts precisa acessar seu microfone para detectar dispositivos Google Cast próximos.</string>
+    <string>O PodHopper precisa acessar seu microfone para detectar dispositivos Google Cast próximos.</string>
     <key>NSPhotoLibraryAddUsageDescription</key>
-    <string>O Pocket Casts precisa de permissão para salvar essa imagem em sua biblioteca de fotos.</string>
+    <string>O PodHopper precisa de permissão para salvar essa imagem em sua biblioteca de fotos.</string>
     <key>NSPhotoLibraryUsageDescription</key>
-    <string>O Pocket Casts precisa de permissão para salvar essa imagem em sua biblioteca de fotos.</string>
+    <string>O PodHopper precisa de permissão para salvar essa imagem em sua biblioteca de fotos.</string>
   </dict>
 </plist>

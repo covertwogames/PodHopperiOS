@@ -64,7 +64,7 @@
     <key>accessibility_plus_only</key>
     <string>Låst Plus-funktion</string>
     <key>accessibility_profile_settings</key>
-    <string>Pocket Casts-inställningar</string>
+    <string>PodHopper-inställningar</string>
     <key>accessibility_select_episode</key>
     <string>Välj avsnitt</string>
     <key>accessibility_show_filter_details</key>
@@ -130,19 +130,19 @@
     <key>account_signed_out_alert_message</key>
     <string>Tänka sig, om du skriver Google i Google kan du krascha internet. 🫢 
 
-Tryck på knappen nedan för att logga in på ditt Pocket Casts-konto igen.</string>
+Tryck på knappen nedan för att logga in på ditt PodHopper-konto igen.</string>
     <key>account_signed_out_alert_title</key>
     <string>Du har blivit utloggad.</string>
     <key>account_sso_failed</key>
     <string>Inloggning misslyckades. Försök igen.</string>
     <key>account_title</key>
-    <string>Pocket Casts-konto</string>
+    <string>PodHopper-konto</string>
     <key>account_upgraded</key>
     <string>Kontot har uppgraderats</string>
     <key>account_welcome</key>
-    <string>Välkommen till Pocket Casts!</string>
+    <string>Välkommen till PodHopper!</string>
     <key>account_welcome_plus</key>
-    <string>Välkommen till Pocket Casts Plus!</string>
+    <string>Välkommen till PodHopper Plus!</string>
     <key>add_bookmark</key>
     <string>Lägg till bokmärke</string>
     <key>add_bookmark_subtitle</key>
@@ -185,7 +185,7 @@ Tryck på knappen nedan för att logga in på ditt Pocket Casts-konto igen.</str
     <string>Appmärke</string>
     <key>app_clip_placholder_message</key>
     <string>Det kan ha tagits bort eller så är länken trasig.
-Men det finns mycket mer på Pocket Casts.
+Men det finns mycket mer på PodHopper.
 Ladda ner appen för att få den fullständiga upplevelsen.</string>
     <key>app_clip_placholder_title</key>
     <string>Tyvärr kunde vi inte hitta det avsnittet</string>
@@ -226,7 +226,7 @@ Ladda ner appen för att få den fullständiga upplevelsen.</string>
     <key>app_icon_round_light</key>
     <string>Rund ljus</string>
     <key>app_share_text</key>
-    <string>Hej! Här är en länk för att ladda ner Pocket Casts-appen. Jag tycker att den är jättebra och tänkte att du också skulle gilla den.</string>
+    <string>Hej! Här är en länk för att ladda ner PodHopper-appen. Jag tycker att den är jättebra och tänkte att du också skulle gilla den.</string>
     <key>app_version</key>
     <string>Version %1$@ (%2$@)</string>
     <key>appearance_app_icon_header</key>
@@ -238,7 +238,7 @@ Ladda ner appen för att få den fullständiga upplevelsen.</string>
     <key>appearance_embedded_artwork</key>
     <string>Använd avsnittsomslag</string>
     <key>appearance_embedded_artwork_subtitle</key>
-    <string>Vissa serier har anpassade omslag för specifika avsnitt. Aktivera det här alternativet så visar Pocket Casts dem istället för seriens omslag.</string>
+    <string>Vissa serier har anpassade omslag för specifika avsnitt. Aktivera det här alternativet så visar PodHopper dem istället för seriens omslag.</string>
     <key>appearance_light_theme</key>
     <string>Ljust tema</string>
     <key>appearance_match_device_theme</key>
@@ -322,7 +322,7 @@ Ladda ner appen för att få den fullständiga upplevelsen.</string>
     <key>banner_ads_report_too_often</key>
     <string>Får upp denna annons för ofta</string>
     <key>beta_purchase_disabled</key>
-    <string>Ladda ner Pocket Casts från App Store för att köpa %1$@.</string>
+    <string>Ladda ner PodHopper från App Store för att köpa %1$@.</string>
     <key>beta_thank_you</key>
     <string>Tack för att du är med som betatestare.</string>
     <key>bookmark_added</key>
@@ -350,9 +350,9 @@ Ladda ner appen för att få den fullständiga upplevelsen.</string>
     <key>bookmarks_count_singular</key>
     <string>1 bokmärke</string>
     <key>bookmarks_early_access_locked_message</key>
-    <string>Lås upp den här och många andra funktioner med Pocket Casts %1$@ och spara tidsstämplar för dina favoritavsnitt. Snart tillgänglig för %2$@-prenumeranter.</string>
+    <string>Lås upp den här och många andra funktioner med PodHopper %1$@ och spara tidsstämplar för dina favoritavsnitt. Snart tillgänglig för %2$@-prenumeranter.</string>
     <key>bookmarks_locked_message</key>
-    <string>Lås upp denna funktion och många fler med Pocket Casts %1$@ och spara tidsstämplar för dina favoritavsnitt.</string>
+    <string>Lås upp denna funktion och många fler med PodHopper %1$@ och spara tidsstämplar för dina favoritavsnitt.</string>
     <key>bottom</key>
     <string>Längst ner</string>
     <key>bulk_download_max_format</key>
@@ -366,7 +366,7 @@ Ladda ner appen för att få den fullständiga upplevelsen.</string>
     <key>cancel_confirm_item_plus</key>
     <string>Efter detta datum kommer åtkomsten till Plus-funktioner som bokmärken, slumpmässig uppspelning, bärbara tillbehör med mera att tas bort.</string>
     <key>cancel_confirm_item_uploads</key>
-    <string>Alla filer som har laddats upp till ditt Pocket Casts-konto kommer att tas bort (men nedladdningar på dina mobila enheter kommer att vara kvar).</string>
+    <string>Alla filer som har laddats upp till ditt PodHopper-konto kommer att tas bort (men nedladdningar på dina mobila enheter kommer att vara kvar).</string>
     <key>cancel_confirm_sub_expiry</key>
     <string>Din nuvarande prenumeration förblir aktiv till %1$@.</string>
     <key>cancel_confirm_sub_expiry_date_fallback</key>
@@ -398,17 +398,17 @@ Ladda ner appen för att få den fullständiga upplevelsen.</string>
     <key>cancel_subscription_help_description</key>
     <string>Har du stött på problem eller någon funktion som krånglar?</string>
     <key>cancel_subscription_help_title</key>
-    <string>Behöver du hjälp med Pocket Casts?</string>
+    <string>Behöver du hjälp med PodHopper?</string>
     <key>cancel_subscription_new_plan_description</key>
     <string>Hitta rätt paket för dig.</string>
     <key>cancel_subscription_new_plan_title</key>
     <string>Letar du efter ett annat paket?</string>
     <key>cancel_subscription_offer_success_view_description</key>
-    <string>Tack för att du väljer Pocket Casts. Din gratismånad kommer att läggas till i din nuvarande prenumeration.</string>
+    <string>Tack för att du väljer PodHopper. Din gratismånad kommer att läggas till i din nuvarande prenumeration.</string>
     <key>cancel_subscription_offer_success_view_title</key>
     <string>Njut av din gratismånad!</string>
     <key>cancel_subscription_offer_yearly_success_view_description</key>
-    <string>Tack för att du väljer Pocket Casts. Ditt rabatterade år börjar efter att ditt nuvarande paket löper ut.</string>
+    <string>Tack för att du väljer PodHopper. Ditt rabatterade år börjar efter att ditt nuvarande paket löper ut.</string>
     <key>cancel_subscription_offer_yearly_success_view_title</key>
     <string>50 %% rabatt på nästa år.</string>
     <key>cancel_subscription_promotion_description_monthly</key>
@@ -433,7 +433,7 @@ Ladda ner appen för att få den fullständiga upplevelsen.</string>
     <string>Skicka feedback</string>
     <key>cancel_subscription_survey_title</key>
     <string>Tack för att du provade
-Pocket Casts Plus</string>
+PodHopper Plus</string>
     <key>cancel_subscription_survey_toast_fail</key>
     <string>Något gick fel.</string>
     <key>cancel_subscription_survey_toast_success</key>
@@ -446,9 +446,9 @@ Låt oss hjälpa dig först</string>
     <key>cancel_subscription_winback_view_continue_cancellation_button</key>
     <string>Fortsätt med annullering</string>
     <key>cancel_subscription_winback_view_description_montly</key>
-    <string>Få en månad med Pocket Casts Plus utan kostnad! Erbjudandet kommer att läggas till i din nuvarande prenumeration.</string>
+    <string>Få en månad med PodHopper Plus utan kostnad! Erbjudandet kommer att läggas till i din nuvarande prenumeration.</string>
     <key>cancel_subscription_winback_view_description_yearly</key>
-    <string>Betala %@ nu för att säkra ett år med Pocket Casts Plus till halva priset. Ditt rabatterade år börjar efter att ditt nuvarande paket löper ut.</string>
+    <string>Betala %@ nu för att säkra ett år med PodHopper Plus till halva priset. Ditt rabatterade år börjar efter att ditt nuvarande paket löper ut.</string>
     <key>cancel_subscription_winback_view_title_montly</key>
     <string>Få nästa månad gratis och spara %@</string>
     <key>cancel_subscription_winback_view_title_yearly</key>
@@ -468,7 +468,7 @@ Låt oss hjälpa dig först</string>
     <key>champion_description</key>
     <string>Tack för att du varit med oss sedan starten. Om du tycker om att använda vår app vill vi gärna höra din feedback.</string>
     <key>champion_title</key>
-    <string>Du är en sann förespråkare för Pocket Casts.</string>
+    <string>Du är en sann förespråkare för PodHopper.</string>
     <key>change_app_icon</key>
     <string>Ändra appikon</string>
     <key>change_bookmark_subtitle</key>
@@ -558,11 +558,11 @@ Låt oss hjälpa dig först</string>
     <key>create_account</key>
     <string>Skapa konto</string>
     <key>create_account_app_store_error_message</key>
-    <string>Pocket Casts har problem med att ansluta till App Store. Kontrollera din anslutning och försök igen.</string>
+    <string>PodHopper har problem med att ansluta till App Store. Kontrollera din anslutning och försök igen.</string>
     <key>create_account_app_store_error_title</key>
     <string>Det gick inte att få kontakt med App Store.</string>
     <key>create_account_find_out_more_plus</key>
-    <string>Läs mer om Pocket Casts Plus</string>
+    <string>Läs mer om PodHopper Plus</string>
     <key>create_account_free_account_type</key>
     <string>Vanlig</string>
     <key>create_account_free_details</key>
@@ -915,7 +915,7 @@ Låt oss hjälpa dig först</string>
     <string>Synkronisera mellan enheter</string>
     <key>eac_informational_view_modal_description</key>
     <string>Skapa ett konto eller logga in för att ta del av
-Pocket Casts till fullo.</string>
+PodHopper till fullo.</string>
     <key>eac_informational_view_modal_get_started_button</key>
     <string>Kom igång</string>
     <key>eac_informational_view_modal_title</key>
@@ -1161,7 +1161,7 @@ du lyssnade på var
     <key>file_upload_name_required</key>
     <string>Namn obligatoriskt</string>
     <key>file_upload_no_files_description</key>
-    <string>Ladda upp dina egna filer till Pocket Casts och lyssna eller titta på dem när som helst.</string>
+    <string>Ladda upp dina egna filer till PodHopper och lyssna eller titta på dem när som helst.</string>
     <key>file_upload_no_files_helper</key>
     <string>Hur gör jag det?</string>
     <key>file_upload_no_files_title</key>
@@ -1389,7 +1389,7 @@ du lyssnade på var
     <key>generated_transcripts_overlay_description</key>
     <string>Prenumerera på Plus för att få åtkomst till den och andra Premium-funktioner som bokmärken och mappar.</string>
     <key>generated_transcripts_overlay_title</key>
-    <string>Den här transkriptionen genereras automatiskt av Pocket Casts.</string>
+    <string>Den här transkriptionen genereras automatiskt av PodHopper.</string>
     <key>go_to_discover</key>
     <string>Gå till Upptäck</string>
     <key>go_to_podcast</key>
@@ -1421,11 +1421,11 @@ du lyssnade på var
     <key>how_to_upload_explanation</key>
     <string>Öppna först en app som har de ljudfiler du vill spara</string>
     <key>how_to_upload_share_action_image_center_text</key>
-    <string>Kopiera till Pocket Casts</string>
+    <string>Kopiera till PodHopper</string>
     <key>how_to_upload_share_action_image_sides_text</key>
     <string>Något annat</string>
     <key>how_to_upload_share_action_instruction</key>
-    <string>I menyn trycker du på ”Kopiera till Pocket Casts”</string>
+    <string>I menyn trycker du på ”Kopiera till PodHopper”</string>
     <key>how_to_upload_share_menu_image_background_button_text</key>
     <string>Ljudfil</string>
     <key>how_to_upload_share_menu_image_foreground_menu_option_text</key>
@@ -1447,33 +1447,33 @@ Obs! Om du tidigare har tagit bort appen Genvägar kommer du att bli ombedd att 
 1. Tryck på knappen Installera Genvägar nedan.
 2. Tryck på knappen Lägg till genväg när du blir ombedd att göra detta.
 3. Tryck på fliken Genvägar.
-4. Lokalisera genvägen "Apple Podcasts till Pocket Casts" i listan.
+4. Lokalisera genvägen "Apple Podcasts till PodHopper" i listan.
 5. Tryck på den för att starta importprocessen.
-6. När genvägen är klar kommer Pocket Casts att öppnas igen och slutföra importprocessen.</string>
+6. När genvägen är klar kommer PodHopper att öppnas igen och slutföra importprocessen.</string>
     <key>import_instructions_breaker</key>
     <string>1. Tryck på knappen Öppna Breaker nedan
 2. Tryck på Inställningar i det nedre flikfältet
 3. Tryck på Anslutning
 4. Tryck på Exportera prenumerationer
-5. När dialogen öppnas, lokalisera Pocket Casts-ikonen och tryck sedan på den</string>
+5. När dialogen öppnas, lokalisera PodHopper-ikonen och tryck sedan på den</string>
     <key>import_instructions_castbox</key>
     <string>1. Tryck på knappen Öppna Castbox nedan
 2. Tryck på fliken Personligt
 3. Svep nedåt tills du ser alternativet Inställningar och klicka sedan på det
 4. Svep nedåt tills du ser alternativet OPML-export och klicka sedan på det
-5. Om du blir ombedd att göra det, tryck på "Öppna i Pocket Casts"
+5. Om du blir ombedd att göra det, tryck på "Öppna i PodHopper"
 6. Om filen öppnas i Safari, tryck på knappen Ladda ner
 7. När nedladdningen är klar, tryck på nedladdningsikonen i URL-fältet
 8. Tryck på alternativet Nedladdningar
 9. Tryck på castbox_opml-filen 
-10. Om det behövs, tryck på ikonen Dela och öppna sedan filen med Pocket Casts
-11. När delningsdialogen öppnas, lokalisera Pocket Casts-ikonen och tryck sedan på den</string>
+10. Om det behövs, tryck på ikonen Dela och öppna sedan filen med PodHopper
+11. När delningsdialogen öppnas, lokalisera PodHopper-ikonen och tryck sedan på den</string>
     <key>import_instructions_castro</key>
     <string>1. Tryck på knappen Öppna Castro nedan
 2. Tryck på kugghjulsikonen i det övre hörnet av appen
 3. Svep nedåt tills du ser alternativet Användardata och klicka sedan på det
 4. Tryck på alternativet Exportera prenumerationer
-5. När delningsdialogen öppnas, lokalisera Pocket Casts-ikonen och tryck sedan på den</string>
+5. När delningsdialogen öppnas, lokalisera PodHopper-ikonen och tryck sedan på den</string>
     <key>import_instructions_import_from</key>
     <string>Importera från %1$@</string>
     <key>import_instructions_install_shortcut</key>
@@ -1486,17 +1486,17 @@ Obs! Om du tidigare har tagit bort appen Genvägar kommer du att bli ombedd att 
     <string>1. Tryck på knappen nedan för att öppna Overcast
 2. Tryck på kugghjulsikonen i det övre hörnet av appen
 3. Svep nedåt tills du ser alternativet Exportera OPML och klicka sedan på det
-4. När dialogen öppnas, lokalisera Pocket Casts-ikonen och tryck sedan på den</string>
+4. När dialogen öppnas, lokalisera PodHopper-ikonen och tryck sedan på den</string>
     <key>import_opml_from_url</key>
     <string>Importera dina podcasts från en OPML-fil med hjälp av en URL</string>
     <key>import_podcasts_description</key>
-    <string>Du kan importera alla dina prenumerationer till Pocket Casts via en OPML-fil som i stor utsträckning stöds av många podcast applikationer. Exportera filen från din andra app och välj Öppna i Pocket Casts.
+    <string>Du kan importera alla dina prenumerationer till PodHopper via en OPML-fil som i stor utsträckning stöds av många podcast applikationer. Exportera filen från din andra app och välj Öppna i PodHopper.
 
-Observera: Du kan behöva skicka OPML-filen till dig själv via ett mejl, långtryck sedan på bilagan och välja Pocket Casts.</string>
+Observera: Du kan behöva skicka OPML-filen till dig själv via ett mejl, långtryck sedan på bilagan och välja PodHopper.</string>
     <key>import_podcasts_description_new</key>
-    <string>Du kan importera dina podcasts till Pocket Casts med hjälp av OPML-formatet, som stöds i stor utsträckning. Exportera filen från den andra appen och välj Öppna i Pocket Casts.
+    <string>Du kan importera dina podcasts till PodHopper med hjälp av OPML-formatet, som stöds i stor utsträckning. Exportera filen från den andra appen och välj Öppna i PodHopper.
 
-Anmärkning: Du kan behöva skicka OPML-filen till dig själv via e-post, trycka länge på bilagan och välja Pocket Casts.</string>
+Anmärkning: Du kan behöva skicka OPML-filen till dig själv via e-post, trycka länge på bilagan och välja PodHopper.</string>
     <key>import_podcasts_title</key>
     <string>IMPORTERA TILL POCKET CASTS</string>
     <key>import_subtitle</key>
@@ -1537,7 +1537,7 @@ podcasts med dig</string>
     <key>kids_profile_submit_feedback_send_button</key>
     <string>Skicka</string>
     <key>kids_profile_submit_feedback_title</key>
-    <string>Vad skulle du vilja se i en barnprofil för Pocket Casts?</string>
+    <string>Vad skulle du vilja se i en barnprofil för PodHopper?</string>
     <key>kids_profile_submit_success</key>
     <string>Tack för din feedback!</string>
     <key>kids_profile_thankyou_button_close</key>
@@ -1563,9 +1563,9 @@ podcasts med dig</string>
     <key>loading</key>
     <string>Läser in...</string>
     <key>login_landing_subtitle</key>
-    <string>Dina podcasts, alltid synkroniserade. Håll ditt bibliotek säkert och njut av Pocket Casts på webben och via skrivbordet.</string>
+    <string>Dina podcasts, alltid synkroniserade. Håll ditt bibliotek säkert och njut av PodHopper på webben och via skrivbordet.</string>
     <key>login_landing_title</key>
-    <string>Skapa ditt Pocket Casts-konto</string>
+    <string>Skapa ditt PodHopper-konto</string>
     <key>login_subtitle</key>
     <string>Skapa ett konto för att synkronisera din lyssningsupplevelse på alla dina enheter.</string>
     <key>login_title</key>
@@ -1575,7 +1575,7 @@ podcasts med dig</string>
     <key>logs_no_email_account_configured</key>
     <string>Du behöver konfigurera ett e-postkonto på enheten för att skicka loggarna</string>
     <key>logs_watch_os_not_available</key>
-    <string>Inga watchOS-loggar är tillgängliga. Se till att du har en Apple Watch parkopplad och klockappen för Pocket Casts installerad.</string>
+    <string>Inga watchOS-loggar är tillgängliga. Se till att du har en Apple Watch parkopplad och klockappen för PodHopper installerad.</string>
     <key>manage_downloads_action</key>
     <string>Hantera nedladdningar</string>
     <key>manage_downloads_detail</key>
@@ -1695,7 +1695,7 @@ podcasts med dig</string>
     <key>not_on_wifi</key>
     <string>Du har inte tillgång till WiFi</string>
     <key>notifications_app_clip_body</key>
-    <string>Installera Pocket Casts för att få den fullständiga upplevelsen med kraftfulla uppspelnings- och anpassningsverktyg.</string>
+    <string>Installera PodHopper för att få den fullständiga upplevelsen med kraftfulla uppspelnings- och anpassningsverktyg.</string>
     <key>notifications_app_clip_title</key>
     <string>Redo för fler podcasts?</string>
     <key>notifications_daily_reminders</key>
@@ -1721,7 +1721,7 @@ podcasts med dig</string>
     <key>notifications_onboarding_filters_title</key>
     <string>Organisera dina avsnitt</string>
     <key>notifications_onboarding_import_body</key>
-    <string>Byter du från en annan app? Ta med alla dina favoritshower till Pocket Casts.</string>
+    <string>Byter du från en annan app? Ta med alla dina favoritshower till PodHopper.</string>
     <key>notifications_onboarding_import_title</key>
     <string>Importera enkelt dina podcasts</string>
     <key>notifications_onboarding_newsletter_subtitle</key>
@@ -1755,7 +1755,7 @@ podcasts med dig</string>
     <key>notifications_permissions_action</key>
     <string>Tillåt aviseringar</string>
     <key>notifications_permissions_body</key>
-    <string>Aviseringar är det bästa sättet att hålla koll på nya avsnitt, få rekommendationer om nya program och tips om Pocket Casts.</string>
+    <string>Aviseringar är det bästa sättet att hålla koll på nya avsnitt, få rekommendationer om nya program och tips om PodHopper.</string>
     <key>notifications_permissions_needs_action</key>
     <string>Tillåt aviseringar i dina enhetsinställningar</string>
     <key>notifications_permissions_open_settings</key>
@@ -1767,7 +1767,7 @@ podcasts med dig</string>
     <key>notifications_play_now</key>
     <string>Spela upp nu</string>
     <key>notifications_pocket_cast_offers</key>
-    <string>Pocket Casts-erbjudanden</string>
+    <string>PodHopper-erbjudanden</string>
     <key>notifications_recommendations_trending_body</key>
     <string>Kolla in vad alla andra lyssnar på denna vecka.</string>
     <key>notifications_recommendations_trending_title</key>
@@ -1789,7 +1789,7 @@ podcasts med dig</string>
     <key>notitifications_permission_banner_action</key>
     <string>Gå till enhetens inställningar</string>
     <key>notitifications_permission_banner_message</key>
-    <string>För att få notiser från Pocket Casts måste du aktivera dem i dina enhetsinställningar.</string>
+    <string>För att få notiser från PodHopper måste du aktivera dem i dina enhetsinställningar.</string>
     <key>notitifications_permission_banner_title</key>
     <string>Tillåt push-notiser</string>
     <key>now_playing</key>
@@ -1809,7 +1809,7 @@ podcasts med dig</string>
     <key>on</key>
     <string>Till</string>
     <key>onboarding_quote_author</key>
-    <string>Pocket Casts-användare</string>
+    <string>PodHopper-användare</string>
     <key>onboarding_quote_best</key>
     <string>Bästa podcast-appen som finns. Utan tvekan</string>
     <key>onboarding_quote_customization</key>
@@ -1874,7 +1874,7 @@ UPPDATERINGAR</string>
     <key>patron_callout</key>
     <string>Tror du på vad vi gör och vill visa ditt stöd?</string>
     <key>patron_description</key>
-    <string>Bli en Pocket Casts Patron och hjälp oss att fortsätta att leverera den bästa möjliga podcastupplevelsen.</string>
+    <string>Bli en PodHopper Patron och hjälp oss att fortsätta att leverera den bästa möjliga podcastupplevelsen.</string>
     <key>patron_feature_early_access</key>
     <string>Tidig åtkomst till funktioner</string>
     <key>patron_feature_everything_in_plus</key>
@@ -1882,9 +1882,9 @@ UPPDATERINGAR</string>
     <key>patron_feature_profile_badge</key>
     <string>Supporterprofilmärke</string>
     <key>patron_feature_profile_icons</key>
-    <string>Särskilda Pocket Casts-appikoner</string>
+    <string>Särskilda PodHopper-appikoner</string>
     <key>patron_purchase_promo_title</key>
-    <string>Bli Patron-medlem och lås upp alla Pocket Casts-funktioner</string>
+    <string>Bli Patron-medlem och lås upp alla PodHopper-funktioner</string>
     <key>patron_subscribe_to</key>
     <string>Prenumerera på Patron</string>
     <key>patron_thank_you</key>
@@ -1900,19 +1900,19 @@ UPPDATERINGAR</string>
     <key>pause</key>
     <string>Pause</string>
     <key>paywall_dynamic_headline_banner_ad</key>
-    <string>Säg adjö till bannerannonser och mer med Pocket Casts Plus</string>
+    <string>Säg adjö till bannerannonser och mer med PodHopper Plus</string>
     <key>paywall_dynamic_headline_files</key>
-    <string>Ladda upp dina filer och mer därtill med Pocket Casts Plus</string>
+    <string>Ladda upp dina filer och mer därtill med PodHopper Plus</string>
     <key>paywall_dynamic_headline_folder</key>
-    <string>Organisera dina podcasts och mer därtill med Pocket Casts Plus</string>
+    <string>Organisera dina podcasts och mer därtill med PodHopper Plus</string>
     <key>paywall_dynamic_headline_icons</key>
-    <string>Få exklusiva appikoner och mer därtill med Pocket Casts Plus</string>
+    <string>Få exklusiva appikoner och mer därtill med PodHopper Plus</string>
     <key>paywall_dynamic_headline_themes</key>
-    <string>Få exklusiva teman och mer därtill med Pocket Casts Plus</string>
+    <string>Få exklusiva teman och mer därtill med PodHopper Plus</string>
     <key>paywall_dynamic_headline_up_next_shuffle</key>
     <string>Spela upp dina avsnitt slumpvis och mer därtill med Pocket Cast Plus</string>
     <key>paywall_dynamic_headline_watch</key>
-    <string>Lyssna via din klocka och mer därtill med Pocket Casts Plus</string>
+    <string>Lyssna via din klocka och mer därtill med PodHopper Plus</string>
     <key>phone</key>
     <string>Telefon</string>
     <key>play</key>
@@ -1944,9 +1944,9 @@ UPPDATERINGAR</string>
     <key>playback_2024_longest_episode_title</key>
     <string>Det längsta avsnittet du lyssnade på var %1$@</string>
     <key>playback_2024_plus_upsell_button_title</key>
-    <string>Kolla in Pocket Casts Plus</string>
+    <string>Kolla in PodHopper Plus</string>
     <key>playback_2024_plus_upsell_description</key>
-    <string>Stöd Pocket Casts genom att prenumerera på Plus och få mer statistik, plus premiumfunktioner som bokmärken, mappar och förvalda kapitel.</string>
+    <string>Stöd PodHopper genom att prenumerera på Plus och få mer statistik, plus premiumfunktioner som bokmärken, mappar och förvalda kapitel.</string>
     <key>playback_2024_plus_upsell_title</key>
     <string>Det är inte allt!</string>
     <key>playback_2024_ratings_description_1_to_3</key>
@@ -1994,7 +1994,7 @@ UPPDATERINGAR</string>
     <key>playback_2025_end_story_description</key>
     <string>Dela din uppspelning med vänner och ge lite kärlek till de podcasters som höll dig sällskap hela året</string>
     <key>playback_2025_end_story_title</key>
-    <string>Tack för att du spenderar ditt år med Pocket Casts</string>
+    <string>Tack för att du spenderar ditt år med PodHopper</string>
     <key>playback_2025_failed_to_load</key>
     <string>Vi kunde inte läsa in uppspelningen</string>
     <key>playback_2025_feature_description</key>
@@ -2016,11 +2016,11 @@ UPPDATERINGAR</string>
     <key>playback_2025_plus_thanks_description</key>
     <string>Dina %1$@-förmåner låser upp extra statistik- och power-funktioner</string>
     <key>playback_2025_plus_thanks_title</key>
-    <string>Tack för att du stödjer Pocket Casts!</string>
+    <string>Tack för att du stödjer PodHopper!</string>
     <key>playback_2025_plus_upsell_button_title</key>
-    <string>Skaffa Pocket Casts Plus</string>
+    <string>Skaffa PodHopper Plus</string>
     <key>playback_2025_plus_upsell_description</key>
-    <string>Prenumerera på Pocket Casts Plus för utökad statistik, bokmärken, mappar, kapitelval och fler sätt att fördjupa dig i dina lyssningsvanor</string>
+    <string>Prenumerera på PodHopper Plus för utökad statistik, bokmärken, mappar, kapitelval och fler sätt att fördjupa dig i dina lyssningsvanor</string>
     <key>playback_2025_plus_upsell_title</key>
     <string>Vill du göra en djupdykning?</string>
     <key>playback_2025_ratings_description_1_to_3</key>
@@ -2303,9 +2303,9 @@ Prova att justera reglerna, eller spara denna spellista för framtida avsnitt so
     <key>please_try_again_later</key>
     <string>Försök igen senare.</string>
     <key>plus_account_required_prompt</key>
-    <string>Ett Pocket Casts-konto krävs för Pocket Casts Plus. Detta säkerställer en sömlös lyssningsupplevelse på alla dina enheter.</string>
+    <string>Ett PodHopper-konto krävs för PodHopper Plus. Detta säkerställer en sömlös lyssningsupplevelse på alla dina enheter.</string>
     <key>plus_account_required_prompt_details</key>
-    <string>Skapa ett konto eller logga in för att få åtkomst till Pocket Casts Plus.</string>
+    <string>Skapa ett konto eller logga in för att få åtkomst till PodHopper Plus.</string>
     <key>plus_account_trial_details</key>
     <string>När din provperiod är över kommer du fortfarande att ha tillgång till fördelarna med ditt vanliga konto. Lycka till med podcastandet!</string>
     <key>plus_button_title_unlock_all</key>
@@ -2313,15 +2313,15 @@ Prova att justera reglerna, eller spara denna spellista för framtida avsnitt so
     <key>plus_cancel_terms</key>
     <string>Kan avslutas när som helst</string>
     <key>plus_champion</key>
-    <string>Pocket Casts-förespråkare</string>
+    <string>PodHopper-förespråkare</string>
     <key>plus_champion_message</key>
-    <string>Tack för att du har varit med Pocket Casts sedan starten. Du är en sann förespråkare.</string>
+    <string>Tack för att du har varit med PodHopper sedan starten. Du är en sann förespråkare.</string>
     <key>plus_cloud_storage_limit_format</key>
     <string>%1$@ GB molnlagring</string>
     <key>plus_discount_yearly_membership</key>
     <string>50 %% rabatt på ditt första år</string>
     <key>plus_error_already_registered</key>
-    <string>Du har redan ett Pocket Casts Plus-konto</string>
+    <string>Du har redan ett PodHopper Plus-konto</string>
     <key>plus_error_already_registered_details</key>
     <string>Tack för ditt stöd. Tyvärr innebär detta att du inte kan ta del av den här kampanjen.</string>
     <key>plus_expiration_format</key>
@@ -2355,7 +2355,7 @@ Prova att justera reglerna, eller spara denna spellista för framtida avsnitt so
     <key>plus_feature_card_title_wear_os</key>
     <string>Apple Watch- och Wear OS-uppspelning</string>
     <key>plus_feature_gratitude</key>
-    <string>Den eviga tacksamheten hos alla här på Pocket Casts</string>
+    <string>Den eviga tacksamheten hos alla här på PodHopper</string>
     <key>plus_feature_librofm</key>
     <string>Gratis ljudbok från Libro.fm</string>
     <key>plus_feature_slumber</key>
@@ -2385,7 +2385,7 @@ Prova att justera reglerna, eller spara denna spellista för framtida avsnitt so
     <key>plus_marketing_hide_ads_title</key>
     <string>Dölj annonser</string>
     <key>plus_marketing_learn_more_button</key>
-    <string>Läs mer om Pocket Casts Plus</string>
+    <string>Läs mer om PodHopper Plus</string>
     <key>plus_marketing_main_description</key>
     <string>Gör appen din egen och bli distribuerad på en och samma gång. Ladda upp dina egna ljudfiler till vår molnserver och få tillgång till ditt konto via vår webbspelare.</string>
     <key>plus_marketing_no_banner_ads</key>
@@ -2395,7 +2395,7 @@ Prova att justera reglerna, eller spara denna spellista för framtida avsnitt so
     <key>plus_marketing_themes_icons_title</key>
     <string>Teman och ikoner</string>
     <key>plus_marketing_title</key>
-    <string>Allt du älskar med Pocket Casts och mer därtill</string>
+    <string>Allt du älskar med PodHopper och mer därtill</string>
     <key>plus_marketing_up_next_shuffle</key>
     <string>Slumpmässig Nästa-uppspelning</string>
     <key>plus_marketing_updated_cloud_storage_description</key>
@@ -2417,19 +2417,19 @@ Prova att justera reglerna, eller spara denna spellista för framtida avsnitt so
     <key>plus_price_per_month</key>
     <string>%1$@/månad</string>
     <key>plus_promo_paragraph</key>
-    <string>Skaffa Pocket Casts Plus för att låsa upp denna funktion, plus mycket mer!</string>
+    <string>Skaffa PodHopper Plus för att låsa upp denna funktion, plus mycket mer!</string>
     <key>plus_promotion_expired</key>
     <string>Kampanjen har löpt ut eller så är den ogiltig</string>
     <key>plus_promotion_expired_nudge</key>
-    <string>Du är välkommen att registrera dig för Pocket Casts Plus ändå, skapa ett vanligt konto eller bara dyka in direkt. </string>
+    <string>Du är välkommen att registrera dig för PodHopper Plus ändå, skapa ett vanligt konto eller bara dyka in direkt. </string>
     <key>plus_promotion_used</key>
     <string>Koden har redan använts</string>
     <key>plus_purchase_failed</key>
     <string>Det verkar som att det uppstod ett problem när din betalning behandlades. Försök igen.</string>
     <key>plus_purchase_promo_title</key>
-    <string>Bli Plus-medlem och lås upp alla Pocket Casts-funktioner</string>
+    <string>Bli Plus-medlem och lås upp alla PodHopper-funktioner</string>
     <key>plus_required_feature</key>
-    <string>Denna funktion kräver Pocket Casts Plus</string>
+    <string>Denna funktion kräver PodHopper Plus</string>
     <key>plus_select_payment_frequency</key>
     <string>Välj betalningsfrekvens</string>
     <key>plus_skip</key>
@@ -2447,11 +2447,11 @@ Prova att justera reglerna, eller spara denna spellista för framtida avsnitt so
     <key>plus_subscription_expiration</key>
     <string>PLUS LÖPER UT %1$@</string>
     <key>plus_subscription_google</key>
-    <string>Det verkar som att du började prenumerera på Pocket Casts Plus från en Android-enhet</string>
+    <string>Det verkar som att du började prenumerera på PodHopper Plus från en Android-enhet</string>
     <key>plus_subscription_google_details</key>
     <string>Om du vill avsluta din prenumeration måste du göra detta via Inställningar.</string>
     <key>plus_subscription_web</key>
-    <string>Det verkar som att du började prenumerera på Pocket Casts Plus via webben</string>
+    <string>Det verkar som att du började prenumerera på PodHopper Plus via webben</string>
     <key>plus_subscription_web_details</key>
     <string>Om du vill avsluta din prenumeration måste du göra detta via Pocketcasts.com.</string>
     <key>plus_upgrade_no_internet_message</key>
@@ -2461,13 +2461,13 @@ Prova att justera reglerna, eller spara denna spellista för framtida avsnitt so
     <key>plus_yearly_frequency_pricing_format</key>
     <string>%1$@ per år</string>
     <key>pocket_casts_logo</key>
-    <string>Pocket Casts-logotyp</string>
+    <string>PodHopper-logotyp</string>
     <key>pocket_casts_newsletter</key>
-    <string>Pocket Casts-nyhetsbrev</string>
+    <string>PodHopper-nyhetsbrev</string>
     <key>pocket_casts_newsletter_description</key>
     <string>Få nyheter, appuppdateringar, spellistor, intervjuer, och mer direkt i din inkorg</string>
     <key>pocket_casts_plus</key>
-    <string>Pocket Casts Plus</string>
+    <string>PodHopper Plus</string>
     <key>pocket_casts_plus_short</key>
     <string>Plus</string>
     <key>pocket_casts_welcome_newsletter_title</key>
@@ -2706,7 +2706,7 @@ Om du behöver inspiration så kan du Upptäcka nya podcasts nedan.</string>
     <key>profile</key>
     <string>Profil</string>
     <key>profile_help_support</key>
-    <string>Hjälp till att stödja Pocket Casts genom att uppgradera ditt konto</string>
+    <string>Hjälp till att stödja PodHopper genom att uppgradera ditt konto</string>
     <key>profile_last_app_refresh</key>
     <string>Appen uppdaterades senast %1$@</string>
     <key>profile_listening_history_empty_description</key>
@@ -2752,7 +2752,7 @@ Om du behöver inspiration så kan du Upptäcka nya podcasts nedan.</string>
     <key>rate</key>
     <string>Omdöme</string>
     <key>rate_pocket_casts</key>
-    <string>Betygsätt Pocket Casts</string>
+    <string>Betygsätt PodHopper</string>
     <key>rating_error</key>
     <string>Hoppsan. Det uppstod ett fel.</string>
     <key>rating_listen_to_this_podcast_message</key>
@@ -2798,20 +2798,20 @@ Om du behöver inspiration så kan du Upptäcka nya podcasts nedan.</string>
     <key>referrals_share_guest_pass</key>
     <string>Dela gästpass</string>
     <key>referrals_share_no_guest_pass_message</key>
-    <string>Tack för att du delar Pocket Casts! Vi meddelar dig när du har fler gästpass att ge bort.</string>
+    <string>Tack för att du delar PodHopper! Vi meddelar dig när du har fler gästpass att ge bort.</string>
     <key>referrals_share_no_guest_pass_title</key>
     <string>Du har delat ut alla dina gästpass.</string>
     <key>referrals_share_pass_long_message</key>
     <string>Hej!
 
-Här är ett %1$@ gästpass för Pocket Casts Plus – min favoritpodcastspelare. Den är fullspäckad med unika funktioner som bokmärken, mappar och annat som du inte hittar någon annanstans. Jag tror att du också kommer att älska den!
+Här är ett %1$@ gästpass för PodHopper Plus – min favoritpodcastspelare. Den är fullspäckad med unika funktioner som bokmärken, mappar och annat som du inte hittar någon annanstans. Jag tror att du också kommer att älska den!
 </string>
     <key>referrals_share_pass_message</key>
-    <string>Hej! Använd länken nedan för att göra anspråk på ditt %1$@ gästpass för Pocket Casts Plus och ta del av podcasts på alla dina enheter.</string>
+    <string>Hej! Använd länken nedan för att göra anspråk på ditt %1$@ gästpass för PodHopper Plus och ta del av podcasts på alla dina enheter.</string>
     <key>referrals_share_pass_subject</key>
-    <string>%1$@ gästpass för Pocket Casts Plus.</string>
+    <string>%1$@ gästpass för PodHopper Plus.</string>
     <key>referrals_tip_message</key>
-    <string>Ge bort %1$@ med Pocket Casts Plus.</string>
+    <string>Ge bort %1$@ med PodHopper Plus.</string>
     <key>referrals_tip_title</key>
     <string>Du har %1$@ gästpass att dela</string>
     <key>refresh_control_fetching_episodes</key>
@@ -2971,7 +2971,7 @@ Här är ett %1$@ gästpass för Pocket Casts Plus – min favoritpodcastspelare
     <key>server_error_login_user_register_failed</key>
     <string>Kontot gick inte att skapa. Försök igen senare.</string>
     <key>server_error_promo_already_plus</key>
-    <string>Du prenumererar redan på Pocket Casts Plus. Du behöver inte använda några koder.</string>
+    <string>Du prenumererar redan på PodHopper Plus. Du behöver inte använda några koder.</string>
     <key>server_error_promo_already_redeemed</key>
     <string>Du har redan utnyttjat den här kampanjkoden. Men det var värt ett försök!</string>
     <key>server_error_promo_code_expired_or_invalid</key>
@@ -3093,7 +3093,7 @@ Här är ett %1$@ gästpass för Pocket Casts Plus – min favoritpodcastspelare
     <key>settings_custom_auto_archive_msg</key>
     <string>Behöver du mer finkornig kontroll? Aktivera inställningar för automatisk arkivering för den här podcasten</string>
     <key>settings_custom_msg</key>
-    <string>Pocket Casts kommer ihåg vilka effekter du valde och kommer att använda samma på alla podcasts. Aktivera den här inställningen om du vill anpassa effekterna för en specifik podcast.</string>
+    <string>PodHopper kommer ihåg vilka effekter du valde och kommer att använda samma på alla podcasts. Aktivera den här inställningen om du vill anpassa effekterna för en specifik podcast.</string>
     <key>settings_episode_limit</key>
     <string>Avsnittsgräns</string>
     <key>settings_episode_limit_format</key>
@@ -3175,7 +3175,7 @@ Här är ett %1$@ gästpass för Pocket Casts Plus – min favoritpodcastspelare
     <key>settings_general_legacy_bluetooth</key>
     <string>Stöd för legacy Bluetooth</string>
     <key>settings_general_legacy_bluetooth_subtitle</key>
-    <string>Prova aktivera den här inställningen om du har en Bluetooth-enhet eller bilstereo som hela tiden pausar eller spelar om ett Pocket Casts avsnittet från början..</string>
+    <string>Prova aktivera den här inställningen om du har en Bluetooth-enhet eller bilstereo som hela tiden pausar eller spelar om ett PodHopper avsnittet från början..</string>
     <key>settings_general_lock_screen_disabled</key>
     <string>Aktivera låsskärmsskrubbning</string>
     <key>settings_general_multi_select_gesture</key>
@@ -3211,7 +3211,7 @@ Här är ett %1$@ gästpass för Pocket Casts Plus – min favoritpodcastspelare
     <key>settings_general_smart_playback</key>
     <string>Intelligent uppspelning</string>
     <key>settings_general_smart_playback_subtitle</key>
-    <string>Pocket Casts kommer att gå tillbaka lite när du återupptar ett avsnitt så att du inte missar någonting.</string>
+    <string>PodHopper kommer att gå tillbaka lite när du återupptar ett avsnitt så att du inte missar någonting.</string>
     <key>settings_general_up_next_swipe</key>
     <string>Svepgest-nästa</string>
     <key>settings_general_up_next_tap</key>
@@ -3335,9 +3335,9 @@ Här är ett %1$@ gästpass för Pocket Casts Plus – min favoritpodcastspelare
     <key>settings_status_host</key>
     <string>Vanliga podcastvärdar</string>
     <key>settings_status_host_description</key>
-    <string>Podcastskapare använder olika värdtjänster för sina avsnittsfiler. Dessa hanteras inte av Pocket Casts.</string>
+    <string>Podcastskapare använder olika värdtjänster för sina avsnittsfiler. Dessa hanteras inte av PodHopper.</string>
     <key>settings_status_host_failure_message</key>
-    <string>Den vanligaste orsaken är att du har en annonsblockerare konfigurerad på din telefon eller i ditt nätverk. Du måste avblockera den här domänen för att ladda ner podcasts. Observera att Pocket Casts inte är värd för dina podcasts eller väljer vilken värdtjänst som används för dem. Det är upp till showens skapare och ligger utanför vår kontroll.</string>
+    <string>Den vanligaste orsaken är att du har en annonsblockerare konfigurerad på din telefon eller i ditt nätverk. Du måste avblockera den här domänen för att ladda ner podcasts. Observera att PodHopper inte är värd för dina podcasts eller väljer vilken värdtjänst som används för dem. Det är upp till showens skapare och ligger utanför vår kontroll.</string>
     <key>settings_status_internet</key>
     <string>Internet</string>
     <key>settings_status_internet_description</key>
@@ -3385,7 +3385,7 @@ Här är ett %1$@ gästpass för Pocket Casts Plus – min favoritpodcastspelare
     <key>settings_watch_auto_download</key>
     <string>Ladda automatiskt ner Nästa </string>
     <key>settings_watch_auto_download_off_subtitle</key>
-    <string>Ange antalet avsnitt från Nästa som du vill att Pocket Casts ska ladda ner till din Klocka.</string>
+    <string>Ange antalet avsnitt från Nästa som du vill att PodHopper ska ladda ner till din Klocka.</string>
     <key>settings_watch_delete_downloads</key>
     <string>Ta bort nedladdningar som ligger utanför gränsen</string>
     <key>settings_watch_delete_downloads_off_subtitle</key>
@@ -3395,7 +3395,7 @@ Här är ett %1$@ gästpass för Pocket Casts Plus – min favoritpodcastspelare
     <key>settings_watch_episode_limit</key>
     <string>Antal avsnitt</string>
     <key>settings_watch_episode_limit_subtitle</key>
-    <string>Pocket Casts laddar ner de %1$@ översta avsnitten i din Nästa-kö för offline-uppspelning.</string>
+    <string>PodHopper laddar ner de %1$@ översta avsnitten i din Nästa-kö för offline-uppspelning.</string>
     <key>settings_watch_episode_number_option_format</key>
     <string>Topp %1$@</string>
     <key>setup_account</key>
@@ -3571,9 +3571,9 @@ Här är ett %1$@ gästpass för Pocket Casts Plus – min favoritpodcastspelare
     <key>skip_chapters</key>
     <string>Förvalda kapitel</string>
     <key>skip_chapters_patron_prompt</key>
-    <string>Välj kapitel och mer i förväg med Pocket Casts Patron</string>
+    <string>Välj kapitel och mer i förväg med PodHopper Patron</string>
     <key>skip_chapters_plus_prompt</key>
-    <string>Välj kapitel och mer i förväg med Pocket Casts Plus</string>
+    <string>Välj kapitel och mer i förväg med PodHopper Plus</string>
     <key>skip_forward</key>
     <string>Hoppa framåt</string>
     <key>sleep_timer</key>
@@ -3613,7 +3613,7 @@ Här är ett %1$@ gästpass för Pocket Casts Plus – min favoritpodcastspelare
     <key>sonos_connecting</key>
     <string>ANSLUTER …</string>
     <key>sonos_connection_failed_account_link</key>
-    <string>Det går för närvarande inte att länka Pocket Casts-kontot. Försök igen senare.</string>
+    <string>Det går för närvarande inte att länka PodHopper-kontot. Försök igen senare.</string>
     <key>sonos_connection_failed_app_missing</key>
     <string>Det gick inte att öppna Sonos-appen och slutföra länkningsprocessen.</string>
     <key>sonos_connection_failed_title</key>
@@ -3623,7 +3623,7 @@ Här är ett %1$@ gästpass för Pocket Casts Plus – min favoritpodcastspelare
 
 Din e-postadress, ditt lösenord eller annan känslig information delas aldrig.</string>
     <key>sonos_connection_sign_in_prompt</key>
-    <string>Du behöver ha ett Pocket Casts-konto för att ansluta till Sonos.</string>
+    <string>Du behöver ha ett PodHopper-konto för att ansluta till Sonos.</string>
     <key>sort_by</key>
     <string>Sortera efter</string>
     <key>sort_episodes</key>
@@ -3747,7 +3747,7 @@ Din e-postadress, ditt lösenord eller annan känslig information delas aldrig.<
     <key>suggested_folders_use_suggested_folders</key>
     <string>Använd dessa mappar</string>
     <key>support_watch_help_message</key>
-    <string>Om du har problem med Pocket Casts Watch-appen kan vi skicka dina bärbara loggar för att hjälpa dig. Om du vill att vi ska göra det, öppna Pocket Casts på din klocka.</string>
+    <string>Om du har problem med PodHopper Watch-appen kan vi skicka dina bärbara loggar för att hjälpa dig. Om du vill att vi ska göra det, öppna PodHopper på din klocka.</string>
     <key>support_watch_help_opened_app</key>
     <string>Jag har öppnat Watch-appen</string>
     <key>support_watch_help_send_without_log</key>
@@ -3865,7 +3865,7 @@ Din e-postadress, ditt lösenord eller annan känslig information delas aldrig.<
     <key>tv_home_browse_categories_section_title</key>
     <string>Bläddra i kategorier</string>
     <key>tv_home_featured_section_title</key>
-    <string>Utvalt på Pocket Casts</string>
+    <string>Utvalt på PodHopper</string>
     <key>tv_home_keep_listening_title</key>
     <string>Fortsätt där du slutade</string>
     <key>tv_home_new_releases</key>
@@ -3973,7 +3973,7 @@ Din e-postadress, ditt lösenord eller annan känslig information delas aldrig.<
     <key>tv_sign_in_subtitle</key>
     <string>Öppna kameran och peka på denna QR-kod</string>
     <key>tv_sign_in_title</key>
-    <string>Logga in i Pocket Casts</string>
+    <string>Logga in i PodHopper</string>
     <key>tv_signing_in_subtitle</key>
     <string>Laddar dina podcasts</string>
     <key>tv_signing_in_title</key>
@@ -4009,7 +4009,7 @@ Din e-postadress, ditt lösenord eller annan känslig information delas aldrig.<
     <key>tv_welcome_subtitle</key>
     <string>Dina podcasts. På den stora skärmen. Uppenbarligen.</string>
     <key>tv_welcome_title</key>
-    <string>Välkommen till Pocket Casts TV</string>
+    <string>Välkommen till PodHopper TV</string>
     <key>unarchive</key>
     <string>Avarkivera</string>
     <key>unfollow</key>
@@ -4057,7 +4057,7 @@ Din e-postadress, ditt lösenord eller annan känslig information delas aldrig.<
     <key>upgrade_experiment_free_membership_format</key>
     <string>Gratis provperiod med %1$@ Plus</string>
     <key>upgrade_experiment_paywall_button</key>
-    <string>Skaffa Pocket Casts Plus</string>
+    <string>Skaffa PodHopper Plus</string>
     <key>upgrade_experiment_reviews_app_store_button</key>
     <string>Se alla recensioner i App Store</string>
     <key>upgrade_experiment_reviews_app_store_info</key>
@@ -4067,7 +4067,7 @@ Din e-postadress, ditt lösenord eller annan känslig information delas aldrig.<
     <key>upgrade_experiment_reviews_review_text_1</key>
     <string>8 år av utmärkt kvalitet och ständiga förbättringar</string>
     <key>upgrade_experiment_reviews_review_text_2</key>
-    <string>Jag har använt Pocket Casts sedan 2017.
+    <string>Jag har använt PodHopper sedan 2017.
 
 Det här är utan tvekan den bästa appen för att lyssna på podcaster. Det har många funktioner och vidareutvecklas kontinuerligt. Det har förekommit en del klagomål på Ul-bytet, men jag har faktiskt inte märkt av det så mycket.
 
@@ -4113,7 +4113,7 @@ Appen kan vara så enkel eller svår att använda som du själv vill att den ska
     <key>user_satisfaction_survey_subtitle</key>
     <string>Hej där! Vi skulle gärna vilja veta om du gillar vår app.</string>
     <key>user_satisfaction_survey_title</key>
-    <string>Gillar du Pocket Casts?</string>
+    <string>Gillar du PodHopper?</string>
     <key>user_satisfaction_survey_yes_response</key>
     <string>Ja!</string>
     <key>view_transcript</key>
@@ -4159,11 +4159,11 @@ Båda alternativen är ärligt talat riktigt bra. 🙂</string>
     <key>watch_source_msg</key>
     <string>Podcasts spelas upp från den högtalare som den valda enheten är ansluten till</string>
     <key>watch_source_plus_info</key>
-    <string>Ladda ner direkt till din klocka och lyssna utan din telefon Kolla in Pocket Casts Plus i din telefonapp, eller på webben.</string>
+    <string>Ladda ner direkt till din klocka och lyssna utan din telefon Kolla in PodHopper Plus i din telefonapp, eller på webben.</string>
     <key>watch_source_refresh_account</key>
     <string>Uppdatera konto</string>
     <key>watch_source_refresh_account_info</key>
-    <string>Om du redan har ett Pocket Casts Plus-konto kan du uppdatera kontot för att aktivera det</string>
+    <string>Om du redan har ett PodHopper Plus-konto kan du uppdatera kontot för att aktivera det</string>
     <key>watch_source_refresh_data</key>
     <string>Uppdatera data</string>
     <key>watch_source_sign_in_info</key>
@@ -4199,7 +4199,7 @@ Båda alternativen är ärligt talat riktigt bra. 🙂</string>
     <key>whats_new_in_version</key>
     <string>Vad som är nytt i %1$@</string>
     <key>whats_new_page_one_7_20</key>
-    <string>Om du älskar podcasts hälften så mycket vi gör har du antagligen en hel del. Om du Pocket Casts Plus-prenumerant kan du nu sortera dem i mappar och dela in dem i grupper.
+    <string>Om du älskar podcasts hälften så mycket vi gör har du antagligen en hel del. Om du PodHopper Plus-prenumerant kan du nu sortera dem i mappar och dela in dem i grupper.
 
 Tack för ditt stöd. Din startskärm har aldrig sett bättre ut.</string>
     <key>whats_new_page_one_title_7_20</key>
@@ -4211,7 +4211,7 @@ Detta innebär att du kan koppla av med vetskapen om att allt det hårda arbete 
     <key>whats_new_page_two_title_7_20</key>
     <string>Synkronisering av startsidesrutnät</string>
     <key>widgets_app_icon_description</key>
-    <string>Starta Pocket Casts snabbt</string>
+    <string>Starta PodHopper snabbt</string>
     <key>widgets_app_icon_name</key>
     <string>Ikon</string>
     <key>widgets_discover_prompt_msg</key>

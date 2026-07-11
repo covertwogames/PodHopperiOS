@@ -64,7 +64,7 @@
     <key>accessibility_plus_only</key>
     <string>Plus 功能已解鎖</string>
     <key>accessibility_profile_settings</key>
-    <string>Pocket Casts 設定</string>
+    <string>PodHopper 設定</string>
     <key>accessibility_select_episode</key>
     <string>選取本集</string>
     <key>accessibility_show_filter_details</key>
@@ -130,19 +130,19 @@
     <key>account_signed_out_alert_message</key>
     <string>Turns out, if you type Google into Google, you can break the internet. 🫢 
 
-Tap the button below to sign into your Pocket Casts account again.</string>
+Tap the button below to sign into your PodHopper account again.</string>
     <key>account_signed_out_alert_title</key>
     <string>You've been signed out.</string>
     <key>account_sso_failed</key>
     <string>登入失敗。 請再試一次。</string>
     <key>account_title</key>
-    <string>Pocket Casts 帳號</string>
+    <string>PodHopper 帳號</string>
     <key>account_upgraded</key>
     <string>帳號已升級</string>
     <key>account_welcome</key>
-    <string>歡迎使用 Pocket Casts！</string>
+    <string>歡迎使用 PodHopper！</string>
     <key>account_welcome_plus</key>
-    <string>歡迎使用 Pocket Casts Plus！</string>
+    <string>歡迎使用 PodHopper Plus！</string>
     <key>add_bookmark</key>
     <string>新增書籤</string>
     <key>add_bookmark_subtitle</key>
@@ -185,7 +185,7 @@ Tap the button below to sign into your Pocket Casts account again.</string>
     <string>應用程式徽章</string>
     <key>app_clip_placholder_message</key>
     <string>內容可能移除，或連結損壞。
-但 Pocket Casts 還有更多內容。
+但 PodHopper 還有更多內容。
 下載應用程式，享受完整體驗！</string>
     <key>app_clip_placholder_title</key>
     <string>抱歉，找不到該單集</string>
@@ -226,7 +226,7 @@ Tap the button below to sign into your Pocket Casts account again.</string>
     <key>app_icon_round_light</key>
     <string>圓形淺色</string>
     <key>app_share_text</key>
-    <string>嗨！ 在此提供下載 Pocket Casts 應用程式的連結。我很喜歡這個應用程式，相信你也會喜歡它。</string>
+    <string>嗨！ 在此提供下載 PodHopper 應用程式的連結。我很喜歡這個應用程式，相信你也會喜歡它。</string>
     <key>app_version</key>
     <string>版本 %1$@ (%2$@)</string>
     <key>appearance_app_icon_header</key>
@@ -238,7 +238,7 @@ Tap the button below to sign into your Pocket Casts account again.</string>
     <key>appearance_embedded_artwork</key>
     <string>使用單集封面圖片</string>
     <key>appearance_embedded_artwork_subtitle</key>
-    <string>有些節目會針對特定單集推出自訂封面圖片。 若啟用此選項，Pocket Casts 就會顯示這些封面圖片，而非節目的封面圖片。</string>
+    <string>有些節目會針對特定單集推出自訂封面圖片。 若啟用此選項，PodHopper 就會顯示這些封面圖片，而非節目的封面圖片。</string>
     <key>appearance_light_theme</key>
     <string>淺色佈景主題</string>
     <key>appearance_match_device_theme</key>
@@ -322,7 +322,7 @@ Tap the button below to sign into your Pocket Casts account again.</string>
     <key>banner_ads_report_too_often</key>
     <string>看到這則廣告的次數太頻繁</string>
     <key>beta_purchase_disabled</key>
-    <string>請從 App Store 下載 Pocket Casts 來購買 %1$@。</string>
+    <string>請從 App Store 下載 PodHopper 來購買 %1$@。</string>
     <key>beta_thank_you</key>
     <string>感謝你協助進行測試版的測試！</string>
     <key>bookmark_added</key>
@@ -350,9 +350,9 @@ Tap the button below to sign into your Pocket Casts account again.</string>
     <key>bookmarks_count_singular</key>
     <string>1 個書籤</string>
     <key>bookmarks_early_access_locked_message</key>
-    <string>利用 Pocket Casts %1$@ 解鎖此功能與其他許多功能，並儲存你所愛單集的時間戳記。 即將為 %2$@ 訂閱者推出。</string>
+    <string>利用 PodHopper %1$@ 解鎖此功能與其他許多功能，並儲存你所愛單集的時間戳記。 即將為 %2$@ 訂閱者推出。</string>
     <key>bookmarks_locked_message</key>
-    <string>利用 Pocket Casts %1$@ 解鎖此功能與其他許多功能，並儲存你所愛單集的時間戳記。</string>
+    <string>利用 PodHopper %1$@ 解鎖此功能與其他許多功能，並儲存你所愛單集的時間戳記。</string>
     <key>bottom</key>
     <string>底部</string>
     <key>bulk_download_max_format</key>
@@ -366,7 +366,7 @@ Tap the button below to sign into your Pocket Casts account again.</string>
     <key>cancel_confirm_item_plus</key>
     <string>系統將在這個日期後，移除書籤、隨機播放、穿戴式裝置等 Plus 功能的存取權。</string>
     <key>cancel_confirm_item_uploads</key>
-    <string>系統會刪除上傳至你 Pocket Casts 帳號的所有檔案，但會保留下載到你行動裝置的檔案。</string>
+    <string>系統會刪除上傳至你 PodHopper 帳號的所有檔案，但會保留下載到你行動裝置的檔案。</string>
     <key>cancel_confirm_sub_expiry</key>
     <string>目前訂閱有效期限至 %1$@。</string>
     <key>cancel_confirm_sub_expiry_date_fallback</key>
@@ -398,17 +398,17 @@ Tap the button below to sign into your Pocket Casts account again.</string>
     <key>cancel_subscription_help_description</key>
     <string>對功能有疑問或遇到問題。</string>
     <key>cancel_subscription_help_title</key>
-    <string>需要 Pocket Casts 的相關協助嗎？</string>
+    <string>需要 PodHopper 的相關協助嗎？</string>
     <key>cancel_subscription_new_plan_description</key>
     <string>尋找適合你的方案。</string>
     <key>cancel_subscription_new_plan_title</key>
     <string>正在尋找其他方案？</string>
     <key>cancel_subscription_offer_success_view_description</key>
-    <string>感謝選用 Pocket Casts。 你的免費月份將新增至目前的訂閱。</string>
+    <string>感謝選用 PodHopper。 你的免費月份將新增至目前的訂閱。</string>
     <key>cancel_subscription_offer_success_view_title</key>
     <string>盡情免費試用一個月！</string>
     <key>cancel_subscription_offer_yearly_success_view_description</key>
-    <string>感謝選用 Pocket Casts。 優惠年份會從目前方案結束後開始。</string>
+    <string>感謝選用 PodHopper。 優惠年份會從目前方案結束後開始。</string>
     <key>cancel_subscription_offer_yearly_success_view_title</key>
     <string>次年享 50%% 優惠！</string>
     <key>cancel_subscription_promotion_description_monthly</key>
@@ -433,7 +433,7 @@ Tap the button below to sign into your Pocket Casts account again.</string>
     <string>送出意見回饋</string>
     <key>cancel_subscription_survey_title</key>
     <string>謝謝你試用
-Pocket Casts Plus</string>
+PodHopper Plus</string>
     <key>cancel_subscription_survey_toast_fail</key>
     <string>不好意思，出了一些問題。</string>
     <key>cancel_subscription_survey_toast_success</key>
@@ -446,9 +446,9 @@ Pocket Casts Plus</string>
     <key>cancel_subscription_winback_view_continue_cancellation_button</key>
     <string>繼續取消</string>
     <key>cancel_subscription_winback_view_description_montly</key>
-    <string>免費享有 1 個月的 Pocket Casts Plus！ 優惠將會新增至目前的訂閱。</string>
+    <string>免費享有 1 個月的 PodHopper Plus！ 優惠將會新增至目前的訂閱。</string>
     <key>cancel_subscription_winback_view_description_yearly</key>
-    <string>立即支付 %@，就能以半價享有 Pocket Casts Plus 為期一年的服務。 優惠年份會從目前方案結束後開始。</string>
+    <string>立即支付 %@，就能以半價享有 PodHopper Plus 為期一年的服務。 優惠年份會從目前方案結束後開始。</string>
     <key>cancel_subscription_winback_view_title_montly</key>
     <string>下個月免費使用並省下 %@</string>
     <key>cancel_subscription_winback_view_title_yearly</key>
@@ -468,7 +468,7 @@ Pocket Casts Plus</string>
     <key>champion_description</key>
     <string>感謝你從一開始就選擇我們！ 若你滿意我們的應用程式，我們很樂意聽聽你的意見回饋。</string>
     <key>champion_title</key>
-    <string>你是 Pocket Casts 真正的支持者！</string>
+    <string>你是 PodHopper 真正的支持者！</string>
     <key>change_app_icon</key>
     <string>變更應用程式圖示</string>
     <key>change_bookmark_subtitle</key>
@@ -558,11 +558,11 @@ Pocket Casts Plus</string>
     <key>create_account</key>
     <string>建立帳號</string>
     <key>create_account_app_store_error_message</key>
-    <string>Pocket Casts 連線至 App Store 時發生問題。請檢查你的連線並再試一次。</string>
+    <string>PodHopper 連線至 App Store 時發生問題。請檢查你的連線並再試一次。</string>
     <key>create_account_app_store_error_title</key>
     <string>無法聯繫 App Store</string>
     <key>create_account_find_out_more_plus</key>
-    <string>深入了解 Pocket Casts Plus</string>
+    <string>深入了解 PodHopper Plus</string>
     <key>create_account_free_account_type</key>
     <string>一般</string>
     <key>create_account_free_details</key>
@@ -915,7 +915,7 @@ Pocket Casts Plus</string>
     <string>跨裝置同步</string>
     <key>eac_informational_view_modal_description</key>
     <string>建立或登入帳號即可暢聽內容
-將 Pocket Casts 發揮到淋漓盡致。</string>
+將 PodHopper 發揮到淋漓盡致。</string>
     <key>eac_informational_view_modal_get_started_button</key>
     <string>開始使用</string>
     <key>eac_informational_view_modal_title</key>
@@ -1161,7 +1161,7 @@ Pocket Casts Plus</string>
     <key>file_upload_name_required</key>
     <string>名稱為必填</string>
     <key>file_upload_no_files_description</key>
-    <string>將自己的檔案上傳到 Pocket Casts，以利隨時收聽或觀看。</string>
+    <string>將自己的檔案上傳到 PodHopper，以利隨時收聽或觀看。</string>
     <key>file_upload_no_files_helper</key>
     <string>我該怎麼做？</string>
     <key>file_upload_no_files_title</key>
@@ -1389,7 +1389,7 @@ Pocket Casts Plus</string>
     <key>generated_transcripts_overlay_description</key>
     <string>訂閱 Plus 即可存取逐字稿和其他進階版功能，例如書籤和資料夾。</string>
     <key>generated_transcripts_overlay_title</key>
-    <string>本逐字稿由 Pocket Casts 自動生成。</string>
+    <string>本逐字稿由 PodHopper 自動生成。</string>
     <key>go_to_discover</key>
     <string>開始探索</string>
     <key>go_to_podcast</key>
@@ -1421,11 +1421,11 @@ Pocket Casts Plus</string>
     <key>how_to_upload_explanation</key>
     <string>首先找到你要儲存的音訊檔案，開啟檔案所在的應用程式</string>
     <key>how_to_upload_share_action_image_center_text</key>
-    <string>複製到 Pocket Casts</string>
+    <string>複製到 PodHopper</string>
     <key>how_to_upload_share_action_image_sides_text</key>
     <string>其他</string>
     <key>how_to_upload_share_action_instruction</key>
-    <string>在選單中點選「複製到 Pocket Casts」</string>
+    <string>在選單中點選「複製到 PodHopper」</string>
     <key>how_to_upload_share_menu_image_background_button_text</key>
     <string>音訊檔案</string>
     <key>how_to_upload_share_menu_image_foreground_menu_option_text</key>
@@ -1447,33 +1447,33 @@ Pocket Casts Plus</string>
 1. 點選下方的「安裝捷徑」按鈕。
 2. 出現提示時，點選「新增捷徑」按鈕。
 3. 點選「捷徑」分頁。
-4. 在清單中找到「Apple Podcasts to Pocket Casts」捷徑。
+4. 在清單中找到「Apple Podcasts to PodHopper」捷徑。
 5. 點選以開始匯入程序。
-6. Pocket Casts 執行完成後，捷徑將重新開啟並完成匯入程序。</string>
+6. PodHopper 執行完成後，捷徑將重新開啟並完成匯入程序。</string>
     <key>import_instructions_breaker</key>
     <string>1. 點選下方的「開啟 Breaker」按鈕
 2. 點選底端分頁列中的「設定」
 3. 點選「連結」
 4. 點選「匯出訂閱項目」
-5. 對話方塊開啟時，找到 Pocket Casts 圖示，然後點選該圖示</string>
+5. 對話方塊開啟時，找到 PodHopper 圖示，然後點選該圖示</string>
     <key>import_instructions_castbox</key>
     <string>1. 點選下方的「開啟 Castbox」按鈕
 2. 點選「個人」分頁
 3. 向下滑動，看見「設定」選項時點選該選項
 4. 向下滑動，看見「OPML 匯出」選項時點選該選項
-5. 如果出現提示，請點選「在 Pocket Casts 中開啟」
+5. 如果出現提示，請點選「在 PodHopper 中開啟」
 6. 如果檔案在 Safari 中開啟，請點選「下載」按鈕
 7. 下載完成後，點選 URL 列中的下載圖示
 8. 點選「下載項目」
 9. 點選 castbox_opml 檔案
-10. 若有需要，請點選「分享」圖示，然後使用 Pocket Casts 開啟檔案
-11. 分享對話方塊開啟時，找到 Pocket Casts 圖示，然後點選該圖示</string>
+10. 若有需要，請點選「分享」圖示，然後使用 PodHopper 開啟檔案
+11. 分享對話方塊開啟時，找到 PodHopper 圖示，然後點選該圖示</string>
     <key>import_instructions_castro</key>
     <string>1. 點選下方的「開啟 Castro」按鈕
 2. 點選應用程式上角的小齒輪圖示
 3. 向下滑動，看見「使用者資料」選項時點選該選項
 4. 點選「匯出訂閱項目」
-5. 分享對話方塊開啟時，找到 Pocket Casts 圖示，然後點選該圖示</string>
+5. 分享對話方塊開啟時，找到 PodHopper 圖示，然後點選該圖示</string>
     <key>import_instructions_import_from</key>
     <string>從 %1$@ 匯入</string>
     <key>import_instructions_install_shortcut</key>
@@ -1486,17 +1486,17 @@ Pocket Casts Plus</string>
     <string>1. 點選下方按鈕開啟 Overcast
 2. 點選應用程式上角的小齒輪圖示
 3. 向下滑動，看見「匯出 OPML」選項時點選該選項
-4. 對話方塊開啟時，找到 Pocket Casts 圖示，然後點選該圖示</string>
+4. 對話方塊開啟時，找到 PodHopper 圖示，然後點選該圖示</string>
     <key>import_opml_from_url</key>
     <string>使用 URL 從 OPML 檔案匯入你的 Podcast</string>
     <key>import_podcasts_description</key>
-    <string>你可使用廣受支援的 OPML 格式將 Podcast 訂閱項目匯入 Pocket Casts。從其他應用程式匯出檔案，並選擇在 Pocket Casts 中開啟。
+    <string>你可使用廣受支援的 OPML 格式將 Podcast 訂閱項目匯入 PodHopper。從其他應用程式匯出檔案，並選擇在 PodHopper 中開啟。
 
-注意：你可能需將 OPML 檔案以電子郵件傳送給自己 (長按附件並選取 Pocket Casts)。</string>
+注意：你可能需將 OPML 檔案以電子郵件傳送給自己 (長按附件並選取 PodHopper)。</string>
     <key>import_podcasts_description_new</key>
-    <string>你可以使用獲得廣泛支援的 OPML 格式，將你的 Podcast 匯入 Pocket Casts。 從另一個應用程式匯出檔案，並選擇在 Pocket Casts 開啟。
+    <string>你可以使用獲得廣泛支援的 OPML 格式，將你的 Podcast 匯入 PodHopper。 從另一個應用程式匯出檔案，並選擇在 PodHopper 開啟。
 
-注意：請透過電子郵件將 OPML 檔案寄給自己，然後長按附件並選取 Pocket Casts。</string>
+注意：請透過電子郵件將 OPML 檔案寄給自己，然後長按附件並選取 PodHopper。</string>
     <key>import_podcasts_title</key>
     <string>匯入 POCKET CASTS</string>
     <key>import_subtitle</key>
@@ -1537,7 +1537,7 @@ Pocket Casts Plus</string>
     <key>kids_profile_submit_feedback_send_button</key>
     <string>傳送</string>
     <key>kids_profile_submit_feedback_title</key>
-    <string>你想要在 Pocket Casts 的兒童個人檔案中看到哪些內容？</string>
+    <string>你想要在 PodHopper 的兒童個人檔案中看到哪些內容？</string>
     <key>kids_profile_submit_success</key>
     <string>感謝你的意見回饋！</string>
     <key>kids_profile_thankyou_button_close</key>
@@ -1563,9 +1563,9 @@ Pocket Casts Plus</string>
     <key>loading</key>
     <string>正在載入...</string>
     <key>login_landing_subtitle</key>
-    <string>讓 Podcast 永遠保持同步。 保護你的媒體庫，在網頁和桌上型電腦安全收聽 Pocket Casts。</string>
+    <string>讓 Podcast 永遠保持同步。 保護你的媒體庫，在網頁和桌上型電腦安全收聽 PodHopper。</string>
     <key>login_landing_title</key>
-    <string>建立 Pocket Casts 帳號</string>
+    <string>建立 PodHopper 帳號</string>
     <key>login_subtitle</key>
     <string>建立帳號即可在所有裝置上同步你的收聽體驗。</string>
     <key>login_title</key>
@@ -1575,7 +1575,7 @@ Pocket Casts Plus</string>
     <key>logs_no_email_account_configured</key>
     <string>請在裝置上設定電子郵件帳號，以利傳送記錄</string>
     <key>logs_watch_os_not_available</key>
-    <string>沒有可用的 watchOS 記錄。 請確認你已配對 Apple Watch 並安裝 Pocket Casts Watch 應用程式。</string>
+    <string>沒有可用的 watchOS 記錄。 請確認你已配對 Apple Watch 並安裝 PodHopper Watch 應用程式。</string>
     <key>manage_downloads_action</key>
     <string>管理下載項目</string>
     <key>manage_downloads_detail</key>
@@ -1695,7 +1695,7 @@ Pocket Casts Plus</string>
     <key>not_on_wifi</key>
     <string>你並未連上 WiFi</string>
     <key>notifications_app_clip_body</key>
-    <string>安裝 Pocket Casts 即可使用強大的播放和自訂工具，享受完整體驗。</string>
+    <string>安裝 PodHopper 即可使用強大的播放和自訂工具，享受完整體驗。</string>
     <key>notifications_app_clip_title</key>
     <string>準備好收到更多 Podcast 通知了嗎？</string>
     <key>notifications_daily_reminders</key>
@@ -1721,7 +1721,7 @@ Pocket Casts Plus</string>
     <key>notifications_onboarding_filters_title</key>
     <string>整理你的單集</string>
     <key>notifications_onboarding_import_body</key>
-    <string>從其他應用程式過來的使用者？ 將所有最愛節目轉移到 Pocket Casts。</string>
+    <string>從其他應用程式過來的使用者？ 將所有最愛節目轉移到 PodHopper。</string>
     <key>notifications_onboarding_import_title</key>
     <string>輕鬆匯入你的 Podcast</string>
     <key>notifications_onboarding_newsletter_subtitle</key>
@@ -1755,7 +1755,7 @@ Pocket Casts Plus</string>
     <key>notifications_permissions_action</key>
     <string>允許通知</string>
     <key>notifications_permissions_body</key>
-    <string>允許「通知」，用最佳方式追蹤新單集、取得新節目推薦和 Pocket Casts 秘訣。</string>
+    <string>允許「通知」，用最佳方式追蹤新單集、取得新節目推薦和 PodHopper 秘訣。</string>
     <key>notifications_permissions_needs_action</key>
     <string>請在裝置設定中允許通知</string>
     <key>notifications_permissions_open_settings</key>
@@ -1767,7 +1767,7 @@ Pocket Casts Plus</string>
     <key>notifications_play_now</key>
     <string>立即播放</string>
     <key>notifications_pocket_cast_offers</key>
-    <string>Pocket Casts 優惠</string>
+    <string>PodHopper 優惠</string>
     <key>notifications_recommendations_trending_body</key>
     <string>查看其他人本週都在聽什麼。</string>
     <key>notifications_recommendations_trending_title</key>
@@ -1789,7 +1789,7 @@ Pocket Casts Plus</string>
     <key>notitifications_permission_banner_action</key>
     <string>前往裝置設定</string>
     <key>notitifications_permission_banner_message</key>
-    <string>若要接收 Pocket Casts 的通知，請在裝置設定中開啟通知。</string>
+    <string>若要接收 PodHopper 的通知，請在裝置設定中開啟通知。</string>
     <key>notitifications_permission_banner_title</key>
     <string>允許推播通知</string>
     <key>now_playing</key>
@@ -1809,7 +1809,7 @@ Pocket Casts Plus</string>
     <key>on</key>
     <string>上</string>
     <key>onboarding_quote_author</key>
-    <string>Pocket Casts 使用者</string>
+    <string>PodHopper 使用者</string>
     <key>onboarding_quote_best</key>
     <string>市面上最棒的 Podcast 應用程式 截至目前為止</string>
     <key>onboarding_quote_customization</key>
@@ -1874,7 +1874,7 @@ Pocket Casts Plus</string>
     <key>patron_callout</key>
     <string>肯定我們的服務，並想表達支持嗎？</string>
     <key>patron_description</key>
-    <string>成為 Pocket Casts Patron，協助我們繼續提供最優質的 Podcast 使用體驗。</string>
+    <string>成為 PodHopper Patron，協助我們繼續提供最優質的 Podcast 使用體驗。</string>
     <key>patron_feature_early_access</key>
     <string>搶先使用新功能</string>
     <key>patron_feature_everything_in_plus</key>
@@ -1882,9 +1882,9 @@ Pocket Casts Plus</string>
     <key>patron_feature_profile_badge</key>
     <string>支持者個人檔案徽章</string>
     <key>patron_feature_profile_icons</key>
-    <string>特殊 Pocket Casts 應用程式圖示</string>
+    <string>特殊 PodHopper 應用程式圖示</string>
     <key>patron_purchase_promo_title</key>
-    <string>成為 Patron 會員並解鎖所有 Pocket Casts 功能</string>
+    <string>成為 Patron 會員並解鎖所有 PodHopper 功能</string>
     <key>patron_subscribe_to</key>
     <string>訂閱 Patron</string>
     <key>patron_thank_you</key>
@@ -1900,19 +1900,19 @@ Pocket Casts Plus</string>
     <key>pause</key>
     <string>暫停</string>
     <key>paywall_dynamic_headline_banner_ad</key>
-    <string>使用 Pocket Casts Plus，從此向橫幅廣告等內容告別</string>
+    <string>使用 PodHopper Plus，從此向橫幅廣告等內容告別</string>
     <key>paywall_dynamic_headline_files</key>
-    <string>運用 Pocket Casts Plus 上傳檔案並享有更多功能</string>
+    <string>運用 PodHopper Plus 上傳檔案並享有更多功能</string>
     <key>paywall_dynamic_headline_folder</key>
-    <string>透過 Pocket Casts Plus 打理 Podcast 並享有更多功能</string>
+    <string>透過 PodHopper Plus 打理 Podcast 並享有更多功能</string>
     <key>paywall_dynamic_headline_icons</key>
-    <string>透過 Pocket Casts Plus 獲得專屬應用程式圖示並享有更多功能</string>
+    <string>透過 PodHopper Plus 獲得專屬應用程式圖示並享有更多功能</string>
     <key>paywall_dynamic_headline_themes</key>
-    <string>Pocket Casts Plus 提供專屬佈景主題並享有更多功能</string>
+    <string>PodHopper Plus 提供專屬佈景主題並享有更多功能</string>
     <key>paywall_dynamic_headline_up_next_shuffle</key>
-    <string>透過 Pocket Casts Plus 隨機播放單集並享有更多功能</string>
+    <string>透過 PodHopper Plus 隨機播放單集並享有更多功能</string>
     <key>paywall_dynamic_headline_watch</key>
-    <string>運用 Pocket Casts Plus 直接從手錶聆聽並享有更多功能</string>
+    <string>運用 PodHopper Plus 直接從手錶聆聽並享有更多功能</string>
     <key>phone</key>
     <string>手機</string>
     <key>play</key>
@@ -1944,9 +1944,9 @@ Pocket Casts Plus</string>
     <key>playback_2024_longest_episode_title</key>
     <string>你收聽時間最長的一集為〈%1$@〉</string>
     <key>playback_2024_plus_upsell_button_title</key>
-    <string>訂閱 Pocket Casts Plus</string>
+    <string>訂閱 PodHopper Plus</string>
     <key>playback_2024_plus_upsell_description</key>
-    <string>若想支持 Pocket Casts，不妨訂閱 Plus 方案，不僅能取得更多統計資料，還可獲得書籤、資料夾或預先選取的章節等進階版功能！</string>
+    <string>若想支持 PodHopper，不妨訂閱 Plus 方案，不僅能取得更多統計資料，還可獲得書籤、資料夾或預先選取的章節等進階版功能！</string>
     <key>playback_2024_plus_upsell_title</key>
     <string>不僅如此，還有更多！</string>
     <key>playback_2024_ratings_description_1_to_3</key>
@@ -1994,7 +1994,7 @@ Pocket Casts Plus</string>
     <key>playback_2025_end_story_description</key>
     <string>與好友分享年度播放回顧，向陪伴你一整年的 Podcast 主講人表達心意</string>
     <key>playback_2025_end_story_title</key>
-    <string>感謝你這一年來持續使用 Pocket Casts</string>
+    <string>感謝你這一年來持續使用 PodHopper</string>
     <key>playback_2025_failed_to_load</key>
     <string>很抱歉，我們無法載入播放功能</string>
     <key>playback_2025_feature_description</key>
@@ -2016,11 +2016,11 @@ Pocket Casts Plus</string>
     <key>playback_2025_plus_thanks_description</key>
     <string>只要使用「%1$@」好康，即可解鎖額外的統計工具和強大功能</string>
     <key>playback_2025_plus_thanks_title</key>
-    <string>感謝你助 Pocket Casts 一臂之力！</string>
+    <string>感謝你助 PodHopper 一臂之力！</string>
     <key>playback_2025_plus_upsell_button_title</key>
-    <string>取得 Pocket Casts Plus</string>
+    <string>取得 PodHopper Plus</string>
     <key>playback_2025_plus_upsell_description</key>
-    <string>訂閱 Pocket Casts Plus，即可享有更深入的統計資料、書籤、資料夾、預先選取章節功能，並透過更多方式深入探索個人收聽習慣</string>
+    <string>訂閱 PodHopper Plus，即可享有更深入的統計資料、書籤、資料夾、預先選取章節功能，並透過更多方式深入探索個人收聽習慣</string>
     <key>playback_2025_plus_upsell_title</key>
     <string>想深入探索嗎？</string>
     <key>playback_2025_ratings_description_1_to_3</key>
@@ -2303,9 +2303,9 @@ Pocket Casts Plus</string>
     <key>please_try_again_later</key>
     <string>請稍後再試一次。</string>
     <key>plus_account_required_prompt</key>
-    <string>你必須有 Pocket Casts 帳號才能註冊 Pocket Casts Plus。這樣才能確保你在所有裝置上都能順利收聽。</string>
+    <string>你必須有 PodHopper 帳號才能註冊 PodHopper Plus。這樣才能確保你在所有裝置上都能順利收聽。</string>
     <key>plus_account_required_prompt_details</key>
-    <string>建立帳號或登入即可兌換 Pocket Casts Plus 存取權限。</string>
+    <string>建立帳號或登入即可兌換 PodHopper Plus 存取權限。</string>
     <key>plus_account_trial_details</key>
     <string>試用期結束後，你仍可使用一般帳號的所有優質功能。祝你聆聽 Podcast 愉快！</string>
     <key>plus_button_title_unlock_all</key>
@@ -2313,15 +2313,15 @@ Pocket Casts Plus</string>
     <key>plus_cancel_terms</key>
     <string>可以隨時取消</string>
     <key>plus_champion</key>
-    <string>Pocket Casts 支持者</string>
+    <string>PodHopper 支持者</string>
     <key>plus_champion_message</key>
-    <string>感謝你對 Pocket Casts 始終支持不懈。 你是真正的支持者！</string>
+    <string>感謝你對 PodHopper 始終支持不懈。 你是真正的支持者！</string>
     <key>plus_cloud_storage_limit_format</key>
     <string>%1$@ GB 雲端儲存空間</string>
     <key>plus_discount_yearly_membership</key>
     <string>首年享 50%% 優惠</string>
     <key>plus_error_already_registered</key>
-    <string>你已經有 Pocket Casts Plus 帳號了</string>
+    <string>你已經有 PodHopper Plus 帳號了</string>
     <key>plus_error_already_registered_details</key>
     <string>感謝你的支持，但很抱歉你無法使用此優惠。</string>
     <key>plus_expiration_format</key>
@@ -2355,7 +2355,7 @@ Pocket Casts Plus</string>
     <key>plus_feature_card_title_wear_os</key>
     <string>Apple Watch 和 Wear OS 播放</string>
     <key>plus_feature_gratitude</key>
-    <string>Pocket Casts 所有使用者向你表達誠摯的謝意</string>
+    <string>PodHopper 所有使用者向你表達誠摯的謝意</string>
     <key>plus_feature_librofm</key>
     <string>來自 Libro.fm 的免費有聲書</string>
     <key>plus_feature_slumber</key>
@@ -2385,7 +2385,7 @@ Pocket Casts Plus</string>
     <key>plus_marketing_hide_ads_title</key>
     <string>隱藏廣告</string>
     <key>plus_marketing_learn_more_button</key>
-    <string>深入了解 Pocket Casts Plus</string>
+    <string>深入了解 PodHopper Plus</string>
     <key>plus_marketing_main_description</key>
     <string>個人化設定，讓節目獲得更多聽眾，雙效合一。將你的音訊檔案上傳到雲端伺服器、透過網頁播放器存取帳號，還可讓 App 更合你所需。</string>
     <key>plus_marketing_no_banner_ads</key>
@@ -2395,7 +2395,7 @@ Pocket Casts Plus</string>
     <key>plus_marketing_themes_icons_title</key>
     <string>主題和圖示</string>
     <key>plus_marketing_title</key>
-    <string>包含所有你喜愛的 Pocket Casts 功能，以及更多好康</string>
+    <string>包含所有你喜愛的 PodHopper 功能，以及更多好康</string>
     <key>plus_marketing_up_next_shuffle</key>
     <string>接下來隨機播放</string>
     <key>plus_marketing_updated_cloud_storage_description</key>
@@ -2417,19 +2417,19 @@ Pocket Casts Plus</string>
     <key>plus_price_per_month</key>
     <string>每月 %1$@</string>
     <key>plus_promo_paragraph</key>
-    <string>取得 Pocket Casts Plus 即可解鎖此功能及其他眾多功能！</string>
+    <string>取得 PodHopper Plus 即可解鎖此功能及其他眾多功能！</string>
     <key>plus_promotion_expired</key>
     <string>促銷代碼過期或無效</string>
     <key>plus_promotion_expired_nudge</key>
-    <string>歡迎註冊 Pocket Casts Plus，你可以建立一般帳號，也可以馬上開始使用。</string>
+    <string>歡迎註冊 PodHopper Plus，你可以建立一般帳號，也可以馬上開始使用。</string>
     <key>plus_promotion_used</key>
     <string>代碼已使用</string>
     <key>plus_purchase_failed</key>
     <string>處理你的付款時似乎發生問題。 請再試一次。</string>
     <key>plus_purchase_promo_title</key>
-    <string>成為 Plus 會員並解鎖所有 Pocket Casts 功能</string>
+    <string>成為 Plus 會員並解鎖所有 PodHopper 功能</string>
     <key>plus_required_feature</key>
-    <string>此功能需要 Pocket Casts Plus</string>
+    <string>此功能需要 PodHopper Plus</string>
     <key>plus_select_payment_frequency</key>
     <string>選取付款頻率</string>
     <key>plus_skip</key>
@@ -2447,11 +2447,11 @@ Pocket Casts Plus</string>
     <key>plus_subscription_expiration</key>
     <string>Plus 將於 %1$@ 到期</string>
     <key>plus_subscription_google</key>
-    <string>你似乎是透過 Android 裝置訂閱 Pocket Casts Plus</string>
+    <string>你似乎是透過 Android 裝置訂閱 PodHopper Plus</string>
     <key>plus_subscription_google_details</key>
     <string>若要取消訂閱，請透過「設定」取消。</string>
     <key>plus_subscription_web</key>
-    <string>你似乎是透過網頁訂閱 Pocket Casts Plus</string>
+    <string>你似乎是透過網頁訂閱 PodHopper Plus</string>
     <key>plus_subscription_web_details</key>
     <string>若要取消訂閱，請前往 Pocketcasts.com 取消。</string>
     <key>plus_upgrade_no_internet_message</key>
@@ -2461,13 +2461,13 @@ Pocket Casts Plus</string>
     <key>plus_yearly_frequency_pricing_format</key>
     <string>每年 %1$@</string>
     <key>pocket_casts_logo</key>
-    <string>Pocket Casts 標誌</string>
+    <string>PodHopper 標誌</string>
     <key>pocket_casts_newsletter</key>
-    <string>Pocket Casts 電子報</string>
+    <string>PodHopper 電子報</string>
     <key>pocket_casts_newsletter_description</key>
     <string>接收最新消息、應用程式更新、佈景主題播放清單、訪談等其他內容。</string>
     <key>pocket_casts_plus</key>
-    <string>Pocket Casts Plus</string>
+    <string>PodHopper Plus</string>
     <key>pocket_casts_plus_short</key>
     <string>Plus</string>
     <key>pocket_casts_welcome_newsletter_title</key>
@@ -2706,7 +2706,7 @@ Pocket Casts Plus</string>
     <key>profile</key>
     <string>個人檔案</string>
     <key>profile_help_support</key>
-    <string>升級帳號以支持 Pocket Casts</string>
+    <string>升級帳號以支持 PodHopper</string>
     <key>profile_last_app_refresh</key>
     <string>應用程式上次重新整理時間：%1$@</string>
     <key>profile_listening_history_empty_description</key>
@@ -2752,7 +2752,7 @@ Pocket Casts Plus</string>
     <key>rate</key>
     <string>稅率</string>
     <key>rate_pocket_casts</key>
-    <string>為 Pocket Casts 評分</string>
+    <string>為 PodHopper 評分</string>
     <key>rating_error</key>
     <string>糟糕！ 發生錯誤。</string>
     <key>rating_listen_to_this_podcast_message</key>
@@ -2798,20 +2798,20 @@ Pocket Casts Plus</string>
     <key>referrals_share_guest_pass</key>
     <string>分享訪客體驗券</string>
     <key>referrals_share_no_guest_pass_message</key>
-    <string>感謝你不吝分享 Pocket Casts 體驗！ 若有更多體驗券可使用，我們會再另行通知。</string>
+    <string>感謝你不吝分享 PodHopper 體驗！ 若有更多體驗券可使用，我們會再另行通知。</string>
     <key>referrals_share_no_guest_pass_title</key>
     <string>你已分享完所有的訪客體驗券！</string>
     <key>referrals_share_pass_long_message</key>
     <string>你好！
 
-在此送上 Pocket Casts Plus 的 %1$@訪客體驗券，這是我最愛的 Podcast 播放器。 Pocket Casts Plus 提供書籤、資料夾等其他播放器找不到的獨特功能。 我相信你也會愛上這個工具！
+在此送上 PodHopper Plus 的 %1$@訪客體驗券，這是我最愛的 Podcast 播放器。 PodHopper Plus 提供書籤、資料夾等其他播放器找不到的獨特功能。 我相信你也會愛上這個工具！
 </string>
     <key>referrals_share_pass_message</key>
-    <string>嗨！ 使用下方連結領取你的 %1$@ Pocket Casts Plus 訪客體驗券，在所有裝置上盡情暢聽 Podcast！</string>
+    <string>嗨！ 使用下方連結領取你的 %1$@ PodHopper Plus 訪客體驗券，在所有裝置上盡情暢聽 Podcast！</string>
     <key>referrals_share_pass_subject</key>
-    <string>%1$@ Pocket Casts Plus 訪客體驗券！</string>
+    <string>%1$@ PodHopper Plus 訪客體驗券！</string>
     <key>referrals_tip_message</key>
-    <string>贈送 %1$@ Pocket Casts Plus 體驗</string>
+    <string>贈送 %1$@ PodHopper Plus 體驗</string>
     <key>referrals_tip_title</key>
     <string>你有 %1$@ 張體驗券可分享</string>
     <key>refresh_control_fetching_episodes</key>
@@ -2971,7 +2971,7 @@ Pocket Casts Plus</string>
     <key>server_error_login_user_register_failed</key>
     <string>無法建立帳號，請稍後再試一次</string>
     <key>server_error_promo_already_plus</key>
-    <string>你已經是 Pocket Casts Plus 訂閱者，不需要兌換任何代碼。</string>
+    <string>你已經是 PodHopper Plus 訂閱者，不需要兌換任何代碼。</string>
     <key>server_error_promo_already_redeemed</key>
     <string>你已經領取此促銷代碼。試試看也無妨！</string>
     <key>server_error_promo_code_expired_or_invalid</key>
@@ -3093,7 +3093,7 @@ Pocket Casts Plus</string>
     <key>settings_custom_auto_archive_msg</key>
     <string>需要其他微調控制嗎？ 為此 Podcast 節目啟用自動封存設定</string>
     <key>settings_custom_msg</key>
-    <string>Pocket Casts 會記住你上次播放使用的效果，並套用至所有 Podcast 節目中。如果你只想為此 Podcast 節目建立自訂效果，可啟用此功能。</string>
+    <string>PodHopper 會記住你上次播放使用的效果，並套用至所有 Podcast 節目中。如果你只想為此 Podcast 節目建立自訂效果，可啟用此功能。</string>
     <key>settings_episode_limit</key>
     <string>單集限制</string>
     <key>settings_episode_limit_format</key>
@@ -3175,7 +3175,7 @@ Pocket Casts Plus</string>
     <key>settings_general_legacy_bluetooth</key>
     <string>舊版藍牙支援</string>
     <key>settings_general_legacy_bluetooth_subtitle</key>
-    <string>藍牙裝置或汽車音響似乎會導致 Pocket Casts 暫停播放，或將播放位置重設為 0；請嘗試開啟此設定以修正問題。</string>
+    <string>藍牙裝置或汽車音響似乎會導致 PodHopper 暫停播放，或將播放位置重設為 0；請嘗試開啟此設定以修正問題。</string>
     <key>settings_general_lock_screen_disabled</key>
     <string>啟用鎖定螢幕播放控制功能</string>
     <key>settings_general_multi_select_gesture</key>
@@ -3211,7 +3211,7 @@ Pocket Casts Plus</string>
     <key>settings_general_smart_playback</key>
     <string>智慧化繼續播放</string>
     <key>settings_general_smart_playback_subtitle</key>
-    <string>開啟此功能時，Pocket Casts 會在你繼續播放單集時稍微倒退一些，讓你能更輕鬆跟上進度。</string>
+    <string>開啟此功能時，PodHopper 會在你繼續播放單集時稍微倒退一些，讓你能更輕鬆跟上進度。</string>
     <key>settings_general_up_next_swipe</key>
     <string>「接下來播放」撥動</string>
     <key>settings_general_up_next_tap</key>
@@ -3335,9 +3335,9 @@ Pocket Casts Plus</string>
     <key>settings_status_host</key>
     <string>Podcast 常見託管服務商</string>
     <key>settings_status_host_description</key>
-    <string>Podcast 作者會將單集檔案交由各式託管服務商管理，而這些服務商不受 Pocket Casts 管理。</string>
+    <string>Podcast 作者會將單集檔案交由各式託管服務商管理，而這些服務商不受 PodHopper 管理。</string>
     <key>settings_status_host_failure_message</key>
-    <string>最常見的原因是在手機或網路上設定了廣告封鎖程式。  你需要解除封鎖此網域才能下載 Podcast。 請注意，Pocket Casts 不負責管理 Podcast 或選擇託管服務商，一切由節目作者決定。</string>
+    <string>最常見的原因是在手機或網路上設定了廣告封鎖程式。  你需要解除封鎖此網域才能下載 Podcast。 請注意，PodHopper 不負責管理 Podcast 或選擇託管服務商，一切由節目作者決定。</string>
     <key>settings_status_internet</key>
     <string>網際網路</string>
     <key>settings_status_internet_description</key>
@@ -3385,7 +3385,7 @@ Pocket Casts Plus</string>
     <key>settings_watch_auto_download</key>
     <string>自動下載「接下來播放」</string>
     <key>settings_watch_auto_download_off_subtitle</key>
-    <string>設定 Pocket Casts 會從「接下來播放」佇列中下載到手錶中供離線播放的單集。</string>
+    <string>設定 PodHopper 會從「接下來播放」佇列中下載到手錶中供離線播放的單集。</string>
     <key>settings_watch_delete_downloads</key>
     <string>刪除超出限制的下載檔案</string>
     <key>settings_watch_delete_downloads_off_subtitle</key>
@@ -3395,7 +3395,7 @@ Pocket Casts Plus</string>
     <key>settings_watch_episode_limit</key>
     <string>單集</string>
     <key>settings_watch_episode_limit_subtitle</key>
-    <string>Pocket Casts 會將「接下來播放」佇列中的前 %1$@ 集下載至你的手錶供離線播放。</string>
+    <string>PodHopper 會將「接下來播放」佇列中的前 %1$@ 集下載至你的手錶供離線播放。</string>
     <key>settings_watch_episode_number_option_format</key>
     <string>前 %1$@ 集</string>
     <key>setup_account</key>
@@ -3571,9 +3571,9 @@ Pocket Casts Plus</string>
     <key>skip_chapters</key>
     <string>預先選取的章節</string>
     <key>skip_chapters_patron_prompt</key>
-    <string>訂閱 Pocket Casts Patron，就能預先選取章節並享有更多功能</string>
+    <string>訂閱 PodHopper Patron，就能預先選取章節並享有更多功能</string>
     <key>skip_chapters_plus_prompt</key>
-    <string>訂閱 Pocket Casts Plus，就能預先選取章節並享有更多功能</string>
+    <string>訂閱 PodHopper Plus，就能預先選取章節並享有更多功能</string>
     <key>skip_forward</key>
     <string>快轉跳過</string>
     <key>sleep_timer</key>
@@ -3613,7 +3613,7 @@ Pocket Casts Plus</string>
     <key>sonos_connecting</key>
     <string>正在連線...</string>
     <key>sonos_connection_failed_account_link</key>
-    <string>目前無法連結 Pocket Casts 帳號。請稍後再試一次。</string>
+    <string>目前無法連結 PodHopper 帳號。請稍後再試一次。</string>
     <key>sonos_connection_failed_app_missing</key>
     <string>無法開啟 Sonos 應用程式以完成連結程序。</string>
     <key>sonos_connection_failed_title</key>
@@ -3623,7 +3623,7 @@ Pocket Casts Plus</string>
 
 我們絕不會分享你的電子郵件地址、密碼和其他敏感內容。</string>
     <key>sonos_connection_sign_in_prompt</key>
-    <string>你必須有 Pocket Casts 帳號，才可以與 Sonos 連線。</string>
+    <string>你必須有 PodHopper 帳號，才可以與 Sonos 連線。</string>
     <key>sort_by</key>
     <string>排序依據</string>
     <key>sort_episodes</key>
@@ -3747,7 +3747,7 @@ Pocket Casts Plus</string>
     <key>suggested_folders_use_suggested_folders</key>
     <string>使用這些資料夾</string>
     <key>support_watch_help_message</key>
-    <string>如果 Pocket Casts Watch 應用程式發生問題，我們可以傳送你的穿戴記錄給你以提供協助。 若要進行此操作，請在 Watch 上開啟 Pocket Casts。</string>
+    <string>如果 PodHopper Watch 應用程式發生問題，我們可以傳送你的穿戴記錄給你以提供協助。 若要進行此操作，請在 Watch 上開啟 PodHopper。</string>
     <key>support_watch_help_opened_app</key>
     <string>我已開啟 Watch 應用程式</string>
     <key>support_watch_help_send_without_log</key>
@@ -3865,7 +3865,7 @@ Pocket Casts Plus</string>
     <key>tv_home_browse_categories_section_title</key>
     <string>瀏覽分類</string>
     <key>tv_home_featured_section_title</key>
-    <string>Pocket Casts 精選</string>
+    <string>PodHopper 精選</string>
     <key>tv_home_keep_listening_title</key>
     <string>接續之前的進度</string>
     <key>tv_home_new_releases</key>
@@ -3973,7 +3973,7 @@ Pocket Casts Plus</string>
     <key>tv_sign_in_subtitle</key>
     <string>開啟相機並指向此 QR 碼</string>
     <key>tv_sign_in_title</key>
-    <string>登入 Pocket Casts</string>
+    <string>登入 PodHopper</string>
     <key>tv_signing_in_subtitle</key>
     <string>正在載入你的 Podcast。</string>
     <key>tv_signing_in_title</key>
@@ -4009,7 +4009,7 @@ Pocket Casts Plus</string>
     <key>tv_welcome_subtitle</key>
     <string>你的 Podcast。 用大螢幕播放。 很明顯。</string>
     <key>tv_welcome_title</key>
-    <string>歡迎使用 Pocket Casts TV</string>
+    <string>歡迎使用 PodHopper TV</string>
     <key>unarchive</key>
     <string>取消封存</string>
     <key>unfollow</key>
@@ -4057,7 +4057,7 @@ Pocket Casts Plus</string>
     <key>upgrade_experiment_free_membership_format</key>
     <string>Plus 免費試用 %1$@</string>
     <key>upgrade_experiment_paywall_button</key>
-    <string>取得 Pocket Casts Plus</string>
+    <string>取得 PodHopper Plus</string>
     <key>upgrade_experiment_reviews_app_store_button</key>
     <string>在 App Store 上查看所有評論</string>
     <key>upgrade_experiment_reviews_app_store_info</key>
@@ -4067,7 +4067,7 @@ Pocket Casts Plus</string>
     <key>upgrade_experiment_reviews_review_text_1</key>
     <string>累積 8 年卓越經驗並且不懈地提升品質</string>
     <key>upgrade_experiment_reviews_review_text_2</key>
-    <string>我從 2017 起就是 Pocket Casts 使用者。
+    <string>我從 2017 起就是 PodHopper 使用者。
 
 這無疑是聆聽 Podcast 最棒的應用程式。 功能豐富，並且積極開發更新。 部分使用者對於 UI 變更有一些抱怨，但我還沒有意識到太多改變。
 
@@ -4113,7 +4113,7 @@ Pocket Casts Plus</string>
     <key>user_satisfaction_survey_subtitle</key>
     <string>你好！ 歡迎分享你的應用程式滿意度。</string>
     <key>user_satisfaction_survey_title</key>
-    <string>Pocket Casts 使用起來還滿意嗎？</string>
+    <string>PodHopper 使用起來還滿意嗎？</string>
     <key>user_satisfaction_survey_yes_response</key>
     <string>可以！</string>
     <key>view_transcript</key>
@@ -4159,11 +4159,11 @@ Pocket Casts Plus</string>
     <key>watch_source_msg</key>
     <string>Podcast 節目會從所選裝置連接的喇叭播放</string>
     <key>watch_source_plus_info</key>
-    <string>直接下載到你的手錶，不用手機就能聆聽。在你的手機應用程式或網頁上查看 Pocket Casts Plus。</string>
+    <string>直接下載到你的手錶，不用手機就能聆聽。在你的手機應用程式或網頁上查看 PodHopper Plus。</string>
     <key>watch_source_refresh_account</key>
     <string>重新整理帳號</string>
     <key>watch_source_refresh_account_info</key>
-    <string>如果你有 Pocket Casts Plus 帳號，請重新整理帳號以嘗試啟用此按鈕</string>
+    <string>如果你有 PodHopper Plus 帳號，請重新整理帳號以嘗試啟用此按鈕</string>
     <key>watch_source_refresh_data</key>
     <string>重新整理資料</string>
     <key>watch_source_sign_in_info</key>
@@ -4199,7 +4199,7 @@ Pocket Casts Plus</string>
     <key>whats_new_in_version</key>
     <string>%1$@ 最新內容</string>
     <key>whats_new_page_one_7_20</key>
-    <string>如果你喜歡 Podcast 的程度有我們的一半，那你可能收聽很多 Podcast 節目。 如果你是 Pocket Casts Plus 訂閱者，現在你可以將 Podcast 節目排序至資料夾，再將其排序至整潔的群組。
+    <string>如果你喜歡 Podcast 的程度有我們的一半，那你可能收聽很多 Podcast 節目。 如果你是 PodHopper Plus 訂閱者，現在你可以將 Podcast 節目排序至資料夾，再將其排序至整潔的群組。
 
 多虧了你的支援，你的主畫面現已更加美觀！</string>
     <key>whats_new_page_one_title_7_20</key>
@@ -4211,7 +4211,7 @@ Pocket Casts Plus</string>
     <key>whats_new_page_two_title_7_20</key>
     <string>主畫面網格同步</string>
     <key>widgets_app_icon_description</key>
-    <string>快速推出 Pocket Casts</string>
+    <string>快速推出 PodHopper</string>
     <key>widgets_app_icon_name</key>
     <string>圖示</string>
     <key>widgets_discover_prompt_msg</key>

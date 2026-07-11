@@ -52,8 +52,8 @@ struct LegalAndMore: View {
     }
 
     private enum Constants {
-        static let termsOfUseURL = URL(string: "https://support.pocketcasts.com/article/terms-of-use-overview/")!
-        static let privacyPolicyURL = URL(string: "https://support.pocketcasts.com/article/privacy-policy/")!
+        static let termsOfUseURL = URL(string: "https://covertwogames.com/podhopperprivacy.html")!
+        static let privacyPolicyURL = URL(string: "https://covertwogames.com/podhopperprivacy.html")!
         static let acknowledgementsURL = Bundle.main.url(forResource: "acknowledgements", withExtension: "html")!
     }
 }
