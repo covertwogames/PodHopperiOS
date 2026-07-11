@@ -1,9 +1,5 @@
 import Foundation
 
-struct EpisodeSearchEnvelope: Decodable {
-    public let episodes: [EpisodeSearchResult]
-}
-
 public struct EpisodeSearchResult: Codable, Hashable {
     public let uuid: String
     public let title: String
@@ -40,36 +36,11 @@ public struct EpisodeSearchResult: Codable, Hashable {
 }
 
 public class EpisodeSearchTask {
-    private let session: URLSession
+    public init(session: URLSession = .shared) {}
 
-    public init(session: URLSession = .shared) {
-        self.session = session
-    }
-
+    /// PodHopper: episode search runs against the local database instead of the Pocket Casts
+    /// cache server.
     public func search(term: String) async throws -> [EpisodeSearchResult] {
-        let searchURL = URL(string: "\(ServerConstants.Urls.cache())episode/search")!
-        var request = URLRequest(url: searchURL)
-        request.httpMethod = "POST"
-        request.addLocalizationHeaders()
-
-        let json: [String: Any] = ["term": term]
-
-        let jsonData = try JSONSerialization.data(withJSONObject: json)
-
-        request.httpBody = jsonData
-
-        let (data, _) = try await session.data(for: request)
-        let decoder = JSONDecoder()
-        decoder.keyDecodingStrategy = .convertFromSnakeCase
-
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss'Z'"
-        dateFormatter.locale = Locale(identifier: "en_US_POSIX")
-        dateFormatter.timeZone = TimeZone(secondsFromGMT: 0)
-
-        decoder.dateDecodingStrategy = .formatted(dateFormatter)
-
-        let envelope = try decoder.decode(EpisodeSearchEnvelope.self, from: data)
-        return envelope.episodes
+        PodHopperSearch.shared.searchEpisodes(term: term)
     }
 }

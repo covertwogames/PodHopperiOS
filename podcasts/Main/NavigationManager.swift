@@ -145,6 +145,10 @@ class NavigationManager {
 
                 mainController?.navigateToPodcastInfo(podcastInfo)
             } else if let searchResult = data[NavigationManager.podcastKey] as? PodcastFolderSearchResult {
+                // PodHopper: search results are local stubs; fetch their episodes on first open.
+                Task.detached {
+                    PodHopperFeedManager.shared.fillEpisodesIfNeeded(podcastUuid: searchResult.uuid)
+                }
                 mainController?.navigateTo(podcast: searchResult)
             }
         } else if place == NavigationManager.folderPageKey {

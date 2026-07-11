@@ -1,9 +1,5 @@
 import Foundation
 
-struct CombinedSearchEnvelope: Decodable {
-    public let results: [CombinedSearchResult]
-}
-
 public enum CombinedSearchResultType: Hashable {
     case episode(EpisodeSearchResult)
     case podcast(PodcastFolderSearchResult)
@@ -37,33 +33,17 @@ public struct CombinedSearchResult: Decodable, Hashable {
 }
 
 public class CombinedSearchTask {
-    private let session: URLSession
+    public init(session: URLSession = .shared) {}
 
-    public init(session: URLSession = .shared) {
-        self.session = session
-    }
-
+    /// PodHopper: combines the on-device iTunes podcast search with a local database episode
+    /// search instead of calling the Pocket Casts combined search endpoint.
     public func search(term: String) async throws -> [CombinedSearchResultType] {
-        let components = URLComponents(string: ServerConstants.Urls.cache() + "search/combined")
-        guard let searchURL = components?.url,
-              let request = ServerHelper.createJsonRequest(url: searchURL, params: ["term": term], timeout: 10, cachePolicy: .reloadIgnoringCacheData)
-        else {
-            throw URL.URLCreationError.invalidURLString
-        }
+        let podcasts = try await PodHopperSearch.shared.searchPodcasts(term: term, limit: 20)
+        let episodes = PodHopperSearch.shared.searchEpisodes(term: term, limit: 30)
 
-        let (data, _) = try await session.data(for: request)
-        let decoder = JSONDecoder()
-        decoder.keyDecodingStrategy = .convertFromSnakeCase
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss'Z'"
-        dateFormatter.locale = Locale(identifier: "en_US_POSIX")
-        dateFormatter.timeZone = TimeZone(secondsFromGMT: 0)
+        var results: [CombinedSearchResultType] = podcasts.map { .podcast($0) }
+        results.append(contentsOf: episodes.map { .episode($0) })
 
-        decoder.dateDecodingStrategy = .formatted(dateFormatter)
-
-        let envelope = try decoder.decode(CombinedSearchEnvelope.self, from: data)
-        return envelope.results.compactMap { result in
-            return result.resolvedResultType
-        }
+        return results
     }
 }

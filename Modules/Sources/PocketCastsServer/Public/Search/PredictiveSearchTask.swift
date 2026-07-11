@@ -45,30 +45,22 @@ public struct PredictiveSearchResult: Decodable, Hashable {
                 self.type = .unknown(value)
         }
     }
+
+    /// PodHopper: init used by the on-device iTunes predictive search backend.
+    init(type: PredictiveSearchResultType) {
+        self.type = type
+    }
 }
 
 public class PredictiveSearchTask {
-    private let session: URLSession
+    public init(session: URLSession = .shared) {}
 
-    public init(session: URLSession = .shared) {
-        self.session = session
-    }
-
+    /// PodHopper: predictive suggestions come from a small iTunes search instead of the
+    /// Pocket Casts autocomplete server.
     public func search(term: String) async throws -> [PredictiveSearchResult] {
-        var components = URLComponents(string: ServerConstants.Urls.search + "autocomplete/search")
-        components?.queryItems = [URLQueryItem(name: "q", value: term)]
-        guard let searchURL = components?.url else {
-            throw URL.URLCreationError.invalidURLString
+        let podcasts = try await PodHopperSearch.shared.searchPodcasts(term: term, limit: 6)
+        return podcasts.map { podcast in
+            PredictiveSearchResult(type: .podcast(PredictivePodcastSearchResult(uuid: podcast.uuid, title: podcast.title ?? "", author: podcast.author ?? "", isExplicit: podcast.explicit)))
         }
-        var request = URLRequest(url: searchURL)
-        request.httpMethod = "GET"
-        request.addLocalizationHeaders()
-
-        let (data, _) = try await session.data(for: request)
-        let decoder = JSONDecoder()
-        decoder.keyDecodingStrategy = .convertFromSnakeCase
-
-        let envelope = try decoder.decode(PredictiveSearchEnvelope.self, from: data)
-        return envelope.results
     }
 }

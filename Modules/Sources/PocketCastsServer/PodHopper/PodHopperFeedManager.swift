@@ -115,6 +115,18 @@ public final class PodHopperFeedManager {
         return uuid
     }
 
+    /// Fetches episodes for a stubbed podcast the first time its page is opened, if the feed
+    /// has not been filled yet. Safe to call repeatedly.
+    public func fillEpisodesIfNeeded(podcastUuid: String) {
+        guard let podcast = dataManager.findPodcast(uuid: podcastUuid, includeUnsubscribed: true),
+              let feedUrl = podcast.podcastUrl, feedUrl.isEmpty == false,
+              dataManager.findEpisodesWhere(customWhere: "podcastUuid = ? LIMIT 1", arguments: [podcastUuid]).isEmpty else {
+            return
+        }
+
+        fillFeedUrlEpisodes(feedUrl)
+    }
+
     /// Download and parse the feed and fill in the episodes for a stub created by `addFeedUrlStub`.
     /// No op if the podcast already has episodes, so a second open never re-parses or disturbs play
     /// state. Preserves the existing subscribed flag, added date and artwork already on screen, in

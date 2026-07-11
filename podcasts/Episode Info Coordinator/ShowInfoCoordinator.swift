@@ -3,146 +3,48 @@ import PocketCastsDataModel
 import PocketCastsServer
 import PocketCastsUtils
 
+/// PodHopper: episode information comes straight from the local database instead of the
+/// Pocket Casts cache server. Show notes are the episode description parsed from the RSS
+/// feed, artwork falls back to the podcast artwork, chapters come from the embedded chapter
+/// parser during playback, and there are no remote transcripts.
 actor ShowInfoCoordinator: ShowInfoCoordinating {
     static let shared = ShowInfoCoordinator()
 
-    private let dataRetriever: ShowInfoDataRetriever
-    private let podcastIndexChapterRetriever: PodcastIndexChapterDataRetriever
     private let dataManager: DataManager
-    private let transcriptDataRetriever: TranscriptsDataRetriever
 
-    private var requestingShowInfo: [String: Task<Episode.Metadata?, Error>] = [:]
-    private var requestingRawMetadata: [String: Task<String?, Error>] = [:]
-
-    init(
-        dataRetriever: ShowInfoDataRetriever = ShowInfoDataRetriever(),
-        podcastIndexChapterRetriever: PodcastIndexChapterDataRetriever = PodcastIndexChapterDataRetriever(),
-        dataManager: DataManager = .sharedManager,
-        transcriptDataRetriever: TranscriptsDataRetriever = TranscriptsDataRetriever()
-    ) {
-        self.dataRetriever = dataRetriever
-        self.podcastIndexChapterRetriever = podcastIndexChapterRetriever
+    init(dataManager: DataManager = .sharedManager) {
         self.dataManager = dataManager
-        self.transcriptDataRetriever = transcriptDataRetriever
     }
 
     func loadShowNotes(
         podcastUuid: String,
         episodeUuid: String
     ) async throws -> String {
-        let metadata = try await loadShowInfo(podcastUuid: podcastUuid, episodeUuid: episodeUuid)
-        return metadata?.showNotes ?? CacheServerHandler.noShowNotesMessage
+        if let notes = dataManager.findEpisode(uuid: episodeUuid)?.episodeDescription, notes.isEmpty == false {
+            return notes
+        }
+
+        return CacheServerHandler.noShowNotesMessage
     }
 
     func loadEpisodeArtworkUrl(
         podcastUuid: String,
         episodeUuid: String
     ) async throws -> String? {
-        let metadata = try await loadShowInfo(podcastUuid: podcastUuid, episodeUuid: episodeUuid)
-        return metadata?.image
+        nil
     }
 
     public func loadChapters(
         podcastUuid: String,
         episodeUuid: String
     ) async throws -> ([Episode.Metadata.EpisodeChapter]?, [PodcastIndexChapter]?) {
-        let metadata = try await loadShowInfo(podcastUuid: podcastUuid, episodeUuid: episodeUuid)
-
-        if let pocastIndexChapterUrl = metadata?.chaptersUrl,
-            let chapters = try? await podcastIndexChapterRetriever.loadChapters(pocastIndexChapterUrl) {
-            return (nil, chapters.chapters)
-        }
-
-        return (metadata?.chapters, nil)
+        (nil, nil)
     }
 
-    private func buildGeneratedTranscript(podcastUuid: String, episodeUuid: String) -> Episode.Metadata.Transcript {
-        let format = TranscriptFormat.vtt
-        let urlString = "\(ServerConstants.Urls.generatedTranscripts)\(podcastUuid)/\(episodeUuid).\(format.fileExtension)"
-        return Episode.Metadata.Transcript(url: urlString, type: format.rawValue, language: nil)
-    }
-
-    public func loadTranscriptsMetadata(podcastUuid: String, episodeUuid: String) async throws -> EpisodeTranscriptData {
-#if os(watchOS)
-        return (transcripts: [], hasGeneratedTranscripts: false, isDisplayingGeneratedTranscript: false)
-#else
-        let metadata = try await loadShowInfo(podcastUuid: podcastUuid, episodeUuid: episodeUuid)
-
-        if FeatureFlag.generatedTranscripts.enabled {
-            let externalTranscripts = metadata?.transcripts ?? []
-            var pocketCastsTranscripts: [Episode.Metadata.Transcript] = []
-            if let episode = dataManager.findEpisode(uuid: episodeUuid),
-               let hasTranscript = episode.hasGeneratedTranscript {
-                if hasTranscript {
-                    let transcript = buildGeneratedTranscript(podcastUuid: podcastUuid, episodeUuid: episodeUuid)
-                    pocketCastsTranscripts = [transcript]
-                }
-            } else {
-                pocketCastsTranscripts = metadata?.pocketCastsTranscripts ?? []
-            }
-
-            let isDisplayingGenerated = externalTranscripts.isEmpty && !pocketCastsTranscripts.isEmpty
-            let transcripts = externalTranscripts.isEmpty ? pocketCastsTranscripts : externalTranscripts
-            return (transcripts: transcripts, hasGeneratedTranscripts: !pocketCastsTranscripts.isEmpty, isDisplayingGeneratedTranscript: isDisplayingGenerated)
-        }
-
-        guard let transcripts = metadata?.transcripts else {
-            return (transcripts: [], hasGeneratedTranscripts: false, isDisplayingGeneratedTranscript: false)
-        }
-        return (transcripts: transcripts, hasGeneratedTranscripts: false, isDisplayingGeneratedTranscript: false)
-#endif
-    }
-
-    @discardableResult
-    func loadShowInfo(
+    public func loadTranscriptsMetadata(
         podcastUuid: String,
         episodeUuid: String
-    ) async throws -> Episode.Metadata? {
-        try await requestShowInfo(podcastUuid: podcastUuid, episodeUuid: episodeUuid)
-    }
-
-    @discardableResult
-    func requestShowInfo(
-        podcastUuid: String,
-        episodeUuid: String
-    ) async throws -> Episode.Metadata? {
-        if let task = requestingShowInfo[episodeUuid] {
-            return try await task.value
-        }
-
-        let task = Task<Episode.Metadata?, Error> { [weak self] in
-            guard let self else { throw TaskError.nilSelf }
-
-            do {
-                let data = try await dataRetriever.loadEpisodeDataFromCache(for: podcastUuid, episodeUuid: episodeUuid)
-                await setRequestingShowInfoToNil(for: episodeUuid)
-                return await getShowInfo(for: data?.data(using: .utf8))
-            } catch {
-                await setRequestingShowInfoToNil(for: episodeUuid)
-                throw error
-            }
-        }
-
-        requestingShowInfo[episodeUuid] = task
-
-        return try await task.value
-    }
-
-    private func setRequestingShowInfoToNil(for episodeUuid: String) {
-        requestingShowInfo[episodeUuid] = nil
-    }
-
-    private func getShowInfo(for data: Data?) async -> Episode.Metadata? {
-        guard let data else {
-            return nil
-        }
-
-        do {
-            let decoder = JSONDecoder()
-            decoder.keyDecodingStrategy = .convertFromSnakeCase
-            return try decoder.decode(Episode.Metadata.self, from: data)
-        } catch {
-            return nil
-        }
+    ) async throws -> EpisodeTranscriptData {
+        (transcripts: [], hasGeneratedTranscripts: false, isDisplayingGeneratedTranscript: false)
     }
 }

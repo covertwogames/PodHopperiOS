@@ -1,23 +1,6 @@
 import Foundation
 import PocketCastsDataModel
 
-struct PodcastsSearchEnvelope: Decodable {
-    let status: String
-    let message: String?
-    let result: PodcastsSearchEnvelopeResult
-}
-
-struct PodcastsSearchEnvelopeResult: Decodable {
-    /// Podcast returned when the user searches directly for a URL
-    let podcast: PodcastFolderSearchResult?
-
-    /// Regular search results based on a search term
-    let searchResults: [PodcastFolderSearchResult]?
-
-    /// The poll uuid if the result is still being processed on the server
-    let pollUuid: String?
-}
-
 public struct PodcastFolderSearchResult: Codable, Hashable {
     public let uuid: String
     public let title: String?
@@ -38,6 +21,16 @@ public struct PodcastFolderSearchResult: Codable, Hashable {
         self.kind = (try? container.decodeIfPresent(Kind.self, forKey: .kind)) ?? .podcast
         self.isLocal = (try? container.decode(Bool.self, forKey: .isLocal)) ?? false
         self.explicit = try? container.decodeIfPresent(Bool.self, forKey: .explicit)
+    }
+
+    /// PodHopper: memberwise init used by the on-device iTunes search backend.
+    init(uuid: String, title: String?, author: String?, kind: Kind, isLocal: Bool?, explicit: Bool?) {
+        self.uuid = uuid
+        self.title = title
+        self.author = author
+        self.kind = kind
+        self.isLocal = isLocal
+        self.explicit = explicit
     }
 
     public init?(from podcast: Podcast) {
@@ -100,51 +93,12 @@ extension PodcastFolderSearchResult: Identifiable {
 }
 
 public class PodcastSearchTask {
-    private let session: URLSession
+    public init(session: URLSession = .shared) {}
 
-    public init(session: URLSession = .shared) {
-        self.session = session
-    }
-
+    /// PodHopper: podcast search runs against the iTunes Search API on device instead of the
+    /// Pocket Casts search servers.
     public func search(term: String) async throws -> [PodcastFolderSearchResult] {
-        var envelope: PodcastsSearchEnvelope?
-        var retry = true
-        var pollCount = 0
-        while retry {
-            envelope = try await search(term: term)
-            // Check if status of search is poll, if it's polled we will repeat the call after x amount of secs.
-            pollCount += 1
-            let backOffTime = pollBackoffTime(pollCount: pollCount)
-            guard envelope?.status == "poll", backOffTime > 0 else {
-                retry = false
-                continue
-            }
-
-            try await Task.sleep(nanoseconds: backOffTime)
-        }
-
-        if let podcast = envelope?.result.podcast {
-            return [podcast]
-        } else {
-            return envelope?.result.searchResults ?? []
-        }
-    }
-
-    private func search(term: String) async throws -> PodcastsSearchEnvelope {
-        let url = ServerHelper.asUrl(ServerConstants.Urls.main() + "podcasts/search")
-        let request = ServerHelper.createJsonRequest(url: url, params: MainServerHandler.shared.podcastSearchQuery(searchTerm: term)!, timeout: 10, cachePolicy: .reloadIgnoringCacheData)
-
-        let (data, _) = try await session.data(for: request!)
-        let decoder = JSONDecoder()
-        decoder.keyDecodingStrategy = .convertFromSnakeCase
-        let envelope = try decoder.decode(PodcastsSearchEnvelope.self, from: data)
-        return envelope
-    }
-
-    private func pollBackoffTime(pollCount: Int) -> UInt64 {
-        let multiply = pow(10, 9)
-
-        return UInt64(NSDecimalNumber(decimal: Decimal(pollCount.pollWaitingTime) * multiply).uint64Value)
+        try await PodHopperSearch.shared.searchPodcasts(term: term)
     }
 }
 
