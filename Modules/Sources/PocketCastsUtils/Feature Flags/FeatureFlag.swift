@@ -364,11 +364,13 @@ public enum FeatureFlag: String, CaseIterable {
         case .ignoreRouteDisconnectedInterruption:
             true
         case .referrals:
-            true
+            // PodHopper: the Pocket Casts referral program (gift passes, claim banners, and the
+            // profile hint popup) does not exist here.
+            false
         case .referralsClaim:
-            true
+            false
         case .referralsSend:
-            true
+            false
         case .syncStats:
             true
         case .playerIsReadyToPlay:
