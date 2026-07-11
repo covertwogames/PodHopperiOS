@@ -55,9 +55,6 @@ class ExtensionDelegate: NSObject, WKApplicationDelegate {
                 if identifier == DownloadManager.cellBackgroundSessionId {
                     FileLog.shared.addMessage("Watch Extension Delegate start url session download refresh background task")
                     DownloadManager.shared.processBackgroundTaskCallback(task: urlSessionTask)
-                } else if identifier.startsWith(string: BackgroundSyncManager.sessionIdPrefix) {
-                    FileLog.shared.addMessage("Watch Extension Delegate start url session upnext refresh background task")
-                    BackgroundSyncManager.shared.processBackgroundTaskCallback(task: urlSessionTask, identifier: identifier)
                 } else {
                     urlSessionTask.setTaskCompletedWithSnapshot(true)
                 }
