@@ -58,12 +58,6 @@ struct PodcastHeaderView: View {
                 .clipped()
             Spacer().frame(height: topMarginForTitle)
             podcastTitle
-            Spacer().frame(height: titleBottomMargin - bottomMarginAdjustmentForTitle)
-            StarRatingView(viewModel: viewModel.podcastRatingViewModel,
-                           style: .short,
-                           onRate: {
-                viewModel.podcastRatingViewModel.update(podcast: viewModel.podcast, ignoringCache: true)
-            })
             Spacer().frame(height: titleBottomMargin)
             podcastActions
             Spacer().frame(height: itemMargin)

@@ -117,20 +117,6 @@ extension AppDelegate {
         }
 
         // share list page opened
-        JLRoutes.global().addRoute("/sharelist/*") { parameters -> Bool in
-            guard let pathComponents = parameters[JLRouteWildcardComponentsKey] as? [String] else { return false }
-
-            let sharePath = pathComponents.joined(separator: "/")
-
-            let jsonFileLocation = "http://\(sharePath).json"
-            let listController = IncomingShareListViewController(jsonLocation: jsonFileLocation)
-            let navController = SJUIUtils.popupNavController(for: listController)
-
-            SceneHelper.rootViewController()?.present(navController, animated: true, completion: nil)
-
-            return true
-        }
-
         // URL schemes for open, play, pause
         JLRoutes.global().addRoute("/open") { _ -> Bool in
             true
@@ -257,89 +243,6 @@ extension AppDelegate {
         }
 
         // Sonos App Link
-        JLRoutes.global().addRoute("/applink/sonos/*") { [weak self] parameters -> Bool in
-            guard let strongSelf = self, let originalUrl = parameters[JLRouteURLKey] as? URL else { return false }
-
-            let redirectUri = originalUrl.absoluteString.replacingOccurrences(of: "pktc://applink/sonos/", with: "")
-
-            if let modalController = strongSelf.modalController {
-                modalController.dismiss(animated: false, completion: nil)
-            }
-
-            let sonosController = SonosLinkController()
-            sonosController.callbackUri = redirectUri
-            let navController = SJUIUtils.navController(for: sonosController)
-            strongSelf.modalController = navController
-            SceneHelper.rootViewController()?.present(navController, animated: true, completion: nil)
-
-            return true
-        }
-
-        JLRoutes.global().addRoute("social/share/:showOrPrivate/:sharingId") { [weak self] parameters -> Bool in
-            guard let strongSelf = self, let folder = parameters["showOrPrivate"] as? String, let sharingId = parameters["sharingId"] as? String, let controller = SceneHelper.rootViewController() else { return false }
-            var sharePath = "social/share/\(folder)/\(sharingId)"
-            if let timestamp = parameters["t"] as? String {
-                sharePath = sharePath + "/?t=\(timestamp)"
-            }
-            FileLog.shared.addMessage("Opening share link, path: \(folder)/\(sharingId)")
-            strongSelf.openSharePath(sharePath, controller: controller, onErrorOpen: nil)
-            return true
-        }
-
-        // Promotion Codes:
-        JLRoutes.global().addRoute("/redeem/promo/*") { [weak self] parameters -> Bool in
-            guard self != nil else { return false }
-            var promoCode: String?
-            if let pathComponents = parameters[JLRouteWildcardComponentsKey] as? [String], !pathComponents.isEmpty {
-                promoCode = pathComponents[0]
-            }
-
-            NavigationManager.sharedManager.navigateTo(NavigationManager.showPromotionPageKey, data: [NavigationManager.promotionInfoKey: promoCode as Any])
-            return true
-        }
-
-        // Supporter Podcasts
-        JLRoutes.global().addRoute("/premium/podcast/*") { [weak self] parameters -> Bool in
-            guard self != nil else { return false }
-
-            if let pathComponents = parameters[JLRouteWildcardComponentsKey] as? [String], !pathComponents.isEmpty, let podcastTitle = parameters["title"] as? String {
-                let uuid = pathComponents[0]
-
-                if SyncManager.isUserLoggedIn() {
-                    RefreshManager.shared.refreshPodcasts(forceEvenIfRefreshedRecently: true)
-                    ApiServerHandler.shared.retrieveSubscriptionStatus()
-                    var bundleUuid: String?
-                    if let bundle = SubscriptionHelper.bundleSubscriptionForPodcast(podcastUuid: uuid) {
-                        bundleUuid = bundle.bundleUuid
-                    }
-                    NavigationManager.sharedManager.navigateTo(NavigationManager.supporterBundlePageKey, data: [NavigationManager.supporterBundleUuid: bundleUuid as Any])
-                } else {
-                    var podcastInfo = PodcastInfo()
-                    podcastInfo.uuid = uuid
-                    podcastInfo.title = podcastTitle
-
-                    NavigationManager.sharedManager.navigateTo(NavigationManager.supporterSignInKey, data: [NavigationManager.supporterPodcastInfo: podcastInfo])
-                }
-            }
-            return true
-        }
-
-        JLRoutes.global().addRoute("/premium/supporter-contributions/*") { [weak self] parameters -> Bool in
-            guard self != nil else { return false }
-            if let pathComponents = parameters[JLRouteWildcardComponentsKey] as? [String], !pathComponents.isEmpty {
-                let uuid = pathComponents[0]
-
-                if SyncManager.isUserLoggedIn() {
-                    RefreshManager.shared.refreshPodcasts(forceEvenIfRefreshedRecently: true)
-                    ApiServerHandler.shared.retrieveSubscriptionStatus()
-                    NavigationManager.sharedManager.navigateTo(NavigationManager.supporterBundlePageKey, data: [NavigationManager.supporterBundleUuid: uuid])
-                } else {
-                    NavigationManager.sharedManager.navigateTo(NavigationManager.supporterSignInKey, data: [NavigationManager.supporterBundleUuid: uuid])
-                }
-            }
-            return true
-        }
-
         JLRoutes.global().addRoute("/upnext/*") { [weak self] paramDict -> Bool in
             var source: UpNextViewSource = .unknown
             var showFromMiniPlayer: Bool = true
@@ -360,19 +263,6 @@ extension AppDelegate {
         }
 
         // Support - send IAP purchase receipt to server:
-        JLRoutes.global().addRoute("/support/sendreceipt/*") { [weak self] _ -> Bool in
-            guard self != nil else { return false }
-
-            ApiServerHandler.shared.sendPurchaseReceipt(completion: { success in
-                if success {
-                    FileLog.shared.addMessage("AppDelegate successfully validated receipt")
-                } else {
-                    FileLog.shared.addMessage("AppDelegate failed to validate receipt")
-                }
-            })
-            return true
-        }
-
         // Import OMPL extension
         JLRoutes.global().addRoute("/import-file/*") { [weak self] parameters -> Bool in
             guard let self,
@@ -402,12 +292,6 @@ extension AppDelegate {
             return true
         }
 
-        JLRoutes.global().addRoute("/signup") {[weak self] _ -> Bool in
-            guard self != nil else { return false }
-            NavigationManager.sharedManager.navigateTo(NavigationManager.signUpPageKey)
-            return true
-        }
-
         JLRoutes.global().addRoute("/settings/import") {[weak self] _ -> Bool in
             guard self != nil else { return false }
             NavigationManager.sharedManager.navigateTo(NavigationManager.settingsPageKey, data: [NavigationManager.settingsRowKey: SettingsViewController.TableRow.importSteps])
@@ -423,13 +307,6 @@ extension AppDelegate {
         JLRoutes.global().addRoute("/filters") {[weak self] _ -> Bool in
             guard self != nil else { return false }
             NavigationManager.sharedManager.navigateTo(NavigationManager.filterPageKey)
-            return true
-        }
-
-        JLRoutes.global().addRoute("/upsell") { _ -> Bool in
-            guard let viewController = SceneHelper.rootViewController() else { return false }
-            let source = PlusUpgradeViewSource(rawValue: ["source"] as? String ?? PlusUpgradeViewSource.deepLink.rawValue) ?? .unknown
-            NavigationManager.sharedManager.navigateTo(NavigationManager.subscriptionRequiredPageKey, data: ["source": source, NavigationManager.subscriptionUpgradeVCKey: viewController])
             return true
         }
     }

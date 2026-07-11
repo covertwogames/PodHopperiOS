@@ -53,11 +53,10 @@ class MainTabBarController: UITabBarController, NavigationProtocol {
         DataManager.sharedManager.copyAllData()
 
         alert?.hideAlert(true, completion: {
-            // Start the full sync
-            let controller = SyncSigninViewController()
-            controller.loginAgain = true
+            // PodHopper: recovery no longer routes through the Pocket Casts sign in screen. Data
+            // has been copied to the fresh database; signing back in to a PodHopper account from
+            // the Profile tab restores syncing.
             SceneHelper.rootViewController()?.dismiss(animated: true)
-            SceneHelper.rootViewController()?.present(controller, animated: true, completion: nil)
         })
     }
 

@@ -31,29 +31,9 @@ class PodcastRatingViewModel: ObservableObject {
     /// Updates the rating for the podcast.
     ///
     func update(podcast: Podcast?, ignoringCache: Bool = false) {
-        // If we want to reload and ignore the cache, let's reset the state to waiting and reload
-        if ignoringCache, state == .done {
-            state = .waiting
-        }
-
+        // PodHopper: podcast ratings are a Pocket Casts service. The rating UI is removed and
+        // this never fetches, so any leftover surface simply renders without a rating.
         self.podcast = podcast
-
-        // Don't update if we have already finished or are currently updating
-        guard state == .waiting, let uuid = podcast?.uuid else { return }
-
-        self.uuid = uuid
-        state = .loading
-
-        Task {
-            let rating = try? await PodcastRatingTask().retrieve(for: uuid, ignoringCache: ignoringCache)
-
-            // Publish on main thread only
-            await MainActor.run {
-                self.rating = rating
-            }
-
-            state = .done
-        }
     }
 
     private enum LoadingState {

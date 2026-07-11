@@ -55,15 +55,17 @@ open class SubscriptionHelper: NSObject {
         }
 
         get {
+            // PodHopper: default to the plus tier so tier gated features are unlocked.
             UserDefaults.standard.string(forKey: ServerConstants.UserDefaults.subscriptionTier).flatMap {
                 SubscriptionTier(rawValue: $0)
-            } ?? .none
+            } ?? .plus
         }
     }
 
     public class func hasActiveSubscription() -> Bool {
-        let status = UserDefaults.standard.bool(forKey: ServerConstants.UserDefaults.subscriptionPaid)
-        return status
+        // PodHopper: every feature is included for everyone; the app always reports an active
+        // subscription so nothing is gated and no upgrade prompts ever show.
+        true
     }
 
     public class func hasRenewingSubscription() -> Bool {
