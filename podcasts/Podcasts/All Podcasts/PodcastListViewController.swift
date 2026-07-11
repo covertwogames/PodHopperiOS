@@ -7,7 +7,7 @@ import UIKit
 import Kingfisher
 import SafariServices
 
-class PodcastListViewController: PCViewController, ShareListDelegate {
+class PodcastListViewController: PCViewController {
     let gridHelper = GridHelper()
     var refreshController: FullSyncRefreshController?
     var bannerAdModel: BannerAdModel?
@@ -501,12 +501,6 @@ class PodcastListViewController: PCViewController, ShareListDelegate {
         optionsPicker.present(from: self)
 
         Analytics.track(.podcastsListOptionsButtonTapped)
-    }
-
-    // MARK: - ShareListDelegate
-
-    func shareUrlAvailable(_ shareUrl: String, listName: String) {
-        SharingHelper.shared.shareLinkToPodcastList(name: listName, url: shareUrl, fromController: self, barButtonItem: customRightBtn, completionHandler: nil)
     }
 
     func itemCount() -> Int {
