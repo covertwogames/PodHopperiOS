@@ -145,9 +145,13 @@ class NavigationManager {
 
                 mainController?.navigateToPodcastInfo(podcastInfo)
             } else if let searchResult = data[NavigationManager.podcastKey] as? PodcastFolderSearchResult {
-                // PodHopper: search results are local stubs; fetch their episodes on first open.
+                // PodHopper: search results are local stubs; fetch their episodes on first open and
+                // tell the open podcast page the moment they land so it reloads.
                 Task.detached {
                     PodHopperFeedManager.shared.fillEpisodesIfNeeded(podcastUuid: searchResult.uuid)
+                    DispatchQueue.main.async {
+                        NotificationCenter.default.post(name: Constants.Notifications.podcastUpdated, object: searchResult.uuid)
+                    }
                 }
                 mainController?.navigateTo(podcast: searchResult)
             }

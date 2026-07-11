@@ -124,7 +124,10 @@ public final class PodHopperFeedManager {
             return
         }
 
+        FileLog.shared.addMessage("PodHopper: filling episodes for \(podcastUuid) from \(feedUrl)")
         fillFeedUrlEpisodes(feedUrl)
+        let filled = dataManager.findEpisodesWhere(customWhere: "podcastUuid = ? LIMIT 1", arguments: [podcastUuid]).isEmpty == false
+        FileLog.shared.addMessage("PodHopper: episode fill for \(podcastUuid) \(filled ? "succeeded" : "failed, feed fetch or parse problem")")
     }
 
     /// Download and parse the feed and fill in the episodes for a stub created by `addFeedUrlStub`.

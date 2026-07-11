@@ -63,6 +63,9 @@ final class PodHopperDiscoverViewModel: ObservableObject {
             onOpenPodcast?(uuid)
             Task.detached {
                 PodHopperFeedManager.shared.fillFeedUrlEpisodes(feedUrl)
+                DispatchQueue.main.async {
+                    NotificationCenter.default.post(name: Constants.Notifications.podcastUpdated, object: uuid)
+                }
             }
         }
     }
