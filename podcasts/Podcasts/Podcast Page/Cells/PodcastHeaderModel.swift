@@ -67,7 +67,7 @@ class PodcastHeaderViewModel: NSObject, ObservableObject {
         return String(substring).lowercased()
     }
 
-    let displayCategoryAndAuthor: AttributedString
+    @Published private(set) var displayCategoryAndAuthor: AttributedString
 
     private static func makeDisplayCategoryAndAuthor(for podcast: Podcast) -> AttributedString {
         let category = podcast.podcastCategory?.localized(seperatingWith: \.isNewline) ?? ""
