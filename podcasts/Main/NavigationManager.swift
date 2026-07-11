@@ -240,8 +240,6 @@ class NavigationManager {
             if let data, let urlString = data[NavigationManager.safariVCUrlKey] as? String {
                 mainController?.showInSafariViewController(urlString: urlString)
             }
-        } else if place == NavigationManager.endOfYearStories {
-            mainController?.showEndOfYearStories()
         } else if place == NavigationManager.onboardingFlow {
             let flow: OnboardingFlow.Flow? = data?["flow"] as? OnboardingFlow.Flow
             mainController?.showOnboardingFlow(flow: flow)
@@ -303,9 +301,6 @@ class NavigationManager {
         }
         if row == NavigationManager.profileRowDownloadsKey {
             mainController?.navigateToProfile(row: .downloaded, animated: animated)
-        }
-        if row == NavigationManager.profileRowEndOfYearKey {
-            mainController?.navigateToProfile(row: .endOfYearPrompt, animated: animated)
         }
     }
 

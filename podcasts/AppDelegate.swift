@@ -31,7 +31,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     // MARK: - App Lifecycle
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]? = nil) -> Bool {
-        updateEndOfYearRemoteValue()
         updateRemoteFeatureFlags()
         TraceManager.shared.setup(handler: traceHandler)
 
@@ -78,12 +77,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         GoogleCastManager.sharedManager.setup()
 
         setupRoutes()
-
-        if Settings.shouldResultEndOfYearSyncStatus {
-            Settings.setHasSyncedEpisodesForPlayback(false, year: 2025)
-            Settings.setHasSyncedEpisodesForPlaybackAsPlusUser(false, year: 2025)
-            Settings.shouldResultEndOfYearSyncStatus = false
-        }
 
 
         NotificationsHelper.shared.register(checkToken: false)
@@ -306,11 +299,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
         // PodHopper: Firebase Remote Config removed. Feature flags run on their built-in
         // defaults, so there are no remote overrides to apply here anymore.
-    }
-
-    private func updateEndOfYearRemoteValue() {
-        // Update if EOY requires an account to be seen
-        EndOfYear.requireAccount = Settings.endOfYearRequireAccount
     }
 
     private func postLaunchSetup() {

@@ -87,9 +87,8 @@ class ProfileViewController: PCViewController, UITableViewDataSource, UITableVie
 
     var promoRedeemedMessage: String?
     private let settingsCellId = "SettingsCell"
-    private let endOfYearPromptCell = "EndOfYearPromptCell"
 
-    enum TableRow { case informationalBanner, allStats, downloaded, starred, listeningHistory, help, uploadedFiles, endOfYearPrompt, bookmarks }
+    enum TableRow { case informationalBanner, allStats, downloaded, starred, listeningHistory, help, uploadedFiles, bookmarks }
 
     private lazy var informationalBannerCoordinator: InformationalBannerViewCoordinator = {
         let viewModel = InformationalBannerViewModel(bannerType: .profile)
@@ -99,7 +98,6 @@ class ProfileViewController: PCViewController, UITableViewDataSource, UITableVie
     @IBOutlet var profileTable: UITableView! {
         didSet {
             profileTable.register(UINib(nibName: "TopLevelSettingsCell", bundle: nil), forCellReuseIdentifier: settingsCellId)
-            profileTable.register(EndOfYearPromptCell.self, forCellReuseIdentifier: endOfYearPromptCell)
             profileTable.register(InformationalProfileBannerCell.self, forCellReuseIdentifier: InformationalProfileBannerCell.identifier)
         }
     }
@@ -167,17 +165,12 @@ class ProfileViewController: PCViewController, UITableViewDataSource, UITableVie
         addCustomObserver(.userLoginDidChange, selector: #selector(handleDataChangedNotification))
         addCustomObserver(.serverUserWillBeSignedOut, selector: #selector(handleDataChangedNotification))
         addCustomObserver(.whatsNewDismissed, selector: #selector(whatsNewDismissed))
-        addCustomObserver(EndOfYear.eoyEligibilityDidChange, selector: #selector(handleDataChangedNotification))
 
         addCustomObserver(Constants.Notifications.tappedOnSelectedTab, selector: #selector(checkForScrollTap(_:)))
         if promoRedeemedMessage != nil {
             updateDisplayedData()
             showPromotionRedeemedAcknowledgement()
             promoRedeemedMessage = nil
-        }
-
-        if EndOfYear.isEligible {
-            NotificationCenter.postOnMainThread(notification: Constants.Notifications.profileSeen)
         }
 
         whatsNewDismissed()
@@ -309,10 +302,6 @@ class ProfileViewController: PCViewController, UITableViewDataSource, UITableVie
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let row = tableData[indexPath.section][indexPath.row]
 
-        guard row != .endOfYearPrompt else {
-            return tableView.dequeueReusableCell(withIdentifier: endOfYearPromptCell, for: indexPath) as! EndOfYearPromptCell
-        }
-
         if row == .informationalBanner {
             let cell = tableView.dequeueReusableCell(withIdentifier: InformationalProfileBannerCell.identifier, for: indexPath) as! InformationalProfileBannerCell
             cell.onCloseBannerTap = { [weak self] cell in
@@ -351,8 +340,6 @@ class ProfileViewController: PCViewController, UITableViewDataSource, UITableVie
         case .help:
             cell.settingsImage.image = UIImage(named: "profile-help")
             cell.settingsLabel.text = L10n.settingsHelp
-        case .endOfYearPrompt:
-            return EndOfYearPromptCell()
         case .bookmarks:
             cell.settingsImage.image = UIImage(named: "bookmarks-profile")
             cell.settingsLabel.text = L10n.bookmarks
@@ -364,13 +351,6 @@ class ProfileViewController: PCViewController, UITableViewDataSource, UITableVie
     func tableView(_ tableView: UITableView, shouldHighlightRowAt indexPath: IndexPath) -> Bool {
         let row = tableData[indexPath.section][indexPath.row]
         return row != .informationalBanner
-    }
-
-    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-        let row = tableData[indexPath.section][indexPath.row]
-        if row == .endOfYearPrompt {
-            Analytics.track(.endOfYearProfileCardShown, properties: ["current_year": EndOfYear.currentYear.literalValue])
-        }
     }
 
     func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -417,16 +397,6 @@ class ProfileViewController: PCViewController, UITableViewDataSource, UITableVie
             dismiss(animated: true)
             let navController = SJUIUtils.navController(for: PodHopperHelpHostingController())
             present(navController, animated: true, completion: nil)
-        case .endOfYearPrompt:
-            dismiss(animated: true)
-            Analytics.track(.endOfYearProfileCardTapped, properties: ["current_year": EndOfYear.currentYear.literalValue])
-            if let endOfYear = (tabBarController as? MainTabBarController)?.endOfYear {
-                endOfYear.showStories(in: self, from: .profile)
-            } else {
-                //Show warning that playback is not available
-                let alert = UIAlertController(title: L10n.playbackNotAvailable, message: L10n.pleaseTryAgainLater, preferredStyle: .alert)
-                present(alert, animated: true)
-            }
         case .bookmarks:
             let bookmarksController = BookmarksProfileListController()
             navigationController?.pushViewController(bookmarksController, animated: true)
@@ -450,10 +420,6 @@ class ProfileViewController: PCViewController, UITableViewDataSource, UITableVie
     private func refreshTableData() {
         var data: [[ProfileViewController.TableRow]]
         data = [[.allStats, .downloaded, .uploadedFiles, .starred, .bookmarks, .listeningHistory, .help]]
-
-        if EndOfYear.isEndOfYearActive, EndOfYear.isEligible {
-            data[0].insert(.endOfYearPrompt, at: 0)
-        }
 
         if informationalBannerCoordinator.shouldShowBanner() {
             data[0].insert(.informationalBanner, at: 0)

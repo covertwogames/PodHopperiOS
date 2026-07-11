@@ -283,7 +283,6 @@ struct DeveloperMenu: View {
             }
 
             Section {
-                EndOfYearDeveloperMenuButton()
             } header: {
                 Text("End of Year")
             }

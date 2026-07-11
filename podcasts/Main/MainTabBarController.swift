@@ -15,7 +15,6 @@ class MainTabBarController: UITabBarController, NavigationProtocol {
 
     let playPauseCommand = UIKeyCommand(title: L10n.keycommandPlayPause, action: #selector(handlePlayPauseKey), input: " ", modifierFlags: [])
 
-    lazy var endOfYear = EndOfYear()
 
     private lazy var profileTabBarItem = UITabBarItem(title: L10n.profile, image: UIImage(named: "profile_tab"), tag: pcTabs.firstIndex(of: .profile) ?? -1)
 
@@ -36,7 +35,6 @@ class MainTabBarController: UITabBarController, NavigationProtocol {
     var viewDidAppearBefore: Bool = false
 
     /// Whether we're actively presenting the what's new
-    var isShowingWhatsNew: Bool = false
 
     /// Displayed during database migrations
     var alert: ShiftyLoadingAlert?
@@ -115,8 +113,6 @@ class MainTabBarController: UITabBarController, NavigationProtocol {
         upNextViewController.tabBarItem = upNextTabBarItem
         vcsInTab = [podcastsController, filtersViewController, discoverViewController, upNextViewController, profileViewController]
 
-        displayEndOfYearBadgeIfNeeded()
-
         viewControllers = vcsInTab.map { SJUIUtils.navController(for: $0) }
         selectedIndex = UserDefaults.standard.integer(forKey: Constants.UserDefaults.lastTabOpened)
 
@@ -133,7 +129,6 @@ class MainTabBarController: UITabBarController, NavigationProtocol {
         NotificationCenter.default.addObserver(self, selector: #selector(textEditingDidEnd), name: Constants.Notifications.textEditingDidEnd, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(handleFollowSystemThemeTurnedOn), name: Constants.Notifications.followSystemThemeTurnedOn, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(willEnterForeground), name: UIApplication.willEnterForegroundNotification, object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(profileSeen), name: Constants.Notifications.profileSeen, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(refreshProfileTabAvatar), name: .userLoginDidChange, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(refreshProfileTabAvatarForcingReload), name: Constants.Notifications.avatarNeedsRefreshing, object: nil)
         refreshProfileTabAvatar()
@@ -145,7 +140,6 @@ class MainTabBarController: UITabBarController, NavigationProtocol {
         NotificationCenter.default.addObserver(self, selector: #selector(animateEpisodeAddedToUpNext(_:)), name: Constants.Notifications.upNextEpisodeAdded, object: nil)
         refreshUpNextTabBadge()
 
-        observersForEndOfYearStats()
         addBookmarkCreatedToastHandler()
         if FeatureFlag.displayErrorsOnPlayer.enabled {
             setupErrorBanner()
@@ -169,7 +163,6 @@ class MainTabBarController: UITabBarController, NavigationProtocol {
         // Show any app launch announcements/prompts only once
         if !viewDidAppearBefore {
             showWhatsNewIfNeeded()
-            showEndOfYearPromptIfNeeded()
 
             viewDidAppearBefore = true
         }
@@ -712,14 +705,7 @@ class MainTabBarController: UITabBarController, NavigationProtocol {
     }
 
     func showEndOfYearStories() {
-        guard let presentedViewController else {
-            endOfYear.showStories(in: self, from: .modal)
-            return
-        }
-
-        presentedViewController.dismiss(animated: true) {
-            self.endOfYear.showStories(in: self, from: .modal)
-        }
+        // PodHopper: the Pocket Casts end of year stories feature does not exist here.
     }
 
     func dismissPresentedViewController(completion: (() -> Void)? = nil) {
@@ -764,57 +750,12 @@ class MainTabBarController: UITabBarController, NavigationProtocol {
         return true
     }
 
-    // MARK: - End of Year
-
-    @objc private func profileSeen() {
-        profileTabBarItem.badgeValue = nil
-        if let year = endOfYear.storyModelType?.year {
-            Settings.setShowBadgeForEndOfYear(false, year: year)
-        }
-    }
-
-    func observersForEndOfYearStats() {
-        guard FeatureFlag.endOfYear.enabled || FeatureFlag.endOfYear2024.enabled || FeatureFlag.endOfYear2025.enabled else {
-            return
-        }
-
-        NotificationCenter.default.addObserver(forName: .userSignedIn, object: nil, queue: .main) { _ in
-            self.endOfYear.resetStateIfNeeded()
-        }
-
-        // When the What's New is dismissed, check to see if we should also show the end of year prompt
-        NotificationCenter.default.addObserver(forName: .whatsNewDismissed, object: nil, queue: .main) { _ in
-            self.isShowingWhatsNew = false
-            self.showEndOfYearPromptIfNeeded()
-        }
-
-        NotificationCenter.default.addObserver(forName: .onboardingFlowDidDismiss, object: nil, queue: .main) { _ in
-            self.endOfYear.showPromptBasedOnState(in: self)
-
-            self.displayEndOfYearBadgeIfNeeded()
-        }
-
-        // If the requirement for EOY changes and registration is not required anymore
-        // Show the modal
-        NotificationCenter.default.addObserver(forName: .eoyRegistrationNotRequired, object: nil, queue: .main) { [weak self] _ in
-            guard let self else {
-                return
-            }
-
-            if self.presentedViewController == nil {
-                self.endOfYear.showPrompt(in: self)
-            }
-        }
-    }
-
     // MARK: - Orientation
 
     // we implement this here to lock all views (except presented modal VCs to portrait)
     override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
         .portrait
     }
-
-    // MARK: - End of Year
 
     private func updateTabBarColor() {
         tabBar.unselectedItemTintColor = AppTheme.unselectedTabBarItemColor()
@@ -841,12 +782,6 @@ class MainTabBarController: UITabBarController, NavigationProtocol {
 
         tabBar.standardAppearance = appearance
         tabBar.scrollEdgeAppearance = appearance
-    }
-
-    private func displayEndOfYearBadgeIfNeeded() {
-        if EndOfYear.isEligible, let year = endOfYear.storyModelType?.year, Settings.showBadgeForEndOfYear(year) {
-            profileTabBarItem.badgeValue = "●"
-        }
     }
 
     @objc private func willEnterForeground() {
@@ -1030,19 +965,11 @@ private extension MainTabBarController {
 // MARK: - App Launch Prompts
 
 private extension MainTabBarController {
-    func showEndOfYearPromptIfNeeded() {
-        // Only show the prompt if there isn't an active announcement flow
-        guard !isShowingWhatsNew, AnnouncementFlow.current == .none else { return }
-
-        endOfYear.showPromptBasedOnState(in: self)
-    }
-
     func showWhatsNewIfNeeded() {
         guard let controller = view.window?.rootViewController else { return }
 
         if let whatsNewViewController = appDelegate()?.whatsNew.viewControllerToShow() {
             controller.present(whatsNewViewController, animated: true)
-            isShowingWhatsNew = true
         }
     }
 }
