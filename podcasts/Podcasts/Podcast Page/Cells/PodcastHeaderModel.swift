@@ -38,6 +38,7 @@ class PodcastHeaderViewModel: NSObject, ObservableObject {
             }
             self.podcast = podcast
             self.isSubscribed = podcast.isSubscribed()
+            self.displayCategoryAndAuthor = Self.makeDisplayCategoryAndAuthor(for: podcast)
         }
         .store(in: &cancellables)
     }

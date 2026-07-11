@@ -388,7 +388,8 @@ public enum FeatureFlag: String, CaseIterable {
         case .autoDownloadOnSubscribe:
             true
         case .useFollowNaming:
-            true
+            // PodHopper: use classic Subscribe naming everywhere.
+            false
         case .useDefaultPlayerTapCookie:
             true
         case .markAllSyncedInSingleStatement:

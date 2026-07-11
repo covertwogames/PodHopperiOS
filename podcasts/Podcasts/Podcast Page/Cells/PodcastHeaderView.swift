@@ -140,7 +140,7 @@ struct PodcastHeaderView: View {
                 viewModel.subscribeButtonTapped()
             }
         } label: {
-            Text(viewModel.isSubscribed ? "" : L10n.follow)
+            Text(viewModel.isSubscribed ? "" : (FeatureFlag.useFollowNaming.enabled ? L10n.follow : L10n.subscribe))
                 .font(.body).bold()
                 .foregroundStyle(theme.primaryText01)
                 .padding()
@@ -241,14 +241,18 @@ struct PodcastHeaderView: View {
         .accessibilityLabel(title)
     }
 
-    private var podcastDescription: some View {
-        PodcastHeaderDescriptionView(htmlDescription: viewModel.htmlDescription, delegate: viewModel) { newHeight in
-            DispatchQueue.main.async {
-                contentHeight = newHeight
+    @ViewBuilder private var podcastDescription: some View {
+        // PodHopper: a podcast with no description renders nothing instead of reserving
+        // several blank lines of estimated label height.
+        if viewModel.htmlDescription.trim().isEmpty == false {
+            PodcastHeaderDescriptionView(htmlDescription: viewModel.htmlDescription, delegate: viewModel) { newHeight in
+                DispatchQueue.main.async {
+                    contentHeight = newHeight
+                }
             }
+            .frame(height: contentHeight)
+            .animation(.easeInOut(duration: 0.1), value: contentHeight)
         }
-        .frame(height: contentHeight)
-        .animation(.easeInOut(duration: 0.1), value: contentHeight)
     }
 
     private var podcastDetails: some View {
