@@ -89,7 +89,7 @@ class ProfileViewController: PCViewController, UITableViewDataSource, UITableVie
     private let settingsCellId = "SettingsCell"
     private let endOfYearPromptCell = "EndOfYearPromptCell"
 
-    enum TableRow { case informationalBanner, kidsProfile, allStats, downloaded, starred, listeningHistory, help, uploadedFiles, endOfYearPrompt, bookmarks }
+    enum TableRow { case informationalBanner, allStats, downloaded, starred, listeningHistory, help, uploadedFiles, endOfYearPrompt, bookmarks }
 
     private lazy var informationalBannerCoordinator: InformationalBannerViewCoordinator = {
         let viewModel = InformationalBannerViewModel(bannerType: .profile)
@@ -100,7 +100,6 @@ class ProfileViewController: PCViewController, UITableViewDataSource, UITableVie
         didSet {
             profileTable.register(UINib(nibName: "TopLevelSettingsCell", bundle: nil), forCellReuseIdentifier: settingsCellId)
             profileTable.register(EndOfYearPromptCell.self, forCellReuseIdentifier: endOfYearPromptCell)
-            profileTable.register(KidsProfileBannerTableCell.self, forCellReuseIdentifier: KidsProfileBannerTableCell.identifier)
             profileTable.register(InformationalProfileBannerCell.self, forCellReuseIdentifier: InformationalProfileBannerCell.identifier)
         }
     }
@@ -325,22 +324,6 @@ class ProfileViewController: PCViewController, UITableViewDataSource, UITableVie
             return cell
         }
 
-        if row == .kidsProfile {
-            let cell = tableView.dequeueReusableCell(withIdentifier: KidsProfileBannerTableCell.identifier, for: indexPath) as! KidsProfileBannerTableCell
-            cell.onCloseButtonTap = { [weak self] cell in
-                if let cell, let indexPath = tableView.indexPath(for: cell) {
-                    self?.tableData[indexPath.section].remove(at: indexPath.row)
-                    tableView.deleteRows(at: [indexPath], with: .fade)
-                }
-            }
-            cell.onRequestEarlyAccessTap = { [weak self] _ in
-                let viewModel = KidsProfileSheetViewModel()
-                let hostViewController = KidsProfileSheetHost(viewModel: viewModel)
-                self?.present(hostViewController, animated: true)
-            }
-            return cell
-        }
-
         let cell = tableView.dequeueReusableCell(withIdentifier: settingsCellId, for: indexPath) as! TopLevelSettingsCell
 
         cell.settingsImage.tintColor = ThemeColor.primaryIcon01()
@@ -350,8 +333,6 @@ class ProfileViewController: PCViewController, UITableViewDataSource, UITableVie
         switch row {
         case .informationalBanner:
             return InformationalProfileBannerCell()
-        case .kidsProfile:
-            return KidsProfileBannerTableCell()
         case .allStats:
             cell.settingsImage.image = UIImage(named: "profile-stats")
             cell.settingsLabel.text = L10n.settingsStats
@@ -382,14 +363,11 @@ class ProfileViewController: PCViewController, UITableViewDataSource, UITableVie
 
     func tableView(_ tableView: UITableView, shouldHighlightRowAt indexPath: IndexPath) -> Bool {
         let row = tableData[indexPath.section][indexPath.row]
-        return row != .kidsProfile && row != .informationalBanner
+        return row != .informationalBanner
     }
 
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         let row = tableData[indexPath.section][indexPath.row]
-        if row == .kidsProfile {
-            Analytics.track(.kidsProfileBannerSeen)
-        }
         if row == .endOfYearPrompt {
             Analytics.track(.endOfYearProfileCardShown, properties: ["current_year": EndOfYear.currentYear.literalValue])
         }
@@ -418,7 +396,7 @@ class ProfileViewController: PCViewController, UITableViewDataSource, UITableVie
 
     func navigateToRow(_ row: TableRow) {
         switch row {
-        case .kidsProfile, .informationalBanner:
+        case .informationalBanner:
             break
         case .allStats:
             let statsViewController = StatsViewController()
@@ -475,10 +453,6 @@ class ProfileViewController: PCViewController, UITableViewDataSource, UITableVie
 
         if EndOfYear.isEndOfYearActive, EndOfYear.isEligible {
             data[0].insert(.endOfYearPrompt, at: 0)
-        }
-
-        if FeatureFlag.kidsProfile.enabled && !Settings.shouldHideBanner {
-            data[0].insert(.kidsProfile, at: 0)
         }
 
         if informationalBannerCoordinator.shouldShowBanner() {

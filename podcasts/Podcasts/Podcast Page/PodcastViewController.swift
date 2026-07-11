@@ -58,9 +58,6 @@ protocol PodcastActionsDelegate: AnyObject {
 
     func enableMultiSelect()
 
-    var podcastRatingViewModel: PodcastRatingViewModel { get }
-    var ratingView: UIView { get }
-
     func showBookmarks()
     func showEpisodes()
     func showYouMightLike()
@@ -113,8 +110,6 @@ class PodcastViewController: PCViewController, PodcastActionsDelegate, SyncSigni
     var searchController: EpisodeListSearchController?
 
     var cellHeights: [IndexPath: CGFloat] = [:]
-
-    var podcastRatingViewModel = PodcastRatingViewModel()
 
     private var podcastInfo: PodcastInfo?
     var loadingPodcastInfo = false
@@ -226,17 +221,6 @@ class PodcastViewController: PCViewController, PodcastActionsDelegate, SyncSigni
     private var bookmarksActionBarHost: UIHostingController<AnyView>?
     private var bookmarksActionBarBottomConstraint: NSLayoutConstraint?
 
-    lazy var ratingView: UIView = {
-        let view = StarRatingView(viewModel: podcastRatingViewModel,
-                                  onRate: { [weak self] in
-            self?.podcastRatingViewModel.update(podcast: self?.podcast, ignoringCache: true)
-        })
-            .padding(.top, 10)
-            .themedUIView
-        view.backgroundColor = .clear
-        return view
-    }()
-
     init(podcast: Podcast) {
         self.podcast = podcast
 
@@ -244,7 +228,6 @@ class PodcastViewController: PCViewController, PodcastActionsDelegate, SyncSigni
         summaryExpanded = !podcast.isSubscribed()
 
         AnalyticsHelper.podcastOpened(uuid: podcast.uuid)
-        podcastRatingViewModel.update(podcast: podcast)
 
         super.init(nibName: "PodcastViewController", bundle: nil)
     }
@@ -259,7 +242,6 @@ class PodcastViewController: PCViewController, PodcastActionsDelegate, SyncSigni
         }
 
         if let uuid = podcastInfo.uuid {
-            podcastRatingViewModel.update(podcast: podcast)
             AnalyticsHelper.podcastOpened(uuid: uuid)
         }
 
@@ -353,7 +335,6 @@ class PodcastViewController: PCViewController, PodcastActionsDelegate, SyncSigni
         NotificationCenter.default.addObserver(self, selector: #selector(folderChanged(_:)), name: Constants.Notifications.folderChanged, object: nil)
 
         listenForBookmarkChanges()
-        setupLogin()
         setupBookmarkViewModel()
 
         setupRefreshControl()
@@ -388,12 +369,6 @@ class PodcastViewController: PCViewController, PodcastActionsDelegate, SyncSigni
         guard shouldBlur != isNavBarBlurred else { return }
         isNavBarBlurred = shouldBlur
         setTransparentNavBarScrolled(shouldBlur)
-    }
-
-    private func setupLogin() {
-        podcastRatingViewModel.presentLogin = { [weak self] _ in
-            self?.showLogin(message: L10n.ratingLoginRequired)
-        }
     }
 
     private func setupBookmarkViewModel() {
@@ -450,11 +425,6 @@ class PodcastViewController: PCViewController, PodcastActionsDelegate, SyncSigni
         // opened, so its episodes reflect progress made on other devices.
         PodHopperPositionSync.shared.pullLatestPositions()
 
-        // Load the ratings even if we've already started loading them to cover all other potential view states
-        // The view model will ignore extra calls
-        if let _ = [podcast?.uuid, podcastInfo?.uuid].compactMap({ $0 }).first {
-            podcastRatingViewModel.update(podcast: podcast)
-        }
         updateColors()
     }
 

@@ -43,15 +43,6 @@ class PodcastHeaderViewModel: NSObject, ObservableObject {
         .store(in: &cancellables)
     }
 
-    lazy var podcastRatingViewModel: PodcastRatingViewModel = {
-        let podcastRatingViewModel = PodcastRatingViewModel()
-        podcastRatingViewModel.update(podcast: podcast)
-        podcastRatingViewModel.presentLogin = { [weak self] _ in
-            self?.delegate?.showLogin(message: L10n.ratingLoginRequired)
-        }
-        return podcastRatingViewModel
-    }()
-
     var folderImage: String {
         let isSubscriptionAvailable = SubscriptionHelper.hasActiveSubscription() && SyncManager.isUserLoggedIn()
         let folderImage = isSubscriptionAvailable ? (podcast.folderUuid?.isEmpty ?? true) ? "folder-empty" : "folder-check" : "folder-create"

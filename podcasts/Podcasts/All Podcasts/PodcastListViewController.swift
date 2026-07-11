@@ -10,12 +10,7 @@ import SafariServices
 class PodcastListViewController: PCViewController {
     let gridHelper = GridHelper()
     var refreshController: FullSyncRefreshController?
-    var bannerAdModel: BannerAdModel?
 
-    /// Indicates whether the banner ad is currently animating to indicate to the collection view layout which size to use
-    var isAnimatingBannerAd = false
-
-    private var bannerTask: Task<Void, Never>? = nil
 
     @IBOutlet var addPodcastBtn: ThemeableButton! {
         didSet {
@@ -139,12 +134,10 @@ class PodcastListViewController: PCViewController {
         super.viewWillAppear(animated)
 
         navigationController?.navigationBar.shadowImage = UIImage()
-        loadBannerAd()
     }
 
     override func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
-        bannerTask?.cancel()
         navigationController?.navigationBar.shadowImage = nil
         removeAllCustomObservers()
         if isEditingOrder {
@@ -176,39 +169,6 @@ class PodcastListViewController: PCViewController {
             guard let self else { return }
 
             self.updateNavigationButtons()
-            self.loadBannerAd()
-        }
-    }
-
-    private func loadBannerAd() {
-        bannerTask?.cancel()
-
-        if SubscriptionHelper.shouldDisplayBannerAd {
-            DiscoverServerHandler.shared.blazePromotion(for: .podcastList) { [weak self] promotion, shouldAnimate in
-                guard let self else { return }
-
-                if shouldAnimate {
-                    self.bannerTask = Task { [weak self] in
-                        try? await Task.sleep(for: .seconds(2))
-                        await MainActor.run {
-                            self?.setupBannerAd(promotion: promotion, shouldAnimate: true)
-                        }
-                    }
-                } else {
-                    self.setupBannerAd(promotion: promotion, shouldAnimate: false)
-                }
-            }
-        } else {
-            if bannerAdModel != nil {
-                bannerAdModel = nil
-                UIView.animate(withDuration: 0.25, delay: 0, options: [.curveEaseOut]) {
-                    self.isAnimatingBannerAd = false
-                } completion: { _ in
-                    self.podcastsCollectionView.performBatchUpdates({
-                        self.podcastsCollectionView.collectionViewLayout.invalidateLayout()
-                    })
-                }
-            }
         }
     }
 
@@ -565,29 +525,6 @@ class PodcastListViewController: PCViewController {
         updateBottomFadeColor()
     }
 
-    private func setupBannerAd(promotion: BlazePromotion, shouldAnimate: Bool) {
-        guard SubscriptionHelper.shouldDisplayBannerAd else {
-            return
-        }
-        bannerAdModel = BannerAdModel(promotion: promotion) {
-            UIApplication.shared.openSafariVCIfPossible(promotion.urlApple)
-        }
-        isAnimatingBannerAd = shouldAnimate
-
-        if shouldAnimate {
-            UIView.animate(withDuration: 0.25, delay: 0, options: [.curveEaseOut]) {
-                self.isAnimatingBannerAd = false
-            } completion: { _ in
-                self.podcastsCollectionView.performBatchUpdates({
-                    self.podcastsCollectionView.collectionViewLayout.invalidateLayout()
-                })
-            }
-        } else {
-            podcastsCollectionView.performBatchUpdates({
-                podcastsCollectionView.collectionViewLayout.invalidateLayout()
-            })
-        }
-    }
 }
 
 // MARK: - Refresh Control

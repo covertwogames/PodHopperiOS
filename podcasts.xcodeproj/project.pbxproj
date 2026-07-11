@@ -35,20 +35,11 @@
 		102864AB2CED1F990098B2A9 /* CancelSubscription.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 102864AA2CED1F990098B2A9 /* CancelSubscription.xcassets */; };
 		1035FFED2CEE5F4E00C1E80D /* CancelSubscriptionOption.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1035FFEC2CEE5F4E00C1E80D /* CancelSubscriptionOption.swift */; };
 		105A6C452BAA0B410025B855 /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = 10B558ED2BA476BA0061847C /* PrivacyInfo.xcprivacy */; };
-		10756F832C57D00B0089D34F /* KidsProfileThankYouScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10756F822C57D00B0089D34F /* KidsProfileThankYouScreen.swift */; };
 		10756F852C5944660089D34F /* Podcast+Sortable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10756F842C5944660089D34F /* Podcast+Sortable.swift */; };
 		10756F862C5944660089D34F /* Podcast+Sortable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10756F842C5944660089D34F /* Podcast+Sortable.swift */; };
 		10756F882C59449C0089D34F /* Folder+Sortable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10756F872C59449C0089D34F /* Folder+Sortable.swift */; };
 		10756F892C59449C0089D34F /* Folder+Sortable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10756F872C59449C0089D34F /* Folder+Sortable.swift */; };
-		10756F8B2C5945C00089D34F /* KidsProfileSubmitScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10756F8A2C5945C00089D34F /* KidsProfileSubmitScreen.swift */; };
 		109446762CEB3A8100977161 /* CancelSubscriptionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 109446752CEB3A7E00977161 /* CancelSubscriptionViewModel.swift */; };
-		10A4F7532C515D720084D783 /* KidsProfile.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 10A4F7522C515D720084D783 /* KidsProfile.xcassets */; };
-		10A4F7562C5162C90084D783 /* KidsProfileBannerTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10A4F7552C5162C90084D783 /* KidsProfileBannerTableCell.swift */; };
-		10A4F7582C52635F0084D783 /* KidsProfileBannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10A4F7572C52635F0084D783 /* KidsProfileBannerView.swift */; };
-		10A4F75B2C5286560084D783 /* KidsProfileBannerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10A4F75A2C5286560084D783 /* KidsProfileBannerViewModel.swift */; };
-		10A4F7652C540B400084D783 /* KidsProfileSheetHost.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10A4F7642C540B400084D783 /* KidsProfileSheetHost.swift */; };
-		10A4F7672C540DC00084D783 /* KidsProfileSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10A4F7662C540DC00084D783 /* KidsProfileSheet.swift */; };
-		10A4F7692C540EBE0084D783 /* KidsProfileSheetViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10A4F7682C540EBE0084D783 /* KidsProfileSheetViewModel.swift */; };
 		10DFE9312C5A889700957D0A /* CategoryPodcastsTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10DFE9302C5A889700957D0A /* CategoryPodcastsTable.swift */; };
 		3FC668C02F7CD3440072EBA8 /* XcodeTarget_podcasts in Frameworks */ = {isa = PBXBuildFile; productRef = 3FC668BF2F7CD3440072EBA8 /* XcodeTarget_podcasts */; };
 		3FC668C22F7CD4A60072EBA8 /* XcodeTarget_NotificationExtension in Frameworks */ = {isa = PBXBuildFile; productRef = 3FC668C12F7CD4A60072EBA8 /* XcodeTarget_NotificationExtension */; };
@@ -1589,18 +1580,9 @@
 		102864A82CECEDB20098B2A9 /* CancelSubscriptionViewRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CancelSubscriptionViewRow.swift; sourceTree = "<group>"; };
 		102864AA2CED1F990098B2A9 /* CancelSubscription.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = CancelSubscription.xcassets; sourceTree = "<group>"; };
 		1035FFEC2CEE5F4E00C1E80D /* CancelSubscriptionOption.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CancelSubscriptionOption.swift; sourceTree = "<group>"; };
-		10756F822C57D00B0089D34F /* KidsProfileThankYouScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = KidsProfileThankYouScreen.swift; path = "Kids Profile/KidsProfileThankYouScreen.swift"; sourceTree = "<group>"; };
 		10756F842C5944660089D34F /* Podcast+Sortable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Podcast+Sortable.swift"; sourceTree = "<group>"; };
 		10756F872C59449C0089D34F /* Folder+Sortable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Folder+Sortable.swift"; sourceTree = "<group>"; };
-		10756F8A2C5945C00089D34F /* KidsProfileSubmitScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = KidsProfileSubmitScreen.swift; path = "Kids Profile/KidsProfileSubmitScreen.swift"; sourceTree = "<group>"; };
 		109446752CEB3A7E00977161 /* CancelSubscriptionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CancelSubscriptionViewModel.swift; sourceTree = "<group>"; };
-		10A4F7522C515D720084D783 /* KidsProfile.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = KidsProfile.xcassets; sourceTree = "<group>"; };
-		10A4F7552C5162C90084D783 /* KidsProfileBannerTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = KidsProfileBannerTableCell.swift; path = "Kids Profile/KidsProfileBannerTableCell.swift"; sourceTree = "<group>"; };
-		10A4F7572C52635F0084D783 /* KidsProfileBannerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = KidsProfileBannerView.swift; path = "Kids Profile/KidsProfileBannerView.swift"; sourceTree = "<group>"; };
-		10A4F75A2C5286560084D783 /* KidsProfileBannerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = KidsProfileBannerViewModel.swift; path = "Kids Profile/KidsProfileBannerViewModel.swift"; sourceTree = "<group>"; };
-		10A4F7642C540B400084D783 /* KidsProfileSheetHost.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = KidsProfileSheetHost.swift; path = "Kids Profile/KidsProfileSheetHost.swift"; sourceTree = "<group>"; };
-		10A4F7662C540DC00084D783 /* KidsProfileSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = KidsProfileSheet.swift; path = "Kids Profile/KidsProfileSheet.swift"; sourceTree = "<group>"; };
-		10A4F7682C540EBE0084D783 /* KidsProfileSheetViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = KidsProfileSheetViewModel.swift; path = "Kids Profile/KidsProfileSheetViewModel.swift"; sourceTree = "<group>"; };
 		10B558ED2BA476BA0061847C /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
 		10DFE9302C5A889700957D0A /* CategoryPodcastsTable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryPodcastsTable.swift; sourceTree = "<group>"; };
 		14DD11DB5830A48ACE6928B2 /* VoiceBoostN.c */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.c; path = VoiceBoostN.c; sourceTree = "<group>"; };
@@ -3129,27 +3111,13 @@
 		10756F812C57CFF00089D34F /* Screens */ = {
 			isa = PBXGroup;
 			children = (
-				10756F822C57D00B0089D34F /* KidsProfileThankYouScreen.swift */,
-				10756F8A2C5945C00089D34F /* KidsProfileSubmitScreen.swift */,
 			);
 			name = Screens;
-			sourceTree = "<group>";
-		};
-		10A4F7542C51627C0084D783 /* Kids Profile */ = {
-			isa = PBXGroup;
-			children = (
-				10A4F7632C540AE80084D783 /* Scheet */,
-				10A4F7592C52862A0084D783 /* Banner */,
-			);
-			name = "Kids Profile";
 			sourceTree = "<group>";
 		};
 		10A4F7592C52862A0084D783 /* Banner */ = {
 			isa = PBXGroup;
 			children = (
-				10A4F7552C5162C90084D783 /* KidsProfileBannerTableCell.swift */,
-				10A4F7572C52635F0084D783 /* KidsProfileBannerView.swift */,
-				10A4F75A2C5286560084D783 /* KidsProfileBannerViewModel.swift */,
 			);
 			name = Banner;
 			sourceTree = "<group>";
@@ -3157,9 +3125,6 @@
 		10A4F7632C540AE80084D783 /* Scheet */ = {
 			isa = PBXGroup;
 			children = (
-				10A4F7642C540B400084D783 /* KidsProfileSheetHost.swift */,
-				10A4F7682C540EBE0084D783 /* KidsProfileSheetViewModel.swift */,
-				10A4F7662C540DC00084D783 /* KidsProfileSheet.swift */,
 				10756F812C57CFF00089D34F /* Screens */,
 			);
 			name = Scheet;
@@ -4208,7 +4173,6 @@
 			isa = PBXGroup;
 			children = (
 				F26CC6302FACD5D400C1F8F7 /* Share Profile */,
-				10A4F7542C51627C0084D783 /* Kids Profile */,
 				C76400542A0EDFB90092A74B /* UserInfo.swift */,
 				C713D4EB2A04C8D700A78468 /* Profile - SwiftUI */,
 				BD5B79191783F9CF00A0F407 /* Settings */,
@@ -4770,7 +4734,6 @@
 				BDE43412231759060045D0CB /* Files.xcassets */,
 				4053CE042150B3D5001C92B1 /* Filter.xcassets */,
 				BDC3028A1C7ABAD300FC2026 /* iPadImages.xcassets */,
-				10A4F7522C515D720084D783 /* KidsProfile.xcassets */,
 				BD5AE6801FE0CF950009B8A1 /* ListImages.xcassets */,
 				BD8E76C71B9EA709000E20C7 /* NoArtwork.xcassets */,
 				C7B3C61C291AD0EA00054145 /* Onboarding.xcassets */,
@@ -6197,7 +6160,6 @@
 				BD8E76C81B9EA709000E20C7 /* NoArtwork.xcassets in Resources */,
 				BD6B6670245BC25B00CF5245 /* AppIcon-Indigo20x20@2x.png in Resources */,
 				BD6B664E245BC24C00CF5245 /* AppIcon-Pocket-Cats20x20@2x.png in Resources */,
-				10A4F7532C515D720084D783 /* KidsProfile.xcassets in Resources */,
 				BD12931A22F809F8004608A6 /* AppIcon-Electric-Pink40x40@3x.png in Resources */,
 				8BD5A5042A1F96C200F473C6 /* AppIcon-Pride29x29@2x.png in Resources */,
 				405553D8244AD7A70048FE7A /* WatchSettingsViewController.xib in Resources */,
@@ -6843,7 +6805,6 @@
 				BD9CF8C2281FC6970000F29A /* AboutViewModel.swift in Sources */,
 				4000A2A025463C6A00356FCE /* LeftAlignedFlowLayout.swift in Sources */,
 				BD59E6BA24107C110019AF1C /* StarredViewController+Swipe.swift in Sources */,
-				10A4F7562C5162C90084D783 /* KidsProfileBannerTableCell.swift in Sources */,
 				BDA0E29F22DDB2DC0029EBEB /* ThemeableLabel.swift in Sources */,
 				BD3FD738202A85E900A7F609 /* ListeningHistoryViewController+Table.swift in Sources */,
 				9A9B83C02DCBC36D002CE179 /* CancelSubscriptionSurveyRow.swift in Sources */,
@@ -6953,7 +6914,6 @@
 				8BD7A2472C09134900CF84E8 /* FolderHistoryModel.swift in Sources */,
 				BD339C5C2149E35600E655F9 /* VideoViewController+Controls.swift in Sources */,
 				4041FE572181751F0089D4A1 /* SiriShortcutsManager.swift in Sources */,
-				10A4F75B2C5286560084D783 /* KidsProfileBannerViewModel.swift in Sources */,
 				4053CDFB214F374B001C92B1 /* ReleaseDateFilterOverlayController.swift in Sources */,
 				BD26AFD427BDFD18008CC973 /* Folder+Formatting.swift in Sources */,
 				FF9ED3552C86010F00B6E630 /* TipView.swift in Sources */,
@@ -7019,7 +6979,6 @@
 				8B907F182AA8E1F100926F4F /* MiniPlayerViewController+TransitionDelegate.swift in Sources */,
 				BD35E91A1D45BBDA00CAE2A7 /* EmailHelper.swift in Sources */,
 				463C127A2714B57800178F9E /* Themeable+SwiftUI.swift in Sources */,
-				10756F8B2C5945C00089D34F /* KidsProfileSubmitScreen.swift in Sources */,
 				9A66BE612E96879A007516A5 /* PlaylistDetailViewModel+Archive.swift in Sources */,
 				9A156AB32CF8BEE3007BA8D9 /* CancelSubscriptionPlanRow.swift in Sources */,
 				400A3F032277CB3A007361C7 /* NewEmailViewController.swift in Sources */,
@@ -7077,7 +7036,6 @@
 				BD8E76C61B9E9C03000E20C7 /* AppTheme.swift in Sources */,
 				BDB1E4FE1B8C5C2B009AD30F /* CategorySummaryViewController.swift in Sources */,
 				BD542C20240382A100F35D26 /* EpisodeFilter+Formatting.swift in Sources */,
-				10A4F7582C52635F0084D783 /* KidsProfileBannerView.swift in Sources */,
 				4007B060230E3A81008DDCF5 /* WhatsNewStructs.swift in Sources */,
 				4041FE8D218A7DA60089D4A1 /* SiriShortcutEnabledCell.swift in Sources */,
 				FF40C0662C65175B003A9D93 /* TranscriptErrorView.swift in Sources */,
@@ -7169,7 +7127,6 @@
 				BD980DA21F666A91008E381A /* GridLayout.swift in Sources */,
 				9AA14FAB2E44BDED00464A5A /* SmartRuleToggleHeaderView.swift in Sources */,
 				466DE3F2278783F70046F722 /* EpisodeListHeaderView.swift in Sources */,
-				10A4F7652C540B400084D783 /* KidsProfileSheetHost.swift in Sources */,
 				400A3EFA22703D54007361C7 /* AccountUpdatedViewController.swift in Sources */,
 				403946EC2285898400F55162 /* CustomStorageColorCell.swift in Sources */,
 				BD00CB2B24BD20CD00A10257 /* TimeStepperCell.swift in Sources */,
@@ -7200,7 +7157,6 @@
 				BDB165DE20806F86007B57CD /* DownloadManager.swift in Sources */,
 				FF4E93122BDBF0D800F370AA /* MiniPlayerGradientView.swift in Sources */,
 				404A080A24E4C78000308722 /* SceneDelegate.swift in Sources */,
-				10756F832C57D00B0089D34F /* KidsProfileThankYouScreen.swift in Sources */,
 				BDEC9AB52051197900088D76 /* BadgeSettingsViewController.swift in Sources */,
 				F5197A402B995A1E007C8D0A /* DownloadManager+Logging.swift in Sources */,
 				408529A3247C9A53007FE8AA /* PodcastSupporterCell.swift in Sources */,
@@ -7218,7 +7174,6 @@
 				9AE5043C2DEDF2030027A4AE /* TranscriptContainerViewController.swift in Sources */,
 				9A9004D12E2E97DF005879CB /* PlaylistCellViewModel.swift in Sources */,
 				BD48D5A6216DB26A00391F9E /* HapticsHelper.swift in Sources */,
-				10A4F7672C540DC00084D783 /* KidsProfileSheet.swift in Sources */,
 				9AF355842E535A3C0083ECA7 /* SmartPlaylistRuleInfo.swift in Sources */,
 				BD8139D21FB95C3900DBF0EC /* ProfileViewController.swift in Sources */,
 				BD7114BF20E224BF003DF634 /* AutoArchiveViewController.swift in Sources */,
@@ -7301,7 +7256,6 @@
 				C713D4FD2A05168B00A78468 /* Theme+AppColors.swift in Sources */,
 				4084262B2134CBCD0076D82E /* LargeListSummaryViewController.swift in Sources */,
 				9AF646932E5DEB1A00627836 /* PlaylistDetailViewController+MultiSelect.swift in Sources */,
-				10A4F7692C540EBE0084D783 /* KidsProfileSheetViewModel.swift in Sources */,
 				BDA0E2A122DDB31A0029EBEB /* ThemeStyle.swift in Sources */,
 				BDF7BDCE1CA2247F0045AB6D /* StatsCell.swift in Sources */,
 				40F1492C218BCC4F008F54EA /* PlaylistShortcutsViewController.swift in Sources */,

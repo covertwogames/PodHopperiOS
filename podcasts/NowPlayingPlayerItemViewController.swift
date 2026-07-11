@@ -16,7 +16,6 @@ class NowPlayingPlayerItemViewController: PlayerItemViewController {
     /// screen player.
     var placeholderArtwork: UIImage?
 
-    private var bannerTask: Task<Void, Never>? = nil
 
     // Detect Display Zoom (zoomed display makes UI elements appear larger).
     // Scale controls down slightly when zoomed to avoid oversized buttons.
@@ -235,8 +234,6 @@ class NowPlayingPlayerItemViewController: PlayerItemViewController {
 
     var lastShelfLoadState = ShelfLoadState()
 
-    private var bannerAdHostingController: PCHostingController<AnyView>?
-    private var bannerAdHeightConstraint: NSLayoutConstraint?
 
     private let analyticsPlaybackHelper = AnalyticsPlaybackHelper.shared
 
@@ -275,12 +272,6 @@ class NowPlayingPlayerItemViewController: PlayerItemViewController {
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        loadBannerAd()
-    }
-
-    override func viewDidDisappear(_ animated: Bool) {
-        super.viewDidDisappear(animated)
-        bannerTask?.cancel()
     }
 
     private var lastBoundsAdjustedFor = CGRect.zero
@@ -295,27 +286,6 @@ class NowPlayingPlayerItemViewController: PlayerItemViewController {
             toggleTranscript()
 #endif
         }
-    }
-
-    private func loadBannerAd() {
-#if !APPCLIP
-        if SubscriptionHelper.shouldDisplayPlayerBannerAd {
-            DiscoverServerHandler.shared.blazePromotion(for: .player) { [weak self] promotion, shouldAnimate in
-                guard let self else { return }
-
-                if shouldAnimate {
-                    self.bannerTask = Task { [weak self] in
-                        try? await Task.sleep(for: .seconds(2))
-                        await MainActor.run {
-                            self?.addAdBanner(promotion: promotion, animated: true)
-                        }
-                    }
-                } else {
-                    self.addAdBanner(promotion: promotion, animated: false)
-                }
-            }
-        }
-#endif
     }
 
     private var playerContainer: PlayerContainerViewController? {
@@ -337,11 +307,6 @@ class NowPlayingPlayerItemViewController: PlayerItemViewController {
 
         resizeControls()
 
-        #if !APPCLIP
-        if FeatureFlag.bannerAdPlayer.enabled {
-            updateBannerAdHeight()
-        }
-        #endif
     }
 
     private func resizeControls() {
@@ -382,11 +347,6 @@ class NowPlayingPlayerItemViewController: PlayerItemViewController {
     override func willBeRemovedFromPlayer() {
         removeAllCustomObservers()
 
-        #if !APPCLIP
-        if FeatureFlag.bannerAdPlayer.enabled {
-            removeBannerAd()
-        }
-        #endif
     }
 
     override func themeDidChange() {
@@ -397,14 +357,6 @@ class NowPlayingPlayerItemViewController: PlayerItemViewController {
     override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
         super.traitCollectionDidChange(previousTraitCollection)
 
-        #if !APPCLIP
-        if FeatureFlag.bannerAdPlayer.enabled {
-            // Update banner height when text size category changes
-            if traitCollection.preferredContentSizeCategory != previousTraitCollection?.preferredContentSizeCategory {
-                updateBannerAdHeight()
-            }
-        }
-        #endif
 
         if traitCollection.preferredContentSizeCategory != previousTraitCollection?.preferredContentSizeCategory {
             updateSize()
@@ -599,85 +551,6 @@ class NowPlayingPlayerItemViewController: PlayerItemViewController {
             skipBackBtn.finishedTransition()
             skipFwdBtn.finishedTransition()
         })
-    }
-
-    // MARK: Banner Ad
-
-    func addAdBanner(promotion: BlazePromotion, animated: Bool = true) {
-        removeBannerAd()
-
-        guard let stackView = episodeImage.superview as? UIStackView else { return }
-
-        let model = BannerAdModel(promotion: promotion) {
-            UIApplication.shared.openSafariVCIfPossible(promotion.urlApple)
-        }
-
-        let adView = BannerAdView(model: model, colors: .playerColors(Theme.sharedTheme)).padding(16)
-        let hostingController = PCHostingController(rootView: AnyView(adView))
-
-        hostingController.view.translatesAutoresizingMaskIntoConstraints = false
-        hostingController.view.backgroundColor = .clear
-
-        let targetSize = CGSize(width: stackView.bounds.width, height: UIView.layoutFittingCompressedSize.height)
-        let size = hostingController.sizeThatFits(in: targetSize)
-
-        addChild(hostingController)
-        let adUiView = hostingController.view!
-
-        stackView.insertArrangedSubview(adUiView, at: 0)
-
-        adUiView.alpha = 0
-        let topConstraint = adUiView.topAnchor.constraint(equalTo: view.topAnchor, constant: -120)
-
-        let heightConstraint = hostingController.view.heightAnchor.constraint(equalToConstant: size.height)
-        NSLayoutConstraint.activate([
-            heightConstraint,
-            topConstraint,
-        ])
-
-        hostingController.didMove(toParent: self)
-        bannerAdHostingController = hostingController
-        bannerAdHeightConstraint = heightConstraint
-
-        view.layoutIfNeeded()
-
-        if animated {
-            // Animate move first
-            UIView.animate(withDuration: 0.25, delay: 0, options: [.curveEaseOut]) {
-                topConstraint.constant = 0
-                self.view.layoutIfNeeded()
-            }
-
-            // Animate opacity second so it's more noticeable
-            UIView.animate(withDuration: 0.2, delay: 0.05) {
-                adUiView.alpha = 1
-            }
-        } else {
-            topConstraint.constant = 0
-            adUiView.alpha = 1
-        }
-    }
-
-    private func removeBannerAd() {
-        guard let hostingController = bannerAdHostingController else { return }
-
-        hostingController.willMove(toParent: nil)
-        hostingController.view.removeFromSuperview()
-        hostingController.removeFromParent()
-        bannerAdHostingController = nil
-        bannerAdHeightConstraint = nil
-    }
-
-    private func updateBannerAdHeight() {
-        guard let hostingController = bannerAdHostingController,
-              let heightConstraint = bannerAdHeightConstraint,
-              let stackView = episodeImage.superview as? UIStackView else { return }
-
-        let targetSize = CGSize(width: stackView.bounds.width, height: UIView.layoutFittingCompressedSize.height)
-        let size = hostingController.sizeThatFits(in: targetSize)
-
-        heightConstraint.constant = size.height
-        view.layoutIfNeeded()
     }
 
     #endif

@@ -263,14 +263,4 @@ open class SubscriptionHelper: NSObject {
             UserDefaults.standard.set(newValue, forKey: ServerConstants.UserDefaults.removeDiscoverAds)
         }
     }
-
-    public class var shouldDisplayBannerAd: Bool {
-        // PodHopper: no ads, ever.
-        false
-    }
-
-    public class var shouldDisplayPlayerBannerAd: Bool {
-        // PodHopper: no ads, ever.
-        false
-    }
 }

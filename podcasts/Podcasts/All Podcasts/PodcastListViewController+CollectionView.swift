@@ -9,7 +9,6 @@ extension PodcastListViewController: UICollectionViewDelegate, UICollectionViewD
     private static let podcastListCellId = "PodcastListCell"
     private static let folderSquareCellId = "FolderGridCell"
     private static let folderListCellId = "FolderListCell"
-    private static let bannerAdHeaderId = "BannerAdHeader"
     private static let emptyStateCellId = "EmptyStateCell"
 
     func registerCells() {
@@ -20,7 +19,6 @@ extension PodcastListViewController: UICollectionViewDelegate, UICollectionViewD
         podcastsCollectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: PodcastListViewController.emptyStateCellId)
 
         // Register header view for banner ads
-        podcastsCollectionView.register(UICollectionReusableView.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: PodcastListViewController.bannerAdHeaderId)
     }
 
     func numberOfSections(in collectionView: UICollectionView) -> Int {
@@ -167,86 +165,4 @@ extension PodcastListViewController: UICollectionViewDelegate, UICollectionViewD
         }
     }
 
-    // MARK: - Supplementary Views
-
-    func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
-        if kind == UICollectionView.elementKindSectionHeader {
-            let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: PodcastListViewController.bannerAdHeaderId, for: indexPath)
-
-            // Remove existing subviews
-            headerView.subviews.forEach { $0.removeFromSuperview() }
-
-            if let bannerAdModel {
-                let bannerAdView = bannerAdView(bannerAdModel: bannerAdModel)
-                let hostingController = PCHostingController(rootView: bannerAdView)
-                hostingController.view.translatesAutoresizingMaskIntoConstraints = false
-                hostingController.view.backgroundColor = .clear
-
-                headerView.addSubview(hostingController.view)
-                NSLayoutConstraint.activate([
-                    hostingController.view.topAnchor.constraint(equalTo: headerView.topAnchor),
-                    hostingController.view.leadingAnchor.constraint(equalTo: headerView.leadingAnchor),
-                    hostingController.view.trailingAnchor.constraint(equalTo: headerView.trailingAnchor),
-                    hostingController.view.bottomAnchor.constraint(equalTo: headerView.bottomAnchor)
-                ])
-
-                hostingController.view.alpha = 0
-
-                // Set initial position constraint
-                let topConstraint = hostingController.view.topAnchor.constraint(equalTo: headerView.topAnchor, constant: -120)
-                topConstraint.isActive = true
-
-                headerView.layoutIfNeeded()
-
-                // Set alpha to 0 after layout is complete
-                DispatchQueue.main.async {
-
-                    // Animate the banner down first
-                    UIView.animate(withDuration: 0.25, delay: 0, options: [.curveEaseOut]) {
-                        topConstraint.constant = 0
-                        headerView.layoutIfNeeded()
-                    }
-
-                    // Animate opacity second so it's more noticeable
-                    UIView.animate(withDuration: 0.2, delay: 0.05) {
-                        hostingController.view.alpha = 1
-                    }
-                }
-            }
-
-            return headerView
-        }
-
-        return UICollectionReusableView()
-    }
-
-    private func bannerAdView(bannerAdModel: BannerAdModel) -> some View {
-        let backgroundColor = (podcastsCollectionView as? ThemeableCollectionView)!.style
-        let isSameColor = ThemeColor.secondaryUi01() == AppTheme.colorForStyle(backgroundColor)
-
-        let additionalPadding: CGFloat = Settings.libraryType() == .list ? 16 : 0
-
-        return BannerAdView(model: bannerAdModel, colors: .podcastList(Theme.sharedTheme))
-            .padding(.top, !isSameColor ? 16 : 0)
-            .padding(.bottom, additionalPadding)
-            .padding(.horizontal, additionalPadding)
-            .environmentObject(Theme.sharedTheme)
-    }
-
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
-
-        guard let bannerAdModel else {
-            return .zero
-        }
-
-        // Use a separate view because fetching the view from UICollectionView isn't allowed until view is part of window hierarchy.
-        let sizingView = bannerAdView(bannerAdModel: bannerAdModel)
-
-        let hostingController = UIHostingController(rootView: sizingView)
-        let targetSize = CGSize(width: collectionView.bounds.width, height: UIView.layoutFittingCompressedSize.height)
-        let size = hostingController.sizeThatFits(in: targetSize)
-
-        // Return zero height initially for animation, then full size after animation starts
-        return isAnimatingBannerAd ? .zero : size
-    }
 }
