@@ -73,15 +73,22 @@ class SharingHelper: NSObject {
     }
 
     func createActivityController(episode: Episode, shareTime: TimeInterval) -> UIActivityViewController {
-        var sharingUrl = episode.shareURL
-        if shareTime > 0 {
-            AnalyticsHelper.sharedEpisodeWithTimestamp()
-            sharingUrl += "?t=\(round(episode.playedUpTo))"
-        } else {
-            AnalyticsHelper.sharedEpisode()
+        // PodHopper: plain text share matching the Android app, no pca.st links.
+        AnalyticsHelper.sharedEpisode()
+
+        let podcast = DataManager.sharedManager.findPodcast(uuid: episode.podcastUuid, includeUnsubscribed: true)
+        var text = "Listen to \(episode.title ?? "this episode")"
+        if let podcastTitle = podcast?.title {
+            text += " from \(podcastTitle)"
+        }
+        if let mediaUrl = episode.downloadUrl, mediaUrl.isEmpty == false {
+            text += ": \(mediaUrl)"
+        }
+        if let feedUrl = podcast?.podcastUrl?.trim(), feedUrl.isEmpty == false {
+            text += "\n\nSubscribe to their show at: \(feedUrl)"
         }
 
-        let activityController = UIActivityViewController(activityItems: [URL(string: sharingUrl)!], applicationActivities: nil)
+        let activityController = UIActivityViewController(activityItems: [text], applicationActivities: nil)
         activityController.completionWithItemsHandler = nil
         return activityController
     }

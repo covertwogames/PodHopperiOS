@@ -115,18 +115,32 @@ enum SharingModal {
             return
         }
 
-        let sharingDestinations: [ShareDestination] = ShareDestination.displayedApps + [.copyLink, .systemSheet(vc: viewController)]
-        let sharingView = SharingView(destinations: sharingDestinations, selectedOption: option, source: source)
-        let modalView = ModalView {
-            sharingView
-        } dismissAction: {
-            Analytics.track(.shareScreenCloseButtonTapped)
-            viewController.dismiss(animated: true)
+        // PodHopper: plain text share matching the Android app. A podcast shares its feed URL; an
+        // episode shares its media URL plus the feed URL to subscribe. The Pocket Casts styled
+        // card and clip flow is gone along with its pca.st links.
+        let podcast = option.podcast
+        let feedUrl = podcast.podcastUrl?.trim() ?? ""
+        var text: String
+        switch option {
+        case .podcast:
+            text = "Check out \(podcast.title ?? "this podcast")"
+            if feedUrl.isEmpty == false {
+                text += ": \(feedUrl)"
+            }
+        case .episode(let episode), .currentPosition(let episode, _), .bookmark(let episode, _), .clip(let episode, _), .clipShare(let episode, _, _):
+            text = "Listen to \(episode.title ?? "this episode") from \(podcast.title ?? "this podcast")"
+            if let mediaUrl = episode.downloadUrl, mediaUrl.isEmpty == false {
+                text += ": \(mediaUrl)"
+            }
+            if feedUrl.isEmpty == false {
+                text += "\n\nSubscribe to their show at: \(feedUrl)"
+            }
         }
-        .background(Color(PlayerColorHelper.playerBackgroundColor01()))
 
-        let hostingController = ThemedHostingController(rootView: modalView, theme: Theme(previewTheme: .contrastLight))
-        viewController.present(hostingController, animated: true)
+        let activityController = UIActivityViewController(activityItems: [text], applicationActivities: nil)
+        activityController.popoverPresentationController?.sourceView = viewController.view
+        activityController.popoverPresentationController?.sourceRect = CGRect(x: viewController.view.bounds.midX, y: viewController.view.bounds.midY, width: 44, height: 44)
+        viewController.present(activityController, animated: true)
     }
 }
 

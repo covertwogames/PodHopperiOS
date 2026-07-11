@@ -88,6 +88,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
         NotificationsHelper.shared.register(checkToken: false)
+        PodHopperEpisodeNotifications.shared.setup()
 
         DispatchQueue.global().async { [weak self] in
             guard let self else {
