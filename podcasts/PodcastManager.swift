@@ -172,15 +172,6 @@ class PodcastManager: NSObject {
 
     // MARK: - Import
 
-    #if !os(watchOS) && !os(tvOS)
-        func importSharedItemFromUrl(_ strippedUrl: String, completion: @escaping (IncomingShareItem?) -> Void) {
-            importerQueue.cancelAllOperations()
-
-            let importer = SharedItemImporter(strippedUrl: strippedUrl, completion: completion)
-            importerQueue.addOperation(importer)
-        }
-    #endif
-
     #if !os(watchOS) && !APPCLIP && !os(tvOS)
         func importPodcastsFromOpml(_ opmlFile: URL, progressWindow: ShiftyLoadingAlert? = nil) {
             importerQueue.cancelAllOperations()

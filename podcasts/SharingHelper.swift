@@ -48,20 +48,6 @@ class SharingHelper: NSObject {
         SharingModal.show(option: .podcast(podcast), from: fromSource, in: fromController)
     }
 
-    func shareLinkToPodcastList(name: String, url: String, fromController: UIViewController, barButtonItem: UIBarButtonItem?, completionHandler: (() -> Void)?) {
-        AnalyticsHelper.sharedPodcastList()
-
-        activityController = UIActivityViewController(activityItems: [URL(string: url)!], applicationActivities: nil)
-        activityController?.completionWithItemsHandler = nil
-
-        guard let activityController else { return }
-
-        fromController.present(activityController, animated: true) {
-            completionHandler?()
-        }
-        activityController.popoverPresentationController?.barButtonItem = barButtonItem
-    }
-
     func shareLinkTo(episode: Episode, shareTime: TimeInterval, fromController: UIViewController, fromSource: AnalyticsSource, barButtonItem: UIBarButtonItem?) {
         let option: SharingModal.Option = shareTime == 0 ? .episode(episode) : .currentPosition(episode, shareTime)
         SharingModal.show(option: option, from: fromSource, in: fromController)

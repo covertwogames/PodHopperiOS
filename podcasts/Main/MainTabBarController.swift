@@ -643,16 +643,7 @@ class MainTabBarController: UITabBarController, NavigationProtocol {
     }
 
     func showRedeemGuestPass(url: URL) {
-        switchToTab(.profile)
-
-        guard let navController = selectedViewController as? UINavigationController else {
-            return
-        }
-
-        navController.popToRootViewController(animated: false)
-        navController.dismiss(animated: true)
-
-        ReferralsCoordinator.shared.startClaimFlow(from: navController, referralURL: url)
+        // PodHopper: the Pocket Casts referral program does not exist here; guest pass links do nothing.
     }
 
     func showHeadphoneSettings() {

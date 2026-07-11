@@ -214,12 +214,6 @@ class NavigationManager {
         else if place == NavigationManager.settingsHeadphoneKey {
             mainController?.showHeadphoneSettings()
         }
-        else if place == NavigationManager.settingsRedeemGuestPassKey {
-            guard let data, let url = data[NavigationManager.redeemGuestPassURLKey] as? URL else {
-                return
-            }
-            mainController?.showRedeemGuestPass(url: url)
-        }
         else if place == NavigationManager.showPromotionPageKey {
             var promoCode: String?
             if let data, let promoString = data[NavigationManager.promotionInfoKey] as? String {
