@@ -5,7 +5,6 @@ import PocketCastsDataModel
 import PocketCastsServer
 import PocketCastsUtils
 import Combine
-import Sentry
 
 class AppDelegate: UIResponder, UIApplicationDelegate {
     private static let initialRefreshDelay = 2.seconds
@@ -40,8 +39,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         addAnalyticsObservers()
         setupAnalytics()
 
-        DataManager.logger = SentryLogger()
-        ServerConfig.shared.errorLogger = SentryLogger()
+        DataManager.logger = FileErrorLogger()
+        ServerConfig.shared.errorLogger = FileErrorLogger()
 
         appInstallState = appLifecycleAnalytics.checkApplicationInstalledOrUpgraded()
 
@@ -396,19 +395,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 }
 
-struct SentryLogger: ErrorLogger {
+/// PodHopper: errors from the data and server layers go to the local debug log only.
+struct FileErrorLogger: ErrorLogger {
     func log(error: Error, context: [String: String]?) {
-        if BuildEnvironment.current == .appStore {
-            let crumb = Breadcrumb()
-            crumb.level = SentryLevel.info
-            crumb.category = "grdb"
-            crumb.message = error.localizedDescription
-            SentrySDK.addBreadcrumb(crumb)
-            return
-        }
-
-    #if os(iOS)
-    CrashLoggingAdapter.sharedManager?.crashLogging?.logError(error, tags: context ?? [:], level: .warning)
-    #endif
+        FileLog.shared.addMessage("Error: \(error.localizedDescription). Context: \(context?.debugDescription ?? "none")")
     }
 }

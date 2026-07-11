@@ -1,7 +1,6 @@
 import Foundation
 import PocketCastsDataModel
 #if !os(tvOS)
-import Sentry
 #endif
 
 enum TranscriptError: Error {
@@ -82,15 +81,6 @@ class TranscriptManager {
             throw TranscriptError.failedToLoad
         }
 
-        #if !os(tvOS)
-        await MainActor.run {
-            let crumb = Breadcrumb()
-            crumb.level = SentryLevel.info
-            crumb.category = "transcript"
-            crumb.message = "Transcript file \(transcriptURL)"
-            SentrySDK.addBreadcrumb(crumb)
-        }
-        #endif
         guard let model = TranscriptModel.makeModel(from: transcriptText, format: transcriptFormat) else {
             throw TranscriptError.failedToParse
         }

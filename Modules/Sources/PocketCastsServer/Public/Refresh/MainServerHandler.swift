@@ -213,37 +213,6 @@ public class MainServerHandler {
         }
     }
 
-    public func createRefreshRequest(podcasts: [Podcast]) -> URLRequest? {
-        guard let uniqueId = ServerConfig.shared.syncDelegate?.uniqueAppId() else {
-            return nil
-        }
-
-        for podcast in podcasts { // ensure podcasts have up to date latest episode uuids
-            ServerPodcastManager.shared.updateLatestEpisodeInfo(podcast: podcast, setDefaults: false)
-        }
-
-        let pushEnabled = ServerConfig.shared.syncDelegate?.isPushEnabled() ?? false
-
-        var jsonRequest = jsonWithStandardParams(uniqueId: uniqueId)
-        jsonRequest["push_sound"] = "11" // for legacy reasons, this is always the push sound we send, since it's no longer configurable
-        jsonRequest["podcasts"] = podcasts.map(\.uuid).joined(separator: ",")
-        jsonRequest["last_episodes"] = podcasts.map { $0.forceRefreshEpisodeFrom ?? $0.latestEpisodeUuid ?? "" }.joined(separator: ",")
-        jsonRequest["push_messages_on"] = podcasts.map { (pushEnabled && $0.isPushEnabled) ? "1" : "0" }.joined()
-        if let pushToken = ServerSettings.pushToken() {
-            jsonRequest["push_token"] = pushToken
-        }
-        jsonRequest["push_on"] = pushEnabled ? "true" : "false"
-        guard let data = try? JSONSerialization.data(withJSONObject: jsonRequest) else {
-            FileLog.shared.addMessage("Failed to create refresh request")
-            return nil
-        }
-
-        let url = ServerHelper.asUrl(ServerConstants.Urls.main() + "user/update")
-        let request = ServerHelper.createJsonRequest(url: url, data: data, timeout: MainServerHandler.callTimeout, cachePolicy: .reloadIgnoringCacheData)
-
-        return request
-    }
-
     public func podcastSearch(searchTerm: String, completion: @escaping (PodcastSearchResponse?) -> Void) {
         guard let uniqueId = ServerConfig.shared.syncDelegate?.uniqueAppId() else {
             completion(PodcastSearchResponse.failedResponse())
@@ -258,20 +227,6 @@ public class MainServerHandler {
 
         let searchOperation = PodcastSearchOperation(searchQuery: searchQuery, completionHandler: completion)
         searchQueue.addOperation(searchOperation)
-    }
-
-    func podcastSearchQuery(searchTerm: String) -> PodcastSearchQuery? {
-        guard let uniqueId = ServerConfig.shared.syncDelegate?.uniqueAppId() else {
-            return nil
-        }
-
-        var baseQuery: BaseRequest = PodcastSearchQuery()
-        addStandardParams(baseRequest: &baseQuery, uniqueId: uniqueId)
-
-        var searchQuery = baseQuery as! PodcastSearchQuery
-        searchQuery.q = searchTerm
-
-        return searchQuery
     }
 
     public func refreshPodcastFeed(podcast: Podcast, completion: @escaping (Bool) -> Void) {
