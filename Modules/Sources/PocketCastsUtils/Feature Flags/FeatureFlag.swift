@@ -428,7 +428,7 @@ public enum FeatureFlag: String, CaseIterable {
         case .podcastsSortChanges:
             true
         case .recommendations:
-            true
+            false
         case .cancelSubscriptionSurvey:
             true
         case .newOfferEligibilityCheck:

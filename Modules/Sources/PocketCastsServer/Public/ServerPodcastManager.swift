@@ -138,35 +138,22 @@ public class ServerPodcastManager: NSObject {
     }
 
     public func addMissingPodcast(episodeUuid: String, podcastUuid: String) {
-        let url = ServerConstants.Urls.cache() + "mobile/podcast/findbyepisode/\(podcastUuid)/\(episodeUuid)"
-
-        if let info = loadFrom(url: url), addPodcast(podcastInfo: info, subscribe: false, lastModified: nil) {
-            // all good
-        }
+        // PodHopper: podcasts are added from their feed url, so a podcast that is not already on
+        // device cannot be resolved from a uuid alone. The Pocket Casts cache server is never
+        // contacted, since it does not know PodHopper's feed derived uuids.
     }
 
     public func addMissingEpisode(episodeUuid: String, podcastUuid: String) -> Episode? {
-        let url = ServerConstants.Urls.cache() + "mobile/podcast/findbyepisode/\(podcastUuid)/\(episodeUuid)"
-
-        if let info = loadFrom(url: url) {
-            return addEpisode(podcastInfo: info)
-        }
-
-        return nil
+        // PodHopper: episodes arrive with their podcast's feed, so the only place to resolve one is
+        // the local database. The Pocket Casts cache server is never contacted.
+        DataManager.sharedManager.findEpisode(uuid: episodeUuid)
     }
 
     public func addMissingPodcastAndEpisode(episodeUuid: String, podcastUuid: String, shouldUpdateEpisode: Bool = false, completion: ((Episode?) -> ())? = nil) {
-        let url = ServerConstants.Urls.cache() + "mobile/podcast/findbyepisode/\(podcastUuid)/\(episodeUuid)"
-
-        if let info = loadFrom(url: url) {
-            // Ensure podcast is added, otherwise episode won't be
-            if !PodcastExistsHelper.shared.exists(uuid: podcastUuid) {
-                _ = addPodcast(podcastInfo: info, subscribe: false, lastModified: nil)
-            }
-
-            let episode = addEpisode(podcastInfo: info, shouldUpdate: shouldUpdateEpisode)
-            completion?(episode)
-        }
+        // PodHopper: resolved from the local database only, never from the Pocket Casts cache
+        // server. The completion is always called, including on failure, which the original
+        // implementation did not do.
+        completion?(DataManager.sharedManager.findEpisode(uuid: episodeUuid))
     }
 
     private func addToDatabase(upNextItem: UpNextItem, to podcast: Podcast) {
@@ -277,69 +264,10 @@ public class ServerPodcastManager: NSObject {
     }
 
     public func loadRecommendations(for podcastUUID: String, in region: String?) async throws -> PodcastCollection? {
-        let components = URLComponents(string: ServerConstants.Urls.api())
-
-        guard var components else {
-            assertionFailure("[ServerPodcastManager] Recommendations API URL failed")
-            throw URLError(.badURL)
-        }
-
-        components.path += "recommendations/podcast/\(podcastUUID)"
-
-        if let region {
-            components.queryItems = [
-                URLQueryItem(name: "country", value: region)
-            ]
-        }
-
-        guard let url = components.url else {
-            assertionFailure("[ServerPodcastManager] Recommendations API construction failed")
-            throw URLError(.badURL)
-        }
-
-        var request = URLRequest(url: url, cachePolicy: .reloadIgnoringLocalCacheData, timeoutInterval: 10)
-        request.httpMethod = "GET"
-        request.addValue("application/json", forHTTPHeaderField: ServerConstants.HttpHeaders.accept)
-        request.setValue("application/json; charset=UTF8", forHTTPHeaderField: ServerConstants.HttpHeaders.contentType)
-        request.addLocalizationHeaders()
-        let (data, response) = try await urlConnection.send(request: request)
-
-        if (response as? HTTPURLResponse)?.statusCode == ServerConstants.HttpConstants.notModified {
-            return nil
-        }
-
-        guard let data else {
-            return nil
-        }
-
-        let decoder = JSONDecoder()
-        decoder.dateDecodingStrategy = .iso8601
-
-        return try decoder.decode(PodcastCollection.self, from: data)
-    }
-
-    private func loadFrom(url: String) -> [String: Any]? {
-        let url = ServerHelper.asUrl(url)
-        var request = URLRequest(url: url, cachePolicy: .reloadIgnoringLocalCacheData, timeoutInterval: 10)
-        request.httpMethod = "GET"
-        request.addValue("application/json", forHTTPHeaderField: ServerConstants.HttpHeaders.accept)
-        request.setValue("application/json; charset=UTF8", forHTTPHeaderField: ServerConstants.HttpHeaders.contentType)
-        request.addLocalizationHeaders()
-        do {
-            let (responseData, response) = try urlConnection.sendSynchronousRequest(with: request)
-            guard let data = responseData else { return nil }
-
-            if let response = response as? HTTPURLResponse, response.statusCode == ServerConstants.HttpConstants.notModified {
-                return nil
-            }
-            if let jsonResponse = try JSONSerialization.jsonObject(with: data, options: []) as? [String: Any] {
-                return jsonResponse
-            }
-        } catch {
-            print("Failed to get from server \(error.localizedDescription)")
-        }
-
-        return nil
+        // PodHopper: the "You might like" recommendations came from the Pocket Casts API, which has
+        // no knowledge of PodHopper's podcasts. The feature is switched off in FeatureFlag, and this
+        // returns nothing so that no request is ever made even if the flag is turned back on.
+        nil
     }
 
     public func highestSortOrderForHomeGrid() -> Int32 {
