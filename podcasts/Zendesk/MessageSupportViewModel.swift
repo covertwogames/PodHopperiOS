@@ -141,7 +141,7 @@ class MessageSupportViewModel: ObservableObject {
                 // Check if the user mentioned watch on their issue description and if there
                 // are any Apple Watch logs available.
                 let containsWatch = self.comment.localizedCaseInsensitiveContains(L10n.watch) || self.comment.lowercased().contains("watch")
-                if containsWatch && customFields.contains(where: { $0.value.contains(FileLog.noWearableLogsAvailable) }) && !ignoreUnavailableWatchLogs {
+                if containsWatch && customFields.contains(where: { $0.value.contains("No wearable logs were available") }) && !ignoreUnavailableWatchLogs {
                     return Fail(error: MessageSupportFailure.watchLogMissing).eraseToAnyPublisher()
                 } else {
                     let hasLogs = customFields.contains(where: { $0.id == SupportCustomField.debugLog.rawValue && !$0.value.hasSuffix("User opted out")})
