@@ -1,45 +1,32 @@
 import XCTest
 @testable import PocketCastsServer
 
-/// Tests the pure apply decision at the heart of the position sync: the two protections (never apply
-/// a stale remote change, never overwrite the episode playing right now), completion detection, and
-/// the position-versus-in-progress branch. No database or player is involved.
+/// Tests the pure apply decision at the heart of the position sync: the currently-playing guard
+/// (never overwrite the episode playing right now), completion detection, and the
+/// position-versus-in-progress branch. Conflict resolution is freshest-writer-wins decided by the
+/// query, so the decision no longer takes any local timestamp. No database or player is involved.
 final class PodHopperPositionSyncTests: XCTestCase {
 
     private typealias Decision = PodHopperPositionSync.ApplyDecision
 
     private func decide(
-        localModified: Int64 = 0,
         playingThis: Bool = false,
         position: Int = 100,
         total: Int = 1000,
         completed: Bool = false,
-        remoteTs: Int64 = 500,
         notPlayed: Bool = false
     ) -> Decision {
         PodHopperPositionSync.decideApply(
-            localModifiedMs: localModified,
             isCurrentlyPlayingThisEpisode: playingThis,
             positionSec: position,
             totalSec: total,
             completed: completed,
-            remoteTs: remoteTs,
             playingStatusIsNotPlayed: notPlayed
         )
     }
 
-    func testStaleRemoteChangeIsSkipped() {
-        // Local change is newer than the remote row, so the remote must not rewind us.
-        XCTAssertEqual(decide(localModified: 600, remoteTs: 500), .skip)
-    }
-
-    func testStaleWinsEvenOverACompletion() {
-        // A stale completion must not undo newer local progress.
-        XCTAssertEqual(decide(localModified: 600, completed: true, remoteTs: 500), .skip)
-    }
-
     func testCurrentlyPlayingEpisodeIsNeverOverwritten() {
-        XCTAssertEqual(decide(playingThis: true, position: 50, remoteTs: 9000), .skip)
+        XCTAssertEqual(decide(playingThis: true, position: 50), .skip)
     }
 
     func testExplicitCompletionMarksPlayed() {
@@ -60,11 +47,6 @@ final class PodHopperPositionSyncTests: XCTestCase {
 
     func testNegativePositionWithoutCompletionIsSkipped() {
         XCTAssertEqual(decide(position: -1, total: 0, completed: false), .skip)
-    }
-
-    func testEqualLocalModifiedIsNotStale() {
-        // Equal timestamps are allowed through (Guard 1 only blocks strictly older remote rows).
-        XCTAssertEqual(decide(localModified: 500, position: 200, total: 1000, remoteTs: 500), .setPosition(200, markInProgress: false))
     }
 
     func testIsCompletionRowHelper() {

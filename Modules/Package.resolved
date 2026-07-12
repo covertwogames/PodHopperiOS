@@ -1,5 +1,5 @@
 {
-  "originHash" : "2981f43f0683d1d38ce5837633fdba7ac14ed536a966f62359f8c3db9f9e91fb",
+  "originHash" : "417515a3f0a90964cea2a736bcdbd9e676526526989666476b8172e2b58702db",
   "pins" : [
     {
       "identity" : "abseil-cpp-binary",
@@ -62,6 +62,15 @@
       "state" : {
         "revision" : "e0e64805519b23b08dcca9c83ca2d4a2b3de4c33",
         "version" : "3.4.0"
+      }
+    },
+    {
+      "identity" : "feedkit",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/nmdias/FeedKit.git",
+      "state" : {
+        "revision" : "e55b2cafaf67370092c91193cfb8a8b008e05888",
+        "version" : "10.4.0"
       }
     },
     {
