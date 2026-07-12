@@ -86,3 +86,39 @@ struct IAPDiscountInfo {
     let key: String
     let signature: String
 }
+
+// MARK: - Product attributes
+// PodHopper: moved here from the deleted PlusAccountUpgradePrompt so live pricing and
+// analytics code keeps compiling.
+extension IAPProductID {
+    var subscriptionTier: SubscriptionTier {
+        switch self {
+        case .monthly, .yearly, .yearlyReferral:
+            return .plus
+        case .patronYearly, .patronMonthly:
+            return .patron
+        }
+    }
+
+    var plan: Plan {
+        switch self {
+        case .monthly, .yearly, .yearlyReferral:
+            return .plus
+        case .patronYearly, .patronMonthly:
+            return .patron
+        }
+    }
+
+    var frequency: PlanFrequency {
+        switch self {
+        case .monthly, .patronMonthly:
+            return .monthly
+        case .yearly, .patronYearly, .yearlyReferral:
+            return .yearly
+        }
+    }
+
+    var productInfo: ProductInfo {
+        .init(plan: plan, frequency: frequency)
+    }
+}
