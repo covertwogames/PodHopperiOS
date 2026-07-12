@@ -4,7 +4,6 @@ import PocketCastsDataModel
 import PocketCastsServer
 import PocketCastsUtils
 import UIKit
-import UIDeviceIdentifier
 import SwiftUI
 import SafariServices
 
