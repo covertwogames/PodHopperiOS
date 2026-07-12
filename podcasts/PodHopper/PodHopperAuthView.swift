@@ -1,4 +1,5 @@
 import SwiftUI
+import UIKit
 
 /// PodHopper's sign-in / sign-up / password-recovery / account screens. Mirrors the Android
 /// PodHopperOnboarding login and signup screens: same copy, same field layout, same actions. Themed
@@ -62,8 +63,8 @@ private struct PodHopperLoginForm: View {
             )
 
             VStack(spacing: 12) {
-                PodHopperAuthField(systemIcon: "envelope", placeholder: "Email Address", text: $email, isEmail: true)
-                PodHopperAuthField(systemIcon: "key", placeholder: "Password", text: $password, isSecure: true)
+                PodHopperAuthField(systemIcon: "envelope", placeholder: "Email Address", text: $email, isEmail: true, contentType: .username)
+                PodHopperAuthField(systemIcon: "key", placeholder: "Password", text: $password, isSecure: true, contentType: .password)
             }
 
             PodHopperStatusText(status: viewModel.status)
@@ -114,8 +115,8 @@ private struct PodHopperSignupForm: View {
                 }
             } else {
                 VStack(spacing: 12) {
-                    PodHopperAuthField(systemIcon: "envelope", placeholder: "Email Address", text: $email, isEmail: true)
-                    PodHopperAuthField(systemIcon: "key", placeholder: "Password", text: $password, isSecure: true)
+                    PodHopperAuthField(systemIcon: "envelope", placeholder: "Email Address", text: $email, isEmail: true, contentType: .username)
+                    PodHopperAuthField(systemIcon: "key", placeholder: "Password", text: $password, isSecure: true, contentType: .newPassword)
                 }
 
                 PodHopperStatusText(status: viewModel.status)
@@ -159,7 +160,7 @@ private struct PodHopperRecoverForm: View {
                     viewModel.mode = .login
                 }
             } else {
-                PodHopperAuthField(systemIcon: "envelope", placeholder: "Email Address", text: $email, isEmail: true)
+                PodHopperAuthField(systemIcon: "envelope", placeholder: "Email Address", text: $email, isEmail: true, contentType: .username)
 
                 PodHopperStatusText(status: viewModel.status)
 
@@ -231,6 +232,7 @@ private struct PodHopperAuthField: View {
     @Binding var text: String
     var isEmail: Bool = false
     var isSecure: Bool = false
+    var contentType: UITextContentType? = nil
 
     @FocusState private var focused: Bool
     @State private var reveal = false
@@ -255,6 +257,7 @@ private struct PodHopperAuthField: View {
             .textInputAutocapitalization(.never)
             .autocorrectionDisabled(true)
             .keyboardType(isEmail ? .emailAddress : .default)
+            .textContentType(contentType)
 
             if isSecure {
                 Button {
