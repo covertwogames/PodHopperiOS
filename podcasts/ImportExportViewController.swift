@@ -82,22 +82,19 @@ class ImportExportViewController: PCViewController, UIDocumentInteractionControl
         Analytics.track(.settingsImportExportStarted)
         let podcasts = DataManager.sharedManager.allPodcasts(includeUnsubscribed: false)
 
-        let uuids = podcasts.map(\.uuid)
+        // PodHopper: every podcast's feed url is already on device, so the OPML export is built
+        // locally instead of asking the Pocket Casts server to map uuids to feed urls (which it
+        // could not do for PodHopper's feed derived uuids anyway).
+        let mapping = Dictionary(uniqueKeysWithValues: podcasts.compactMap { podcast -> (String, String)? in
+            guard let url = podcast.podcastUrl, url.isEmpty == false else { return nil }
+            return (podcast.uuid, url)
+        })
 
-        MainServerHandler.shared.exportPodcasts(uuids: uuids) { exportResponse in
-            DispatchQueue.main.async { [weak self] in
-                guard let self else { return }
-                self.loadingAlert?.hideAlert(false)
-                self.loadingAlert = nil
-
-                guard let exportResponse, exportResponse.success(), let mapping = exportResponse.result else {
-                    self.presentError()
-                    Analytics.track(.settingsImportExportFailed)
-                    return
-                }
-
-                self.performOpmlExport(podcasts, mappingDictionary: mapping)
-            }
+        DispatchQueue.main.async { [weak self] in
+            guard let self else { return }
+            self.loadingAlert?.hideAlert(false)
+            self.loadingAlert = nil
+            self.performOpmlExport(podcasts, mappingDictionary: mapping)
         }
     }
 

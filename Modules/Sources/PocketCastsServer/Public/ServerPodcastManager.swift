@@ -61,13 +61,24 @@ public class ServerPodcastManager: NSObject {
     }
 
     public func addFromUuid(podcastUuid: String, subscribe: Bool, autoDownloads: Int = 0, completion: ((Bool) -> Void)?) {
-        CacheServerHandler.shared.loadPodcastInfo(podcastUuid: podcastUuid) { [weak self] podcastInfo, lastModified in
-            if let podcastInfo {
-                self?.addFromJson(podcastUuid: podcastUuid, lastModified: lastModified, podcastInfo: podcastInfo, subscribe: subscribe, autoDownloads: autoDownloads, completion: completion)
-            } else {
-                completion?(false)
-            }
+        // PodHopper: podcasts are added from their feed url by the client feed engine, so a uuid
+        // that is not already in the local database cannot be resolved. The Pocket Casts cache
+        // server is never asked, because it does not know PodHopper's feed derived uuids.
+        guard let podcast = DataManager.sharedManager.findPodcast(uuid: podcastUuid, includeUnsubscribed: true) else {
+            completion?(false)
+            return
         }
+
+        if subscribe, podcast.isSubscribed() == false {
+            podcast.subscribed = 1
+            podcast.syncStatus = SyncStatus.notSynced.rawValue
+            if autoDownloads > 0 {
+                podcast.autoDownloadSetting = Int32(autoDownloads)
+            }
+            DataManager.sharedManager.save(podcast: podcast)
+        }
+
+        completion?(true)
     }
 
     public func addFromiTunesId(_ itunesId: Int, subscribe: Bool, autoDownloads: Int = 0, completion: ((Bool, String?) -> Void)?) {

@@ -43,15 +43,14 @@ class ColorManager {
     }
 
     class func darkThemeTintColorForPodcastUuid(_ uuid: String, completion: @escaping ((UIColor) -> Void)) {
-        CacheServerHandler.shared.loadPodcastColors(podcastUuid: uuid, allowCachedVersion: true, completion: { _, _, darkThemeTint in
-            guard let darkThemeTint else {
-                completion(ColorManager.sharedManager.defaultDarkTintColor)
+        // PodHopper: podcast colors come from the local database (populated from the feed) instead
+        // of the Pocket Casts color server.
+        guard let podcast = DataManager.sharedManager.findPodcast(uuid: uuid, includeUnsubscribed: true) else {
+            completion(ColorManager.sharedManager.defaultDarkTintColor)
+            return
+        }
 
-                return
-            }
-
-            completion(UIColor(hex: darkThemeTint))
-        })
+        completion(ColorManager.sharedManager.darkThemeTintForPodcast(podcast))
     }
 
     class func lightThemeTintForPodcast(_ podcast: Podcast, defaultColor: UIColor? = nil) -> UIColor {
