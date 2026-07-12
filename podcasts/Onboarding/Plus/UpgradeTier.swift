@@ -190,3 +190,20 @@ extension UpgradeTier {
             background: self.background)
     }
 }
+
+// MARK: - Marketing copy links
+// PodHopper: moved here from the deleted UpgradeLandingView so the tier definitions stay
+// self contained.
+extension String {
+    var slumberStudiosWithUrl: String {
+        self.replacingOccurrences(of: "Slumber Studios", with: "[Slumber Studios](https://slumberstudios.com)")
+    }
+
+    var newSlumberStudiosWithUrl: String {
+        self.replacingOccurrences(of: self, with: "[\(self)](https://slumberstudios.com)")
+    }
+
+    var libroFmWithURL: String {
+        self.replacingOccurrences(of: "Libro.fm", with: "[Libro.fm](https://libro.fm)")
+    }
+}
