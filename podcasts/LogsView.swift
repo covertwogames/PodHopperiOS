@@ -46,7 +46,7 @@ class LogsViewModel: NSObject, ObservableObject, MFMailComposeViewControllerDele
             components.minute ?? 0,
             components.second ?? 0
         )
-        let tempURL = FileManager.default.temporaryDirectory.appendingPathComponent("pocketcasts-logs-\(dateString).txt")
+        let tempURL = FileManager.default.temporaryDirectory.appendingPathComponent("podhopper-logs-\(dateString).txt")
         try? data.write(to: tempURL)
         return tempURL
     }
@@ -58,8 +58,8 @@ class LogsViewModel: NSObject, ObservableObject, MFMailComposeViewControllerDele
         }
         let mailVC = MFMailComposeViewController()
         mailVC.mailComposeDelegate = self
-        mailVC.setSubject("iOS Logs \(Settings.appVersion())")
-        mailVC.setToRecipients(["support@pocketcasts.com"])
+        mailVC.setSubject("PodHopper iOS Logs \(Settings.appVersion())")
+        mailVC.setToRecipients(["feedback@covertwogames.com"])
         mailVC.setMessageBody("Please find attached my logs", isHTML: false)
         if let data = logs.data(using: .utf8) {
             mailVC.addAttachmentData(data, mimeType: UTType.plainText.preferredMIMEType ?? "plain/text", fileName: "logs.txt")

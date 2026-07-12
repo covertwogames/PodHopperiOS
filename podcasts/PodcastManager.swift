@@ -84,15 +84,8 @@ class PodcastManager: NSObject {
     }
 
     func didReceiveToken(_ token: String) {
-        #if !os(watchOS)
-            let currentToken = ServerSettings.pushToken()
-
-            if currentToken == token { return } // they are the same, no need to do anything
-
-            ServerSettings.setPushToken(token: token)
-
-            RefreshManager.shared.refreshPodcasts(forceEvenIfRefreshedRecently: true)
-        #endif
+        // PodHopper: the device push token is never stored or sent to any server. Episode
+        // notifications are generated locally on the device.
     }
 
     // MARK: - Downloads

@@ -102,7 +102,8 @@ class NotificationsHelper: NSObject, UNUserNotificationCenterDelegate {
             guard settings.authorizationStatus == .notDetermined else {
                 DispatchQueue.main.async {
                     completion?(settings.authorizationStatus != .denied)
-                    UIApplication.shared.registerForRemoteNotifications()
+                    // PodHopper: episode alerts are generated locally, so the app never registers
+                    // for remote notifications and no device push token is ever created.
                 }
                 return
             }
@@ -110,9 +111,6 @@ class NotificationsHelper: NSObject, UNUserNotificationCenterDelegate {
             notificationCenter.requestAuthorization(options: [.alert, .badge, .sound], completionHandler: { granted, _ in
                 if granted {
                     Analytics.track(.notificationsOptInAllowed)
-                    DispatchQueue.main.async {
-                        UIApplication.shared.registerForRemoteNotifications()
-                    }
                 } else {
                     Analytics.track(.notificationsOptInDenied)
                 }
