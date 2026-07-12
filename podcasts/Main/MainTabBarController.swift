@@ -526,9 +526,7 @@ class MainTabBarController: UITabBarController, NavigationProtocol {
     }
 
     func showSubscriptionCancelledAcknowledge() {
-        let cancelledVC = CancelledAcknowledgeViewController()
-        let controller = view.window?.rootViewController
-        controller?.present(SJUIUtils.popupNavController(for: cancelledVC), animated: true, completion: nil)
+        // PodHopper: there are no Pocket Casts subscriptions to cancel.
     }
 
     func showSubscriptionRequired(_ upgradeRootViewController: UIViewController, source: PlusUpgradeViewSource, context: OnboardingFlow.Context? = nil, flow: OnboardingFlow.Flow = .plusUpsell) {
@@ -544,21 +542,11 @@ class MainTabBarController: UITabBarController, NavigationProtocol {
     }
 
     func showPromotionPage(promoCode: String?) {
-        switchToTab(.profile)
-        if let navController = selectedViewController as? UINavigationController {
-            navController.popToRootViewController(animated: false)
-
-            if let profileVC = navController.topViewController as? ProfileViewController {
-                profileVC.presentedViewController?.dismiss(animated: true, completion: nil)
-                profileVC.promoCode = promoCode
-            }
-        }
+        // PodHopper: Pocket Casts promotions do not exist here.
     }
 
     func showPromotionFinishedAcknowledge() {
-        let promoFinishedVC = PromotionFinishedViewController()
-        let controller = view.window?.rootViewController
-        controller?.present(SJUIUtils.popupNavController(for: promoFinishedVC), animated: true, completion: nil)
+        // PodHopper: Pocket Casts promotions do not exist here.
     }
 
     func showPrivacyPolicy() {
@@ -682,26 +670,15 @@ class MainTabBarController: UITabBarController, NavigationProtocol {
     }
 
     func showSupporterSignIn(podcastInfo: PodcastInfo) {
-        let supporterVC = SupporterGratitudeViewController(podcastInfo: podcastInfo)
-        let controller = view.window?.rootViewController
-        controller?.present(SJUIUtils.popupNavController(for: supporterVC), animated: true, completion: nil)
+        // PodHopper: Pocket Casts supporter podcasts do not exist here.
     }
 
     func showSupporterSignIn(bundleUuid: String) {
-        let supporterVC = SupporterGratitudeViewController(bundleUuid: bundleUuid)
-        let controller = view.window?.rootViewController
-        controller?.present(SJUIUtils.popupNavController(for: supporterVC), animated: true, completion: nil)
+        // PodHopper: Pocket Casts supporter podcasts do not exist here.
     }
 
     func showSupporterBundleDetails(bundleUuid: String?) {
-        switchToTab(.profile)
-        if let navController = selectedViewController as? UINavigationController {
-            navController.popToRootViewController(animated: false)
-            let supporterVC = SupporterContributionsViewController()
-            supporterVC.bundleUuidToOpen = bundleUuid
-            navController.pushViewController(AccountViewController(), animated: false)
-            navController.pushViewController(supporterVC, animated: true)
-        }
+        // PodHopper: Pocket Casts supporter podcasts do not exist here.
     }
 
     func showEndOfYearStories() {

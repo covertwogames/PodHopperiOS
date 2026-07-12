@@ -1,4 +1,5 @@
 import Foundation
+import UIKit
 import PocketCastsUtils
 
 struct OnboardingFlow: AnalyticsSourceProvider {
@@ -16,82 +17,14 @@ struct OnboardingFlow: AnalyticsSourceProvider {
         self.source = source
         self.accountCreated = accountCreated
 
-        let navigationController = controller as? UINavigationController
-
-        let flowController: UIViewController
-        switch flow {
-        case .plusUpsell, .endOfYearUpsell, .suggestedFolderUpsell:
-            // Only the upsell flow needs an unknown source
-            self.source = source
-            flowController = upgradeController(in: navigationController,
-                                               viewSource: source,
-                                               context: context,
-                                               customTitle: customTitle)
-
-        case .plusAccountUpgrade:
-            self.source = source
-            let product = context?["product"] as? ProductInfo
-            if FeatureFlag.newOnboardingUpgrade.enabled {
-                flowController = UpgradeAccountViewModel.make(in: controller,
-                                                              flowSource: .accountScreen,
-                                                              viewSource: source,
-                                                              plan: product?.plan ?? .plus,
-                                                              frequency: product?.frequency ?? .yearly)
-            } else {
-                flowController = PlusPurchaseModel.make(in: controller,
-                                                        plan: product?.plan ?? .plus,
-                                                        selectedPrice: product?.frequency ?? .yearly,
-                                                        customTitle: customTitle)
-            }
-
-        case .patronAccountUpgrade:
-            self.source = source
-            if FeatureFlag.newOnboardingUpgrade.enabled {
-                flowController = UpgradeAccountViewModel.make(in: controller,
-                                                              flowSource: .upsell,
-                                                              viewSource: source,
-                                                              plan: .patron,
-                                                              frequency: .yearly,
-                                                              )
-            } else {
-                let config = PlusLandingViewModel.Config(products: [.patron], displayProduct: .init(plan: .patron, frequency: .yearly))
-                flowController = PlusLandingViewModel.make(in: navigationController,
-                                                           from: .upsell,
-                                                           viewSource: source,
-                                                           config: config,
-                                                           customTitle: customTitle)
-            }
-
-        case .plusAccountUpgradeNeedsLogin:
-            flowController = LoginCoordinator.make(in: navigationController, continuePurchasing: .init(plan: .plus, frequency: .yearly))
-
-        case .encourageAccountCreation:
-            flowController = InformationalModalViewModel.makeController()
-
-        case .initialOnboarding:
-            flowController = LoginCoordinator.make(in: navigationController, isOnboarding: true)
-        default:
-            flowController = LoginCoordinator.make(in: navigationController, isOnboarding: false)
-        }
-
-        return flowController
-    }
-
-    private func upgradeController(in controller: UINavigationController?, viewSource: PlusUpgradeViewSource, context: Context?, customTitle: String? = nil) -> UIViewController {
-        let product = context?["product"] as? ProductInfo
-        if FeatureFlag.newOnboardingUpgrade.enabled {
-            return UpgradeAccountViewModel.make(in: controller,
-                                                flowSource: .upsell,
-                                                viewSource: viewSource,
-                                                plan: product?.plan ?? .plus,
-                                                frequency: product?.frequency ?? .yearly)
-        } else {
-            return PlusLandingViewModel.make(in: controller,
-                                             from: .upsell,
-                                             viewSource: viewSource,
-                                             config: .init(displayProduct: product),
-                                             customTitle: customTitle)
-        }
+        _ = controller
+        _ = context
+        _ = customTitle
+        // PodHopper: the Pocket Casts login, account, and upgrade screens are gone. Every remaining
+        // caller of this flow is an unreachable gate (all features are unlocked and there is no
+        // Pocket Casts account system), so this returns an empty dismissable controller instead of
+        // routing anywhere.
+        return UIViewController()
     }
 
     /// Resets the internal flow state to none and clears any analytics sources

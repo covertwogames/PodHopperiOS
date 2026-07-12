@@ -7,16 +7,10 @@ struct DeveloperMenu: View {
     @State var showingImporter = false
     @State var showingExporter = false
     @State var showingPlaylistsOnboarding = false
-    @State var showingRecommendationsOnboarding = false
-    @State var showingInterestsOnboarding = false
-    @State var showingRecommendationsOnboardingSelected = false
-    @State var showSurvey = false
-    @State var showIntroCarousel = false
     @State var showDeviceApproval = false
     @State var showingNotificationsPermissions = false
     @State var enableDebugPlaylistLimit = false
 
-    @StateObject var recommendationsViewModel = RecommendationsViewModel(configuration: .all)
 
     var body: some View {
         List {
@@ -327,15 +321,6 @@ struct DeveloperMenu: View {
             }
 
             Section {
-                Button("Present Cancel Subscription Survey") {
-                    showSurvey = true
-                }
-                .sheet(isPresented: $showSurvey) {
-                    CancelSubscriptionSurveyView(viewModel: CancelSubscriptionSurveyViewModel(navigationController: nil))
-                }
-                Button("Reset Cancel Subscription Survey visibility") {
-                    Settings.subscriptionCancelledSurveyShown = false
-                }
             } header: {
                 Text("Cancel Subscription Survey")
             }
@@ -350,40 +335,6 @@ struct DeveloperMenu: View {
                 Text("Ratings")
             }
 
-            Section {
-                Button("Show Intro Carousel") {
-                    showIntroCarousel = true
-                }
-                .sheet(isPresented: $showIntroCarousel) {
-                    IntroCarouselView(coordinator: LoginCoordinator())
-                }
-                Button("Show Onboarding Recommendations") {
-                    showingRecommendationsOnboarding = true
-                }
-                .sheet(isPresented: $showingRecommendationsOnboarding) {
-                    NavigationStack {
-                        OnboardingRecommendationsView(coordinator: LoginCoordinator())
-                            .environmentObject(Theme.sharedTheme)
-                    }
-                }
-                Button("Show Onboarding Interests") {
-                    showingInterestsOnboarding = true
-                }
-                .sheet(isPresented: $showingInterestsOnboarding) {
-                    InterestsView(continueCallback: { categories in
-                        showInterestRecommendations(categories: categories)
-                    }, notNowCallback: {
-                        showingInterestsOnboarding.toggle()
-                    }, isInsideNavigation: false)
-                        .environmentObject(Theme.sharedTheme)
-                }
-                .sheet(isPresented: $showingRecommendationsOnboardingSelected) {
-                    OnboardingRecommendationsView(coordinator: LoginCoordinator(), viewModel: self.recommendationsViewModel)
-                        .environmentObject(Theme.sharedTheme)
-                }
-            } header: {
-                Text("Onboarding")
-            }
 
             Section {
                 Button("Show Device Approval") {
@@ -429,11 +380,6 @@ struct DeveloperMenu: View {
         .miniPlayerSafeAreaInset()
     }
 
-    func showInterestRecommendations(categories: [DiscoverCategory]) {
-        showingInterestsOnboarding = false
-        recommendationsViewModel.configuration = .preselected(categories)
-        showingRecommendationsOnboardingSelected = true
-    }
 }
 
 struct DeveloperMenu_Previews: PreviewProvider {

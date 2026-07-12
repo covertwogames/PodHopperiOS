@@ -35,7 +35,6 @@ protocol PodcastActionsDelegate: AnyObject {
     func episodeCount() -> Int
     func archivedEpisodeCount() -> Int
 
-    func manageSubscriptionTapped()
     func settingsTapped()
     func fundingTapped()
     func folderTapped()
@@ -61,7 +60,6 @@ protocol PodcastActionsDelegate: AnyObject {
     func showBookmarks()
     func showEpisodes()
     func showYouMightLike()
-    func showLogin(message: String?)
 
     func shouldDisplayPodcastFeedReloadButton() -> Bool
     func reloadPodcastFeed(source: PodcastFeedReloadSource)
@@ -69,7 +67,7 @@ protocol PodcastActionsDelegate: AnyObject {
     func open(url: URL)
 }
 
-class PodcastViewController: PCViewController, PodcastActionsDelegate, SyncSigninDelegate, MultiSelectActionDelegate {
+class PodcastViewController: PCViewController, PodcastActionsDelegate, MultiSelectActionDelegate {
     var podcast: Podcast?
     var episodeInfo = [ArraySection<String, ListItem>]()
     var uuidsThatMatchSearch = [String]()
@@ -382,14 +380,6 @@ class PodcastViewController: PCViewController, PodcastActionsDelegate, SyncSigni
         viewModel.router = self
 
         self.bookmarkViewModel = viewModel
-    }
-
-    func showLogin(message: String?) {
-        let loginViewController = LoginCoordinator.make()
-        present(loginViewController, animated: true)
-        if let message {
-            Toast.show(message)
-        }
     }
 
     private func listenForBookmarkChanges() {
@@ -897,19 +887,6 @@ class PodcastViewController: PCViewController, PodcastActionsDelegate, SyncSigni
         Analytics.track(.podcastScreenFundingTapped, properties: ["podcast_uuid": podcast?.uuid ?? ""])
         guard let urlString = podcast?.fundingURL, let url = URL(string: urlString) else { return }
         UIApplication.shared.open(url, options: [:], completionHandler: nil)
-    }
-
-    func manageSubscriptionTapped() {
-        guard SyncManager.isUserLoggedIn() else {
-            let signinPage = SyncSigninViewController()
-            signinPage.delegate = self
-
-            navigationController?.pushViewController(signinPage, animated: true)
-            return
-        }
-        guard let podcast, let bundle = SubscriptionHelper.bundleSubscriptionForPodcast(podcastUuid: podcast.uuid) else { return }
-        let subscriptionController = SupporterPodcastViewController(bundleSubscription: bundle)
-        navigationController?.pushViewController(subscriptionController, animated: true)
     }
 
     func didActivateSearch() {
@@ -1618,12 +1595,6 @@ class PodcastViewController: PCViewController, PodcastActionsDelegate, SyncSigni
     override func accessibilityPerformEscape() -> Bool {
         navigationController?.popViewController(animated: true)
         return true
-    }
-
-    // MARK: - SyncSigninDelegate
-
-    func signingProcessCompleted() {
-        navigationController?.popToViewController(self, animated: true)
     }
 
     @MainActor

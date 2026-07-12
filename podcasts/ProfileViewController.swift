@@ -79,13 +79,6 @@ class ProfileViewController: PCViewController, UITableViewDataSource, UITableVie
         }
     }
 
-    var promoCode: String? {
-        didSet {
-            showPromotionViewController(promoCode: promoCode)
-        }
-    }
-
-    var promoRedeemedMessage: String?
     private let settingsCellId = "SettingsCell"
 
     enum TableRow { case informationalBanner, allStats, downloaded, starred, listeningHistory, help, uploadedFiles, bookmarks }
@@ -167,21 +160,8 @@ class ProfileViewController: PCViewController, UITableViewDataSource, UITableVie
         addCustomObserver(.whatsNewDismissed, selector: #selector(whatsNewDismissed))
 
         addCustomObserver(Constants.Notifications.tappedOnSelectedTab, selector: #selector(checkForScrollTap(_:)))
-        if promoRedeemedMessage != nil {
-            updateDisplayedData()
-            showPromotionRedeemedAcknowledgement()
-            promoRedeemedMessage = nil
-        }
-
         whatsNewDismissed()
 
-        if FeatureFlag.cancelSubscriptionSurvey.enabled,
-           SyncManager.isUserLoggedIn(),
-           SubscriptionHelper.hasCancelledSubscription,
-           !Settings.subscriptionCancelledSurveyShown {
-            let controller = CancelSubscriptionSurveyViewModel.make()
-            present(controller, animated: true)
-        }
     }
 
     override func viewDidDisappear(_ animated: Bool) {
@@ -210,11 +190,6 @@ class ProfileViewController: PCViewController, UITableViewDataSource, UITableVie
 
         let settingsController = SettingsViewController()
         navigationController?.pushViewController(settingsController, animated: true)
-    }
-
-    private func showAccountController() {
-        let accountVC = AccountViewController()
-        navigationController?.pushViewController(accountVC, animated: true)
     }
 
     private func refreshTapped() {
