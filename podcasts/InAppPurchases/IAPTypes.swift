@@ -1,4 +1,5 @@
 import Foundation
+import PocketCastsServer
 
 enum IAPProductID: String {
     case yearly = "com.pocketcasts.plus.yearly"
