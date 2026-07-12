@@ -118,11 +118,9 @@ struct SupportConfig: ZDConfig {
             .eraseToAnyPublisher()
         }
 
-        // Return the File UUID that has been queued for upload
-        return FileLog.shared.encryptedLogUUID()
-            .map { uuid in
-                ZDCustomField(.debugLog, value: uuid)
-            }
+        // PodHopper: debug logs are never uploaded anywhere; the support email attaches the
+        // log contents in the display path above instead.
+        return Just(ZDCustomField(.debugLog, value: "Log upload is not available in PodHopper"))
             .eraseToAnyPublisher()
     }
 
@@ -138,11 +136,8 @@ struct SupportConfig: ZDConfig {
             .eraseToAnyPublisher()
         }
 
-        // Return the File Name to be enqued for upload
-        return FileLog.shared.encryptedWatchLogUUID()
-            .map { uuid in
-                ZDCustomField(.wearableLog, value: uuid)
-            }
+        // PodHopper: watch logs are never uploaded anywhere.
+        return Just(ZDCustomField(.wearableLog, value: "Log upload is not available in PodHopper"))
             .eraseToAnyPublisher()
     }
 

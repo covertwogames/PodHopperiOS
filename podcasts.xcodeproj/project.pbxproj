@@ -229,7 +229,6 @@
 		462EE0AD26FCC081003D67DC /* ZenDeskHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 462EE0AC26FCC081003D67DC /* ZenDeskHelpers.swift */; };
 		462EE0AF26FCCF97003D67DC /* PCMessageSupportViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 462EE0AE26FCCF97003D67DC /* PCMessageSupportViewModel.swift */; };
 		462EE0B827024FF3003D67DC /* ApiCredentials.swift in Sources */ = {isa = PBXBuildFile; fileRef = 462EE0B427024FF3003D67DC /* ApiCredentials.swift */; };
-		46305CF2272B0962003AC87B /* FileLog+FileUpload.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46305CF1272B0962003AC87B /* FileLog+FileUpload.swift */; };
 		46316CF027A85E7F00458BA4 /* GenerateScreenshots.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46316CEF27A85E7F00458BA4 /* GenerateScreenshots.swift */; };
 		46316CF227A85F3000458BA4 /* XCUIElement+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46316CF127A85F3000458BA4 /* XCUIElement+Extensions.swift */; };
 		463538A426E16A2E00BA9D35 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 460C375526D831E3008B3609 /* Localizable.strings */; };
@@ -1053,7 +1052,6 @@
 		F58189C22DBC56A200B95199 /* PodcastInfo+DiscoverPodcast.swift in Sources */ = {isa = PBXBuildFile; fileRef = F58189C12DBC56A200B95199 /* PodcastInfo+DiscoverPodcast.swift */; };
 		F58189C32DBC56A200B95199 /* PodcastInfo+DiscoverPodcast.swift in Sources */ = {isa = PBXBuildFile; fileRef = F58189C12DBC56A200B95199 /* PodcastInfo+DiscoverPodcast.swift */; };
 		F5AA0FD42E21D05D00ECDEEA /* SurveyDebugInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5AA0FD32E21D05D00ECDEEA /* SurveyDebugInfoView.swift */; };
-		F5B312B42BF5B6D400290696 /* FirebaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5B312B32BF5B6D400290696 /* FirebaseManager.swift */; };
 		F5BA0D742E3443ED005931D3 /* PressableLottieButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5BA0D732E3443ED005931D3 /* PressableLottieButtonStyle.swift */; };
 		F5BA5C9A2C7F701900BDA5B9 /* DiscoverCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5BA5C992C7F701900BDA5B9 /* DiscoverCollectionViewController.swift */; };
 		F5BA5C9C2C80F38200BDA5B9 /* UIViewControllerContentConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5BA5C9B2C80F38200BDA5B9 /* UIViewControllerContentConfiguration.swift */; };
@@ -1171,7 +1169,6 @@
 		F5F5097D2CEBFDE2007D6E39 /* skip_button.json in Resources */ = {isa = PBXBuildFile; fileRef = BD43BDE52122AD0600E63165 /* skip_button.json */; };
 		F5F5097E2CEBFDE6007D6E39 /* skip.json in Resources */ = {isa = PBXBuildFile; fileRef = BD85E3A31E6670DF001B17C1 /* skip.json */; };
 		F5F884632CC9EAA6002BED2C /* Humane-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = F5F884622CC9EAA6002BED2C /* Humane-Bold.otf */; };
-		F5FDDD842E58E8B000FB1C33 /* FirebaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5B312B32BF5B6D400290696 /* FirebaseManager.swift */; };
 		F5FF61202BD076BA00190711 /* Sharing.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F5FF611F2BD076BA00190711 /* Sharing.xcassets */; };
 		FCCC80732DD56B380080EB2C /* HowToUploadView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCCC80722DD56B380080EB2C /* HowToUploadView.swift */; };
 		FCE96E142D922FEF00AC50E3 /* HowToShareMenuImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCE96E132D922FEF00AC50E3 /* HowToShareMenuImageView.swift */; };
@@ -1327,7 +1324,6 @@
 		FFEE59C42EB37F4300D4B145 /* playback2025_listening_time.json in Resources */ = {isa = PBXBuildFile; fileRef = FFEE59C22EB37F4300D4B145 /* playback2025_listening_time.json */; };
 		FFF024CF2B62B13A00457373 /* Pocket Casts Configuration.storekit in Resources */ = {isa = PBXBuildFile; fileRef = C7547F77286F571900DC1C9E /* Pocket Casts Configuration.storekit */; };
 		FFF23E8A2CC91E370046D3AD /* ServerPodcastManager+Subscription.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFF23E892CC91E2A0046D3AD /* ServerPodcastManager+Subscription.swift */; };
-		FFFEB10A2F9BDA9A00E68E0C /* FirebaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5B312B32BF5B6D400290696 /* FirebaseManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -1719,7 +1715,6 @@
 		462EE0AC26FCC081003D67DC /* ZenDeskHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZenDeskHelpers.swift; sourceTree = "<group>"; };
 		462EE0AE26FCCF97003D67DC /* PCMessageSupportViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PCMessageSupportViewModel.swift; sourceTree = "<group>"; };
 		462EE0B427024FF3003D67DC /* ApiCredentials.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApiCredentials.swift; sourceTree = "<group>"; };
-		46305CF1272B0962003AC87B /* FileLog+FileUpload.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FileLog+FileUpload.swift"; sourceTree = "<group>"; };
 		46305CF3272B09F2003AC87B /* ApiCredentials.tpl */ = {isa = PBXFileReference; lastKnownFileType = text; path = ApiCredentials.tpl; sourceTree = "<group>"; };
 		46316CEF27A85E7F00458BA4 /* GenerateScreenshots.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenerateScreenshots.swift; sourceTree = "<group>"; };
 		46316CF127A85F3000458BA4 /* XCUIElement+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "XCUIElement+Extensions.swift"; sourceTree = "<group>"; };
@@ -2524,7 +2519,6 @@
 		F57BAC662C00CD9C007B24BD /* URLSession+Episode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URLSession+Episode.swift"; sourceTree = "<group>"; };
 		F58189C12DBC56A200B95199 /* PodcastInfo+DiscoverPodcast.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PodcastInfo+DiscoverPodcast.swift"; sourceTree = "<group>"; };
 		F5AA0FD32E21D05D00ECDEEA /* SurveyDebugInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SurveyDebugInfoView.swift; sourceTree = "<group>"; };
-		F5B312B32BF5B6D400290696 /* FirebaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseManager.swift; sourceTree = "<group>"; };
 		F5BA0D732E3443ED005931D3 /* PressableLottieButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PressableLottieButtonStyle.swift; sourceTree = "<group>"; };
 		F5BA5C992C7F701900BDA5B9 /* DiscoverCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoverCollectionViewController.swift; sourceTree = "<group>"; };
 		F5BA5C9B2C80F38200BDA5B9 /* UIViewControllerContentConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerContentConfiguration.swift; sourceTree = "<group>"; };
@@ -2636,7 +2630,6 @@
 		3F74794E2F555197004C7FF6 /* PBXFileSystemSynchronizedBuildFileExceptionSet */ = {
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
-				"Variation+CustomTreatment.swift",
 			);
 			target = F5D5F7782CEBE769001F492D /* Pocket Casts App Clip */;
 		};
@@ -3241,7 +3234,6 @@
 				462EE0AC26FCC081003D67DC /* ZenDeskHelpers.swift */,
 				46CD3C9A2715E25800F5EB8F /* SupportLogsView.swift */,
 				46CD3C9E2715E38E00F5EB8F /* SupportLogsViewModel.swift */,
-				46305CF1272B0962003AC87B /* FileLog+FileUpload.swift */,
 			);
 			path = Zendesk;
 			sourceTree = "<group>";
@@ -4112,7 +4104,6 @@
 				8B484EF428D23BEF001AFA97 /* PlaybackTimeHelper.swift */,
 				C7F4BAB428DA6BBB001C9785 /* BackgroundSignOutListener.swift */,
 				4647623028F70CD0006D005A /* AuthenticationHelper.swift */,
-				F5B312B32BF5B6D400290696 /* FirebaseManager.swift */,
 			);
 			name = "Managers and Helpers";
 			sourceTree = "<group>";
@@ -6870,7 +6861,6 @@
 				BD585C1D204785EF00AC842C /* AppDelegate.swift in Sources */,
 				BDDAE72C27F2E76B003741A1 /* FileTypeUtil.swift in Sources */,
 				BDD6F0342140E1A3005FD8A3 /* ChapterManager.swift in Sources */,
-				46305CF2272B0962003AC87B /* FileLog+FileUpload.swift in Sources */,
 				FF7F89ED2C2AF6DE00FC0ED5 /* TranscriptManager.swift in Sources */,
 				BD2F3BA62366C17500416633 /* PlayerContainerViewController+Scroll.swift in Sources */,
 				BDFB26E71CD08B3C00787B7E /* ImportExportViewController.swift in Sources */,
@@ -7047,7 +7037,6 @@
 				4084F68624DCE2F6006E5D97 /* StarredViewController+Multiselect.swift in Sources */,
 				FFF23E8A2CC91E370046D3AD /* ServerPodcastManager+Subscription.swift in Sources */,
 				BDB5F0CD20450FDC00437669 /* Enumerations.swift in Sources */,
-				F5B312B42BF5B6D400290696 /* FirebaseManager.swift in Sources */,
 				10DFE9312C5A889700957D0A /* CategoryPodcastsTable.swift in Sources */,
 				BD0F6D7B24BD60FF00EDFB99 /* FilterDurationViewController.swift in Sources */,
 				BD98C54F1BA8058800E85D3B /* PodcastHeaderListViewController.swift in Sources */,
@@ -7287,7 +7276,6 @@
 				F5F509062CEBEA93007D6E39 /* ThemeColor.swift in Sources */,
 				F5F5095A2CEBF674007D6E39 /* PlayBufferManager.swift in Sources */,
 				F553A1682CECF9F0006581A1 /* PodcastImageView.swift in Sources */,
-				F5FDDD842E58E8B000FB1C33 /* FirebaseManager.swift in Sources */,
 				F5F508FE2CEBE9F8007D6E39 /* TimeSlider.swift in Sources */,
 				F5F509132CEBEBEC007D6E39 /* Notifications.swift in Sources */,
 				F5F5094C2CEBF412007D6E39 /* VideoViewController+Seek.swift in Sources */,
@@ -7390,7 +7378,6 @@
 				FF6033FC2FAB4C8300EB3AD5 /* AutoplayHelper.swift in Sources */,
 				FF49FEAD2F9BBCA900E68E0C /* LocalizationHelpers.swift in Sources */,
 				FF492A7A2F9BDA9A00E68E0C /* Constants.swift in Sources */,
-				FFFEB10A2F9BDA9A00E68E0C /* FirebaseManager.swift in Sources */,
 				FF8FFE6E2FAA8F240086A867 /* TranscriptFormat.swift in Sources */,
 				FF65058B2FAA963100C3662E /* Notifications.swift in Sources */,
 				FF32F3EB2FAB972700226E58 /* AuthenticationHelper.swift in Sources */,

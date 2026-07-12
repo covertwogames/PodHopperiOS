@@ -72,9 +72,9 @@ class DatabaseExport {
             let debugInfoFile = exportDirectory.appendingPathComponent("info.txt")
             fileManager.createFile(atPath: debugInfoFile.path, contents: DebugInfo.string(optOut: UserDefaults.standard.debugOptedOut).data(using: .utf8))
 
-            let watchLogFile = await FileLog.shared.watchLogFileForUpload().awaitFirstValue(in: &cancellables)
-            if let watchLogFile {
-                try moveFile(watchLogFile, exportDirectory: exportDirectory, exportFileName: "watchos-logs.txt")
+            if let watchLog = await WatchManager.shared.requestLogFile() {
+                let watchLogFile = exportDirectory.appendingPathComponent("watchos-logs.txt")
+                fileManager.createFile(atPath: watchLogFile.path, contents: watchLog.data(using: .utf8))
             }
 
             // Write the bundle document

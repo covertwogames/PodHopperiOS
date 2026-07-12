@@ -26,7 +26,7 @@ class LogsViewModel: NSObject, ObservableObject, MFMailComposeViewControllerDele
                 self.logs = result
             }
         case .watchOS:
-            let result = await FileLog.shared.watchLogFileAsString()
+            let result = await WatchManager.shared.requestLogFile()
             await MainActor.run {
                 self.logs = result ?? L10n.logsWatchOsNotAvailable
             }
