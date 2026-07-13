@@ -55,6 +55,34 @@ code is unreachable, but it is load-bearing at compile time. Deleting it means f
 extracting the stories engine and shared views. Note: wave 5 killed the intro carousel and
 interests views, so this may now be easier than it was; recompute the closure before starting.
 
+## Watch item: mark-as-played ordering (no action taken)
+
+Android had a bug where marking the currently playing episode as played corrupted the Up Next
+queue and froze the player, because the queue advanced before the completed status was written.
+iOS has the same ordering (EpisodeManager.markAsPlayed calls
+PlaybackManager.removeIfPlayingOrQueued, which synchronously advances playback, before writing
+playingStatus = completed), but a full trace found no actual defect:
+
+- The two writes are column scoped (playingStatus vs playedUpTo), so neither can clobber the other.
+- Nothing in the advance path reads the outgoing episode's status. playNextEpisode reads the next
+  episode's status only, and Up Next stores uuids.
+- PodHopperPositionSync uses a serial queue and pushCompletion is enqueued last, so no cross-device
+  desync. Both pushCompletion callers already push after the local write.
+- Notifications post synchronously on the main thread, so observers can transiently read the stale
+  status, but markAsPlayed then writes completed and fires episodePlayStatusChanged, so the UI
+  settles correct.
+
+If a related bug does surface (playback stopping or an episode appearing unplayed after being
+marked played), the fix is to write the completed status before calling removeIfPlayingOrQueued.
+The trap when doing that: autoplayIfNeeded resolves the next episode via
+AutoplayHelper.nextEpisode, which locates the CURRENT episode by index in its source list. Podcast
+lists do not filter on playing status, but smart filters do (PlaylistQueryBuilder), and a filter
+that excludes finished episodes would drop the episode as soon as it is marked completed, so
+firstIndex would fail and autoplay would stop. The query pins the playing episode
+(episodeUuidToAddToQueries) only when PlaybackManager.uuidOfPlayingList matches that filter. So any
+reorder must resolve the autoplay next-episode decision before the status write, not rely on the
+pin. bulkMarkAsPlayed routes the current episode through markAsPlayed, so it inherits any fix.
+
 ## Remaining cleanup (none urgent, nothing user facing)
 
 - **Dead menu in the legal web view.** OnlineSupportController creates customRightBtn (a "..."
