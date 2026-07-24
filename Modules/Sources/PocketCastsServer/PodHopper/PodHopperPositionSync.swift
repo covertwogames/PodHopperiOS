@@ -21,6 +21,9 @@ public protocol PodHopperPositionSyncDelegate: AnyObject {
     func markInProgress(episode: BaseEpisode)
     /// A real local mark-as-played: removes from Up Next and auto-archives per the podcast settings.
     func markAsPlayed(episode: BaseEpisode)
+    /// A real local mark-as-unplayed: resets played status and position and unarchives. Used when a
+    /// remote row regresses an episode this device had finished. Must bump playingStatusModified.
+    func markAsUnplayed(episode: BaseEpisode)
     /// Switch the player to this episode, paused at its synced position, with the host's own
     /// do-not-interrupt guards.
     func adoptEpisodeIntoPlayer(episode: BaseEpisode)
@@ -69,6 +72,8 @@ public final class PodHopperPositionSync {
     private var _lastPushAttemptMs: Int64 = 0
     private var _lastReconcileMs: Int64 = 0
     private var _applyingUuids = Set<String>()
+    /// Per-episode timestamps of recent sync applies, for the circuit breaker.
+    private var _applyHistory = [String: [Int64]]()
     private var cachedInstallId: String?
 
     private var cancellables = Set<AnyCancellable>()
@@ -173,41 +178,75 @@ public final class PodHopperPositionSync {
         pushPosition(episode: snapshot.episode, positionMs: snapshot.positionMs, durationMs: snapshot.durationMs, immediate: immediate)
     }
 
-    /// Push an explicit completion. Called on natural finish and manual mark-as-played. Skipped when
-    /// this completion is itself the result of a remote apply (the echo guard).
+    /// Push an explicit completion. Thin wrapper kept for the single-episode callers.
     public func pushCompletion(episode: BaseEpisode) {
+        pushPlayedState(episodes: [episode], completed: true)
+    }
+
+    /// Push played state for any number of episodes. Every path that changes played state goes
+    /// through here: single mark-played, single un-mark, both bulk paths, and natural completion.
+    /// A completed row parks position at the duration and an un-marked row parks it at zero, so a
+    /// consumer reading position alone still reads the episode correctly. Rows go up in chunks, and
+    /// a failed chunk logs and lets the remaining chunks through rather than abandoning them.
+    ///
+    /// Skipped per episode when that episode is itself mid-apply from the sync (the echo guard).
+    /// This covers un-marks too, because applying a regression calls the host's mark-as-unplayed,
+    /// which pushes.
+    public func pushPlayedState(episodes: [BaseEpisode], completed: Bool) {
         if !supabase.isLoggedIn() {
             return
         }
-        if isApplyingRemote(uuid: episode.uuid) {
+        let candidates = episodes.filter { !isApplyingRemote(uuid: $0.uuid) }
+        if candidates.isEmpty {
             return
         }
+
+        // Snapshot everything the push needs while still on the calling thread. Episode objects are
+        // not safe to read from the work queue.
         // iOS stores duration and playedUpTo in seconds (Android used milliseconds).
-        let totalSec = Int(episode.duration > 0 ? episode.duration : episode.playedUpTo)
-        let episodeKey = episode.uuid
-        let episodeUrl = episode.downloadUrl
-        let podcastUuid = (episode as? Episode)?.podcastUuid
+        let snapshots: [(key: String, url: String?, totalSec: Int, podcastUuid: String?)] = candidates.map { episode in
+            (
+                key: episode.uuid,
+                url: episode.downloadUrl,
+                totalSec: Int(episode.duration > 0 ? episode.duration : episode.playedUpTo),
+                podcastUuid: (episode as? Episode)?.podcastUuid
+            )
+        }
         let now = nowMs()
 
         workQueue.async {
             do {
                 guard let userId = try self.supabase.getUserId() else { return }
-                let feedUrl = podcastUuid.flatMap { self.dataManager.findPodcast(uuid: $0, includeUnsubscribed: true)?.podcastUrl }
-                let row: [String: Any] = [
-                    "user_id": userId,
-                    "episode_key": episodeKey,
-                    "episode_url": episodeUrl ?? NSNull(),
-                    "position_sec": totalSec,
-                    "total_sec": totalSec,
-                    "completed": true,
-                    "feed_url": feedUrl ?? NSNull(),
-                    "device_id": self.installId(),
-                    "device_name": self.deviceName(),
-                    "updated_at_ms": now,
-                ]
-                try self.supabase.upsert(table: Self.table, onConflictColumns: "user_id,episode_key", rows: [row])
+                let deviceId = self.installId()
+                let deviceName = self.deviceName()
+                let rows: [[String: Any]] = snapshots.map { snapshot in
+                    let feedUrl = snapshot.podcastUuid.flatMap { self.dataManager.findPodcast(uuid: $0, includeUnsubscribed: true)?.podcastUrl }
+                    return [
+                        "user_id": userId,
+                        "episode_key": snapshot.key,
+                        "episode_url": snapshot.url ?? NSNull(),
+                        "position_sec": completed ? snapshot.totalSec : 0,
+                        "total_sec": snapshot.totalSec,
+                        "completed": completed,
+                        "feed_url": feedUrl ?? NSNull(),
+                        "device_id": deviceId,
+                        "device_name": deviceName,
+                        "updated_at_ms": now,
+                    ]
+                }
+                var start = 0
+                while start < rows.count {
+                    let end = min(start + Self.pushChunkSize, rows.count)
+                    let chunk = Array(rows[start ..< end])
+                    do {
+                        try self.supabase.upsert(table: Self.table, onConflictColumns: "user_id,episode_key", rows: chunk)
+                    } catch {
+                        FileLog.shared.addMessage("PodHopper played-state push chunk failed, continuing with the remaining chunks: \(error)")
+                    }
+                    start = end
+                }
             } catch {
-                FileLog.shared.addMessage("PodHopper completion push failed, will retry on next finish: \(error)")
+                FileLog.shared.addMessage("PodHopper played-state push failed, will retry on the next change: \(error)")
             }
         }
     }
@@ -251,6 +290,11 @@ public final class PodHopperPositionSync {
                 }
 
                 self.retryParkedRows()
+
+                // Walk the completion history. Runs after the delta pull so the cheap incremental
+                // path settles first. It has its own error handling, so a reconcile failure does not
+                // mask a successful delta pull.
+                self.reconcileCompletions()
 
                 // Resume the now-playing window from the freshest cross-device state. This uses a
                 // direct "most recent in-progress across other devices" query, not the cursor page,
@@ -431,6 +475,75 @@ public final class PodHopperPositionSync {
         }
     }
 
+    // MARK: Completions reconcile
+
+    /// Walks the completion history and applies any completion this device has not finished
+    /// locally, paging forward on its own cursor which starts from the beginning of time.
+    ///
+    /// Deliberately NOT filtered by device_id. The shared row records only its most recent writer,
+    /// so a device can author a completion row while its own local state stays unfinished, and a
+    /// device filter then hides that completion from the one device that needs it, permanently.
+    /// Applying an own row is idempotent: episodes already completed here are skipped, and the
+    /// staleness guard in the apply path stops a historical row from undoing a newer local change.
+    ///
+    /// Only completions are replayed from history. Positions are not, because a historical position
+    /// row can be older than this device's local progress and would rewind it; live positions belong
+    /// to the delta pull. Blocking; runs on the calling background queue.
+    private func reconcileCompletions() {
+        do {
+            var cursor = (defaults.object(forKey: Self.completionsCursorKey) as? NSNumber)?.int64Value ?? 0
+
+            while true {
+                let query = "select=episode_key,position_sec,total_sec,updated_at_ms"
+                    + "&completed=is.true"
+                    + "&updated_at_ms=gt.\(cursor)"
+                    + "&order=updated_at_ms.asc"
+                    + "&limit=\(PodHopperConfig.pullPageLimit)"
+                let rows = try supabase.select(table: Self.table, query: query)
+                let count = rows.count
+                if count == 0 {
+                    break
+                }
+
+                var maxTs = cursor
+                for row in rows {
+                    let updatedAtMs = (row["updated_at_ms"] as? NSNumber)?.int64Value ?? 0
+                    if updatedAtMs > maxTs {
+                        maxTs = updatedAtMs
+                    }
+                    guard let episodeKey = row["episode_key"] as? String, !episodeKey.isEmpty else {
+                        continue
+                    }
+                    let positionSec = (row["position_sec"] as? NSNumber)?.intValue ?? -1
+                    let totalSec = (row["total_sec"] as? NSNumber)?.intValue ?? 0
+                    guard let episode = dataManager.findEpisode(uuid: episodeKey) else {
+                        // Same guarantee as the delta pull: an episode whose feed has not refreshed
+                        // here yet is parked, not dropped, and applied once it exists.
+                        parkRow(episodeKey: episodeKey, positionSec: positionSec, totalSec: totalSec, completed: true, remoteTs: updatedAtMs)
+                        continue
+                    }
+                    if episode.playingStatus != PlayingStatus.completed.rawValue {
+                        applyOne(episode: episode, positionSec: positionSec, totalSec: totalSec, completed: true, remoteTs: updatedAtMs)
+                    }
+                }
+
+                if maxTs > cursor {
+                    cursor = maxTs
+                    defaults.set(NSNumber(value: cursor), forKey: Self.completionsCursorKey)
+                } else {
+                    break
+                }
+                if count < PodHopperConfig.pullPageLimit {
+                    break
+                }
+            }
+
+            retryParkedRows()
+        } catch {
+            FileLog.shared.addMessage("PodHopper completions reconcile failed: \(error)")
+        }
+    }
+
     // MARK: Apply
 
     /// Applies every row in a page, parking those whose episode is not local yet. Returns the highest
@@ -458,34 +571,90 @@ public final class PodHopperPositionSync {
             parkRow(episodeKey: episodeKey, positionSec: positionSec, totalSec: totalSec, completed: completed, remoteTs: remoteTs)
             return
         }
-        applyOne(episode: episode, positionSec: positionSec, totalSec: totalSec, completed: completed)
+        applyOne(episode: episode, positionSec: positionSec, totalSec: totalSec, completed: completed, remoteTs: remoteTs)
     }
 
-    private func applyOne(episode: Episode, positionSec: Int, totalSec: Int, completed: Bool) {
+    private func applyOne(episode: Episode, positionSec: Int, totalSec: Int, completed: Bool, remoteTs: Int64) {
+        // Staleness guard, ahead of every decision: a row older than this device's own played-state
+        // change must never undo it. This is what stops an un-mark made offline from being reverted
+        // by the next pull. Both values are milliseconds, the remote one stamped by the database and
+        // the local one by this device, so the comparison assumes network-synced clocks. That soft
+        // spot is accepted, and matches Android.
+        let localStatusTs = episode.playingStatusModified
+        if localStatusTs > 0, remoteTs > 0, localStatusTs > remoteTs {
+            return
+        }
+
         let isCurrentlyPlayingThis = delegate?.currentlyPlayingEpisodeUuid() == episode.uuid
         let playingStatusIsNotPlayed = episode.playingStatus == PlayingStatus.notPlayed.rawValue
+        let playingStatusIsCompleted = episode.playingStatus == PlayingStatus.completed.rawValue
 
         let decision = Self.decideApply(
             isCurrentlyPlayingThisEpisode: isCurrentlyPlayingThis,
             positionSec: positionSec,
             totalSec: totalSec,
             completed: completed,
-            playingStatusIsNotPlayed: playingStatusIsNotPlayed
+            playingStatusIsNotPlayed: playingStatusIsNotPlayed,
+            playingStatusIsCompleted: playingStatusIsCompleted
         )
 
         switch decision {
         case .skip:
             return
         case .complete:
+            guard allowApply(uuid: episode.uuid) else { return }
             addApplying(episode.uuid)
             delegate?.markAsPlayed(episode: episode)
             removeApplying(episode.uuid)
+        case .uncomplete(let remotePositionSec):
+            // An episode finished before this app stamped played-state timestamps has nothing for
+            // the staleness guard above to defend, so a regression row would silently undo it.
+            // Require a stamped local change before regressing. Android never needed this because
+            // it has always stamped; this only brings iOS up to that same precondition.
+            if localStatusTs <= 0 {
+                return
+            }
+            guard allowApply(uuid: episode.uuid) else { return }
+            addApplying(episode.uuid)
+            delegate?.markAsUnplayed(episode: episode)
+            if remotePositionSec > 0 {
+                delegate?.updatePlayedUpTo(episode: episode, positionSec: Double(remotePositionSec))
+                delegate?.markInProgress(episode: episode)
+            }
+            removeApplying(episode.uuid)
         case .setPosition(let sec, let markInProgress):
+            guard allowApply(uuid: episode.uuid) else { return }
             delegate?.updatePlayedUpTo(episode: episode, positionSec: sec)
             if markInProgress {
                 delegate?.markInProgress(episode: episode)
             }
         }
+    }
+
+    /// Refuses more than [applyBreakerMaxApplies] sync applies to one episode inside
+    /// [applyBreakerWindowMs]. A runaway apply loop is a bug; this bounds the damage and names the
+    /// episode in the log. In memory only, so it resets with the process.
+    private func allowApply(uuid: String) -> Bool {
+        let now = nowMs()
+        var refused = false
+        var recentCount = 0
+
+        stateLock.lock()
+        var history = _applyHistory[uuid] ?? []
+        history.removeAll { now - $0 > Self.applyBreakerWindowMs }
+        if history.count >= Self.applyBreakerMaxApplies {
+            refused = true
+            recentCount = history.count
+        } else {
+            history.append(now)
+        }
+        _applyHistory[uuid] = history
+        stateLock.unlock()
+
+        if refused {
+            FileLog.shared.addMessage("PodHopper sync circuit breaker tripped for episode \(uuid): \(recentCount) applies in the last hour, refusing more")
+        }
+        return !refused
     }
 
     /// The pure apply decision. Freshest writer wins: the row came from another device's write to the
@@ -497,7 +666,8 @@ public final class PodHopperPositionSync {
         positionSec: Int,
         totalSec: Int,
         completed: Bool,
-        playingStatusIsNotPlayed: Bool
+        playingStatusIsNotPlayed: Bool,
+        playingStatusIsCompleted: Bool
     ) -> ApplyDecision {
         if isCurrentlyPlayingThisEpisode {
             return .skip
@@ -505,8 +675,15 @@ public final class PodHopperPositionSync {
         if isCompletionRow(positionSec: positionSec, totalSec: totalSec, completed: completed) {
             return .complete
         }
+        // The row says not finished. If it is finished here, another device un-marked it and that
+        // wins, subject to the staleness guard the caller applies first.
+        if playingStatusIsCompleted {
+            return .uncomplete(positionSec)
+        }
         if positionSec >= 0 {
-            return .setPosition(Double(positionSec), markInProgress: playingStatusIsNotPlayed)
+            // Only real progress moves an episode to in-progress. An un-mark row carries position
+            // zero, and must not flip an already-unplayed episode to in-progress.
+            return .setPosition(Double(positionSec), markInProgress: playingStatusIsNotPlayed && positionSec > 0)
         }
         return .skip
     }
@@ -519,6 +696,7 @@ public final class PodHopperPositionSync {
     enum ApplyDecision: Equatable {
         case skip
         case complete
+        case uncomplete(Int)
         case setPosition(Double, markInProgress: Bool)
     }
 
@@ -551,7 +729,8 @@ public final class PodHopperPositionSync {
                 episode: episode,
                 positionSec: (entry["p"] as? NSNumber)?.intValue ?? -1,
                 totalSec: (entry["t"] as? NSNumber)?.intValue ?? 0,
-                completed: (entry["c"] as? Bool) ?? ((entry["c"] as? NSNumber)?.boolValue ?? false)
+                completed: (entry["c"] as? Bool) ?? ((entry["c"] as? NSNumber)?.boolValue ?? false),
+                remoteTs: (entry["u"] as? NSNumber)?.int64Value ?? 0
             )
             parked.removeValue(forKey: episodeKey)
             changed = true
@@ -624,13 +803,14 @@ public final class PodHopperPositionSync {
         return generated
     }
 
-    /// Resets this device's position sync bookkeeping so a future account starts clean. Clears the
-    /// pull cursor and parked rows, sending the cursor back to the first-sync sentinel. The install
+    /// Resets this device's position sync bookkeeping so a future account starts clean. Clears both
+    /// cursors and parked rows, sending the delta cursor back to the first-sync sentinel. The install
     /// id is kept, since it identifies the device, not the account. Does not touch any episode,
     /// podcast, or playback data.
     public func clearLocalSyncState() {
         defaults.removeObject(forKey: Self.lastPullMsKey)
         defaults.removeObject(forKey: Self.parkedKey)
+        defaults.removeObject(forKey: Self.completionsCursorKey)
     }
 
     // MARK: Applying-uuid set
@@ -665,6 +845,7 @@ public final class PodHopperPositionSync {
     private static let table = "playback_state"
     private static let installIdKey = "install_id"
     private static let lastPullMsKey = "last_pull_ms"
+    private static let completionsCursorKey = "completions_cursor_ms"
     private static let parkedKey = "parked_rows"
     private static let minPushIntervalMs: Int64 = 4000
     private static let playPullTimeoutMs: Int64 = 5000
@@ -672,4 +853,7 @@ public final class PodHopperPositionSync {
     private static let adoptScanLimit = 10
     private static let firstSyncSentinel: Int64 = -1
     private static let maxParked = 500
+    private static let pushChunkSize = 100
+    private static let applyBreakerWindowMs: Int64 = 3_600_000
+    private static let applyBreakerMaxApplies = 6
 }

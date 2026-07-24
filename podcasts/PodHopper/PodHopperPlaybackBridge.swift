@@ -37,12 +37,19 @@ final class PodHopperPlaybackBridge: PodHopperPositionSyncDelegate {
     }
 
     func markAsPlayed(episode: BaseEpisode) {
+        // Synchronous: the engine holds its echo guard across this call, so the completion push
+        // that EpisodeManager fires must happen before this returns. EpisodeManager stamps
+        // playingStatusModified itself, which is what the staleness guard compares against.
         runOnMainSync {
             EpisodeManager.markAsPlayed(episode: episode, fireNotification: true, userInitiated: false)
-            // markAsPlayed only bumps playingStatusModified when the Pocket Casts sync is logged in,
-            // which PodHopper never is. Bump it explicitly so the completion is timestamped and the
-            // staleness guard protects it on the next pull.
-            DataManager.sharedManager.saveEpisode(playingStatus: .completed, episode: episode, updateSyncFlag: true)
+        }
+    }
+
+    func markAsUnplayed(episode: BaseEpisode) {
+        // Synchronous for the same reason as markAsPlayed: un-marking now pushes, so the echo guard
+        // has to still be held when that push is skipped.
+        runOnMainSync {
+            EpisodeManager.markAsUnplayed(episode: episode, fireNotification: true, userInitiated: false)
         }
     }
 

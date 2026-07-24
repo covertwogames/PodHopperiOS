@@ -1241,11 +1241,12 @@ class PlaybackManager: ServerPlaybackDelegate {
             episode.playingStatus = PlayingStatus.completed.rawValue
             episode.playedUpTo = episode.duration
 
-            if SyncManager.isUserLoggedIn() {
-                let currentUtcTime = TimeFormatter.currentUTCTimeInMillis()
-                episode.playingStatusModified = currentUtcTime
-                episode.playedUpToModified = currentUtcTime
-            }
+            // PodHopper: stamp unconditionally. These timestamps used to ride on the Pocket Casts
+            // login, which no longer exists, and the position sync's staleness guard compares
+            // playingStatusModified against the server's timestamp for the row.
+            let currentUtcTime = TimeFormatter.currentUTCTimeInMillis()
+            episode.playingStatusModified = currentUtcTime
+            episode.playedUpToModified = currentUtcTime
 
             if let episode = episode as? Episode {
                 episode.lastPlaybackInteractionDate = Date()

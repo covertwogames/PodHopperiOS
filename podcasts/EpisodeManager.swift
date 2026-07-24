@@ -14,7 +14,10 @@ class EpisodeManager: NSObject {
         // we always fire the episode removed notification here. It's a bit dodgy but the boolean applies to the episode meta data update
         PlaybackManager.shared.removeIfPlayingOrQueued(episode: episode, fireNotification: true)
 
-        DataManager.sharedManager.saveEpisode(playingStatus: .completed, episode: episode, updateSyncFlag: SyncManager.isUserLoggedIn())
+        // PodHopper: updateSyncFlag is true so playingStatusModified is stamped. It used to ride on
+        // the Pocket Casts login, which no longer exists, and the position sync's staleness guard
+        // compares that timestamp against the server's timestamp for the row.
+        DataManager.sharedManager.saveEpisode(playingStatus: .completed, episode: episode, updateSyncFlag: true)
 
         // PodHopper: push the completion across devices. Echo-guarded, so a completion that is itself
         // a remote apply (via the sync bridge) is not bounced back.
@@ -53,6 +56,10 @@ class EpisodeManager: NSObject {
         var episodesMinusCurrent = episodes
         var currentEpisodeToMarkAsPlayed: BaseEpisode?
 
+        // PodHopper: capture what actually changes before the writes land, so the push mirrors what
+        // the database did. The bulk writers skip episodes already in the target state.
+        let episodesToPush = episodes.filter { $0.playingStatus != PlayingStatus.completed.rawValue }
+
         if let currentEpisode = PlaybackManager.shared.currentEpisode(), let index = episodes.firstIndex(where: { $0.uuid == currentEpisode.uuid }) {
             episodesMinusCurrent.remove(at: index)
             currentEpisodeToMarkAsPlayed = currentEpisode
@@ -76,16 +83,18 @@ class EpisodeManager: NSObject {
         let uuids = episodesMinusCurrent.map(\.uuid)
         PlaybackManager.shared.bulkRemoveQueued(uuids: uuids)
 
+        // PodHopper: updateSyncFlag is forced true here so playingStatusModified is stamped on every
+        // episode in the batch. The staleness guard has nothing to compare without it.
         if !episodesToArchive.isEmpty {
-            DataManager.sharedManager.bulkArchive(episodes: episodesToArchive, markAsNotDownloaded: true, markAsPlayed: true, updateSyncFlag: updateSyncFlag)
+            DataManager.sharedManager.bulkArchive(episodes: episodesToArchive, markAsNotDownloaded: true, markAsPlayed: true, updateSyncFlag: true)
         }
 
         if !episodesToMarkAsPlayed.isEmpty {
-            DataManager.sharedManager.bulkMarkAsPlayed(episodes: episodesToMarkAsPlayed, updateSyncFlag: updateSyncFlag)
+            DataManager.sharedManager.bulkMarkAsPlayed(episodes: episodesToMarkAsPlayed, updateSyncFlag: true)
         }
 
         if !userEpisodeToMarkAsPlayed.isEmpty {
-            DataManager.sharedManager.bulkMarkAsPlayed(episodes: userEpisodeToMarkAsPlayed, updateSyncFlag: updateSyncFlag)
+            DataManager.sharedManager.bulkMarkAsPlayed(episodes: userEpisodeToMarkAsPlayed, updateSyncFlag: true)
 
             #if !APPCLIP
             userEpisodeToMarkAsPlayed.forEach { userEpisode in
@@ -99,6 +108,14 @@ class EpisodeManager: NSObject {
             }
             #endif
         }
+        // PodHopper: the bulk paths write the database directly and never reach markAsPlayed, so
+        // they need their own push or a bulk mark-as-played never leaves this device. The current
+        // episode is excluded here because markAsPlayed below pushes it individually.
+        let bulkPush = episodesToPush.filter { episode in episode.uuid != currentEpisodeToMarkAsPlayed?.uuid }
+        if !bulkPush.isEmpty {
+            PodHopperPositionSync.shared.pushPlayedState(episodes: bulkPush, completed: true)
+        }
+
         if let currentEpisode = currentEpisodeToMarkAsPlayed {
             markAsPlayed(episode: currentEpisode, fireNotification: true, userInitiated: false)
         }
@@ -137,13 +154,21 @@ class EpisodeManager: NSObject {
     }
 
     class func markAsUnplayed(episode: BaseEpisode, fireNotification: Bool, userInitiated: Bool = true) {
-        let updateSyncFlag = SyncManager.isUserLoggedIn()
+        // PodHopper: always stamp, for the same reason as markAsPlayed. This is also the shared
+        // choke point for the internal un-marks (queueing a finished episode, bulk queueing), not
+        // just the user's own mark-as-unplayed action.
+        let updateSyncFlag = true
 
         DataManager.sharedManager.saveEpisode(playingStatus: .notPlayed, episode: episode, updateSyncFlag: updateSyncFlag)
         DataManager.sharedManager.saveEpisode(playedUpTo: 0, episode: episode, updateSyncFlag: updateSyncFlag)
         if let episode = episode as? Episode {
             DataManager.sharedManager.saveEpisode(archived: false, episode: episode, updateSyncFlag: updateSyncFlag)
         }
+
+        // PodHopper: an un-mark is a played-state change and has to reach the other devices, or the
+        // server keeps saying finished and the next sync undoes this locally. Echo-guarded, so an
+        // un-mark that is itself a remote apply is not bounced back.
+        PodHopperPositionSync.shared.pushPlayedState(episodes: [episode], completed: false)
 
         if fireNotification {
             NotificationCenter.postOnMainThread(notification: Constants.Notifications.episodePlayStatusChanged, object: episode.uuid)
@@ -155,7 +180,16 @@ class EpisodeManager: NSObject {
     }
 
     class func bulkMarkAsUnPlayed(_ baseEpisodes: [BaseEpisode]) {
-        DataManager.sharedManager.bulkMarkAsUnPlayed(baseEpisodes: baseEpisodes, updateSyncFlag: SyncManager.isUserLoggedIn())
+        // PodHopper: capture what changes before the write, stamp the timestamps, and push, for the
+        // same reasons as the bulk mark-as-played path above.
+        let episodesToPush = baseEpisodes.filter { $0.playingStatus != PlayingStatus.notPlayed.rawValue }
+
+        DataManager.sharedManager.bulkMarkAsUnPlayed(baseEpisodes: baseEpisodes, updateSyncFlag: true)
+
+        if !episodesToPush.isEmpty {
+            PodHopperPositionSync.shared.pushPlayedState(episodes: episodesToPush, completed: false)
+        }
+
         NotificationCenter.postOnMainThread(notification: Constants.Notifications.manyEpisodesChanged)
 
         analyticsHelper.bulkMarkAsUnplayed(count: baseEpisodes.count)

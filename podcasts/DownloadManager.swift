@@ -491,8 +491,10 @@ class DownloadManager: NSObject, FilePathProtocol {
 
     private func markUnplayedAndUnarchiveIfRequired(episode: BaseEpisode, saveChanges: Bool) {
         var episodeModified = false
+        var unmarkedAsPlayed = false
 
         if episode.played() {
+            unmarkedAsPlayed = true
             FileLog.shared.addMessage("Marking episode as unplayed because it's getting added to the download queue: \(episode.displayableTitle())")
             episode.playingStatus = PlayingStatus.notPlayed.rawValue
             episode.playingStatusModified = TimeFormatter.currentUTCTimeInMillis()
@@ -517,6 +519,13 @@ class DownloadManager: NSObject, FilePathProtocol {
 
         if episodeModified, saveChanges {
             dataManager.save(episode: episode)
+        }
+
+        if unmarkedAsPlayed {
+            // PodHopper: queueing a finished episode un-marks it, and that is a played-state change
+            // like any other. Without this push the server keeps saying finished and the next sync
+            // undoes it locally.
+            PodHopperPositionSync.shared.pushPlayedState(episodes: [episode], completed: false)
         }
     }
 
