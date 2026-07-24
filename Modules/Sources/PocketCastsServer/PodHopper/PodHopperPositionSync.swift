@@ -575,6 +575,13 @@ public final class PodHopperPositionSync {
     }
 
     private func applyOne(episode: Episode, positionSec: Int, totalSec: Int, completed: Bool, remoteTs: Int64) {
+        // Circuit breaker first, counting every row the sync tries to apply to this episode rather
+        // than only the ones that change something, so a loop that keeps being turned away by the
+        // guards below still trips it and still gets logged. Matches Android's placement.
+        guard allowApply(uuid: episode.uuid) else {
+            return
+        }
+
         // Staleness guard, ahead of every decision: a row older than this device's own played-state
         // change must never undo it. This is what stops an un-mark made offline from being reverted
         // by the next pull. Both values are milliseconds, the remote one stamped by the database and
@@ -602,7 +609,6 @@ public final class PodHopperPositionSync {
         case .skip:
             return
         case .complete:
-            guard allowApply(uuid: episode.uuid) else { return }
             addApplying(episode.uuid)
             delegate?.markAsPlayed(episode: episode)
             removeApplying(episode.uuid)
@@ -614,7 +620,6 @@ public final class PodHopperPositionSync {
             if localStatusTs <= 0 {
                 return
             }
-            guard allowApply(uuid: episode.uuid) else { return }
             addApplying(episode.uuid)
             delegate?.markAsUnplayed(episode: episode)
             if remotePositionSec > 0 {
@@ -623,7 +628,6 @@ public final class PodHopperPositionSync {
             }
             removeApplying(episode.uuid)
         case .setPosition(let sec, let markInProgress):
-            guard allowApply(uuid: episode.uuid) else { return }
             delegate?.updatePlayedUpTo(episode: episode, positionSec: sec)
             if markInProgress {
                 delegate?.markInProgress(episode: episode)

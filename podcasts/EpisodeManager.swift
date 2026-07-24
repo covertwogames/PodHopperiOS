@@ -56,10 +56,6 @@ class EpisodeManager: NSObject {
         var episodesMinusCurrent = episodes
         var currentEpisodeToMarkAsPlayed: BaseEpisode?
 
-        // PodHopper: capture what actually changes before the writes land, so the push mirrors what
-        // the database did. The bulk writers skip episodes already in the target state.
-        let episodesToPush = episodes.filter { $0.playingStatus != PlayingStatus.completed.rawValue }
-
         if let currentEpisode = PlaybackManager.shared.currentEpisode(), let index = episodes.firstIndex(where: { $0.uuid == currentEpisode.uuid }) {
             episodesMinusCurrent.remove(at: index)
             currentEpisodeToMarkAsPlayed = currentEpisode
@@ -109,11 +105,13 @@ class EpisodeManager: NSObject {
             #endif
         }
         // PodHopper: the bulk paths write the database directly and never reach markAsPlayed, so
-        // they need their own push or a bulk mark-as-played never leaves this device. The current
-        // episode is excluded here because markAsPlayed below pushes it individually.
-        let bulkPush = episodesToPush.filter { episode in episode.uuid != currentEpisodeToMarkAsPlayed?.uuid }
-        if !bulkPush.isEmpty {
-            PodHopperPositionSync.shared.pushPlayedState(episodes: bulkPush, completed: true)
+        // they need their own push or a bulk mark-as-played never leaves this device. Deliberately
+        // unfiltered, matching Android: the user asked for these episodes to be played, so that is
+        // the fact to publish even for ones already played here, otherwise a stale not-completed row
+        // written elsewhere survives and the reconcile undoes the action later. The current episode
+        // is excluded only because markAsPlayed below pushes it individually.
+        if !episodesMinusCurrent.isEmpty {
+            PodHopperPositionSync.shared.pushPlayedState(episodes: episodesMinusCurrent, completed: true)
         }
 
         if let currentEpisode = currentEpisodeToMarkAsPlayed {
@@ -180,15 +178,11 @@ class EpisodeManager: NSObject {
     }
 
     class func bulkMarkAsUnPlayed(_ baseEpisodes: [BaseEpisode]) {
-        // PodHopper: capture what changes before the write, stamp the timestamps, and push, for the
-        // same reasons as the bulk mark-as-played path above.
-        let episodesToPush = baseEpisodes.filter { $0.playingStatus != PlayingStatus.notPlayed.rawValue }
-
+        // PodHopper: stamp the timestamps and push, unfiltered, for the same reasons as the bulk
+        // mark-as-played path above.
         DataManager.sharedManager.bulkMarkAsUnPlayed(baseEpisodes: baseEpisodes, updateSyncFlag: true)
 
-        if !episodesToPush.isEmpty {
-            PodHopperPositionSync.shared.pushPlayedState(episodes: episodesToPush, completed: false)
-        }
+        PodHopperPositionSync.shared.pushPlayedState(episodes: baseEpisodes, completed: false)
 
         NotificationCenter.postOnMainThread(notification: Constants.Notifications.manyEpisodesChanged)
 
