@@ -145,23 +145,32 @@ public final class PodHopperPositionSync {
         let podcastUuid = (episode as? Episode)?.podcastUuid
 
         workQueue.async {
+            // Built from local data only, deliberately without the user id. Resolving the user id
+            // refreshes the auth session over the network, so it throws while offline and returns
+            // nothing at all after a process restart, which is exactly when this row needs saving.
+            // The id is stamped at send time, when the device is by definition online.
+            let feedUrl = podcastUuid.flatMap { self.dataManager.findPodcast(uuid: $0, includeUnsubscribed: true)?.podcastUrl }
+            let row: [String: Any] = [
+                "episode_key": episodeKey,
+                "episode_url": episodeUrl ?? NSNull(),
+                "position_sec": positionSec,
+                "total_sec": totalSec,
+                "feed_url": feedUrl ?? NSNull(),
+                "device_id": self.installId(),
+                "device_name": self.deviceName(),
+                "updated_at_ms": now,
+            ]
             do {
-                guard let userId = try self.supabase.getUserId() else { return }
-                let feedUrl = podcastUuid.flatMap { self.dataManager.findPodcast(uuid: $0, includeUnsubscribed: true)?.podcastUrl }
-                let row: [String: Any] = [
-                    "user_id": userId,
-                    "episode_key": episodeKey,
-                    "episode_url": episodeUrl ?? NSNull(),
-                    "position_sec": positionSec,
-                    "total_sec": totalSec,
-                    "feed_url": feedUrl ?? NSNull(),
-                    "device_id": self.installId(),
-                    "device_name": self.deviceName(),
-                    "updated_at_ms": now,
-                ]
-                try self.supabase.upsert(table: Self.table, onConflictColumns: "user_id,episode_key", rows: [row])
+                guard let userId = try self.supabase.getUserId() else {
+                    self.enqueuePending([row])
+                    return
+                }
+                var wire = row
+                wire["user_id"] = userId
+                try self.supabase.upsert(table: Self.table, onConflictColumns: "user_id,episode_key", rows: [wire])
             } catch {
-                FileLog.shared.addMessage("PodHopper position push failed, will retry next cycle: \(error)")
+                self.enqueuePending([row])
+                FileLog.shared.addMessage("PodHopper position push failed, queued for retry: \(error)")
             }
         }
     }
@@ -215,38 +224,50 @@ public final class PodHopperPositionSync {
         let now = nowMs()
 
         workQueue.async {
+            let deviceId = self.installId()
+            let deviceName = self.deviceName()
+            // Built without the user id for the same reason as pushPosition: it is unavailable
+            // offline, which is precisely when these rows need to survive.
+            let rows: [[String: Any]] = snapshots.map { snapshot in
+                let feedUrl = snapshot.podcastUuid.flatMap { self.dataManager.findPodcast(uuid: $0, includeUnsubscribed: true)?.podcastUrl }
+                return [
+                    "episode_key": snapshot.key,
+                    "episode_url": snapshot.url ?? NSNull(),
+                    "position_sec": completed ? snapshot.totalSec : 0,
+                    "total_sec": snapshot.totalSec,
+                    "completed": completed,
+                    "feed_url": feedUrl ?? NSNull(),
+                    "device_id": deviceId,
+                    "device_name": deviceName,
+                    "updated_at_ms": now,
+                ]
+            }
             do {
-                guard let userId = try self.supabase.getUserId() else { return }
-                let deviceId = self.installId()
-                let deviceName = self.deviceName()
-                let rows: [[String: Any]] = snapshots.map { snapshot in
-                    let feedUrl = snapshot.podcastUuid.flatMap { self.dataManager.findPodcast(uuid: $0, includeUnsubscribed: true)?.podcastUrl }
-                    return [
-                        "user_id": userId,
-                        "episode_key": snapshot.key,
-                        "episode_url": snapshot.url ?? NSNull(),
-                        "position_sec": completed ? snapshot.totalSec : 0,
-                        "total_sec": snapshot.totalSec,
-                        "completed": completed,
-                        "feed_url": feedUrl ?? NSNull(),
-                        "device_id": deviceId,
-                        "device_name": deviceName,
-                        "updated_at_ms": now,
-                    ]
+                guard let userId = try self.supabase.getUserId() else {
+                    self.enqueuePending(rows)
+                    return
                 }
                 var start = 0
                 while start < rows.count {
                     let end = min(start + Self.pushChunkSize, rows.count)
                     let chunk = Array(rows[start ..< end])
                     do {
-                        try self.supabase.upsert(table: Self.table, onConflictColumns: "user_id,episode_key", rows: chunk)
+                        let wire = chunk.map { row -> [String: Any] in
+                            var copy = row
+                            copy["user_id"] = userId
+                            return copy
+                        }
+                        try self.supabase.upsert(table: Self.table, onConflictColumns: "user_id,episode_key", rows: wire)
                     } catch {
-                        FileLog.shared.addMessage("PodHopper played-state push chunk failed, continuing with the remaining chunks: \(error)")
+                        // Only the failed chunk is queued; the remaining chunks still go.
+                        self.enqueuePending(chunk)
+                        FileLog.shared.addMessage("PodHopper played-state push chunk failed, queued for retry: \(error)")
                     }
                     start = end
                 }
             } catch {
-                FileLog.shared.addMessage("PodHopper played-state push failed, will retry on the next change: \(error)")
+                self.enqueuePending(rows)
+                FileLog.shared.addMessage("PodHopper played-state push failed, queued for retry: \(error)")
             }
         }
     }
@@ -307,6 +328,14 @@ public final class PodHopperPositionSync {
             } catch {
                 FileLog.shared.addMessage("PodHopper position pull failed: \(error)")
             }
+
+            // Publish anything an earlier push could not send. Deliberately after the pull, never
+            // before: a device that acted offline holds queued rows that are newer by timestamp than
+            // anything on the backend, so draining first would overwrite another device's state and
+            // then pull back the row it had just replaced, finding nothing new. Read before
+            // publishing. Outside the catch above so a failed pull does not skip the drain, and
+            // self-contained so a drain failure can never stop the sync around it.
+            self.drainPendingPushes()
         }
     }
 
@@ -744,6 +773,150 @@ public final class PodHopperPositionSync {
         }
     }
 
+    // MARK: Pending push queue
+
+    /// Saves rows a push could not send. One entry per episode, so a queue built over a long offline
+    /// stretch stays proportional to the episodes touched rather than the actions taken.
+    ///
+    /// A later row for the same episode is merged over the earlier one rather than replacing it: a
+    /// position sample omits the completed column, and replacing would silently discard a completion
+    /// queued moments earlier. An older row never overwrites a newer one.
+    private func enqueuePending(_ rows: [[String: Any]]) {
+        if rows.isEmpty {
+            return
+        }
+        var pending = readPending()
+        for row in rows {
+            guard let key = row["episode_key"] as? String, !key.isEmpty else { continue }
+            let newTs = (row["updated_at_ms"] as? NSNumber)?.int64Value ?? 0
+            guard var existing = pending[key] else {
+                pending[key] = row
+                continue
+            }
+            let existingTs = (existing["updated_at_ms"] as? NSNumber)?.int64Value ?? 0
+            if newTs < existingTs {
+                continue
+            }
+            for (field, value) in row {
+                existing[field] = value
+            }
+            pending[key] = existing
+        }
+
+        if pending.count > Self.maxPending {
+            let oldestFirst = pending.sorted { lhs, rhs in
+                ((lhs.value["updated_at_ms"] as? NSNumber)?.int64Value ?? 0) < ((rhs.value["updated_at_ms"] as? NSNumber)?.int64Value ?? 0)
+            }
+            let dropCount = pending.count - Self.maxPending
+            for entry in oldestFirst.prefix(dropCount) {
+                pending.removeValue(forKey: entry.key)
+            }
+        }
+        writePending(pending)
+    }
+
+    /// Sends queued rows, stamping the user id now that the device is online. Never throws: a retry
+    /// queue is an addition to sync, never a precondition for it.
+    ///
+    /// Each row is checked against what the backend currently holds and dropped when the backend is
+    /// already at least as new. The upsert is unconditional and the database's own last-writer-wins
+    /// trigger cannot help here, because the server stamps every incoming row with the current time,
+    /// so without this check a queued row would overwrite a newer write from another device: finish
+    /// an episode offline on the phone, replay it in the car, and the phone would re-complete it on
+    /// reconnect.
+    private func drainPendingPushes() {
+        let pending = readPending()
+        if pending.isEmpty {
+            return
+        }
+        do {
+            guard let userId = try supabase.getUserId() else {
+                return
+            }
+
+            // Episode keys go straight into a query string, and the client force unwraps
+            // URL(string:), so a key carrying a character that is illegal in a URL would crash
+            // rather than fail. Every key this app generates is a hyphenated hex uuid, so this
+            // filter should never exclude anything; a key that somehow does is left queued rather
+            // than sent blind, because without a backend comparison it could overwrite newer state.
+            let safeKeyCharacters = CharacterSet(charactersIn: "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789-")
+            let keys = pending.keys.filter { key in
+                !key.isEmpty && key.rangeOfCharacter(from: safeKeyCharacters.inverted) == nil
+            }
+            if keys.count != pending.count {
+                FileLog.shared.addMessage("PodHopper pending push drain: \(pending.count - keys.count) queued row(s) have an unexpected episode key and are being held back")
+            }
+            if keys.isEmpty {
+                return
+            }
+
+            var backendTs = [String: Int64]()
+            var looked = 0
+            while looked < keys.count {
+                let end = min(looked + Self.pendingLookupChunkSize, keys.count)
+                let list = keys[looked ..< end].joined(separator: ",")
+                let rows = try supabase.select(table: Self.table, query: "select=episode_key,updated_at_ms&episode_key=in.(\(list))")
+                for row in rows {
+                    guard let key = row["episode_key"] as? String else { continue }
+                    backendTs[key] = (row["updated_at_ms"] as? NSNumber)?.int64Value ?? 0
+                }
+                looked = end
+            }
+
+            var remaining = pending
+            var sendable = [[String: Any]]()
+            for key in keys {
+                guard let row = pending[key] else { continue }
+                let ourTs = (row["updated_at_ms"] as? NSNumber)?.int64Value ?? 0
+                if let theirs = backendTs[key], theirs >= ourTs {
+                    remaining.removeValue(forKey: key)
+                    continue
+                }
+                var wire = row
+                wire["user_id"] = userId
+                sendable.append(wire)
+            }
+
+            var sent = 0
+            while sent < sendable.count {
+                let end = min(sent + Self.pushChunkSize, sendable.count)
+                let chunk = Array(sendable[sent ..< end])
+                do {
+                    try supabase.upsert(table: Self.table, onConflictColumns: "user_id,episode_key", rows: chunk)
+                    for row in chunk {
+                        if let key = row["episode_key"] as? String {
+                            remaining.removeValue(forKey: key)
+                        }
+                    }
+                } catch {
+                    // Only this batch stays queued.
+                    FileLog.shared.addMessage("PodHopper pending push batch failed, staying queued: \(error)")
+                }
+                sent = end
+            }
+            writePending(remaining)
+        } catch {
+            // Everything stays queued for the next sync.
+            FileLog.shared.addMessage("PodHopper pending push drain failed, staying queued: \(error)")
+        }
+    }
+
+    private func readPending() -> [String: [String: Any]] {
+        guard let data = defaults.data(forKey: Self.pendingKey) else { return [:] }
+        let parsed = (try? JSONSerialization.jsonObject(with: data)) as? [String: [String: Any]]
+        return parsed ?? [:]
+    }
+
+    private func writePending(_ pending: [String: [String: Any]]) {
+        if pending.isEmpty {
+            defaults.removeObject(forKey: Self.pendingKey)
+            return
+        }
+        if let data = try? JSONSerialization.data(withJSONObject: pending) {
+            defaults.set(data, forKey: Self.pendingKey)
+        }
+    }
+
     private func readParked() -> [String: [String: Any]] {
         guard let data = defaults.data(forKey: Self.parkedKey) else { return [:] }
         let parsed = (try? JSONSerialization.jsonObject(with: data)) as? [String: [String: Any]]
@@ -815,6 +988,7 @@ public final class PodHopperPositionSync {
         defaults.removeObject(forKey: Self.lastPullMsKey)
         defaults.removeObject(forKey: Self.parkedKey)
         defaults.removeObject(forKey: Self.completionsCursorKey)
+        defaults.removeObject(forKey: Self.pendingKey)
     }
 
     // MARK: Applying-uuid set
@@ -851,12 +1025,15 @@ public final class PodHopperPositionSync {
     private static let lastPullMsKey = "last_pull_ms"
     private static let completionsCursorKey = "completions_cursor_ms"
     private static let parkedKey = "parked_rows"
+    private static let pendingKey = "pending_pushes"
     private static let minPushIntervalMs: Int64 = 4000
     private static let playPullTimeoutMs: Int64 = 5000
     private static let reconcileMinIntervalMs: Int64 = 5000
     private static let adoptScanLimit = 10
     private static let firstSyncSentinel: Int64 = -1
     private static let maxParked = 500
+    private static let maxPending = 500
+    private static let pendingLookupChunkSize = 50
     private static let pushChunkSize = 100
     private static let applyBreakerWindowMs: Int64 = 3_600_000
     private static let applyBreakerMaxApplies = 6
