@@ -3,11 +3,6 @@ import PocketCastsUtils
 import SwiftUI
 
 struct AboutView: View {
-    private let logoCellHeight: CGFloat = 120
-    private let familyCellHeight: CGFloat = 160
-    private let logoOffsetAmount: CGFloat = 30
-    private let familyCellTopPadding: CGFloat = 6
-
     @EnvironmentObject var theme: Theme
 
     @ObservedObject private var model = AboutViewModel()
@@ -78,12 +73,6 @@ struct AboutView: View {
         SharingHelper.shared.shareLinkToApp(fromController: controller)
     }
 
-    private func calculateLogoSize(geometry: GeometryProxy) -> CGFloat {
-        let sizeToFit = geometry.size.width / CGFloat(AboutLogo.allCases.count) * 1.4
-
-        return sizeToFit.clamped(to: 45 ..< 80)
-    }
-
     private func openUrl(_ urlStr: String) {
         guard let url = URL(string: urlStr) else { return }
 
@@ -91,30 +80,6 @@ struct AboutView: View {
         if application.canOpenURL(url) {
             application.open(url, options: [:], completionHandler: nil)
         }
-    }
-}
-
-struct LogoView: View {
-    @EnvironmentObject var theme: Theme
-
-    private let maxRotationDegrees: Double = 30
-
-    var logo: AboutLogo
-    var index: Int
-    var logoSize: CGFloat
-    var logoOffset: CGFloat
-
-    var body: some View {
-        ZStack {
-            Circle()
-                .foregroundColor(logo.color)
-            Image(logo.logoName)
-                .rotationEffect(logo.randomRotation(maxDegrees: maxRotationDegrees))
-                .tint(logo.logoTint(onDark: theme.activeTheme.isDark))
-        }
-        .offset(x: -logoOffset * CGFloat(index), y: index % 2 == 0 ? -logoOffset : logoOffset)
-        .frame(width: logoSize, height: logoSize)
-        .accessibilityLabel(logo.description)
     }
 }
 

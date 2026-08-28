@@ -574,7 +574,6 @@
 		BD674B0B1F68F2BD00AC1B2B /* PlaylistManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD674B0A1F68F2BD00AC1B2B /* PlaylistManager.swift */; };
 		BD69EBBC1CD1D383007F273B /* SocialsHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD69EBBB1CD1D383007F273B /* SocialsHelper.swift */; };
 		BD6B1F011CE05159003CE958 /* AnalyticsHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD6B1F001CE05159003CE958 /* AnalyticsHelper.swift */; };
-		BD6B432A2755F516005E4017 /* AboutViewLogos.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD6B43292755F516005E4017 /* AboutViewLogos.swift */; };
 		BD6B432C27561EA8005E4017 /* PCHostingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD6B432B27561EA8005E4017 /* PCHostingController.swift */; };
 		BD6B664B245BC24C00CF5245 /* AppIcon-Pocket-Cats20x20@2x~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = BD6B6639245BC24900CF5245 /* AppIcon-Pocket-Cats20x20@2x~ipad.png */; };
 		BD6B664C245BC24C00CF5245 /* AppIcon-Pocket-Cats20x20@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = BD6B663A245BC24900CF5245 /* AppIcon-Pocket-Cats20x20@3x.png */; };
@@ -1984,7 +1983,6 @@
 		BD674B0A1F68F2BD00AC1B2B /* PlaylistManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaylistManager.swift; sourceTree = "<group>"; };
 		BD69EBBB1CD1D383007F273B /* SocialsHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SocialsHelper.swift; sourceTree = "<group>"; };
 		BD6B1F001CE05159003CE958 /* AnalyticsHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = AnalyticsHelper.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
-		BD6B43292755F516005E4017 /* AboutViewLogos.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutViewLogos.swift; sourceTree = "<group>"; };
 		BD6B432B27561EA8005E4017 /* PCHostingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PCHostingController.swift; sourceTree = "<group>"; };
 		BD6B6639245BC24900CF5245 /* AppIcon-Pocket-Cats20x20@2x~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "AppIcon-Pocket-Cats20x20@2x~ipad.png"; sourceTree = "<group>"; };
 		BD6B663A245BC24900CF5245 /* AppIcon-Pocket-Cats20x20@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "AppIcon-Pocket-Cats20x20@3x.png"; sourceTree = "<group>"; };
@@ -4512,7 +4510,6 @@
 			children = (
 				BD9CF8C1281FC6970000F29A /* AboutViewModel.swift */,
 				BD9F2FD527549BA300070958 /* AboutView.swift */,
-				BD6B43292755F516005E4017 /* AboutViewLogos.swift */,
 				BD27B8C82756FA20007A0EA7 /* ModalCloseButton.swift */,
 				4007B04A230E1FB4008DDCF5 /* WhatsNewViewController.swift */,
 				4007B04B230E1FB4008DDCF5 /* WhatsNewViewController.xib */,
@@ -6616,7 +6613,6 @@
 				BD40987C1B9ED731007F36BD /* SynchronizedAudioStack.swift in Sources */,
 				BD8032D32123EAD600BFBB03 /* EffectsButton.swift in Sources */,
 				BD86D94F217EB81C0010FA1B /* FilterDownloadCell.swift in Sources */,
-				BD6B432A2755F516005E4017 /* AboutViewLogos.swift in Sources */,
 				462EE0AD26FCC081003D67DC /* ZenDeskHelpers.swift in Sources */,
 				403B5B0621812E6000821A54 /* AppDelegate+SiriShortcuts.swift in Sources */,
 				BD2F3BA42366C0F900416633 /* PlayerContainerViewController+Gestures.swift in Sources */,
