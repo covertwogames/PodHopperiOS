@@ -2474,7 +2474,6 @@
 		3FDAD4F62F46D77800CC3259 /* PodcastsIntentsUI */ = {isa = PBXFileSystemSynchronizedRootGroup; exceptions = (3FDAD4FA2F46D77800CC3259 /* PBXFileSystemSynchronizedBuildFileExceptionSet */, ); explicitFileTypes = {}; explicitFolders = (); path = PodcastsIntentsUI; sourceTree = "<group>"; };
 		3FDAD4FC2F46D78600CC3259 /* Screenshot Automation Watch */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = "Screenshot Automation Watch"; sourceTree = "<group>"; };
 		3FDAD5042F46D78E00CC3259 /* Share Extension */ = {isa = PBXFileSystemSynchronizedRootGroup; exceptions = (3FDAD5072F46D78E00CC3259 /* PBXFileSystemSynchronizedBuildFileExceptionSet */, ); explicitFileTypes = {}; explicitFolders = (); path = "Share Extension"; sourceTree = "<group>"; };
-		3FDAD5122F46D79100CC3259 /* Pocket Casts App Clip */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = "Pocket Casts App Clip"; sourceTree = "<group>"; };
 		3FDAD5A22F46D82100CC3259 /* Test Plans */ = {isa = PBXFileSystemSynchronizedRootGroup; exceptions = (3FDAD5A42F46D82200CC3259 /* PBXFileSystemSynchronizedBuildFileExceptionSet */, ); explicitFileTypes = {}; explicitFolders = (); path = "Test Plans"; sourceTree = "<group>"; };
 		FAB1E0001C0DEBA5E0000001 /* PodHopper */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = PodHopper; sourceTree = "<group>"; };
 /* End PBXFileSystemSynchronizedRootGroup section */
@@ -3976,7 +3975,6 @@
 				3FDAD4FC2F46D78600CC3259 /* Screenshot Automation Watch */,
 				3F26BB7B2F4FC23E0007119B /* PocketCastsTests */,
 				3FDAD5042F46D78E00CC3259 /* Share Extension */,
-				3FDAD5122F46D79100CC3259 /* Pocket Casts App Clip */,
 				BDBD53EE17019B2A0048C8C5 /* Frameworks */,
 				BDBD53ED17019B2A0048C8C5 /* Products */,
 			);
