@@ -116,6 +116,7 @@ final class PodHopperAuthViewModel: ObservableObject {
         // Clear both sync engines so the next account starts clean.
         PodHopperPositionSync.shared.clearLocalSyncState()
         PodHopperSubscriptionSync.shared.clearLocalSyncState()
+        PodHopperUpNextSync.shared.clearLocalSyncState()
         onClose?()
     }
 

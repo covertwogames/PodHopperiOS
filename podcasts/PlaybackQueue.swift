@@ -277,6 +277,10 @@ class PlaybackQueue: NSObject {
         saveReplaceIfRequired()
 
         NotificationCenter.postOnMainThread(notification: Constants.Notifications.upNextQueueChanged)
+
+        // PodHopper: this path does not go through refreshAppFiring, so without this a cleared
+        // queue would never publish and the other devices would keep the old list.
+        startSyncTimer()
     }
 
     func clearUpNextList() {
@@ -290,6 +294,9 @@ class PlaybackQueue: NSObject {
         saveReplaceIfRequired()
 
         NotificationCenter.postOnMainThread(notification: Constants.Notifications.upNextQueueChanged)
+
+        // PodHopper: same gap as removeAllEpisodes above.
+        startSyncTimer()
     }
 
     func refreshList(checkForAutoDownload: Bool) {
@@ -481,6 +488,9 @@ class PlaybackQueue: NSObject {
             return
         }
 
-        RefreshManager.shared.syncUpNext()
+        // PodHopper: the Pocket Casts Up Next sync this used to call is dead (it returns
+        // immediately without a Pocket Casts login), so the timer drives the PodHopper queue push
+        // instead. Signature gated, so an unchanged queue costs nothing.
+        PodHopperUpNextSync.shared.pushIfChanged()
     }
 }

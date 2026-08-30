@@ -336,6 +336,10 @@ public final class PodHopperPositionSync {
             // publishing. Outside the catch above so a failed pull does not skip the drain, and
             // self-contained so a drain failure can never stop the sync around it.
             self.drainPendingPushes()
+
+            // Queue sync rides the same cycle, after positions have settled. Self contained, so a
+            // failure in it cannot affect position or completion sync.
+            PodHopperUpNextSync.shared.sync()
         }
     }
 
@@ -960,6 +964,17 @@ public final class PodHopperPositionSync {
             return 0
         }
         return (first["updated_at_ms"] as? NSNumber)?.int64Value ?? 0
+    }
+
+    /// This device's install id, shared with the other PodHopper sync engines so every table
+    /// records the same device rather than each engine minting its own identity.
+    public func deviceInstallId() -> String {
+        installId()
+    }
+
+    /// This device's display name, shared with the other PodHopper sync engines.
+    public func deviceDisplayName() -> String {
+        deviceName()
     }
 
     private func installId() -> String {
