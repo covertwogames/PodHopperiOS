@@ -114,10 +114,34 @@ public final class PodHopperUpNextSync {
         do {
             let rows = try supabase.select(table: Self.table, query: "select=episodes,updated_at_ms&limit=1")
             guard let row = rows.first else {
-                // No row yet: this account has never published a queue. Nothing to apply, and the
-                // signature stays unset so a fresh device still reads before it writes.
+                // No row at all. Asking and being told there is nothing is itself a completed
+                // reconcile, and it is the one state it is safe to publish from, so record an empty
+                // signature. Without this the first row can never be created: the push waits for a
+                // reconcile that can never happen against an empty table. Only when no signature
+                // exists yet, so a device whose row was deleted keeps its own and republishes on its
+                // next local change rather than immediately.
+                if readSignature() == nil {
+                    writeSignature([])
+                }
                 return
             }
+
+            let remoteTs = (row["updated_at_ms"] as? NSNumber)?.int64Value ?? 0
+
+            // The pull always runs before the push, so without this an unpublished local edit would
+            // be discarded simply because of that ordering, not because the remote was newer. The
+            // stamp is only set while this device is genuinely ahead of the backend and is cleared
+            // the moment it catches up, so it cannot block a legitimate remote update.
+            //
+            // A signature must already exist for the stamp to count. A device that has never
+            // reconciled has to read first no matter how recently its queue changed, otherwise a
+            // queue built locally before the first pull would make that device refuse the backend's
+            // queue forever.
+            if readSignature() != nil, let localChangeMs = readLocalChangeMs(), remoteTs > 0, localChangeMs > remoteTs {
+                FileLog.shared.addMessage("PodHopper up next: holding a newer unpublished local queue, skipping this remote copy")
+                return
+            }
+
             let raw = (row["episodes"] as? [[String: Any]]) ?? []
             let entries = raw.compactMap { Entry(json: $0) }
             applyRemoteQueue(entries)
@@ -233,7 +257,14 @@ public final class PodHopperUpNextSync {
 
         // Nothing changed since the last reconcile, so there is nothing to publish. This also makes
         // an echo impossible: a queue that was just applied equals its own signature.
-        if signature == localUuids { return }
+        //
+        // The stamp is cleared here as well as on success. An edit that is later undone leaves this
+        // device level with the backend while a stamp is still recorded, and without this clear that
+        // stamp would sit set forever and silently refuse every remote queue from then on.
+        if signature == localUuids {
+            clearLocalChangeMs()
+            return
+        }
 
         var entries = localEpisodes.map { entry(for: $0) }
 
@@ -256,6 +287,8 @@ public final class PodHopperUpNextSync {
             ]
             try supabase.upsert(table: Self.table, onConflictColumns: "user_id", rows: [row])
             writeSignature(localUuids)
+            // Published, so this device is no longer ahead of the backend.
+            clearLocalChangeMs()
         } catch {
             // Left unsignatured on purpose: the next sync sees the list still differs and retries.
             FileLog.shared.addMessage("PodHopper up next push failed, will retry on the next change: \(error)")
@@ -283,6 +316,39 @@ public final class PodHopperUpNextSync {
     }
 
     // MARK: Local state
+
+    /// Records that this device's queue just changed locally, so a pull arriving before the change
+    /// is published cannot discard it.
+    ///
+    /// Called from the queue's own change trigger rather than from the push, because the push is
+    /// debounced by several seconds and an edit followed by the app being backgrounded would
+    /// otherwise never be stamped at all.
+    ///
+    /// This is deliberately not called from the apply path, and does not need to be: applying a
+    /// remote queue writes its rows straight through DataManager rather than through PlaybackQueue's
+    /// mutation methods, so it never reaches this trigger. If the apply is ever rewritten to go
+    /// through PlaybackQueue, it must exclude itself here, or the device will claim to be ahead of
+    /// the backend the instant it accepts an update and start refusing the queues it just took.
+    ///
+    /// The comparison this feeds comes down to one device's clock against another's, which is the
+    /// same assumption the position sync already makes and is fine for network-synced devices.
+    public func noteLocalChange() {
+        #if os(watchOS)
+        // The Watch never pulls or pushes, so a stamp written here would never be read.
+        return
+        #else
+        defaults.set(NSNumber(value: nowMs()), forKey: Self.localChangeKey)
+        #endif
+    }
+
+    private func readLocalChangeMs() -> Int64? {
+        guard let value = defaults.object(forKey: Self.localChangeKey) as? NSNumber else { return nil }
+        return value.int64Value
+    }
+
+    private func clearLocalChangeMs() {
+        defaults.removeObject(forKey: Self.localChangeKey)
+    }
 
     /// The uuid list this device last reconciled with the backend. Absent until the first pull.
     private func readSignature() -> [String]? {
@@ -325,6 +391,7 @@ public final class PodHopperUpNextSync {
     public func clearLocalSyncState() {
         defaults.removeObject(forKey: Self.signatureKey)
         defaults.removeObject(forKey: Self.heldKey)
+        defaults.removeObject(forKey: Self.localChangeKey)
     }
 
     private func nowMs() -> Int64 {
@@ -334,4 +401,5 @@ public final class PodHopperUpNextSync {
     private static let table = "up_next_queue"
     private static let signatureKey = "up_next_signature"
     private static let heldKey = "up_next_held"
+    private static let localChangeKey = "up_next_local_change_ms"
 }
