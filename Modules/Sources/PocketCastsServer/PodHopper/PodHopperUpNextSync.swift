@@ -20,6 +20,7 @@ public final class PodHopperUpNextSync {
 
     private let supabase: PodHopperSupabaseClient
     private let dataManager: DataManager
+    private let feedManager: PodHopperFeedManager
     private let defaults: UserDefaults
 
     private let workQueue = DispatchQueue(label: "au.com.podhopper.upnextsync", qos: .utility)
@@ -28,10 +29,12 @@ public final class PodHopperUpNextSync {
     public init(
         supabase: PodHopperSupabaseClient = .shared,
         dataManager: DataManager = .sharedManager,
+        feedManager: PodHopperFeedManager = .shared,
         defaults: UserDefaults = UserDefaults(suiteName: PodHopperPositionSync.suiteName) ?? .standard
     ) {
         self.supabase = supabase
         self.dataManager = dataManager
+        self.feedManager = feedManager
         self.defaults = defaults
     }
 
@@ -223,11 +226,27 @@ public final class PodHopperUpNextSync {
 
             // Nothing was sent and the queue has not moved since this device last applied it.
             if sending.isEmpty, let applied = readVersion(), applied == version {
-                return
+                // The backend has not moved, but an entry this device could not build last time may
+                // have arrived since, which is how a device recovers once a feed refresh brings the
+                // episode in. Local lookups only: no network, and no write when nothing changed, so
+                // this cannot feed itself. The probe uses the same lookup the apply uses, because a
+                // probe that disagreed with the apply would either never retry or never stop.
+                let unresolved = readUnresolved()
+                let recovered = unresolved.contains { dataManager.findBaseEpisode(uuid: $0) != nil }
+                if !recovered {
+                    return
+                }
+                FileLog.shared.addMessage("PodHopper up next: a previously missing episode has arrived, re-applying version \(version)")
             }
 
-            applyRemoteQueue(entries)
+            // The version records what the backend was; the unresolved list records what this device
+            // could not build from it. Keeping them separate is what lets the device retry only the
+            // missing entries. Simply not recording the version would loop instead: the apply emits
+            // a queue change, which triggers a push, which syncs and applies again, forever on a
+            // device holding an entry that can never resolve.
+            let stillUnresolved = applyRemoteQueue(entries)
             writeVersion(version)
+            writeUnresolved(stillUnresolved)
         } catch {
             // Actions stay recorded for the next sync.
             FileLog.shared.addMessage("PodHopper up next sync failed, \(sending.count) action(s) still queued: \(error)")
@@ -242,18 +261,21 @@ public final class PodHopperUpNextSync {
     /// use behind it: existing entries are moved rather than rebuilt, and the queue is snapshotted
     /// before it changes. Entries this device cannot resolve are skipped for display only. Nothing
     /// is lost by skipping them, because this device never sends a list and so cannot delete them.
-    private func applyRemoteQueue(_ remoteEntries: [Entry]) {
-        guard let playback = ServerConfig.shared.playbackDelegate else { return }
+    @discardableResult
+    private func applyRemoteQueue(_ remoteEntries: [Entry]) -> [String] {
+        guard let playback = ServerConfig.shared.playbackDelegate else { return [] }
 
         let localUuids = playback.allEpisodesInQueue(includeNowPlaying: true).map { $0.uuid }
         let entries = preservePlayingEpisode(remoteEntries, playback: playback)
 
-        if entries.map({ $0.uuid }) == localUuids { return }
+        // Identical lists mean every entry resolved, so nothing is outstanding.
+        if entries.map({ $0.uuid }) == localUuids { return [] }
 
         dataManager.snapshotUpNext()
 
         let episodePlayingBefore = playback.currentEpisode()
         var resolvedUuids = [String]()
+        var unresolvedUuids = [String]()
 
         for (index, entry) in entries.enumerated() {
             if let existing = dataManager.findPlaylistEpisode(uuid: entry.uuid) {
@@ -265,7 +287,20 @@ public final class PodHopperUpNextSync {
                 continue
             }
 
-            if let localEpisode = dataManager.findBaseEpisode(uuid: entry.uuid) {
+            var localEpisode = dataManager.findBaseEpisode(uuid: entry.uuid)
+
+            if localEpisode == nil, let feedUrl = entry.feedUrl, !feedUrl.isEmpty {
+                // Not known here, so fetch the podcast it belongs to and look again. Without this an
+                // episode queued from a podcast this device has never seen could never be shown, no
+                // matter how many times it synced. Note this only helps a genuinely unknown podcast:
+                // the fetch returns immediately when the podcast already exists, so an episode from
+                // a subscribed show that simply has not been fetched yet stays outstanding here and
+                // is recovered by the retry above once a feed refresh brings it in.
+                _ = feedManager.addFeedUrlAsUnsubscribed(feedUrl)
+                localEpisode = dataManager.findBaseEpisode(uuid: entry.uuid)
+            }
+
+            if let localEpisode {
                 let newEpisode = PlaylistEpisode()
                 newEpisode.episodePosition = Int32(index)
                 newEpisode.episodeUuid = entry.uuid
@@ -273,6 +308,8 @@ public final class PodHopperUpNextSync {
                 newEpisode.title = localEpisode.displayableTitle()
                 dataManager.save(playlistEpisode: newEpisode)
                 resolvedUuids.append(entry.uuid)
+            } else {
+                unresolvedUuids.append(entry.uuid)
             }
         }
 
@@ -288,6 +325,11 @@ public final class PodHopperUpNextSync {
         } else if episodePlayingBefore != nil, resolvedUuids.isEmpty {
             playback.playingEpisodeChangedExternally()
         }
+
+        let note = unresolvedUuids.isEmpty ? "" : ", \(unresolvedUuids.count) could not be built yet and will be retried when their episodes arrive"
+        FileLog.shared.addMessage("PodHopper up next applied \(resolvedUuids.count) episode(s)\(note)")
+
+        return unresolvedUuids
     }
 
     /// Keeps the episode playing right now at the head, applying the backend's order behind it, so a
@@ -331,6 +373,20 @@ public final class PodHopperUpNextSync {
         }
     }
 
+    /// The entries the last apply could not build. Kept next to the version so the device can retry
+    /// just those without re-applying a queue that has not changed.
+    private func readUnresolved() -> [String] {
+        (defaults.array(forKey: Self.unresolvedKey) as? [String]) ?? []
+    }
+
+    private func writeUnresolved(_ uuids: [String]) {
+        if uuids.isEmpty {
+            defaults.removeObject(forKey: Self.unresolvedKey)
+            return
+        }
+        defaults.set(uuids, forKey: Self.unresolvedKey)
+    }
+
     private func readVersion() -> Int64? {
         (defaults.object(forKey: Self.versionKey) as? NSNumber)?.int64Value
     }
@@ -343,10 +399,12 @@ public final class PodHopperUpNextSync {
     public func clearLocalSyncState() {
         defaults.removeObject(forKey: Self.actionsKey)
         defaults.removeObject(forKey: Self.versionKey)
+        defaults.removeObject(forKey: Self.unresolvedKey)
     }
 
     private static let function = "apply_up_next_actions"
     private static let actionsKey = "up_next_actions"
     private static let versionKey = "up_next_version"
+    private static let unresolvedKey = "up_next_unresolved"
     private static let maxPendingActions = 500
 }
