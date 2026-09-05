@@ -199,6 +199,7 @@ class WatchManager: NSObject, WCSessionDelegate {
             }
         } else if WatchConstants.Messages.ClearUpNextRequest.type == messageType {
             PlaybackManager.shared.queue.clearUpNextList()
+            PodHopperUpNextSync.shared.replace(episodes: PlaybackManager.shared.queue.allEpisodes(includeNowPlaying: true))
         } else if WatchConstants.Messages.ChangeChapterRequest.type == messageType {
             if let nextChapter = payload[WatchConstants.Messages.ChangeChapterRequest.nextChapter] as? Bool {
                 handleChangeChapter(next: nextChapter)

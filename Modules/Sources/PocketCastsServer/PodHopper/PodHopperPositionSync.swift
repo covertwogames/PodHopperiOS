@@ -337,8 +337,10 @@ public final class PodHopperPositionSync {
             // self-contained so a drain failure can never stop the sync around it.
             self.drainPendingPushes()
 
-            // Queue sync rides the same cycle, after positions have settled. Self contained, so a
-            // failure in it cannot affect position or completion sync.
+            // The queue and the playback position are the same state: the first entry of the queue
+            // is the episode playing. Refreshing them together is what stops a device restoring the
+            // right position inside an episode while showing a queue from some earlier cycle. Self
+            // contained, so a failure here cannot affect position or completion sync.
             PodHopperUpNextSync.shared.sync()
         }
     }

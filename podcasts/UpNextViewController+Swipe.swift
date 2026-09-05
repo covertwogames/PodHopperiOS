@@ -1,4 +1,5 @@
 import Foundation
+import PocketCastsServer
 import PocketCastsDataModel
 import PocketCastsUtils
 import SwipeCellKit
@@ -17,6 +18,7 @@ extension UpNextViewController: SwipeTableViewCellDelegate {
                 Analytics.track(.episodeSwipeActionPerformed, properties: ["action": "up_next_move_up", "source": "up_next"])
 
                 PlaybackManager.shared.queue.move(episode: episode, to: 0, fireNotification: false)
+                PodHopperUpNextSync.shared.replace(episodes: PlaybackManager.shared.queue.allEpisodes(includeNowPlaying: true))
                 self.moveRow(at: indexPath, to: IndexPath(row: 0, section: indexPath.section), in: tableView)
             }
             moveToTopAction.image = UIImage(named: "upnext-movetotop")
@@ -28,6 +30,7 @@ extension UpNextViewController: SwipeTableViewCellDelegate {
 
                 let queueCount = PlaybackManager.shared.queue.upNextCount()
                 PlaybackManager.shared.queue.move(episode: episode, to: queueCount - 1, fireNotification: false)
+                PodHopperUpNextSync.shared.replace(episodes: PlaybackManager.shared.queue.allEpisodes(includeNowPlaying: true))
                 self.moveRow(at: indexPath, to: IndexPath(row: queueCount - 1, section: indexPath.section), in: tableView)
                 Analytics.track(.episodeSwipeActionPerformed, properties: ["action": "up_next_move_down", "source": "up_next"])
             }

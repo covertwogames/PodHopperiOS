@@ -131,6 +131,18 @@ public final class PodHopperSupabaseClient {
         _ = try executeExpectingSuccess(request, retryOnAuthError: true)
     }
 
+    /// Calls a Postgres function through PostgREST. The function runs as the caller, so row level
+    /// security applies exactly as it does to a table request.
+    public func rpc(function: String, body: [String: Any]) throws -> [String: Any] {
+        let url = PodHopperConfig.supabaseURL + "/rest/v1/rpc/" + function
+        var request = try authedRestRequest(url: url)
+        request.httpMethod = "POST"
+        request.httpBody = try JSONSerialization.data(withJSONObject: body)
+        let responseBody = try executeExpectingSuccess(request, retryOnAuthError: true)
+        let parsed = try JSONSerialization.jsonObject(with: Data(responseBody.utf8))
+        return (parsed as? [String: Any]) ?? [:]
+    }
+
     public func select(table: String, query: String) throws -> [[String: Any]] {
         let url = PodHopperConfig.supabaseURL + "/rest/v1/" + table + "?" + query
         var request = try authedRestRequest(url: url)

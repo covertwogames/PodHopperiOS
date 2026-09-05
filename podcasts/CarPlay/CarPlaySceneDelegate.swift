@@ -15,6 +15,11 @@ class CarPlaySceneDelegate: CustomObserver, CPTemplateApplicationSceneDelegate, 
     func templateApplicationScene(_ templateApplicationScene: CPTemplateApplicationScene, didConnect interfaceController: CPInterfaceController) {
         FileLog.shared.addMessage("CarPlay: didConnect")
 
+        // PodHopper: connecting to a car is a wake up for playback state, and the queue is part of
+        // that state rather than something on a slower schedule. Without this the car can show a
+        // queue from whenever it last synced while restoring the correct position in an episode.
+        PodHopperPositionSync.shared.pullLatestPositions()
+
         self.interfaceController = interfaceController
         interfaceController.delegate = self
 

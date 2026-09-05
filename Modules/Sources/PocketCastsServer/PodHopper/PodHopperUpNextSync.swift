@@ -2,20 +2,18 @@ import Foundation
 import PocketCastsDataModel
 import PocketCastsUtils
 
-/// Cross device Up Next queue sync.
+/// Cross device Up Next queue sync, built on server applied actions.
 ///
-/// One row per user holds the whole ordered queue. Two different orderings cannot be meaningfully
-/// merged, so the rule is the same one the position sync uses: freshest write wins, whole list.
+/// Devices do not send the queue. They send what the user did, and the backend applies those
+/// actions in arrival order to the one canonical queue and returns the result. The properties that
+/// matter fall out of that: a device that did nothing has nothing to send and therefore cannot
+/// publish an empty queue over a queue somebody else built, and a device acting on a stale queue has
+/// its action applied on top of the current one rather than replacing it. Device clocks stop
+/// mattering, because ordering is the server's.
 ///
-/// The reconcile logic here is adapted from the Pocket Casts era UpNextSyncTask, which had years of
-/// real use behind it. What changed is the transport (Supabase rather than the Pocket Casts API),
-/// the entry type (a plain struct rather than protobuf), and the treatment of entries this device
-/// cannot resolve, which are now held rather than dropped.
-///
-/// The engine lives in the shared module so the phone and CarPlay (same process) both use it. The
-/// Watch app needs nothing: it renders a snapshot the phone sends over WatchConnectivity, and
-/// WatchManager already reserializes that snapshot when upNextQueueChanged fires, which is exactly
-/// what applying a remote queue posts.
+/// This replaced a whole list model where every device asserted the entire queue and timestamps
+/// decided the winner. That model could not tell "the user cleared their queue" apart from "this
+/// device has nothing because it has not been used", since both are an empty list.
 public final class PodHopperUpNextSync {
 
     public static let shared = PodHopperUpNextSync()
@@ -25,6 +23,7 @@ public final class PodHopperUpNextSync {
     private let defaults: UserDefaults
 
     private let workQueue = DispatchQueue(label: "au.com.podhopper.upnextsync", qos: .utility)
+    private let stateLock = NSLock()
 
     public init(
         supabase: PodHopperSupabaseClient = .shared,
@@ -37,7 +36,7 @@ public final class PodHopperUpNextSync {
     }
 
     /// One queue entry on the wire. Keys are deliberately short and must match Android exactly or
-    /// the two platforms will not interoperate. Every field except the uuid may be null.
+    /// the two platforms will not interoperate. Only the uuid is required.
     struct Entry {
         let uuid: String
         let title: String?
@@ -45,15 +44,6 @@ public final class PodHopperUpNextSync {
         let feedUrl: String?
         let mediaUrl: String?
         let publishedMs: Int64?
-
-        init(uuid: String, title: String?, podcastUuid: String?, feedUrl: String?, mediaUrl: String?, publishedMs: Int64?) {
-            self.uuid = uuid
-            self.title = title
-            self.podcastUuid = podcastUuid
-            self.feedUrl = feedUrl
-            self.mediaUrl = mediaUrl
-            self.publishedMs = publishedMs
-        }
 
         init?(json: [String: Any]) {
             guard let uuid = json["u"] as? String, !uuid.isEmpty else { return nil }
@@ -63,6 +53,18 @@ public final class PodHopperUpNextSync {
             self.feedUrl = json["f"] as? String
             self.mediaUrl = json["m"] as? String
             self.publishedMs = (json["d"] as? NSNumber)?.int64Value
+        }
+
+        init(episode: BaseEpisode, dataManager: DataManager) {
+            uuid = episode.uuid
+            title = episode.displayableTitle()
+            podcastUuid = episode.parentIdentifier()
+            // Populated wherever it is known, unlike Android, which leaves it null for local
+            // episodes. PodHopper resolves podcasts by feed url, so an entry carrying one can be
+            // resolved by a device that has never seen that podcast.
+            feedUrl = dataManager.findPodcast(uuid: episode.parentIdentifier(), includeUnsubscribed: true)?.podcastUrl
+            mediaUrl = episode.downloadUrl
+            publishedMs = episode.publishedDate.map { Int64($0.timeIntervalSince1970 * 1000) }
         }
 
         var json: [String: Any] {
@@ -77,107 +79,181 @@ public final class PodHopperUpNextSync {
         }
     }
 
-    // MARK: Entry point
+    // MARK: Recording what the user did
 
-    /// Pull then push, in that order. Reading before publishing is the same lesson the offline
-    /// outbox taught: a device that reordered offline holds a list that is newer by timestamp than
-    /// anything on the backend, so publishing first would overwrite another device's queue and then
-    /// pull back the row it had just replaced.
+    /// Records a user decision to be sent on the next sync. Only genuine user decisions belong here.
     ///
-    /// Never throws. The queue sync is an addition to the sync cycle, never a precondition for it.
-    public func sync() {
+    /// Deliberately NOT recorded, and each of these would corrupt the account queue if it were:
+    ///
+    /// - Applying the backend's own queue. That path writes PlaylistEpisode rows straight through
+    ///   DataManager and never reaches these call sites, but it is worth naming.
+    /// - Autoplay filling an empty queue, which is the app choosing, not the user.
+    /// - The override inside addToUpNext when nothing is playing. That replaces the local queue with
+    ///   a single episode, which is upstream's own long standing queue wiping bug, and it is exactly
+    ///   the state a car is in after sitting unused for a week.
+    /// - The clear inside endPlayback, which also runs when playback fails and the current episode
+    ///   cannot be fetched. Recording it would wipe the account queue on a network hiccup.
+    public func record(_ action: Action) {
+        #if os(watchOS)
+        // The Watch renders a snapshot the phone sends and never talks to the backend itself.
+        return
+        #else
         guard supabase.isLoggedIn() else { return }
-        pullBlocking()
-        pushIfChangedBlocking()
+
+        stateLock.lock()
+        var pending = readActions()
+        pending.append(action)
+        if pending.count > Self.maxPendingActions {
+            pending = Array(pending.suffix(Self.maxPendingActions))
+        }
+        writeActions(pending)
+        stateLock.unlock()
+        #endif
     }
 
-    /// Push only, for the queue's own change trigger. Cheap when nothing changed: the signature
-    /// check short circuits before any network work.
-    public func pushIfChanged() {
+    /// A recorded user decision. The id exists so a successful send can delete exactly what it sent,
+    /// rather than everything older than some timestamp, which would swallow an action the user
+    /// created while the request was in flight.
+    public struct Action {
+        let id: String
+        let type: String
+        let entry: Entry?
+        let uuid: String?
+        let entries: [Entry]?
+
+        var json: [String: Any] {
+            var payload: [String: Any] = ["type": type]
+            if let entry { payload["entry"] = entry.json }
+            if let uuid { payload["uuid"] = uuid }
+            if let entries { payload["entries"] = entries.map { $0.json } }
+            return payload
+        }
+    }
+
+    public func playNow(episode: BaseEpisode) {
+        record(Action(id: UUID().uuidString, type: "play_now", entry: Entry(episode: episode, dataManager: dataManager), uuid: nil, entries: nil))
+    }
+
+    public func playNext(episode: BaseEpisode) {
+        record(Action(id: UUID().uuidString, type: "play_next", entry: Entry(episode: episode, dataManager: dataManager), uuid: nil, entries: nil))
+    }
+
+    public func playLast(episode: BaseEpisode) {
+        record(Action(id: UUID().uuidString, type: "play_last", entry: Entry(episode: episode, dataManager: dataManager), uuid: nil, entries: nil))
+    }
+
+    public func remove(episodeUuid: String) {
+        record(Action(id: UUID().uuidString, type: "remove", entry: nil, uuid: episodeUuid, entries: nil))
+    }
+
+    /// Used for reorders and for the user clearing the queue. The list is the queue the user meant
+    /// to end up with, including whatever is playing, since the first entry is the current episode.
+    public func replace(episodes: [BaseEpisode]) {
+        let entries = episodes.map { Entry(episode: $0, dataManager: dataManager) }
+        record(Action(id: UUID().uuidString, type: "replace", entry: nil, uuid: nil, entries: entries))
+    }
+
+    // MARK: Sync
+
+    /// Sends pending actions and applies the queue the backend returns, in one call.
+    ///
+    /// Never throws. Queue sync is an addition to the sync cycle, never a precondition for it.
+    public func sync() {
         #if os(watchOS)
-        // The Watch app compiles PlaybackQueue and so reaches this trigger, but its queue is a
-        // projection of the phone's and can be a partial standalone list, so it must never publish.
-        // The signature rule already blocks it, since the Watch never pulls and therefore never has
-        // a signature, but that is an accident of wiring rather than an intention. This is explicit.
+        return
+        #else
+        guard supabase.isLoggedIn() else { return }
+        syncBlocking()
+        #endif
+    }
+
+    /// Runs the sync off the caller's thread, for the queue's own change trigger.
+    public func syncSoon() {
+        #if os(watchOS)
         return
         #else
         guard supabase.isLoggedIn() else { return }
         workQueue.async { [weak self] in
-            self?.pushIfChangedBlocking()
+            self?.syncBlocking()
         }
         #endif
     }
 
-    // MARK: Pull
+    private func syncBlocking() {
+        stateLock.lock()
+        let sending = readActions()
+        stateLock.unlock()
 
-    private func pullBlocking() {
         do {
-            let rows = try supabase.select(table: Self.table, query: "select=episodes,updated_at_ms&limit=1")
-            guard let row = rows.first else {
-                // No row at all. Asking and being told there is nothing is itself a completed
-                // reconcile, and it is the one state it is safe to publish from, so record an empty
-                // signature. Without this the first row can never be created: the push waits for a
-                // reconcile that can never happen against an empty table. Only when no signature
-                // exists yet, so a device whose row was deleted keeps its own and republishes on its
-                // next local change rather than immediately.
-                if readSignature() == nil {
-                    writeSignature([])
-                }
-                return
+            let payload: [String: Any] = [
+                "p_actions": sending.map { $0.json },
+                "p_device_id": PodHopperPositionSync.shared.deviceInstallId(),
+                "p_device_name": PodHopperPositionSync.shared.deviceDisplayName(),
+            ]
+            let response = try supabase.rpc(function: Self.function, body: payload)
+
+            // Only now that the call succeeded, and only the actions actually sent, so an action the
+            // user created while this was in flight survives.
+            if !sending.isEmpty {
+                let sentIds = Set(sending.map { $0.id })
+                stateLock.lock()
+                let remaining = readActions().filter { !sentIds.contains($0.id) }
+                writeActions(remaining)
+                stateLock.unlock()
             }
 
-            let remoteTs = (row["updated_at_ms"] as? NSNumber)?.int64Value ?? 0
-
-            // The pull always runs before the push, so without this an unpublished local edit would
-            // be discarded simply because of that ordering, not because the remote was newer. The
-            // stamp is only set while this device is genuinely ahead of the backend and is cleared
-            // the moment it catches up, so it cannot block a legitimate remote update.
-            //
-            // A signature must already exist for the stamp to count. A device that has never
-            // reconciled has to read first no matter how recently its queue changed, otherwise a
-            // queue built locally before the first pull would make that device refuse the backend's
-            // queue forever.
-            if readSignature() != nil, let localChangeMs = readLocalChangeMs(), remoteTs > 0, localChangeMs > remoteTs {
-                FileLog.shared.addMessage("PodHopper up next: holding a newer unpublished local queue, skipping this remote copy")
-                return
-            }
-
-            let raw = (row["episodes"] as? [[String: Any]]) ?? []
+            let version = (response["version"] as? NSNumber)?.int64Value ?? 0
+            let raw = (response["episodes"] as? [[String: Any]]) ?? []
             let entries = raw.compactMap { Entry(json: $0) }
+
+            // A brand new account that has never held a queue, on a device that has one. Actions are
+            // only recorded while signed in, so a queue built before signing in has nothing behind
+            // it. Guarded so it can only ever fill an empty account, never overwrite one.
+            if sending.isEmpty, version == 0, entries.isEmpty {
+                if let playback = ServerConfig.shared.playbackDelegate {
+                    let local = playback.allEpisodesInQueue(includeNowPlaying: true)
+                    if !local.isEmpty {
+                        FileLog.shared.addMessage("PodHopper up next: seeding a new account with this device's queue")
+                        replace(episodes: local)
+                        writeVersion(version)
+                        return
+                    }
+                }
+            }
+
+            // Nothing was sent and the queue has not moved since this device last applied it.
+            if sending.isEmpty, let applied = readVersion(), applied == version {
+                return
+            }
+
             applyRemoteQueue(entries)
+            writeVersion(version)
         } catch {
-            FileLog.shared.addMessage("PodHopper up next pull failed: \(error)")
+            // Actions stay recorded for the next sync.
+            FileLog.shared.addMessage("PodHopper up next sync failed, \(sending.count) action(s) still queued: \(error)")
         }
     }
 
     // MARK: Apply
 
-    /// Applies a remote queue to this device, preserving the episode playing right now and holding
-    /// entries this device cannot resolve.
+    /// Applies the backend's queue to this device, preserving the episode playing right now.
+    ///
+    /// The reconcile is adapted from the Pocket Casts era UpNextSyncTask, which had years of real
+    /// use behind it: existing entries are moved rather than rebuilt, and the queue is snapshotted
+    /// before it changes. Entries this device cannot resolve are skipped for display only. Nothing
+    /// is lost by skipping them, because this device never sends a list and so cannot delete them.
     private func applyRemoteQueue(_ remoteEntries: [Entry]) {
         guard let playback = ServerConfig.shared.playbackDelegate else { return }
 
-        let localEpisodes = playback.allEpisodesInQueue(includeNowPlaying: true)
-        let localUuids = localEpisodes.map { $0.uuid }
-
-        // Never displace the episode playing right now. If the incoming head is a different
-        // episode, the playing one stays at the head and the remote order applies behind it.
+        let localUuids = playback.allEpisodesInQueue(includeNowPlaying: true).map { $0.uuid }
         let entries = preservePlayingEpisode(remoteEntries, playback: playback)
 
-        // Identical lists mean there is nothing to do, but the signature still has to be recorded:
-        // this device has now reconciled with the backend, which is what allows it to push later.
-        if entries.map({ $0.uuid }) == localUuids {
-            writeSignature(localUuids)
-            writeHeld([])
-            return
-        }
+        if entries.map({ $0.uuid }) == localUuids { return }
 
         dataManager.snapshotUpNext()
 
         let episodePlayingBefore = playback.currentEpisode()
-
         var resolvedUuids = [String]()
-        var held = [HeldEntry]()
 
         for (index, entry) in entries.enumerated() {
             if let existing = dataManager.findPlaylistEpisode(uuid: entry.uuid) {
@@ -197,26 +273,10 @@ public final class PodHopperUpNextSync {
                 newEpisode.title = localEpisode.displayableTitle()
                 dataManager.save(playlistEpisode: newEpisode)
                 resolvedUuids.append(entry.uuid)
-                continue
             }
-
-            // This device has not seen the episode yet, most likely because its feed has not
-            // refreshed here. Hold it verbatim at its original index rather than dropping it: the
-            // next push re-inserts it, so advancing an episode in the car cannot silently delete
-            // entries from the phone. It resolves on its own once a refresh brings the episode in.
-            held.append(HeldEntry(index: index, entry: entry))
         }
 
         dataManager.deleteAllUpNextEpisodesNotIn(uuids: resolvedUuids)
-
-        if !held.isEmpty {
-            FileLog.shared.addMessage("PodHopper up next: applied \(resolvedUuids.count) entries, holding \(held.count) this device cannot resolve yet")
-        }
-
-        writeHeld(held)
-        // The signature records what this device's queue now is, so an unchanged queue produces no
-        // push and an applied queue cannot echo back.
-        writeSignature(resolvedUuids)
 
         playback.queueRefreshList(checkForAutoDownload: true)
         playback.upNextQueueChanged()
@@ -230,176 +290,63 @@ public final class PodHopperUpNextSync {
         }
     }
 
-    /// Moves the episode playing right now to the head of the incoming list. Adapted from the
-    /// Pocket Casts era addPlayingEpisode. Only applies while actually playing: a paused episode is
-    /// not protected, matching the position sync's own currently-playing rule.
+    /// Keeps the episode playing right now at the head, applying the backend's order behind it, so a
+    /// remote queue can never move the scrubber out from under a listener.
     private func preservePlayingEpisode(_ entries: [Entry], playback: ServerPlaybackDelegate) -> [Entry] {
         guard playback.playing(), let playing = playback.currentEpisode() else { return entries }
         if entries.first?.uuid == playing.uuid { return entries }
 
         var list = entries.filter { $0.uuid != playing.uuid }
-        list.insert(entry(for: playing), at: 0)
+        list.insert(Entry(episode: playing, dataManager: dataManager), at: 0)
         return list
-    }
-
-    // MARK: Push
-
-    private func pushIfChangedBlocking() {
-        guard let playback = ServerConfig.shared.playbackDelegate else { return }
-
-        let localEpisodes = playback.allEpisodesInQueue(includeNowPlaying: true)
-        let localUuids = localEpisodes.map { $0.uuid }
-
-        // No signature means this device has never reconciled with the backend, so it must read
-        // before it writes. This is what stops a fresh install, or a queue that has not finished
-        // loading at app start, from publishing an empty list over the user's real queue.
-        guard let signature = readSignature() else { return }
-
-        // Nothing changed since the last reconcile, so there is nothing to publish. This also makes
-        // an echo impossible: a queue that was just applied equals its own signature.
-        //
-        // The stamp is cleared here as well as on success. An edit that is later undone leaves this
-        // device level with the backend while a stamp is still recorded, and without this clear that
-        // stamp would sit set forever and silently refuse every remote queue from then on.
-        if signature == localUuids {
-            clearLocalChangeMs()
-            return
-        }
-
-        var entries = localEpisodes.map { entry(for: $0) }
-
-        // Re-insert entries this device could not resolve, at the positions they arrived at, so a
-        // push from here cannot delete them from the devices that can resolve them.
-        for heldEntry in readHeld().sorted(by: { $0.index < $1.index }) {
-            if entries.contains(where: { $0.uuid == heldEntry.entry.uuid }) { continue }
-            let index = min(max(heldEntry.index, 0), entries.count)
-            entries.insert(heldEntry.entry, at: index)
-        }
-
-        do {
-            guard let userId = try supabase.getUserId() else { return }
-            let row: [String: Any] = [
-                "user_id": userId,
-                "episodes": entries.map { $0.json },
-                "device_id": PodHopperPositionSync.shared.deviceInstallId(),
-                "device_name": PodHopperPositionSync.shared.deviceDisplayName(),
-                "updated_at_ms": nowMs(),
-            ]
-            try supabase.upsert(table: Self.table, onConflictColumns: "user_id", rows: [row])
-            writeSignature(localUuids)
-            // Published, so this device is no longer ahead of the backend.
-            clearLocalChangeMs()
-        } catch {
-            // Left unsignatured on purpose: the next sync sees the list still differs and retries.
-            FileLog.shared.addMessage("PodHopper up next push failed, will retry on the next change: \(error)")
-        }
-    }
-
-    // MARK: Entry building
-
-    private func entry(for episode: BaseEpisode) -> Entry {
-        let podcastUuid = episode.parentIdentifier()
-        // Populated wherever it is known, unlike Android, which leaves it null for local episodes.
-        // PodHopper resolves podcasts by feed url, so an entry carrying one can be resolved by a
-        // device that has never seen that podcast, which turns a held entry into a recoverable one.
-        let feedUrl = dataManager.findPodcast(uuid: podcastUuid, includeUnsubscribed: true)?.podcastUrl
-        let publishedMs = episode.publishedDate.map { Int64($0.timeIntervalSince1970 * 1000) }
-
-        return Entry(
-            uuid: episode.uuid,
-            title: episode.displayableTitle(),
-            podcastUuid: podcastUuid,
-            feedUrl: feedUrl,
-            mediaUrl: episode.downloadUrl,
-            publishedMs: publishedMs
-        )
     }
 
     // MARK: Local state
 
-    /// Records that this device's queue just changed locally, so a pull arriving before the change
-    /// is published cannot discard it.
-    ///
-    /// Called from the queue's own change trigger rather than from the push, because the push is
-    /// debounced by several seconds and an edit followed by the app being backgrounded would
-    /// otherwise never be stamped at all.
-    ///
-    /// This is deliberately not called from the apply path, and does not need to be: applying a
-    /// remote queue writes its rows straight through DataManager rather than through PlaybackQueue's
-    /// mutation methods, so it never reaches this trigger. If the apply is ever rewritten to go
-    /// through PlaybackQueue, it must exclude itself here, or the device will claim to be ahead of
-    /// the backend the instant it accepts an update and start refusing the queues it just took.
-    ///
-    /// The comparison this feeds comes down to one device's clock against another's, which is the
-    /// same assumption the position sync already makes and is fine for network-synced devices.
-    public func noteLocalChange() {
-        #if os(watchOS)
-        // The Watch never pulls or pushes, so a stamp written here would never be read.
-        return
-        #else
-        defaults.set(NSNumber(value: nowMs()), forKey: Self.localChangeKey)
-        #endif
-    }
-
-    private func readLocalChangeMs() -> Int64? {
-        guard let value = defaults.object(forKey: Self.localChangeKey) as? NSNumber else { return nil }
-        return value.int64Value
-    }
-
-    private func clearLocalChangeMs() {
-        defaults.removeObject(forKey: Self.localChangeKey)
-    }
-
-    /// The uuid list this device last reconciled with the backend. Absent until the first pull.
-    private func readSignature() -> [String]? {
-        defaults.array(forKey: Self.signatureKey) as? [String]
-    }
-
-    private func writeSignature(_ uuids: [String]) {
-        defaults.set(uuids, forKey: Self.signatureKey)
-    }
-
-    struct HeldEntry {
-        let index: Int
-        let entry: Entry
-    }
-
-    private func readHeld() -> [HeldEntry] {
-        guard let data = defaults.data(forKey: Self.heldKey),
+    private func readActions() -> [Action] {
+        guard let data = defaults.data(forKey: Self.actionsKey),
               let raw = (try? JSONSerialization.jsonObject(with: data)) as? [[String: Any]] else { return [] }
         return raw.compactMap { item in
-            guard let index = (item["i"] as? NSNumber)?.intValue,
-                  let entryJson = item["e"] as? [String: Any],
-                  let entry = Entry(json: entryJson) else { return nil }
-            return HeldEntry(index: index, entry: entry)
+            guard let id = item["id"] as? String, let type = item["type"] as? String else { return nil }
+            let entry = (item["entry"] as? [String: Any]).flatMap { Entry(json: $0) }
+            let entries = (item["entries"] as? [[String: Any]])?.compactMap { Entry(json: $0) }
+            return Action(id: id, type: type, entry: entry, uuid: item["uuid"] as? String, entries: entries)
         }
     }
 
-    private func writeHeld(_ held: [HeldEntry]) {
-        if held.isEmpty {
-            defaults.removeObject(forKey: Self.heldKey)
+    private func writeActions(_ actions: [Action]) {
+        if actions.isEmpty {
+            defaults.removeObject(forKey: Self.actionsKey)
             return
         }
-        let raw = held.map { ["i": NSNumber(value: $0.index), "e": $0.entry.json] }
+        let raw: [[String: Any]] = actions.map { action in
+            var item: [String: Any] = ["id": action.id, "type": action.type]
+            if let entry = action.entry { item["entry"] = entry.json }
+            if let uuid = action.uuid { item["uuid"] = uuid }
+            if let entries = action.entries { item["entries"] = entries.map { $0.json } }
+            return item
+        }
         if let data = try? JSONSerialization.data(withJSONObject: raw) {
-            defaults.set(data, forKey: Self.heldKey)
+            defaults.set(data, forKey: Self.actionsKey)
         }
     }
 
-    /// Clears the signature and held entries so the next sign in reads before it writes. Does not
-    /// touch the queue itself.
+    private func readVersion() -> Int64? {
+        (defaults.object(forKey: Self.versionKey) as? NSNumber)?.int64Value
+    }
+
+    private func writeVersion(_ version: Int64) {
+        defaults.set(NSNumber(value: version), forKey: Self.versionKey)
+    }
+
+    /// Clears everything this device remembers about the queue, so the next sign in starts fresh.
     public func clearLocalSyncState() {
-        defaults.removeObject(forKey: Self.signatureKey)
-        defaults.removeObject(forKey: Self.heldKey)
-        defaults.removeObject(forKey: Self.localChangeKey)
+        defaults.removeObject(forKey: Self.actionsKey)
+        defaults.removeObject(forKey: Self.versionKey)
     }
 
-    private func nowMs() -> Int64 {
-        Int64(Date().timeIntervalSince1970 * 1000)
-    }
-
-    private static let table = "up_next_queue"
-    private static let signatureKey = "up_next_signature"
-    private static let heldKey = "up_next_held"
-    private static let localChangeKey = "up_next_local_change_ms"
+    private static let function = "apply_up_next_actions"
+    private static let actionsKey = "up_next_actions"
+    private static let versionKey = "up_next_version"
+    private static let maxPendingActions = 500
 }

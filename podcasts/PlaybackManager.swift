@@ -184,6 +184,17 @@ class PlaybackManager: ServerPlaybackDelegate {
 
         // pressing play/pause when using the Effects Player will cause the code to go through here again, but we only need to mess with the Up Next if we're not playing the same episode anymore
         if episodeIsChanging {
+            // PodHopper: playing an episode puts it at the head, which is play_now. Recorded here at
+            // the manager rather than inside PlaybackQueue, which is what keeps the paths that must
+            // not publish out of it: autoplay adds straight through queue.add, and adopting the
+            // episode another device is playing pushes straight through
+            // queue.pushNewCurrentlyPlaying. Skipped when overrideUpNext is set, because the only
+            // two callers that pass it, playing a whole list and adding with an idle player, record
+            // their own more accurate action instead.
+            if !overrideUpNext {
+                PodHopperUpNextSync.shared.playNow(episode: episode)
+            }
+
             if overrideUpNext || queue.upNextCount() == 0 {
                 queue.overrideAllEpisodesWith(episode: episode)
             } else {
@@ -603,7 +614,20 @@ class PlaybackManager: ServerPlaybackDelegate {
         }
 
         guard let playingEpisode = currentEpisode() else {
-            // if there's nothing playing, just play this
+            // PodHopper: record the user's decision, then load. The load below overrides Up Next,
+            // replacing the local queue with this one episode, and that override is deliberately not
+            // recorded as an action. It is the app tidying up an empty player, not the user asking
+            // for their queue to be cleared, and a device with an idle player is exactly the state a
+            // car is in after sitting for a week. Upstream hit this too: see the comment above about
+            // user reports of Up Next being cleared.
+            if userInitiated {
+                if toTop {
+                    PodHopperUpNextSync.shared.playNext(episode: episode)
+                } else {
+                    PodHopperUpNextSync.shared.playLast(episode: episode)
+                }
+            }
+
             load(episode: episode, autoPlay: false, overrideUpNext: true)
 
             return
@@ -631,6 +655,16 @@ class PlaybackManager: ServerPlaybackDelegate {
 
         // otherwise we don't have this item, so add it to the bottom of our future list
         queue.add(episode: episode, fireNotification: true, partOfBulkAdd: false, toTop: toTop)
+
+        // PodHopper: only the user's own adds are published. The ServerPlaybackDelegate version of
+        // this method hardcodes userInitiated to false, so a sync driven add cannot echo back out.
+        if userInitiated {
+            if toTop {
+                PodHopperUpNextSync.shared.playNext(episode: episode)
+            } else {
+                PodHopperUpNextSync.shared.playLast(episode: episode)
+            }
+        }
     }
 
     func removeIfPlayingOrQueued(episode: BaseEpisode?, fireNotification: Bool, saveCurrentEpisode: Bool = true, userInitiated: Bool = false) {
@@ -638,6 +672,15 @@ class PlaybackManager: ServerPlaybackDelegate {
             AnalyticsEpisodeHelper.shared.episodeRemovedFromUpNext(episode: episode)
         }
         if isNowPlayingEpisode(episodeUuid: episode?.uuid) {
+            // PodHopper: the episode leaving the head is a real change to the queue whether the user
+            // removed it or it simply finished, so it is published either way. The endPlayback
+            // branch below additionally clears the whole local queue, and that clear is deliberately
+            // not recorded: it also runs when playback fails and the current episode cannot be
+            // fetched, so recording it would wipe the account queue on a network hiccup.
+            if let episode {
+                PodHopperUpNextSync.shared.remove(episodeUuid: episode.uuid)
+            }
+
             autoplayIfNeeded()
             if queue.upNextCount() > 0 {
                 playNextEpisode(autoPlay: playing())
@@ -650,6 +693,7 @@ class PlaybackManager: ServerPlaybackDelegate {
 
         if let episode {
             queue.remove(episode: episode, fireNotification: fireNotification)
+            PodHopperUpNextSync.shared.remove(episodeUuid: episode.uuid)
         }
     }
 
@@ -681,6 +725,9 @@ class PlaybackManager: ServerPlaybackDelegate {
 
         if FeatureFlag.upNextShuffle.enabled, queueCount > 1, index > 0 {
             queue.move(episode: nextEpisode, to: 0)
+            // PodHopper: shuffle really did reorder the queue, so the other devices need the new
+            // order or they would play a different episode next than this device just chose.
+            PodHopperUpNextSync.shared.replace(episodes: queue.allEpisodes(includeNowPlaying: true))
         }
 
         queue.removeTopEpisode(fireNotification: false)
@@ -1353,6 +1400,8 @@ class PlaybackManager: ServerPlaybackDelegate {
         } else {
             // there's a new list of episodes to play, so clear what's currently playing and play that
             load(episode: startingAtEpisode, autoPlay: true, overrideUpNext: true)
+            // PodHopper: the user chose to play a whole list, which really is a replacement.
+            PodHopperUpNextSync.shared.replace(episodes: queue.allEpisodes(includeNowPlaying: true))
             NotificationCenter.postOnMainThread(notification: Constants.Notifications.playbackTrackChanged)
 
             let filteredEpisodes = episodes!.filter { $0.uuid != startingAtEpisode.uuid }

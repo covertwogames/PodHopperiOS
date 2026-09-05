@@ -290,6 +290,7 @@ class MultiSelectHelper {
             return
         }
         PlaybackManager.shared.queue.bulkMove(selectedPlayListEpisodes, toTop: true)
+        PodHopperUpNextSync.shared.replace(episodes: PlaybackManager.shared.queue.allEpisodes(includeNowPlaying: true))
         actionDelegate.multiSelectActionCompleted()
     }
 
@@ -299,6 +300,7 @@ class MultiSelectHelper {
             return
         }
         PlaybackManager.shared.queue.bulkMove(selectedPlayListEpisodes, toTop: false)
+        PodHopperUpNextSync.shared.replace(episodes: PlaybackManager.shared.queue.allEpisodes(includeNowPlaying: true))
         actionDelegate.multiSelectActionCompleted()
     }
 

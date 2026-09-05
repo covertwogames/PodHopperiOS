@@ -381,6 +381,7 @@ class UpNextViewController: UIViewController, UIGestureRecognizerDelegate {
             let action = OptionAction(label: option.description) { [weak self] in
                 let queue = PlaybackManager.shared.queue
                 queue.reorderUpNext(sortedEpisodes: option.sort(queue.allEpisodes(includeNowPlaying: false)))
+                PodHopperUpNextSync.shared.replace(episodes: queue.allEpisodes(includeNowPlaying: true))
                 self?.reloadTable()
                 self?.track(.upNextSort, properties: ["sort_type": option.analyticsDescription])
             }
@@ -402,6 +403,8 @@ class UpNextViewController: UIViewController, UIGestureRecognizerDelegate {
 
     private func performClearAll() {
         PlaybackManager.shared.queue.clearUpNextList()
+        // The current episode survives a clear, so publish what is actually left.
+        PodHopperUpNextSync.shared.replace(episodes: PlaybackManager.shared.queue.allEpisodes(includeNowPlaying: true))
         reloadTable()
         track(.upNextQueueCleared)
     }

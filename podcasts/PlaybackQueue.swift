@@ -460,15 +460,6 @@ class PlaybackQueue: NSObject {
     }
 
     private func startSyncTimer(after delay: TimeInterval? = nil) {
-        // PodHopper: every queue mutation reaches here with no delay argument, while the only
-        // delayed call is the reschedule from syncTimerFired while the user is still interacting.
-        // Stamping only the no-delay path therefore records real edits and nothing else, and it
-        // records them now rather than when the debounced push finally runs, so an edit made just
-        // before the app is backgrounded is still protected from being overwritten by a pull.
-        if delay == nil {
-            PodHopperUpNextSync.shared.noteLocalChange()
-        }
-
         cancelSyncTimer()
         scheduleSyncTimer(after: delay ?? syncTimerDelay)
     }
@@ -497,9 +488,9 @@ class PlaybackQueue: NSObject {
             return
         }
 
-        // PodHopper: the Pocket Casts Up Next sync this used to call is dead (it returns
-        // immediately without a Pocket Casts login), so the timer drives the PodHopper queue push
-        // instead. Signature gated, so an unchanged queue costs nothing.
-        PodHopperUpNextSync.shared.pushIfChanged()
+        // PodHopper: sends any actions the user has taken and applies whatever the backend returns.
+        // Cheap when nothing happened, because a sync with no actions changes no rows and returns
+        // the version this device already has.
+        PodHopperUpNextSync.shared.syncSoon()
     }
 }
