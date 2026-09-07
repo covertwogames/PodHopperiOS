@@ -459,7 +459,15 @@ public final class PodHopperPositionSync {
                     result = .none
                 } else {
                     let positionSec = (rows[0]["position_sec"] as? NSNumber)?.intValue ?? -1
+                    let remoteTs = (rows[0]["updated_at_ms"] as? NSNumber)?.int64Value ?? 0
                     if positionSec < 0 {
+                        result = .none
+                    } else if self.localPositionIsNewer(episode: episode, remoteTs: remoteTs) {
+                        // Another device wrote last, but this device has moved the position since,
+                        // and that change has not reached the server yet. Applying the row here is
+                        // what made a pause then play jump backwards. Keep local; the push that
+                        // follows publishes it.
+                        FileLog.shared.addMessage("PodHopper play-pull: keeping this device's newer position over a stale synced row")
                         result = .none
                     } else {
                         self.delegate?.updatePlayedUpTo(episode: episode, positionSec: Double(positionSec))
@@ -663,11 +671,31 @@ public final class PodHopperPositionSync {
             }
             removeApplying(episode.uuid)
         case .setPosition(let sec, let markInProgress):
+            // Only the plain position branch takes this guard. Completion and un-mark above are
+            // decided by the played-status timestamp, which is the right field for those.
+            if localPositionIsNewer(episode: episode, remoteTs: remoteTs) {
+                return
+            }
             delegate?.updatePlayedUpTo(episode: episode, positionSec: sec)
             if markInProgress {
                 delegate?.markInProgress(episode: episode)
             }
         }
+    }
+
+    /// True when this device changed the episode's position after the remote row was written, so the
+    /// row is stale no matter which device wrote it.
+    ///
+    /// Uses playedUpToModified, which is stamped only by real position changes: playback, seeks,
+    /// mark played and mark unplayed. The played-status timestamp is the wrong field here, because
+    /// merely pressing play refreshes it, which would keep local almost every time.
+    ///
+    /// No local timestamp means anything remote wins, so a first play on a device still picks up the
+    /// synced position. Compares this device's clock against the server's, the same assumption the
+    /// played-state guard above already makes.
+    private func localPositionIsNewer(episode: BaseEpisode, remoteTs: Int64) -> Bool {
+        let localTs = episode.playedUpToModified
+        return localTs > 0 && remoteTs > 0 && localTs > remoteTs
     }
 
     /// Refuses more than [applyBreakerMaxApplies] sync applies to one episode inside

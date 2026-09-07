@@ -468,7 +468,9 @@ class PlaybackManager: ServerPlaybackDelegate {
     }
 
     func seekTo(time: TimeInterval, startPlaybackAfterSeek: Bool = false, seekHint: SeekHint? = nil) {
-        seekTo(time: time, syncChanges: SyncManager.isUserLoggedIn(), startPlaybackAfterSeek: startPlaybackAfterSeek, seekHint: seekHint)
+        // PodHopper: true so a seek stamps playedUpToModified, for the same reason as
+        // recordPlaybackPosition. Inside seekTo this flag only controls that one save.
+        seekTo(time: time, syncChanges: true, startPlaybackAfterSeek: startPlaybackAfterSeek, seekHint: seekHint)
     }
 
     func seekToFromSync(time: TimeInterval, syncChanges: Bool, startPlaybackAfterSeek: Bool) {
@@ -1354,7 +1356,8 @@ class PlaybackManager: ServerPlaybackDelegate {
         guard let currEpisode = currentEpisode() else { return }
 
         let upTo = currentTime()
-        DataManager.sharedManager.saveEpisode(playedUpTo: upTo, episode: currEpisode, updateSyncFlag: SyncManager.isUserLoggedIn())
+        // PodHopper: stamped, same reason as the other position writes.
+        DataManager.sharedManager.saveEpisode(playedUpTo: upTo, episode: currEpisode, updateSyncFlag: true)
 
         cleanupCurrentPlayer(permanent: true)
 
@@ -1627,7 +1630,11 @@ class PlaybackManager: ServerPlaybackDelegate {
         if upTo <= 0 { return }
 
         let isUserLoggedIn = SyncManager.isUserLoggedIn()
-        DataManager.sharedManager.saveEpisode(playedUpTo: upTo, episode: currEpisode, updateSyncFlag: isUserLoggedIn)
+        // PodHopper: stamp playedUpToModified on every real position change. This used to ride on the
+        // Pocket Casts login, which no longer exists, so the field never moved and the position
+        // sync's staleness guard had nothing to compare against. It is one extra column on a write
+        // that already happens.
+        DataManager.sharedManager.saveEpisode(playedUpTo: upTo, episode: currEpisode, updateSyncFlag: true)
         DataManager.sharedManager.updateEpisodePlaybackInteractionDate(episode: currEpisode)
         FileLog.shared.addMessage("saving played up to \(upTo) for episode \(currEpisode.displayableTitle())")
         if sendToServerImmediately, isUserLoggedIn {
