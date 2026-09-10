@@ -70,6 +70,10 @@ public final class PodHopperPositionSync {
     private let workQueue = DispatchQueue(label: "au.com.podhopper.positionsync", qos: .utility)
     private let stateLock = NSLock()
     private var _lastPushAttemptMs: Int64 = 0
+    /// The episode and position last handed to the backend, so an unchanged position is not
+    /// republished with a fresh timestamp.
+    private var _lastPushedEpisodeUuid: String?
+    private var _lastPushedPositionSec = -1
     private var _lastReconcileMs: Int64 = 0
     private var _applyingUuids = Set<String>()
     /// Per-episode timestamps of recent sync applies, for the circuit breaker.
@@ -141,6 +145,29 @@ public final class PodHopperPositionSync {
         let episodeKey = episode.uuid
         let episodeUrl = episode.downloadUrl
         let positionSec = positionMs / 1000
+
+        // Publish only a position that has actually moved since the last one this device sent.
+        //
+        // Pause runs its whole routine even when the player is already paused, and a headset can
+        // send pause repeatedly, so without this the same position goes up again and again, each
+        // time with a fresh server timestamp. Another device then sees a row that is newer by
+        // timestamp and far older by content, and rewinds to it. The staleness guard cannot help,
+        // because it only blocks rows older than the local change.
+        //
+        // Exact equality on purpose. A tolerance window could swallow genuine slow movement, while
+        // an exact match can only ever fail open and publish, which is the behaviour we already had.
+        // Placed after the throttle bookkeeping above so only the publish is skipped, nothing else.
+        stateLock.lock()
+        let alreadyPublished = episodeKey == _lastPushedEpisodeUuid && positionSec == _lastPushedPositionSec
+        if !alreadyPublished {
+            _lastPushedEpisodeUuid = episodeKey
+            _lastPushedPositionSec = positionSec
+        }
+        stateLock.unlock()
+
+        if alreadyPublished {
+            return
+        }
         let totalSec = durationMs / 1000
         let podcastUuid = (episode as? Episode)?.podcastUuid
 
@@ -1030,6 +1057,11 @@ public final class PodHopperPositionSync {
     /// id is kept, since it identifies the device, not the account. Does not touch any episode,
     /// podcast, or playback data.
     public func clearLocalSyncState() {
+        stateLock.lock()
+        _lastPushedEpisodeUuid = nil
+        _lastPushedPositionSec = -1
+        stateLock.unlock()
+
         defaults.removeObject(forKey: Self.lastPullMsKey)
         defaults.removeObject(forKey: Self.parkedKey)
         defaults.removeObject(forKey: Self.completionsCursorKey)

@@ -1630,11 +1630,16 @@ class PlaybackManager: ServerPlaybackDelegate {
         if upTo <= 0 { return }
 
         let isUserLoggedIn = SyncManager.isUserLoggedIn()
-        // PodHopper: stamp playedUpToModified on every real position change. This used to ride on the
-        // Pocket Casts login, which no longer exists, so the field never moved and the position
-        // sync's staleness guard had nothing to compare against. It is one extra column on a write
-        // that already happens.
-        DataManager.sharedManager.saveEpisode(playedUpTo: upTo, episode: currEpisode, updateSyncFlag: true)
+        // PodHopper: stamp playedUpToModified only when the position actually moved. It used to ride
+        // on the Pocket Casts login, which no longer exists, so the field never moved at all and the
+        // position sync's staleness guard had nothing to compare against. Stamping unconditionally
+        // is wrong in the other direction: this save also runs on pause, pause runs even when the
+        // player is already paused, and a headset can send pause repeatedly, so the timestamp would
+        // keep advancing on a position sitting still and the device would then refuse another
+        // device's genuinely newer position. Only the stamp is conditional; the position write, the
+        // interaction date and the notifications below are unchanged.
+        let positionMoved = upTo != currEpisode.playedUpTo
+        DataManager.sharedManager.saveEpisode(playedUpTo: upTo, episode: currEpisode, updateSyncFlag: positionMoved)
         DataManager.sharedManager.updateEpisodePlaybackInteractionDate(episode: currEpisode)
         FileLog.shared.addMessage("saving played up to \(upTo) for episode \(currEpisode.displayableTitle())")
         if sendToServerImmediately, isUserLoggedIn {
