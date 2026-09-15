@@ -952,19 +952,9 @@
 				<string>pktc</string>
 			</array>
 		</dict>
-		<dict>
-			<key>CFBundleTypeRole</key>
-			<string>Editor</string>
-			<key>CFBundleURLName</key>
-			<string>GoogleSignIn</string>
-			<key>CFBundleURLSchemes</key>
-			<array/>
-		</dict>
 	</array>
 	<key>CFBundleVersion</key>
 	<string>$(CURRENT_PROJECT_VERSION)</string>
-	<key>FirebaseScreenReportingEnabled</key>
-	<false/>
 	<key>ITSAppUsesNonExemptEncryption</key>
 	<false/>
 	<key>LSApplicationQueriesSchemes</key>
@@ -992,11 +982,11 @@
 		<dict/>
 	</dict>
 	<key>NSBluetoothPeripheralUsageDescription</key>
-	<string>Pocket Casts needs to access your bluetooth in order to detect nearby Google Cast devices.</string>
+	<string>Pod Hopper needs to access your bluetooth in order to detect nearby Google Cast devices.</string>
 	<key>NSBonjourServices</key>
 	<array>
 		<string>_googlecast._tcp</string>
-		<string>_2FA4D21B._googlecast._tcp</string>
+		<string>_CC1AD845._googlecast._tcp</string>
 	</array>
 	<key>NSCameraUsageDescription</key>
 	<string>This allows you to add custom images to your files</string>

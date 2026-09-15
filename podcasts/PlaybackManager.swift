@@ -683,7 +683,11 @@ class PlaybackManager: ServerPlaybackDelegate {
                 PodHopperUpNextSync.shared.remove(episodeUuid: episode.uuid)
             }
 
-            autoplayIfNeeded()
+            // PodHopper: publish autoplay's pick only when the episode was finished on this
+            // device. A completion arriving from another device runs autoplay here too, and
+            // publishing that pick would add a second episode the user never chose.
+            let finishedOnThisDevice = episode.map { !PodHopperPositionSync.shared.isApplyingRemote(uuid: $0.uuid) } ?? false
+            autoplayIfNeeded(publishPick: finishedOnThisDevice)
             if queue.upNextCount() > 0 {
                 playNextEpisode(autoPlay: playing())
             } else {
@@ -1280,7 +1284,7 @@ class PlaybackManager: ServerPlaybackDelegate {
 
         // handle the episode that just finished, marking it as played, etc
         if let episode = currentEpisode() {
-            autoplayIfNeeded()
+            autoplayIfNeeded(publishPick: !PodHopperPositionSync.shared.isApplyingRemote(uuid: episode.uuid))
 
             FileLog.shared.addMessage("Finished playing \(episode.displayableTitle())")
             Analytics.track(.playerEpisodeCompleted, properties: [
@@ -2457,7 +2461,10 @@ class PlaybackManager: ServerPlaybackDelegate {
     // MARK: - Autoplay
 
     /// Autoplay the next episode
-    private func autoplayIfNeeded() {
+    /// - Parameter publishPick: whether the chosen episode is sent to the account's Up Next queue.
+    /// The pick used to stay local, and because the queue sync only protects an episode that is
+    /// actually playing, a later sync removed the episode autoplay had just loaded while paused.
+    private func autoplayIfNeeded(publishPick: Bool) {
         #if !os(watchOS) && !APPCLIP
         // If Autoplay is enabled we check if there's another episode to play
         if Settings.autoplay,
@@ -2465,8 +2472,11 @@ class PlaybackManager: ServerPlaybackDelegate {
            let episode = currentEpisode() {
 
             if let nextEpisode = AutoplayHelper.shared.nextEpisode(currentEpisodeUuid: episode.uuid) {
-                FileLog.shared.addMessage("Autoplaying next episode: \(nextEpisode.displayableTitle())")
+                FileLog.shared.addMessage("Autoplaying next episode: \(nextEpisode.displayableTitle()), sent to the account's queue: \(publishPick)")
                 queue.add(episode: nextEpisode, fireNotification: false)
+                if publishPick {
+                    PodHopperUpNextSync.shared.playNext(episode: nextEpisode)
+                }
                 Analytics.track(.playbackEpisodeAutoplayed, properties: ["episode_uuid": nextEpisode.uuid])
                 return
             } else {

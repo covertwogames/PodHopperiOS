@@ -8,7 +8,11 @@ class GoogleCastManager: NSObject, GCKRemoteMediaClientListener, GCKSessionManag
 
     let deviceManager = CastDevicesManager()
 
-    private let castAppId = "2FA4D21B"
+    // PodHopper: Google's stock Default Media Receiver. The previous value, 2FA4D21B, was Pocket
+    // Casts' own registered receiver, so casting loaded Automattic's receiver page and showed the
+    // Pocket Casts name and logo on the TV. The stock receiver displays whatever the sender
+    // supplies (title, podcast name, artwork, progress), which is already de-branded here.
+    private let castAppId = "CC1AD845"
     private let episodeUuidKey = "EPISODE_UUID"
 
     private let googleCastMaxPlaybackRate: Float = 2

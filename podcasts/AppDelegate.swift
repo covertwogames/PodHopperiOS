@@ -112,7 +112,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
         setupBackgroundRefresh()
 
-        IAPHelper.shared.setup(hasSubscription: SubscriptionHelper.hasActiveSubscription())
+        // PodHopper: the app sells nothing, so it no longer registers as an observer of Apple's
+        // payment queue at launch. Products are never requested (the entitlement is always active)
+        // and a purchase cannot be started (buyProduct has no callers, and would need both a
+        // Pocket Casts login and a fetched product), so there is nothing for the observer to see.
 
         setupSignOutListener()
 
@@ -201,7 +204,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         badgeHelper.teardown()
         shortcutManager.stopListeningForShortcutChanges()
 
-        IAPHelper.shared.tearDown()
         UIApplication.shared.endReceivingRemoteControlEvents()
     }
 
