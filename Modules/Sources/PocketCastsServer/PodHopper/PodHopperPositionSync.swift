@@ -70,10 +70,6 @@ public final class PodHopperPositionSync {
     private let workQueue = DispatchQueue(label: "au.com.podhopper.positionsync", qos: .utility)
     private let stateLock = NSLock()
     private var _lastPushAttemptMs: Int64 = 0
-    /// The episode and position last handed to the backend, so an unchanged position is not
-    /// republished with a fresh timestamp.
-    private var _lastPushedEpisodeUuid: String?
-    private var _lastPushedPositionSec = -1
     private var _lastReconcileMs: Int64 = 0
     private var _applyingUuids = Set<String>()
     /// Per-episode timestamps of recent sync applies, for the circuit breaker.
@@ -156,12 +152,32 @@ public final class PodHopperPositionSync {
         //
         // Exact equality on purpose. A tolerance window could swallow genuine slow movement, while
         // an exact match can only ever fail open and publish, which is the behaviour we already had.
-        // Placed after the throttle bookkeeping above so only the publish is skipped, nothing else.
+        // Every push here reads the position from the same place, so an unchanged position always
+        // repeats exactly. Placed after the throttle bookkeeping above so only the publish is
+        // skipped, nothing else.
+        //
+        // The record of what was last sent is kept per episode and saved, rather than one value in
+        // memory. In memory it was forgotten on every app launch, and this device pushes whenever
+        // the app goes to the background, so opening and leaving the app republished an old
+        // position as new. One value also let switching episodes and back reset it.
         stateLock.lock()
-        let alreadyPublished = episodeKey == _lastPushedEpisodeUuid && positionSec == _lastPushedPositionSec
+        var lastPushed = readLastPushed()
+        var alreadyPublished = false
+        if let entry = lastPushed[episodeKey], let previousSec = (entry["p"] as? NSNumber)?.intValue {
+            alreadyPublished = previousSec == positionSec
+        }
         if !alreadyPublished {
-            _lastPushedEpisodeUuid = episodeKey
-            _lastPushedPositionSec = positionSec
+            lastPushed[episodeKey] = ["p": positionSec, "u": now]
+            if lastPushed.count > Self.maxLastPushed {
+                let oldestFirst = lastPushed.sorted { lhs, rhs in
+                    ((lhs.value["u"] as? NSNumber)?.int64Value ?? 0) < ((rhs.value["u"] as? NSNumber)?.int64Value ?? 0)
+                }
+                let dropCount = lastPushed.count - Self.maxLastPushed
+                for entry in oldestFirst.prefix(dropCount) {
+                    lastPushed.removeValue(forKey: entry.key)
+                }
+            }
+            writeLastPushed(lastPushed)
         }
         stateLock.unlock()
 
@@ -990,6 +1006,20 @@ public final class PodHopperPositionSync {
         }
     }
 
+    /// The saved per-episode record of the position last sent, keyed by episode uuid: "p" is the
+    /// position in seconds, "u" when it was sent. Callers hold stateLock.
+    private func readLastPushed() -> [String: [String: Any]] {
+        guard let data = defaults.data(forKey: Self.lastPushedKey) else { return [:] }
+        let parsed = (try? JSONSerialization.jsonObject(with: data)) as? [String: [String: Any]]
+        return parsed ?? [:]
+    }
+
+    private func writeLastPushed(_ lastPushed: [String: [String: Any]]) {
+        if let data = try? JSONSerialization.data(withJSONObject: lastPushed) {
+            defaults.set(data, forKey: Self.lastPushedKey)
+        }
+    }
+
     // MARK: Cursor and install id
 
     private func cursorOrStartFresh() throws -> Int64 {
@@ -1057,9 +1087,9 @@ public final class PodHopperPositionSync {
     /// id is kept, since it identifies the device, not the account. Does not touch any episode,
     /// podcast, or playback data.
     public func clearLocalSyncState() {
+        // Under the lock, so a push in flight cannot write the record back after it is cleared.
         stateLock.lock()
-        _lastPushedEpisodeUuid = nil
-        _lastPushedPositionSec = -1
+        defaults.removeObject(forKey: Self.lastPushedKey)
         stateLock.unlock()
 
         defaults.removeObject(forKey: Self.lastPullMsKey)
@@ -1103,6 +1133,7 @@ public final class PodHopperPositionSync {
     private static let completionsCursorKey = "completions_cursor_ms"
     private static let parkedKey = "parked_rows"
     private static let pendingKey = "pending_pushes"
+    private static let lastPushedKey = "last_pushed_positions"
     private static let minPushIntervalMs: Int64 = 4000
     private static let playPullTimeoutMs: Int64 = 5000
     private static let reconcileMinIntervalMs: Int64 = 5000
@@ -1110,6 +1141,7 @@ public final class PodHopperPositionSync {
     private static let firstSyncSentinel: Int64 = -1
     private static let maxParked = 500
     private static let maxPending = 500
+    private static let maxLastPushed = 200
     private static let pendingLookupChunkSize = 50
     private static let pushChunkSize = 100
     private static let applyBreakerWindowMs: Int64 = 3_600_000

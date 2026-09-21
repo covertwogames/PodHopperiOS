@@ -1360,8 +1360,12 @@ class PlaybackManager: ServerPlaybackDelegate {
         guard let currEpisode = currentEpisode() else { return }
 
         let upTo = currentTime()
-        // PodHopper: stamped, same reason as the other position writes.
-        DataManager.sharedManager.saveEpisode(playedUpTo: upTo, episode: currEpisode, updateSyncFlag: true)
+        // PodHopper: stamp playedUpToModified only when the position actually moved, the same rule
+        // recordPlaybackPosition follows. Stamping on every termination made an unchanged position
+        // look freshly changed, so the position sync's staleness guard then refused another
+        // device's genuinely newer position as older than this one.
+        let positionMoved = upTo != currEpisode.playedUpTo
+        DataManager.sharedManager.saveEpisode(playedUpTo: upTo, episode: currEpisode, updateSyncFlag: positionMoved)
 
         cleanupCurrentPlayer(permanent: true)
 
