@@ -16,6 +16,10 @@ import UIKit
 public protocol PodHopperPositionSyncDelegate: AnyObject {
     /// Apply a synced position. Must set playedUpTo and bump playedUpToModified.
     func updatePlayedUpTo(episode: BaseEpisode, positionSec: Double)
+    /// If this episode is the one loaded and it is paused, move it to a position just synced from
+    /// another device, so the player and the cached current episode agree with the saved record.
+    /// Called only from background sync, never from the pre-play check. Must not start playback.
+    func alignPausedEpisodeWithSyncedPosition(episodeUuid: String, positionSec: Double)
     /// Move a not-played episode to in-progress so status and position stay consistent. Must bump
     /// playingStatusModified.
     func markInProgress(episode: BaseEpisode)
@@ -161,23 +165,13 @@ public final class PodHopperPositionSync {
         // the app goes to the background, so opening and leaving the app republished an old
         // position as new. One value also let switching episodes and back reset it.
         stateLock.lock()
-        var lastPushed = readLastPushed()
+        let lastPushed = readLastPushed()
         var alreadyPublished = false
         if let entry = lastPushed[episodeKey], let previousSec = (entry["p"] as? NSNumber)?.intValue {
             alreadyPublished = previousSec == positionSec
         }
         if !alreadyPublished {
-            lastPushed[episodeKey] = ["p": positionSec, "u": now]
-            if lastPushed.count > Self.maxLastPushed {
-                let oldestFirst = lastPushed.sorted { lhs, rhs in
-                    ((lhs.value["u"] as? NSNumber)?.int64Value ?? 0) < ((rhs.value["u"] as? NSNumber)?.int64Value ?? 0)
-                }
-                let dropCount = lastPushed.count - Self.maxLastPushed
-                for entry in oldestFirst.prefix(dropCount) {
-                    lastPushed.removeValue(forKey: entry.key)
-                }
-            }
-            writeLastPushed(lastPushed)
+            recordLastPushed(lastPushed, episodeKey: episodeKey, positionSec: positionSec, now: now)
         }
         stateLock.unlock()
 
@@ -514,6 +508,7 @@ public final class PodHopperPositionSync {
                         result = .none
                     } else {
                         self.delegate?.updatePlayedUpTo(episode: episode, positionSec: Double(positionSec))
+                        self.recordReceivedPosition(episodeKey: episode.uuid, positionSec: positionSec)
                         // requiredStartingPosition only honors playedUpTo when the episode is in
                         // progress. An episode played only on another device is notPlayed locally, so
                         // mark it in progress here, exactly as the page pull does when it applies a
@@ -711,6 +706,8 @@ public final class PodHopperPositionSync {
             if remotePositionSec > 0 {
                 delegate?.updatePlayedUpTo(episode: episode, positionSec: Double(remotePositionSec))
                 delegate?.markInProgress(episode: episode)
+                recordReceivedPosition(episodeKey: episode.uuid, positionSec: remotePositionSec)
+                delegate?.alignPausedEpisodeWithSyncedPosition(episodeUuid: episode.uuid, positionSec: Double(remotePositionSec))
             }
             removeApplying(episode.uuid)
         case .setPosition(let sec, let markInProgress):
@@ -720,9 +717,11 @@ public final class PodHopperPositionSync {
                 return
             }
             delegate?.updatePlayedUpTo(episode: episode, positionSec: sec)
+            recordReceivedPosition(episodeKey: episode.uuid, positionSec: positionSec)
             if markInProgress {
                 delegate?.markInProgress(episode: episode)
             }
+            delegate?.alignPausedEpisodeWithSyncedPosition(episodeUuid: episode.uuid, positionSec: sec)
         }
     }
 
@@ -1018,6 +1017,36 @@ public final class PodHopperPositionSync {
         if let data = try? JSONSerialization.data(withJSONObject: lastPushed) {
             defaults.set(data, forKey: Self.lastPushedKey)
         }
+    }
+
+    /// Records [positionSec] as the last position sent for [episodeKey] and saves the record,
+    /// dropping the least recently recorded episodes once it holds more than [maxLastPushed].
+    /// Callers hold stateLock.
+    private func recordLastPushed(_ lastPushed: [String: [String: Any]], episodeKey: String, positionSec: Int, now: Int64) {
+        var updated = lastPushed
+        updated[episodeKey] = ["p": positionSec, "u": now]
+        if updated.count > Self.maxLastPushed {
+            let oldestFirst = updated.sorted { lhs, rhs in
+                ((lhs.value["u"] as? NSNumber)?.int64Value ?? 0) < ((rhs.value["u"] as? NSNumber)?.int64Value ?? 0)
+            }
+            let dropCount = updated.count - Self.maxLastPushed
+            for entry in oldestFirst.prefix(dropCount) {
+                updated.removeValue(forKey: entry.key)
+            }
+        }
+        writeLastPushed(updated)
+    }
+
+    /// Records a position received from another device as if this device had sent it. The paused
+    /// player is moved to that position (see alignPausedEpisodeWithSyncedPosition), so without this
+    /// the next pause or background push would send it straight back with a fresh timestamp, and if
+    /// the other device had listened further in the meantime, drag it back. With it, that push is a
+    /// repeat and is skipped.
+    private func recordReceivedPosition(episodeKey: String, positionSec: Int) {
+        let now = nowMs()
+        stateLock.lock()
+        recordLastPushed(readLastPushed(), episodeKey: episodeKey, positionSec: positionSec, now: now)
+        stateLock.unlock()
     }
 
     // MARK: Cursor and install id

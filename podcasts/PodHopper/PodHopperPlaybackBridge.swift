@@ -16,6 +16,8 @@ import PocketCastsUtils
 ///   own database queue, so they are safe to run directly from the engine's background work queue and
 ///   they do not touch the player.
 /// - adoptEpisodeIntoPlayer changes the now-playing episode, so it is dispatched to the main thread.
+/// - alignPausedEpisodeWithSyncedPosition moves the paused player, so it is dispatched to the main
+///   thread too. Asynchronously: moving the player sends nothing, so the engine need not wait.
 final class PodHopperPlaybackBridge: PodHopperPositionSyncDelegate {
     static let shared = PodHopperPlaybackBridge()
 
@@ -29,6 +31,28 @@ final class PodHopperPlaybackBridge: PodHopperPositionSyncDelegate {
     func updatePlayedUpTo(episode: BaseEpisode, positionSec: Double) {
         // updateSyncFlag: true bumps playedUpToModified, which the staleness guard relies on.
         DataManager.sharedManager.saveEpisode(playedUpTo: positionSec, episode: episode, updateSyncFlag: true)
+    }
+
+    func alignPausedEpisodeWithSyncedPosition(episodeUuid: String, positionSec: Double) {
+        // updatePlayedUpTo writes the saved record only. The loaded episode's cached copy and the
+        // paused player kept the old position, and the next pause, which runs in full even when
+        // already paused, read the old position back from the player and wrote it over the synced
+        // one. Leaves the player alone while playing or about to play (playing() covers both),
+        // while casting, when another episode is loaded, or when it is already there. The sync seek
+        // is the one Pocket Casts used for this: it keeps the move out of the seek analytics and,
+        // with startPlaybackAfterSeek false, never starts playback.
+        DispatchQueue.main.async {
+            let playback = PlaybackManager.shared
+            guard !playback.playing(),
+                  !GoogleCastManager.sharedManager.connectedOrConnectingToDevice(),
+                  let current = playback.currentEpisode(),
+                  current.uuid == episodeUuid,
+                  current.playedUpTo != positionSec
+            else {
+                return
+            }
+            playback.seekToFromSync(time: positionSec, syncChanges: false, startPlaybackAfterSeek: false)
+        }
     }
 
     func markInProgress(episode: BaseEpisode) {
