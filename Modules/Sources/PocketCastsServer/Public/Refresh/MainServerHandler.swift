@@ -229,6 +229,15 @@ public class MainServerHandler {
         searchQueue.addOperation(searchOperation)
     }
 
+    /// PodHopper: the watch keeps only the newest episodes of each podcast. Phone and car keep all.
+    static var feedEpisodeLimit: Int? {
+        #if os(watchOS)
+            return PodHopperFeedParser.watchEpisodeCap
+        #else
+            return nil
+        #endif
+    }
+
     public func refreshPodcastFeed(podcast: Podcast, completion: @escaping (Bool) -> Void) {
         // PodHopper re-fetches and re-parses the feed on device instead of asking the Pocket Casts
         // server to refresh it, which has no record of feed derived podcasts. Any episodes the feed
@@ -244,7 +253,7 @@ public class MainServerHandler {
         DispatchQueue.global(qos: .utility).async {
             // PodHopper: conditional fetch. A host that says "not modified" means there is nothing to
             // insert, which is a successful refresh, not a failure.
-            let result = PodHopperFeedParser().fetch(feedUrl: feedUrl, conditional: true)
+            let result = PodHopperFeedParser().fetch(feedUrl: feedUrl, conditional: true, maxEpisodes: Self.feedEpisodeLimit)
             if case .notModified = result {
                 FileLog.shared.addMessage("Feed unchanged since the last refresh for \(podcast.uuid)")
                 completion(true)
@@ -334,7 +343,7 @@ public class MainServerHandler {
             DispatchQueue.global(qos: .utility).async {
                 // PodHopper: conditional fetch. "Not modified" answers the question directly: the
                 // feed has nothing new. No validator is stored here, because nothing is saved.
-                guard case let .success(parsed, _) = PodHopperFeedParser().fetch(feedUrl: feedUrl, conditional: true) else {
+                guard case let .success(parsed, _) = PodHopperFeedParser().fetch(feedUrl: feedUrl, conditional: true, maxEpisodes: Self.feedEpisodeLimit) else {
                     continuation.resume(returning: false)
                     return
                 }

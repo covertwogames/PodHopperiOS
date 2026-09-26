@@ -39,10 +39,62 @@ public final class PodHopperFeedManager {
     ///     parse; tests inject a fixture-backed closure so no network is touched.
     public init(
         dataManager: DataManager = .sharedManager,
-        parseFeed: @escaping (String) -> PodHopperFeedParser.ParsedFeed? = { PodHopperFeedParser().parse(feedUrl: $0) }
+        parseFeed: @escaping (String) -> PodHopperFeedParser.ParsedFeed? = { PodHopperFeedManager.parseFeedForThisDevice($0) }
     ) {
         self.dataManager = dataManager
         self.parseFeed = parseFeed
+    }
+
+    /// PodHopper: the watch keeps only the newest episodes of each podcast, because parsing and
+    /// storing every episode of a large feed is what exhausts a watch. The phone and car keep the
+    /// whole feed as before. Older episodes still reach the watch through `addFeedUrlForEpisode`
+    /// when Up Next or a synced position names one.
+    public static func parseFeedForThisDevice(_ feedUrl: String) -> PodHopperFeedParser.ParsedFeed? {
+        #if os(watchOS)
+            return PodHopperFeedParser().parse(feedUrl: feedUrl, maxEpisodes: PodHopperFeedParser.watchEpisodeCap)
+        #else
+            return PodHopperFeedParser().parse(feedUrl: feedUrl)
+        #endif
+    }
+
+    /// Fetch just enough of a feed to store one named episode, for when sync refers to an episode
+    /// this device does not hold. Reading stops at that episode instead of taking the whole feed,
+    /// which is what makes the watch's episode cap workable. Returns the episode's podcast uuid.
+    @discardableResult
+    public func addFeedUrlForEpisode(_ feedUrl: String, episodeUuid: String) -> String? {
+        let uuid = PodHopperUUID.podcastUuid(forFeed: feedUrl)
+
+        if dataManager.findBaseEpisode(uuid: episodeUuid) != nil {
+            return uuid
+        }
+
+        guard let parsed = PodHopperFeedParser().parse(feedUrl: feedUrl, containingEpisodeUuid: episodeUuid) else {
+            return nil
+        }
+
+        // An existing podcast keeps its own row: re-saving the parsed one would add a second row and
+        // throw away local settings. Only a podcast we have never seen is inserted, unsubscribed.
+        let podcast: PocketCastsDataModel.Podcast
+        if let existing = dataManager.findPodcast(uuid: uuid, includeUnsubscribed: true) {
+            podcast = existing
+        } else {
+            parsed.podcast.subscribed = 0
+            dataManager.save(podcast: parsed.podcast)
+            podcast = parsed.podcast
+        }
+
+        // Only insert episodes we do not already hold, because a bulk save inserts rather than
+        // replaces and would otherwise duplicate the newest episodes every time this runs.
+        let missing = parsed.episodes.filter { dataManager.findBaseEpisode(uuid: $0.uuid) == nil }
+        for episode in missing {
+            episode.podcastUuid = podcast.uuid
+            episode.podcast_id = podcast.id
+        }
+        if !missing.isEmpty {
+            dataManager.bulkSave(episodes: missing)
+        }
+
+        return podcast.uuid
     }
 
     /// Deterministic podcast id for a feed URL, so callers can resolve a feed to its id without

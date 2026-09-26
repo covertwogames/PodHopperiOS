@@ -443,7 +443,13 @@ public final class PodHopperPositionSync {
         }
         var episode = dataManager.findEpisode(uuid: candidate.episodeKey)
         if episode == nil, let feedUrl = candidate.feedUrl, !feedUrl.isEmpty {
-            _ = feedManager.addFeedUrlAsUnsubscribed(feedUrl)
+            // PodHopper: as in Up Next sync, the watch reads the feed only as far as the episode a
+            // position was synced for, rather than storing the whole feed to find one episode.
+            #if os(watchOS)
+                _ = feedManager.addFeedUrlForEpisode(feedUrl, episodeUuid: candidate.episodeKey)
+            #else
+                _ = feedManager.addFeedUrlAsUnsubscribed(feedUrl)
+            #endif
             episode = dataManager.findEpisode(uuid: candidate.episodeKey)
         }
         guard let target = episode else {

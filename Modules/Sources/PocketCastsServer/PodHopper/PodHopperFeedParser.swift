@@ -48,6 +48,10 @@ public final class PodHopperFeedParser {
 
     // MARK: Network fetch then parse
 
+    /// PodHopper: how many of the newest episodes the watch keeps per podcast. Matches Android's
+    /// watch cap. Older episodes are fetched one at a time when sync needs them.
+    public static let watchEpisodeCap = 25
+
     private static let userAgent = "PodHopper/1.0"
     private static let accept = "application/rss+xml, application/atom+xml, application/xml;q=0.9, text/xml;q=0.8, */*;q=0.5"
 
@@ -60,7 +64,7 @@ public final class PodHopperFeedParser {
     ///
     /// The system URL cache is bypassed for feed requests so the conditional headers we send are the
     /// ones the host answers, rather than the session quietly serving its own cached copy.
-    public func fetch(feedUrl: String, conditional: Bool = false) -> FeedResult {
+    public func fetch(feedUrl: String, conditional: Bool = false, maxEpisodes: Int? = nil, stopAtEpisodeUuid: String? = nil) -> FeedResult {
         let trimmed = feedUrl.trimmingCharacters(in: .whitespacesAndNewlines)
         guard let url = URL(string: trimmed) else {
             return .failure(reason: "Invalid URL")
@@ -115,7 +119,7 @@ public final class PodHopperFeedParser {
         guard let data = data else {
             return .failure(reason: "Empty response")
         }
-        guard let parsed = parse(data: data, feedUrl: trimmed) else {
+        guard let parsed = parse(data: data, feedUrl: trimmed, maxEpisodes: maxEpisodes, stopAtEpisodeUuid: stopAtEpisodeUuid) else {
             return .failure(reason: "Feed format not recognized")
         }
         return .success(parsed, validators: validators)
@@ -123,19 +127,33 @@ public final class PodHopperFeedParser {
 
     /// Convenience wrapper returning nil on any failure. Always fetches in full: callers that want
     /// the "has this changed?" behaviour use `fetch(feedUrl:conditional:)` and handle `notModified`.
-    public func parse(feedUrl: String) -> ParsedFeed? {
-        if case let .success(feed, _) = fetch(feedUrl: feedUrl) { return feed }
+    public func parse(feedUrl: String, maxEpisodes: Int? = nil) -> ParsedFeed? {
+        if case let .success(feed, _) = fetch(feedUrl: feedUrl, maxEpisodes: maxEpisodes) { return feed }
         return nil
+    }
+
+    /// Fetch a feed and read it only as far as one particular episode, used when sync names an
+    /// episode this device does not hold. Returns nil if the feed does not contain it.
+    public func parse(feedUrl: String, containingEpisodeUuid episodeUuid: String) -> ParsedFeed? {
+        guard case let .success(feed, _) = fetch(feedUrl: feedUrl, stopAtEpisodeUuid: episodeUuid) else { return nil }
+        return feed.episodes.contains(where: { $0.uuid == episodeUuid }) ? feed : nil
     }
 
     // MARK: Pure parse (no network, unit testable)
 
     /// Parse already downloaded feed bytes. FeedKit first, lenient `XMLParser` fallback.
-    public func parse(data: Data, feedUrl: String) -> ParsedFeed? {
-        if let rss = try? RSSFeed(data: data), let built = buildFromStrict(rss, feedUrl: feedUrl) {
-            return built
+    ///
+    /// PodHopper: pass `maxEpisodes` to stop after that many episodes, or `stopAtEpisodeUuid` to
+    /// stop once a particular episode has been read. Either one skips the FeedKit path, because
+    /// FeedKit builds the whole feed in one go and cannot be stopped part way. The watch uses the
+    /// limit so a feed with thousands of episodes costs it 25 episode objects instead of thousands.
+    public func parse(data: Data, feedUrl: String, maxEpisodes: Int? = nil, stopAtEpisodeUuid: String? = nil) -> ParsedFeed? {
+        if maxEpisodes == nil, stopAtEpisodeUuid == nil {
+            if let rss = try? RSSFeed(data: data), let built = buildFromStrict(rss, feedUrl: feedUrl) {
+                return built
+            }
         }
-        return parseLeniently(data: data, feedUrl: feedUrl)
+        return parseLeniently(data: data, feedUrl: feedUrl, maxEpisodes: maxEpisodes, stopAtEpisodeUuid: stopAtEpisodeUuid)
     }
 
     // MARK: Strict (FeedKit) builder
@@ -186,15 +204,16 @@ public final class PodHopperFeedParser {
     /// elements as simply absent rather than as a reason to reject the feed. Returns nil only when
     /// nothing usable (no channel title and no playable episodes) is found. Internal so the test
     /// suite can exercise this path directly.
-    func parseLeniently(data: Data, feedUrl: String) -> ParsedFeed? {
+    func parseLeniently(data: Data, feedUrl: String, maxEpisodes: Int? = nil, stopAtEpisodeUuid: String? = nil) -> ParsedFeed? {
         let url = feedUrl.trimmingCharacters(in: .whitespacesAndNewlines)
         let podcastUuid = PodHopperUUID.podcastUuid(forFeed: url)
 
-        let delegate = LenientFeedDelegate()
+        let delegate = LenientFeedDelegate(maxItems: maxEpisodes, stopAtEpisodeUuid: stopAtEpisodeUuid)
         let parser = XMLParser(data: data)
         parser.shouldProcessNamespaces = false
         parser.delegate = delegate
-        guard parser.parse() else { return nil }
+        // Stopping early makes `parse()` report false, which is a success here: we asked it to stop.
+        if !parser.parse(), !delegate.stoppedEarly { return nil }
 
         if (delegate.channelTitle?.isEmpty ?? true) && delegate.items.isEmpty {
             return nil
@@ -212,9 +231,12 @@ public final class PodHopperFeedParser {
         let episodes: [PocketCastsDataModel.Episode] = delegate.items.compactMap { raw in
             let audioUrl = raw.enclosureUrl.trimmingCharacters(in: .whitespacesAndNewlines)
             guard !audioUrl.isEmpty else { return nil }
-            let guid = raw.guid.isEmpty ? audioUrl : raw.guid
+            // PodHopper: use the same blank-guid rule as the FeedKit path. Both fall back to the
+            // audio URL when the guid is missing or only whitespace, so an episode gets the same id
+            // whichever parser read it. Episode ids are what Supabase sync matches across devices,
+            // so the two paths disagreeing would break playback sync for that episode.
             return makeEpisode(
-                uuid: PodHopperUUID.episodeUuid(forGuid: guid),
+                uuid: PodHopperUUID.episodeUuid(guid: raw.guid, enclosureUrl: audioUrl),
                 podcastUuid: podcastUuid,
                 title: raw.title,
                 description: raw.description,
@@ -331,6 +353,19 @@ private final class LenientFeedDelegate: NSObject, XMLParserDelegate {
         var enclosureType = ""
     }
 
+    /// PodHopper: how many episodes to read before stopping, and an episode to stop at once seen.
+    /// Both exist so a device that only needs the newest episodes, or one particular episode, does
+    /// not have to build the whole feed in memory.
+    private let maxItems: Int?
+    private let stopAtEpisodeUuid: String?
+    private(set) var stoppedEarly = false
+
+    init(maxItems: Int? = nil, stopAtEpisodeUuid: String? = nil) {
+        self.maxItems = maxItems
+        self.stopAtEpisodeUuid = stopAtEpisodeUuid
+        super.init()
+    }
+
     private(set) var channelTitle: String?
     private(set) var channelDescription: String?
     private(set) var channelAuthor: String?
@@ -386,10 +421,23 @@ private final class LenientFeedDelegate: NSObject, XMLParserDelegate {
 
         if inItem {
             if local == "item" {
+                var reachedTarget = false
                 if !current.enclosureUrl.isEmpty {
                     items.append(current)
+                    if let wanted = stopAtEpisodeUuid {
+                        let audioUrl = current.enclosureUrl.trimmingCharacters(in: .whitespacesAndNewlines)
+                        reachedTarget = PodHopperUUID.episodeUuid(guid: current.guid, enclosureUrl: audioUrl) == wanted
+                    }
                 }
                 inItem = false
+
+                // PodHopper: stop as soon as we have what this device asked for. abortParsing makes
+                // parse() report false, so the flag records that stopping was deliberate.
+                if reachedTarget || (maxItems.map { items.count >= $0 } ?? false) {
+                    stoppedEarly = true
+                    parser.abortParsing()
+                    return
+                }
             } else if local == "title" {
                 if current.title.isEmpty { current.title = value }
             } else if local == "description" || (prefix == "itunes" && local == "summary") {

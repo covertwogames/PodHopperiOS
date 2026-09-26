@@ -296,7 +296,14 @@ public final class PodHopperUpNextSync {
                 // the fetch returns immediately when the podcast already exists, so an episode from
                 // a subscribed show that simply has not been fetched yet stays outstanding here and
                 // is recovered by the retry above once a feed refresh brings it in.
-                _ = feedManager.addFeedUrlAsUnsubscribed(feedUrl)
+                // PodHopper: the watch only keeps each podcast's newest episodes, so pulling the
+                // whole feed here would undo that cap for the sake of one episode. Read the feed
+                // only as far as the episode we were sent instead.
+                #if os(watchOS)
+                    _ = feedManager.addFeedUrlForEpisode(feedUrl, episodeUuid: entry.uuid)
+                #else
+                    _ = feedManager.addFeedUrlAsUnsubscribed(feedUrl)
+                #endif
                 localEpisode = dataManager.findBaseEpisode(uuid: entry.uuid)
             }
 

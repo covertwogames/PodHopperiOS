@@ -15,6 +15,17 @@ enum PodHopperRefresh {
     /// one podcast at a time, while not opening an unbounded number of connections. Matches Android.
     private static let maxConcurrentFeedRefreshes = 6
 
+    /// PodHopper: the watch keeps only the newest episodes of each podcast, so a feed with thousands
+    /// of them costs it a handful of episode objects instead of thousands. The phone and car keep
+    /// the whole feed, as before.
+    private static var episodeLimit: Int? {
+        #if os(watchOS)
+            return PodHopperFeedParser.watchEpisodeCap
+        #else
+            return nil
+        #endif
+    }
+
     /// Parse each podcast's feed and build a refresh response keyed by podcast uuid containing every
     /// episode found in the feed. Blocking until all feeds are parsed, so call it off the main thread.
     /// Podcasts without a feed url, or whose feed cannot be fetched or parsed, are simply skipped and
@@ -48,7 +59,7 @@ enum PodHopperRefresh {
                 // PodHopper: ask the host whether the feed changed. An unchanged feed costs nothing
                 // beyond the round trip: no body, no parse, no database work. Validators are only
                 // staged here; `RefreshOperation` commits them once the episodes are saved.
-                switch parser.fetch(feedUrl: feedUrl, conditional: true) {
+                switch parser.fetch(feedUrl: feedUrl, conditional: true, maxEpisodes: episodeLimit) {
                 case .notModified:
                     return
                 case .failure:
