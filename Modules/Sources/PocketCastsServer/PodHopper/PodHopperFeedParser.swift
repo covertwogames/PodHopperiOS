@@ -28,9 +28,12 @@ public final class PodHopperFeedParser {
     }
 
     /// Outcome of a feed fetch. `failure` carries a short human readable cause (an HTTP status like
-    /// "HTTP 403" or an error summary) so the caller can show what went wrong.
+    /// "HTTP 403" or an error summary) so the caller can show what went wrong. `notModified` is only
+    /// ever returned for a conditional fetch, and means the host confirmed the feed is unchanged, so
+    /// there is nothing to parse and nothing to save.
     public enum FeedResult {
-        case success(ParsedFeed)
+        case success(ParsedFeed, validators: PodHopperFeedValidators.Validators?)
+        case notModified
         case failure(reason: String)
     }
 
@@ -49,7 +52,15 @@ public final class PodHopperFeedParser {
     private static let accept = "application/rss+xml, application/atom+xml, application/xml;q=0.9, text/xml;q=0.8, */*;q=0.5"
 
     /// Download and parse the feed at `feedUrl`. Runs blocking, so call it off the main thread.
-    public func fetch(feedUrl: String) -> FeedResult {
+    ///
+    /// PodHopper: pass `conditional: true` from refresh paths. The request then carries whatever the
+    /// host last told us about this feed, and a host that answers "not modified" costs us no body to
+    /// download, no parse and no database work. Paths that need the episodes themselves (subscribing,
+    /// filling a stub podcast) must leave it false, because "not modified" returns no feed at all.
+    ///
+    /// The system URL cache is bypassed for feed requests so the conditional headers we send are the
+    /// ones the host answers, rather than the session quietly serving its own cached copy.
+    public func fetch(feedUrl: String, conditional: Bool = false) -> FeedResult {
         let trimmed = feedUrl.trimmingCharacters(in: .whitespacesAndNewlines)
         guard let url = URL(string: trimmed) else {
             return .failure(reason: "Invalid URL")
@@ -59,22 +70,45 @@ public final class PodHopperFeedParser {
         request.setValue(Self.userAgent, forHTTPHeaderField: "User-Agent")
         request.setValue(Self.accept, forHTTPHeaderField: "Accept")
         request.timeoutInterval = 15
+        request.cachePolicy = .reloadIgnoringLocalCacheData
+
+        if conditional, let known = PodHopperFeedValidators.shared.stored(for: trimmed) {
+            if let etag = known.etag, !etag.isEmpty {
+                request.setValue(etag, forHTTPHeaderField: "If-None-Match")
+            }
+            if let lastModified = known.lastModified, !lastModified.isEmpty {
+                request.setValue(lastModified, forHTTPHeaderField: "If-Modified-Since")
+            }
+        }
 
         var data: Data?
         var failureReason: String?
+        var notModified = false
+        var validators: PodHopperFeedValidators.Validators?
         let semaphore = DispatchSemaphore(value: 0)
         URLSession.shared.dataTask(with: request) { responseData, response, error in
             if let error = error {
                 failureReason = error.localizedDescription
+            } else if let http = response as? HTTPURLResponse, http.statusCode == 304 {
+                notModified = true
             } else if let http = response as? HTTPURLResponse, !(200...299).contains(http.statusCode) {
                 failureReason = "HTTP \(http.statusCode)"
             } else {
                 data = responseData
+                if let http = response as? HTTPURLResponse {
+                    let etag = http.value(forHTTPHeaderField: "ETag")
+                    let lastModified = http.value(forHTTPHeaderField: "Last-Modified")
+                    let found = PodHopperFeedValidators.Validators(etag: etag, lastModified: lastModified)
+                    validators = found
+                }
             }
             semaphore.signal()
         }.resume()
         semaphore.wait()
 
+        if notModified {
+            return .notModified
+        }
         if let reason = failureReason {
             return .failure(reason: reason)
         }
@@ -84,12 +118,13 @@ public final class PodHopperFeedParser {
         guard let parsed = parse(data: data, feedUrl: trimmed) else {
             return .failure(reason: "Feed format not recognized")
         }
-        return .success(parsed)
+        return .success(parsed, validators: validators)
     }
 
-    /// Convenience wrapper returning nil on any failure.
+    /// Convenience wrapper returning nil on any failure. Always fetches in full: callers that want
+    /// the "has this changed?" behaviour use `fetch(feedUrl:conditional:)` and handle `notModified`.
     public func parse(feedUrl: String) -> ParsedFeed? {
-        if case let .success(feed) = fetch(feedUrl: feedUrl) { return feed }
+        if case let .success(feed, _) = fetch(feedUrl: feedUrl) { return feed }
         return nil
     }
 

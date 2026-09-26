@@ -10,6 +10,10 @@ extension PodcastManager {
         // unsubscribe (which routes back through here via the sync bridge) is not bounced back.
         PodHopperSubscriptionSync.shared.pushSubscription(feedUrl: podcast.podcastUrl ?? "", subscribed: false)
 
+        // PodHopper: forget what the host told us about this feed. Without this, re-subscribing could
+        // be answered "not modified" while we no longer hold any of its episodes.
+        PodHopperFeedValidators.shared.clear(for: podcast.podcastUrl ?? "")
+
         let savedFolderUuid = podcast.folderUuid
 
         if SyncManager.isUserLoggedIn() {

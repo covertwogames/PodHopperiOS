@@ -160,6 +160,10 @@ class RefreshOperation: Operation, @unchecked Sendable {
             ServerPodcastManager.shared.updateLatestEpisodeInfo(podcast: podcast, setDefaults: false)
         }
 
+        // PodHopper: the episodes from this refresh are saved, so it is now safe to remember what
+        // each host told us about its feed. Until this point the validators are only held in memory.
+        PodHopperFeedValidators.shared.commitStaged()
+
         ServerConfig.shared.syncDelegate?.checkForUnusedPodcasts()
         ServerConfig.shared.syncDelegate?.cleanupAllUnusedEpisodeBuffers()
 
@@ -171,6 +175,10 @@ class RefreshOperation: Operation, @unchecked Sendable {
     }
 
     private func cleanupAfterCancel() {
+        // PodHopper: a cancelled refresh may have saved some episodes but not others, so throw the
+        // staged validators away and let the next refresh fetch those feeds in full.
+        PodHopperFeedValidators.shared.discardStaged()
+
         apiQueue.cancelAllOperations()
     }
 

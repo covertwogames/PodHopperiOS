@@ -21,6 +21,12 @@ enum PodHopperRefresh {
     /// contribute no updates rather than failing the whole refresh. Returning all episodes per podcast
     /// is intentional: the downstream `RefreshOperation` discards the ones already stored.
     static func refreshResponse(for podcasts: [Podcast]) -> PodcastRefreshResponse {
+        // PodHopper: drop anything staged by an earlier refresh that never reached the save step, so
+        // this run can only ever commit validators for feeds it fetched itself. Without this, a
+        // refresh that was abandoned before saving could have its validators committed later by an
+        // unrelated refresh, and those feeds would be treated as up to date without their episodes.
+        PodHopperFeedValidators.shared.discardStaged()
+
         let parser = PodHopperFeedParser()
         let permits = DispatchSemaphore(value: maxConcurrentFeedRefreshes)
         let group = DispatchGroup()
@@ -39,12 +45,25 @@ enum PodHopperRefresh {
                     group.leave()
                 }
 
-                guard let parsed = parser.parse(feedUrl: feedUrl), !parsed.episodes.isEmpty else { return }
-                let refreshEpisodes = parsed.episodes.map(refreshEpisode(from:))
+                // PodHopper: ask the host whether the feed changed. An unchanged feed costs nothing
+                // beyond the round trip: no body, no parse, no database work. Validators are only
+                // staged here; `RefreshOperation` commits them once the episodes are saved.
+                switch parser.fetch(feedUrl: feedUrl, conditional: true) {
+                case .notModified:
+                    return
+                case .failure:
+                    return
+                case let .success(parsed, validators):
+                    if let validators = validators {
+                        PodHopperFeedValidators.shared.stage(validators, for: feedUrl)
+                    }
+                    guard !parsed.episodes.isEmpty else { return }
+                    let refreshEpisodes = parsed.episodes.map(refreshEpisode(from:))
 
-                lock.lock()
-                updates[uuid] = refreshEpisodes
-                lock.unlock()
+                    lock.lock()
+                    updates[uuid] = refreshEpisodes
+                    lock.unlock()
+                }
             }
         }
 

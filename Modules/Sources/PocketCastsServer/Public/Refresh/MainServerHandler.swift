@@ -242,7 +242,16 @@ public class MainServerHandler {
 
         FileLog.shared.addMessage("Attempting on-device feed refresh for \(podcast.uuid)")
         DispatchQueue.global(qos: .utility).async {
-            guard let parsed = PodHopperFeedParser().parse(feedUrl: feedUrl) else {
+            // PodHopper: conditional fetch. A host that says "not modified" means there is nothing to
+            // insert, which is a successful refresh, not a failure.
+            let result = PodHopperFeedParser().fetch(feedUrl: feedUrl, conditional: true)
+            if case .notModified = result {
+                FileLog.shared.addMessage("Feed unchanged since the last refresh for \(podcast.uuid)")
+                completion(true)
+
+                return
+            }
+            guard case let .success(parsed, validators) = result else {
                 FileLog.shared.addMessage("Feed refresh failed: could not fetch or parse feed for \(podcast.uuid)")
                 completion(false)
 
@@ -258,6 +267,12 @@ public class MainServerHandler {
             if !newEpisodes.isEmpty {
                 DataManager.sharedManager.bulkSave(episodes: newEpisodes)
                 ServerPodcastManager.shared.updateLatestEpisodeInfo(podcast: podcast, setDefaults: false)
+            }
+
+            // PodHopper: remember what the host told us, but only now that the episodes are stored,
+            // so a failure part way through cannot leave us believing we are already up to date.
+            if let validators = validators {
+                PodHopperFeedValidators.shared.store(validators, for: feedUrl)
             }
 
             FileLog.shared.addMessage("On-device feed refresh complete for \(podcast.uuid), added \(newEpisodes.count) episode(s)")
@@ -317,7 +332,9 @@ public class MainServerHandler {
 
         return await withCheckedContinuation { continuation in
             DispatchQueue.global(qos: .utility).async {
-                guard let parsed = PodHopperFeedParser().parse(feedUrl: feedUrl) else {
+                // PodHopper: conditional fetch. "Not modified" answers the question directly: the
+                // feed has nothing new. No validator is stored here, because nothing is saved.
+                guard case let .success(parsed, _) = PodHopperFeedParser().fetch(feedUrl: feedUrl, conditional: true) else {
                     continuation.resume(returning: false)
                     return
                 }
