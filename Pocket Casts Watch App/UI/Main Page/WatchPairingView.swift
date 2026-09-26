@@ -5,7 +5,7 @@ import WatchKit
 
 /// Signs this watch into a PodHopper account using the device-pairing code flow. The watch asks the
 /// pairing edge function for a code, the user types that code into the PodHopper phone app (Settings,
-/// Sync Account to Car App), and once the phone approves it the watch claims a Supabase session and
+/// Sync Account to Car or Watch), and once the phone approves it the watch claims a Supabase session and
 /// turns on sync. This is the device side of the same pairing path the car uses; the one phone screen
 /// approves either device.
 struct WatchPairingView: View {
@@ -21,7 +21,7 @@ struct WatchPairingView: View {
                         .font(.footnote)
                         .foregroundStyle(.gray)
                 case .showingCode(let code):
-                    Text("In the PodHopper app on your phone, open Settings then Sync Account to Car App, and enter this code:")
+                    Text("In the PodHopper app on your phone, open Settings then Sync Account to Car or Watch, and enter this code:")
                         .font(.footnote)
                         .multilineTextAlignment(.center)
                     Text(code)

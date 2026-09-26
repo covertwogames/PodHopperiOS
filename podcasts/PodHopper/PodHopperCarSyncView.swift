@@ -2,7 +2,7 @@ import Combine
 import PocketCastsServer
 import SwiftUI
 
-/// PodHopper's "Sync Account to Car App" screen. Mirrors the Android PodHopperCarSyncFragment: the
+/// PodHopper's "Sync Account to Car or Watch" screen. Mirrors the Android PodHopperCarSyncFragment: the
 /// signed-in user types the pairing code shown on their car (or watch) and this approves it against
 /// their PodHopper account through the Supabase pairing edge function. One screen serves any device
 /// that shows a code.
@@ -12,7 +12,7 @@ struct PodHopperCarSyncView: View {
     @State private var code = ""
 
     private let loggedOutText = "This option requires you to be logged into a PodHopper account. Tap on the Profile page and login or create your account first."
-    private let instructions = "Open PodHopper on your car and it will show a pairing code. Enter that code below to sign your car into your PodHopper account."
+    private let instructions = "Open PodHopper on your car or watch and it will show a pairing code. Enter that code below to sign that device into your PodHopper account."
 
     var body: some View {
         ScrollView {
@@ -42,7 +42,7 @@ struct PodHopperCarSyncView: View {
                         viewModel.pair(rawCode: code)
                     } label: {
                         ZStack {
-                            Text("Pair Car")
+                            Text("Pair Device")
                                 .opacity(viewModel.pairingState == .submitting ? 0 : 1)
                             if viewModel.pairingState == .submitting {
                                 ProgressView()

@@ -64,7 +64,7 @@ class SettingsViewController: PCViewController, UITableViewDataSource, UITableVi
             case .privacy:
                 return (L10n.settingsPrivacy, UIImage(named: "privacy"))
             case .syncAccountToCar:
-                return ("Sync Account to Car App", UIImage(systemName: "car"))
+                return ("Sync Account to Car or Watch", UIImage(systemName: "car"))
             case .deleteAccount:
                 return ("Delete Account", UIImage(systemName: "trash"))
             case .developer:
@@ -203,7 +203,7 @@ class SettingsViewController: PCViewController, UITableViewDataSource, UITableVi
             navigationController?.pushViewController(controller, animated: true)
         case .syncAccountToCar:
             let controller = ThemedHostingController(rootView: PodHopperCarSyncView())
-            controller.title = "Sync Account to Car App"
+            controller.title = "Sync Account to Car or Watch"
             navigationController?.pushViewController(controller, animated: true)
         case .deleteAccount:
             let alert = UIAlertController(
