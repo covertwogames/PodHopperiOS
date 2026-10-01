@@ -9,6 +9,9 @@ class ExtensionDelegate: NSObject, WKApplicationDelegate {
     func applicationDidFinishLaunching() {
         SessionManager.shared.setup()
         WatchSyncManager.shared.setup()
+        // PodHopper: give the position sync its Watch host, so positions from other devices are
+        // applied here. Without it nothing was ever applied on the Watch.
+        WatchPodHopperPositionHost.shared.install()
         restorePreviousStateIfRequired()
     }
 
@@ -17,10 +20,12 @@ class ExtensionDelegate: NSObject, WKApplicationDelegate {
         if WatchSyncManager.shared.isPlusUser() {
             scheduleNextRefresh()
         }
+        WatchPodHopperPositionHost.shared.becameActive()
     }
 
     func applicationWillResignActive() {
         DownloadManager.shared.transferForegroundDownloadsToBackground()
+        WatchPodHopperPositionHost.shared.willResignActive()
     }
 
     func handleUserActivity(_ userInfo: [AnyHashable: Any]?) {
@@ -84,6 +89,9 @@ class ExtensionDelegate: NSObject, WKApplicationDelegate {
         FileLog.shared.addMessage("Starting a background refresh")
         PodHopperSubscriptionSync.shared.pollSubscriptions()
         RefreshManager.shared.refreshPodcasts(forceEvenIfRefreshedRecently: false)
+        // PodHopper: bring positions from other devices across too, so the Watch is current the
+        // next time it is opened.
+        PodHopperPositionSync.shared.pullLatestPositions()
     }
 
     private func scheduleNextRefresh() {
