@@ -60,6 +60,18 @@ class PlaybackManager: ServerPlaybackDelegate {
 
     private let analyticsPlaybackHelper = AnalyticsPlaybackHelper.shared
 
+    // PodHopper: late position check. When the play-time check cannot reach the server, playback
+    // starts from this device's own position; the check keeps asking for this long after playback
+    // starts and corrects the position once. Sixty seconds: across ten network drops in the
+    // Android car's log on 28 and 29 Sep 2026, every wake-up had signal within 30 seconds.
+    private static let latePositionCheckWindow: TimeInterval = 60
+    private static let latePositionCheckInterval: TimeInterval = 3
+    // A synced position is only worth moving to when it is meaningfully ahead.
+    private static let syncedPositionMinAhead: TimeInterval = 30
+    private var latePositionCheckToken: UUID?
+    // The episode whose position was moved by a seek (user or sync) since the late check started.
+    private var positionMovedEpisodeUuid: String?
+
     #if !APPCLIP
     lazy var bookmarkManager: BookmarkManager = {
         BookmarkManager(playbackManager: self)
@@ -255,6 +267,126 @@ class PlaybackManager: ServerPlaybackDelegate {
         load(episode: episode, autoPlay: false, overrideUpNext: false)
     }
 
+    // MARK: - PodHopper late position check
+
+    /// PodHopper: the play-time check could not reach the server, so playback started from this
+    /// device's own position, which may be stale. Hold this device's writes for the episode, keep
+    /// asking every few seconds for up to a minute, and act once on the answer: jump forward if
+    /// another device is meaningfully ahead, or follow a completion made elsewhere. Stops the moment
+    /// the position is moved by a seek or the episode changes. Mirrors the Android fix of 30 Sep
+    /// 2026. Main thread.
+    private func startLatePositionCheck(episode: BaseEpisode) {
+        let token = UUID()
+        latePositionCheckToken = token
+        positionMovedEpisodeUuid = nil
+        let deadline = Date().addingTimeInterval(Self.latePositionCheckWindow)
+        PodHopperPositionSync.shared.holdPositionPushes(episodeUuid: episode.uuid, until: deadline)
+        scheduleLatePositionAttempt(episode: episode, token: token, deadline: deadline)
+    }
+
+    private func scheduleLatePositionAttempt(episode: BaseEpisode, token: UUID, deadline: Date) {
+        DispatchQueue.main.asyncAfter(deadline: .now() + Self.latePositionCheckInterval) { [weak self] in
+            guard let self, self.latePositionCheckToken == token else { return }
+            guard self.currentEpisode()?.uuid == episode.uuid, self.positionMovedEpisodeUuid != episode.uuid else {
+                // Moved or changed: the listener's choice stands. A seek has already released the
+                // hold and its new position goes out on the next tick.
+                self.finishLatePositionCheck(episode: episode, token: token, publishPosition: false)
+                return
+            }
+            guard Date() < deadline else {
+                FileLog.shared.addMessage("PodHopper late position check: no answer within the window, keeping local")
+                self.finishLatePositionCheck(episode: episode, token: token, publishPosition: true)
+                return
+            }
+            DispatchQueue.global(qos: .userInitiated).async {
+                let state = PodHopperPositionSync.shared.fetchOtherDeviceState(episode: episode)
+                var moveOnTo: BaseEpisode?
+                if case .completed = state {
+                    // Finished elsewhere: find what that device moved on to, and store its synced
+                    // position before switching, so the switch starts in the right place even if
+                    // the play-time check inside play() cannot reach the server again.
+                    if let latest = PodHopperPositionSync.shared.resolveLatestInProgressEpisode(), latest.uuid != episode.uuid {
+                        _ = PodHopperPositionSync.shared.applyRemotePositionBeforePlay(episode: latest)
+                        moveOnTo = latest
+                    }
+                }
+                DispatchQueue.main.async {
+                    guard self.latePositionCheckToken == token else { return }
+                    guard self.currentEpisode()?.uuid == episode.uuid, self.positionMovedEpisodeUuid != episode.uuid else {
+                        self.finishLatePositionCheck(episode: episode, token: token, publishPosition: false)
+                        return
+                    }
+                    guard let state else {
+                        // The server could not be reached yet: ask again inside the window.
+                        self.scheduleLatePositionAttempt(episode: episode, token: token, deadline: deadline)
+                        return
+                    }
+                    switch state {
+                    case .noOtherDevice:
+                        FileLog.shared.addMessage("PodHopper late position check: no other device has this episode, keeping local")
+                        self.finishLatePositionCheck(episode: episode, token: token, publishPosition: true)
+                    case .inProgress(let positionSec):
+                        self.jumpToSyncedPositionIfAhead(episode: episode, token: token, remotePositionSec: positionSec)
+                    case .completed:
+                        self.followCompletionFromOtherDevice(episode: episode, token: token, moveOnTo: moveOnTo)
+                    }
+                }
+            }
+        }
+    }
+
+    /// Move to another device's position for the episode playing now, once, when it is meaningfully
+    /// ahead. The jump goes through the normal seek, so it records the move and cannot repeat, and
+    /// the seek releases the hold once the new position is in place.
+    private func jumpToSyncedPositionIfAhead(episode: BaseEpisode, token: UUID, remotePositionSec: Int) {
+        let localSec = currentTime()
+        let remoteSec = TimeInterval(remotePositionSec)
+        guard remoteSec >= localSec + Self.syncedPositionMinAhead else {
+            FileLog.shared.addMessage("PodHopper late position check: other device not meaningfully ahead (remote \(remoteSec), local \(localSec))")
+            finishLatePositionCheck(episode: episode, token: token, publishPosition: true)
+            return
+        }
+        guard playing() else {
+            // Paused: the background sync moves a paused episode to the synced position itself.
+            finishLatePositionCheck(episode: episode, token: token, publishPosition: true)
+            return
+        }
+        FileLog.shared.addMessage("PodHopper late position check: jumping to synced position \(remoteSec) (local \(localSec))")
+        // Hand over to the seek: it records the move and releases the hold once it has landed.
+        // Releasing here instead would let the next write publish the old position mid-seek.
+        latePositionCheckToken = nil
+        seekToFromSync(time: remoteSec, syncChanges: true, startPlaybackAfterSeek: false)
+    }
+
+    /// Another device finished the episode playing here. Mirrors Android: if that device has moved
+    /// on to another episode, switch to it at its synced position first, then mark this one played,
+    /// so its removal is a quiet queue change rather than an interruption. Otherwise mark it played,
+    /// which runs the normal end-of-episode flow. The completion is applied the way a pulled one is,
+    /// inside the sync's echo guard, so it is not pushed back and autoplay's pick is not published.
+    private func followCompletionFromOtherDevice(episode: BaseEpisode, token: UUID, moveOnTo: BaseEpisode?) {
+        FileLog.shared.addMessage("PodHopper late position check: \(episode.uuid) was finished on another device")
+        if let moveOnTo, currentEpisode()?.uuid == episode.uuid {
+            FileLog.shared.addMessage("PodHopper late position check: following the other device to \(moveOnTo.uuid)")
+            // load makes the new episode current before it returns, so this episode is no longer the
+            // one playing when it is marked played below.
+            load(episode: moveOnTo, autoPlay: true, overrideUpNext: false)
+        }
+        PodHopperPositionSync.shared.applyRemoteCompletion(episode: episode)
+        finishLatePositionCheck(episode: episode, token: token, publishPosition: false)
+    }
+
+    /// End the check. Releases the hold if it is still in place and, for outcomes where this device
+    /// keeps its own position on the same episode, publishes that position straight away so a pause
+    /// during the window is not lost.
+    private func finishLatePositionCheck(episode: BaseEpisode, token: UUID, publishPosition: Bool) {
+        guard latePositionCheckToken == token else { return }
+        latePositionCheckToken = nil
+        let released = PodHopperPositionSync.shared.releasePositionPushHold(episodeUuid: episode.uuid)
+        if released, publishPosition, currentEpisode()?.uuid == episode.uuid {
+            PodHopperPositionSync.shared.pushCurrentPosition(immediate: true)
+        }
+    }
+
     func play(completion: (() -> Void)? = nil, userInitiated: Bool = true) {
         guard let currEpisode = currentEpisode() else { return }
 
@@ -267,8 +399,13 @@ class PlaybackManager: ServerPlaybackDelegate {
         // starts where another device left off instead of from the stale local position. The pull
         // runs off the main thread and is time bounded; the real play then runs on the main thread.
         // This mirrors Android, which applies the position at the top of its own play().
-        PodHopperPositionSync.shared.applyRemotePositionBeforePlay(episode: currEpisode) {
+        PodHopperPositionSync.shared.applyRemotePositionBeforePlay(episode: currEpisode) { pullResult in
             self.performPlayAfterRemoteSync(currEpisode: currEpisode, completion: completion, userInitiated: userInitiated)
+            // PodHopper: the check could not reach the server, so playback starts from this
+            // device's own position, which may be stale. Keep checking until it answers.
+            if pullResult == .failed {
+                self.startLatePositionCheck(episode: currEpisode)
+            }
         }
     }
 
@@ -497,6 +634,11 @@ class PlaybackManager: ServerPlaybackDelegate {
         }
 
         let currentTime = playingEpisode.playedUpTo
+        // PodHopper: every seek (skip, scrub, chapter, lock screen, car, sync) passes through here,
+        // so this is where "the position has been moved for this episode" is recorded, which stops
+        // the late position check. The push hold is released below once the seek has landed, so
+        // the first write afterwards carries the new position rather than the old one.
+        positionMovedEpisodeUuid = playingEpisode.uuid
         seekingTo = time
         FileLog.shared.addMessage("seek to \(time) startPlaybackAfterSeek \(startPlaybackAfterSeek)")
 
@@ -506,6 +648,7 @@ class PlaybackManager: ServerPlaybackDelegate {
                 guard let strongSelf = self else { return }
 
                 strongSelf.seekingTo = PlaybackManager.notSeeking
+                PodHopperPositionSync.shared.releasePositionPushHold(episodeUuid: playingEpisode.uuid)
 
                 strongSelf.recordPlaybackPosition(sendToServerImmediately: false, fireNotifications: true)
                 strongSelf.checkForChapterChange()
@@ -522,6 +665,7 @@ class PlaybackManager: ServerPlaybackDelegate {
                 DataManager.sharedManager.saveEpisode(playedUpTo: time, episode: playingEpisode, updateSyncFlag: syncChanges)
 
                 seekingTo = PlaybackManager.notSeeking
+                PodHopperPositionSync.shared.releasePositionPushHold(episodeUuid: playingEpisode.uuid)
                 NotificationCenter.postOnMainThread(notification: Constants.Notifications.playbackPositionSaved, object: playingEpisode.uuid)
                 checkForChapterChange()
                 fireProgressNotification()

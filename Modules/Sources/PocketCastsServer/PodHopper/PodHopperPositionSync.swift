@@ -129,6 +129,9 @@ public final class PodHopperPositionSync {
             return
         }
         let now = nowMs()
+        if isPositionPushHeld(episodeUuid: episode.uuid, now: now) {
+            return
+        }
         if !immediate {
             stateLock.lock()
             let throttled = now - _lastPushAttemptMs < Self.minPushIntervalMs
@@ -222,6 +225,163 @@ public final class PodHopperPositionSync {
             return
         }
         pushPosition(episode: snapshot.episode, positionMs: snapshot.positionMs, durationMs: snapshot.durationMs, immediate: immediate)
+    }
+
+    // MARK: Late position check support
+
+    // PodHopper: while playback started from a position this device could not check against the
+    // server, its writes for that episode are held back until the check has an answer. Without
+    // this, the first write after the network returns replaces another device's newer row before
+    // this device has looked at it: on 29 Sep 2026 the Android car resumed offline at 29:16, came
+    // online ten seconds later, and its first write overwrote the phone's 63:45 two milliseconds
+    // before its own check read the row. Mirrors Android. Released by the check, by a seek
+    // completing, or by its deadline. Completions are never held: finishing always wins.
+    private var _pushHoldEpisodeUuid: String?
+    private var _pushHoldUntilMs: Int64 = 0
+
+    /// Hold this device's position writes for an episode until `until`.
+    public func holdPositionPushes(episodeUuid: String, until: Date) {
+        stateLock.lock()
+        _pushHoldEpisodeUuid = episodeUuid
+        _pushHoldUntilMs = Int64(until.timeIntervalSince1970 * 1000)
+        stateLock.unlock()
+        FileLog.shared.addMessage("PodHopper holding position pushes for \(episodeUuid) until its synced position is checked")
+    }
+
+    /// End the hold for this episode. Returns true when a hold was actually released.
+    @discardableResult
+    public func releasePositionPushHold(episodeUuid: String) -> Bool {
+        stateLock.lock()
+        let released = _pushHoldEpisodeUuid == episodeUuid
+        if released {
+            _pushHoldEpisodeUuid = nil
+            _pushHoldUntilMs = 0
+        }
+        stateLock.unlock()
+        if released {
+            FileLog.shared.addMessage("PodHopper position pushes for \(episodeUuid) resumed")
+        }
+        return released
+    }
+
+    private func isPositionPushHeld(episodeUuid: String, now: Int64) -> Bool {
+        stateLock.lock()
+        defer { stateLock.unlock() }
+        guard let held = _pushHoldEpisodeUuid, held == episodeUuid else {
+            return false
+        }
+        if now >= _pushHoldUntilMs {
+            _pushHoldEpisodeUuid = nil
+            _pushHoldUntilMs = 0
+            return false
+        }
+        return true
+    }
+
+    /// What other devices have for one episode, for the late position check.
+    public enum OtherDeviceState {
+        case inProgress(positionSec: Int)
+        case completed
+        case noOtherDevice
+    }
+
+    /// The other devices' latest row for this episode. `.noOtherDevice` means the server answered
+    /// and nobody else has it; nil means the question could not be answered (signed out, offline,
+    /// timed out), so the caller may ask again. Blocking and time bounded; call off the main thread.
+    /// Mirrors Android's fetchRemoteEpisodeState.
+    public func fetchOtherDeviceState(episode: BaseEpisode) -> OtherDeviceState? {
+        if !supabase.isLoggedIn() {
+            return nil
+        }
+        var result: OtherDeviceState?
+        let semaphore = DispatchSemaphore(value: 0)
+        DispatchQueue.global(qos: .userInitiated).async {
+            do {
+                let installId = self.installId()
+                let query = "select=position_sec,total_sec,completed,updated_at_ms"
+                    + "&episode_key=eq.\(episode.uuid)"
+                    + "&device_id=neq.\(installId)"
+                    + "&order=updated_at_ms.desc"
+                    + "&limit=1"
+                let rows = try self.supabase.select(table: Self.table, query: query)
+                if let row = rows.first {
+                    let positionSec = (row["position_sec"] as? NSNumber)?.intValue ?? -1
+                    let totalSec = (row["total_sec"] as? NSNumber)?.intValue ?? 0
+                    let completed = (row["completed"] as? Bool) ?? ((row["completed"] as? NSNumber)?.boolValue ?? false)
+                    if Self.isCompletionRow(positionSec: positionSec, totalSec: totalSec, completed: completed) {
+                        result = .completed
+                    } else if positionSec >= 0 {
+                        result = .inProgress(positionSec: positionSec)
+                    } else {
+                        result = .noOtherDevice
+                    }
+                } else {
+                    result = .noOtherDevice
+                }
+            } catch {
+                result = nil
+            }
+            semaphore.signal()
+        }
+        if semaphore.wait(timeout: .now() + .milliseconds(Int(Self.playPullTimeoutMs))) == .timedOut {
+            return nil
+        }
+        return result
+    }
+
+    /// The most recently played still-in-progress episode on another device, fetched onto this
+    /// device if needed, for when the episode playing here turns out to be finished elsewhere.
+    /// Deliberately skips the adopt guards (they stop unwanted switches; following the listener to
+    /// what they moved on to is wanted) but still respects the auto-switch answer. Returns nil when
+    /// signed out, auto-switch is off, offline, timed out, or nothing is in progress. Blocking and
+    /// time bounded; call off the main thread. Mirrors Android's resolveLatestInProgressEpisode.
+    public func resolveLatestInProgressEpisode() -> BaseEpisode? {
+        if !supabase.isLoggedIn() {
+            return nil
+        }
+        guard delegate?.autoSwitchToCurrentEpisodeEnabled() == true else {
+            return nil
+        }
+        var resolved: BaseEpisode?
+        let semaphore = DispatchSemaphore(value: 0)
+        DispatchQueue.global(qos: .userInitiated).async {
+            do {
+                let installId = self.installId()
+                let query = "select=episode_key,feed_url,position_sec,total_sec,completed,updated_at_ms"
+                    + "&device_id=neq.\(installId)"
+                    + "&order=updated_at_ms.desc"
+                    + "&limit=\(Self.adoptScanLimit)"
+                let rows = try self.supabase.select(table: Self.table, query: query)
+                if let candidate = self.latestInProgressFrom(rows) {
+                    var episode = self.dataManager.findEpisode(uuid: candidate.episodeKey)
+                    if episode == nil, let feedUrl = candidate.feedUrl, !feedUrl.isEmpty {
+                        #if os(watchOS)
+                            _ = self.feedManager.addFeedUrlForEpisode(feedUrl, episodeUuid: candidate.episodeKey)
+                        #else
+                            _ = self.feedManager.addFeedUrlAsUnsubscribed(feedUrl)
+                        #endif
+                        episode = self.dataManager.findEpisode(uuid: candidate.episodeKey)
+                    }
+                    resolved = episode
+                }
+            } catch {
+                resolved = nil
+            }
+            semaphore.signal()
+        }
+        if semaphore.wait(timeout: .now() + .milliseconds(Int(Self.playPullTimeoutMs))) == .timedOut {
+            return nil
+        }
+        return resolved
+    }
+
+    /// Apply another device's completion of this episode exactly as a pulled completion is applied:
+    /// inside the echo guard, so the completion is not pushed back and autoplay's pick is not
+    /// published to the account's Up Next. Call on the main thread.
+    public func applyRemoteCompletion(episode: BaseEpisode) {
+        addApplying(episode.uuid)
+        delegate?.markAsPlayed(episode: episode)
+        removeApplying(episode.uuid)
     }
 
     /// Push an explicit completion. Thin wrapper kept for the single-episode callers.
@@ -547,17 +707,19 @@ public final class PodHopperPositionSync {
     /// queue and then calls [completion] on the main thread, so playback can start from the synced
     /// position without ever blocking the main thread. The completion is always called exactly once,
     /// including when signed out or when the pull times out, so the play flow never stalls.
-    public func applyRemotePositionBeforePlay(episode: BaseEpisode, completion: @escaping () -> Void) {
+    public func applyRemotePositionBeforePlay(episode: BaseEpisode, completion: @escaping (PlayPullResult) -> Void) {
         if !supabase.isLoggedIn() {
             DispatchQueue.main.async {
-                completion()
+                completion(.none)
             }
             return
         }
         DispatchQueue.global(qos: .userInitiated).async {
-            _ = self.applyRemotePositionBeforePlay(episode: episode)
+            // PodHopper: the result goes to the player. It used to be discarded, so a check that
+            // failed offline left playback on the stale local position with nothing to correct it.
+            let result = self.applyRemotePositionBeforePlay(episode: episode)
             DispatchQueue.main.async {
-                completion()
+                completion(result)
             }
         }
     }
