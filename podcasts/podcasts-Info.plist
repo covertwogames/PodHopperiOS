@@ -74,7 +74,7 @@
 		</dict>
 		<dict>
 			<key>CFBundleTypeName</key>
-			<string>Pocket Casts Bundle</string>
+			<string>PodHopper Bundle</string>
 			<key>CFBundleTypeRole</key>
 			<string>Editor</string>
 			<key>LSHandlerRank</key>
@@ -1108,7 +1108,7 @@
 				<string>com.apple.package</string>
 			</array>
 			<key>UTTypeDescription</key>
-			<string>Pocket Casts Bundle</string>
+			<string>PodHopper Bundle</string>
 			<key>UTTypeIconFiles</key>
 			<array/>
 			<key>UTTypeIdentifier</key>

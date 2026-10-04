@@ -88,7 +88,7 @@ class NowPlayingHelper {
 
         if let episode = episode as? Episode, let parentPodcast = episode.parentPodcast() {
             // some car stereo's do weird things with the % character, so here we replace it with pct to work around those bugs
-            let safeCharacterPodcastTitle = parentPodcast.title?.replacingOccurrences(of: "%", with: "pct") ?? "Pocket Casts"
+            let safeCharacterPodcastTitle = parentPodcast.title?.replacingOccurrences(of: "%", with: "pct") ?? "PodHopper"
 
             nowPlayingInfo[MPMediaItemPropertyArtist] = safeCharacterPodcastTitle as NSString
             nowPlayingInfo[MPMediaItemPropertyComposer] = safeCharacterPodcastTitle as NSString

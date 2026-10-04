@@ -1493,7 +1493,7 @@ Nota: És possible que t'hagis d'enviar el fitxer OPML a tu mateix per correu el
 
 Nota: Potser necessitaràs enviar-te per correu electrònic el fitxer OPML, mantingues premut l'adjunt i selecciona PodHopper.</string>
     <key>import_podcasts_title</key>
-    <string>IMPORTAR A POCKET CASTS</string>
+    <string>IMPORTAR A PODHOPPER</string>
     <key>import_subtitle</key>
     <string>Vens des d'una altra aplicació? Importa els teus pòdcasts i escolta'ls. Sempre pots fer això més endavant des de la configuració.</string>
     <key>import_title</key>

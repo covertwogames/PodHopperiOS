@@ -1498,7 +1498,7 @@ Hinweis: Möglicherweise musst du dir die OPML-Datei per E-Mail zuschicken. Drü
 
 Hinweis: Möglicherweise musst du dir die OPML-Datei per E-Mail zuschicken. Drücke länger auf den Anhang und wähle „PodHopper“ aus.</string>
     <key>import_podcasts_title</key>
-    <string>IN POCKET CASTS IMPORTIEREN</string>
+    <string>IN PODHOPPER IMPORTIEREN</string>
     <key>import_subtitle</key>
     <string>Hast du vorher eine andere App genutzt? Importiere deine Podcast und starte dein Hörerlebnis. Du kannst dies auch jederzeit später in den Einstellungen machen.</string>
     <key>import_title</key>

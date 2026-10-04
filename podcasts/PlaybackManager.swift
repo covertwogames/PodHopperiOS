@@ -346,11 +346,10 @@ class PlaybackManager: ServerPlaybackDelegate {
             finishLatePositionCheck(episode: episode, token: token, publishPosition: true)
             return
         }
-        guard playing() else {
-            // Paused: the background sync moves a paused episode to the synced position itself.
-            finishLatePositionCheck(episode: episode, token: token, publishPosition: true)
-            return
-        }
+        // Paused or playing, move it. A paused episode cannot be left for the background sync: the
+        // few seconds this device played from its stale position stamped that position as the
+        // newest change, so the background sync and the next play-time check would both keep it,
+        // and finishing here would even publish it. A seek while paused only moves the position.
         FileLog.shared.addMessage("PodHopper late position check: jumping to synced position \(remoteSec) (local \(localSec))")
         // Hand over to the seek: it records the move and releases the hold once it has landed.
         // Releasing here instead would let the next write publish the old position mid-seek.
@@ -528,13 +527,15 @@ class PlaybackManager: ServerPlaybackDelegate {
         seekTo(time: ceil(previousChapter.startTime.seconds), startPlaybackAfterSeek: startPlaybackAfterSkip)
     }
 
-    func skipToNextChapter(startPlaybackAfterSkip: Bool = false) {
+    /// PodHopper: `automatic` is true only when the player skips a chapter the listener deselected,
+    /// which is not the listener choosing a position (see `seekTo`'s `recordsMove`).
+    func skipToNextChapter(startPlaybackAfterSkip: Bool = false, automatic: Bool = false) {
         guard let nextChapter = chapterManager.nextVisiblePlayableChapter() else {
             // If there are no more chapters to play, we skip to the end of the last chapter
             // We do that because for some episodes the last chapter might not necessarily
             // be the end of the episode. So we don't make this assumption here and respect
             // whatever the producer set.
-            skipToEndOfLastChapter()
+            skipToEndOfLastChapter(automatic: automatic)
             return
         }
 
@@ -542,16 +543,16 @@ class PlaybackManager: ServerPlaybackDelegate {
             trackChapterSkipped()
         }
 
-        seekTo(time: ceil(nextChapter.startTime.seconds), startPlaybackAfterSeek: startPlaybackAfterSkip)
+        seekTo(time: ceil(nextChapter.startTime.seconds), startPlaybackAfterSeek: startPlaybackAfterSkip, recordsMove: !automatic)
     }
 
     func skipToChapter(_ chapter: ChapterInfo, startPlaybackAfterSkip: Bool = false) {
         seekTo(time: ceil(chapter.startTime.seconds), startPlaybackAfterSeek: startPlaybackAfterSkip)
     }
 
-    func skipToEndOfLastChapter() {
+    func skipToEndOfLastChapter(automatic: Bool = false) {
         if let lastChapter = chapterManager.lastChapter {
-            seekTo(time: ceil(lastChapter.startTime.seconds) + lastChapter.duration)
+            seekTo(time: ceil(lastChapter.startTime.seconds) + lastChapter.duration, startPlaybackAfterSeek: false, recordsMove: !automatic)
         }
     }
 
@@ -582,7 +583,7 @@ class PlaybackManager: ServerPlaybackDelegate {
     func playableChaptersUpdated() {
         // Check if current chapter still needs to be played
         if currentChapters().visibleChapter?.isPlayable() == false {
-            skipToNextChapter()
+            skipToNextChapter(automatic: true)
         }
     }
 
@@ -591,7 +592,7 @@ class PlaybackManager: ServerPlaybackDelegate {
 
         if chapterManager.haveTriedToParseChaptersFor(episodeUuid: episodeUuid), chapterManager.updateCurrentChapter(time: currentTime()) {
             if currentChapters().visibleChapter?.isPlayable() == false {
-                skipToNextChapter()
+                skipToNextChapter(automatic: true)
                 trackChapterSkipped()
             } else {
                 fireChapterChangeNotification()
@@ -604,10 +605,10 @@ class PlaybackManager: ServerPlaybackDelegate {
         seekingTo != PlaybackManager.notSeeking
     }
 
-    func seekTo(time: TimeInterval, startPlaybackAfterSeek: Bool = false, seekHint: SeekHint? = nil) {
+    func seekTo(time: TimeInterval, startPlaybackAfterSeek: Bool = false, seekHint: SeekHint? = nil, recordsMove: Bool = true) {
         // PodHopper: true so a seek stamps playedUpToModified, for the same reason as
         // recordPlaybackPosition. Inside seekTo this flag only controls that one save.
-        seekTo(time: time, syncChanges: true, startPlaybackAfterSeek: startPlaybackAfterSeek, seekHint: seekHint)
+        seekTo(time: time, syncChanges: true, startPlaybackAfterSeek: startPlaybackAfterSeek, seekHint: seekHint, recordsMove: recordsMove)
     }
 
     func seekToFromSync(time: TimeInterval, syncChanges: Bool, startPlaybackAfterSeek: Bool) {
@@ -620,7 +621,11 @@ class PlaybackManager: ServerPlaybackDelegate {
         case forward
     }
 
-    func seekTo(time: TimeInterval, syncChanges: Bool, startPlaybackAfterSeek: Bool = false, seekHint: SeekHint? = nil) {
+    /// PodHopper: `recordsMove` is false only for the player skipping a deselected chapter on its
+    /// own. That is not the listener choosing a position, so it neither stops the late position
+    /// check nor ends the hold on this device's writes. Otherwise a stale position that happened
+    /// to sit in a deselected chapter would switch the check off the moment playback reached it.
+    func seekTo(time: TimeInterval, syncChanges: Bool, startPlaybackAfterSeek: Bool = false, seekHint: SeekHint? = nil, recordsMove: Bool = true) {
         guard let playingEpisode = currentEpisode() else { return } // nothing to actually seek
 
         if seekHint == .back, !isValidSeek(time: time) {
@@ -638,7 +643,9 @@ class PlaybackManager: ServerPlaybackDelegate {
         // so this is where "the position has been moved for this episode" is recorded, which stops
         // the late position check. The push hold is released below once the seek has landed, so
         // the first write afterwards carries the new position rather than the old one.
-        positionMovedEpisodeUuid = playingEpisode.uuid
+        if recordsMove {
+            positionMovedEpisodeUuid = playingEpisode.uuid
+        }
         seekingTo = time
         FileLog.shared.addMessage("seek to \(time) startPlaybackAfterSeek \(startPlaybackAfterSeek)")
 
@@ -648,7 +655,9 @@ class PlaybackManager: ServerPlaybackDelegate {
                 guard let strongSelf = self else { return }
 
                 strongSelf.seekingTo = PlaybackManager.notSeeking
-                PodHopperPositionSync.shared.releasePositionPushHold(episodeUuid: playingEpisode.uuid)
+                if recordsMove {
+                    PodHopperPositionSync.shared.releasePositionPushHold(episodeUuid: playingEpisode.uuid)
+                }
 
                 strongSelf.recordPlaybackPosition(sendToServerImmediately: false, fireNotifications: true)
                 strongSelf.checkForChapterChange()
@@ -665,7 +674,9 @@ class PlaybackManager: ServerPlaybackDelegate {
                 DataManager.sharedManager.saveEpisode(playedUpTo: time, episode: playingEpisode, updateSyncFlag: syncChanges)
 
                 seekingTo = PlaybackManager.notSeeking
-                PodHopperPositionSync.shared.releasePositionPushHold(episodeUuid: playingEpisode.uuid)
+                if recordsMove {
+                    PodHopperPositionSync.shared.releasePositionPushHold(episodeUuid: playingEpisode.uuid)
+                }
                 NotificationCenter.postOnMainThread(notification: Constants.Notifications.playbackPositionSaved, object: playingEpisode.uuid)
                 checkForChapterChange()
                 fireProgressNotification()

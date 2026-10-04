@@ -312,16 +312,8 @@ extension AppDelegate {
     }
 
     func setupNewFeaturesRoutes() {
-        JLRoutes.global().addRoute("/features/*") {[weak self] parameters -> Bool in
-            guard self != nil,
-                  let pathComponents = parameters[JLRouteWildcardComponentsKey] as? [String],
-                  let feature = pathComponents.first
-            else {
-                return false
-            }
-            NavigationManager.sharedManager.navigateTo(NavigationManager.featurePageKey, data: [NavigationManager.featureKey: feature])
-            return true
-        }
+        // PodHopper: the only feature link, pktc://features/suggestedFolders, opened a Pocket Casts
+        // upsell flow. It is no longer registered, so such a link just opens the app.
     }
 
     func setupProfileRoutes() {

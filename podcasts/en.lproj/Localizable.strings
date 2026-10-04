@@ -1217,7 +1217,7 @@
 "import_opml_from_url" = "Import your podcasts from an OPML file using a URL";
 
 /* Title for the section that provides information on how to import podcasts to PodHopper */
-"import_podcasts_title" = "IMPORT TO POCKET CASTS";
+"import_podcasts_title" = "IMPORT TO PODHOPPER";
 
 /* A common string used throughout the app. Status message informing the user that the episode has been started but not finished. */
 "in_progress" = "In Progress";

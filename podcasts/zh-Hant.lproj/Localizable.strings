@@ -1498,7 +1498,7 @@ PodHopper Plus</string>
 
 注意：請透過電子郵件將 OPML 檔案寄給自己，然後長按附件並選取 PodHopper。</string>
     <key>import_podcasts_title</key>
-    <string>匯入 POCKET CASTS</string>
+    <string>匯入 PODHOPPER</string>
     <key>import_subtitle</key>
     <string>是其他應用程式的內容？ 匯入並收聽你的 Podcast 節目。 你可以稍後在設定中執行此操作。</string>
     <key>import_title</key>

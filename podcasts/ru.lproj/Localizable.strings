@@ -1498,7 +1498,7 @@ PodHopper на полную мощность.</string>
 
 Примечание. Вам может потребоваться отправить файл OPML самому себе по электронной почте, для этого нажмите и удерживайте вложение, а затем выберите PodHopper.</string>
     <key>import_podcasts_title</key>
-    <string>ИМПОРТ В POCKET CASTS</string>
+    <string>ИМПОРТ В PODHOPPER</string>
     <key>import_subtitle</key>
     <string>Заходите из другого приложения? Импортируйте и слушайте подкасты. Это можно сделать в любое время в настройках.</string>
     <key>import_title</key>

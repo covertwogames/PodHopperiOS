@@ -1498,7 +1498,7 @@ Observera: Du kan behöva skicka OPML-filen till dig själv via ett mejl, långt
 
 Anmärkning: Du kan behöva skicka OPML-filen till dig själv via e-post, trycka länge på bilagan och välja PodHopper.</string>
     <key>import_podcasts_title</key>
-    <string>IMPORTERA TILL POCKET CASTS</string>
+    <string>IMPORTERA TILL PODHOPPER</string>
     <key>import_subtitle</key>
     <string>Kommer du från en annan app? Importera dina podcasts och börja lyssna. Du kan alltid göra detta senare i dina inställningar.</string>
     <key>import_title</key>

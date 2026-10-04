@@ -44,7 +44,7 @@ struct PodHopperPrivacyView: View {
         ),
         Section(
             heading: "Contact",
-            body: "Questions about this policy? Email info@covertwogames.com."
+            body: "Questions about this policy? Email feedback@podhopper.app."
         )
     ]
 

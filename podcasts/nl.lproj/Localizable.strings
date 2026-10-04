@@ -1496,7 +1496,7 @@ Opmerking: Mogelijk moet je het OPML-bestand naar jezelf mailen. Hiervoor druk j
 
 Opmerking: Mogelijk moet je het OPML-bestand naar jezelf mailen. Hiervoor druk je op de bijlage en selecteer je PodHopper.</string>
     <key>import_podcasts_title</key>
-    <string>IMPORTEREN NAAR POCKET CASTS</string>
+    <string>IMPORTEREN NAAR PODHOPPER</string>
     <key>import_subtitle</key>
     <string>Afkomstig van een andere app? Importeer je podcast en begin met luisteren. Je kunt dit later altijd nog doen in de instellingen.</string>
     <key>import_title</key>

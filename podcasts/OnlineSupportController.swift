@@ -144,12 +144,10 @@ class OnlineSupportController: PCViewController, WKNavigationDelegate, UIAdaptiv
     // MARK: - WKNavigationDelegate
 
     func webView(_ webView: WKWebView, decidePolicyFor navigationAction: WKNavigationAction, decisionHandler: @escaping (WKNavigationActionPolicy) -> Void) {
-        if let urlStr = navigationAction.request.url?.absoluteString, urlStr.contains("mailto") {
-            let feedback = urlStr.contains("Feedback")
-            let chatbot = urlStr.lowercased().contains("chatbot-support@pocketcasts.com")
-            AnalyticsHelper.userGuideEmail(feedback: feedback)
-            let type: ZDType = chatbot ? .chatbotSupport : (feedback ? .feedback : .support)
-            emailHelper.presentSupportDialog(self, type: type)
+        if let url = navigationAction.request.url, url.scheme?.lowercased() == "mailto" {
+            // PodHopper: an email link on a page shown here (the privacy policy and terms) opens Mail
+            // addressed as the link intends. This used to open the Pocket Casts support form instead.
+            UIApplication.shared.open(url)
             decisionHandler(.cancel)
             return
         } else if let urlStr = navigationAction.request.url?.absoluteString, !urlStr.contains("device=ios"), urlStr.contains("support.pocketcasts.com") {

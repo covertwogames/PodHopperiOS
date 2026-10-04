@@ -1490,7 +1490,7 @@ PodHopper。</string>
     <key>import_opml_from_url</key>
     <string>使用 URL 从 OPML 文件导入播客</string>
     <key>import_podcasts_description</key>
-    <string>您可以使用广受支持的 OPML 格式将播客订阅导入到 Pocket casts。 从另一个应用程序导出文件并选择在 Pocket casts 中打开。
+    <string>您可以使用广受支持的 OPML 格式将播客订阅导入到 PodHopper。 从另一个应用程序导出文件并选择在 PodHopper 中打开。
 
 注意：您可能需要通过电子邮件将 OPML 文件发送给自己，请长按附件并选择 PodHopper。</string>
     <key>import_podcasts_description_new</key>
@@ -1498,7 +1498,7 @@ PodHopper。</string>
 
 注意：您可能需要通过电子邮件将 OPML 文件发送给自己，请长按附件并选择 PodHopper。</string>
     <key>import_podcasts_title</key>
-    <string>导入到 POCKET CASTS</string>
+    <string>导入到 PODHOPPER</string>
     <key>import_subtitle</key>
     <string>来自其他应用？ 导入您的播客并开始收听。 您日后可以随时在设置中执行此操作。</string>
     <key>import_title</key>
