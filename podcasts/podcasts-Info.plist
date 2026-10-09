@@ -1009,14 +1009,6 @@
 		<string>SJOpenFilterIntent</string>
 		<string>SJSleepTimerIntent</string>
 	</array>
-	<key>UIAppFonts</key>
-	<array>
-		<string>DMSans.ttf</string>
-		<string>Humane-Medium.otf</string>
-		<string>Humane-Bold.otf</string>
-		<string>Humane-SemiBold.otf</string>
-		<string>Inter.ttf</string>
-	</array>
 	<key>UIApplicationSceneManifest</key>
 	<dict>
 		<key>UIApplicationSupportsMultipleScenes</key>

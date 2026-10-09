@@ -77,14 +77,37 @@ search, iTunes top list loader, Supabase client, subscription and position sync)
 PodHopper's own Supabase backed flow (PodHopperAuthView). Episode notifications are generated
 locally on device; the app no longer registers for remote push at all.
 
-## End of Year: refactor, not purge
+## End of Year: removed (October 2026)
 
-The EOY trees are NOT deletable. The onboarding intro carousel, login cover art, WhatsNew
-views, and ServerPodcastManager are built on the EOY stories engine and its shared components
-(dependency closure: 55 of 58 app files load-bearing). All entry points are severed and the
-code is unreachable, but it is load-bearing at compile time. Deleting it means first
-extracting the stories engine and shared views. Note: wave 5 killed the intro carousel and
-interests views, so this may now be easier than it was; recompute the closure before starting.
+An earlier version of this note said the End of Year code could not be deleted because other
+screens were built on it. That stopped being true once wave 5 and the PodHopper onboarding
+replaced those screens. A fresh closure (two independent traces at 1a1dad141) found End of Year
+unreachable in every build (its three feature flags default to false, only the DEBUG beta menu
+can change them, and nothing outside its own files presents it), and only four pieces used
+anywhere else:
+
+- BottomSheetSwiftUIWrapper (MDCSwiftUIWrapper.swift) and PodcastCover / NormalCoverShadow /
+  BigCoverShadow (PodcastCover.swift) were moved unchanged into podcasts/Common SwiftUI. They
+  serve the free-up-space sheet, the playlist episode-unavailable alert, the Podroll info sheet,
+  the stats info sheet, Settings > Folders History, and folder results in search.
+- The EndOfYear Swift package now holds only shared helpers: View.snapshot (CarPlay Filters tab
+  artwork; ShareProfileViewModel also calls it without importing the module, which Swift 5
+  allows), CircularProgressView (SubscriptionProfileImage), and the renderForSharing environment
+  key (RenderForSharing.swift; PodcastCover and SlumberViews still reference it). The package
+  keeps the name EndOfYear so Package.swift and the nine `import EndOfYear` lines stay as they
+  were. Do not copy those helpers into the app while the package exists: Swift would report
+  ambiguous uses everywhere.
+
+Removed: the 54 story files in podcasts/End of Year (and its synchronized group), 10 package
+files, EndOfYear.xcassets, 19 Lottie files, 2 mp4s and img_0.png (used only inside the 2025
+animations), the DMSans, Humane and Inter fonts with their UIAppFonts entries, the End of Year
+tests and EndOfYearManagerMock, and a badge check in PodcastListViewController's uncalled
+makeProfileButton. Left for the leftovers stage, all dead but compiling: EndOfYearDataManager and
+the DataManager End of Year methods, SyncYearListeningHistoryTask, the End of Year settings keys,
+feature flags and analytics events (UserSatisfactionSurveyManager still uses three of the events),
+the NavigationManager keys, the showEndOfYearStories stub, OnboardingFlow's endOfYear cases,
+eoyRegistrationNotRequired, OnboardingModalHostingViewController, and the End of Year strings
+(keep eoyNotNow, which NotificationsPermissionsView uses).
 
 ## Watch item: mark-as-played ordering (no action taken)
 
@@ -131,6 +154,11 @@ pin. bulkMarkAsPlayed routes the current episode through markAsPlayed, so it inh
 - **addFromiTunesId** still points at the Pocket Casts server, but no live flow reaches it
   (Discover resolves iTunes entries to feed urls before opening a podcast page). Dead by flow,
   not by code.
+- **CancelSubscription.xcassets is still registered.** Purge wave 5 (eaae0a859) deleted the folder
+  from the repo but left its four lines in project.pbxproj (build file, file reference, group
+  child, Resources phase). Builds on the Mac have worked since, possibly because a local copy of
+  the folder survived there (not verified). A fresh clone may fail with "Build input file cannot
+  be found". Remove those four lines.
 - **Unit test target does not build.** PocketCastsTests/Tests/ABTest/ABTestProviderTests.swift
   still imports AutomatticTracks, which the Xcode finale removed. The app itself is not affected;
   only running the unit tests is. Delete that test file (it tests the removed ABTest code).
@@ -164,7 +192,8 @@ pin. bulkMarkAsPlayed routes the current episode through markAsPlayed, so it inh
    in through Automattic-Tracks), and expect code that silently compiled against ObjC categories
    in those packages to break (FileManager.fileExistsAtURL came from Sentry).
 7. **Compute the dependency closure before committing to a deletion scope.** EOY looked
-   deletable and was not.
+   deletable and was not, until the screens built on it were replaced; then it was. Recompute
+   the closure each time instead of trusting an old one.
 8. **"The code exists" is not "the user can reach it."** Every claim about runtime behavior must
    be traced to an actual UI trigger or lifecycle event, not inferred from a grep hit. Three
    separate wrong findings in the server audit came from skipping this. Trace sinks upward to a

@@ -211,15 +211,6 @@ class PodcastListViewController: PCViewController {
             imageView.heightAnchor.constraint(equalToConstant: avatarSize),
         ])
 
-        if EndOfYear.isEligible, EndOfYear.shouldShowBadge {
-            let badgeSize = CGFloat(10)
-            let badge = makeBadge(size: badgeSize)
-            imageView.addSubview(badge)
-            NSLayoutConstraint.activate([
-                badge.centerXAnchor.constraint(equalTo: imageView.rightAnchor, constant: -(badgeSize / 2)),
-                badge.centerYAnchor.constraint(equalTo: imageView.topAnchor, constant: +(badgeSize / 2)),
-            ])
-        }
         return UIBarButtonItem(customView: imageView)
     }
 
