@@ -169,7 +169,7 @@ class ServerSyncManager: ServerSyncDelegate {
     }
 
     func privateUserAgent() -> String {
-        "Pocket Casts/iOS/" + Settings.appVersion()
+        "PodHopper/iOS/" + Settings.appVersion()
     }
 
     func autoDownloadLatestEpisodes(uuids: [String]) {

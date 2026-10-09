@@ -219,9 +219,11 @@ enum PodHopperArtworkColor {
     }
 
     /// Resolve a podcast's artwork URL the same way the main image path does: the feed's own artwork
-    /// when present, falling back to the Pocket Casts image server only when a podcast has none. This
-    /// resolver is duplicated here on purpose, because ColorManager also compiles into the Watch app
-    /// target, where the app side image helper does not exist but DataManager and ServerHelper do.
+    /// when present. When a podcast has none, ServerHelper.imageUrl returns a file that never exists,
+    /// so the load fails, the completion gets nils as it would for any failure, and no server is
+    /// contacted. This resolver is duplicated here on purpose, because ColorManager also compiles
+    /// into the Watch app target, where the app side image helper does not exist but DataManager and
+    /// ServerHelper do.
     private static func artworkURL(forPodcast uuid: String) -> URL {
         if let podcast = DataManager.sharedManager.findPodcast(uuid: uuid, includeUnsubscribed: true),
            let feedArtwork = podcast.imageURL,

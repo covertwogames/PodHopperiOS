@@ -36,8 +36,12 @@ class FoldersCoordinator: NSObject {
         self.dataManager = dataManager
         self.suggestedFoldersModel = SuggestedFoldersModel()
         super.init()
-        Task {
-            await suggestedFoldersModel.load()
+        // PodHopper: suggested folders are switched off, and every screen that shows them already
+        // checks the flag. Check it here too, so the suggestions are never fetched in the background.
+        if FeatureFlag.suggestedFolders.enabled {
+            Task {
+                await suggestedFoldersModel.load()
+            }
         }
     }
 

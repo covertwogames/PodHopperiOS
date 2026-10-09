@@ -59,7 +59,8 @@ class OnlineSupportController: PCViewController, WKNavigationDelegate, UIAdaptiv
 
         navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.close, target: self, action: #selector(doneTapped))
 
-        customRightBtn = UIBarButtonItem(image: UIImage(named: "more"), menu: makeOptionsMenu())
+        // PodHopper: no "..." menu here. Its connection status page checked servers PodHopper does
+        // not use, and these pages only show PodHopper's legal text.
 
         AnalyticsHelper.userGuideOpened()
 

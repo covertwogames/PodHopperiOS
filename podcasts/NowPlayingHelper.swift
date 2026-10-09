@@ -107,8 +107,8 @@ class NowPlayingHelper {
                 nowPlayingInfo[MPMediaItemPropertyGenre] = "Podcast" as NSString
             }
         } else {
-            nowPlayingInfo[MPMediaItemPropertyArtist] = "PocketCasts" as NSString
-            nowPlayingInfo[MPMediaItemPropertyComposer] = "PocketCasts" as NSString
+            nowPlayingInfo[MPMediaItemPropertyArtist] = "PodHopper" as NSString
+            nowPlayingInfo[MPMediaItemPropertyComposer] = "PodHopper" as NSString
             nowPlayingInfo[MPMediaItemPropertyGenre] = "Podcast" as NSString
         }
 

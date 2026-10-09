@@ -1,6 +1,5 @@
 import Foundation
 import PocketCastsUtils
-import EventHorizonSDK
 
 class Analytics {
     static let shared = Analytics()
@@ -67,15 +66,6 @@ class Analytics {
     fileprivate func setAdaptersRegisteredStatus(_ value: Bool) {
         adaptersRegistered = value
         Self.logCurrentAdapters()
-    }
-}
-
-// MARK: Analytics (EventHorizon)
-
-extension Analytics {
-    static func send(_ event: some EventHorizonSDK.Trackable) {
-        let properties = event.analyticsProperties.mapValues { String(describing: $0) }
-        Analytics.shared._track(event.analyticsName, properties: properties)
     }
 }
 

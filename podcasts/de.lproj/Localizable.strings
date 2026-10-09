@@ -1161,7 +1161,7 @@ Folge dauerte
     <key>file_upload_name_required</key>
     <string>Name erforderlich</string>
     <key>file_upload_no_files_description</key>
-    <string>Lade deine eigenen Dateien in Pocket Casts hoch. So kannst du sie dir jederzeit ansehen oder anhören.</string>
+    <string>Lade deine eigenen Dateien in PodHopper hoch. So kannst du sie dir jederzeit ansehen oder anhören.</string>
     <key>file_upload_no_files_helper</key>
     <string>Wie geht das?</string>
     <key>file_upload_no_files_title</key>
@@ -2804,14 +2804,14 @@ Viele Anregungen findest du im Tab „Entdecken“.</string>
     <key>referrals_share_pass_long_message</key>
     <string>Hallo!
 
-Hier ist ein Gastpass für %1$@ für Pocket Casts Plus ‒ meinen liebsten Podcast Player. Er bietet eine Vielzahl einzigartiger Funktionen, die du sonst bei keinem anderen Podcast Player finden wirst, wie Lesezeichen, Ordner und vieles mehr. Ich bin mir sicher, er wird dir auch gefallen!
+Hier ist ein Gastpass für %1$@ für PodHopper Plus ‒ meinen liebsten Podcast Player. Er bietet eine Vielzahl einzigartiger Funktionen, die du sonst bei keinem anderen Podcast Player finden wirst, wie Lesezeichen, Ordner und vieles mehr. Ich bin mir sicher, er wird dir auch gefallen!
 </string>
     <key>referrals_share_pass_message</key>
-    <string>Hallo! Über den unten stehenden Link kannst du deinen Gastpass (Zeitraum: %1$@) für Pocket Casts Plus anfordern und dir auf all deinen Geräten Podcasts anhören!</string>
+    <string>Hallo! Über den unten stehenden Link kannst du deinen Gastpass (Zeitraum: %1$@) für PodHopper Plus anfordern und dir auf all deinen Geräten Podcasts anhören!</string>
     <key>referrals_share_pass_subject</key>
-    <string>Gastpass (Zeitraum: %1$@) für Pocket Casts Plus!</string>
+    <string>Gastpass (Zeitraum: %1$@) für PodHopper Plus!</string>
     <key>referrals_tip_message</key>
-    <string>Verschenke Pocket Casts Plus (Zeitraum: %1$@)!</string>
+    <string>Verschenke PodHopper Plus (Zeitraum: %1$@)!</string>
     <key>referrals_tip_title</key>
     <string>Dir stehen %1$@ Pässe zum Teilen zur Verfügung</string>
     <key>refresh_control_fetching_episodes</key>
@@ -4009,7 +4009,7 @@ Deine E-Mail-Adresse, dein Passwort und andere sensible Daten werden nicht getei
     <key>tv_welcome_subtitle</key>
     <string>Deine Podcasts. Auf dem großen Bildschirm. Offensichtlich.</string>
     <key>tv_welcome_title</key>
-    <string>Willkommen bei Pocket Casts TV</string>
+    <string>Willkommen bei PodHopper TV</string>
     <key>unarchive</key>
     <string>Wiederherstellen</string>
     <key>unfollow</key>

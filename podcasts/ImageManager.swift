@@ -567,9 +567,9 @@ class ImageManager {
     }
 
     /// Single source of truth for a podcast's artwork URL. PodHopper feed podcasts carry their own
-    /// artwork url from the RSS feed, so use it directly instead of the Pocket Casts image server,
-    /// which has no entry for feed podcasts. Falls back to the Pocket Casts server only when a
-    /// podcast has no feed artwork. Mirrors the Android PocketCastsImageRequestFactory override.
+    /// artwork url from the RSS feed, so use it directly. When a podcast has no feed artwork,
+    /// ServerHelper.imageUrl returns a file that never exists, so the placeholder shows and no
+    /// server is contacted. Mirrors the Android PocketCastsImageRequestFactory override.
     static func podcastImageURL(uuid: String, size: Int) -> URL {
         if let podcast = DataManager.sharedManager.findPodcast(uuid: uuid, includeUnsubscribed: true),
            let feedArtwork = podcast.imageURL,

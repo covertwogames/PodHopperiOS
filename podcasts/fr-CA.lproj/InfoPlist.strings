@@ -12,8 +12,8 @@
     <key>NSMicrophoneUsageDescription</key>
     <string>PodHopper doit accéder à votre microphone afin de détecter les appareils Google Cast à proximité.</string>
     <key>NSPhotoLibraryAddUsageDescription</key>
-    <string>Pocket Casts nécessite une autorisation pour sauvegarder cette image dans votre bibliothèque de photos.</string>
+    <string>PodHopper nécessite une autorisation pour sauvegarder cette image dans votre bibliothèque de photos.</string>
     <key>NSPhotoLibraryUsageDescription</key>
-    <string>Pocket Casts nécessite une autorisation pour sauvegarder cette image dans votre bibliothèque de photos.</string>
+    <string>PodHopper nécessite une autorisation pour sauvegarder cette image dans votre bibliothèque de photos.</string>
   </dict>
 </plist>

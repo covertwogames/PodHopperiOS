@@ -35,8 +35,26 @@ Automattic during support requests).
 **Server cutover:** the last four live Pocket Casts server calls now use local data.
 In-podcast episode search filters the local database. Podcast colors read from the local
 database. addFromUuid resolves against the local database instead of the cache server. The
-OPML export builds its uuid to feed url mapping on device. Verified: zero calls to any
-Pocket Casts network handler remain in the app.
+OPML export builds its uuid to feed url mapping on device. This section originally said zero
+calls to any Pocket Casts network handler remained. That was wrong: two were still live, and
+Stage 1 (below) removed them.
+
+**Stage 1 (October 2026):** a full trace of what was left found two live contacts with Pocket
+Casts servers and removed both. Suggested folders were fetched in the background on every launch
+even though the feature flag is off (FoldersCoordinator now checks the flag, and
+ApiServerHandler.suggestedFolders returns nil without a request). Artwork fell back to the Pocket
+Casts image server for a podcast with no artwork of its own, and the color tiles for your own
+files were downloaded from it (ServerHelper.imageUrl now points at a file that never exists, so
+the placeholder shows; userEpisodeDefaultImageUrl draws the color tile on the device and keeps it
+in Caches/PodHopperFileArtwork). Also in Stage 1: the EventHorizonSDK binary package (downloaded
+from Automattic at build time, never called) removed from Modules/Package.swift; the pktc
+/resetalltours and /pair link routes removed; the "..." menu removed from the legal web pages;
+the app's network user agent says PodHopper; the lock screen shows PodHopper as the artist for
+your own files; the notification and watch no-artwork placeholders, the how-to logo, and the Siri
+shortcut icons replaced with PodHopper versions; the watch accent color and complication tint
+changed from red to PodHopper green (#269E5F); "Pocket Casts" replaced with PodHopper in the
+translated strings (de, fr, fr-CA, ja, nl, pt-BR, ru, sv); AutomatticTracksiOS and Firebase
+removed from the acknowledgements page, since neither is in the app any more.
 
 ## Current architecture
 
@@ -85,11 +103,13 @@ pin. bulkMarkAsPlayed routes the current episode through markAsPlayed, so it inh
 
 ## Remaining cleanup (none urgent, nothing user facing)
 
-- **Dead menu in the legal web view.** OnlineSupportController creates customRightBtn (a "..."
-  menu with Connection Status, Export Database, and Logs) but never assigns it to
-  navigationItem.rightBarButtonItem, so it never renders. That makes LogsView, LogsViewController,
-  StatusPageView, and StatusPageViewModel unreachable dead code. Delete the menu and those
-  screens together.
+- **Leftovers of the legal web view menu.** Stage 1 removed the line that created the "..." menu
+  (Connection Status, Export Database, Logs) in OnlineSupportController. An earlier version of
+  this note said the menu never rendered; that was not certain, because the customRightBtn setter
+  in PCViewController does put the button on the navigation item, and the controller is shown
+  inside SwiftUI. Either way it is gone now. Its private functions (makeOptionsMenu,
+  showStatusPage, export, viewLogs) and the screens only it opened (LogsView, LogsViewController,
+  StatusPageView, StatusPageViewModel) are now dead code. Delete them together.
 - **Zendesk.** ZendeskSupportService and the message support stack have no reachable presenter
   (EmailHelper, their only caller, has zero callers). Deletable.
 - **Vestigial Pocket Casts constants.** The service host functions in ServerConstants (main,
@@ -98,6 +118,14 @@ pin. bulkMarkAsPlayed routes the current episode through markAsPlayed, so it inh
 - **addFromiTunesId** still points at the Pocket Casts server, but no live flow reaches it
   (Discover resolves iTunes entries to feed urls before opening a podcast page). Dead by flow,
   not by code.
+- **Unit test target does not build.** PocketCastsTests/Tests/ABTest/ABTestProviderTests.swift
+  still imports AutomatticTracks, which the Xcode finale removed. The app itself is not affected;
+  only running the unit tests is. Delete that test file (it tests the removed ABTest code).
+- **pktc link scheme.** The app still registers pktc:// links. Changing it to PodHopper's own
+  scheme is planned as its own package.
+- **Unused leftovers.** The "Pocketcasts.com" string in every language
+  (plus_subscription_web_details) and the about_a8c_family string have no callers. ServerHelper's
+  colorUrl, playerUrl, and bundleUrl still name Pocket Casts addresses but have no live callers.
 - **Deferred product items:** CarPlay entitlement request and real car validation, reviewer
   account for App Store review, the 8.15 vs 1.0 version decision, watch standalone gating.
 

@@ -146,13 +146,6 @@ extension AppDelegate {
 
             return true
         }
-        // developer features:
-        JLRoutes.global().addRoute("/resetalltours") { _ -> Bool in
-            Settings.setWhatsNewLastAcknowledged(0)
-
-            return true
-        }
-
         // Support for subscribing to a feed URL
         JLRoutes.global().addRoute("/subscribe/*") { [weak self] parameters -> Bool in
             guard
@@ -282,7 +275,6 @@ extension AppDelegate {
         setupNewFeaturesRoutes()
         setupProfileRoutes()
         setupTestFlightIAPRoutes()
-        setupTVPairingRoutes()
     }
 
     func setupOnboardingRoutes() {
@@ -326,18 +318,6 @@ extension AppDelegate {
                 return true
             }
             NavigationManager.sharedManager.navigateTo(NavigationManager.settingsProfileKey, data: [NavigationManager.profileRowKey: row])
-            return true
-        }
-    }
-
-    func setupTVPairingRoutes() {
-        JLRoutes.global().addRoute("/pair") { [weak self] parameters -> Bool in
-            guard self != nil else {
-                return true
-            }
-            let userCode = parameters["user_code"] as? String
-
-            NavigationManager.sharedManager.navigateTo(NavigationManager.deviceApprovePageKey, data: [NavigationManager.deviceApproveCodeKey: userCode as Any])
             return true
         }
     }

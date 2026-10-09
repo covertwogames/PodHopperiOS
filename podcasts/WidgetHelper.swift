@@ -205,9 +205,12 @@ class WidgetHelper {
             if !fileManager.fileExists(atPath: sharedDirectory.path, isDirectory: &isDir) {
                 try fileManager.createDirectory(at: sharedDirectory, withIntermediateDirectories: false, attributes: nil)
             }
-            if !fileManager.fileExists(atPath: sharedPath.path),
+            // PodHopper: a file shown as a plain color tile is copied again every time. The copy keeps
+            // the same name when the file's color or the app's theme changes, so copying it only once
+            // would leave the widget showing the old color. The tile is tiny, so this is cheap.
+            if userEpisode.imageColor > 0 || !fileManager.fileExists(atPath: sharedPath.path),
                let customImage = UIImage(contentsOfFile: path.path), let downsized = customImage.resized(to: CGSize(width: 280, height: 280)) {
-                try downsized.jpegData(compressionQuality: 1)?.write(to: sharedPath)
+                try downsized.jpegData(compressionQuality: 1)?.write(to: sharedPath, options: .atomic)
             }
             return sharedPath.absoluteString
         } catch let error as NSError {

@@ -2,7 +2,8 @@
 import ClockKit
 
 class ComplicationController: NSObject, CLKComplicationDataSource {
-    private static let tintColor = UIColor(red: 0.956, green: 0.262, blue: 0.211, alpha: 1.0)
+    // PodHopper green (#269E5F)
+    private static let tintColor = UIColor(red: 38 / 255, green: 158 / 255, blue: 95 / 255, alpha: 1.0)
 
     override init() {
         super.init()

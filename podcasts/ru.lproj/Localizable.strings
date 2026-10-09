@@ -366,7 +366,7 @@
     <key>cancel_confirm_item_plus</key>
     <string>После этой даты доступ к функциям Plus, таким как «Закладки», «Случайный выбор», «Портативные» и др., будет удалён.</string>
     <key>cancel_confirm_item_uploads</key>
-    <string>Файлы, загруженные в вашу учётную запись Pocket Casts, будут удалены, но файлы, загруженные на ваши мобильные устройства, сохранятся.</string>
+    <string>Файлы, загруженные в вашу учётную запись PodHopper, будут удалены, но файлы, загруженные на ваши мобильные устройства, сохранятся.</string>
     <key>cancel_confirm_sub_expiry</key>
     <string>Ваша текущая подписка будет действовать до %1$@.</string>
     <key>cancel_confirm_sub_expiry_date_fallback</key>
@@ -1389,7 +1389,7 @@ PodHopper на полную мощность.</string>
     <key>generated_transcripts_overlay_description</key>
     <string>Подпишитесь на Plus, чтобы пользоваться ею и другими премиум-функциями, такими как закладки и папки.</string>
     <key>generated_transcripts_overlay_title</key>
-    <string>Расшифровка автоматически создана Pocket Casts.</string>
+    <string>Расшифровка автоматически создана PodHopper.</string>
     <key>go_to_discover</key>
     <string>Перейти к рекомендациям</string>
     <key>go_to_podcast</key>
@@ -1447,33 +1447,33 @@ PodHopper на полную мощность.</string>
 1. Нажмите кнопку "Установить шорткат" ниже.
 2. Когда появится запрос, нажмите кнопку "Добавить шорткат".
 3. Нажмите вкладку "Шорткаты".
-4. В списке найдите шорткат "Из Apple Podcasts в Pocket Casts".
+4. В списке найдите шорткат "Из Apple Podcasts в PodHopper".
 5. Нажмите её, чтобы начать импорт.
-6. После запуска шортката снова откроется Pocket Casts для завершения импорта.</string>
+6. После запуска шортката снова откроется PodHopper для завершения импорта.</string>
     <key>import_instructions_breaker</key>
     <string>1. Нажмите кнопку "Открыть Breaker" ниже.
 2. Нажмите "Настройки" на нижней панели вкладок.
 3. Нажмите "Подключение".
 4. Нажмите "Экспорт подписок".
-5. В открывшемся диалоговом окне найдите значок Pocket Casts и нажмите его.</string>
+5. В открывшемся диалоговом окне найдите значок PodHopper и нажмите его.</string>
     <key>import_instructions_castbox</key>
     <string>1. Нажмите кнопку "Открыть Castbox" ниже.
 2. Нажмите вкладку "Личное".
 3. Прокрутите экран вниз, найдите опцию "Настройки" и выберите её.
 4. Прокрутите экран вниз, найдите опцию "Экспорт OPML" и выберите её.
-5. В окне запроса выберите "Открыть в Pocket Casts".
+5. В окне запроса выберите "Открыть в PodHopper".
 6. Если файл откроется в Safari, нажмите кнопку "Загрузить".
 7. После завершения загрузки нажмите значок загрузки в строке URL-адреса.
 8. Выберите "Загрузки".
 9. Нажмите файл castbox_opml.
-10. Если нужно, нажмите значок "Поделиться" и откройте файл в Pocket Casts.
-11. Когда откроется диалоговое окно, найдите значок Pocket Casts и нажмите его.</string>
+10. Если нужно, нажмите значок "Поделиться" и откройте файл в PodHopper.
+11. Когда откроется диалоговое окно, найдите значок PodHopper и нажмите его.</string>
     <key>import_instructions_castro</key>
     <string>1. Нажмите кнопку "Открыть Castro" ниже.
 2. Нажмите значок шестерёнки в верхней части экрана приложения.
 3. Прокрутите страницу вниз до опции "Данные пользователя" и нажмите её.
 4. Выберите "Экспортировать подписки".
-5. Когда откроется диалоговое окно, найдите значок Pocket Casts и нажмите его.</string>
+5. Когда откроется диалоговое окно, найдите значок PodHopper и нажмите его.</string>
     <key>import_instructions_import_from</key>
     <string>Импорт из %1$@</string>
     <key>import_instructions_install_shortcut</key>
@@ -1486,7 +1486,7 @@ PodHopper на полную мощность.</string>
     <string>1. Нажмите кнопку ниже, чтобы открыть Overcast.
 2. Нажмите значок шестерёнки в верхней части экрана приложения.
 3. Прокрутите экран вниз, найдите опцию "Экспорт OPML" и выберите её.
-4. В открывшемся диалоговом окне найдите значок Pocket Casts и нажмите его.</string>
+4. В открывшемся диалоговом окне найдите значок PodHopper и нажмите его.</string>
     <key>import_opml_from_url</key>
     <string>Импортируйте подкасты из файла OPML с помощью URL-адреса</string>
     <key>import_podcasts_description</key>
@@ -1884,7 +1884,7 @@ PodHopper на полную мощность.</string>
     <key>patron_feature_profile_icons</key>
     <string>Специальные значки приложения PodHopper</string>
     <key>patron_purchase_promo_title</key>
-    <string>Станьте пользователем Patron и получите доступ ко всем возможностям Pocket Casts</string>
+    <string>Станьте пользователем Patron и получите доступ ко всем возможностям PodHopper</string>
     <key>patron_subscribe_to</key>
     <string>Подписаться на Patron</string>
     <key>patron_thank_you</key>
@@ -1900,15 +1900,15 @@ PodHopper на полную мощность.</string>
     <key>pause</key>
     <string>Пауза</string>
     <key>paywall_dynamic_headline_banner_ad</key>
-    <string>Забудьте о рекламных баннерах и не только благодаря Pocket Casts Plus</string>
+    <string>Забудьте о рекламных баннерах и не только благодаря PodHopper Plus</string>
     <key>paywall_dynamic_headline_files</key>
-    <string>Загружайте свои файлы при помощи Pocket Casts Plus и многое другое</string>
+    <string>Загружайте свои файлы при помощи PodHopper Plus и многое другое</string>
     <key>paywall_dynamic_headline_folder</key>
-    <string>Упорядочивайте ваши подкасты с Pocket Casts Plus и многое другое</string>
+    <string>Упорядочивайте ваши подкасты с PodHopper Plus и многое другое</string>
     <key>paywall_dynamic_headline_icons</key>
-    <string>Получайте эксклюзивные значки приложений с Pocket Casts Plus и многое другое</string>
+    <string>Получайте эксклюзивные значки приложений с PodHopper Plus и многое другое</string>
     <key>paywall_dynamic_headline_themes</key>
-    <string>Получайте эксклюзивные темы с Pocket Casts Plus и многое другое</string>
+    <string>Получайте эксклюзивные темы с PodHopper Plus и многое другое</string>
     <key>paywall_dynamic_headline_up_next_shuffle</key>
     <string>При помощи PodHopper Plus можно воспроизводить выпуски в случайном порядке и делать ещё много интересного</string>
     <key>paywall_dynamic_headline_watch</key>
@@ -2355,7 +2355,7 @@ PodHopper на полную мощность.</string>
     <key>plus_feature_card_title_wear_os</key>
     <string>Воспроизведение на Apple Watch и Wear OS</string>
     <key>plus_feature_gratitude</key>
-    <string>Бесконечная благодарность от всей команды Pocket Casts</string>
+    <string>Бесконечная благодарность от всей команды PodHopper</string>
     <key>plus_feature_librofm</key>
     <string>Бесплатная аудиокнига от Libro.fm</string>
     <key>plus_feature_slumber</key>
@@ -2395,7 +2395,7 @@ PodHopper на полную мощность.</string>
     <key>plus_marketing_themes_icons_title</key>
     <string>Темы и значки</string>
     <key>plus_marketing_title</key>
-    <string>Всё, что вам нравится в Pocket Casts, и ещё больше</string>
+    <string>Всё, что вам нравится в PodHopper, и ещё больше</string>
     <key>plus_marketing_up_next_shuffle</key>
     <string>Следующий, случайно выбранный элемент</string>
     <key>plus_marketing_updated_cloud_storage_description</key>
@@ -2427,7 +2427,7 @@ PodHopper на полную мощность.</string>
     <key>plus_purchase_failed</key>
     <string>Похоже, что при обработке вашего платежа возникла проблема. Повторите попытку.</string>
     <key>plus_purchase_promo_title</key>
-    <string>Станьте пользователем Plus и получите доступ ко всем возможностям Pocket Casts</string>
+    <string>Станьте пользователем Plus и получите доступ ко всем возможностям PodHopper</string>
     <key>plus_required_feature</key>
     <string>Для работы этой функции требуется PodHopper Plus</string>
     <key>plus_select_payment_frequency</key>
@@ -2804,12 +2804,12 @@ PodHopper на полную мощность.</string>
     <key>referrals_share_pass_long_message</key>
     <string>Здравствуйте!
 
-Это гостевой пропуск на %1$@ в Pocket Casts Plus — мой любимый плеер подкастов. В нём есть множество уникальных функций, которых больше нет нигде: закладки, папки и многое другое. Надеюсь, вам он тоже понравится!
+Это гостевой пропуск на %1$@ в PodHopper Plus — мой любимый плеер подкастов. В нём есть множество уникальных функций, которых больше нет нигде: закладки, папки и многое другое. Надеюсь, вам он тоже понравится!
 </string>
     <key>referrals_share_pass_message</key>
-    <string>Привет! По ссылке ниже лежит ваш гостевой пропуск в Pocket Casts Plus сроком на %1$@. Воспользуйтесь им и слушайте подкасты на любом из ваших устройств!</string>
+    <string>Привет! По ссылке ниже лежит ваш гостевой пропуск в PodHopper Plus сроком на %1$@. Воспользуйтесь им и слушайте подкасты на любом из ваших устройств!</string>
     <key>referrals_share_pass_subject</key>
-    <string>Гостевой пропуск Pocket Casts Plus на %1$@</string>
+    <string>Гостевой пропуск PodHopper Plus на %1$@</string>
     <key>referrals_tip_message</key>
     <string>%1$@ пользования PodHopper Plus в подарок!</string>
     <key>referrals_tip_title</key>
@@ -3175,7 +3175,7 @@ PodHopper на полную мощность.</string>
     <key>settings_general_legacy_bluetooth</key>
     <string>Поддержка старых версий Bluetooth</string>
     <key>settings_general_legacy_bluetooth_subtitle</key>
-    <string>Если ваше устройство Bluetooth или автомобильная стереосистема приостанавливает воспроизведение Pocket Casts или сбрасывает позицию воспроизведения на 0, попробуйте включить эту настройку, чтобы устранить проблему.</string>
+    <string>Если ваше устройство Bluetooth или автомобильная стереосистема приостанавливает воспроизведение PodHopper или сбрасывает позицию воспроизведения на 0, попробуйте включить эту настройку, чтобы устранить проблему.</string>
     <key>settings_general_lock_screen_disabled</key>
     <string>Включить очистку экрана блокировки</string>
     <key>settings_general_multi_select_gesture</key>
@@ -3385,7 +3385,7 @@ PodHopper на полную мощность.</string>
     <key>settings_watch_auto_download</key>
     <string>Автоматическая загрузка следующих выпусков</string>
     <key>settings_watch_auto_download_off_subtitle</key>
-    <string>Укажите количество выпусков из очереди «Следующие», которые Pocket Casts скачает в ваши часы для автономного воспроизведения.</string>
+    <string>Укажите количество выпусков из очереди «Следующие», которые PodHopper скачает в ваши часы для автономного воспроизведения.</string>
     <key>settings_watch_delete_downloads</key>
     <string>Удалить скачивания, превышающие порог</string>
     <key>settings_watch_delete_downloads_off_subtitle</key>
@@ -3613,7 +3613,7 @@ PodHopper на полную мощность.</string>
     <key>sonos_connecting</key>
     <string>ПОДКЛЮЧЕНИЕ...</string>
     <key>sonos_connection_failed_account_link</key>
-    <string>В данный момент не удается привязать учетную запись Pocket Casts. Повторите попытку позже.</string>
+    <string>В данный момент не удается привязать учетную запись PodHopper. Повторите попытку позже.</string>
     <key>sonos_connection_failed_app_missing</key>
     <string>Не удается открыть приложение Sonos для завершения привязки.</string>
     <key>sonos_connection_failed_title</key>
@@ -3747,7 +3747,7 @@ PodHopper на полную мощность.</string>
     <key>suggested_folders_use_suggested_folders</key>
     <string>Использовать эти папки</string>
     <key>support_watch_help_message</key>
-    <string>Если у вас возникли проблемы с приложением Pocket Casts для часов, мы можем отправить журналы с носимого устройства, чтобы помочь вам. Для этого откройте Pocket Casts на часах.</string>
+    <string>Если у вас возникли проблемы с приложением PodHopper для часов, мы можем отправить журналы с носимого устройства, чтобы помочь вам. Для этого откройте PodHopper на часах.</string>
     <key>support_watch_help_opened_app</key>
     <string>Я открыл (-а) приложение для часов</string>
     <key>support_watch_help_send_without_log</key>
@@ -3973,7 +3973,7 @@ PodHopper на полную мощность.</string>
     <key>tv_sign_in_subtitle</key>
     <string>Откройте камеру и наведите на этот QR-код</string>
     <key>tv_sign_in_title</key>
-    <string>Войти в Pocket Casts</string>
+    <string>Войти в PodHopper</string>
     <key>tv_signing_in_subtitle</key>
     <string>Мы загружаем ваши подкасты.</string>
     <key>tv_signing_in_title</key>

@@ -322,7 +322,7 @@
     <key>banner_ads_report_too_often</key>
     <string>この広告の表示頻度が高すぎる</string>
     <key>beta_purchase_disabled</key>
-    <string>%1$@ を購入するには App Store から Pocket Cast をダウンロードしてください。</string>
+    <string>%1$@ を購入するには App Store から PodHopper をダウンロードしてください。</string>
     <key>beta_thank_you</key>
     <string>ベータテストお疲れ様でした !</string>
     <key>bookmark_added</key>
@@ -3743,7 +3743,7 @@ PodHopper を最大限に活用しましょう。</string>
     <key>suggested_folders_use_suggested_folders</key>
     <string>これらのフォルダーを使用</string>
     <key>support_watch_help_message</key>
-    <string>PodHopper Watch アプリで問題が発生した場合は、ウェアラブルログを送信するとサポートの際に役立ちます。 これを行うには、Watch で Pocket Cast を開いてください。</string>
+    <string>PodHopper Watch アプリで問題が発生した場合は、ウェアラブルログを送信するとサポートの際に役立ちます。 これを行うには、Watch で PodHopper を開いてください。</string>
     <key>support_watch_help_opened_app</key>
     <string>Watch アプリを開きました</string>
     <key>support_watch_help_send_without_log</key>
@@ -3969,7 +3969,7 @@ PodHopper を最大限に活用しましょう。</string>
     <key>tv_sign_in_subtitle</key>
     <string>カメラを開き、この QR コードに向けます</string>
     <key>tv_sign_in_title</key>
-    <string>Pocket Casts にログイン</string>
+    <string>PodHopper にログイン</string>
     <key>tv_signing_in_subtitle</key>
     <string>ポッドキャストを読み込んでいます。</string>
     <key>tv_signing_in_title</key>

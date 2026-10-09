@@ -3967,7 +3967,7 @@ Je e-mailadres, wachtwoord en andere gevoelige gegevens worden nooit gedeeld.</s
     <key>tv_sign_in_subtitle</key>
     <string>Open je camera en wijs naar deze QR-code</string>
     <key>tv_sign_in_title</key>
-    <string>Log in bij Pocket Casts</string>
+    <string>Log in bij PodHopper</string>
     <key>tv_signing_in_subtitle</key>
     <string>Je podcasts worden geladen.</string>
     <key>tv_signing_in_title</key>
@@ -4003,7 +4003,7 @@ Je e-mailadres, wachtwoord en andere gevoelige gegevens worden nooit gedeeld.</s
     <key>tv_welcome_subtitle</key>
     <string>Je podcasts. Op het grote scherm. Duidelijk.</string>
     <key>tv_welcome_title</key>
-    <string>Welkom bij Pocket Casts TV</string>
+    <string>Welkom bij PodHopper TV</string>
     <key>unarchive</key>
     <string>Dearchiveren</string>
     <key>unfollow</key>

@@ -322,7 +322,7 @@ Téléchargez l’application pour vivre pleinement l’expérience !</string>
     <key>banner_ads_report_too_often</key>
     <string>Je vois cette publicité trop souvent</string>
     <key>beta_purchase_disabled</key>
-    <string>Veuillez télécharger Pocket Casts sur l’App Store pour acheter %1$@.</string>
+    <string>Veuillez télécharger PodHopper sur l’App Store pour acheter %1$@.</string>
     <key>beta_thank_you</key>
     <string>Merci de participer au test bêta !</string>
     <key>bookmark_added</key>
@@ -1447,33 +1447,33 @@ Remarque : si vous avez supprimé l’application Raccourcis, vous recevrez une
 1. Appuyez sur le bouton « Install Shortcut » (Installer Raccourcis) ci-dessous.
 2. Lorsque l’invite s’affiche, appuyez sur le bouton « Add Shortcut » (Ajouter Raccourcis).
 3. Appuyez sur l’onglet « Shortcuts » (Raccourcis).
-4. Recherchez le raccourci « Apple Podcasts to Pocket Casts » (Apple Podcasts vers Pocket Casts) dans la liste.
+4. Recherchez le raccourci « Apple Podcasts to PodHopper » (Apple Podcasts vers PodHopper) dans la liste.
 5. Appuyez dessus pour lancer l’importation.
-6. Une fois le raccourci exécuté, Pocket Casts se relance et termine l’importation.</string>
+6. Une fois le raccourci exécuté, PodHopper se relance et termine l’importation.</string>
     <key>import_instructions_breaker</key>
     <string>1. Appuyez sur le bouton « Open Breaker » (Ouvrir Breaker) ci-dessous.
 2. Appuyez sur « Settings » (Réglages) dans la barre d’onglets inférieure.
 3. Appuyez sur « Connection » (Connexion).
 4. Appuyez sur « Export subscriptions » (Exporter des abonnements).
-5. Une fois la boîte de dialogue ouverte, recherchez l’icône Pocket Casts, puis appuyez dessus.</string>
+5. Une fois la boîte de dialogue ouverte, recherchez l’icône PodHopper, puis appuyez dessus.</string>
     <key>import_instructions_castbox</key>
     <string>1. Appuyez sur le bouton « Open Castbox » (Ouvrir Castbox) ci-dessous.
 2. Appuyez sur l’onglet « Personal » (Personnel).
 3. Faites défiler l’écran jusqu’à l’option « Settings » (Réglages), puis appuyez dessus.
 4. Faites défiler l’écran jusqu’à l’option « OPML Export » (Exportation OPML), puis appuyez dessus.
-5. Si une invite s’affiche, appuyez sur « Open in Pocket Casts » (Ouvrir dans Pocket Casts).
+5. Si une invite s’affiche, appuyez sur « Open in PodHopper » (Ouvrir dans PodHopper).
 6. Si le fichier s’ouvre dans Safari, appuyez sur le bouton « Download » (Télécharger).
 7. Une fois le téléchargement terminé, appuyez sur l’icône de téléchargement dans la barre d’URL.
 8. Appuyez sur l’élément « Downloads » (Téléchargements).
 9. Appuyez sur le fichier « castbox_opml ». 
-10. Si nécessaire, appuyez sur l’icône de partage, puis ouvrez le fichier avec Pocket Casts.
-11. Lorsque la boîte de dialogue de partage s’ouvre, recherchez l’icône Pocket Casts, puis appuyez dessus.</string>
+10. Si nécessaire, appuyez sur l’icône de partage, puis ouvrez le fichier avec PodHopper.
+11. Lorsque la boîte de dialogue de partage s’ouvre, recherchez l’icône PodHopper, puis appuyez dessus.</string>
     <key>import_instructions_castro</key>
     <string>1. Appuyez sur le bouton « Open Castro » (Ouvrir Castro) ci-dessous.
 2. Appuyez sur l’icône en forme d’engrenage dans le coin supérieur de l’application.
 3. Faites défiler l’écran jusqu’à l’option « User Data » (Données utilisateur), puis appuyez dessus.
 4. Appuyez sur l’élément « Export Subscriptions » (Exporter des abonnements).
-5. Lorsque la boîte de dialogue de partage s’ouvre, recherchez l’icône Pocket Casts, puis appuyez dessus.</string>
+5. Lorsque la boîte de dialogue de partage s’ouvre, recherchez l’icône PodHopper, puis appuyez dessus.</string>
     <key>import_instructions_import_from</key>
     <string>Importer depuis %1$@</string>
     <key>import_instructions_install_shortcut</key>
@@ -1486,7 +1486,7 @@ Remarque : si vous avez supprimé l’application Raccourcis, vous recevrez une
     <string>1. Appuyez sur le bouton ci-dessous pour ouvrir Overcast.
 2. Appuyez sur l’icône en forme d’engrenage dans le coin supérieur de l’application.
 3. Faites défiler l’écran jusqu’à « Export OPML » (Exportation OPML), puis appuyez dessus.
-4. Une fois la boîte de dialogue ouverte, recherchez l’icône Pocket Casts, puis appuyez dessus.</string>
+4. Une fois la boîte de dialogue ouverte, recherchez l’icône PodHopper, puis appuyez dessus.</string>
     <key>import_opml_from_url</key>
     <string>Importez vos podcasts à partir d’un fichier OPML en utilisant une URL.</string>
     <key>import_podcasts_description</key>
@@ -1874,7 +1874,7 @@ MISES À JOUR</string>
     <key>patron_callout</key>
     <string>Vous croyez en ce que nous faisons et souhaitez nous témoigner votre soutien ?</string>
     <key>patron_description</key>
-    <string>Devenez parrain de Pocket Casts afin de nous aider à continuer d’offrir une qualité d’écoute optimale sur nos podcasts.</string>
+    <string>Devenez parrain de PodHopper afin de nous aider à continuer d’offrir une qualité d’écoute optimale sur nos podcasts.</string>
     <key>patron_feature_early_access</key>
     <string>Accès en avant-première aux fonctionnalités</string>
     <key>patron_feature_everything_in_plus</key>
@@ -1882,9 +1882,9 @@ MISES À JOUR</string>
     <key>patron_feature_profile_badge</key>
     <string>Badge de profil de sponsor</string>
     <key>patron_feature_profile_icons</key>
-    <string>Icônes d’applications spéciales Pocket Casts</string>
+    <string>Icônes d’applications spéciales PodHopper</string>
     <key>patron_purchase_promo_title</key>
-    <string>Devenez parrain et profitez de toutes les fonctionnalités de Pocket Casts</string>
+    <string>Devenez parrain et profitez de toutes les fonctionnalités de PodHopper</string>
     <key>patron_subscribe_to</key>
     <string>S’abonner au programme de parrainage</string>
     <key>patron_thank_you</key>
@@ -2016,7 +2016,7 @@ MISES À JOUR</string>
     <key>playback_2025_plus_thanks_description</key>
     <string>Vos avantages %1$@ vous permettent d’accéder à des statistiques supplémentaires et des fonctionnalités avancées</string>
     <key>playback_2025_plus_thanks_title</key>
-    <string>Merci de soutenir Pocket Casts !</string>
+    <string>Merci de soutenir PodHopper !</string>
     <key>playback_2025_plus_upsell_button_title</key>
     <string>Obtenir PodHopper Plus</string>
     <key>playback_2025_plus_upsell_description</key>
@@ -2355,7 +2355,7 @@ Essayez d’ajuster les règles ou enregistrez cette playlist pour les futurs é
     <key>plus_feature_card_title_wear_os</key>
     <string>Lecture sur Apple Watch et Wear OS</string>
     <key>plus_feature_gratitude</key>
-    <string>L’infinie gratitude de tous les membres de Pocket Casts</string>
+    <string>L’infinie gratitude de tous les membres de PodHopper</string>
     <key>plus_feature_librofm</key>
     <string>Livre audio gratuit provenant de Libro.fm</string>
     <key>plus_feature_slumber</key>
@@ -2395,7 +2395,7 @@ Essayez d’ajuster les règles ou enregistrez cette playlist pour les futurs é
     <key>plus_marketing_themes_icons_title</key>
     <string>Thèmes et icônes</string>
     <key>plus_marketing_title</key>
-    <string>Tout ce que vous aimez à propos de Pocket Casts, et bien plus encore</string>
+    <string>Tout ce que vous aimez à propos de PodHopper, et bien plus encore</string>
     <key>plus_marketing_up_next_shuffle</key>
     <string>Lecture aléatoire dans la file d’attente</string>
     <key>plus_marketing_updated_cloud_storage_description</key>
@@ -2427,7 +2427,7 @@ Essayez d’ajuster les règles ou enregistrez cette playlist pour les futurs é
     <key>plus_purchase_failed</key>
     <string>Il semble qu’un problème soit survenu lors du traitement de votre paiement. Veuillez réessayer.</string>
     <key>plus_purchase_promo_title</key>
-    <string>Devenir un membre Plus et profiter de toutes les fonctionnalités de Pocket Casts</string>
+    <string>Devenir un membre Plus et profiter de toutes les fonctionnalités de PodHopper</string>
     <key>plus_required_feature</key>
     <string>Cette fonctionnalité nécessite PodHopper Plus</string>
     <key>plus_select_payment_frequency</key>
@@ -2807,9 +2807,9 @@ Si vous voulez obtenir des suggestions, essayez l’onglet Découvertes.</string
 Voici un passe invité %1$@ pour PodHopper Plus, mon lecteur de podcast préféré. Il regorge de fonctionnalités uniques, comme les signets, les dossiers et d’autres choses que tu ne trouveras nulle part ailleurs. Je pense que tu l’aimeras aussi !
 </string>
     <key>referrals_share_pass_message</key>
-    <string>Salut ! Utilisez le lien ci-dessous pour demander votre passe invité %1$@ de Pocket Casts Plus et profitez de podcasts sur tous vos appareils !</string>
+    <string>Salut ! Utilisez le lien ci-dessous pour demander votre passe invité %1$@ de PodHopper Plus et profitez de podcasts sur tous vos appareils !</string>
     <key>referrals_share_pass_subject</key>
-    <string>Passe invité %1$@ de Pocket Casts Plus !</string>
+    <string>Passe invité %1$@ de PodHopper Plus !</string>
     <key>referrals_tip_message</key>
     <string>Offrez %1$@ de PodHopper Plus !</string>
     <key>referrals_tip_title</key>
@@ -3747,7 +3747,7 @@ Votre adresse courriel, votre mot de passe et d’autres éléments sensibles ne
     <key>suggested_folders_use_suggested_folders</key>
     <string>Utiliser ces dossiers</string>
     <key>support_watch_help_message</key>
-    <string>Si vous rencontrez des difficultés avec l’application Pocket Casts Watch, nous pouvons vous envoyer les journaux de votre montre afin de mieux vous aider. Pour ce faire, ouvrez Pocket Casts sur votre montre.</string>
+    <string>Si vous rencontrez des difficultés avec l’application PodHopper Watch, nous pouvons vous envoyer les journaux de votre montre afin de mieux vous aider. Pour ce faire, ouvrez PodHopper sur votre montre.</string>
     <key>support_watch_help_opened_app</key>
     <string>J’ai ouvert l’application Watch</string>
     <key>support_watch_help_send_without_log</key>
@@ -3973,7 +3973,7 @@ Votre adresse courriel, votre mot de passe et d’autres éléments sensibles ne
     <key>tv_sign_in_subtitle</key>
     <string>Ouvrez votre appareil photo et scannez ce code QR</string>
     <key>tv_sign_in_title</key>
-    <string>Se connecter à Pocket Casts</string>
+    <string>Se connecter à PodHopper</string>
     <key>tv_signing_in_subtitle</key>
     <string>Nous chargeons vos podcasts.</string>
     <key>tv_signing_in_title</key>
@@ -4159,11 +4159,11 @@ Impossible de se tromper. 🙂</string>
     <key>watch_source_msg</key>
     <string>Le son des balados sortira du haut-parleur auquel est connecté l’appareil choisi.</string>
     <key>watch_source_plus_info</key>
-    <string>Téléchargez des balados directement sur votre montre et écoutez-les sans votre téléphone. Découvrez Pocket Casts Plus sur l’application mobile ou sur le Web.</string>
+    <string>Téléchargez des balados directement sur votre montre et écoutez-les sans votre téléphone. Découvrez PodHopper Plus sur l’application mobile ou sur le Web.</string>
     <key>watch_source_refresh_account</key>
     <string>Actualiser le compte</string>
     <key>watch_source_refresh_account_info</key>
-    <string>Si vous possédez un compte Pocket Casts Plus, actualisez-le pour tenter de l’activer.</string>
+    <string>Si vous possédez un compte PodHopper Plus, actualisez-le pour tenter de l’activer.</string>
     <key>watch_source_refresh_data</key>
     <string>Actualiser les données</string>
     <key>watch_source_sign_in_info</key>
@@ -4211,7 +4211,7 @@ Vous pouvez donc avoir l’esprit tranquille, sachant que le dur labeur consacr�
     <key>whats_new_page_two_title_7_20</key>
     <string>Synchronisation de la grille d’accueil</string>
     <key>widgets_app_icon_description</key>
-    <string>Lancement rapide de Pocket Casts</string>
+    <string>Lancement rapide de PodHopper</string>
     <key>widgets_app_icon_name</key>
     <string>Icône</string>
     <key>widgets_discover_prompt_msg</key>
