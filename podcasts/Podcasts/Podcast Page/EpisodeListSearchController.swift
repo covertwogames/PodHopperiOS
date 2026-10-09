@@ -222,7 +222,7 @@ class EpisodeListSearchController: SimpleNotificationsViewController, UISearchBa
             queueAction.outline = true
 
             if !Settings.mobileDataAllowed() {
-                warningMessage = L10n.downloadDataWarningWithSettingsLink("pktc://settings/storage-and-data") + "\n" + warningMessage
+                warningMessage = L10n.downloadDataWarningWithSettingsLink("podhopper://settings/storage-and-data") + "\n" + warningMessage
             }
             confirmPicker.addAttributedDescriptiveActions(title: L10n.notOnWifi, message: warningMessage, icon: "option-alert", actions: [downloadAction, queueAction])
         }

@@ -63,7 +63,9 @@ class PodcastHeaderViewModel: NSObject, ObservableObject {
     private static func makeDisplayCategoryAndAuthor(for podcast: Podcast) -> AttributedString {
         let category = podcast.podcastCategory?.localized(seperatingWith: \.isNewline) ?? ""
         var result = AttributedString(category)
-        result.link = URL(string: "http://pocketcasts.com")
+        // PodHopper: a placeholder that makes the category tappable. PodcastHeaderView catches the
+        // tap and runs categoryTapped, so this address is never opened.
+        result.link = URL(string: "podhopper://category")
         if let author = podcast.author {
             result += AttributedString(" · \(author)")
         }

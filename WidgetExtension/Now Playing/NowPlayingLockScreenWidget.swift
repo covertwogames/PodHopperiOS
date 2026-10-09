@@ -28,7 +28,7 @@ struct NowPlayingLockscreenWidgetEntryView: View {
     }
 
     var widgetURL: String {
-        return entry.episode != nil ? "pktc://show_player" : "pktc://discover?source=widget"
+        return entry.episode != nil ? "podhopper://show_player" : "podhopper://discover?source=widget"
     }
 
     var body: some View {

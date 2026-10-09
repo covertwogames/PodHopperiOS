@@ -91,31 +91,31 @@ enum NotificationType: String {
     var link: String {
         switch self {
         case .onboardingSignUp:
-            return "pktc://signup"
+            return "podhopper://signup"
         case .onboardingImport:
-            return "pktc://settings/import"
+            return "podhopper://settings/import"
         case .onboardingThemes:
-            return "pktc://settings/themes"
+            return "podhopper://settings/themes"
         case .onboardingUpNext:
-            return "pktc://upnext/?location=tab"
+            return "podhopper://upnext/?location=tab"
         case .onboardingFilters:
-            return "pktc://filters"
+            return "podhopper://filters"
         case .onboardingUpsell:
-            return "pktc://upsell"
+            return "podhopper://upsell"
         case .onboardingStaffPicks:
-            return "pktc://discover/staff-picks"
+            return "podhopper://discover/staff-picks"
         case .reengagementWeekly:
-            return "pktc://discover"
+            return "podhopper://discover"
         case .reengagementDownloads:
-            return "pktc://profile/downloads"
+            return "podhopper://profile/downloads"
         case .recommendationsTrending:
-            return "pktc://discover/trending"
+            return "podhopper://discover/trending"
         case .recommendationsYouMightLike:
-            return "pktc://discover/recommendations_user"
+            return "podhopper://discover/recommendations_user"
         case .upsell:
-            return "pktc://upsell"
+            return "podhopper://upsell"
         case .newFeatureSuggestedFolders:
-            return "pktc://features/suggestedFolders"
+            return "podhopper://features/suggestedFolders"
         }
     }
 

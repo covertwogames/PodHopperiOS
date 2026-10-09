@@ -56,6 +56,19 @@ changed from red to PodHopper green (#269E5F); "Pocket Casts" replaced with PodH
 translated strings (de, fr, fr-CA, ja, nl, pt-BR, ru, sv); AutomatticTracksiOS and Firebase
 removed from the acknowledgements page, since neither is in the app any more.
 
+**Link type (October 2026):** the app registers podhopper:// instead of pktc://, the old app's
+link type, so other apps and websites can no longer open PodHopper with pktc links, and links the
+app sends itself (the share extension, the Settings link in the Not on Wi-Fi warning) can no
+longer land in Pocket Casts when both apps are installed. Every link the app builds (widgets,
+share extension, home screen quick actions, Siri, local notifications, in-app links) uses
+podhopper://. AppDelegate+UrlHandling still accepts pktc links that reach it directly (a widget
+placed before the update, until widgets refresh), see appLinkSchemes. Routing (JLRoutes) never
+depended on the link type. Left alone on purpose: the internal au.com.shiftyjelly identifiers.
+The KeychainHelper prefix holds the PodHopper sign-in, so renaming it signs everyone out. The
+background download and upload session ids would orphan transfers in progress at update time.
+The background refresh task id, the Siri activity type, and the quick action type are invisible,
+so renaming them only adds risk.
+
 ## Current architecture
 
 Refresh, discovery, search, and subscriptions all run on PodHopper's own layer in
@@ -121,8 +134,10 @@ pin. bulkMarkAsPlayed routes the current episode through markAsPlayed, so it inh
 - **Unit test target does not build.** PocketCastsTests/Tests/ABTest/ABTestProviderTests.swift
   still imports AutomatticTracks, which the Xcode finale removed. The app itself is not affected;
   only running the unit tests is. Delete that test file (it tests the removed ABTest code).
-- **pktc link scheme.** The app still registers pktc:// links. Changing it to PodHopper's own
-  scheme is planned as its own package.
+- **Developer-only leftovers with pktc links.** scripts/notifications/*.apns (simulator push
+  payloads for the old app's bundle id; PodHopper does not register for remote push) and
+  Screenshot Automation/GenerateScreenshots.swift (a UI test pointing at a share-list route that
+  no longer exists). Not shipped. Delete with the other unused files.
 - **Unused leftovers.** The "Pocketcasts.com" string in every language
   (plus_subscription_web_details) and the about_a8c_family string have no callers. ServerHelper's
   colorUrl, playerUrl, and bundleUrl still name Pocket Casts addresses but have no live callers.

@@ -29,25 +29,25 @@ extension AppDelegate {
             if let mediaItem = playIntent.mediaItems?.first {
                 if mediaItem.identifier == Constants.SiriActions.playFilterId {
                     if let containerId = playIntent.mediaContainer?.identifier {
-                        urlString = "pktc://shortcuts/filter/\(containerId)"
+                        urlString = "podhopper://shortcuts/filter/\(containerId)"
                     }
                 } else if mediaItem.identifier == Constants.SiriActions.playPodcastId {
                     if let containerId = playIntent.mediaContainer?.identifier {
-                        urlString = "pktc://shortcuts/podcast/\(containerId)"
+                        urlString = "podhopper://shortcuts/podcast/\(containerId)"
                     }
                 } else if mediaItem.identifier == Constants.SiriActions.playSuggestedId {
-                    urlString = "pktc://shortcuts/discover"
+                    urlString = "podhopper://shortcuts/discover"
                 }
             }
             // to fix missing media items when called from shortcuts
             else if let container = playIntent.mediaContainer {
                 if container.type == .podcastPlaylist {
                     if let containerId = container.identifier {
-                        urlString = "pktc://shortcuts/filter/\(containerId)"
+                        urlString = "podhopper://shortcuts/filter/\(containerId)"
                     }
                 } else if container.type == .podcastShow {
                     if let containerId = container.identifier {
-                        urlString = "pktc://shortcuts/podcast/\(containerId)"
+                        urlString = "podhopper://shortcuts/podcast/\(containerId)"
                     }
                 }
             }

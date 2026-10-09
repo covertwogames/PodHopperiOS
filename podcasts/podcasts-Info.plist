@@ -946,10 +946,10 @@
 			<key>CFBundleTypeRole</key>
 			<string>Editor</string>
 			<key>CFBundleURLName</key>
-			<string>au.com.shiftyjelly.podcasts</string>
+			<string>com.covertwogames.podhopper</string>
 			<key>CFBundleURLSchemes</key>
 			<array>
-				<string>pktc</string>
+				<string>podhopper</string>
 			</array>
 		</dict>
 	</array>

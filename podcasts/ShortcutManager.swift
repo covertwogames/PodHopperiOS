@@ -59,7 +59,7 @@ class ShortcutManager: CustomObserver {
                     localizedTitle: topPlaylist.playlistName,
                     localizedSubtitle: "\(DataManager.sharedManager.episodeCount(for: topPlaylist, episodeUuidToAdd: topPlaylist.episodeUuidToAddToQueries())) items",
                     icon: UIApplicationShortcutIcon(templateImageName: iconName),
-                    userInfo: ["url": "pktc://shortcuts/filter/\(topPlaylist.uuid)" as NSSecureCoding]
+                    userInfo: ["url": "podhopper://shortcuts/filter/\(topPlaylist.uuid)" as NSSecureCoding]
                 )
             )
         }
@@ -73,7 +73,7 @@ class ShortcutManager: CustomObserver {
                         localizedTitle: L10n.pause,
                         localizedSubtitle: currentEpisode.displayableTitle(),
                         icon: UIApplicationShortcutIcon(type: .pause),
-                        userInfo: ["url": "pktc://shortcuts/pause" as NSSecureCoding]
+                        userInfo: ["url": "podhopper://shortcuts/pause" as NSSecureCoding]
                     )
                 )
             } else {
@@ -83,7 +83,7 @@ class ShortcutManager: CustomObserver {
                         localizedTitle: L10n.play,
                         localizedSubtitle: currentEpisode.displayableTitle(),
                         icon: UIApplicationShortcutIcon(type: .play),
-                        userInfo: ["url": "pktc://shortcuts/play" as NSSecureCoding]
+                        userInfo: ["url": "podhopper://shortcuts/play" as NSSecureCoding]
                     )
                 )
             }
@@ -95,7 +95,7 @@ class ShortcutManager: CustomObserver {
                     localizedTitle: "Find New Podcasts",
                     localizedSubtitle: nil,
                     icon: UIApplicationShortcutIcon(type: .search),
-                    userInfo: ["url": "pktc://shortcuts/discover" as NSSecureCoding]
+                    userInfo: ["url": "podhopper://shortcuts/discover" as NSSecureCoding]
                 )
             )
         }

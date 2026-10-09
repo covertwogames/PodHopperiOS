@@ -36,7 +36,7 @@ extension NetworkUtils {
         }
         laterAction.outline = true
 
-        optionsPicker.addAttributedDescriptiveActions(title: L10n.notOnWifi, message: L10n.downloadDataWarningWithSettingsLink("pktc://settings/storage-and-data"), icon: "option-alert", actions: [downloadAction, laterAction])
+        optionsPicker.addAttributedDescriptiveActions(title: L10n.notOnWifi, message: L10n.downloadDataWarningWithSettingsLink("podhopper://settings/storage-and-data"), icon: "option-alert", actions: [downloadAction, laterAction])
 
         optionsPicker.setNoActionCallback {
             disallowed?()
@@ -56,7 +56,7 @@ extension NetworkUtils {
         let streamAction = OptionAction(label: L10n.podcastStreamConfirmation, icon: nil) {
             allowed?()
         }
-        optionsPicker.addAttributedDescriptiveActions(title: L10n.notOnWifi, message: L10n.podcastStreamDataWarningWithSettings("pktc://settings/storage-and-data"), icon: "option-alert", actions: [streamAction])
+        optionsPicker.addAttributedDescriptiveActions(title: L10n.notOnWifi, message: L10n.podcastStreamDataWarningWithSettings("podhopper://settings/storage-and-data"), icon: "option-alert", actions: [streamAction])
 
         optionsPicker.setNoActionCallback {
             disallowed?()

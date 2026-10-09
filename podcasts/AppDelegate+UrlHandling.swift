@@ -5,6 +5,12 @@ import PocketCastsDataModel
 import PocketCastsServer
 import PocketCastsUtils
 
+/// PodHopper: the link types the app routes. podhopper is the app's own, and the only one registered
+/// in podcasts-Info.plist, so it is the only one other apps and websites can open. pktc, the old link
+/// type, is still accepted for links saved on a phone before the change, such as a widget placed
+/// earlier that has not refreshed yet.
+private let appLinkSchemes = ["podhopper", "pktc"]
+
 extension AppDelegate {
     func application(_ application: UIApplication, performActionFor shortcutItem: UIApplicationShortcutItem, completionHandler: @escaping (Bool) -> Void) {
         appDelegate()?.handleShortcutItem(shortcutItem)
@@ -59,12 +65,25 @@ extension AppDelegate {
                 NavigationManager.sharedManager.navigateTo(NavigationManager.uploadedPageKey, data: [NavigationManager.uploadFileKey: url])
             }
         } else {
-            // check to see what the scheme is we support itpc, http, feed & our own pktc
-            if let scheme = url.scheme, scheme == "pktc" {
+            // PodHopper: only the app's own link types are routed (see appLinkSchemes).
+            if let scheme = url.scheme?.lowercased(), appLinkSchemes.contains(scheme) {
                 JLRoutes.routeURL(url)
             }
         }
         return true
+    }
+
+    /// PodHopper: the rest of an app link after "<link type>://<host>/", for either accepted link type
+    /// (see appLinkSchemes), or nil when the link does not start that way or nothing follows it.
+    private func appLinkRemainder(of urlString: String, afterHost host: String) -> String? {
+        for scheme in appLinkSchemes {
+            let prefix = "\(scheme)://\(host)/"
+            if let range = urlString.range(of: prefix, options: [.anchored, .caseInsensitive]) {
+                let remainder = String(urlString[range.upperBound...])
+                return remainder.isEmpty ? nil : remainder
+            }
+        }
+        return nil
     }
 
     func setupRoutes() {
@@ -156,10 +175,8 @@ extension AppDelegate {
                 return false
             }
 
-            let prefix = "pktc://subscribe/"
-            if prefix.count >= subscribeUrl.count { return true } // this request is missing a URL
-
-            let feedUrl = subscribeUrl.replacingOccurrences(of: prefix, with: "")
+            // this request is missing a URL, or is not one of the app's own links
+            guard let feedUrl = strongSelf.appLinkRemainder(of: subscribeUrl, afterHost: "subscribe") else { return true }
 
             let searchTerm = !feedUrl.hasPrefix("http://") && !feedUrl.hasPrefix("https://") ? "http://\(feedUrl)" : feedUrl
 
@@ -262,9 +279,11 @@ extension AppDelegate {
                   let rootViewController = SceneHelper.rootViewController(),
                   let originalUrl = parameters[JLRouteURLKey] as? URL else { return false }
 
-            let fileURLString = originalUrl.absoluteString.replacingOccurrences(of: "pktc://import-file/", with: "")
-
-            guard let fileURL = URL(string: fileURLString) else {
+            // PodHopper: only a file location is accepted after the prefix. Anything else, including
+            // another app link, is ignored, so this route can never call itself again.
+            guard let fileURLString = self.appLinkRemainder(of: originalUrl.absoluteString, afterHost: "import-file"),
+                  let fileURL = URL(string: fileURLString),
+                  fileURL.isFileURL else {
                 return true
             }
 
@@ -304,7 +323,7 @@ extension AppDelegate {
     }
 
     func setupNewFeaturesRoutes() {
-        // PodHopper: the only feature link, pktc://features/suggestedFolders, opened a Pocket Casts
+        // PodHopper: the only feature link, podhopper://features/suggestedFolders, opened a Pocket Casts
         // upsell flow. It is no longer registered, so such a link just opens the app.
     }
 

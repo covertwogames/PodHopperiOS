@@ -592,7 +592,7 @@ struct ShareProfileView: View {
         if let range = attributed.range(of: link) {
             attributed[range].foregroundColor = theme.primaryInteractive01
             if tappable {
-                attributed[range].link = URL(string: "pocketcasts://privacy")
+                attributed[range].link = URL(string: "podhopper://privacy")
             }
         }
         return attributed

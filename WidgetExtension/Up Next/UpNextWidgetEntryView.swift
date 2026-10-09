@@ -51,7 +51,7 @@ struct UpNextWidgetEntryView: View {
                 }
                 .frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity)
                 .background(widgetColorScheme.filterViewBackgroundColor.opacity(isAccentedRenderingMode ? 0.0 : 1))
-                .widgetURL(URL(string: "pktc://last_opened"))
+                .widgetURL(URL(string: "podhopper://last_opened"))
             }
         }
         .environment(\.widgetColorScheme, widgetColorScheme)

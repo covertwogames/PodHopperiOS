@@ -45,7 +45,7 @@ struct DescriptiveActionAttributedTextView: View {
 
 #Preview {
     DescriptiveActionAttributedTextView(
-        text: "This download will use mobile data. You can turn off this warning in [Settings](pktc://settings/storage-and-data).",
+        text: "This download will use mobile data. You can turn off this warning in [Settings](podhopper://settings/storage-and-data).",
         onLinkTap: {}
     )
         .environmentObject(Theme(previewTheme: .light))

@@ -21,7 +21,7 @@ class ShareViewController: UIViewController {
     }
 
     func redirectToHostApp(_ url: String) {
-        guard let url = URL(string: "pktc://import-file/\(url)") else {
+        guard let url = URL(string: "podhopper://import-file/\(url)") else {
             return
         }
 
@@ -60,7 +60,7 @@ class ShareViewController: UIViewController {
 
             self?.close()
 
-            // Redirect to Pocket Casts to handle the file
+            // Redirect to PodHopper to handle the file
             self?.redirectToHostApp(destURL.absoluteString)
         }
     }
