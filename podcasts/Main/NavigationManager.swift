@@ -49,9 +49,6 @@ class NavigationManager {
     static let showPrivacyPolicyPageKey = "showPrivacyPage"
     static let showTermsOfUsePageKey = "showTermsOfUsePage"
 
-    static let showWhatsNewPageKey = "showWhatsNewPage"
-    static let whatsNewInfoKey = "WhatsNewInfo"
-
     static let openUrlInSafariVCKey = "openSafariVCUrlPage"
     static let safariVCUrlKey = "safariVCUrlKey"
 
@@ -62,7 +59,6 @@ class NavigationManager {
     static let settingsProfileKey = "profilePage"
     static let profileRowKey = "profileRow"
     static let profileRowDownloadsKey = "downloads"
-    static let profileRowEndOfYearKey = "playback"
     static let settingsHeadphoneKey = "headphoneSettings"
     static let settingsRedeemGuestPassKey = "redeemGuestPassPage"
     static let redeemGuestPassURLKey = "redeemGuestPassURLKey"
@@ -70,7 +66,6 @@ class NavigationManager {
     static let deviceApprovePageKey = "deviceApprovePageKey"
     static let deviceApproveCodeKey = "deviceApproveCodeKey"
 
-    static let endOfYearStories = "endOfYearStories"
     static let onboardingFlow = "onboardingFlow"
 
     static let settingsGeneralKey = "generalSettingsPage"
@@ -198,10 +193,6 @@ class NavigationManager {
             mainController?.showPrivacyPolicy()
         } else if place == NavigationManager.showTermsOfUsePageKey {
             mainController?.showTermsOfUse()
-        } else if place == NavigationManager.showWhatsNewPageKey {
-            if let data, let whatsNewInfo = data[NavigationManager.whatsNewInfoKey] as? WhatsNewInfo {
-                mainController?.showWhatsNew(whatsNewInfo: whatsNewInfo)
-            }
         } else if place == NavigationManager.settingsAppearanceKey {
             var showThemeSelection = false
             if let data, let showThemeSelectionValue = data[NavigationManager.settingsAppearanceShowThemeKey] as? Bool {

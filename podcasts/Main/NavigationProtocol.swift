@@ -49,13 +49,10 @@ protocol NavigationProtocol: AnyObject {
     func showTermsOfUse()
     func showPrivacyPolicy()
 
-    func showWhatsNew(whatsNewInfo: WhatsNewInfo)
-
     func showApproveDevice(code: String?)
 
     func showInSafariViewController(urlString: String)
 
-    func showEndOfYearStories()
     func dismissPresentedViewController(completion: (() -> Void)?)
     func showOnboardingFlow(flow: OnboardingFlow.Flow?)
     func showNotificationsPermissions()

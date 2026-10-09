@@ -13,10 +13,7 @@ class OnlineSupportController: PCViewController, WKNavigationDelegate, UIAdaptiv
 
     private let loadingIndicator = AngularActivityIndicator(size: CGSize(width: 40, height: 40), lineWidth: 2.0, duration: 1.0)
 
-    private var emailHelper = EmailHelper()
     private var supportWebView = WKWebView()
-    private var databaseExport: DatabaseExport? = nil
-    private var loadingAlert: ShiftyLoadingAlert?
     private let source: Source
 
     var didDismiss: (() -> Void)? = nil
@@ -113,27 +110,6 @@ class OnlineSupportController: PCViewController, WKNavigationDelegate, UIAdaptiv
         dismiss(animated: true, completion: didDismiss)
     }
 
-    private func makeOptionsMenu() -> UIMenu {
-        UIMenu(children: [
-            UIAction(title: L10n.settingsConnectionStatus) { [weak self] _ in
-                self?.showStatusPage()
-            },
-            UIAction(title: L10n.exportDatabase) { [weak self] _ in
-                guard let self, let sender = customRightBtn else { return }
-                export(sender)
-            },
-            UIAction(title: L10n.logs) { [weak self] _ in
-                guard let self, let sender = customRightBtn else { return }
-                viewLogs(sender)
-            },
-        ])
-    }
-
-    private func showStatusPage() {
-        let hostingController = ThemedHostingController(rootView: StatusPageView(source: source))
-        navigationController?.pushViewController(hostingController, animated: true)
-    }
-
     private func load() {
         supportWebView.load(request)
     }
@@ -151,15 +127,6 @@ class OnlineSupportController: PCViewController, WKNavigationDelegate, UIAdaptiv
             UIApplication.shared.open(url)
             decisionHandler(.cancel)
             return
-        } else if let urlStr = navigationAction.request.url?.absoluteString, !urlStr.contains("device=ios"), urlStr.contains("support.pocketcasts.com") {
-            let newUrlStr = "\(urlStr)\(urlStr.contains("?") ? "&" : "?")device=ios"
-            if let newUrl = URL(string: newUrlStr) {
-                let newRequest = URLRequest(url: newUrl)
-                webView.load(newRequest)
-
-                decisionHandler(.cancel)
-                return
-            }
         }
 
         decisionHandler(.allow)
@@ -181,55 +148,5 @@ class OnlineSupportController: PCViewController, WKNavigationDelegate, UIAdaptiv
 
     func presentationControllerDidDismiss(_ presentationController: UIPresentationController) {
         didDismiss?()
-    }
-}
-
-// MARK: - Export
-
-private extension OnlineSupportController {
-    func export(_ sender: UIBarButtonItem) {
-        Analytics.track(.exportDatabaseTapped, properties: ["source": source.rawValue])
-
-        databaseExport = .init()
-
-        loadingAlert = ShiftyLoadingAlert(title: L10n.exportingDatabase)
-        loadingAlert?.showAlert(self, hasProgress: false, completion: { [weak self] in
-            Task {
-                let url = await self?.databaseExport?.export()
-                self?.shareExport(url: url, sender: sender)
-            }
-        })
-    }
-
-    @MainActor
-    func shareExport(url: URL?, sender: UIBarButtonItem) {
-        loadingAlert?.hideAlert(false)
-        loadingAlert = nil
-
-        guard let url else {
-            SJUIUtils.showAlert(title: L10n.settingsExportError, message: nil, from: self)
-            return
-        }
-
-        // Share the file
-        let shareSheet = UIActivityViewController(activityItems: [url], applicationActivities: nil)
-        shareSheet.completionWithItemsHandler = { [weak self] _, _, _, _ in
-            // Attempt to cleanup the temporary file
-            self?.databaseExport?.cleanup(url: url)
-            self?.databaseExport = nil
-        }
-
-        shareSheet.popoverPresentationController?.barButtonItem = sender
-
-        present(shareSheet, animated: true, completion: nil)
-    }
-}
-
-// MARK: - Logs
-
-private extension OnlineSupportController {
-    func viewLogs(_ sender: UIBarButtonItem) {
-        let vc = LogsViewController(source: source)
-        self.navigationController?.pushViewController(vc, animated: true)
     }
 }

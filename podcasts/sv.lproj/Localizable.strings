@@ -5,12 +5,8 @@
   <dict>
     <key>Settings_files_add_up_next_subtitle</key>
     <string>Lägg automatiskt till nya filer i Nästa</string>
-    <key>about_a8c_family</key>
-    <string>Automattic-familjen</string>
     <key>about_acknowledgements</key>
     <string>Erkännanden</string>
-    <key>about_join_from_anywhere</key>
-    <string>Anslut var du än är</string>
     <key>about_legal_and_more</key>
     <string>Juridisk information med mera</string>
     <key>about_privacy_policy</key>
@@ -23,8 +19,6 @@
     <string>Användarvillkor</string>
     <key>about_website</key>
     <string>Webbplats</string>
-    <key>about_work_with_us</key>
-    <string>Jobba med oss</string>
     <key>accessibility_cancel_multiselect</key>
     <string>Avbryt flerval</string>
     <key>accessibility_close_dialog</key>
@@ -37,8 +31,6 @@
     <string>Avfärda</string>
     <key>accessibility_episode_playback</key>
     <string>Uppspelning av avsnitt</string>
-    <key>accessibility_hide_filter_details</key>
-    <string>Tryck för att dölja filterinformation</string>
     <key>accessibility_hint_player_navigate_to_podcast_label</key>
     <string>Tryck för att gå till huvudsidan för podcastinformation</string>
     <key>accessibility_hint_star</key>
@@ -57,8 +49,6 @@
     <string>Uppspelningshastighet %1$@ gånger</string>
     <key>accessibility_playlist_add_episode</key>
     <string>Lägg till avsnitt</string>
-    <key>accessibility_playlist_color</key>
-    <string>Spellistans färg %1$@</string>
     <key>accessibility_playlist_image</key>
     <string>Spellistebild</string>
     <key>accessibility_plus_only</key>
@@ -67,82 +57,24 @@
     <string>PodHopper-inställningar</string>
     <key>accessibility_select_episode</key>
     <string>Välj avsnitt</string>
-    <key>accessibility_show_filter_details</key>
-    <string>Tryck för att visa filterinformation</string>
-    <key>accessibility_sign_in</key>
-    <string>Tryck för att visa eller konfigurera konto</string>
     <key>accessibility_sort_and_options</key>
     <string>Sortering och Alternativ</string>
     <key>account</key>
     <string>Konto</string>
-    <key>account_change_email</key>
-    <string>Ändra e-post</string>
-    <key>account_completion_nudge</key>
-    <string>Nästan klart!</string>
-    <key>account_completion_nudge_msg</key>
-    <string>Slutför din betalning för att slutföra uppgraderingen av ditt konto.</string>
     <key>account_created</key>
     <string>Konto skapat.</string>
-    <key>account_creation_complete</key>
-    <string>Slutför kontoskapandet</string>
-    <key>account_delete_account</key>
-    <string>Ta bort konto</string>
-    <key>account_delete_account_conf</key>
-    <string>Ja, ta bort det</string>
-    <key>account_delete_account_error</key>
-    <string>Kontoborttagningen misslyckades</string>
-    <key>account_delete_account_error_msg</key>
-    <string>Det gick inte att ta bort kontot.</string>
-    <key>account_delete_account_final_alert_msg</key>
-    <string>Sista chansen, är du helt säker på att du vill ta bort ditt konto? Du kommer att förlora alla dina prenumerationer och din uppspelningshistorik permanent!</string>
-    <key>account_delete_account_first_alert_msg</key>
-    <string>Är du säker på att du vill ta bort ditt konto. Åtgärden går inte att ångra!</string>
-    <key>account_delete_account_title</key>
-    <string>Ta bort konto?</string>
-    <key>account_details_free_account</key>
-    <string>Gratis konto</string>
-    <key>account_details_listened_for</key>
-    <string>Lyssnade i %1$@</string>
     <key>account_details_plus_title</key>
     <string>Ta din podcastupplevelse till nästa nivå med exklusiv tillgång till funktioner och anpassningsalternativ.</string>
-    <key>account_login</key>
-    <string>Logga in</string>
     <key>account_payment_renews_monthly</key>
     <string>Förnyas automatiskt varje månad</string>
     <key>account_payment_renews_yearly</key>
     <string>Förnyas automatiskt årligen</string>
-    <key>account_privacy_policy</key>
-    <string>Integritetspolicy</string>
-    <key>account_registration_failed</key>
-    <string>Registreringen misslyckades, försök igen senare</string>
-    <key>account_select_type</key>
-    <string>Välj kontotyp</string>
-    <key>account_sign_out</key>
-    <string>Logga ut</string>
-    <key>account_sign_out_alert_message</key>
-    <string>Dina podcasts, förlopp och data kommer att vara här när du är tillbaka.</string>
-    <key>account_sign_out_alert_title</key>
-    <string>Logga ut?</string>
-    <key>account_sign_out_supporter_prompt</key>
-    <string>Om du loggar ut tas %1$@ podcasts som stöds bort från den här enheten. Är du säker?</string>
-    <key>account_sign_out_supporter_subtitle</key>
-    <string>Du kan logga in igen för att återfå åtkomst.</string>
     <key>account_signed_out_alert_message</key>
     <string>Tänka sig, om du skriver Google i Google kan du krascha internet. 🫢 
 
 Tryck på knappen nedan för att logga in på ditt PodHopper-konto igen.</string>
     <key>account_signed_out_alert_title</key>
     <string>Du har blivit utloggad.</string>
-    <key>account_sso_failed</key>
-    <string>Inloggning misslyckades. Försök igen.</string>
-    <key>account_title</key>
-    <string>PodHopper-konto</string>
-    <key>account_upgraded</key>
-    <string>Kontot har uppgraderats</string>
-    <key>account_welcome</key>
-    <string>Välkommen till PodHopper!</string>
-    <key>account_welcome_plus</key>
-    <string>Välkommen till PodHopper Plus!</string>
     <key>add_bookmark</key>
     <string>Lägg till bokmärke</string>
     <key>add_bookmark_subtitle</key>
@@ -157,12 +89,6 @@ Tryck på knappen nedan för att logga in på ditt PodHopper-konto igen.</string
     <string>Om din Nästa-kö är tom och du börjar lyssna på ett avsnitt kommer Spela upp automatiskt att fortsätta spela upp avsnitt från den aktuella showen eller listan.</string>
     <key>announcement_autoplay_title</key>
     <string>Spela upp automatiskt är här.</string>
-    <key>announcement_bookmarks_description</key>
-    <string>Du kan spara tidsstämplar för avsnitt från åtgärdsmenyn i spelaren eller med en hörlursåtgärd.</string>
-    <key>announcement_bookmarks_title</key>
-    <string>Bokmärkena är här!</string>
-    <key>announcement_bookmarks_title_beta</key>
-    <string>Var med och betatesta bokmärken!</string>
     <key>announcement_deselect_chapters_free</key>
     <string>Prenumerera på Plus nu så att du kan välja och hoppa över kapitel automatiskt i avsnitt som stöder detta.</string>
     <key>announcement_deselect_chapters_patron</key>
@@ -183,50 +109,6 @@ Tryck på knappen nedan för att logga in på ditt PodHopper-konto igen.</string
     <string>Dröm stort</string>
     <key>app_badge</key>
     <string>Appmärke</string>
-    <key>app_clip_placholder_message</key>
-    <string>Det kan ha tagits bort eller så är länken trasig.
-Men det finns mycket mer på PodHopper.
-Ladda ner appen för att få den fullständiga upplevelsen.</string>
-    <key>app_clip_placholder_title</key>
-    <string>Tyvärr kunde vi inte hitta det avsnittet</string>
-    <key>app_icon_classic</key>
-    <string>Klassisk</string>
-    <key>app_icon_dark</key>
-    <string>Mörk</string>
-    <key>app_icon_default</key>
-    <string>Standard</string>
-    <key>app_icon_electric_blue</key>
-    <string>Elektrisk blå</string>
-    <key>app_icon_electric_pink</key>
-    <string>Elektrisk rosa</string>
-    <key>app_icon_halloween</key>
-    <string>Halloween</string>
-    <key>app_icon_indigo</key>
-    <string>Indigo</string>
-    <key>app_icon_patron_chrome</key>
-    <string>Patron Chrome</string>
-    <key>app_icon_patron_dark</key>
-    <string>Patron mörk</string>
-    <key>app_icon_patron_glow</key>
-    <string>Patron Glow</string>
-    <key>app_icon_patron_round</key>
-    <string>Patron rund</string>
-    <key>app_icon_plus</key>
-    <string>Plus</string>
-    <key>app_icon_pocket_cats</key>
-    <string>Pocket Cats</string>
-    <key>app_icon_radioactivity</key>
-    <string>Radioaktiv grön</string>
-    <key>app_icon_red_velvet</key>
-    <string>Röd sammet</string>
-    <key>app_icon_rose</key>
-    <string>Rosé</string>
-    <key>app_icon_round_dark</key>
-    <string>Rund mörk</string>
-    <key>app_icon_round_light</key>
-    <string>Rund ljus</string>
-    <key>app_share_text</key>
-    <string>Hej! Här är en länk för att ladda ner PodHopper-appen. Jag tycker att den är jättebra och tänkte att du också skulle gilla den.</string>
     <key>app_version</key>
     <string>Version %1$@ (%2$@)</string>
     <key>appearance_app_icon_header</key>
@@ -291,10 +173,6 @@ Ladda ner appen för att få den fullständiga upplevelsen.</string>
     <string>Det senaste avsnittet</string>
     <key>auto_download_limit_one_episode_show</key>
     <string>Det senaste avsnittet per show</string>
-    <key>auto_download_off_subtitle</key>
-    <string>Aktivera automatisk nedladdning av avsnitt i det här filtret</string>
-    <key>auto_download_on_plural_format</key>
-    <string>De första %1$@ avsnitten i det här filtret kommer att laddas ner automatiskt</string>
     <key>auto_download_prompt_first</key>
     <string>De första</string>
     <key>auto_restart_sleep_timer</key>
@@ -303,28 +181,6 @@ Ladda ner appen för att få den fullständiga upplevelsen.</string>
     <string>Om det här alternativet är aktiverat kommer sömntimern att starta om automatiskt om du spelar upp ett avsnitt inom 5 minuter efter den senaste pausen.</string>
     <key>back</key>
     <string>Tillbaka</string>
-    <key>banner_ads_info_label</key>
-    <string>Annons</string>
-    <key>banner_ads_remove_ads</key>
-    <string>Ta bort annonser</string>
-    <key>banner_ads_report_ad</key>
-    <string>Rapportera annonsen</string>
-    <key>banner_ads_report_ad_title</key>
-    <string>Varför rapporterar du annonsen?</string>
-    <key>banner_ads_report_broken</key>
-    <string>Annonsen verkar trasig</string>
-    <key>banner_ads_report_confirmation</key>
-    <string>Du rapporterade denna annons.</string>
-    <key>banner_ads_report_malicious</key>
-    <string>Det här är en skadlig annons</string>
-    <key>banner_ads_report_other</key>
-    <string>Övrigt</string>
-    <key>banner_ads_report_too_often</key>
-    <string>Får upp denna annons för ofta</string>
-    <key>beta_purchase_disabled</key>
-    <string>Ladda ner PodHopper från App Store för att köpa %1$@.</string>
-    <key>beta_thank_you</key>
-    <string>Tack för att du är med som betatestare.</string>
     <key>bookmark_added</key>
     <string>Bokmärke tillagt</string>
     <key>bookmark_added_button_title</key>
@@ -349,114 +205,16 @@ Ladda ner appen för att få den fullständiga upplevelsen.</string>
     <string>%1$@ bokmärken</string>
     <key>bookmarks_count_singular</key>
     <string>1 bokmärke</string>
-    <key>bookmarks_early_access_locked_message</key>
-    <string>Lås upp den här och många andra funktioner med PodHopper %1$@ och spara tidsstämplar för dina favoritavsnitt. Snart tillgänglig för %2$@-prenumeranter.</string>
-    <key>bookmarks_locked_message</key>
-    <string>Lås upp denna funktion och många fler med PodHopper %1$@ och spara tidsstämplar för dina favoritavsnitt.</string>
     <key>bottom</key>
     <string>Längst ner</string>
     <key>bulk_download_max_format</key>
     <string>Massnedladdningar är begränsade till %1$@.</string>
     <key>cancel</key>
     <string>Avbryt</string>
-    <key>cancel_confirm_item_folders</key>
-    <string>Dina mappar kommer att tas bort och deras innehåll kommer att flyttas tillbaka till skärmen Podcasts.</string>
-    <key>cancel_confirm_item_history</key>
-    <string>Dina podcasts och din lyssningshistorik kommer fortsätta att vara tillgängliga. </string>
-    <key>cancel_confirm_item_plus</key>
-    <string>Efter detta datum kommer åtkomsten till Plus-funktioner som bokmärken, slumpmässig uppspelning, bärbara tillbehör med mera att tas bort.</string>
-    <key>cancel_confirm_item_uploads</key>
-    <string>Alla filer som har laddats upp till ditt PodHopper-konto kommer att tas bort (men nedladdningar på dina mobila enheter kommer att vara kvar).</string>
-    <key>cancel_confirm_sub_expiry</key>
-    <string>Din nuvarande prenumeration förblir aktiv till %1$@.</string>
-    <key>cancel_confirm_sub_expiry_date_fallback</key>
-    <string>ditt utgångsdatum</string>
-    <key>cancel_confirm_subtitle</key>
-    <string>Om du avslutar ändras ditt paket till ett gratiskonto.</string>
-    <key>cancel_confirm_title</key>
-    <string>Saker du bör veta innan du avslutar</string>
     <key>cancel_download</key>
     <string>Avbryt nedladdning</string>
-    <key>cancel_failed</key>
-    <string>Det gick inte att avbryta</string>
     <key>cancel_subscription</key>
     <string>Avbryt prenumeration</string>
-    <key>cancel_subscription_available_plans_best_value_badge</key>
-    <string>Mest för pengarna</string>
-    <key>cancel_subscription_available_plans_footer</key>
-    <string>Ditt nya paket kommer att aktiveras i slutet av din nuvarande faktureringsperiod.</string>
-    <key>cancel_subscription_available_plans_retry_screen_text</key>
-    <string>Något gick fel vid hämtningen av dina paket.</string>
-    <key>cancel_subscription_available_plans_title</key>
-    <string>Tillgängliga paket</string>
-    <key>cancel_subscription_claim_offer_button</key>
-    <string>Utnyttja erbjudande</string>
-    <key>cancel_subscription_continue_button</key>
-    <string>Fortsätt med annullering</string>
-    <key>cancel_subscription_generic_error</key>
-    <string>Ett fel uppstod. Försök igen senare.</string>
-    <key>cancel_subscription_help_description</key>
-    <string>Har du stött på problem eller någon funktion som krånglar?</string>
-    <key>cancel_subscription_help_title</key>
-    <string>Behöver du hjälp med PodHopper?</string>
-    <key>cancel_subscription_new_plan_description</key>
-    <string>Hitta rätt paket för dig.</string>
-    <key>cancel_subscription_new_plan_title</key>
-    <string>Letar du efter ett annat paket?</string>
-    <key>cancel_subscription_offer_success_view_description</key>
-    <string>Tack för att du väljer PodHopper. Din gratismånad kommer att läggas till i din nuvarande prenumeration.</string>
-    <key>cancel_subscription_offer_success_view_title</key>
-    <string>Njut av din gratismånad!</string>
-    <key>cancel_subscription_offer_yearly_success_view_description</key>
-    <string>Tack för att du väljer PodHopper. Ditt rabatterade år börjar efter att ditt nuvarande paket löper ut.</string>
-    <key>cancel_subscription_offer_yearly_success_view_title</key>
-    <string>50 %% rabatt på nästa år.</string>
-    <key>cancel_subscription_promotion_description_monthly</key>
-    <string>Spara %@ i början av nästa faktureringscykel.</string>
-    <key>cancel_subscription_promotion_description_yearly</key>
-    <string>Betala %@ nu för ytterligare ett år med 50 %% rabatt</string>
-    <key>cancel_subscription_promotion_title</key>
-    <string>Få nästa månad gratis</string>
-    <key>cancel_subscription_survey_description</key>
-    <string>Vi vill gärna veta varför du avslutade prenumerationen. Din feedback hjälper oss att bli bättre.</string>
-    <key>cancel_subscription_survey_row_better_app</key>
-    <string>Jag hittade en bättre app</string>
-    <key>cancel_subscription_survey_row_cost</key>
-    <string>Kostnadsrelaterade orsaker</string>
-    <key>cancel_subscription_survey_row_not_enough</key>
-    <string>Jag använder det inte tillräckligt</string>
-    <key>cancel_subscription_survey_row_other</key>
-    <string>Övrigt</string>
-    <key>cancel_subscription_survey_row_technical_issue</key>
-    <string>Tekniska problem</string>
-    <key>cancel_subscription_survey_submit_feedback</key>
-    <string>Skicka feedback</string>
-    <key>cancel_subscription_survey_title</key>
-    <string>Tack för att du provade
-PodHopper Plus</string>
-    <key>cancel_subscription_survey_toast_fail</key>
-    <string>Något gick fel.</string>
-    <key>cancel_subscription_survey_toast_success</key>
-    <string>Tack för din feedback!</string>
-    <key>cancel_subscription_title</key>
-    <string>Funderar du på att lämna oss?
-Låt oss hjälpa dig först</string>
-    <key>cancel_subscription_winback_view_accept_offer_button</key>
-    <string>Acceptera erbjudandet</string>
-    <key>cancel_subscription_winback_view_continue_cancellation_button</key>
-    <string>Fortsätt med annullering</string>
-    <key>cancel_subscription_winback_view_description_montly</key>
-    <string>Få en månad med PodHopper Plus utan kostnad! Erbjudandet kommer att läggas till i din nuvarande prenumeration.</string>
-    <key>cancel_subscription_winback_view_description_yearly</key>
-    <string>Betala %@ nu för att säkra ett år med PodHopper Plus till halva priset. Ditt rabatterade år börjar efter att ditt nuvarande paket löper ut.</string>
-    <key>cancel_subscription_winback_view_title_montly</key>
-    <string>Få nästa månad gratis och spara %@</string>
-    <key>cancel_subscription_winback_view_title_yearly</key>
-    <string>Få 50 %% rabatt på ditt nästa år och spara %@</string>
-    <key>cancel_subscription_yearly_promotion_title</key>
-    <string>50 %% rabatt på ditt nästa år.</string>
-    <key>canceling</key>
-    <string>Avbryter …</string>
     <key>carplay_chapter_count</key>
     <string>%1$@ av %2$@. %3$@</string>
     <key>carplay_more</key>
@@ -465,30 +223,14 @@ Låt oss hjälpa dig först</string>
     <string>Uppspelningshastighet</string>
     <key>carplay_up_next_queue</key>
     <string>Nästa-kö</string>
-    <key>champion_description</key>
-    <string>Tack för att du varit med oss sedan starten. Om du tycker om att använda vår app vill vi gärna höra din feedback.</string>
-    <key>champion_title</key>
-    <string>Du är en sann förespråkare för PodHopper.</string>
-    <key>change_app_icon</key>
-    <string>Ändra appikon</string>
     <key>change_bookmark_subtitle</key>
     <string>Ändra rubriken som identifierar detta bokmärke</string>
     <key>change_bookmark_title</key>
     <string>Ändra rubrik</string>
     <key>change_email</key>
     <string>Ändra e-postadress</string>
-    <key>change_email_conf</key>
-    <string>E-postadressen har ändrats</string>
     <key>change_password</key>
     <string>Ändra lösenord</string>
-    <key>change_password_conf</key>
-    <string>Lösenord ändrat</string>
-    <key>change_password_error</key>
-    <string>Det gick inte att ändra lösenordet. Ogiltigt lösenord.</string>
-    <key>change_password_error_mismatch</key>
-    <string>Lösenorden matchar inte</string>
-    <key>change_password_length_error</key>
-    <string>Måste innehålla minst 6 tecken</string>
     <key>chapters</key>
     <string>Kapitel</string>
     <key>check_internet_connection</key>
@@ -523,20 +265,6 @@ Låt oss hjälpa dig först</string>
     <string>Tokenautentiseringen misslyckades.</string>
     <key>clip</key>
     <string>Klipp</string>
-    <key>clip_duration_label</key>
-    <string>%@ Längd</string>
-    <key>clip_loading_label</key>
-    <string>Skapar klipp...</string>
-    <key>clip_start_label</key>
-    <string>%@ Start</string>
-    <key>clips_end_time_accessibility_label</key>
-    <string>Klippets slut</string>
-    <key>clips_shareable_media_a11y_label</key>
-    <string>Delbara mediaalternativ</string>
-    <key>clips_shareable_media_item_a11y_label</key>
-    <string>%1$@ format %2$@ av %3$@</string>
-    <key>clips_start_time_accessibility_label</key>
-    <string>Klippets början</string>
     <key>clips_whats_new_button_title</key>
     <string>Uppfattat</string>
     <key>clips_whats_new_message</key>
@@ -549,36 +277,10 @@ Låt oss hjälpa dig först</string>
     <string>Färg</string>
     <key>confirm</key>
     <string>Bekräfta</string>
-    <key>confirm_new_password_prompt</key>
-    <string>Bekräfta nytt lösenord</string>
     <key>continue</key>
     <string>Fortsätt</string>
     <key>copy</key>
     <string>Kopiera</string>
-    <key>create_account</key>
-    <string>Skapa konto</string>
-    <key>create_account_app_store_error_message</key>
-    <string>PodHopper har problem med att ansluta till App Store. Kontrollera din anslutning och försök igen.</string>
-    <key>create_account_app_store_error_title</key>
-    <string>Det gick inte att få kontakt med App Store.</string>
-    <key>create_account_find_out_more_plus</key>
-    <string>Läs mer om PodHopper Plus</string>
-    <key>create_account_free_account_type</key>
-    <string>Vanlig</string>
-    <key>create_account_free_details</key>
-    <string>Nästan allt</string>
-    <key>create_account_free_price</key>
-    <string>Gratis</string>
-    <key>create_account_plus_details</key>
-    <string>Allt upplåst</string>
-    <key>create_audio_clip_description</key>
-    <string>Skapa en .m4a-ljudfil</string>
-    <key>create_audio_clip_title</key>
-    <string>Skapa ljudfil</string>
-    <key>create_clip</key>
-    <string>Skapa klipp</string>
-    <key>create_filter</key>
-    <string>Skapa filter</string>
     <key>create_up_next_snapshot</key>
     <string>Skapa ögonblicksbild</string>
     <key>creator_pick_modal_description</key>
@@ -587,10 +289,6 @@ Låt oss hjälpa dig först</string>
     <string>Läs mer</string>
     <key>creator_pick_modal_title</key>
     <string>Vad är Creator Picks?</string>
-    <key>current_email_prompt</key>
-    <string>Nuvarande e-post</string>
-    <key>current_password_prompt</key>
-    <string>Nuvarande lösenord</string>
     <key>custom_episode</key>
     <string>Anpassat avsnitt</string>
     <key>custom_episode_cancel_upload</key>
@@ -805,10 +503,6 @@ Låt oss hjälpa dig först</string>
     <string>USA</string>
     <key>discover_region_worldwide</key>
     <string>Hela världen</string>
-    <key>discover_search_error_msg</key>
-    <string>Ange minst 2 tecken.</string>
-    <key>discover_search_error_title</key>
-    <string>Ej korrekt längd</string>
     <key>discover_search_failed</key>
     <string>Sökningen misslyckades</string>
     <key>discover_search_failed_msg</key>
@@ -829,8 +523,6 @@ Låt oss hjälpa dig först</string>
     <string>Ladda ner</string>
     <key>download_all</key>
     <string>Ladda ner alla</string>
-    <key>download_data_warning</key>
-    <string>Nedladdning använder data.</string>
     <key>download_data_warning_with_settings_link</key>
     <string>Denna nedladdning kommer att använda mobildata. Du kan stänga av denna varning i [Inställningar](%@).</string>
     <key>download_episode_plural_format</key>
@@ -901,181 +593,22 @@ Låt oss hjälpa dig först</string>
     <string>Profilikon</string>
     <key>eac_informational_banner_profile_title</key>
     <string>Dina shower, på vilken enhet som helst</string>
-    <key>eac_informational_card_backups_description</key>
-    <string>Ditt bibliotek och dina inställningar är säkert sparade.</string>
-    <key>eac_informational_card_backups_title</key>
-    <string>Tillförlitliga säkerhetskopior</string>
-    <key>eac_informational_card_recommendation_description</key>
-    <string>Få skräddarsydda podcastförslag baserat på dina lyssningsvanor.</string>
-    <key>eac_informational_card_recommendation_title</key>
-    <string>Personliga rekommendationer</string>
-    <key>eac_informational_card_sync_description</key>
-    <string>Synkronisera ditt lyssningsförlopp och dina shower på alla enheter.</string>
-    <key>eac_informational_card_sync_title</key>
-    <string>Synkronisera mellan enheter</string>
-    <key>eac_informational_view_modal_description</key>
-    <string>Skapa ett konto eller logga in för att ta del av
-PodHopper till fullo.</string>
-    <key>eac_informational_view_modal_get_started_button</key>
-    <string>Kom igång</string>
-    <key>eac_informational_view_modal_title</key>
-    <string>Vi har noterat att du inte är inloggad</string>
     <key>edit</key>
     <string>Redigera</string>
-    <key>edit_clip</key>
-    <string>Redigera klipp</string>
     <key>enable_it_now</key>
     <string>Aktivera det nu</string>
-    <key>eoy_2024_epilogue_description</key>
-    <string>Glöm inte att dela med vänner och att berätta om dina favoritpodcasts och deras kreatörer</string>
-    <key>eoy_2024_epilogue_title</key>
-    <string>Tack för att du lyssnat med oss i år.
-Vi ses 2025!</string>
-    <key>eoy_card_description</key>
-    <string>Se din lyssningsstatistik, dina favoritpodcasts och mycket mer.</string>
-    <key>eoy_create_account_to_see</key>
-    <string>Spara dina podcasts i molnet, få din årsslutsöversikt och synkronisera ditt lyssningsförlopp med andra enheter.</string>
-    <key>eoy_description</key>
-    <string>Se dina favoritpodcasts och -kategorier, lyssningsstatistik med mera. Dela med vänner och berätta om dina favoritkreatörer.</string>
     <key>eoy_not_now</key>
     <string>Inte nu</string>
-    <key>eoy_share</key>
-    <string>Dela den här berättelsen</string>
-    <key>eoy_share_this_story_message</key>
-    <string>Klistra in den här bilden på dina sociala medier och uppmärksamma dina favoritprogram och upphovsmän</string>
-    <key>eoy_share_this_story_title</key>
-    <string>Dela den här berättelsen?</string>
-    <key>eoy_small_title</key>
-    <string>Podcastår</string>
-    <key>eoy_start_your_free_trial</key>
-    <string>Starta din gratis provperiod</string>
-    <key>eoy_stories_failed</key>
-    <string>Det gick inte att ladda berättelser.</string>
-    <key>eoy_story_epilogue_subtitle</key>
-    <string>Glöm inte att dela med dina vänner och att berätta om dina favoritpodcastkreatörer</string>
-    <key>eoy_story_epilogue_title</key>
-    <string>Tack för att ni lyssnat med oss i år.
-Vi ses 2024!</string>
-    <key>eoy_story_intro_title</key>
-    <string>Låt oss fira ditt lyssningsår ...</string>
-    <key>eoy_story_listened_to</key>
-    <string>Under 2022 lyssnade du på podcasts i %1$@</string>
-    <key>eoy_story_listened_to_categories</key>
-    <string>Du lyssnade på %1$@ olika kategorier under året</string>
-    <key>eoy_story_listened_to_categories_highlighted</key>
-    <string>Du lyssnade på %1$@ under året</string>
-    <key>eoy_story_listened_to_categories_share_text</key>
-    <string>Jag lyssnade på %1$@ olika kategorier under 2023</string>
-    <key>eoy_story_listened_to_categories_subtitle</key>
-    <string>Låt oss titta på några av dina favoriter ...</string>
-    <key>eoy_story_listened_to_categories_text</key>
-    <string>%1$@ olika kategorier</string>
-    <key>eoy_story_listened_to_episodes_text</key>
-    <string>%1$@ avsnitt</string>
-    <key>eoy_story_listened_to_numbers</key>
-    <string>Du lyssnade sammanlagt på %1$@ olika podcasts och %2$@ avsnitt</string>
-    <key>eoy_story_listened_to_numbers_share_text</key>
-    <string>Jag lyssnade på %1$@ olika podcasts och %2$@ avsnitt i år</string>
-    <key>eoy_story_listened_to_numbers_subtitle</key>
-    <string>Det fanns dock ett avsnitt som du fortsatte att komma tillbaka till ...</string>
-    <key>eoy_story_listened_to_numbers_updated</key>
-    <string>Du lyssnade på %1$@ och %2$@</string>
-    <key>eoy_story_listened_to_podcast_text</key>
-    <string>%1$@ olika podcasts</string>
-    <key>eoy_story_listened_to_share_text</key>
-    <string>Jag lyssnade på podcasts %1$@ i år</string>
-    <key>eoy_story_listened_to_subtitle</key>
-    <string>Vi hoppas att du älskade varje minut av det!</string>
-    <key>eoy_story_listened_to_title</key>
-    <string>Detta var den sammanlagda tiden du lyssnade på podcasts</string>
-    <key>eoy_story_listened_to_updated</key>
-    <string>I år lyssnade du på podcasts i %1$@</string>
-    <key>eoy_story_longest_episode</key>
-    <string>Det längsta avsnittet du lyssnade på var %1$@</string>
-    <key>eoy_story_longest_episode_duration</key>
-    <string>Avsnittet var %1$@ långt</string>
-    <key>eoy_story_longest_episode_share_text</key>
-    <string>Det längsta avsnittet jag lyssnade på i år %1$@</string>
-    <key>eoy_story_longest_episode_subtitle</key>
-    <string>Det var ingen mindre än "%1$@" från "%2$@"</string>
-    <key>eoy_story_longest_episode_time</key>
-    <string>Det längsta avsnittet
-du lyssnade på var
-%1$@</string>
-    <key>eoy_story_replay</key>
-    <string>Spela upp igen</string>
-    <key>eoy_story_top_categories</key>
-    <string>Dina favoritkategorier</string>
-    <key>eoy_story_top_categories_share_text</key>
-    <string>Mina mest lyssnade podcastkategorier</string>
-    <key>eoy_story_top_categories_subtitle</key>
-    <string>Du lyssnade på %1$@ avsnitt i sammanlagt %2$@</string>
-    <key>eoy_story_top_categories_title</key>
-    <string>Visste du att %1$@ var din favoritkategori</string>
-    <key>eoy_story_top_podcast</key>
-    <string>%1$@ var den podcast du lyssnade mest på 2023</string>
-    <key>eoy_story_top_podcast_share_text</key>
-    <string>Min favoritpodcast i år! %1$@</string>
-    <key>eoy_story_top_podcast_subtitle</key>
-    <string>Du lyssnade på %1$@ avsnitt i sammanlagt %2$@</string>
-    <key>eoy_story_top_podcasts</key>
-    <string>Dina favoritpodcasts</string>
-    <key>eoy_story_top_podcasts_list_title</key>
-    <string>Mina favoritpodcasts för året.</string>
-    <key>eoy_story_top_podcasts_share_text</key>
-    <string>Mina favoritpodcasts för året. %1$@</string>
-    <key>eoy_story_top_podcasts_subtitle</key>
-    <string>Det här är de fem podcasts du lyssnade mest på under 2023</string>
-    <key>eoy_story_top_podcasts_title</key>
-    <string>Du lyssnade även mycket på dessa podcasts.</string>
-    <key>eoy_subscribe_to_plus</key>
-    <string>Prenumerera på Plus och ta reda på hur du lyssnar jämfört med 2022, annan rolig statistik och Premium-funktioner som bokmärken och mappar.</string>
-    <key>eoy_theres_more</key>
-    <string>Och det finns mer!</string>
-    <key>eoy_title</key>
-    <string>Ditt podcastår</string>
-    <key>eoy_view_year</key>
-    <string>Visa mitt 2023</string>
-    <key>eoy_year_completion_rate</key>
-    <string>slutförandegrad</string>
-    <key>eoy_year_completion_rate_share_text</key>
-    <string>Min slutförandegrad %1$@</string>
-    <key>eoy_year_completion_rate_subtitle</key>
-    <string>Du lyssnade sammanlagt klart på %2$@ av de %1$@ avsnitt du började lyssna på</string>
-    <key>eoy_year_completion_rate_title</key>
-    <string>Din slutförandegrad i år var %1$@</string>
-    <key>eoy_year_over_share_text</key>
-    <string>Min lyssningstid %1$@ jämfört med %2$@</string>
-    <key>eoy_year_over_year_subtitle_flat</key>
-    <string>Och det sägs att kontinuitet är nyckeln till framgång ... eller något i den stilen!</string>
-    <key>eoy_year_over_year_subtitle_went_down</key>
-    <string>Ack ja ... det finns ett liv att leva, eller hur?</string>
-    <key>eoy_year_over_year_subtitle_went_up</key>
-    <string>Är du redo att toppa det under 2024?</string>
-    <key>eoy_year_over_year_title_flat</key>
-    <string>Jämfört med 2022 var din lyssningstid ganska oförändrad</string>
-    <key>eoy_year_over_year_title_skyrocketed</key>
-    <string>Jämfört med 2022 har din lyssningstid skjutit i höjden!</string>
-    <key>eoy_year_over_year_title_went_down</key>
-    <string>Jämfört med 2022 har din lyssningstid minskat något</string>
-    <key>eoy_year_over_year_title_went_up</key>
-    <string>Jämfört med 2022 ökade din lyssningstid med hisnande %1$@%</string>
-    <key>eoy_year_ratings_share_text</key>
-    <string>Jag betygsatte %1$@ olika podcasts under %2$@, med %3$@ som mitt mest använda betyg</string>
     <key>episode</key>
     <string>Avsnitt</string>
     <key>episode_count_plural_format</key>
     <string>%1$@ avsnitt</string>
-    <key>episode_description_title</key>
-    <string>Avsnittsbeskrivning</string>
     <key>episode_detail_add</key>
     <string>Lägg till</string>
     <key>episode_details_title</key>
     <string>Detaljer</string>
     <key>episode_filter_by_duration_label</key>
     <string>Filtrera efter längd</string>
-    <key>episode_filter_no_episodes_msg</key>
-    <string>Det är antingen dags att fira att den här listan är slutförd eller att redigera dina filterinställningar för att hitta mer.</string>
     <key>episode_filter_no_episodes_title</key>
     <string>Inga avsnitt</string>
     <key>episode_indicator_bonus</key>
@@ -1098,16 +631,12 @@ du lyssnade på var
     <string>Fel</string>
     <key>error_general_podcast_not_found</key>
     <string>Det gick inte att hitta podcasten. Kontakta podcastens skapare.</string>
-    <key>export_database</key>
-    <string>Exportera databas</string>
     <key>export_podcasts_description</key>
     <string>Exportera alla dina podcasts som en OPML-fil, som du sedan kan importera till andra Podcast Applikationer.</string>
     <key>export_podcasts_option</key>
     <string>Exportera podcasts</string>
     <key>export_podcasts_title</key>
     <string>EXPORTERA</string>
-    <key>exporting_database</key>
-    <string>Exporterar databas …</string>
     <key>failed_recommendations</key>
     <string>Kunde inte ladda rekommendationer</string>
     <key>feature_marketing_all_plus_features</key>
@@ -1136,12 +665,6 @@ du lyssnade på var
     <string>NYTT</string>
     <key>feature_tour_step_format</key>
     <string>%1$@ av %2$@</string>
-    <key>feedback_continue_with_mail</key>
-    <string>Öppna standardappen för e-post</string>
-    <key>feedback_mail_not_configured_msg</key>
-    <string>För att skicka en felsökningsbilaga måste Apple Mail-appen vara konfigurerad på din telefon. Vad vill du göra?</string>
-    <key>feedback_mail_not_configured_title</key>
-    <string>E-post ej konfigurerad</string>
     <key>file_upload_add_file</key>
     <string>Lägg till fil</string>
     <key>file_upload_add_image</key>
@@ -1180,56 +703,18 @@ du lyssnade på var
     <string>Inga filer har laddats upp</string>
     <key>files_sort</key>
     <string>Sortera filer</string>
-    <key>filter_auto_add_subtitle</key>
-    <string>Nya podcasts som du prenumererar på kommer att läggas till automatiskt</string>
-    <key>filter_auto_add_subtitle_new</key>
-    <string>Nya podcasts som du följer kommer att läggas till automatiskt</string>
-    <key>filter_chips_all_podcasts</key>
-    <string>Alla podcasts</string>
     <key>filter_chips_duration</key>
     <string>Längd</string>
     <key>filter_choose_podcasts</key>
     <string>Välj podcasts</string>
-    <key>filter_create_add_more</key>
-    <string>Lägg till fler kriterier för att förfina ditt filter.</string>
-    <key>filter_create_filter_by</key>
-    <string>FILTRERA EFTER</string>
-    <key>filter_create_instructions</key>
-    <string>Välj dina filterkriterier för att skapa en smart och aktuell spellista.</string>
     <key>filter_create_no_episodes</key>
     <string>Inga matchande avsnitt</string>
-    <key>filter_create_no_episodes_description_explanation</key>
-    <string>Dina valda kriterier matchar inte några nuvarande avsnitt i dina prenumerationer</string>
-    <key>filter_create_no_episodes_description_explanation_new</key>
-    <string>Dina valda kriterier matchar inte några nuvarande avsnitt i dina podcasts</string>
-    <key>filter_create_no_episodes_description_prompt</key>
-    <string>Välj andra filterkriterier, eller spara det här filtret om du tror att det kommer att matcha framtida avsnitt.</string>
-    <key>filter_create_podcasts_all_podcasts</key>
-    <string>Alla podcasts</string>
-    <key>filter_create_preview</key>
-    <string>FÖRHANDSGRANSKA</string>
-    <key>filter_create_save</key>
-    <string>Spara filter</string>
-    <key>filter_details</key>
-    <string>Filterinformation</string>
-    <key>filter_details_color_icon</key>
-    <string>FÄRG OCH IKON</string>
-    <key>filter_details_color_selection</key>
-    <string>Färgväljare</string>
-    <key>filter_details_icon_selection</key>
-    <string>Ikonväljare</string>
-    <key>filter_details_name</key>
-    <string>NAMN</string>
     <key>filter_download_status</key>
     <string>Nedladdningsstatus</string>
     <key>filter_episode_status</key>
     <string>Avsnittsstatus</string>
     <key>filter_longer_than_label</key>
     <string>Längre än</string>
-    <key>filter_manual_add_subtitle</key>
-    <string>Nya podcasts som du prenumererar på kommer inte att läggas till automatiskt</string>
-    <key>filter_manual_add_subtitle_new</key>
-    <string>Nya podcasts som du följer kommer inte att läggas till automatiskt</string>
     <key>filter_media_type</key>
     <string>Medietyp</string>
     <key>filter_media_type_audio</key>
@@ -1242,8 +727,6 @@ du lyssnade på var
     <string>Filtrering av avsnitt som är längre än %1$@ men kortare än %2$@ skulle orsaka en reva i tidsrymden. Tyvärr.</string>
     <key>filter_option_episode_duration_error_title</key>
     <string>Ja, men nej</string>
-    <key>filter_options</key>
-    <string>Filtreringsalternativ</string>
     <key>filter_release_date</key>
     <string>Utgivningsdatum</string>
     <key>filter_release_date_anytime</key>
@@ -1272,10 +755,6 @@ du lyssnade på var
     <string>Nya släpp</string>
     <key>filters_new_filter_button</key>
     <string>+ Nytt filter</string>
-    <key>filters_tip_view_description</key>
-    <string>Skapa smarta filter för att organisera dina avsnitt. Filtrera efter varaktighet, utgivningsdatum, mediatyp med mera.</string>
-    <key>filters_tip_view_title</key>
-    <string>Organisera dina avsnitt</string>
     <key>folder</key>
     <string>Mapp</string>
     <key>folder_add_podcasts_plural_format</key>
@@ -1338,24 +817,10 @@ du lyssnade på var
     <string>En lista över podcaster som togs bort från mappar till följd av en synkronisering.</string>
     <key>follow</key>
     <string>Följ</string>
-    <key>free_trial_detail_label</key>
-    <string>Ingen betalning nu – Avbryt när som helst</string>
-    <key>free_trial_duration_free</key>
-    <string>%1$@ GRATIS</string>
-    <key>free_trial_duration_free_trial</key>
-    <string>%1$@ GRATIS PROVPERIOD</string>
-    <key>free_trial_pricing_terms</key>
-    <string>%1$@ gratis, därefter %2$@</string>
-    <key>free_trial_start_and_subscribe_button</key>
-    <string>Starta gratis provperiod och prenumerera</string>
     <key>free_trial_start_button</key>
     <string>Starta kostnadsfri testperiod</string>
-    <key>free_trial_title_label</key>
-    <string>Prova Plus med %1$@ gratis</string>
     <key>funding</key>
     <string>Finansiering</string>
-    <key>funny_conf_msg</key>
-    <string>Den matchar verkligen dina ögon ✨</string>
     <key>funny_time_not_enough</key>
     <string>Du lyssnar inte så mycket, eller hur?</string>
     <key>funny_time_unit_airplane_takeoffs</key>
@@ -1398,8 +863,6 @@ du lyssnade på var
     <string>Uppfattat</string>
     <key>group_episodes</key>
     <string>Gruppera avsnitt</string>
-    <key>hang_on</key>
-    <string>Häng kvar!</string>
     <key>history_clear_all</key>
     <string>Töm alla</string>
     <key>history_clear_all_details</key>
@@ -1412,12 +875,8 @@ du lyssnade på var
     <string>Timme sparad</string>
     <key>hours_listened</key>
     <string>Timmar lyssnade</string>
-    <key>hours_plural_format</key>
-    <string>%1$@ timmar</string>
     <key>hours_saved</key>
     <string>Timmar sparade</string>
-    <key>hours_singular_format</key>
-    <string>1 timme</string>
     <key>how_to_upload_explanation</key>
     <string>Öppna först en app som har de ljudfiler du vill spara</string>
     <key>how_to_upload_share_action_image_center_text</key>
@@ -1434,22 +893,8 @@ du lyssnade på var
     <string>Välj att dela den filen</string>
     <key>how_to_upload_summary</key>
     <string>Det var allt. Du är klar. Ändra eventuell information som du vill ändra, tryck på Spara och spela!</string>
-    <key>iap_product_monthly_pricing_format</key>
-    <string>%1$@/månad</string>
-    <key>iap_product_weekly_pricing_format</key>
-    <string>%1$@/vecka</string>
     <key>import</key>
     <string>Importera</string>
-    <key>import_instructions_apple_podcasts_steps</key>
-    <string>Vi kan importera dina podcasts från Apple Podcasts genom att använda den inbyggda appen Genvägar.
-Obs! Om du tidigare har tagit bort appen Genvägar kommer du att bli ombedd att installera den igen.
-
-1. Tryck på knappen Installera Genvägar nedan.
-2. Tryck på knappen Lägg till genväg när du blir ombedd att göra detta.
-3. Tryck på fliken Genvägar.
-4. Lokalisera genvägen "Apple Podcasts till PodHopper" i listan.
-5. Tryck på den för att starta importprocessen.
-6. När genvägen är klar kommer PodHopper att öppnas igen och slutföra importprocessen.</string>
     <key>import_instructions_breaker</key>
     <string>1. Tryck på knappen Öppna Breaker nedan
 2. Tryck på Inställningar i det nedre flikfältet
@@ -1480,8 +925,6 @@ Obs! Om du tidigare har tagit bort appen Genvägar kommer du att bli ombedd att 
     <string>Installera Genvägar</string>
     <key>import_instructions_open_in</key>
     <string>Öppna %1$@</string>
-    <key>import_instructions_other_apps_title</key>
-    <string>andra appar</string>
     <key>import_instructions_overcast</key>
     <string>1. Tryck på knappen nedan för att öppna Overcast
 2. Tryck på kugghjulsikonen i det övre hörnet av appen
@@ -1506,14 +949,6 @@ Anmärkning: Du kan behöva skicka OPML-filen till dig själv via e-post, trycka
 podcasts med dig</string>
     <key>in_progress</key>
     <string>Pågår</string>
-    <key>interests_select_at_least</key>
-    <string>Välj minst %1$@</string>
-    <key>interests_show_more_categories</key>
-    <string>Visa fler kategorier</string>
-    <key>interests_subtitle</key>
-    <string>Bra podcasts, utvalda av riktiga människor, är på väg!</string>
-    <key>interests_title</key>
-    <string>Berätta om dina favoritämnen</string>
     <key>keycommand_close_player</key>
     <string>Stäng spelare</string>
     <key>keycommand_decrease_speed</key>
@@ -1524,32 +959,6 @@ podcasts med dig</string>
     <string>Öppna spelare</string>
     <key>keycommand_play_pause</key>
     <string>Spela upp/pausa</string>
-    <key>kids_profile_banner_badge</key>
-    <string>Snart</string>
-    <key>kids_profile_banner_request_button</key>
-    <string>Begär tidig åtkomst </string>
-    <key>kids_profile_banner_text</key>
-    <string>En ny profil med endast innehåll för barn för att hålla ordning på dina prenumerationer.</string>
-    <key>kids_profile_banner_title</key>
-    <string>Barnprofil</string>
-    <key>kids_profile_submit_error</key>
-    <string>Något gick fel. Försök skicka din feedback igen</string>
-    <key>kids_profile_submit_feedback_send_button</key>
-    <string>Skicka</string>
-    <key>kids_profile_submit_feedback_title</key>
-    <string>Vad skulle du vilja se i en barnprofil för PodHopper?</string>
-    <key>kids_profile_submit_success</key>
-    <string>Tack för din feedback!</string>
-    <key>kids_profile_thankyou_button_close</key>
-    <string>Nej tack</string>
-    <key>kids_profile_thankyou_button_send</key>
-    <string>Skicka feedback</string>
-    <key>kids_profile_thankyou_text</key>
-    <string>Du kommer att få en notis via appen när barnprofilen är redo. Vill du berätta för oss vad du skulle vilja se?</string>
-    <key>kids_profile_thankyou_title</key>
-    <string>Tack för ditt intresse</string>
-    <key>learn_about_ratings</key>
-    <string>Läs om betyg</string>
     <key>learn_more</key>
     <string>Lär dig mer</string>
     <key>listening_history</key>
@@ -1562,20 +971,8 @@ podcasts med dig</string>
     <string>Inga avsnitt hittades</string>
     <key>loading</key>
     <string>Läser in...</string>
-    <key>login_landing_subtitle</key>
-    <string>Dina podcasts, alltid synkroniserade. Håll ditt bibliotek säkert och njut av PodHopper på webben och via skrivbordet.</string>
-    <key>login_landing_title</key>
-    <string>Skapa ditt PodHopper-konto</string>
-    <key>login_subtitle</key>
-    <string>Skapa ett konto för att synkronisera din lyssningsupplevelse på alla dina enheter.</string>
-    <key>login_title</key>
-    <string>Upptäck din nästa favoritpodcast</string>
     <key>logs</key>
     <string>Loggar</string>
-    <key>logs_no_email_account_configured</key>
-    <string>Du behöver konfigurera ett e-postkonto på enheten för att skicka loggarna</string>
-    <key>logs_watch_os_not_available</key>
-    <string>Inga watchOS-loggar är tillgängliga. Se till att du har en Apple Watch parkopplad och klockappen för PodHopper installerad.</string>
     <key>manage_downloads_action</key>
     <string>Hantera nedladdningar</string>
     <key>manage_downloads_detail</key>
@@ -1668,18 +1065,12 @@ podcasts med dig</string>
     <string>Tar bort stjärnmärkning för 1 avsnitt</string>
     <key>name</key>
     <string>Namn</string>
-    <key>new_email_address_prompt</key>
-    <string>Ny e-postadress</string>
     <key>new_episodes</key>
     <string>Nya avsnitt</string>
-    <key>new_password_prompt</key>
-    <string>Nytt lösenord</string>
     <key>next</key>
     <string>Nästa</string>
     <key>next_episode</key>
     <string>Nästa avsnitt</string>
-    <key>next_payment_format</key>
-    <string>Nästa betalning: %1$@</string>
     <key>no_bookmarks_button_title</key>
     <string>Hörlursinställningar</string>
     <key>no_bookmarks_locked_button_title</key>
@@ -1694,10 +1085,6 @@ podcasts med dig</string>
     <string>Ingen</string>
     <key>not_on_wifi</key>
     <string>Du har inte tillgång till WiFi</string>
-    <key>notifications_app_clip_body</key>
-    <string>Installera PodHopper för att få den fullständiga upplevelsen med kraftfulla uppspelnings- och anpassningsverktyg.</string>
-    <key>notifications_app_clip_title</key>
-    <string>Redo för fler podcasts?</string>
     <key>notifications_daily_reminders</key>
     <string>Dagliga påminnelser</string>
     <key>notifications_new_feature_suggested_folders_body</key>
@@ -1808,18 +1195,6 @@ podcasts med dig</string>
     <string>OK</string>
     <key>on</key>
     <string>Till</string>
-    <key>onboarding_quote_author</key>
-    <string>PodHopper-användare</string>
-    <key>onboarding_quote_best</key>
-    <string>Bästa podcast-appen som finns. Utan tvekan</string>
-    <key>onboarding_quote_customization</key>
-    <string>Mängden anpassning är vansinnig</string>
-    <key>onboarding_quote_folders</key>
-    <string>Att organisera mina podcasts i mappar är genialt</string>
-    <key>onboarding_recommendations_subtitle</key>
-    <string>Här är några bra shower att börja med. Tryck för att följa, söka eller importera från andra appar.</string>
-    <key>onboarding_recommendations_title</key>
-    <string>Vi hoppas att du kommer att älska dessa förslag!</string>
     <key>only_on_unmetered_wifi</key>
     <string>Endast på WiFi utan datapriser</string>
     <key>only_on_unmetered_wifi_details</key>
@@ -1838,37 +1213,10 @@ podcasts med dig</string>
     <string>Importerar podcasts …</string>
     <key>page_control_page_progress_format</key>
     <string>Sida %1$@ av %2$@</string>
-    <key>paid_podcast_bundled_subscriptions</key>
-    <string>PRENUMERERAR PÅ %1$@ / %2$@</string>
-    <key>paid_podcast_cancel</key>
-    <string>Avbryt bidrag</string>
-    <key>paid_podcast_cancel_msg_plural</key>
-    <string>Supportstatusen förblir aktiv till %1$@. Därefter kommer du inte längre att kunna spela upp denna podcast.</string>
-    <key>paid_podcast_cancel_msg_retain_access</key>
-    <string>Supportstatusen förblir aktiv till %1$@. Du kommer endast att kunna lyssna på avsnitt som släppts före detta datum.</string>
-    <key>paid_podcast_cancel_msg_singular</key>
-    <string>Supportstatusen förblir aktiv till %1$@. Därefter kommer du inte längre att kunna spela upp denna podcast.</string>
-    <key>paid_podcast_generic_error</key>
-    <string>Det gick inte att läsa in informationen</string>
-    <key>paid_podcast_manage</key>
-    <string>Hantera</string>
     <key>paid_podcast_next_episode_format</key>
     <string>Nästa avsnitt %1$@</string>
     <key>paid_podcast_release_frequency_format</key>
     <string>Släpps %1$@</string>
-    <key>paid_podcast_signin_prompt_msg</key>
-    <string>LOGGA IN FÖR
-UPPDATERINGAR</string>
-    <key>paid_podcast_signin_prompt_title</key>
-    <string>Logga in för nya avsnitt</string>
-    <key>paid_podcast_subscription_ended</key>
-    <string>UPPHÖRDE: %1$@</string>
-    <key>paid_podcast_subscription_ends</key>
-    <string>UPPHÖR: %1$@</string>
-    <key>paid_podcast_supporter_only_msg</key>
-    <string>Supporterexklusivt flöde</string>
-    <key>paid_podcast_unsubscribe_msg</key>
-    <string>Om du säger upp din prenumeration på alla dessa podcasts kommer alla nedladdningsfiler för dem att tas bort. Är du säker?</string>
     <key>patron</key>
     <string>Patron</string>
     <key>patron_callout</key>
@@ -1883,20 +1231,8 @@ UPPDATERINGAR</string>
     <string>Supporterprofilmärke</string>
     <key>patron_feature_profile_icons</key>
     <string>Särskilda PodHopper-appikoner</string>
-    <key>patron_purchase_promo_title</key>
-    <string>Bli Patron-medlem och lås upp alla PodHopper-funktioner</string>
     <key>patron_subscribe_to</key>
     <string>Prenumerera på Patron</string>
-    <key>patron_thank_you</key>
-    <string>Tack för ditt stöd.</string>
-    <key>patron_unlock_instructions</key>
-    <string>Håll in upplåsningsknappen nedan för att få några tecken på vår uppskattning.</string>
-    <key>patron_unlock_release</key>
-    <string>Släpp för att låsa upp</string>
-    <key>patron_unlock_word</key>
-    <string>lås upp</string>
-    <key>patron_unlocking</key>
-    <string>Låser upp</string>
     <key>pause</key>
     <string>Pause</string>
     <key>paywall_dynamic_headline_banner_ad</key>
@@ -1927,143 +1263,6 @@ UPPDATERINGAR</string>
     <string>Spela nästa</string>
     <key>play_next_in_up_next</key>
     <string>Spela upp nästa i Up Next</string>
-    <key>playback_2024_completion_rate_description</key>
-    <string>Du lyssnade sammanlagt klart på %2$@ av de %1$@ avsnitt du började lyssna på</string>
-    <key>playback_2024_completion_rate_title</key>
-    <string>Din slutförandegrad i år var %1$@</string>
-    <key>playback_2024_description</key>
-    <string>Se dina favoritpodcasts och -kategorier, lyssningsstatistik med mera. Dela med vänner och berätta om dina favoritkreatörer.</string>
-    <key>playback_2024_feature_description</key>
-    <string>Se din lyssningsstatistik, dina favoritpodcasts och mycket mer.</string>
-    <key>playback_2024_feature_title</key>
-    <string>Uppspelning 2024 är här!</string>
-    <key>playback_2024_listening_time_description</key>
-    <string>%1$@ sammanlagt lyssnande på podcasts</string>
-    <key>playback_2024_longest_episode_description</key>
-    <string>Det var "%1$@" från "%2$@"</string>
-    <key>playback_2024_longest_episode_title</key>
-    <string>Det längsta avsnittet du lyssnade på var %1$@</string>
-    <key>playback_2024_plus_upsell_button_title</key>
-    <string>Kolla in PodHopper Plus</string>
-    <key>playback_2024_plus_upsell_description</key>
-    <string>Stöd PodHopper genom att prenumerera på Plus och få mer statistik, plus premiumfunktioner som bokmärken, mappar och förvalda kapitel.</string>
-    <key>playback_2024_plus_upsell_title</key>
-    <string>Det är inte allt!</string>
-    <key>playback_2024_ratings_description_1_to_3</key>
-    <string>Tack för att du delar din feedback med kreatörscommunityn</string>
-    <key>playback_2024_ratings_description_4_to_5</key>
-    <string>Wow, så många %1$@-stjärniga betyg! Tack för att du delar kärleken till dina favoritkreatörer.</string>
-    <key>playback_2024_ratings_empty_description</key>
-    <string>Visste du att du kan betygsätta shower nu? Dela kärleken till dina favoritkreatörer och hjälp dem att synas.</string>
-    <key>playback_2024_ratings_empty_title</key>
-    <string>Oj då! Inga podcastbetyg att visa dig ännu</string>
-    <key>playback_2024_ratings_title</key>
-    <string>Låt oss se dina betyg.</string>
-    <key>playback_2024_top_spot_description</key>
-    <string>Du lyssnade på %1$@ avsnitt i sammanlagt %2$@ av "%3$@"</string>
-    <key>playback_2024_top_spot_title</key>
-    <string>Det här var din favoritpodcast under 2024</string>
-    <key>playback_2024_view_year</key>
-    <string>Visa Min uppspelning 2024</string>
-    <key>playback_2024_year_over_year_compare_description_down</key>
-    <string>Ack ja ... det finns ett liv att leva, eller hur?</string>
-    <key>playback_2024_year_over_year_compare_description_same</key>
-    <string>Och det sägs att kontinuitet är nyckeln till framgång ... eller något i den stilen.</string>
-    <key>playback_2024_year_over_year_compare_description_up</key>
-    <string>Är du redo att toppa det under 2025?</string>
-    <key>playback_2024_year_over_year_compare_title_down_little</key>
-    <string>Jämfört med 2023 har din lyssningstid minskat något</string>
-    <key>playback_2024_year_over_year_compare_title_down_lot</key>
-    <string>Jämfört med 2023 minskade din lyssningstid med hisnande %1$@</string>
-    <key>playback_2024_year_over_year_compare_title_down_over_500</key>
-    <string>Jämfört med 2023 har din lyssningstid minskat med över  %1$@</string>
-    <key>playback_2024_year_over_year_compare_title_same</key>
-    <string>Jämfört med 2023 var din lyssningstid ganska oförändrad</string>
-    <key>playback_2024_year_over_year_compare_title_up_above_maximum</key>
-    <string>Jämfört med 2023 ökade din lyssningstid med över %1$@</string>
-    <key>playback_2024_year_over_year_compare_title_up_little</key>
-    <string>Jämfört med 2023 har din lyssningstid ökat något</string>
-    <key>playback_2024_year_over_year_compare_title_up_lot</key>
-    <string>Jämfört med 2023 ökade din lyssningstid med hisnande %1$@</string>
-    <key>playback_2024_year_over_year_compare_title_up_over_500</key>
-    <string>Jämfört med 2023 ökade din lyssningstid med över %1$@</string>
-    <key>playback_2025_completion_rate_message</key>
-    <string>Av %1$@ startade avsnitt lyssnade du klart på %2$@. En starkare uppföljning än med de flesta gymmedlemskap</string>
-    <key>playback_2025_completion_rate_title</key>
-    <string>Din slutförandegrad var %1$@</string>
-    <key>playback_2025_end_story_description</key>
-    <string>Dela din uppspelning med vänner och ge lite kärlek till de podcasters som höll dig sällskap hela året</string>
-    <key>playback_2025_end_story_title</key>
-    <string>Tack för att du spenderar ditt år med PodHopper</string>
-    <key>playback_2025_failed_to_load</key>
-    <string>Vi kunde inte läsa in uppspelningen</string>
-    <key>playback_2025_feature_description</key>
-    <string>Se din lyssningsstatistik, dina favoritpodcasts och mycket mer.</string>
-    <key>playback_2025_feature_title</key>
-    <string>Uppspelning är här!</string>
-    <key>playback_2025_intro_message</key>
-    <string>Ditt podcastår, inslaget och redo att återupplevas</string>
-    <key>playback_2025_listened_to_numbers</key>
-    <string>Du lyssnade på %1$@ olika podcasts och %2$@ avsnitt</string>
-    <key>playback_2025_listening_time</key>
-    <string>lyssnade minuter</string>
-    <key>playback_2025_longest_episode_footer</key>
-    <string>Det längsta avsnittet var “%1$@” från “%2$@”</string>
-    <key>playback_2025_longest_episode_message</key>
-    <string>Hoppas att du sträckte på dig först!</string>
-    <key>playback_2025_longest_episode_title</key>
-    <string>Din maratonlyssning: %1$@</string>
-    <key>playback_2025_plus_thanks_description</key>
-    <string>Dina %1$@-förmåner låser upp extra statistik- och power-funktioner</string>
-    <key>playback_2025_plus_thanks_title</key>
-    <string>Tack för att du stödjer PodHopper!</string>
-    <key>playback_2025_plus_upsell_button_title</key>
-    <string>Skaffa PodHopper Plus</string>
-    <key>playback_2025_plus_upsell_description</key>
-    <string>Prenumerera på PodHopper Plus för utökad statistik, bokmärken, mappar, kapitelval och fler sätt att fördjupa dig i dina lyssningsvanor</string>
-    <key>playback_2025_plus_upsell_title</key>
-    <string>Vill du göra en djupdykning?</string>
-    <key>playback_2025_ratings_description_1_to_3</key>
-    <string>Recensioner hjälper fantastiska shower att hittas</string>
-    <key>playback_2025_ratings_description_4_to_5</key>
-    <string>Skapare överallt uppskattar kärleken</string>
-    <key>playback_2025_ratings_empty_description</key>
-    <string>Hjälp dina favoritkreatörer att bli upptäckta genom att dela det du älskar</string>
-    <key>playback_2025_ratings_empty_title</key>
-    <string>Inga betyg än, men det finns fortfarande tid!</string>
-    <key>playback_2025_ratings_title_1_to_3</key>
-    <string>Tack för att du delar din feedback.</string>
-    <key>playback_2025_ratings_title_4_to_5</key>
-    <string>Du strösslade %1$@-stjärniga betyg som konfetti</string>
-    <key>playback_2025_top_5_podcasts_message</key>
-    <string>Fler favoriter, mer uppspelning, mer du</string>
-    <key>playback_2025_top_5_podcasts_title</key>
-    <string>Dina andra favoriter</string>
-    <key>playback_2025_top_spot_description</key>
-    <string>%1$@ avsnitt, %2$@.
-Det är engagemang!</string>
-    <key>playback_2025_top_spot_subtitle</key>
-    <string>Det blir inte mer ”du” än så här</string>
-    <key>playback_2025_top_spot_title</key>
-    <string>Dina favoritpodcasts 2025</string>
-    <key>playback_2025_view_year</key>
-    <string>Visa Min uppspelning 2025</string>
-    <key>playback_2025_year_over_year_comparison_down_message</key>
-    <string>Men hej, kvalitet över kvantitet</string>
-    <key>playback_2025_year_over_year_comparison_down_title</key>
-    <string>Ditt lyssnande minskade med %1$@ i år</string>
-    <key>playback_2025_year_over_year_comparison_hero_message</key>
-    <string>Du lyssnade %1$@ mer i år – välkommen till klubben</string>
-    <key>playback_2025_year_over_year_comparison_hero_title</key>
-    <string>Från noll till hjälte!</string>
-    <key>playback_2025_year_over_year_comparison_same_message</key>
-    <string>Konsekvent, pålitligt, precis som din kafébeställning</string>
-    <key>playback_2025_year_over_year_comparison_same_title</key>
-    <string>Ditt lyssnande 2025 höll sig stabilt</string>
-    <key>playback_2025_year_over_year_comparison_up_message</key>
-    <string>Fler podcasts, mer glädje</string>
-    <key>playback_2025_year_over_year_comparison_up_title</key>
-    <string>Jämfört med 2024 har din lyssningstid skjutit i höjden med %1$@</string>
     <key>playback_effect_all_podcasts</key>
     <string>Alla podcasts</string>
     <key>playback_effect_this_podcast</key>
@@ -2078,8 +1277,6 @@ Det är engagemang!</string>
     <string>Uppspelningseffekter</string>
     <key>playback_failed</key>
     <string>Uppspelningen misslyckades</string>
-    <key>playback_not_available</key>
-    <string>Uppspelning inte tillgänglig</string>
     <key>playback_speed</key>
     <string>%1$@x</string>
     <key>player_accessibility_sleep_timer_on</key>
@@ -2108,8 +1305,6 @@ Det är engagemang!</string>
     <string>Omslag för %1$@</string>
     <key>player_chapter_count</key>
     <string>%1$@ av %2$@</string>
-    <key>player_decrement_time</key>
-    <string>Minska tid</string>
     <key>player_effects_trim_silence_details</key>
     <string>Minska längden på ett avsnitt genom att trimma bort tystnaden.</string>
     <key>player_effects_trim_silence_progress</key>
@@ -2130,24 +1325,14 @@ Det är engagemang!</string>
     <string>Du är offline</string>
     <key>player_error_short_playback_error</key>
     <string>Uppspelningen misslyckades, försök igen</string>
-    <key>player_increment_time</key>
-    <string>Öka tid</string>
     <key>player_mark_as_played_confirmation</key>
     <string>Markera detta avsnitt som spelad?</string>
     <key>player_mark_as_played_confirmation_message</key>
     <string>Den kommer att flyttas från Nästa till din historik.</string>
-    <key>player_options_play_all_message</key>
-    <string>Detta kommer att rensa din nuvarande Nästa-kö.</string>
-    <key>player_options_play_episode_singular</key>
-    <string>Spela 1 avsnitt</string>
-    <key>player_options_play_episodes_plural</key>
-    <string>Spela %1$@ avsnitt</string>
     <key>player_options_shortcut_on_player</key>
     <string>GENVÄG PÅ SPELARE</string>
     <key>player_route_selection</key>
     <string>Gruppväljare</string>
-    <key>player_share_header</key>
-    <string>DELA LÄNK TILL</string>
     <key>player_show_notes_title</key>
     <string>Detaljer</string>
     <key>player_user_episode_download_error</key>
@@ -2214,16 +1399,6 @@ Prova att justera reglerna, eller spara denna spellista för framtida avsnitt so
     <string>Alla avsnitt arkiverade. Lägg till eller avarkivera för att spela upp.</string>
     <key>playlist_options</key>
     <string>Spellistealternativ</string>
-    <key>playlist_play_all_option_save_queue</key>
-    <string>Spara nuvarande kö</string>
-    <key>playlist_play_all_picker_message</key>
-    <string>Din nuvarande Nästa kommer att ersättas när du spelar upp denna spellista. Spara den först för att behålla den.</string>
-    <key>playlist_play_all_picker_title</key>
-    <string>Spara din Nästa-kö?</string>
-    <key>playlist_play_all_replace_picker_message</key>
-    <string>Detta kommer att rensa din nuvarande Nästa-kö och börja spela upp denna spellista.</string>
-    <key>playlist_play_all_replace_picker_title</key>
-    <string>Ersätt nuvarande Nästa?</string>
     <key>playlist_play_all_sheet_button_title</key>
     <string>Byt ut och spela upp</string>
     <key>playlist_play_all_sheet_description</key>
@@ -2246,8 +1421,6 @@ Prova att justera reglerna, eller spara denna spellista för framtida avsnitt so
     <string>Det är antingen dags att fira att den här listan är slutförd eller att redigera dina regler för att hitta mer.</string>
     <key>playlist_smart_preview_description</key>
     <string>Konfigurera smarta regler för att automatiskt lägga till avsnitt i din smarta spellista.</string>
-    <key>playlist_smart_preview_enabled_rules</key>
-    <string>Aktiverade regler</string>
     <key>playlist_smart_preview_more_rules</key>
     <string>Fler regler</string>
     <key>playlist_smart_rule_podcasts_header_subtitle_auto_add</key>
@@ -2270,8 +1443,6 @@ Prova att justera reglerna, eller spara denna spellista för framtida avsnitt so
     <string>Spellistor</string>
     <key>playlists_auto_download_off_subtitle</key>
     <string>Aktivera för att automatiskt ladda ner avsnitt i den här spellistan.</string>
-    <key>playlists_auto_download_on_plural_format</key>
-    <string>De första %1$@ avsnitten i den här spellistan kommer att laddas ner automatiskt</string>
     <key>playlists_default_new_playlist</key>
     <string>Ny spellista</string>
     <key>playlists_delete</key>
@@ -2302,58 +1473,10 @@ Prova att justera reglerna, eller spara denna spellista för framtida avsnitt so
     <string>Vänligen försök igen</string>
     <key>please_try_again_later</key>
     <string>Försök igen senare.</string>
-    <key>plus_account_required_prompt</key>
-    <string>Ett PodHopper-konto krävs för PodHopper Plus. Detta säkerställer en sömlös lyssningsupplevelse på alla dina enheter.</string>
-    <key>plus_account_required_prompt_details</key>
-    <string>Skapa ett konto eller logga in för att få åtkomst till PodHopper Plus.</string>
-    <key>plus_account_trial_details</key>
-    <string>När din provperiod är över kommer du fortfarande att ha tillgång till fördelarna med ditt vanliga konto. Lycka till med podcastandet!</string>
-    <key>plus_button_title_unlock_all</key>
-    <string>Lås upp alla funktioner</string>
-    <key>plus_cancel_terms</key>
-    <string>Kan avslutas när som helst</string>
-    <key>plus_champion</key>
-    <string>PodHopper-förespråkare</string>
-    <key>plus_champion_message</key>
-    <string>Tack för att du har varit med PodHopper sedan starten. Du är en sann förespråkare.</string>
     <key>plus_cloud_storage_limit_format</key>
     <string>%1$@ GB molnlagring</string>
     <key>plus_discount_yearly_membership</key>
     <string>50 %% rabatt på ditt första år</string>
-    <key>plus_error_already_registered</key>
-    <string>Du har redan ett PodHopper Plus-konto</string>
-    <key>plus_error_already_registered_details</key>
-    <string>Tack för ditt stöd. Tyvärr innebär detta att du inte kan ta del av den här kampanjen.</string>
-    <key>plus_expiration_format</key>
-    <string>Löper ut %1$@</string>
-    <key>plus_feature_card_text_bookmarks</key>
-    <string>Spara dina favoritdelar från avsnitt och återkom till dem.</string>
-    <key>plus_feature_card_text_desktop</key>
-    <string>Lyssna på fler platser med våra Windows-, macOS- och webbappar.</string>
-    <key>plus_feature_card_text_extra_themes</key>
-    <string>Välj dina egna färger. Exklusiva ikoner och teman för våra prenumeranter.</string>
-    <key>plus_feature_card_text_folders</key>
-    <string>Organisera dina podcasts i mappar och håll dem synkroniserade på alla dina enheter.</string>
-    <key>plus_feature_card_text_slumber_studio</key>
-    <string>Få 1 år av premiuminnehåll från Slumber Studios.</string>
-    <key>plus_feature_card_text_storage</key>
-    <string>Ladda upp dina ljudfiler till molnlagringen och ha dem tillgängliga överallt.</string>
-    <key>plus_feature_card_text_wear_os</key>
-    <string>Lämna telefonen hemma och ta en löptur.</string>
-    <key>plus_feature_card_title_bookmarks</key>
-    <string>Bokmärken</string>
-    <key>plus_feature_card_title_desktop</key>
-    <string>Dator- och webbappar</string>
-    <key>plus_feature_card_title_extra_themes</key>
-    <string>Extra teman och ikoner</string>
-    <key>plus_feature_card_title_folders</key>
-    <string>Mappar</string>
-    <key>plus_feature_card_title_slumber_studio</key>
-    <string>Dröm med Slumber Studios</string>
-    <key>plus_feature_card_title_storage</key>
-    <string>20 GB lagringsutrymme</string>
-    <key>plus_feature_card_title_wear_os</key>
-    <string>Apple Watch- och Wear OS-uppspelning</string>
     <key>plus_feature_gratitude</key>
     <string>Den eviga tacksamheten hos alla här på PodHopper</string>
     <key>plus_feature_librofm</key>
@@ -2370,98 +1493,34 @@ Prova att justera reglerna, eller spara denna spellista för framtida avsnitt so
     <string>%1$@ gratis provperiod</string>
     <key>plus_marketing_bookmarks_title</key>
     <string>Bokmärken</string>
-    <key>plus_marketing_desktop_apps_title</key>
-    <string>Dator- och webbappar</string>
-    <key>plus_marketing_folders_and_bookmarks_title</key>
-    <string>Mappar och bokmärken</string>
-    <key>plus_marketing_folders_description</key>
-    <string>Skapa mappar för att organisera din podcastsamling.</string>
     <key>plus_marketing_folders_title</key>
     <string>Mappar</string>
     <key>plus_marketing_generated_transcripts</key>
     <string>Genererade transkriptioner</string>
-    <key>plus_marketing_hide_ads_description</key>
-    <string>Annonsfri upplevelse som ger dig mer av det du gillar och mindre av det du inte gillar</string>
-    <key>plus_marketing_hide_ads_title</key>
-    <string>Dölj annonser</string>
     <key>plus_marketing_learn_more_button</key>
     <string>Läs mer om PodHopper Plus</string>
-    <key>plus_marketing_main_description</key>
-    <string>Gör appen din egen och bli distribuerad på en och samma gång. Ladda upp dina egna ljudfiler till vår molnserver och få tillgång till ditt konto via vår webbspelare.</string>
     <key>plus_marketing_no_banner_ads</key>
     <string>Inga bannerannonser</string>
-    <key>plus_marketing_subtitle</key>
-    <string>Få tillgång till exklusiva funktioner och anpassningsalternativ</string>
-    <key>plus_marketing_themes_icons_title</key>
-    <string>Teman och ikoner</string>
     <key>plus_marketing_title</key>
     <string>Allt du älskar med PodHopper och mer därtill</string>
     <key>plus_marketing_up_next_shuffle</key>
     <string>Slumpmässig Nästa-uppspelning</string>
-    <key>plus_marketing_updated_cloud_storage_description</key>
-    <string>Ladda upp dina filer till molnlagringen och ha dem tillgängliga överallt</string>
-    <key>plus_marketing_updated_desktop_apps_description</key>
-    <string>Lyssna på fler platser med våra Windows-, macOS- och webbappar</string>
-    <key>plus_marketing_updated_folders_description</key>
-    <string>Organisera dina podcasts i mappar och håll dem synkroniserade på alla dina enheter.</string>
     <key>plus_marketing_watch_playback_title</key>
     <string>Apple Watch- och Wear OS-appar</string>
     <key>plus_monthly_frequency_pricing_format</key>
     <string>%1$@ per månad</string>
-    <key>plus_payment_canceled</key>
-    <string>Betalningen har avbrutits</string>
-    <key>plus_payment_frequency_best_value</key>
-    <string>Bästa värde</string>
-    <key>plus_per_month</key>
-    <string>per månad</string>
-    <key>plus_price_per_month</key>
-    <string>%1$@/månad</string>
     <key>plus_promo_paragraph</key>
     <string>Skaffa PodHopper Plus för att låsa upp denna funktion, plus mycket mer!</string>
-    <key>plus_promotion_expired</key>
-    <string>Kampanjen har löpt ut eller så är den ogiltig</string>
-    <key>plus_promotion_expired_nudge</key>
-    <string>Du är välkommen att registrera dig för PodHopper Plus ändå, skapa ett vanligt konto eller bara dyka in direkt. </string>
-    <key>plus_promotion_used</key>
-    <string>Koden har redan använts</string>
-    <key>plus_purchase_failed</key>
-    <string>Det verkar som att det uppstod ett problem när din betalning behandlades. Försök igen.</string>
-    <key>plus_purchase_promo_title</key>
-    <string>Bli Plus-medlem och lås upp alla PodHopper-funktioner</string>
-    <key>plus_required_feature</key>
-    <string>Denna funktion kräver PodHopper Plus</string>
-    <key>plus_select_payment_frequency</key>
-    <string>Välj betalningsfrekvens</string>
-    <key>plus_skip</key>
-    <string>Hoppa över</string>
     <key>plus_start_my_free_trial</key>
     <string>Starta min gratis provperiod</string>
-    <key>plus_start_trial_duration_price</key>
-    <string>Prova %1$@, sedan %2$@</string>
     <key>plus_subscribe_to</key>
     <string>Prenumerera på Plus</string>
-    <key>plus_subscription_apple</key>
-    <string>Din prenumeration hanteras av Apple App Store</string>
-    <key>plus_subscription_apple_details</key>
-    <string>Om du vill avsluta din prenumeration måste du göra detta via Inställningar.</string>
-    <key>plus_subscription_expiration</key>
-    <string>PLUS LÖPER UT %1$@</string>
-    <key>plus_subscription_google</key>
-    <string>Det verkar som att du började prenumerera på PodHopper Plus från en Android-enhet</string>
-    <key>plus_subscription_google_details</key>
-    <string>Om du vill avsluta din prenumeration måste du göra detta via Inställningar.</string>
-    <key>plus_subscription_web</key>
-    <string>Det verkar som att du började prenumerera på PodHopper Plus via webben</string>
-    <key>plus_subscription_web_details</key>
-    <string>Om du vill avsluta din prenumeration måste du göra detta via Pocketcasts.com.</string>
     <key>plus_upgrade_no_internet_message</key>
     <string>Kontrollera din internetanslutning och försök igen.</string>
     <key>plus_upgrade_no_internet_title</key>
     <string>Hämtningen kunde inte genomföras</string>
     <key>plus_yearly_frequency_pricing_format</key>
     <string>%1$@ per år</string>
-    <key>pocket_casts_logo</key>
-    <string>PodHopper-logotyp</string>
     <key>pocket_casts_newsletter</key>
     <string>PodHopper-nyhetsbrev</string>
     <key>pocket_casts_newsletter_description</key>
@@ -2585,20 +1644,8 @@ Om du behöver inspiration så kan du Upptäcka nya podcasts nedan.</string>
     <string>%1$@ togs bort från %2$@</string>
     <key>podcast_season_format</key>
     <string>Säsong %1$@</string>
-    <key>podcast_share_episode</key>
-    <string>Dela länk till avsnitt</string>
     <key>podcast_share_episode_error_msg</key>
     <string>Du har inga appar installerade som accepterar den här filen</string>
-    <key>podcast_share_error_msg</key>
-    <string>Podcastens skapare kan ha tagit bort den sedan den här länken delades.</string>
-    <key>podcast_share_error_title</key>
-    <string>Det gick inte att hitta avsnittet</string>
-    <key>podcast_share_list_creating</key>
-    <string>Skapar lista …</string>
-    <key>podcast_share_list_description</key>
-    <string>Beskrivning (valfritt)</string>
-    <key>podcast_share_list_name</key>
-    <string>Listnamn</string>
     <key>podcast_share_open_file</key>
     <string>Öppna fil i...</string>
     <key>podcast_show_archived</key>
@@ -2631,8 +1678,6 @@ Om du behöver inspiration så kan du Upptäcka nya podcasts nedan.</string>
     <string>Uppdateringar slutade: %1$@</string>
     <key>podcast_updates_ends</key>
     <string>Uppdateringar slutar: %1$@</string>
-    <key>podcast_upload_confirmation</key>
-    <string>Ladda upp nu</string>
     <key>podcast_uploading</key>
     <string>Laddar upp … %1$@</string>
     <key>podcast_view_changes_tip_details</key>
@@ -2689,8 +1734,6 @@ Om du behöver inspiration så kan du Upptäcka nya podcasts nedan.</string>
     <string>Lista</string>
     <key>podcasts_plural</key>
     <string>Podcasts</string>
-    <key>podcasts_share</key>
-    <string>Dela podcasts</string>
     <key>podcasts_small_grid</key>
     <string>Litet rutnät</string>
     <key>podcasts_sort</key>
@@ -2699,8 +1742,6 @@ Om du behöver inspiration så kan du Upptäcka nya podcasts nedan.</string>
     <string>Förhandsgranska</string>
     <key>pricing_terms_after_discount</key>
     <string>Återkommande betalning på %1$@ efter %2$@ (%3$@)</string>
-    <key>pricing_terms_after_trial</key>
-    <string>därefter %1$@</string>
     <key>pricing_terms_after_trial_long</key>
     <string>Återkommande betalningar kommer börja efter din %1$@ gratis provperiod (%2$@)</string>
     <key>profile</key>
@@ -2717,24 +1758,12 @@ Om du behöver inspiration så kan du Upptäcka nya podcasts nedan.</string>
     <string>%1$@ filer</string>
     <key>profile_percent_full</key>
     <string>%1$@ fullt</string>
-    <key>profile_reset_password</key>
-    <string>Återställ lösenord</string>
-    <key>profile_sending_reset_email</key>
-    <string>Skickar e-poståterställning</string>
-    <key>profile_sending_reset_email_conf_msg</key>
-    <string>Kolla din e-post :)</string>
-    <key>profile_sending_reset_email_conf_title</key>
-    <string>Länk för återställning av lösenord har skickats</string>
-    <key>profile_sending_reset_email_failed</key>
-    <string>Det gick inte att skicka återställningsmeddelandet, försök igen senare.</string>
     <key>profile_single_file</key>
     <string>1 fil</string>
     <key>profile_starred_no_episodes_desc</key>
     <string>Stjärnmärk avsnitt du älskar och kom tillbaka till dem när du vill.</string>
     <key>profile_starred_no_episodes_title</key>
     <string>Spara dina favoriter</string>
-    <key>purchase_terms</key>
-    <string>Genom att fortsätta godkänner du vår %1$@ och våra %2$@</string>
     <key>queue_clear_episode_queue_plural</key>
     <string>Rensa %1$@ avsnitt</string>
     <key>queue_clear_episode_queue_singular</key>
@@ -2747,69 +1776,14 @@ Om du behöver inspiration så kan du Upptäcka nya podcasts nedan.</string>
     <string>Spelar nu upp %1$@</string>
     <key>queue_time_remaining</key>
     <string>%1$@ återstår</string>
-    <key>queue_total_time_remaining</key>
-    <string>%1$@ återstår</string>
     <key>rate</key>
     <string>Omdöme</string>
-    <key>rate_pocket_casts</key>
-    <string>Betygsätt PodHopper</string>
-    <key>rating_error</key>
-    <string>Hoppsan. Det uppstod ett fel.</string>
-    <key>rating_listen_to_this_podcast_message</key>
-    <string>Det är bara lyssnare på den här podcasten som kan ge den ett betyg. Lyssna på ett par avsnitt och återkom sedan med ditt betyg. Vi ser fram emot att få höra vad du tycker.</string>
-    <key>rating_listen_to_this_podcast_title</key>
-    <string>Lyssna på den här podcasten först</string>
-    <key>rating_login_required</key>
-    <string>Du måste logga in för att ge ett betyg</string>
-    <key>rating_no_ratings</key>
-    <string>Inga betyg</string>
-    <key>rating_submitted</key>
-    <string>Ditt betyg har skickats.</string>
-    <key>rating_thank_you</key>
-    <string>Tack för betyget!</string>
-    <key>rating_title</key>
-    <string>Betygsätt %1$@</string>
     <key>rating_whats_new_button_title</key>
     <string>Uppfattat</string>
     <key>rating_whats_new_message</key>
     <string>Betygsätt dina favoritpodcasts och låt kreatörerna få veta hur mycket du uppskattar deras arbete. Dina betyg hjälper dessutom andra att hitta nya favoritshower.</string>
     <key>rating_whats_new_title</key>
     <string>Nu tillgängligt: Podcastbetyg 🎉</string>
-    <key>referrals_claim_guest_pass_action</key>
-    <string>Aktivera mitt pass</string>
-    <key>referrals_claim_guest_pass_banner_detail</key>
-    <string>Lås upp den fullständiga lyssningsupplevelsen</string>
-    <key>referrals_claim_guest_pass_banner_title</key>
-    <string>Gör anspråk på ditt %1$@ gästpass för Plus</string>
-    <key>referrals_claim_guest_pass_detail</key>
-    <string>Detta erbjudande gäller endast nya medlemmar. Medlemskapet förnyas automatiskt som ett årligt betalmedlemskap för %1$@.</string>
-    <key>referrals_claim_guest_pass_title</key>
-    <string>Gör anspråk på ditt %1$@ gästpass</string>
-    <key>referrals_claim_need_to_be_loggedin</key>
-    <string>Logga in eller registrera dig för att göra anspråk på ditt gästpass.</string>
-    <key>referrals_guest_pass_offer</key>
-    <string>%1$@ gästpass</string>
-    <key>referrals_not_available_to_send</key>
-    <string>Gästpasset är inte tillgängligt för tillfället</string>
-    <key>referrals_offer_not_available_detail</key>
-    <string>Detta gästpass kan endast lösas in en gång och är tillgängligt för användare utan en aktiv Plus- eller Patron-prenumeration. Tack för att du lyssnar.</string>
-    <key>referrals_offer_not_available_title</key>
-    <string>Detta erbjudande är inte tillgängligt</string>
-    <key>referrals_share_guest_pass</key>
-    <string>Dela gästpass</string>
-    <key>referrals_share_no_guest_pass_message</key>
-    <string>Tack för att du delar PodHopper! Vi meddelar dig när du har fler gästpass att ge bort.</string>
-    <key>referrals_share_no_guest_pass_title</key>
-    <string>Du har delat ut alla dina gästpass.</string>
-    <key>referrals_share_pass_long_message</key>
-    <string>Hej!
-
-Här är ett %1$@ gästpass för PodHopper Plus – min favoritpodcastspelare. Den är fullspäckad med unika funktioner som bokmärken, mappar och annat som du inte hittar någon annanstans. Jag tror att du också kommer att älska den!
-</string>
-    <key>referrals_share_pass_message</key>
-    <string>Hej! Använd länken nedan för att göra anspråk på ditt %1$@ gästpass för PodHopper Plus och ta del av podcasts på alla dina enheter.</string>
-    <key>referrals_share_pass_subject</key>
-    <string>%1$@ gästpass för PodHopper Plus.</string>
     <key>referrals_tip_message</key>
     <string>Ge bort %1$@ med PodHopper Plus.</string>
     <key>referrals_tip_title</key>
@@ -2824,8 +1798,6 @@ Här är ett %1$@ gästpass för PodHopper Plus – min favoritpodcastspelare. D
     <string>UPPDATERINGEN MISSLYCKADES :(</string>
     <key>refresh_control_refreshing_files</key>
     <string>UPPDATERAR FILER</string>
-    <key>refresh_control_release_to_refresh</key>
-    <string>SLÄPP FÖR ATT UPPDATERA</string>
     <key>refresh_control_sync_failed</key>
     <string>SYNKRONISERINGEN MISSLYCKADES :(</string>
     <key>refresh_control_syncing_podcasts</key>
@@ -2892,8 +1864,6 @@ Här är ett %1$@ gästpass för PodHopper Plus – min favoritpodcastspelare. D
     <string>Senaste sökningar</string>
     <key>search_results</key>
     <string>%1$@ av %2$@</string>
-    <key>search_results_empty_action</key>
-    <string>Ge oss feedback</string>
     <key>search_results_empty_message</key>
     <string>Prova en ny sökning eller att lägga till en podcastflödes-URL</string>
     <key>search_results_empty_title</key>
@@ -2986,8 +1956,6 @@ Här är ett %1$@ gästpass för PodHopper Plus – min favoritpodcastspelare. D
     <string>Om</string>
     <key>settings_allow_collection_first_party</key>
     <string>Tillåt oss att samla in analyser.</string>
-    <key>settings_allow_collection_third_party</key>
-    <string>Tillåt oss att använda betrodda tjänster från tredje part för att samla in anonyma data.</string>
     <key>settings_analytics</key>
     <string>Analys</string>
     <key>settings_appearance</key>
@@ -3036,12 +2004,6 @@ Här är ett %1$@ gästpass för PodHopper Plus – min favoritpodcastspelare. D
     <string>Arkivera avsnitt efter en viss tid. Nedladdningarna tas bort när avsnittet har arkiverats.</string>
     <key>settings_auto_download</key>
     <string>Automatisk nedladdning</string>
-    <key>settings_auto_downloads_filters_selected_format</key>
-    <string>%1$@ filter valda</string>
-    <key>settings_auto_downloads_filters_selected_singular</key>
-    <string>1 filter valt</string>
-    <key>settings_auto_downloads_no_filters_selected</key>
-    <string>Inga filter valda</string>
     <key>settings_auto_downloads_no_playlists_selected</key>
     <string>Inga spellistor valda</string>
     <key>settings_auto_downloads_no_podcasts_selected</key>
@@ -3056,16 +2018,12 @@ Här är ett %1$@ gästpass för PodHopper Plus – min favoritpodcastspelare. D
     <string>%1$@ podcasts valda</string>
     <key>settings_auto_downloads_podcasts_selected_singular</key>
     <string>1 podcast vald</string>
-    <key>settings_auto_downloads_subtitle_filters</key>
-    <string>Ladda ner de avsnitt som är överst i ett filter</string>
     <key>settings_auto_downloads_subtitle_new_episodes</key>
     <string>Ladda automatiskt ner nya avsnitt, spara avsnitt från shower du har börjar följa nyligen och hantera din lagring genom att sätta en gräns för hur många avsnitt som sparas.</string>
     <key>settings_auto_downloads_subtitle_playlists</key>
     <string>Ladda ner de populäraste avsnitten i en spellista.</string>
     <key>settings_auto_downloads_subtitle_up_next</key>
     <string>Ladda ner avsnitt tillagda i Nästa.</string>
-    <key>settings_badge_filter_header</key>
-    <string>FILTERANTAL FÖR AVSNITT</string>
     <key>settings_badge_new_since_opened</key>
     <string>Nya sedan appen öppnades</string>
     <key>settings_badge_smart_playlist_header</key>
@@ -3076,14 +2034,8 @@ Här är ett %1$@ gästpass för PodHopper Plus – min favoritpodcastspelare. D
     <string>Bekräftelseljud för bokmärke</string>
     <key>settings_bookmark_sound_footer</key>
     <string>Spela upp ett bekräftelseljud när ett bokmärke har skapats med dina hörlurar.</string>
-    <key>settings_change_avatar</key>
-    <string>Ändra profilbild</string>
-    <key>settings_collect_information</key>
-    <string>Samla information</string>
     <key>settings_collect_information_additional_information</key>
     <string>Att tillåta oss att samla in analyser hjälper oss att bygga en bättre app. Vi förstår om du föredrar att inte dela denna information.</string>
-    <key>settings_connection_status</key>
-    <string>Anslutningsstatus</string>
     <key>settings_create_siri_shortcut</key>
     <string>Skapa Siri-genväg</string>
     <key>settings_create_siri_shortcut_msg</key>
@@ -3196,10 +2148,6 @@ Här är ett %1$@ gästpass för PodHopper Plus – min favoritpodcastspelare. D
     <string>Publicera kapitelrubriker</string>
     <key>settings_general_publish_chapter_titles_subtitle</key>
     <string>Om detta är aktiverat kommer kapitelrubriker att skickas över Bluetooth och andra anslutna enheter istället för avsnittsrubriken.</string>
-    <key>settings_general_remote_skips_chapters</key>
-    <string>Hoppa över kapitel med fjärrkontroll</string>
-    <key>settings_general_remote_skips_chapters_subtitle</key>
-    <string>Om du har aktiverat detta, och avsnittet du lyssnar på har flera kapitel, så kan du hoppa till nästa kapitel genom att trycka på rätt knapp på din bil eller dina hörlurar.</string>
     <key>settings_general_remove_groups_apply_all</key>
     <string>Vill du ändra så att inga av dina befintliga podcasts grupperas?</string>
     <key>settings_general_row_action</key>
@@ -3232,12 +2180,6 @@ Här är ett %1$@ gästpass för PodHopper Plus – min favoritpodcastspelare. D
     <string>Anpassa åtgärder som utförs med de vanligaste hörlurskontrollerna.</string>
     <key>settings_help</key>
     <string>Hjälp och feedback</string>
-    <key>settings_import_export</key>
-    <string>Importera/exportera</string>
-    <key>settings_in_filters_plural_format</key>
-    <string>Inkluderad i %1$@ filter</string>
-    <key>settings_in_filters_singular</key>
-    <string>Ingår i 1 filter</string>
     <key>settings_in_menu</key>
     <string>I MENY</string>
     <key>settings_in_smart_playlist_singular</key>
@@ -3248,24 +2190,16 @@ Här är ett %1$@ gästpass för PodHopper Plus – min favoritpodcastspelare. D
     <string>Inaktiva avsnitt är avsnitt som du inte har spelat upp eller laddat ner under den ovan angivna tidsperioden. Nedladdningar tas bort när avsnittet arkiveras.</string>
     <key>settings_next_action</key>
     <string>Nästa åtgärd</string>
-    <key>settings_not_in_filters</key>
-    <string>Ingår inte i några filter</string>
     <key>settings_not_in_smart_playlists</key>
     <string>Ingår Inte I några smarta spellistor</string>
     <key>settings_notifications</key>
     <string>Aviseringar</string>
-    <key>settings_notifications_filter_count</key>
-    <string>Filterantal</string>
     <key>settings_notifications_smart_playlist_count</key>
     <string>Antal för smart spellista</string>
     <key>settings_notifications_subtitle</key>
     <string>Du blir meddelad när ett nytt avsnitt släpps. Det är också användbart för att förbättra tillförlitligheten av automatisk nedladdning.</string>
-    <key>settings_opml</key>
-    <string>Importera/exportera OPML</string>
     <key>settings_play_speed</key>
     <string>Uppspelningshastighet</string>
-    <key>settings_plus_pricing_format</key>
-    <string>%1$@ per månad/%2$@ per år</string>
     <key>settings_previous_action</key>
     <string>Föregående åtgärd</string>
     <key>settings_privacy</key>
@@ -3274,8 +2208,6 @@ Här är ett %1$@ gästpass för PodHopper Plus – min favoritpodcastspelare. D
     <string>Plats i kön</string>
     <key>settings_read_privacy_policy</key>
     <string>Läs integritetspolicy</string>
-    <key>settings_select_filter_singular</key>
-    <string>Välj filter</string>
     <key>settings_select_filters_plural</key>
     <string>Välj filter</string>
     <key>settings_select_playlist_singular</key>
@@ -3284,8 +2216,6 @@ Här är ett %1$@ gästpass för PodHopper Plus – min favoritpodcastspelare. D
     <string>Välj spellistor</string>
     <key>settings_select_smart_playlists_plural</key>
     <string>Välj smarta spellistor</string>
-    <key>settings_shortcuts_filter_open_filter</key>
-    <string>Öppna filter</string>
     <key>settings_shortcuts_filter_open_playlist</key>
     <string>Öppna spellista</string>
     <key>settings_shortcuts_filter_play_all_episodes</key>
@@ -3302,8 +2232,6 @@ Här är ett %1$@ gästpass för PodHopper Plus – min favoritpodcastspelare. D
     <string>Tillgängliga genvägar</string>
     <key>settings_siri_shortcuts_enabled</key>
     <string>Aktiverade genvägar</string>
-    <key>settings_siri_shortcuts_specific_filter</key>
-    <string>Genväg till ett specifikt filter</string>
     <key>settings_siri_shortcuts_specific_playlist</key>
     <string>Genväg till en specifik podcast</string>
     <key>settings_siri_shortcuts_specific_podcast</key>
@@ -3316,42 +2244,6 @@ Här är ett %1$@ gästpass för PodHopper Plus – min favoritpodcastspelare. D
     <string>Hoppa över intro och outro musiken som den produktiva super-lyssnaren du föddes till att vara.</string>
     <key>settings_stats</key>
     <string>Statistik</string>
-    <key>settings_status_account_service</key>
-    <string>Tjänsten Konto</string>
-    <key>settings_status_account_service_description</key>
-    <string>Tjänsten som används för att lagra avsnittsförlopp, prenumerationer, filter, osv.</string>
-    <key>settings_status_description</key>
-    <string>Kontrollera din anslutning med viktiga tjänster Det hjälper till att diagnostisera problem med ditt nätverk, proxyservrar, VPN samt annonsblockerings- och säkerhetsappar.</string>
-    <key>settings_status_discover</key>
-    <string>Upptäck och sök</string>
-    <key>settings_status_discover_description</key>
-    <string>Upptäck-sektionen i appen, med podcastsökning.</string>
-    <key>settings_status_expensive_network</key>
-    <string>WiFi utan datapriser</string>
-    <key>settings_status_expensive_network_description</key>
-    <string>Om detta lyckas kommer det här nätverket att användas för nedladdningar på WiFi utan datapriser.</string>
-    <key>settings_status_expensive_network_failure_message</key>
-    <string>Ditt nuvarande nätverk är markerat som dyrt. Prova att byta till Wi-Fi eller att inaktivera lågdataläge.</string>
-    <key>settings_status_host</key>
-    <string>Vanliga podcastvärdar</string>
-    <key>settings_status_host_description</key>
-    <string>Podcastskapare använder olika värdtjänster för sina avsnittsfiler. Dessa hanteras inte av PodHopper.</string>
-    <key>settings_status_host_failure_message</key>
-    <string>Den vanligaste orsaken är att du har en annonsblockerare konfigurerad på din telefon eller i ditt nätverk. Du måste avblockera den här domänen för att ladda ner podcasts. Observera att PodHopper inte är värd för dina podcasts eller väljer vilken värdtjänst som används för dem. Det är upp till showens skapare och ligger utanför vår kontroll.</string>
-    <key>settings_status_internet</key>
-    <string>Internet</string>
-    <key>settings_status_internet_description</key>
-    <string>Kontrollera ditt nätverks status.</string>
-    <key>settings_status_internet_failure_message</key>
-    <string>Det gick inte att ansluta till internet. Prova att ansluta till ett annat nätverk (t.ex. mobildata).</string>
-    <key>settings_status_refresh_service</key>
-    <string>Tjänsten Uppdatera</string>
-    <key>settings_status_refresh_service_description</key>
-    <string>Tjänsten som används för att hitta nya avsnitt.</string>
-    <key>settings_status_run</key>
-    <string>Kör nu</string>
-    <key>settings_status_service_ad_blocker_help_singular</key>
-    <string>Den vanligaste orsaken är att du har en annonsblockerare konfigurerad på din telefon eller i ditt nätverk. Du måste avblockera domänen %1$@</string>
     <key>settings_storage</key>
     <string>Lagrings- och dataanvändning</string>
     <key>settings_storage_data_warning</key>
@@ -3364,8 +2256,6 @@ Här är ett %1$@ gästpass för PodHopper Plus – min favoritpodcastspelare. D
     <string>ANVÄNDNING</string>
     <key>settings_storage_usage_footer</key>
     <string>Detta kan skilja sig från det lagringsutrymme som visas i dina iPhone-inställningar. iOS hanterar cachelagrade data automatiskt och frigör dem vid behov.</string>
-    <key>settings_third_party_analytics</key>
-    <string>Analyser från tredje part</string>
     <key>settings_title</key>
     <string>Podcastinställningar</string>
     <key>settings_trim_level</key>
@@ -3406,44 +2296,14 @@ Här är ett %1$@ gästpass för PodHopper Plus – min favoritpodcastspelare. D
     <string>Om det här alternativet är aktiverat kommer sömntimern att starta om när du skakar din telefon.</string>
     <key>share</key>
     <string>Dela</string>
-    <key>share_clip</key>
-    <string>Dela klipp</string>
-    <key>share_copied_to_clipboard</key>
-    <string>Länk kopierad till urklipp</string>
-    <key>share_copy_link</key>
-    <string>Kopiera länk</string>
     <key>share_current_position</key>
     <string>Nuvarande position</string>
-    <key>share_description</key>
-    <string>Välj ett format och en plattform att dela till</string>
     <key>share_episode</key>
     <string>Dela avsnitt</string>
-    <key>share_episode_at</key>
-    <string>Dela avsnitt vid %1$@</string>
-    <key>share_episode_title</key>
-    <string>Dela avsnitt</string>
-    <key>share_instagram_stories</key>
-    <string>Berättelser</string>
-    <key>share_list_subscribing</key>
-    <string>Prenumererar …</string>
-    <key>share_more_actions</key>
-    <string>Mer</string>
     <key>share_podcast</key>
     <string>Dela podcast</string>
     <key>share_podcast_private_not_available</key>
     <string>Delning är inte tillgängligt för privata podcasts</string>
-    <key>share_podcast_title</key>
-    <string>Dela podcast</string>
-    <key>share_podcasts_all_selected</key>
-    <string>ALLA HAR VALTS</string>
-    <key>share_podcasts_create_list</key>
-    <string>Skapa lista</string>
-    <key>share_podcasts_sharing</key>
-    <string>Delar ...</string>
-    <key>share_podcasts_sharing_failed_msg</key>
-    <string>Något gick fel när din delningssida skulle skapas</string>
-    <key>share_podcasts_sharing_failed_title</key>
-    <string>Delningen misslyckades</string>
     <key>share_profile</key>
     <string>Dela profil</string>
     <key>share_profile_add_photo_and_name</key>
@@ -3488,38 +2348,10 @@ Här är ett %1$@ gästpass för PodHopper Plus – min favoritpodcastspelare. D
     <string>Vad vill du dela?</string>
     <key>share_select_podcasts</key>
     <string>Välj podcasts</string>
-    <key>shared_item_loading</key>
-    <string>Laddar delat objekt...</string>
-    <key>shared_list</key>
-    <string>Delad lista</string>
-    <key>shared_list_subscribe_conf_action</key>
-    <string>Absolut!</string>
-    <key>shared_list_subscribe_conf_msg</key>
-    <string>Är du säker på att du vill prenumerera på %1$@ podcasts?</string>
-    <key>shared_list_subscribe_conf_title</key>
-    <string>Det är många podcasts!</string>
     <key>show_notes</key>
     <string>Noteringar</string>
     <key>sign_in</key>
     <string>Logga in</string>
-    <key>sign_in_continue_with_email</key>
-    <string>Fortsätt med e-post</string>
-    <key>sign_in_divider_label</key>
-    <string>ELLER</string>
-    <key>sign_in_email_address_prompt</key>
-    <string>E-postadress</string>
-    <key>sign_in_forgot_password</key>
-    <string>Jag har glömt mitt lösenord</string>
-    <key>sign_in_hide_password_label</key>
-    <string>Visa lösenord</string>
-    <key>sign_in_message</key>
-    <string>Spara dina podcastprenumerationer i molnet och synkronisera ditt lyssningsförlopp med andra enheter.</string>
-    <key>sign_in_password_prompt</key>
-    <string>Lösenord</string>
-    <key>sign_in_prompt</key>
-    <string>Logga in eller skapa konto</string>
-    <key>sign_in_show_password_label</key>
-    <string>Dölj lösenord</string>
     <key>signed_in_as</key>
     <string>INLOGGAD SOM</string>
     <key>signed_out</key>
@@ -3602,28 +2434,6 @@ Här är ett %1$@ gästpass för PodHopper Plus – min favoritpodcastspelare. D
     <string>Vi har skapat dessa för att hjälpa dig att komma igång. De uppdateras automatiskt baserat på ditt lyssnande.</string>
     <key>smart_playlists_tip_view_title</key>
     <string>Smarta spellistor, redo att användas</string>
-    <key>social_sign_in_continue_with_apple</key>
-    <string>Fortsätt med Apple</string>
-    <key>social_sign_in_continue_with_google</key>
-    <string>Fortsätt med Google</string>
-    <key>sonos_connect_action</key>
-    <string>ANSLUT</string>
-    <key>sonos_connect_prompt</key>
-    <string>Anslut till Sonos</string>
-    <key>sonos_connecting</key>
-    <string>ANSLUTER …</string>
-    <key>sonos_connection_failed_account_link</key>
-    <string>Det går för närvarande inte att länka PodHopper-kontot. Försök igen senare.</string>
-    <key>sonos_connection_failed_app_missing</key>
-    <string>Det gick inte att öppna Sonos-appen och slutföra länkningsprocessen.</string>
-    <key>sonos_connection_failed_title</key>
-    <string>Länkningen misslyckades</string>
-    <key>sonos_connection_privacy_notice</key>
-    <string>Genom att ansluta till Sonos ger du Sonos-appen tillåtelse att komma åt din avsnittsinformation.
-
-Din e-postadress, ditt lösenord eller annan känslig information delas aldrig.</string>
-    <key>sonos_connection_sign_in_prompt</key>
-    <string>Du behöver ha ett PodHopper-konto för att ansluta till Sonos.</string>
     <key>sort_by</key>
     <string>Sortera efter</string>
     <key>sort_episodes</key>
@@ -3698,38 +2508,8 @@ Din e-postadress, ditt lösenord eller annan känslig information delas aldrig.<
     <string>Stoppa nedladdning</string>
     <key>subscribe</key>
     <string>Prenumerera</string>
-    <key>subscribe_all</key>
-    <string>Prenumerera på alla</string>
     <key>subscribed</key>
     <string>Prenumenerad</string>
-    <key>subscription_cancelled</key>
-    <string>Prenumeration avbruten</string>
-    <key>subscription_cancelled_msg</key>
-    <string>Prenumeration avbruten %1$@ </string>
-    <key>subscription_expires_in</key>
-    <string>Löper ut om %1$@</string>
-    <key>subscription_feature_custom_title_bookmarks</key>
-    <string>Bokmärken: inget mer ”var kan det där ha varit?”</string>
-    <key>subscription_feature_custom_title_folders</key>
-    <string>Mappar: dina podcasts, perfekt placerade</string>
-    <key>subscription_feature_custom_title_pre_selected_chapters</key>
-    <string>Välj kapitel i förväg: plocka ut det bästa innehållet</string>
-    <key>subscription_feature_custom_title_shuffle_upnext</key>
-    <string>Slumpmässig uppspelning: glädjen över spännande val</string>
-    <key>subscription_frequency_pricing_format</key>
-    <string>%1$@ per %2$@</string>
-    <key>subscription_plan_features_info_link</key>
-    <string>Se alla Plus-funktioner</string>
-    <key>subscription_plan_free_trial_info_link</key>
-    <string>Hur fungerar den kostnadsfria provperioden?</string>
-    <key>subscription_plan_month</key>
-    <string>Månatligt paket</string>
-    <key>subscription_plan_savings</key>
-    <string>Spara %1$@ </string>
-    <key>subscription_plan_year</key>
-    <string>Årligt paket</string>
-    <key>subscriptions_thank_you</key>
-    <string>Tack för ditt stöd!</string>
     <key>suggested_folders_create_custom_folder</key>
     <string>Skapa anpassad mapp</string>
     <key>suggested_folders_description</key>
@@ -3746,36 +2526,10 @@ Din e-postadress, ditt lösenord eller annan känslig information delas aldrig.<
     <string>Smarta mappar</string>
     <key>suggested_folders_use_suggested_folders</key>
     <string>Använd dessa mappar</string>
-    <key>support_watch_help_message</key>
-    <string>Om du har problem med PodHopper Watch-appen kan vi skicka dina bärbara loggar för att hjälpa dig. Om du vill att vi ska göra det, öppna PodHopper på din klocka.</string>
-    <key>support_watch_help_opened_app</key>
-    <string>Jag har öppnat Watch-appen</string>
-    <key>support_watch_help_send_without_log</key>
-    <string>Skicka utan Watch-loggar</string>
-    <key>support_watch_help_title</key>
-    <string>Behöver du hjälp med Watch-appen?</string>
     <key>supporter</key>
     <string>Supporter</string>
-    <key>supporter_contributions</key>
-    <string>Supporterbidrag</string>
-    <key>supporter_contributions_subtitle</key>
-    <string>Kontrollera bidragsinformation</string>
-    <key>supporter_payment_canceled</key>
-    <string>Supporter: Avbruten</string>
-    <key>sync_account_error</key>
-    <string>Kontrollera ditt användarnamn och lösenord.</string>
-    <key>sync_account_login</key>
-    <string>Inloggad …</string>
     <key>sync_failed</key>
     <string>Synkroniseringen misslyckades</string>
-    <key>sync_in_progress</key>
-    <string>Synkronisera Nästa och Historik</string>
-    <key>sync_progress</key>
-    <string>Podcast %1$@ av %2$@</string>
-    <key>sync_progress_unknown_count_plural_format</key>
-    <string>%1$@ podcasts har synkroniserats</string>
-    <key>sync_progress_unknown_count_singular</key>
-    <string>1 podcast har synkroniserats</string>
     <key>syncing</key>
     <string>Synkroniserar …</string>
     <key>terms_of_use</key>
@@ -3796,8 +2550,6 @@ Din e-postadress, ditt lösenord eller annan känslig information delas aldrig.<
     <string>Standard ljust</string>
     <key>theme_light_contrast</key>
     <string>Ljus kontrast</string>
-    <key>theme_radioactivity</key>
-    <string>Radioaktivitet</string>
     <key>theme_rose</key>
     <string>Rosé</string>
     <key>time_format_never</key>
@@ -3828,188 +2580,14 @@ Din e-postadress, ditt lösenord eller annan känslig information delas aldrig.<
     <string>Läs med. Även vid 2x.</string>
     <key>transcript_tap_to_seek_streaming_unavailable</key>
     <string>Ladda ner avsnittet och tryck för att söka</string>
-    <key>trial_finished</key>
-    <string>Provperioden har löpt ut</string>
     <key>trim_silence</key>
     <string>Trimma tystnad</string>
     <key>try_again</key>
     <string>Försök igen</string>
     <key>try_it_now</key>
     <string>Prova nu</string>
-    <key>tv_banner_create_account_action_title</key>
-    <string>Skapa ett gratis konto</string>
-    <key>tv_banner_create_account_subtitle</key>
-    <string>Dina följare, dina framsteg, precis där du lämnade dem.</string>
-    <key>tv_banner_create_account_title</key>
-    <string>Ett konto. Alla skärmar</string>
-    <key>tv_banner_discover_more_action_title</key>
-    <string>Upptäck fler program</string>
-    <key>tv_banner_discover_more_subtitle</key>
-    <string>Din nästa favorit finns här någonstans.</string>
-    <key>tv_banner_discover_more_title</key>
-    <string>Du har inte sett hälften än.</string>
-    <key>tv_create_account_come_back</key>
-    <string>När du har skapat ditt konto, kom tillbaka och logga in</string>
-    <key>tv_create_account_subtitle</key>
-    <string>Skanna denna kod för att komma igång på din telefon, det tar bara en minut.</string>
-    <key>tv_create_account_title</key>
-    <string>Skapa ditt gratis konto</string>
-    <key>tv_discover_featured_go_to_podcast</key>
-    <string>Gå till podcasten</string>
-    <key>tv_discover_featured_play_latest_episode</key>
-    <string>Spela det senaste avsnittet</string>
-    <key>tv_discover_play_episode</key>
-    <string>Spela upp avsnitt</string>
-    <key>tv_episode_info</key>
-    <string>Avsnittsinformation</string>
-    <key>tv_home_browse_categories_section_title</key>
-    <string>Bläddra i kategorier</string>
-    <key>tv_home_featured_section_title</key>
-    <string>Utvalt på PodHopper</string>
-    <key>tv_home_keep_listening_title</key>
-    <string>Fortsätt där du slutade</string>
-    <key>tv_home_new_releases</key>
-    <string>Nya släpp</string>
-    <key>tv_home_recently_played</key>
-    <string>Senast spelade</string>
-    <key>tv_home_recommend_user_podcast_section_title</key>
-    <string>Älskad av lyssnare av %1$@</string>
-    <key>tv_home_recommended_for_you_title</key>
-    <string>Du gillar nog de här</string>
-    <key>tv_home_trending_section_title</key>
-    <string>Vad alla lyssnar på den här veckan</string>
     <key>tv_home_video_section_title</key>
     <string>Gjord för TV</string>
-    <key>tv_player_playback_effects</key>
-    <string>Uppspelningseffekter</string>
-    <key>tv_player_playback_speed</key>
-    <string>Uppspelningshastighet</string>
-    <key>tv_player_playback_speed_set</key>
-    <string>Uppspelningshastighet inställ på %1$@</string>
-    <key>tv_player_trim_silence</key>
-    <string>Trimma ner tystnad</string>
-    <key>tv_player_trim_silence_mad_max</key>
-    <string>Mad Max</string>
-    <key>tv_player_trim_silence_medium</key>
-    <string>Medium</string>
-    <key>tv_player_trim_silence_mild</key>
-    <string>Mild</string>
-    <key>tv_player_trim_silence_off</key>
-    <string>Av</string>
-    <key>tv_player_trim_silence_set</key>
-    <string>Trimma ner tystnad: %1$@</string>
-    <key>tv_player_volume_boost</key>
-    <string>Volymökning</string>
-    <key>tv_player_volume_boost_off</key>
-    <string>Volymökning av</string>
-    <key>tv_player_volume_boost_on</key>
-    <string>Volymökning på</string>
-    <key>tv_playlist_detail_episode_count</key>
-    <string>%1$@ avsnitt</string>
-    <key>tv_playlist_detail_play_all</key>
-    <string>Spela alla avsnitt</string>
-    <key>tv_playlists_empty_action_title</key>
-    <string>Skapa en spellista</string>
-    <key>tv_playlists_empty_subtitle</key>
-    <string>Bygg en manuellt eller låt smarta regler sortera åt dig.</string>
-    <key>tv_playlists_empty_title</key>
-    <string>Dina spellistor live här</string>
-    <key>tv_podcast_detail_about</key>
-    <string>Om</string>
-    <key>tv_podcast_detail_all_episodes</key>
-    <string>Alla avsnitt</string>
-    <key>tv_podcast_detail_follow_title</key>
-    <string>Följ denna podcast</string>
-    <key>tv_podcast_detail_following_title</key>
-    <string>Följer</string>
-    <key>tv_podcast_detail_more_info_title</key>
-    <string>Mer info</string>
-    <key>tv_podcast_detail_network</key>
-    <string>Nätverk</string>
-    <key>tv_podcast_detail_next_episode</key>
-    <string>Nästa avsnitt</string>
-    <key>tv_podcast_detail_schedule</key>
-    <string>Schema</string>
-    <key>tv_podcast_detail_start_here</key>
-    <string>Avsnittet att prova först</string>
-    <key>tv_podcast_detail_start_here_subtitle</key>
-    <string>Det här är den som får folk att fastna</string>
-    <key>tv_podcast_detail_website</key>
-    <string>Webbplats</string>
-    <key>tv_podcasts_empty_action_title</key>
-    <string>Upptäck podcasts</string>
-    <key>tv_podcasts_empty_subtitle</key>
-    <string>Följda podcasts visas här, redo att spelas upp.</string>
-    <key>tv_podcasts_empty_title</key>
-    <string>Dags att fylla upp detta.</string>
-    <key>tv_profile_button_accessibility_hint</key>
-    <string>Öppnar profil- och kontoalternativ</string>
-    <key>tv_profile_button_accessibility_label</key>
-    <string>Profil</string>
-    <key>tv_profile_menu_create_account</key>
-    <string>Skapa konto</string>
-    <key>tv_profile_menu_log_in</key>
-    <string>Logga in</string>
-    <key>tv_profile_menu_log_out</key>
-    <string>Logga ut</string>
-    <key>tv_profile_menu_starred_episodes</key>
-    <string>Stjärnmärkta avsnitt</string>
-    <key>tv_search_failed</key>
-    <string>Sökning misslyckades: %1$@</string>
-    <key>tv_search_prompt</key>
-    <string>Podcasts, shower, författare</string>
-    <key>tv_search_searching</key>
-    <string>Söker ...</string>
-    <key>tv_search_type_something</key>
-    <string>Skriv något …</string>
-    <key>tv_sign_in_enter_code</key>
-    <string>eller ange följande kod</string>
-    <key>tv_sign_in_enter_code_go_url</key>
-    <string>går till [%1$@](%2$@)</string>
-    <key>tv_sign_in_enter_code_in_url</key>
-    <string>eller ange denna kod i [%1$@](%2$@)</string>
-    <key>tv_sign_in_qr_code_error_title</key>
-    <string>Det gick inte att hämta din inloggningskod</string>
-    <key>tv_sign_in_subtitle</key>
-    <string>Öppna kameran och peka på denna QR-kod</string>
-    <key>tv_sign_in_title</key>
-    <string>Logga in i PodHopper</string>
-    <key>tv_signing_in_subtitle</key>
-    <string>Laddar dina podcasts</string>
-    <key>tv_signing_in_title</key>
-    <string>Kul att se dig.</string>
-    <key>tv_tab_home</key>
-    <string>Hem</string>
-    <key>tv_tab_playlists</key>
-    <string>Spellistor</string>
-    <key>tv_tab_podcasts</key>
-    <string>Dina podcasts</string>
-    <key>tv_tab_up_next</key>
-    <string>Nästa</string>
-    <key>tv_up_next_empty_action_title</key>
-    <string>Lägg till avsnitt</string>
-    <key>tv_up_next_empty_subtitle</key>
-    <string>Lägg till avsnitt i Nästa så spelas de upp i ordning, ett efter ett</string>
-    <key>tv_up_next_empty_title</key>
-    <string>Inget köat</string>
-    <key>tv_user_profile_actions</key>
-    <string>Användarinställningar</string>
-    <key>tv_user_sign_in_login_type</key>
-    <string>Inloggningstyp</string>
-    <key>tv_user_sign_in_option_manual</key>
-    <string>Användare/pass</string>
-    <key>tv_user_sign_in_option_qr</key>
-    <string>QR</string>
-    <key>tv_welcome_browse_without_account</key>
-    <string>Använd utan konto</string>
-    <key>tv_welcome_create_free_account</key>
-    <string>Skapa gratiskonto</string>
-    <key>tv_welcome_sign_in</key>
-    <string>Logga in</string>
-    <key>tv_welcome_subtitle</key>
-    <string>Dina podcasts. På den stora skärmen. Uppenbarligen.</string>
-    <key>tv_welcome_title</key>
-    <string>Välkommen till PodHopper TV</string>
     <key>unarchive</key>
     <string>Avarkivera</string>
     <key>unfollow</key>
@@ -4020,8 +2598,6 @@ Din e-postadress, ditt lösenord eller annan känslig information delas aldrig.<
     <string>Ta bort stjärnmärkning</string>
     <key>unsubscribe</key>
     <string>Avsluta prenumeration</string>
-    <key>unsubscribe_all</key>
-    <string>Avsluta alla prenumerationer</string>
     <key>up_next</key>
     <string>Nästa</string>
     <key>up_next_empty_description</key>
@@ -4042,58 +2618,8 @@ Din e-postadress, ditt lösenord eller annan känslig information delas aldrig.<
     <string>Slumpmässig uppspelning är på. Avsnitten kommer att spelas upp i slumpmässig ordning.</string>
     <key>upgrade_account</key>
     <string>Uppgradera konto</string>
-    <key>upgrade_account_info</key>
-    <string>Lås upp alla betalfunktioner, såsom mappar, slumpmässig uppspelning, bokmärken med mera.</string>
-    <key>upgrade_account_timeline_charging_day</key>
-    <string>Du kommer att debiteras den %1$@. Du kan avbryta när som helst innan dess.</string>
-    <key>upgrade_account_timeline_day_1</key>
-    <string>Få åtkomst till mappar, slumpvis uppspelning, bokmärken och exklusivt innehåll</string>
-    <key>upgrade_account_timeline_week_before</key>
-    <string>Vi meddelar dig när din provperiod är på väg att löpa ut.</string>
     <key>upgrade_account_title</key>
     <string>Superkrafter för dina podcasts</string>
-    <key>upgrade_experiment_discount_yearly_membership</key>
-    <string>Få 50 %% rabatt på ditt första år</string>
-    <key>upgrade_experiment_free_membership_format</key>
-    <string>Gratis provperiod med %1$@ Plus</string>
-    <key>upgrade_experiment_paywall_button</key>
-    <string>Skaffa PodHopper Plus</string>
-    <key>upgrade_experiment_reviews_app_store_button</key>
-    <string>Se alla recensioner i App Store</string>
-    <key>upgrade_experiment_reviews_app_store_info</key>
-    <string>%1$@ i betyg (%2$@K recensioner)</string>
-    <key>upgrade_experiment_reviews_review_text_0</key>
-    <string>Jag har använt appen länge och omfattningen av funktionalitet och anpassningsmöjligheter som du får med gratisversionen är häpnadsväckande. Jag älskar att den synkroniseras mellan enheter så att jag kan börja lyssna på min telefon och sedan fortsätta på en Alexa-enhet. Jag rekommenderar den till alla som lyssnar på podcaster. Jag älskar även statistiken!</string>
-    <key>upgrade_experiment_reviews_review_text_1</key>
-    <string>8 år av utmärkt kvalitet och ständiga förbättringar</string>
-    <key>upgrade_experiment_reviews_review_text_2</key>
-    <string>Jag har använt PodHopper sedan 2017.
-
-Det här är utan tvekan den bästa appen för att lyssna på podcaster. Det har många funktioner och vidareutvecklas kontinuerligt. Det har förekommit en del klagomål på Ul-bytet, men jag har faktiskt inte märkt av det så mycket.
-
-Appen kan vara så enkel eller svår att använda som du själv vill att den ska vara. Så antingen använder du den bara för att ansluta och spela upp eller så ställer du in hoppa över outro- och intro-timers och alla andra små funktioner du vill aktivera.</string>
-    <key>upgrade_experiment_reviews_review_text_3</key>
-    <string>Synkroniseringsfunktionen är magisk. Jag vet inte vilken slags speciell magi den här appen har, men den är bättre än alla andra appar jag har använt.</string>
-    <key>upgrade_experiment_reviews_review_text_4</key>
-    <string>Jag började med Android och nu har jag använt iOS i nästan ett år. Totalt har jag använt den här appen i minst 6 år. Fungerar lika bra på båda plattformarna. Det är enkelt att hitta nya podcaster att lyssna på, mycket trevlig Ul och man kan även lägga till podcaster via url för rss-flöde. Klockappen är funktionell, men jag använder den mest för att spela/pausa. Du kan logga in med ett konto för att synkronisera mellan enheter, men det är inget krav.</string>
-    <key>upgrade_experiment_reviews_review_text_5</key>
-    <string>PC har varit min favorit i flera år. Jag har provat andra podcast-appar men kommer alltid tillbaka till PC för enkelheten, gränssnittet och supporten. Det är helt klart värt att prova, särskilt om du har tröttnat på din nuvarande podcast-app.</string>
-    <key>upgrade_experiment_reviews_review_title_0</key>
-    <string>Den överlägset bästa podcast-appen</string>
-    <key>upgrade_experiment_reviews_review_title_1</key>
-    <string>Den oumbärliga podcast-appen</string>
-    <key>upgrade_experiment_reviews_review_title_2</key>
-    <string>Bästa podcast-appen där ute</string>
-    <key>upgrade_experiment_reviews_review_title_3</key>
-    <string>Fantastisk app</string>
-    <key>upgrade_experiment_reviews_review_title_4</key>
-    <string>Fungerar fint och det är enkelt att hitta eller lägga till nya poddar</string>
-    <key>upgrade_experiment_reviews_review_title_5</key>
-    <string>Den bästa podcast-appen</string>
-    <key>upgrade_experiment_reviews_text</key>
-    <string>Se varför många har uppgraderat till Plus</string>
-    <key>upgrade_experiment_reviews_title</key>
-    <string>Helt enkelt det bästa sättet att lyssna på podcasts</string>
     <key>upgrade_to_plan</key>
     <string>Uppgradera till %1$@</string>
     <key>upgrade_to_plus</key>
@@ -4138,8 +2664,6 @@ Appen kan vara så enkel eller svår att använda som du själv vill att den ska
     <string>Effekter</string>
     <key>watch_episode_details</key>
     <string>Avsnittsinformation</string>
-    <key>watch_main_menu</key>
-    <string>Huvudmeny</string>
     <key>watch_no_episodes</key>
     <string>Inga avsnitt</string>
     <key>watch_no_filters</key>
@@ -4158,16 +2682,8 @@ Båda alternativen är ärligt talat riktigt bra. 🙂</string>
     <string>Spela källa</string>
     <key>watch_source_msg</key>
     <string>Podcasts spelas upp från den högtalare som den valda enheten är ansluten till</string>
-    <key>watch_source_plus_info</key>
-    <string>Ladda ner direkt till din klocka och lyssna utan din telefon Kolla in PodHopper Plus i din telefonapp, eller på webben.</string>
-    <key>watch_source_refresh_account</key>
-    <string>Uppdatera konto</string>
-    <key>watch_source_refresh_account_info</key>
-    <string>Om du redan har ett PodHopper Plus-konto kan du uppdatera kontot för att aktivera det</string>
     <key>watch_source_refresh_data</key>
     <string>Uppdatera data</string>
-    <key>watch_source_sign_in_info</key>
-    <string>Logga in eller skapa ett konto på din telefon</string>
     <key>watch_tap_to_open</key>
     <string>Tryck för att öppna</string>
     <key>watch_up_next_no_items_subtitle</key>
@@ -4194,22 +2710,6 @@ Båda alternativen är ärligt talat riktigt bra. 🙂</string>
     <string>Tack, nu kan du börja lyssna.</string>
     <key>whats_new</key>
     <string>Nyheter</string>
-    <key>whats_new_blog_more_link_text</key>
-    <string>Läs mer om denna uppdatering på vår blogg</string>
-    <key>whats_new_in_version</key>
-    <string>Vad som är nytt i %1$@</string>
-    <key>whats_new_page_one_7_20</key>
-    <string>Om du älskar podcasts hälften så mycket vi gör har du antagligen en hel del. Om du PodHopper Plus-prenumerant kan du nu sortera dem i mappar och dela in dem i grupper.
-
-Tack för ditt stöd. Din startskärm har aldrig sett bättre ut.</string>
-    <key>whats_new_page_one_title_7_20</key>
-    <string>Mappar</string>
-    <key>whats_new_page_two_7_20</key>
-    <string>Vi synkroniserar nu din startskärm (inklusive dina sorteringsalternativ) på alla enheter. Du kan även dra och släppa objekt i webbspelaren.
-
-Detta innebär att du kan koppla av med vetskapen om att allt det hårda arbete du har lagt ner på att arrangera din podcastsida synkroniseras till ditt konto.</string>
-    <key>whats_new_page_two_title_7_20</key>
-    <string>Synkronisering av startsidesrutnät</string>
     <key>widgets_app_icon_description</key>
     <string>Starta PodHopper snabbt</string>
     <key>widgets_app_icon_name</key>

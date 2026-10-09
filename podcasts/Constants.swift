@@ -144,10 +144,6 @@ struct Constants {
 
         public static let analyticsOptOut = "SJAnalyticsOptOut"
 
-        static let supportName = "PCSupportRequestName"
-        static let supportEmail = "PCSupportRequestEmail"
-        static let supportRemoveDebugInfo = "PCSupportRemoveDebugInfo"
-
         static let lastPickerSort = "PCLastPickerSort"
 
         static let shouldFollowSystemThemeKey = "FollowSystemTheme"
@@ -159,11 +155,6 @@ struct Constants {
         static let surveyPresentationDates = "surveyPresentationDates"
         static let lastSurveyNotReallyDate = "lastSurveyNotReallyDate"
 
-        static let showBadgeForEndOfYear = "showBadgeFor%dEndOfYear"
-        static let modalHasBeenShown = "modal%dHasBeenShown"
-        static let hasSyncedEpisodesForPlayback = "hasSyncedEpisodesForPlayback%d"
-        static let hasSyncedEpisodesForPlaybackAsPlusUser = "hasSyncedEpisodesForPlayback%dAsPlusUser"
-        static let top5PodcastsListLink = "top5PodcastsListLink2023_2"
         static let shouldShowInitialOnboardingFlow = "shouldShowInitialOnboardingFlow"
         static let shouldShowEncourageAccountCreationModal = "shouldShowEncourageAccountCreationModal"
 

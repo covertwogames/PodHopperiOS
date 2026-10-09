@@ -158,7 +158,6 @@ class MainTabBarController: UITabBarController, NavigationProtocol {
         fireSystemThemeMayHaveChanged()
         checkSubscriptionStatusChanged()
         checkPromotionFinishedAcknowledged()
-        checkWhatsNewAcknowledged()
 
         // Show any app launch announcements/prompts only once
         if !viewDidAppearBefore {
@@ -557,21 +556,6 @@ class MainTabBarController: UITabBarController, NavigationProtocol {
         showInSafariViewController(urlString: ServerConstants.Urls.termsOfUse)
     }
 
-    func showWhatsNew(whatsNewInfo: WhatsNewInfo) {
-        guard let controller = view.window?.rootViewController else { return }
-
-        let whatsNewVC = SJUIUtils.popupNavController(for: WhatsNewViewController(whatsNewInfo: whatsNewInfo))
-        whatsNewVC.modalPresentationStyle = .formSheet
-
-        if controller.presentedViewController != nil {
-            controller.dismiss(animated: true) {
-                controller.present(whatsNewVC, animated: true, completion: nil)
-            }
-        } else {
-            controller.present(whatsNewVC, animated: true, completion: nil)
-        }
-    }
-
     func showApproveDevice(code: String?) {
         guard let controller = view.window?.rootViewController else { return }
         let vc = ThemedHostingController(rootView: DeviceApproveView(userCode: code, model: DeviceApproveViewModel(presentingViewController: controller)))
@@ -679,10 +663,6 @@ class MainTabBarController: UITabBarController, NavigationProtocol {
 
     func showSupporterBundleDetails(bundleUuid: String?) {
         // PodHopper: Pocket Casts supporter podcasts do not exist here.
-    }
-
-    func showEndOfYearStories() {
-        // PodHopper: the Pocket Casts end of year stories feature does not exist here.
     }
 
     func dismissPresentedViewController(completion: (() -> Void)? = nil) {
@@ -810,16 +790,6 @@ class MainTabBarController: UITabBarController, NavigationProtocol {
 
         if !renewing, !cancelAcknowledged, giftDays == 0, timeToSubscriptionExpiry < 0 {
             NavigationManager.sharedManager.navigateTo(NavigationManager.subscriptionCancelledAcknowledgePageKey, data: nil)
-        }
-    }
-
-    private func checkWhatsNewAcknowledged() {
-        guard let whatsNewInfo = WhatsNewHelper.extractWhatsNewInfo(), whatsNewInfo.versionCode > Settings.whatsNewLastAcknowledged() else { return }
-
-        if ProcessInfo().isOperatingSystemAtLeast(OperatingSystemVersion(majorVersion: whatsNewInfo.minOSVersion, minorVersion: 0, patchVersion: 0)) {
-            NavigationManager.sharedManager.navigateTo(NavigationManager.showWhatsNewPageKey, data: [NavigationManager.whatsNewInfoKey: whatsNewInfo])
-        } else {
-            Settings.setWhatsNewLastAcknowledged(whatsNewInfo.versionCode)
         }
     }
 

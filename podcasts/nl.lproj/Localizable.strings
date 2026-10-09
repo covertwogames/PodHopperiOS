@@ -5,12 +5,8 @@
   <dict>
     <key>Settings_files_add_up_next_subtitle</key>
     <string>Nieuwe bestanden automatisch toevoegen aan Hierna</string>
-    <key>about_a8c_family</key>
-    <string>Automattic Family</string>
     <key>about_acknowledgements</key>
     <string>Erkenningen</string>
-    <key>about_join_from_anywhere</key>
-    <string>Deelnemen vanaf elke locatie</string>
     <key>about_legal_and_more</key>
     <string>Juridisch en meer</string>
     <key>about_privacy_policy</key>
@@ -23,8 +19,6 @@
     <string>Servicevoorwaarden</string>
     <key>about_website</key>
     <string>Site</string>
-    <key>about_work_with_us</key>
-    <string>Met ons samenwerken</string>
     <key>accessibility_cancel_multiselect</key>
     <string>Multiselect annuleren</string>
     <key>accessibility_close_dialog</key>
@@ -37,8 +31,6 @@
     <string>Negeren</string>
     <key>accessibility_episode_playback</key>
     <string>Aflevering afspelen</string>
-    <key>accessibility_hide_filter_details</key>
-    <string>Tik om filtergegevens te verbergen</string>
     <key>accessibility_hint_player_navigate_to_podcast_label</key>
     <string>Tik hierop om naar de hoofdpagina met podcastinformatie te gaan</string>
     <key>accessibility_hint_star</key>
@@ -57,8 +49,6 @@
     <string>Afspeelsnelheid %1$@ keer</string>
     <key>accessibility_playlist_add_episode</key>
     <string>Aflevering toevoegen</string>
-    <key>accessibility_playlist_color</key>
-    <string>Kleur van playlist %1$@</string>
     <key>accessibility_playlist_image</key>
     <string>Afbeelding van playlist</string>
     <key>accessibility_plus_only</key>
@@ -67,82 +57,24 @@
     <string>PodHopper-instellingen</string>
     <key>accessibility_select_episode</key>
     <string>Aflevering selecteren</string>
-    <key>accessibility_show_filter_details</key>
-    <string>Tik om filtergegevens te bekijken</string>
-    <key>accessibility_sign_in</key>
-    <string>Tik om account te bekijken of in te stellen</string>
     <key>accessibility_sort_and_options</key>
     <string>Sorteren en opties</string>
     <key>account</key>
     <string>Account</string>
-    <key>account_change_email</key>
-    <string>E-mail wijzigen</string>
-    <key>account_completion_nudge</key>
-    <string>Bijna klaar!</string>
-    <key>account_completion_nudge_msg</key>
-    <string>Rond je betaling af om het upgraden van je account te voltooien.</string>
     <key>account_created</key>
     <string>Account aangemaakt.</string>
-    <key>account_creation_complete</key>
-    <string>Volledig account</string>
-    <key>account_delete_account</key>
-    <string>Account verwijderen</string>
-    <key>account_delete_account_conf</key>
-    <string>Ja, verwijder het</string>
-    <key>account_delete_account_error</key>
-    <string>Account verwijderen mislukt</string>
-    <key>account_delete_account_error_msg</key>
-    <string>Kan het account niet verwijderen.</string>
-    <key>account_delete_account_final_alert_msg</key>
-    <string>Laatste kans; wil je je account echt verwijderen? Je verliest al je abonnementen en je afspeelgeschiedenis permanent!</string>
-    <key>account_delete_account_first_alert_msg</key>
-    <string>Weet je zeker dat je je account wilt verwijderen? Je kan dit niet ongedaan maken!</string>
-    <key>account_delete_account_title</key>
-    <string>Account verwijderen?</string>
-    <key>account_details_free_account</key>
-    <string>Gratis account</string>
-    <key>account_details_listened_for</key>
-    <string>%1$@ geluisterd</string>
     <key>account_details_plus_title</key>
     <string>Til je podcast-ervaring naar het volgende niveau met exclusieve toegang tot functies en aanpassingsmogelijkheden.</string>
-    <key>account_login</key>
-    <string>Log in.</string>
     <key>account_payment_renews_monthly</key>
     <string>Automatisch maandelijks verlengen</string>
     <key>account_payment_renews_yearly</key>
     <string>Automatisch jaarlijks verlengen</string>
-    <key>account_privacy_policy</key>
-    <string>Privacybeleid</string>
-    <key>account_registration_failed</key>
-    <string>Registratie mislukt, probeer het later nogmaals</string>
-    <key>account_select_type</key>
-    <string>Accounttype selecteren</string>
-    <key>account_sign_out</key>
-    <string>Afmelden</string>
-    <key>account_sign_out_alert_message</key>
-    <string>Je podcasts, voortgang en gegevens zijn hier wanneer je terug bent.</string>
-    <key>account_sign_out_alert_title</key>
-    <string>Afmelden?</string>
-    <key>account_sign_out_supporter_prompt</key>
-    <string>Door je af te melden, worden %1$@ ondersteunde podcasts van dit apparaat verwijderd. Weet je het zeker?</string>
-    <key>account_sign_out_supporter_subtitle</key>
-    <string>Je kan je opnieuw aanmelden om weer toegang te krijgen.</string>
     <key>account_signed_out_alert_message</key>
     <string>Wat blijkt? als je Google intypt op Google, kun je het internet breken. 🫢 
 
 Tik op de onderstaande knop om opnieuw in te loggen bij je PodHopper-account.</string>
     <key>account_signed_out_alert_title</key>
     <string>Je bent uitgelogd.</string>
-    <key>account_sso_failed</key>
-    <string>Aanmelden mislukt. Probeer het nog eens.</string>
-    <key>account_title</key>
-    <string>PodHopper-account</string>
-    <key>account_upgraded</key>
-    <string>Accountupgrade uitgevoerd</string>
-    <key>account_welcome</key>
-    <string>Welkom bij PodHopper!</string>
-    <key>account_welcome_plus</key>
-    <string>Welkom bij PodHopper Plus!</string>
     <key>add_bookmark</key>
     <string>Bladwijzer toevoegen</string>
     <key>add_bookmark_subtitle</key>
@@ -157,12 +89,6 @@ Tik op de onderstaande knop om opnieuw in te loggen bij je PodHopper-account.</s
     <string>Als je Wachtrij Hierna leeg is en je begint naar een aflevering te luisteren, zal Automatisch afspelen afleveringen van die serie of lijst blijven afspelen.</string>
     <key>announcement_autoplay_title</key>
     <string>Automatisch afspelen is nu beschikbaar!</string>
-    <key>announcement_bookmarks_description</key>
-    <string>Je kan nu tijdstempels van afleveringen opslaan in het actiemenu van de speler of door een koptelefoon-actie.</string>
-    <key>announcement_bookmarks_title</key>
-    <string>De bladwijzers zijn er!</string>
-    <key>announcement_bookmarks_title_beta</key>
-    <string>Doe mee met de bètatests voor bladwijzers!</string>
     <key>announcement_deselect_chapters_free</key>
     <string>Neem een Plus-abonnement om waar mogelijk hoofdstukken van afleveringen automatisch voor te selecteren en over te slaan bij aflevering waarbij dit kan.</string>
     <key>announcement_deselect_chapters_patron</key>
@@ -183,50 +109,6 @@ Tik op de onderstaande knop om opnieuw in te loggen bij je PodHopper-account.</s
     <string>Droom groots</string>
     <key>app_badge</key>
     <string>App-badge</string>
-    <key>app_clip_placholder_message</key>
-    <string>Deze is mogelijk verwijderd of de link is corrupt.
-Maar PodHopper heeft nog veel meer te bieden.
-Download de app voor de volledige ervaring!</string>
-    <key>app_clip_placholder_title</key>
-    <string>Helaas, we konden die aflevering niet vinden</string>
-    <key>app_icon_classic</key>
-    <string>Klassiek</string>
-    <key>app_icon_dark</key>
-    <string>Donker</string>
-    <key>app_icon_default</key>
-    <string>Standaard</string>
-    <key>app_icon_electric_blue</key>
-    <string>Elektrisch blauw</string>
-    <key>app_icon_electric_pink</key>
-    <string>Elektrisch roze</string>
-    <key>app_icon_halloween</key>
-    <string>Halloween</string>
-    <key>app_icon_indigo</key>
-    <string>Indigo</string>
-    <key>app_icon_patron_chrome</key>
-    <string>Patron chroom</string>
-    <key>app_icon_patron_dark</key>
-    <string>Patron donker</string>
-    <key>app_icon_patron_glow</key>
-    <string>Patron gloeiend</string>
-    <key>app_icon_patron_round</key>
-    <string>Patron rond</string>
-    <key>app_icon_plus</key>
-    <string>Plus</string>
-    <key>app_icon_pocket_cats</key>
-    <string>Pocket Cats</string>
-    <key>app_icon_radioactivity</key>
-    <string>Radioactiviteit</string>
-    <key>app_icon_red_velvet</key>
-    <string>Rood fluweel</string>
-    <key>app_icon_rose</key>
-    <string>Rosé</string>
-    <key>app_icon_round_dark</key>
-    <string>Rond donker</string>
-    <key>app_icon_round_light</key>
-    <string>Rond licht</string>
-    <key>app_share_text</key>
-    <string>Hallo! Alsjeblieft, een downloadlink voor de PodHopper-app. Ik vind hem geweldig en ik dacht, jij vast ook.</string>
     <key>app_version</key>
     <string>Versie %1$@ (%2$@)</string>
     <key>appearance_app_icon_header</key>
@@ -291,10 +173,6 @@ Download de app voor de volledige ervaring!</string>
     <string>Nieuwste aflevering</string>
     <key>auto_download_limit_one_episode_show</key>
     <string>Nieuwste aflevering per programma</string>
-    <key>auto_download_off_subtitle</key>
-    <string>Schakel het automatisch downloaden van afleveringen in dit filter in</string>
-    <key>auto_download_on_plural_format</key>
-    <string>De eerste %1$@ afleveringen in dit filter worden automatisch gedownload</string>
     <key>auto_download_prompt_first</key>
     <string>Eerste</string>
     <key>auto_restart_sleep_timer</key>
@@ -303,26 +181,6 @@ Download de app voor de volledige ervaring!</string>
     <string>Indien ingeschakeld, wordt de slaaptimer automatisch opnieuw opgestart als je een aflevering afspeelt binnen vijf minuten van de laatste pauzering.</string>
     <key>back</key>
     <string>Terug</string>
-    <key>banner_ads_remove_ads</key>
-    <string>Advertenties verwijderen</string>
-    <key>banner_ads_report_ad</key>
-    <string>Advertentie rapporteren</string>
-    <key>banner_ads_report_ad_title</key>
-    <string>Waarom rapporteer je deze advertentie?</string>
-    <key>banner_ads_report_broken</key>
-    <string>Deze advertentie lijkt kapot</string>
-    <key>banner_ads_report_confirmation</key>
-    <string>Je hebt deze advertentie gemeld.</string>
-    <key>banner_ads_report_malicious</key>
-    <string>Dit is een schadelijke advertentie</string>
-    <key>banner_ads_report_other</key>
-    <string>Anders</string>
-    <key>banner_ads_report_too_often</key>
-    <string>Ik zie deze advertentie te vaak</string>
-    <key>beta_purchase_disabled</key>
-    <string>Download PodHopper via de App Store om %1$@ aan te kunnen schaffen.</string>
-    <key>beta_thank_you</key>
-    <string>Bedankt dat je deelneemt aan de bètatests!</string>
     <key>bookmark_added</key>
     <string>Bladwijzer toegevoegd</string>
     <key>bookmark_added_button_title</key>
@@ -347,114 +205,16 @@ Download de app voor de volledige ervaring!</string>
     <string>%1$@ bladwijzers</string>
     <key>bookmarks_count_singular</key>
     <string>1 bladwijzer</string>
-    <key>bookmarks_early_access_locked_message</key>
-    <string>Ontgrendel deze functie en nog veel meer met PodHopper %1$@ en sla tijdstempels op van je favoriete afleveringen. Binnenkort beschikbaar voor %2$@-abonnees.</string>
-    <key>bookmarks_locked_message</key>
-    <string>Ontgrendel deze functie en nog veel meer met PodHopper %1$@ en sla tijdstempels op van je favoriete afleveringen.</string>
     <key>bottom</key>
     <string>Onder</string>
     <key>bulk_download_max_format</key>
     <string>Bulkdownloads zijn beperkt tot %1$@.</string>
     <key>cancel</key>
     <string>Annuleer </string>
-    <key>cancel_confirm_item_folders</key>
-    <string>Je mappen worden verwijderd en hun inhoud wordt teruggezet naar het scherm Podcasts.</string>
-    <key>cancel_confirm_item_history</key>
-    <string>Je podcasts en luistergeschiedenis blijven toegankelijk. </string>
-    <key>cancel_confirm_item_plus</key>
-    <string>Na deze datum wordt toegang tot Plus-functies zoals bladwijzers, shuffle, wearables en meer verwijderd.</string>
-    <key>cancel_confirm_item_uploads</key>
-    <string>Alle bestanden die zijn geüpload naar je PodHopper-account worden verwijderd, maar bestanden die zijn gedownload op je mobiele apparaten blijven behouden.</string>
-    <key>cancel_confirm_sub_expiry</key>
-    <string>Je huidige abonnement blijft actief tot %1$@.</string>
-    <key>cancel_confirm_sub_expiry_date_fallback</key>
-    <string>je vervaldatum</string>
-    <key>cancel_confirm_subtitle</key>
-    <string>Als je annuleert, wordt je abonnement aangepast naar een gratis account.</string>
-    <key>cancel_confirm_title</key>
-    <string>Dingen die je moet weten voordat je annuleert</string>
     <key>cancel_download</key>
     <string>Download annuleren</string>
-    <key>cancel_failed</key>
-    <string>Kan niet annuleren</string>
     <key>cancel_subscription</key>
     <string>Abonnement annuleren</string>
-    <key>cancel_subscription_available_plans_best_value_badge</key>
-    <string>Beste deal</string>
-    <key>cancel_subscription_available_plans_footer</key>
-    <string>Je nieuwe abonnement wordt aan het einde van je huidige factuurperiode geactiveerd.</string>
-    <key>cancel_subscription_available_plans_retry_screen_text</key>
-    <string>Er is iets fout gegaan bij het ophalen van je abonnementen.</string>
-    <key>cancel_subscription_available_plans_title</key>
-    <string>Beschikbare abonnementen</string>
-    <key>cancel_subscription_claim_offer_button</key>
-    <string>Aanbieding claimen</string>
-    <key>cancel_subscription_continue_button</key>
-    <string>Doorgaan met annuleren</string>
-    <key>cancel_subscription_generic_error</key>
-    <string>Er is een fout opgetreden. Probeer het later opnieuw.</string>
-    <key>cancel_subscription_help_description</key>
-    <string>Moeite met een van de functies of andere problemen?</string>
-    <key>cancel_subscription_help_title</key>
-    <string>Hulp nodig met PodHopper?</string>
-    <key>cancel_subscription_new_plan_description</key>
-    <string>Vind het abonnement dat bij je past.</string>
-    <key>cancel_subscription_new_plan_title</key>
-    <string>Op zoek naar een ander abonnement?</string>
-    <key>cancel_subscription_offer_success_view_description</key>
-    <string>Bedankt dat je voor PodHopper kiest. Je gratis maand wordt toegevoegd aan je huidige abonnement.</string>
-    <key>cancel_subscription_offer_success_view_title</key>
-    <string>Geniet van een maand gratis toegang!</string>
-    <key>cancel_subscription_offer_yearly_success_view_description</key>
-    <string>Bedankt dat je voor PodHopper kiest. Je jaar met korting begint nadat je huidige abonnement is afgelopen.</string>
-    <key>cancel_subscription_offer_yearly_success_view_title</key>
-    <string>50%% korting op je eerste jaar!</string>
-    <key>cancel_subscription_promotion_description_monthly</key>
-    <string>Bespaar %@ aan het begin van je volgende factuurperiode.</string>
-    <key>cancel_subscription_promotion_description_yearly</key>
-    <string>Betaal nu %@ voor nog een jaar met 50%% korting.</string>
-    <key>cancel_subscription_promotion_title</key>
-    <string>Krijg je volgende maand gratis</string>
-    <key>cancel_subscription_survey_description</key>
-    <string>We willen graag weten waarom je hebt geannuleerd. Je feedback helpt ons te verbeteren.</string>
-    <key>cancel_subscription_survey_row_better_app</key>
-    <string>Ik heb een betere app gevonden</string>
-    <key>cancel_subscription_survey_row_cost</key>
-    <string>Kostengerelateerde redenen</string>
-    <key>cancel_subscription_survey_row_not_enough</key>
-    <string>Ik gebruik het niet genoeg</string>
-    <key>cancel_subscription_survey_row_other</key>
-    <string>Overig</string>
-    <key>cancel_subscription_survey_row_technical_issue</key>
-    <string>Technische problemen</string>
-    <key>cancel_subscription_survey_submit_feedback</key>
-    <string>Feedback indienen</string>
-    <key>cancel_subscription_survey_title</key>
-    <string>Bedankt dat je het probeert
-PodHopper Plus</string>
-    <key>cancel_subscription_survey_toast_fail</key>
-    <string>Er is iets fout gegaan.</string>
-    <key>cancel_subscription_survey_toast_success</key>
-    <string>Bedankt voor je feedback!</string>
-    <key>cancel_subscription_title</key>
-    <string>Overweeg je om weg te gaan?
-Laat ons eerst helpen</string>
-    <key>cancel_subscription_winback_view_accept_offer_button</key>
-    <string>Aanbieding accepteren</string>
-    <key>cancel_subscription_winback_view_continue_cancellation_button</key>
-    <string>Doorgaan met annuleren</string>
-    <key>cancel_subscription_winback_view_description_montly</key>
-    <string>Geniet van een gratis maand PodHopper Plus! De aanbieding wordt toegevoegd aan je huidige abonnement.</string>
-    <key>cancel_subscription_winback_view_description_yearly</key>
-    <string>Betaal nu %@ om een jaar PodHopper Plus tegen de helft van de prijs vast te leggen. Je jaar met korting begint nadat je huidige abonnement is afgelopen.</string>
-    <key>cancel_subscription_winback_view_title_montly</key>
-    <string>Krijg je volgende maand gratis en bespaar %@</string>
-    <key>cancel_subscription_winback_view_title_yearly</key>
-    <string>Krijg 50%% korting op je volgende jaar en bespaar %@</string>
-    <key>cancel_subscription_yearly_promotion_title</key>
-    <string>Krijg 50%% korting op je eerste jaar</string>
-    <key>canceling</key>
-    <string>Annuleren...</string>
     <key>carplay_chapter_count</key>
     <string>%1$@ van %2$@. %3$@</string>
     <key>carplay_more</key>
@@ -463,30 +223,14 @@ Laat ons eerst helpen</string>
     <string>Afspeelsnelheid</string>
     <key>carplay_up_next_queue</key>
     <string>Wachtrij Hierna</string>
-    <key>champion_description</key>
-    <string>Bedankt dat je al sinds het begin op ons vertrouwt! Als je onze app graag gebruikt, horen wij graag je feedback.</string>
-    <key>champion_title</key>
-    <string>Je bent een echte PodHopper-kampioen!</string>
-    <key>change_app_icon</key>
-    <string>App-pictogram veranderen</string>
     <key>change_bookmark_subtitle</key>
     <string>Wijzig de titel die deze bladwijzer identificeert</string>
     <key>change_bookmark_title</key>
     <string>Titel wijzigen</string>
     <key>change_email</key>
     <string>Verander e-mailadres</string>
-    <key>change_email_conf</key>
-    <string>E-mailadres is veranderd</string>
     <key>change_password</key>
     <string>Wijzig wachtwoord</string>
-    <key>change_password_conf</key>
-    <string>Wachtwoord veranderd</string>
-    <key>change_password_error</key>
-    <string>Kan wachtwoord niet wijzigen. Ongeldig wachtwoord.</string>
-    <key>change_password_error_mismatch</key>
-    <string>Wachtwoorden komen niet overeen</string>
-    <key>change_password_length_error</key>
-    <string>Moet ten minste 6 tekens bevatten</string>
     <key>chapters</key>
     <string>Hoofdstukken</string>
     <key>check_internet_connection</key>
@@ -521,20 +265,6 @@ Laat ons eerst helpen</string>
     <string>Token-authenticatie mislukt.</string>
     <key>clip</key>
     <string>Clip</string>
-    <key>clip_duration_label</key>
-    <string>Duur %@</string>
-    <key>clip_loading_label</key>
-    <string>Clip aanmaken …</string>
-    <key>clip_start_label</key>
-    <string>Start %@</string>
-    <key>clips_end_time_accessibility_label</key>
-    <string>Einde clip</string>
-    <key>clips_shareable_media_a11y_label</key>
-    <string>Opties voor deelbare media</string>
-    <key>clips_shareable_media_item_a11y_label</key>
-    <string>%1$@ van %2$@. %3$@</string>
-    <key>clips_start_time_accessibility_label</key>
-    <string>Begin clip</string>
     <key>clips_whats_new_button_title</key>
     <string>Duidelijk</string>
     <key>clips_whats_new_message</key>
@@ -547,36 +277,10 @@ Laat ons eerst helpen</string>
     <string>Kleur</string>
     <key>confirm</key>
     <string>Bevestigen</string>
-    <key>confirm_new_password_prompt</key>
-    <string>Nieuw wachtwoord bevestigen</string>
     <key>continue</key>
     <string>Doorgaan</string>
     <key>copy</key>
     <string>Kopieer</string>
-    <key>create_account</key>
-    <string>Account aanmaken</string>
-    <key>create_account_app_store_error_message</key>
-    <string>PodHopper ondervindt problemen met het verbinden met de App Store. Controleer je verbinding en probeer het nogmaals.</string>
-    <key>create_account_app_store_error_title</key>
-    <string>Kan geen contact maken met de App Store</string>
-    <key>create_account_find_out_more_plus</key>
-    <string>Meer informatie over PodHopper Plus</string>
-    <key>create_account_free_account_type</key>
-    <string>Standaard</string>
-    <key>create_account_free_details</key>
-    <string>Bijna alles</string>
-    <key>create_account_free_price</key>
-    <string>Gratis</string>
-    <key>create_account_plus_details</key>
-    <string>Alles ontgrendeld</string>
-    <key>create_audio_clip_description</key>
-    <string>.m4a audiobestand aanmaken</string>
-    <key>create_audio_clip_title</key>
-    <string>Audiobestand aanmaken</string>
-    <key>create_clip</key>
-    <string>Clip maken</string>
-    <key>create_filter</key>
-    <string>Filter aanmaken</string>
     <key>create_up_next_snapshot</key>
     <string>Snapshot maken</string>
     <key>creator_pick_modal_description</key>
@@ -585,10 +289,6 @@ Laat ons eerst helpen</string>
     <string>Meer informatie</string>
     <key>creator_pick_modal_title</key>
     <string>Wat is een Creator Pick, oftewel keuze van de maker?</string>
-    <key>current_email_prompt</key>
-    <string>Huidig e-mailadres</string>
-    <key>current_password_prompt</key>
-    <string>Huidig wachtwoord</string>
     <key>custom_episode</key>
     <string>Aangepaste aflevering</string>
     <key>custom_episode_cancel_upload</key>
@@ -803,10 +503,6 @@ Laat ons eerst helpen</string>
     <string>Verenigde Staten van Amerika</string>
     <key>discover_region_worldwide</key>
     <string>Wereldwijd</string>
-    <key>discover_search_error_msg</key>
-    <string>Voer minimaal 2 tekens in.</string>
-    <key>discover_search_error_title</key>
-    <string>Lengte beperkt</string>
     <key>discover_search_failed</key>
     <string>Zoekopdracht mislukt</string>
     <key>discover_search_failed_msg</key>
@@ -827,8 +523,6 @@ Laat ons eerst helpen</string>
     <string>Downloaden</string>
     <key>download_all</key>
     <string>Alles downloaden</string>
-    <key>download_data_warning</key>
-    <string>Downloaden verbruikt data.</string>
     <key>download_data_warning_with_settings_link</key>
     <string>Deze download maakt gebruik van mobiele data. Je kan deze waarschuwing uitschakelen in [Instellingen](%@).</string>
     <key>download_episode_plural_format</key>
@@ -899,181 +593,22 @@ Laat ons eerst helpen</string>
     <string>Pictogram profiel</string>
     <key>eac_informational_banner_profile_title</key>
     <string>Je shows, op elk apparaat</string>
-    <key>eac_informational_card_backups_description</key>
-    <string>Je bibliotheek en voorkeuren worden veilig opgeslagen.</string>
-    <key>eac_informational_card_backups_title</key>
-    <string>Betrouwbare backups</string>
-    <key>eac_informational_card_recommendation_description</key>
-    <string>Ontvang op maat gemaakte podcastsuggesties op basis van je luistergewoonten.</string>
-    <key>eac_informational_card_recommendation_title</key>
-    <string>Gepersonaliseerde aanbevelingen</string>
-    <key>eac_informational_card_sync_description</key>
-    <string>Synchroniseer je voortgang en laat zien op al je apparaten.</string>
-    <key>eac_informational_card_sync_title</key>
-    <string>Synchroniseren op verschillende apparaten</string>
-    <key>eac_informational_view_modal_description</key>
-    <string>Maak een account aan of log in om te luisteren
-Haal alles uit PodHopper.</string>
-    <key>eac_informational_view_modal_get_started_button</key>
-    <string>Aan de slag</string>
-    <key>eac_informational_view_modal_title</key>
-    <string>We hebben gemerkt dat je niet bent ingelogd</string>
     <key>edit</key>
     <string>Bewerken</string>
-    <key>edit_clip</key>
-    <string>Clip bewerken</string>
     <key>enable_it_now</key>
     <string>Nu inschakelen</string>
-    <key>eoy_2024_epilogue_description</key>
-    <string>Vergeet niet om te delen met je vrienden en een shoutout te geven aan je favoriete podcasts en makers</string>
-    <key>eoy_2024_epilogue_title</key>
-    <string>Bedankt dat je dit jaar met ons geluisterd hebt.
-We zien je graag terug in 2025!</string>
-    <key>eoy_card_description</key>
-    <string>Bekijk je luisterstatistieken, meest beluisterde podcasts en meer.</string>
-    <key>eoy_create_account_to_see</key>
-    <string>Sla je podcasts op in de cloud, krijg je beoordeling aan het einde van het jaar en synchroniseer je voortgang met andere apparaten.</string>
-    <key>eoy_description</key>
-    <string>Bekijk je beste podcasts, categorieën, luisterstatistieken en meer. Deel met vrienden en geef een shoutout naar je favoriete makers!</string>
     <key>eoy_not_now</key>
     <string>Niet nu</string>
-    <key>eoy_share</key>
-    <string>Deel dit verhaal</string>
-    <key>eoy_share_this_story_message</key>
-    <string>Plaats deze afbeelding op je sociale media en noem je favoriete shows en makers</string>
-    <key>eoy_share_this_story_title</key>
-    <string>Dit verhaal delen?</string>
-    <key>eoy_small_title</key>
-    <string>Jaar in podcasts</string>
-    <key>eoy_start_your_free_trial</key>
-    <string>Start nu je gratis proefabonnement</string>
-    <key>eoy_stories_failed</key>
-    <string>Verhalen konden niet geladen worden.</string>
-    <key>eoy_story_epilogue_subtitle</key>
-    <string>Vergeet niet om te delen met je vrienden en een shoutout te geven naar je favoriete podcastmakers</string>
-    <key>eoy_story_epilogue_title</key>
-    <string>Bedankt dat je dit jaar met ons geluisterd hebt.
-We zien je in 2024!</string>
-    <key>eoy_story_intro_title</key>
-    <string>Laten we je luisterjaar vieren...</string>
-    <key>eoy_story_listened_to</key>
-    <string>In 2022 heb je %1$@ naar podcasts geluisterd</string>
-    <key>eoy_story_listened_to_categories</key>
-    <string>Je hebt dit jaar naar %1$@ verschillende categorieën geluisterd</string>
-    <key>eoy_story_listened_to_categories_highlighted</key>
-    <string>Je hebt dit jaar naar %1$@ geluisterd</string>
-    <key>eoy_story_listened_to_categories_share_text</key>
-    <string>Ik heb in 2023 naar %1$@ verschillende categorieën geluisterd</string>
-    <key>eoy_story_listened_to_categories_subtitle</key>
-    <string>Laten we eens kijken naar je favorieten...</string>
-    <key>eoy_story_listened_to_categories_text</key>
-    <string>%1$@ verschillende categorieën</string>
-    <key>eoy_story_listened_to_episodes_text</key>
-    <string>%1$@ afleveringen</string>
-    <key>eoy_story_listened_to_numbers</key>
-    <string>Je hebt naar %1$@ verschillende podcasts en %2$@ afleveringen geluisterd</string>
-    <key>eoy_story_listened_to_numbers_share_text</key>
-    <string>Ik heb dit jaar naar %1$@ verschillende podcasts en %2$@ afleveringen geluisterd</string>
-    <key>eoy_story_listened_to_numbers_subtitle</key>
-    <string>Maar er was er één waar je steeds maar weer naar terugkeerde ...</string>
-    <key>eoy_story_listened_to_numbers_updated</key>
-    <string>Je luisterde naar %1$@ en %2$@</string>
-    <key>eoy_story_listened_to_podcast_text</key>
-    <string>%1$@ verschillende podcasts</string>
-    <key>eoy_story_listened_to_share_text</key>
-    <string>Dit jaar heb ik %1$@ naar podcasts geluisterd</string>
-    <key>eoy_story_listened_to_subtitle</key>
-    <string>We hopen dat je hebt genoten van elke minuut!</string>
-    <key>eoy_story_listened_to_title</key>
-    <string>Dit was je totale luistertijd wat betreft podcasts.</string>
-    <key>eoy_story_listened_to_updated</key>
-    <string>Dit jaar heb je %1$@ naar podcasts geluisterd</string>
-    <key>eoy_story_longest_episode</key>
-    <string>De langste aflevering waarnaar je hebt geluisterd was %1$@</string>
-    <key>eoy_story_longest_episode_duration</key>
-    <string>Deze aflevering duurde %1$@</string>
-    <key>eoy_story_longest_episode_share_text</key>
-    <string>De langste aflevering waarnaar ik dit jaar heb geluisterd is %1$@</string>
-    <key>eoy_story_longest_episode_subtitle</key>
-    <string>Het was '%1$@' van '%2$@'</string>
-    <key>eoy_story_longest_episode_time</key>
-    <string>De langste aflevering
-waar je naar hebt geluisterd was
-%1$@</string>
-    <key>eoy_story_replay</key>
-    <string>Opnieuw afspelen</string>
-    <key>eoy_story_top_categories</key>
-    <string>Je beste categorieën</string>
-    <key>eoy_story_top_categories_share_text</key>
-    <string>Mijn meest beluisterde podcast-categorieën</string>
-    <key>eoy_story_top_categories_subtitle</key>
-    <string>Je hebt in totaal %2$@ geluisterd naar %1$@ afleveringen</string>
-    <key>eoy_story_top_categories_title</key>
-    <string>Wist je dat %1$@ je favoriete categorie was?</string>
-    <key>eoy_story_top_podcast</key>
-    <string>%1$@ was jouw meest beluisterde show in 2023</string>
-    <key>eoy_story_top_podcast_share_text</key>
-    <string>Mijn favoriete podcast van dit jaar! %1$@</string>
-    <key>eoy_story_top_podcast_subtitle</key>
-    <string>Je hebt in totaal %2$@ geluisterd naar %1$@ podcasts</string>
-    <key>eoy_story_top_podcasts</key>
-    <string>Je beste podcasts</string>
-    <key>eoy_story_top_podcasts_list_title</key>
-    <string>Mijn beste podcasts van het jaar!</string>
-    <key>eoy_story_top_podcasts_share_text</key>
-    <string>Mijn beste podcasts van het jaar! %1$@</string>
-    <key>eoy_story_top_podcasts_subtitle</key>
-    <string>Dit is je top 5 meest geluisterd in 2023</string>
-    <key>eoy_story_top_podcasts_title</key>
-    <string>En deze shows vond je ook geweldig!</string>
-    <key>eoy_subscribe_to_plus</key>
-    <string>Abonneer je op Plus en bekijk hoe jouw luistergedrag is veranderd ten opzichte van 2022, andere leuke statistieken en Premium-functies zoals bladwijzers en mappen.</string>
-    <key>eoy_theres_more</key>
-    <string>Dat is niet alles!</string>
-    <key>eoy_title</key>
-    <string>Jouw jaar in podcasts</string>
-    <key>eoy_view_year</key>
-    <string>Mijn 2023 bekijken</string>
-    <key>eoy_year_completion_rate</key>
-    <string>afrondingspercentage</string>
-    <key>eoy_year_completion_rate_share_text</key>
-    <string>Mijn afrondingspercentage van %1$@</string>
-    <key>eoy_year_completion_rate_subtitle</key>
-    <string>Van de %1$@ afleveringen waar je aan bent begonnen, heb je er %2$@ helemaal afgekeken </string>
-    <key>eoy_year_completion_rate_title</key>
-    <string>Je afrondingspercentage dit jaar was %1$@</string>
-    <key>eoy_year_over_share_text</key>
-    <string>Mijn luistertijd in %1$@, ten opzichte van %2$@</string>
-    <key>eoy_year_over_year_subtitle_flat</key>
-    <string>Consistentie is de sleutel tot succes … of zoiets!</string>
-    <key>eoy_year_over_year_subtitle_went_down</key>
-    <string>Aaaah … er moet worden geleefd, toch?</string>
-    <key>eoy_year_over_year_subtitle_went_up</key>
-    <string>Klaar om dit te overtreffen in 2024?</string>
-    <key>eoy_year_over_year_title_flat</key>
-    <string>Ten opzichte van 2022 is je luistertijd redelijk hetzelfde gebleven</string>
-    <key>eoy_year_over_year_title_skyrocketed</key>
-    <string>Ten opzichte van 2022 is je luistertijd veel hoger!</string>
-    <key>eoy_year_over_year_title_went_down</key>
-    <string>Ten opzichte van 2022 is je luistertijd een klein beetje omlaag gegaan</string>
-    <key>eoy_year_over_year_title_went_up</key>
-    <string>Ten opzichte van 2022 is je luistertijd met maar liefst %1$@ gestegen</string>
-    <key>eoy_year_ratings_share_text</key>
-    <string>Ik heb %1$@ verschillende podcasts beoordeeld in %2$@, met %3$@ als mijn meest gegeven beoordeling</string>
     <key>episode</key>
     <string>Aflevering</string>
     <key>episode_count_plural_format</key>
     <string>%1$@ afleveringen</string>
-    <key>episode_description_title</key>
-    <string>Beschrijving van aflevering</string>
     <key>episode_detail_add</key>
     <string>Toevoegen</string>
     <key>episode_details_title</key>
     <string>Details</string>
     <key>episode_filter_by_duration_label</key>
     <string>Filteren op duur</string>
-    <key>episode_filter_no_episodes_msg</key>
-    <string>Het wordt ofwel tijd om te vieren dat je deze lijst hebt afgerond of om je filterinstellingen te bewerken om er meer te krijgen.</string>
     <key>episode_filter_no_episodes_title</key>
     <string>Geen afleveringen</string>
     <key>episode_indicator_bonus</key>
@@ -1096,16 +631,12 @@ waar je naar hebt geluisterd was
     <string>Fout</string>
     <key>error_general_podcast_not_found</key>
     <string>Kan podcast niet vinden. Neem contact op met de auteur van de podcast.</string>
-    <key>export_database</key>
-    <string>Database exporteren</string>
     <key>export_podcasts_description</key>
     <string>Exporteert al je podcasts als een OPML-bestand dat je in andere podcast-apps kunt importeren.</string>
     <key>export_podcasts_option</key>
     <string>Podcasts exporteren</string>
     <key>export_podcasts_title</key>
     <string>EXPORTEREN</string>
-    <key>exporting_database</key>
-    <string>Database exporteren ...</string>
     <key>failed_recommendations</key>
     <string>Aanbevelingen konden niet worden geladen</string>
     <key>feature_marketing_all_plus_features</key>
@@ -1134,12 +665,6 @@ waar je naar hebt geluisterd was
     <string>Nieuw</string>
     <key>feature_tour_step_format</key>
     <string>%1$@ van %2$@</string>
-    <key>feedback_continue_with_mail</key>
-    <string>Standaard mail-app openen</string>
-    <key>feedback_mail_not_configured_msg</key>
-    <string>Om een debug-bijlage te verzenden, moet de Apple Mail-app geconfigureerd zijn op je telefoon. Wat wil je doen?</string>
-    <key>feedback_mail_not_configured_title</key>
-    <string>Mail niet geconfigureerd</string>
     <key>file_upload_add_file</key>
     <string>Bestand toevoegen</string>
     <key>file_upload_add_image</key>
@@ -1178,56 +703,18 @@ waar je naar hebt geluisterd was
     <string>Geen bestanden geüpload</string>
     <key>files_sort</key>
     <string>Bestanden sorteren</string>
-    <key>filter_auto_add_subtitle</key>
-    <string>Nieuwe podcasts waarop je je abonneert, worden automatisch toegevoegd</string>
-    <key>filter_auto_add_subtitle_new</key>
-    <string>Nieuwe podcasts die je volgt, worden automatisch toegevoegd</string>
-    <key>filter_chips_all_podcasts</key>
-    <string>Al je podcasts</string>
     <key>filter_chips_duration</key>
     <string>Duur</string>
     <key>filter_choose_podcasts</key>
     <string>Podcasts kiezen</string>
-    <key>filter_create_add_more</key>
-    <string>Voeg meer criteria toe om je filter verder te verfijnen.</string>
-    <key>filter_create_filter_by</key>
-    <string>FILTEREN OP</string>
-    <key>filter_create_instructions</key>
-    <string>Selecteer je filtercriteria met deze knoppen om een bijgewerkte intelligente playlist met afleveringen te maken.</string>
     <key>filter_create_no_episodes</key>
     <string>Geen overeenkomende afleveringen</string>
-    <key>filter_create_no_episodes_description_explanation</key>
-    <string>De geselecteerde criteria komen niet overeen met afleveringen in je abonnementen.</string>
-    <key>filter_create_no_episodes_description_explanation_new</key>
-    <string>De geselecteerde criteria komen niet overeen met afleveringen in je podcasts</string>
-    <key>filter_create_no_episodes_description_prompt</key>
-    <string>Kies andere criteria of sla dit filter op als je denkt dat het overeenkomt met toekomstige afleveringen.</string>
-    <key>filter_create_podcasts_all_podcasts</key>
-    <string>Alle podcasts</string>
-    <key>filter_create_preview</key>
-    <string>VOORBEELD BEKIJKEN</string>
-    <key>filter_create_save</key>
-    <string>Filter opslaan</string>
-    <key>filter_details</key>
-    <string>Filtergegevens</string>
-    <key>filter_details_color_icon</key>
-    <string>KLEUR EN PICTOGRAM</string>
-    <key>filter_details_color_selection</key>
-    <string>Kleurenselectie</string>
-    <key>filter_details_icon_selection</key>
-    <string>Pictogramselectie</string>
-    <key>filter_details_name</key>
-    <string>NAAM</string>
     <key>filter_download_status</key>
     <string>Downloadstatus</string>
     <key>filter_episode_status</key>
     <string>Status van aflevering</string>
     <key>filter_longer_than_label</key>
     <string>Langer dan</string>
-    <key>filter_manual_add_subtitle</key>
-    <string>Nieuwe podcasts waarop je je abonneert, worden niet automatisch toegevoegd</string>
-    <key>filter_manual_add_subtitle_new</key>
-    <string>Nieuwe podcasts die je volgt, worden niet automatisch toegevoegd</string>
     <key>filter_media_type</key>
     <string>Type media</string>
     <key>filter_media_type_audio</key>
@@ -1240,8 +727,6 @@ waar je naar hebt geluisterd was
     <string>Als je zou filteren op afleveringen die langer zijn dan %1$@, maar korter zijn dan %2$@, dan veroorzaakt dit een scheur in ons ruimte-tijd-continuüm. Sorry.</string>
     <key>filter_option_episode_duration_error_title</key>
     <string>Ja, maar ook weer niet</string>
-    <key>filter_options</key>
-    <string>Filteropties</string>
     <key>filter_release_date</key>
     <string>Uitgavedatum</string>
     <key>filter_release_date_anytime</key>
@@ -1270,10 +755,6 @@ waar je naar hebt geluisterd was
     <string>Nieuwe uitgaven</string>
     <key>filters_new_filter_button</key>
     <string>+ Nieuwe filter</string>
-    <key>filters_tip_view_description</key>
-    <string>Maak slimme filters aan om je afleveringen te organiseren. Filter op duur, uitgavedatum, mediatype en meer.</string>
-    <key>filters_tip_view_title</key>
-    <string>Organiseer je afleveringen</string>
     <key>folder</key>
     <string>Map</string>
     <key>folder_add_podcasts_plural_format</key>
@@ -1336,24 +817,10 @@ waar je naar hebt geluisterd was
     <string>Een lijst met podcasts die verwijderd zijn uit een map dankzij synchronisatie.</string>
     <key>follow</key>
     <string>Volgen</string>
-    <key>free_trial_detail_label</key>
-    <string>Nu geen betaling - Annuleer wanneer je wilt</string>
-    <key>free_trial_duration_free</key>
-    <string>%1$@ GRATIS</string>
-    <key>free_trial_duration_free_trial</key>
-    <string>%1$@ GRATIS PROEFVERSIE</string>
-    <key>free_trial_pricing_terms</key>
-    <string>%1$@ gratis, daarna %2$@</string>
-    <key>free_trial_start_and_subscribe_button</key>
-    <string>Probeer de gratis proefversie en abonneer je</string>
     <key>free_trial_start_button</key>
     <string>Gratis proefversie starten</string>
-    <key>free_trial_title_label</key>
-    <string>Probeer Plus met %1$@ gratis</string>
     <key>funding</key>
     <string>Financiering</string>
-    <key>funny_conf_msg</key>
-    <string>Het past perfect bij je ogen ✨</string>
     <key>funny_time_not_enough</key>
     <string>Je luistert niet veel, of toch?</string>
     <key>funny_time_unit_airplane_takeoffs</key>
@@ -1396,8 +863,6 @@ waar je naar hebt geluisterd was
     <string>Duidelijk</string>
     <key>group_episodes</key>
     <string>Afleveringen groeperen</string>
-    <key>hang_on</key>
-    <string>Wacht!</string>
     <key>history_clear_all</key>
     <string>Alles wissen</string>
     <key>history_clear_all_details</key>
@@ -1410,12 +875,8 @@ waar je naar hebt geluisterd was
     <string>Uur opgeslagen</string>
     <key>hours_listened</key>
     <string>Uren geluisterd</string>
-    <key>hours_plural_format</key>
-    <string>%1$@ uur</string>
     <key>hours_saved</key>
     <string>Uren opgeslagen</string>
-    <key>hours_singular_format</key>
-    <string>1 uur</string>
     <key>how_to_upload_explanation</key>
     <string>Hiervoor moet je eerst een app openen met audiobestanden die je wilt opslaan</string>
     <key>how_to_upload_share_action_image_center_text</key>
@@ -1432,22 +893,8 @@ waar je naar hebt geluisterd was
     <string>Kies ervoor om dat bestand te delen</string>
     <key>how_to_upload_summary</key>
     <string>Je bent klaar. Wijzig details, klik op Opslaan en speel af!</string>
-    <key>iap_product_monthly_pricing_format</key>
-    <string>%1$@ per maand</string>
-    <key>iap_product_weekly_pricing_format</key>
-    <string>%1$@/week</string>
     <key>import</key>
     <string>Importeren</string>
-    <key>import_instructions_apple_podcasts_steps</key>
-    <string>We kunnen je podcasts importeren van Apple Podcasts met de geïntegreerde Shortcuts-app.
-Opmerking: Als je de Shortcuts-app hebt verwijderd, wordt je gevraagd deze opnieuw te installeren.
-
-1. Tik op de onderstaande knop Shortcuts installeren.
-2. Wanneer dit wordt gevraagd, tik op de knop Snelkoppeling toevoegen.
-3. Tik op het tabblad Snelkoppelingen.
-4. Zoek naar de snelkoppeling 'Apple Podcasts naar PodHopper's in de lijst.
-5. Tik erop om het importeren te starten.
-6. Zodra de snelkoppeling klaar is, zal PodHopper opnieuw openen en het importeren voltooien.</string>
     <key>import_instructions_breaker</key>
     <string>1. Tik op de onderstaande knop Breaker openen
 2. Tik op Instellingen in de onderste tab-balk
@@ -1478,8 +925,6 @@ Opmerking: Als je de Shortcuts-app hebt verwijderd, wordt je gevraagd deze opnie
     <string>Shortcut installeren</string>
     <key>import_instructions_open_in</key>
     <string>%1$@ openen</string>
-    <key>import_instructions_other_apps_title</key>
-    <string>andere apps</string>
     <key>import_instructions_overcast</key>
     <string>1. Tik op de onderstaande knop om Overcast te openen
 2. Tik op het tandwieltje in de bovenhoek van de app
@@ -1504,14 +949,6 @@ Opmerking: Mogelijk moet je het OPML-bestand naar jezelf mailen. Hiervoor druk j
 podcasts mee</string>
     <key>in_progress</key>
     <string>Nog steeds bezig</string>
-    <key>interests_select_at_least</key>
-    <string>Selecteer minimaal %1$@</string>
-    <key>interests_show_more_categories</key>
-    <string>Meer categorieën weergeven</string>
-    <key>interests_subtitle</key>
-    <string>Geweldige podcasts, zorgvuldig geselecteerd door echte mensen, komen jouw kant op!</string>
-    <key>interests_title</key>
-    <string>Vertel ons over je favoriete onderwerpen</string>
     <key>keycommand_close_player</key>
     <string>Speler sluiten</string>
     <key>keycommand_decrease_speed</key>
@@ -1522,32 +959,6 @@ podcasts mee</string>
     <string>Speler openen</string>
     <key>keycommand_play_pause</key>
     <string>Afspelen/pauzeren</string>
-    <key>kids_profile_banner_badge</key>
-    <string>Binnenkort</string>
-    <key>kids_profile_banner_request_button</key>
-    <string>Vroegtijdige toegang aanvragen </string>
-    <key>kids_profile_banner_text</key>
-    <string>Een nieuw profiel met alleen content voor kinderen, om je abonnementen overzichtelijk te houden.</string>
-    <key>kids_profile_banner_title</key>
-    <string>Kids-profiel</string>
-    <key>kids_profile_submit_error</key>
-    <string>Er is iets fout gegaan. Probeer je feedback opnieuw in te dienen</string>
-    <key>kids_profile_submit_feedback_send_button</key>
-    <string>Verzenden</string>
-    <key>kids_profile_submit_feedback_title</key>
-    <string>Wat zijn je wensen voor een Kids-profiel voor PodHopper?</string>
-    <key>kids_profile_submit_success</key>
-    <string>Bedankt voor je feedback!</string>
-    <key>kids_profile_thankyou_button_close</key>
-    <string>Nee, bedankt</string>
-    <key>kids_profile_thankyou_button_send</key>
-    <string>Geef feedback</string>
-    <key>kids_profile_thankyou_text</key>
-    <string>Je ontvangt een melding via de app wanneer het nieuwe Kids-profiel klaar is! Wil je ons je wensen vertellen?</string>
-    <key>kids_profile_thankyou_title</key>
-    <string>Bedankt voor je interesse</string>
-    <key>learn_about_ratings</key>
-    <string>Meer informatie over beoordelingen</string>
     <key>learn_more</key>
     <string>Meer weten</string>
     <key>listening_history</key>
@@ -1560,20 +971,8 @@ podcasts mee</string>
     <string>Geen afleveringen gevonden</string>
     <key>loading</key>
     <string>Laden...</string>
-    <key>login_landing_subtitle</key>
-    <string>Je podcasts, altijd gesynchroniseerd. Houd je bibliotheek veilig en geniet van PodHopper op internet en desktop.</string>
-    <key>login_landing_title</key>
-    <string>Maak een PodHopper-account</string>
-    <key>login_subtitle</key>
-    <string>Maak een account aan om je luisterervaring te synchroniseren op al je apparaten.</string>
-    <key>login_title</key>
-    <string>Ontdek je volgende nieuwe favoriete podcast</string>
     <key>logs</key>
     <string>Logs</string>
-    <key>logs_no_email_account_configured</key>
-    <string>Configureer een e-mailaccount op het apparaat om de logboeken te verzenden</string>
-    <key>logs_watch_os_not_available</key>
-    <string>Geen watchOS-logboeken beschikbaar. Zorg ervoor dat je een Apple Watch hebt gekoppeld en dat de PodHopper-app voor horloges is geïnstalleerd.</string>
     <key>manage_downloads_action</key>
     <string>Downloads beheren</string>
     <key>manage_downloads_detail</key>
@@ -1666,18 +1065,12 @@ podcasts mee</string>
     <string>1 aflevering uit favorieten verwijderen</string>
     <key>name</key>
     <string>Naam</string>
-    <key>new_email_address_prompt</key>
-    <string>Nieuw e-mailadres</string>
     <key>new_episodes</key>
     <string>Nieuwe afleveringen</string>
-    <key>new_password_prompt</key>
-    <string>Nieuw wachtwoord</string>
     <key>next</key>
     <string>Volgende</string>
     <key>next_episode</key>
     <string>Nieuwe aflevering</string>
-    <key>next_payment_format</key>
-    <string>Volgende betaling: %1$@</string>
     <key>no_bookmarks_button_title</key>
     <string>Instellingen koptelefoon</string>
     <key>no_bookmarks_locked_button_title</key>
@@ -1692,10 +1085,6 @@ podcasts mee</string>
     <string>Geen</string>
     <key>not_on_wifi</key>
     <string>Je bent niet verbonden met wifi</string>
-    <key>notifications_app_clip_body</key>
-    <string>Installeer PodHopper voor de volledige ervaring met krachtige tools voor afspelen en aanpassen.</string>
-    <key>notifications_app_clip_title</key>
-    <string>Klaar voor meer podcasts?</string>
     <key>notifications_daily_reminders</key>
     <string>Dagelijkse herinneringen</string>
     <key>notifications_new_feature_suggested_folders_body</key>
@@ -1806,18 +1195,6 @@ podcasts mee</string>
     <string>Ok</string>
     <key>on</key>
     <string>Aan</string>
-    <key>onboarding_quote_author</key>
-    <string>PodHopper-gebruiker</string>
-    <key>onboarding_quote_best</key>
-    <string>Beste podcastapp die er is. Veruit</string>
-    <key>onboarding_quote_customization</key>
-    <string>De hoeveelheid aanpassingsmogelijkheden is waanzinnig</string>
-    <key>onboarding_quote_folders</key>
-    <string>Mijn podcasts organiseren op basis van mappen is geniaal</string>
-    <key>onboarding_recommendations_subtitle</key>
-    <string>Hier zijn een aantal geweldige shows om mee te beginnen. Tik om te volgen, zoeken of importeren vanuit andere apps.</string>
-    <key>onboarding_recommendations_title</key>
-    <string>We hopen dat je deze goede suggesties vindt!</string>
     <key>only_on_unmetered_wifi</key>
     <string>Alleen wifi zonder limiet</string>
     <key>only_on_unmetered_wifi_details</key>
@@ -1836,37 +1213,10 @@ podcasts mee</string>
     <string>Podcasts worden geïmporteerd...</string>
     <key>page_control_page_progress_format</key>
     <string>Pagina %1$@ van %2$@</string>
-    <key>paid_podcast_bundled_subscriptions</key>
-    <string>%1$@ / %2$@ GEABONNEERD</string>
-    <key>paid_podcast_cancel</key>
-    <string>Bijdrage annuleren</string>
-    <key>paid_podcast_cancel_msg_plural</key>
-    <string>Ondersteunerstatus blijft actief tot %1$@. Daarna kan je deze podcasts niet meer afspelen.</string>
-    <key>paid_podcast_cancel_msg_retain_access</key>
-    <string>Ondersteunerstatus blijft actief tot %1$@. Je kan alleen nog luisteren naar afleveringen die vóór deze datum zijn uitgegeven.</string>
-    <key>paid_podcast_cancel_msg_singular</key>
-    <string>Ondersteunerstatus blijft actief tot %1$@. Daarna kan je deze podcast niet meer afspelen.</string>
-    <key>paid_podcast_generic_error</key>
-    <string>Kan info niet laden</string>
-    <key>paid_podcast_manage</key>
-    <string>Beheren</string>
     <key>paid_podcast_next_episode_format</key>
     <string>Nieuwe aflevering %1$@</string>
     <key>paid_podcast_release_frequency_format</key>
     <string>Uitgegeven op %1$@</string>
-    <key>paid_podcast_signin_prompt_msg</key>
-    <string>AANMELDEN VOOR
-UPDATES</string>
-    <key>paid_podcast_signin_prompt_title</key>
-    <string>Aanmelden voor nieuwe afleveringen</string>
-    <key>paid_podcast_subscription_ended</key>
-    <string>BEËINDIGD: %1$@</string>
-    <key>paid_podcast_subscription_ends</key>
-    <string>EINDIGT: %1$@</string>
-    <key>paid_podcast_supporter_only_msg</key>
-    <string>Feed alleen voor ondersteuners</string>
-    <key>paid_podcast_unsubscribe_msg</key>
-    <string>Door je uit te schrijven voor al deze podcasts worden alle gedownloade bestanden die ze bevatten verwijderd. Weet je het zeker?</string>
     <key>patron</key>
     <string>Patron</string>
     <key>patron_callout</key>
@@ -1881,20 +1231,8 @@ UPDATES</string>
     <string>Profielbadge voor ondersteuners</string>
     <key>patron_feature_profile_icons</key>
     <string>Speciale app-pictogrammen voor PodHopper</string>
-    <key>patron_purchase_promo_title</key>
-    <string>Word Patron-lid en profiteer van alle PodHopper-functies</string>
     <key>patron_subscribe_to</key>
     <string>Abonneren op Patron</string>
-    <key>patron_thank_you</key>
-    <string>Bedankt voor je ondersteuning!</string>
-    <key>patron_unlock_instructions</key>
-    <string>Houd de onderstaande ontgrendelknop in om een paar cadeautjes van ons te krijgen.</string>
-    <key>patron_unlock_release</key>
-    <string>Laat los om te ontgrendelen</string>
-    <key>patron_unlock_word</key>
-    <string>ontgrendelen</string>
-    <key>patron_unlocking</key>
-    <string>Ontgrendelen</string>
     <key>pause</key>
     <string>Pauzeren</string>
     <key>paywall_dynamic_headline_banner_ad</key>
@@ -1925,143 +1263,6 @@ UPDATES</string>
     <string>Als eerstvolgende afspelen</string>
     <key>play_next_in_up_next</key>
     <string>Hierna afspelen in Hierna</string>
-    <key>playback_2024_completion_rate_description</key>
-    <string>Van de %1$@ afleveringen waar je aan bent begonnen, heb je er %2$@ helemaal afgeluisterd</string>
-    <key>playback_2024_completion_rate_title</key>
-    <string>Je afrondingspercentage dit jaar was %1$@</string>
-    <key>playback_2024_description</key>
-    <string>Bekijk je luisterstatistieken, meest beluisterde podcasts en categorieën en meer. Deel met je vrienden en geef een shoutout aan je favoriete makers!</string>
-    <key>playback_2024_feature_description</key>
-    <string>Bekijk je luisterstatistieken, meest beluisterde podcasts en meer.</string>
-    <key>playback_2024_feature_title</key>
-    <string>Playback 2024 is gearriveerd!</string>
-    <key>playback_2024_listening_time_description</key>
-    <string>%1$@ totaal geluisterd naar podcasts</string>
-    <key>playback_2024_longest_episode_description</key>
-    <string>Het was '%1$@' van '%2$@'</string>
-    <key>playback_2024_longest_episode_title</key>
-    <string>De langste aflevering waarnaar je hebt geluisterd was %1$@</string>
-    <key>playback_2024_plus_upsell_button_title</key>
-    <string>Bekijk eens PodHopper Plus</string>
-    <key>playback_2024_plus_upsell_description</key>
-    <string>Steun PodHopper door je te abonneren op Plus en krijg toegang tot meer statistieken en Premium-functies zoals bladwijzers, mappen en voorselectie van hoofdstukken!</string>
-    <key>playback_2024_plus_upsell_title</key>
-    <string>Dat is nog niet alles!</string>
-    <key>playback_2024_ratings_description_1_to_3</key>
-    <string>Bedankt dat je je feedback deelt met de community van makers</string>
-    <key>playback_2024_ratings_description_4_to_5</key>
-    <string>Wauw, zoveel beoordelingen van %1$@ sterren! Bedankt dat je je liefde voor je favoriete makers toont.</string>
-    <key>playback_2024_ratings_empty_description</key>
-    <string>Wist je dat je nu shows kan beoordelen? Deel je liefde voor je favoriete makers en breng ze onder de aandacht!</string>
-    <key>playback_2024_ratings_empty_title</key>
-    <string>Oh oh! Er zijn nog geen podcastbeoordelingen voor je</string>
-    <key>playback_2024_ratings_title</key>
-    <string>Laten we naar je beoordelingen kijken!</string>
-    <key>playback_2024_top_spot_description</key>
-    <string>Je hebt in totaal %2$@ geluisterd naar %1$@ afleveringen van '%3$@'</string>
-    <key>playback_2024_top_spot_title</key>
-    <string>Dit was je favoriete podcast in 2024</string>
-    <key>playback_2024_view_year</key>
-    <string>Mijn Playback van 2024 bekijken</string>
-    <key>playback_2024_year_over_year_compare_description_down</key>
-    <string>Aaaah … er moet worden geleefd, toch?</string>
-    <key>playback_2024_year_over_year_compare_description_same</key>
-    <string>Consistentie is de sleutel tot succes … of zoiets!</string>
-    <key>playback_2024_year_over_year_compare_description_up</key>
-    <string>Klaar om dit te overtreffen in 2025?</string>
-    <key>playback_2024_year_over_year_compare_title_down_little</key>
-    <string>Ten opzichte van 2023 is je luistertijd een klein beetje omlaag gegaan</string>
-    <key>playback_2024_year_over_year_compare_title_down_lot</key>
-    <string>Ten opzichte van 2023 is je luistertijd met maar liefst %1$@ omlaag gegaan</string>
-    <key>playback_2024_year_over_year_compare_title_down_over_500</key>
-    <string>Ten opzichte van 2023 is je luistertijd meer dan %1$@ omlaag gegaan</string>
-    <key>playback_2024_year_over_year_compare_title_same</key>
-    <string>Ten opzichte van 2023 is je luistertijd redelijk hetzelfde gebleven</string>
-    <key>playback_2024_year_over_year_compare_title_up_above_maximum</key>
-    <string>Ten opzichte van 2023 is je luistertijd gestegen met meer dan %1$@</string>
-    <key>playback_2024_year_over_year_compare_title_up_little</key>
-    <string>Ten opzichte van 2023 is je luistertijd een klein beetje gestegen</string>
-    <key>playback_2024_year_over_year_compare_title_up_lot</key>
-    <string>Ten opzichte van 2023 is je luistertijd met maar liefst %1$@ gestegen</string>
-    <key>playback_2024_year_over_year_compare_title_up_over_500</key>
-    <string>Ten opzichte van 2023 is je luistertijd gestegen met meer %1$@</string>
-    <key>playback_2025_completion_rate_message</key>
-    <string>Van de %1$@ afleveringen die zijn gestart, heb je er %2$@ voltooid. Een sterkere follow‑through dan de meeste sportschoollidmaatschappen</string>
-    <key>playback_2025_completion_rate_title</key>
-    <string>Je afrondingspercentage dit jaar was %1$@</string>
-    <key>playback_2025_end_story_description</key>
-    <string>Deel je Playback met vrienden en toon wat liefde aan de podcasters die je het hele jaar gezelschap hielden</string>
-    <key>playback_2025_end_story_title</key>
-    <string>Bedankt dat je je jaar bij PodHopper hebt doorgebracht</string>
-    <key>playback_2025_failed_to_load</key>
-    <string>Sorry, we konden het afspelen niet laden</string>
-    <key>playback_2025_feature_description</key>
-    <string>Bekijk je luisterstatistieken, meest beluisterde podcasts en meer.</string>
-    <key>playback_2025_feature_title</key>
-    <string>Afspelen is hier!</string>
-    <key>playback_2025_intro_message</key>
-    <string>Je jaar in podcasts, verpakt en klaar om opnieuw te beleven</string>
-    <key>playback_2025_listened_to_numbers</key>
-    <string>Je hebt naar %1$@ verschillende podcasts en %2$@ afleveringen geluisterd</string>
-    <key>playback_2025_listening_time</key>
-    <string>minuten geluisterd</string>
-    <key>playback_2025_longest_episode_footer</key>
-    <string>De langste aflevering was '%1$@' van '%2$@'</string>
-    <key>playback_2025_longest_episode_message</key>
-    <string>Hopelijk heb je je eerst uitgestrekt!</string>
-    <key>playback_2025_longest_episode_title</key>
-    <string>Je langste luistermarathon: %1$@</string>
-    <key>playback_2025_plus_thanks_description</key>
-    <string>Je %1$@ extraatjes ontgrendelen meer statistieken en krachtige functies</string>
-    <key>playback_2025_plus_thanks_title</key>
-    <string>Bedankt voor je steun aan PodHopper!</string>
-    <key>playback_2025_plus_upsell_button_title</key>
-    <string>Neem PodHopper Plus</string>
-    <key>playback_2025_plus_upsell_description</key>
-    <string>Abonneer je op PodHopper Plus voor uitgebreide statistieken, bladwijzers, mappen, hoofdstukselectie en meer manieren om je luistergewoonten te leren kennen</string>
-    <key>playback_2025_plus_upsell_title</key>
-    <string>Wil je meer opties?</string>
-    <key>playback_2025_ratings_description_1_to_3</key>
-    <string>Beoordelingen helpen geweldige shows gevonden te worden</string>
-    <key>playback_2025_ratings_description_4_to_5</key>
-    <string>Overal waarderen makers de liefde</string>
-    <key>playback_2025_ratings_empty_description</key>
-    <string>Help je favoriete makers ontdekt te worden door te delen waar je van houdt</string>
-    <key>playback_2025_ratings_empty_title</key>
-    <string>Nog geen beoordelingen, maar er is nog tijd!</string>
-    <key>playback_2025_ratings_title_1_to_3</key>
-    <string>Bedankt dat je je feedback hebt gedeeld.</string>
-    <key>playback_2025_ratings_title_4_to_5</key>
-    <string>Je hebt het %1$@-sterrenbeoordelingen laten regenen</string>
-    <key>playback_2025_top_5_podcasts_message</key>
-    <string>Meer favorieten, meer afspelen, meer jij</string>
-    <key>playback_2025_top_5_podcasts_title</key>
-    <string>Je andere go-to's</string>
-    <key>playback_2025_top_spot_description</key>
-    <string>%1$@ afleveringen, %2$@
-Dat is waar we voor staan!</string>
-    <key>playback_2025_top_spot_subtitle</key>
-    <string>Het wordt niet meer "jij" dan dit</string>
-    <key>playback_2025_top_spot_title</key>
-    <string>Je beste podcasts van 2025</string>
-    <key>playback_2025_view_year</key>
-    <string>Mijn Playback van 2025 bekijken</string>
-    <key>playback_2025_year_over_year_comparison_down_message</key>
-    <string>Maar ja, kwaliteit gaat boven kwantiteit</string>
-    <key>playback_2025_year_over_year_comparison_down_title</key>
-    <string>Je hebt dit jaar %1$@ minder geluisterd</string>
-    <key>playback_2025_year_over_year_comparison_hero_message</key>
-    <string>Je hebt dit jaar %1$@ langer geluisterd — welkom bij de club</string>
-    <key>playback_2025_year_over_year_comparison_hero_title</key>
-    <string>Van nul naar held!</string>
-    <key>playback_2025_year_over_year_comparison_same_message</key>
-    <string>Consistent en betrouwbaar, net zoals je koffiebestelling</string>
-    <key>playback_2025_year_over_year_comparison_same_title</key>
-    <string>Je luisterervaring van 2025 is stabiel gebleven</string>
-    <key>playback_2025_year_over_year_comparison_up_message</key>
-    <string>Meer podcasts, meer plezier</string>
-    <key>playback_2025_year_over_year_comparison_up_title</key>
-    <string>Ten opzichte van 2024 is je luistertijd veel hoger %1$@</string>
     <key>playback_effect_all_podcasts</key>
     <string>Alle podcasts</string>
     <key>playback_effect_this_podcast</key>
@@ -2076,8 +1277,6 @@ Dat is waar we voor staan!</string>
     <string>Afspeeleffecten</string>
     <key>playback_failed</key>
     <string>Afspelen mislukt</string>
-    <key>playback_not_available</key>
-    <string>Afspelen niet beschikbaar</string>
     <key>playback_speed</key>
     <string>%1$@x</string>
     <key>player_accessibility_sleep_timer_on</key>
@@ -2106,8 +1305,6 @@ Dat is waar we voor staan!</string>
     <string>%1$@ artwork</string>
     <key>player_chapter_count</key>
     <string>%1$@ van %2$@</string>
-    <key>player_decrement_time</key>
-    <string>Duur van afname</string>
     <key>player_effects_trim_silence_details</key>
     <string>Vermindert de duur van een aflevering door stilte in gesprekken weg te filteren.</string>
     <key>player_effects_trim_silence_progress</key>
@@ -2128,24 +1325,14 @@ Dat is waar we voor staan!</string>
     <string>Je bent offline</string>
     <key>player_error_short_playback_error</key>
     <string>Afspelen mislukt, probeer het nog eens</string>
-    <key>player_increment_time</key>
-    <string>Duur van toename</string>
     <key>player_mark_as_played_confirmation</key>
     <string>Deze aflevering markeren als afgespeeld?</string>
     <key>player_mark_as_played_confirmation_message</key>
     <string>Het verplaatst zich van Hierna naar je geschiedenis.</string>
-    <key>player_options_play_all_message</key>
-    <string>Hierdoor wordt je huidige wachtrij Hierna gewist.</string>
-    <key>player_options_play_episode_singular</key>
-    <string>1 aflevering afspelen</string>
-    <key>player_options_play_episodes_plural</key>
-    <string>%1$@ afleveringen afspelen</string>
     <key>player_options_shortcut_on_player</key>
     <string>SNELKOPPELING IN SPELER</string>
     <key>player_route_selection</key>
     <string>Routeselectie</string>
-    <key>player_share_header</key>
-    <string>LINK DELEN NAAR</string>
     <key>player_show_notes_title</key>
     <string>Details</string>
     <key>player_user_episode_download_error</key>
@@ -2210,16 +1397,6 @@ Pas de regels aan of sla deze playlist op voor toekomstige afleveringen.</string
     <string> Alle afleveringen zijn gearchiveerd. Toevoegen of dearchiveren om af te spelen.</string>
     <key>playlist_options</key>
     <string>Opties voor playlists</string>
-    <key>playlist_play_all_option_save_queue</key>
-    <string>Huidige wachtrij opslaan</string>
-    <key>playlist_play_all_picker_message</key>
-    <string>Je huidige Hierna wordt vervangen wanneer je deze afspeellijst afspeelt. Sla het eerst op om het te behouden.</string>
-    <key>playlist_play_all_picker_title</key>
-    <string>Je Hierna-wachtrij opslaan?</string>
-    <key>playlist_play_all_replace_picker_message</key>
-    <string>Hierdoor wordt je huidige wachtrij Hierna gewist en wordt deze afspeellijst afgespeeld.</string>
-    <key>playlist_play_all_replace_picker_title</key>
-    <string>Huidige Hierna vervangen?</string>
     <key>playlist_play_all_sheet_button_title</key>
     <string>Vervangen en afspelen</string>
     <key>playlist_play_all_sheet_description</key>
@@ -2242,8 +1419,6 @@ Pas de regels aan of sla deze playlist op voor toekomstige afleveringen.</string
     <string>Het wordt ofwel tijd om te vieren dat je deze lijst hebt afgerond of om je regels te bewerken om er meer te krijgen.</string>
     <key>playlist_smart_preview_description</key>
     <string>Stel slimme regels in om automatisch afleveringen aan je intelligente playlist toe te voegen.</string>
-    <key>playlist_smart_preview_enabled_rules</key>
-    <string>Ingeschakelde regels</string>
     <key>playlist_smart_preview_more_rules</key>
     <string>Meer regels</string>
     <key>playlist_smart_rule_podcasts_header_subtitle_auto_add</key>
@@ -2266,8 +1441,6 @@ Pas de regels aan of sla deze playlist op voor toekomstige afleveringen.</string
     <string>Playlists</string>
     <key>playlists_auto_download_off_subtitle</key>
     <string>Schakel het automatisch downloaden van afleveringen in deze playlist in</string>
-    <key>playlists_auto_download_on_plural_format</key>
-    <string>De eerste %1$@ afleveringen in deze playlist worden automatisch gedownload</string>
     <key>playlists_default_new_playlist</key>
     <string>Nieuwe playlist</string>
     <key>playlists_delete</key>
@@ -2298,58 +1471,10 @@ Pas de regels aan of sla deze playlist op voor toekomstige afleveringen.</string
     <string>Probeer het nog eens</string>
     <key>please_try_again_later</key>
     <string>Probeer het later opnieuw.</string>
-    <key>plus_account_required_prompt</key>
-    <string>Voor PodHopper Plus is een PodHopper-account vereist. Dit zorgt ervoor dat je zonder problemen op al je apparaten kan luisteren.</string>
-    <key>plus_account_required_prompt_details</key>
-    <string>Maak een account aan of meld je aan om je toegang tot PodHopper Plus te verzilveren.</string>
-    <key>plus_account_trial_details</key>
-    <string>Wanneer je proefperiode afgelopen is, kan je nog altijd profiteren van de geweldige voordelen van je normale account. Veel plezier met podcasten!</string>
-    <key>plus_button_title_unlock_all</key>
-    <string>Ontgrendel alle functies</string>
-    <key>plus_cancel_terms</key>
-    <string>Kan op elk moment worden opgezegd</string>
-    <key>plus_champion</key>
-    <string>PodHopper-kampioen</string>
-    <key>plus_champion_message</key>
-    <string>Hartstikke bedankt dat je al vanaf het begin bij PodHopper bent. Je bent een kampioen!</string>
     <key>plus_cloud_storage_limit_format</key>
     <string>%1$@ GB cloud-opslagruimte</string>
     <key>plus_discount_yearly_membership</key>
     <string>50%% korting op je eerste jaar</string>
-    <key>plus_error_already_registered</key>
-    <string>Je hebt al een PodHopper Plus-account</string>
-    <key>plus_error_already_registered_details</key>
-    <string>Bedankt voor je ondersteuning, maar dit wil helaas zeggen dat je niet kunt deelnemen aan deze promotie.</string>
-    <key>plus_expiration_format</key>
-    <string>Verloopt %1$@</string>
-    <key>plus_feature_card_text_bookmarks</key>
-    <string>Sla je favoriete stukjes uit afleveringen op en beluister ze later opnieuw.</string>
-    <key>plus_feature_card_text_desktop</key>
-    <string>Luister op meer plekken met Windows en macOS en webapps.</string>
-    <key>plus_feature_card_text_extra_themes</key>
-    <string>Toon je ware aard. Exclusieve pictogrammen en thema's voor onze abonnees.</string>
-    <key>plus_feature_card_text_folders</key>
-    <string>Organiseer je podcasts in mappen en synchroniseer ze op al je apparaten.</string>
-    <key>plus_feature_card_text_slumber_studio</key>
-    <string>Krijg 1 jaar premium content van Slumber Studios.</string>
-    <key>plus_feature_card_text_storage</key>
-    <string>Wanneer je je audiobestanden naar een cloudopslag uploadt, zijn ze overal beschikbaar.</string>
-    <key>plus_feature_card_text_wear_os</key>
-    <string>Leg je telefoon aan de kant en ga hardlopen.</string>
-    <key>plus_feature_card_title_bookmarks</key>
-    <string>Bladwijzers</string>
-    <key>plus_feature_card_title_desktop</key>
-    <string>Desktop- en web-apps</string>
-    <key>plus_feature_card_title_extra_themes</key>
-    <string>Extra thema's en pictogrammen</string>
-    <key>plus_feature_card_title_folders</key>
-    <string>Mappen</string>
-    <key>plus_feature_card_title_slumber_studio</key>
-    <string>Droom met Slumber Studios</string>
-    <key>plus_feature_card_title_storage</key>
-    <string>20 GB opslag</string>
-    <key>plus_feature_card_title_wear_os</key>
-    <string>Afspelen op Apple Watch en Wear OS</string>
     <key>plus_feature_gratitude</key>
     <string>De eeuwige dank van iedereen bij PodHopper</string>
     <key>plus_feature_librofm</key>
@@ -2366,98 +1491,34 @@ Pas de regels aan of sla deze playlist op voor toekomstige afleveringen.</string
     <string>%1$@ Gratis Proefversie</string>
     <key>plus_marketing_bookmarks_title</key>
     <string>Bladwijzers</string>
-    <key>plus_marketing_desktop_apps_title</key>
-    <string>Desktop- en web-apps</string>
-    <key>plus_marketing_folders_and_bookmarks_title</key>
-    <string>Mappen en bladwijzers</string>
-    <key>plus_marketing_folders_description</key>
-    <string>Maak mappen aan om je podcastverzameling te sorteren.</string>
     <key>plus_marketing_folders_title</key>
     <string>Mappen</string>
     <key>plus_marketing_generated_transcripts</key>
     <string>Gegenereerde transcripties</string>
-    <key>plus_marketing_hide_ads_description</key>
-    <string>Een advertentievrije ervaring die je meer biedt van wat je leuk vindt en minder van wat je niet leuk vindt</string>
-    <key>plus_marketing_hide_ads_title</key>
-    <string>Advertenties verbergen</string>
     <key>plus_marketing_learn_more_button</key>
     <string>Bekijk meer informatie over PodHopper Plus</string>
-    <key>plus_marketing_main_description</key>
-    <string>Tegelijkertijd persoonlijk zijn en gedeeld worden. Upload je persoonlijke audiobestanden naar onze cloudservers, krijg toegang tot je account via onze online speler en pas de app naar je eigen voorkeuren aan.</string>
     <key>plus_marketing_no_banner_ads</key>
     <string>Geen banneradvertenties</string>
-    <key>plus_marketing_subtitle</key>
-    <string>Krijg toegang tot exclusieve functies en aanpassingsmogelijkheden</string>
-    <key>plus_marketing_themes_icons_title</key>
-    <string>Thema's en pictogrammen</string>
     <key>plus_marketing_title</key>
     <string>Alles wat je geweldig vindt aan PodHopper en meer</string>
     <key>plus_marketing_up_next_shuffle</key>
     <string>Hierna shuffelen</string>
-    <key>plus_marketing_updated_cloud_storage_description</key>
-    <string>Wanneer je je bestanden naar een cloudopslag uploadt, zijn ze overal beschikbaar</string>
-    <key>plus_marketing_updated_desktop_apps_description</key>
-    <string>Luister overal met onze apps voor Windows en macOS en de online apps</string>
-    <key>plus_marketing_updated_folders_description</key>
-    <string>Organiseer je podcasts in mappen en synchroniseer ze op al je apparaten.</string>
     <key>plus_marketing_watch_playback_title</key>
     <string>Apple Watch- en Wear OS-apps</string>
     <key>plus_monthly_frequency_pricing_format</key>
     <string>%1$@ per maand</string>
-    <key>plus_payment_canceled</key>
-    <string>Betaling geannuleerd</string>
-    <key>plus_payment_frequency_best_value</key>
-    <string>Beste koop</string>
-    <key>plus_per_month</key>
-    <string>per maand</string>
-    <key>plus_price_per_month</key>
-    <string>%1$@ / maandelijks</string>
     <key>plus_promo_paragraph</key>
     <string>Neem PodHopper Plus om deze functie en nog veel meer te ontgrendelen!</string>
-    <key>plus_promotion_expired</key>
-    <string>Promotie vervallen of ongeldig</string>
-    <key>plus_promotion_expired_nudge</key>
-    <string>Je kan je toch aanmelden voor PodHopper Plus, een normaal account aanmaken of gewoon beginnen.</string>
-    <key>plus_promotion_used</key>
-    <string>Code al gebruikt</string>
-    <key>plus_purchase_failed</key>
-    <string>Het lijkt erop dat er een probleem is opgetreden bij het verwerken van je betaling. Probeer het opnieuw.</string>
-    <key>plus_purchase_promo_title</key>
-    <string>Word Plus-lid en profiteer van alle PodHopper-functies</string>
-    <key>plus_required_feature</key>
-    <string>Voor deze functie is PodHopper plus vereist</string>
-    <key>plus_select_payment_frequency</key>
-    <string>Selecteer betaalfrequentie</string>
-    <key>plus_skip</key>
-    <string>Overslaan</string>
     <key>plus_start_my_free_trial</key>
     <string>Mijn gratis proefversie starten</string>
-    <key>plus_start_trial_duration_price</key>
-    <string>Probeer %1$@, vervolgens %2$@</string>
     <key>plus_subscribe_to</key>
     <string>Abonneren op Plus</string>
-    <key>plus_subscription_apple</key>
-    <string>Je abonnement wordt beheerd door de Apple App Store</string>
-    <key>plus_subscription_apple_details</key>
-    <string>Om je abonnement te annuleren, moet je het annuleren via Instellingen.</string>
-    <key>plus_subscription_expiration</key>
-    <string>PLUS VERLOOPT OVER %1$@</string>
-    <key>plus_subscription_google</key>
-    <string>Het lijkt erop alsof je je via een Android-apparaat hebt geabonneerd op PodHopper Plus</string>
-    <key>plus_subscription_google_details</key>
-    <string>Om je abonnement te annuleren, moet je het annuleren via Instellingen.</string>
-    <key>plus_subscription_web</key>
-    <string>Het lijkt erop alsof je je online hebt geabonneerd op PodHopper Plus</string>
-    <key>plus_subscription_web_details</key>
-    <string>Om je abonnement te annuleren, moet je het annuleren via Pocketcasts.com.</string>
     <key>plus_upgrade_no_internet_message</key>
     <string>Controleer je internetverbinding en probeer opnieuw.</string>
     <key>plus_upgrade_no_internet_title</key>
     <string>Kan niet laden</string>
     <key>plus_yearly_frequency_pricing_format</key>
     <string>%1$@ per jaar</string>
-    <key>pocket_casts_logo</key>
-    <string>PodHopper logo</string>
     <key>pocket_casts_newsletter</key>
     <string>PodHopper-nieuwsbrief</string>
     <key>pocket_casts_newsletter_description</key>
@@ -2581,20 +1642,8 @@ Als je op zoek bent naar inspiratie, probeer dan het tabblad Ontdekken.</string>
     <string>%1$@ verwijderd van %2$@</string>
     <key>podcast_season_format</key>
     <string>Seizoen %1$@</string>
-    <key>podcast_share_episode</key>
-    <string>Link naar aflevering delen</string>
     <key>podcast_share_episode_error_msg</key>
     <string>Je hebt geen apps geïnstalleerd die dit bestand kunnen openen</string>
-    <key>podcast_share_error_msg</key>
-    <string>De auteur van de podcast heeft deze mogelijk verwijderd sinds de link is gedeeld.</string>
-    <key>podcast_share_error_title</key>
-    <string>Kan aflevering niet vinden</string>
-    <key>podcast_share_list_creating</key>
-    <string>Lijst maken...</string>
-    <key>podcast_share_list_description</key>
-    <string>Beschrijving (optioneel)</string>
-    <key>podcast_share_list_name</key>
-    <string>Lijstnaam</string>
     <key>podcast_share_open_file</key>
     <string>Bestand openen in...</string>
     <key>podcast_show_archived</key>
@@ -2627,8 +1676,6 @@ Als je op zoek bent naar inspiratie, probeer dan het tabblad Ontdekken.</string>
     <string>Updates beëindigd: %1$@</string>
     <key>podcast_updates_ends</key>
     <string>Updates eindigen: %1$@</string>
-    <key>podcast_upload_confirmation</key>
-    <string>Nu uploaden!</string>
     <key>podcast_uploading</key>
     <string>Wordt geüpload... %1$@</string>
     <key>podcast_view_changes_tip_details</key>
@@ -2685,8 +1732,6 @@ Als je op zoek bent naar inspiratie, probeer dan het tabblad Ontdekken.</string>
     <string>Lijst</string>
     <key>podcasts_plural</key>
     <string>Podcasts</string>
-    <key>podcasts_share</key>
-    <string>Podcasts delen</string>
     <key>podcasts_small_grid</key>
     <string>Klein raster</string>
     <key>podcasts_sort</key>
@@ -2695,8 +1740,6 @@ Als je op zoek bent naar inspiratie, probeer dan het tabblad Ontdekken.</string>
     <string>Voorbeeld</string>
     <key>pricing_terms_after_discount</key>
     <string>Herhaaldelijke betalingen van %1$@ na %2$@ (%3$@)</string>
-    <key>pricing_terms_after_trial</key>
-    <string>daarna %1$@</string>
     <key>pricing_terms_after_trial_long</key>
     <string>Herhaaldelijke betalingen beginnen na je proefperiode van %1$@ (%2$@)</string>
     <key>profile</key>
@@ -2713,16 +1756,6 @@ Als je op zoek bent naar inspiratie, probeer dan het tabblad Ontdekken.</string>
     <string>%1$@ bestanden</string>
     <key>profile_percent_full</key>
     <string>%1$@ vol</string>
-    <key>profile_reset_password</key>
-    <string>Wachtwoord opnieuw instellen</string>
-    <key>profile_sending_reset_email</key>
-    <string>E-mail voor opnieuw instellen wordt verzonden</string>
-    <key>profile_sending_reset_email_conf_msg</key>
-    <string>Controleer je e-mail :)</string>
-    <key>profile_sending_reset_email_conf_title</key>
-    <string>Link voor het opnieuw instellen van het wachtwoord verzonden</string>
-    <key>profile_sending_reset_email_failed</key>
-    <string>Verzenden van e-mail voor opnieuw instellen mislukt, probeer het later opnieuw.</string>
     <key>profile_single_file</key>
     <string>1 bestand</string>
     <key>profile_starred_no_episodes_desc</key>
@@ -2741,69 +1774,14 @@ Als je op zoek bent naar inspiratie, probeer dan het tabblad Ontdekken.</string>
     <string>Bezig met afspelen. %1$@</string>
     <key>queue_time_remaining</key>
     <string>%1$@ resterend</string>
-    <key>queue_total_time_remaining</key>
-    <string>%1$@ totale resterende tijd</string>
     <key>rate</key>
     <string>Beoordelen</string>
-    <key>rate_pocket_casts</key>
-    <string>PodHopper beoordelen</string>
-    <key>rating_error</key>
-    <string>Oeps! Er was een fout.</string>
-    <key>rating_listen_to_this_podcast_message</key>
-    <string>Alleen luisteraars van deze podcast kunnen hem beoordelen. Luister een paar afleveringen en kom dan terug om je beoordeling te geven. We kijken ernaar uit om te horen wat je vindt!</string>
-    <key>rating_listen_to_this_podcast_title</key>
-    <string>Luister alsjeblieft eerst naar deze podcast</string>
-    <key>rating_login_required</key>
-    <string>Je moet inloggen om een beoordeling achter te laten</string>
-    <key>rating_no_ratings</key>
-    <string>Geen beoordelingen</string>
-    <key>rating_submitted</key>
-    <string>Je beoordeling is ingediend!</string>
-    <key>rating_thank_you</key>
-    <string>Bedankt voor het beoordelen!</string>
-    <key>rating_title</key>
-    <string>Beoordeel %1$@</string>
     <key>rating_whats_new_button_title</key>
     <string>Duidelijk</string>
     <key>rating_whats_new_message</key>
     <string>Beoordeel je favoriete podcasts en laat makers weten wat je van hun werk vindt. Daarnaast kan je met je beoordelingen anderen helpen nieuwe favoriete shows te ontdekken!</string>
     <key>rating_whats_new_title</key>
     <string>Nu beschikbaar: podcastbeoordelingen 🎉</string>
-    <key>referrals_claim_guest_pass_action</key>
-    <string>Activeer mijn pas</string>
-    <key>referrals_claim_guest_pass_banner_detail</key>
-    <string>Ontgrendel de volledige luisterervaring</string>
-    <key>referrals_claim_guest_pass_banner_title</key>
-    <string>Claim je %1$@ gastenpas voor Plus</string>
-    <key>referrals_claim_guest_pass_detail</key>
-    <string>Deze aanbieding geldt alleen voor nieuwe leden. Lidmaatschap wordt automatisch verlengd met een betaald jaarlidmaatschap van %1$@.</string>
-    <key>referrals_claim_guest_pass_title</key>
-    <string>Claim je gastenpas van %1$@ voor Plus</string>
-    <key>referrals_claim_need_to_be_loggedin</key>
-    <string>Log in of meld je aan om je gastenpas te claimen.</string>
-    <key>referrals_guest_pass_offer</key>
-    <string>%1$@ gastenpas</string>
-    <key>referrals_not_available_to_send</key>
-    <string>Gastenpas is momenteel niet beschikbaar</string>
-    <key>referrals_offer_not_available_detail</key>
-    <string>Deze gastenpas kan eenmalig worden ingewisseld en is beschikbaar voor iedereen zonder een actief Plus- of Patron-abonnement. Bedankt voor het luisteren!</string>
-    <key>referrals_offer_not_available_title</key>
-    <string>Deze aanbieding is niet geldig</string>
-    <key>referrals_share_guest_pass</key>
-    <string>Gastenpassen delen</string>
-    <key>referrals_share_no_guest_pass_message</key>
-    <string>Bedankt dat je PodHopper hebt gedeeld! We laten het je weten wanneer je meer passen kan weggeven.</string>
-    <key>referrals_share_no_guest_pass_title</key>
-    <string>Je hebt al je gastenpassen al uitgedeeld</string>
-    <key>referrals_share_pass_long_message</key>
-    <string>Hallo!
-
-Hier is een gastenpas van %1$@ voor PodHopper Plus, mijn favoriete podcastspeler. Deze zit vol met unieke functies die je nergens anders vindt, zoals bladwijzers, mappen en meer. Jij zal er vast ook dol op zijn!
-</string>
-    <key>referrals_share_pass_message</key>
-    <string>Hallo! Gebruik de onderstaande link om je gastenpas van %1$@ voor PodHopper Plus te claimen en op al je devices naar podcasts te luisteren!</string>
-    <key>referrals_share_pass_subject</key>
-    <string>Gastenpas van %1$@ voor PodHopper Plus!</string>
     <key>referrals_tip_message</key>
     <string>Geef %1$@ PodHopper Plus weg!</string>
     <key>referrals_tip_title</key>
@@ -2818,8 +1796,6 @@ Hier is een gastenpas van %1$@ voor PodHopper Plus, mijn favoriete podcastspeler
     <string>VERNIEUWEN MISLUKT :(</string>
     <key>refresh_control_refreshing_files</key>
     <string>BESTANDEN WORDEN VERNIEUWD</string>
-    <key>refresh_control_release_to_refresh</key>
-    <string>UITGEVEN OM TE VERNIEUWEN</string>
     <key>refresh_control_sync_failed</key>
     <string>SYNCHRONISATIE MISLUKT :(</string>
     <key>refresh_control_syncing_podcasts</key>
@@ -2886,8 +1862,6 @@ Hier is een gastenpas van %1$@ voor PodHopper Plus, mijn favoriete podcastspeler
     <string>Recente zoekopdrachten</string>
     <key>search_results</key>
     <string>%1$@ van %2$@</string>
-    <key>search_results_empty_action</key>
-    <string>Stuur ons feedback</string>
     <key>search_results_empty_message</key>
     <string>Probeer een nieuwe zoekopdracht of door een URL van een podcast-feed toe te voegen</string>
     <key>search_results_empty_title</key>
@@ -2980,8 +1954,6 @@ Hier is een gastenpas van %1$@ voor PodHopper Plus, mijn favoriete podcastspeler
     <string>Over</string>
     <key>settings_allow_collection_first_party</key>
     <string>Sta ons toe om analytische gegevens te verzamelen.</string>
-    <key>settings_allow_collection_third_party</key>
-    <string>Sta ons toe om vertrouwde diensten van derden te gebruiken om anonieme gegevens te verzamelen.</string>
     <key>settings_analytics</key>
     <string>Analyses</string>
     <key>settings_appearance</key>
@@ -3030,12 +2002,6 @@ Hier is een gastenpas van %1$@ voor PodHopper Plus, mijn favoriete podcastspeler
     <string>Archiveer afleveringen na ingestelde tijdslimieten. Downloads worden verwijderd wanneer de aflevering gearchiveerd is.</string>
     <key>settings_auto_download</key>
     <string>Automatisch downloaden</string>
-    <key>settings_auto_downloads_filters_selected_format</key>
-    <string>%1$@ filters geselecteerd</string>
-    <key>settings_auto_downloads_filters_selected_singular</key>
-    <string>1 filter geselecteerd</string>
-    <key>settings_auto_downloads_no_filters_selected</key>
-    <string>Geen filters geselecteerd</string>
     <key>settings_auto_downloads_no_playlists_selected</key>
     <string>Geen playlists geselecteerd</string>
     <key>settings_auto_downloads_no_podcasts_selected</key>
@@ -3050,16 +2016,12 @@ Hier is een gastenpas van %1$@ voor PodHopper Plus, mijn favoriete podcastspeler
     <string>%1$@ podcasts geselecteerd</string>
     <key>settings_auto_downloads_podcasts_selected_singular</key>
     <string>1 podcast geselecteerd</string>
-    <key>settings_auto_downloads_subtitle_filters</key>
-    <string>Download de bovenste afleveringen in een filter.</string>
     <key>settings_auto_downloads_subtitle_new_episodes</key>
     <string>Download automatisch nieuwe afleveringen, sla afleveringen op van nieuwe shows die je volgt en beheer je opslag door een limiet in te stellen voor hoeveel afleveringen er tegelijkertijd kunnen worden opgeslagen.</string>
     <key>settings_auto_downloads_subtitle_playlists</key>
     <string>Download de bovenste afleveringen in een playlist.</string>
     <key>settings_auto_downloads_subtitle_up_next</key>
     <string>Download afleveringen die zijn toegevoegd aan Hierna.</string>
-    <key>settings_badge_filter_header</key>
-    <string>AANTAL AFLEVERINGFILTERS</string>
     <key>settings_badge_new_since_opened</key>
     <string>Nieuwe sinds de app werd geopend</string>
     <key>settings_badge_smart_playlist_header</key>
@@ -3070,14 +2032,8 @@ Hier is een gastenpas van %1$@ voor PodHopper Plus, mijn favoriete podcastspeler
     <string>Bevestigingsgeluid bladwijzer</string>
     <key>settings_bookmark_sound_footer</key>
     <string>Speel een bevestigingsgeluid op je koptelefoon af nadat een bladwijzer is aangemaakt.</string>
-    <key>settings_change_avatar</key>
-    <string>Avatar wijzigen</string>
-    <key>settings_collect_information</key>
-    <string>Gegevens verzamelen</string>
     <key>settings_collect_information_additional_information</key>
     <string>Wanneer we analytische gegevens mogen verzamelen, helpt dat ons met het verbeteren van de app. We begrijpen het als je deze gegevens liever niet deelt.</string>
-    <key>settings_connection_status</key>
-    <string>Verbindingsstatus</string>
     <key>settings_create_siri_shortcut</key>
     <string>Siri-snelkoppeling aanmaken</string>
     <key>settings_create_siri_shortcut_msg</key>
@@ -3190,10 +2146,6 @@ Hier is een gastenpas van %1$@ voor PodHopper Plus, mijn favoriete podcastspeler
     <string>Hoofdstuktitels publiceren</string>
     <key>settings_general_publish_chapter_titles_subtitle</key>
     <string>Indien ingeschakeld worden hiermee hoofdstuktitels in plaats van de titel van de aflevering verzonden via Bluetooth en andere verbonden apparaten.</string>
-    <key>settings_general_remote_skips_chapters</key>
-    <string>Hoofdstukken op afstand overslaan</string>
-    <key>settings_general_remote_skips_chapters_subtitle</key>
-    <string>Wanneer deze optie is ingeschakeld en een aflevering hoofdstukken bevat, ga je door naar het volgende hoofdstuk wanneer je in je auto of met je koptelefoon op de knop om over te slaan drukt.</string>
     <key>settings_general_remove_groups_apply_all</key>
     <string>Wil je al je huidige podcasts veranderen zodat ze ook niet gegroepeerd worden?</string>
     <key>settings_general_row_action</key>
@@ -3226,12 +2178,6 @@ Hier is een gastenpas van %1$@ voor PodHopper Plus, mijn favoriete podcastspeler
     <string>Pas de andere acties aan die via de vaakst voorkomende knoppen op koptelefoon.</string>
     <key>settings_help</key>
     <string>Hulp en feedback</string>
-    <key>settings_import_export</key>
-    <string>Importeren/exporteren</string>
-    <key>settings_in_filters_plural_format</key>
-    <string>Toegevoegd aan %1$@ filters</string>
-    <key>settings_in_filters_singular</key>
-    <string>Toegevoegd aan 1 filter</string>
     <key>settings_in_menu</key>
     <string>IN MENU</string>
     <key>settings_in_smart_playlist_singular</key>
@@ -3242,24 +2188,16 @@ Hier is een gastenpas van %1$@ voor PodHopper Plus, mijn favoriete podcastspeler
     <string>Inactieve afleveringen zijn afleveringen die je niet hebt afgespeeld of gedownload in de tijd die je hierboven aangeeft. Downloads worden verwijderd wanneer de aflevering gearchiveerd is.</string>
     <key>settings_next_action</key>
     <string>Nieuwe actie</string>
-    <key>settings_not_in_filters</key>
-    <string>Niet toegevoegd aan filters</string>
     <key>settings_not_in_smart_playlists</key>
     <string>Niet inbegrepen in intelligente playlists</string>
     <key>settings_notifications</key>
     <string>Meldingen</string>
-    <key>settings_notifications_filter_count</key>
-    <string>Aantal filters</string>
     <key>settings_notifications_smart_playlist_count</key>
     <string>Aantal intelligente playlists</string>
     <key>settings_notifications_subtitle</key>
     <string>Geeft je een melding wanneer een nieuwe aflevering beschikbaar is. Ook nuttig voor het verbeteren van de betrouwbaarheid van automatische downloads.</string>
-    <key>settings_opml</key>
-    <string>OPML importeren/exporteren</string>
     <key>settings_play_speed</key>
     <string>Afspeelsnelheid</string>
-    <key>settings_plus_pricing_format</key>
-    <string>%1$@ per maand / %2$@ per jaar</string>
     <key>settings_previous_action</key>
     <string>Vorige actie</string>
     <key>settings_privacy</key>
@@ -3268,8 +2206,6 @@ Hier is een gastenpas van %1$@ voor PodHopper Plus, mijn favoriete podcastspeler
     <string>Positie in wachtrij</string>
     <key>settings_read_privacy_policy</key>
     <string>Privacybeleid lezen</string>
-    <key>settings_select_filter_singular</key>
-    <string>Filter selecteren</string>
     <key>settings_select_filters_plural</key>
     <string>Filters selecteren</string>
     <key>settings_select_playlist_singular</key>
@@ -3278,8 +2214,6 @@ Hier is een gastenpas van %1$@ voor PodHopper Plus, mijn favoriete podcastspeler
     <string>Playlists selecteren</string>
     <key>settings_select_smart_playlists_plural</key>
     <string>Intelligente playlists selecteren</string>
-    <key>settings_shortcuts_filter_open_filter</key>
-    <string>Filter openen</string>
     <key>settings_shortcuts_filter_open_playlist</key>
     <string>Playlist openen</string>
     <key>settings_shortcuts_filter_play_all_episodes</key>
@@ -3296,8 +2230,6 @@ Hier is een gastenpas van %1$@ voor PodHopper Plus, mijn favoriete podcastspeler
     <string>Beschikbare snelkoppelingen</string>
     <key>settings_siri_shortcuts_enabled</key>
     <string>Snelkoppelingen inschakelen</string>
-    <key>settings_siri_shortcuts_specific_filter</key>
-    <string>Snelkoppeling naar een specifiek filter</string>
     <key>settings_siri_shortcuts_specific_playlist</key>
     <string>Snelkoppeling naar een specifieke playlist</string>
     <key>settings_siri_shortcuts_specific_podcast</key>
@@ -3310,42 +2242,6 @@ Hier is een gastenpas van %1$@ voor PodHopper Plus, mijn favoriete podcastspeler
     <string>Sla de intro- en outro-muziek over als de ultieme gebruiker waarvoor je bestemd was.</string>
     <key>settings_stats</key>
     <string>Statistieken</string>
-    <key>settings_status_account_service</key>
-    <string>Accountservice</string>
-    <key>settings_status_account_service_description</key>
-    <string>De service die wordt gebruikt om afleveringvoortgang, abonnementen, filters etc op te slaan.</string>
-    <key>settings_status_description</key>
-    <string>Controleer je verbinding met belangrijke services. Dit helpt problemen met je verbinding, proxy's, VPN, adblocker en beveiligingsapps te identificeren.</string>
-    <key>settings_status_discover</key>
-    <string>Ontdekken en zoeken</string>
-    <key>settings_status_discover_description</key>
-    <string>Het gedeelte Ontdekken van de app, waaronder podcasts zoeken.</string>
-    <key>settings_status_expensive_network</key>
-    <string>Wifi zonder limiet</string>
-    <key>settings_status_expensive_network_description</key>
-    <string>Als dit lukt, wordt dit netwerk gebruikt voor downloads op wifi zonder limiet.</string>
-    <key>settings_status_expensive_network_failure_message</key>
-    <string>Je huidige netwerk is gemarkeerd als duur. Probeer over te schakelen naar wifi of schakel de gegevensbesparingsmodus uit.</string>
-    <key>settings_status_host</key>
-    <string>Veelgebruikte Podcast-hosts</string>
-    <key>settings_status_host_description</key>
-    <string>Schrijvers van podcasts hosten afleveringbestanden in verschillende providers die niet worden beheerd door PodHopper.</string>
-    <key>settings_status_host_failure_message</key>
-    <string>De meestvoorkomende oorzaak is dat je een adblocker hebt geconfigureerd op je telefoon of netwerk. Je moet dit domein deblokkeren om podcasts te downloaden. PodHopper host niet of kiest niet waar podcasts worden gehost, dat is aan de schrijver van de show en hier hebben we geen invloed op.</string>
-    <key>settings_status_internet</key>
-    <string>Internet</string>
-    <key>settings_status_internet_description</key>
-    <string>Controleer de status van je netwerk.</string>
-    <key>settings_status_internet_failure_message</key>
-    <string>Kan geen verbinding maken met het internet. Probeer verbinding te maken met een ander netwerk (bij. mobiele data).</string>
-    <key>settings_status_refresh_service</key>
-    <string>Service vernieuwen</string>
-    <key>settings_status_refresh_service_description</key>
-    <string>De service die wordt gebruikt om nieuwe afleveringen te vinden.</string>
-    <key>settings_status_run</key>
-    <string>Nu uitvoeren</string>
-    <key>settings_status_service_ad_blocker_help_singular</key>
-    <string>De meestvoorkomende oorzaak is dat je een adblocker hebt geconfigureerd op je telefoon of netwerk. Je moet het domein %1$@ deblokkeren </string>
     <key>settings_storage</key>
     <string>Gebruik van opslag en data</string>
     <key>settings_storage_data_warning</key>
@@ -3358,8 +2254,6 @@ Hier is een gastenpas van %1$@ voor PodHopper Plus, mijn favoriete podcastspeler
     <string>Gebruik</string>
     <key>settings_storage_usage_footer</key>
     <string>Dit kan verschillen van de opslag die wordt weergegeven in je iPhone-instellingen. iOS beheert gecachete gegevens automatisch en maakt deze vrij wanneer dat nodig is.</string>
-    <key>settings_third_party_analytics</key>
-    <string>Analyses van derden</string>
     <key>settings_title</key>
     <string>Podcast-instellingen</string>
     <key>settings_trim_level</key>
@@ -3400,44 +2294,14 @@ Hier is een gastenpas van %1$@ voor PodHopper Plus, mijn favoriete podcastspeler
     <string>Indien ingeschakeld, wordt de slaaptimer opnieuw opgestart als je met je telefoon schudt.</string>
     <key>share</key>
     <string>Delen</string>
-    <key>share_clip</key>
-    <string>Clip delen</string>
-    <key>share_copied_to_clipboard</key>
-    <string>Link naar klembord gekopieerd</string>
-    <key>share_copy_link</key>
-    <string>Link kopiëren</string>
     <key>share_current_position</key>
     <string>Huidige positie</string>
-    <key>share_description</key>
-    <string>Kies een format en een platform om naar te delen</string>
     <key>share_episode</key>
     <string>Aflevering delen</string>
-    <key>share_episode_at</key>
-    <string>Aflevering delen om %1$@</string>
-    <key>share_episode_title</key>
-    <string>Aflevering delen</string>
-    <key>share_instagram_stories</key>
-    <string>Verhalen</string>
-    <key>share_list_subscribing</key>
-    <string>Aanmelden...</string>
-    <key>share_more_actions</key>
-    <string>Meer</string>
     <key>share_podcast</key>
     <string>Podcast delen</string>
     <key>share_podcast_private_not_available</key>
     <string>Delen is niet beschikbaar voor privépodcasts.</string>
-    <key>share_podcast_title</key>
-    <string>Podcast delen</string>
-    <key>share_podcasts_all_selected</key>
-    <string>ALLES GESELECTEERD</string>
-    <key>share_podcasts_create_list</key>
-    <string>Lijst maken</string>
-    <key>share_podcasts_sharing</key>
-    <string>Delen...</string>
-    <key>share_podcasts_sharing_failed_msg</key>
-    <string>Er is iets verkeerd gegaan tijdens het aanmaken van je deelpagina</string>
-    <key>share_podcasts_sharing_failed_title</key>
-    <string>Delen mislukt</string>
     <key>share_profile</key>
     <string>Profiel delen</string>
     <key>share_profile_add_photo_and_name</key>
@@ -3482,38 +2346,10 @@ Hier is een gastenpas van %1$@ voor PodHopper Plus, mijn favoriete podcastspeler
     <string>Wat wil je delen?</string>
     <key>share_select_podcasts</key>
     <string>Selecteer podcasts</string>
-    <key>shared_item_loading</key>
-    <string>Gedeeld item laden...</string>
-    <key>shared_list</key>
-    <string>Gedeelde lijst</string>
-    <key>shared_list_subscribe_conf_action</key>
-    <string>Zeker weten!</string>
-    <key>shared_list_subscribe_conf_msg</key>
-    <string>Weet je zeker dat je je wilt abonneren op %1$@ podcasts?</string>
-    <key>shared_list_subscribe_conf_title</key>
-    <string>Dat zijn erg veel podcasts!</string>
     <key>show_notes</key>
     <string>Notities</string>
     <key>sign_in</key>
     <string>Aanmelden</string>
-    <key>sign_in_continue_with_email</key>
-    <string>Doorgaan met e-mail</string>
-    <key>sign_in_divider_label</key>
-    <string>OF</string>
-    <key>sign_in_email_address_prompt</key>
-    <string>E-mailadres</string>
-    <key>sign_in_forgot_password</key>
-    <string>Ik ben mijn wachtwoord vergeten</string>
-    <key>sign_in_hide_password_label</key>
-    <string>Wachtwoord weergeven</string>
-    <key>sign_in_message</key>
-    <string>Sla je podcastafleveringen op in de cloud en synchroniseer je voortgang met andere apparaten.</string>
-    <key>sign_in_password_prompt</key>
-    <string>Wachtwoord</string>
-    <key>sign_in_prompt</key>
-    <string>Meld je aan of maak een account aan</string>
-    <key>sign_in_show_password_label</key>
-    <string>Wachtwoord verbergen</string>
     <key>signed_in_as</key>
     <string>AANGEMELD ALS</string>
     <key>signed_out</key>
@@ -3596,28 +2432,6 @@ Hier is een gastenpas van %1$@ voor PodHopper Plus, mijn favoriete podcastspeler
     <string>We hebben deze gemaakt om je op weg te helpen. Ze worden automatisch bijgewerkt op basis van je luistergedrag.</string>
     <key>smart_playlists_tip_view_title</key>
     <string>Intelligente playlists, klaar voor gebruik</string>
-    <key>social_sign_in_continue_with_apple</key>
-    <string>Doorgaan met Apple</string>
-    <key>social_sign_in_continue_with_google</key>
-    <string>Doorgaan met Google</string>
-    <key>sonos_connect_action</key>
-    <string>VERBINDEN</string>
-    <key>sonos_connect_prompt</key>
-    <string>Maak verbinding met Sonos</string>
-    <key>sonos_connecting</key>
-    <string>VERBINDEN...</string>
-    <key>sonos_connection_failed_account_link</key>
-    <string>Kan het PodHopper-account op dit moment niet koppelen. Probeer het later opnieuw.</string>
-    <key>sonos_connection_failed_app_missing</key>
-    <string>Kan de Sonos-app niet openen om het koppelproces te voltooien.</string>
-    <key>sonos_connection_failed_title</key>
-    <string>Koppelen mislukt</string>
-    <key>sonos_connection_privacy_notice</key>
-    <string>Door verbinding te maken met Sonos kan de Sonos-app informatie over je aflevering ophalen.
-
-Je e-mailadres, wachtwoord en andere gevoelige gegevens worden nooit gedeeld.</string>
-    <key>sonos_connection_sign_in_prompt</key>
-    <string>Je moet een PodHopper-account hebben voordat je verbinding kan maken met Sonos.</string>
     <key>sort_by</key>
     <string>Sorteren op</string>
     <key>sort_episodes</key>
@@ -3692,38 +2506,8 @@ Je e-mailadres, wachtwoord en andere gevoelige gegevens worden nooit gedeeld.</s
     <string>Download stoppen</string>
     <key>subscribe</key>
     <string>Abonneren</string>
-    <key>subscribe_all</key>
-    <string>Op alles abonneren</string>
     <key>subscribed</key>
     <string>Geabonneerd</string>
-    <key>subscription_cancelled</key>
-    <string>Het abonnement is geannuleerd</string>
-    <key>subscription_cancelled_msg</key>
-    <string>Het abonnement is geannuleerd %1$@ </string>
-    <key>subscription_expires_in</key>
-    <string>Verloopt over %1$@</string>
-    <key>subscription_feature_custom_title_bookmarks</key>
-    <string>Bladwijzers: nooit meer 'waar stond dat?'</string>
-    <key>subscription_feature_custom_title_folders</key>
-    <string>Mappen: je podcasts, perfect geplaatst</string>
-    <key>subscription_feature_custom_title_pre_selected_chapters</key>
-    <string>Hoofdstukken voorselecteren: ga direct naar wat je wil horen</string>
-    <key>subscription_feature_custom_title_shuffle_upnext</key>
-    <string>Shuffle: het plezier van niet kiezen</string>
-    <key>subscription_frequency_pricing_format</key>
-    <string>%1$@ per %2$@</string>
-    <key>subscription_plan_features_info_link</key>
-    <string>Bekijk alle functies van Plus</string>
-    <key>subscription_plan_free_trial_info_link</key>
-    <string>Hoe werkt de gratis proefversie?</string>
-    <key>subscription_plan_month</key>
-    <string>Maandabonnement</string>
-    <key>subscription_plan_savings</key>
-    <string>Bespaar %1$@ </string>
-    <key>subscription_plan_year</key>
-    <string>Jaarbonnement</string>
-    <key>subscriptions_thank_you</key>
-    <string>Bedankt voor je ondersteuning!</string>
     <key>suggested_folders_create_custom_folder</key>
     <string>Aangepaste mappen aanmaken</string>
     <key>suggested_folders_description</key>
@@ -3740,36 +2524,10 @@ Je e-mailadres, wachtwoord en andere gevoelige gegevens worden nooit gedeeld.</s
     <string>Slimme mappen</string>
     <key>suggested_folders_use_suggested_folders</key>
     <string>Deze mappen gebruiken</string>
-    <key>support_watch_help_message</key>
-    <string>Als je problemen ondervindt met de PodHopper horloge-app, kunnen we jouw draagbare logboeken versturen om je beter te helpen. Om dit te doen moet je PodHopper op je horloge openen.</string>
-    <key>support_watch_help_opened_app</key>
-    <string>Ik heb de horloge-app geopend</string>
-    <key>support_watch_help_send_without_log</key>
-    <string>Versturen zonder horloge-logboeken</string>
-    <key>support_watch_help_title</key>
-    <string>Hulp nodig met de horloge-app?</string>
     <key>supporter</key>
     <string>Ondersteuner</string>
-    <key>supporter_contributions</key>
-    <string>Bijdragen van ondersteuner</string>
-    <key>supporter_contributions_subtitle</key>
-    <string>Bekijk je bijdragen voor meer informatie</string>
-    <key>supporter_payment_canceled</key>
-    <string>Ondersteuner: Geannuleerd</string>
-    <key>sync_account_error</key>
-    <string>Controleer je gebruikersnaam en wachtwoord</string>
-    <key>sync_account_login</key>
-    <string>Ingelogd...</string>
     <key>sync_failed</key>
     <string>Synchronisatie mislukt</string>
-    <key>sync_in_progress</key>
-    <string>Hierna en Geschiedenis synchroniseren</string>
-    <key>sync_progress</key>
-    <string>Podcast %1$@ van %2$@</string>
-    <key>sync_progress_unknown_count_plural_format</key>
-    <string>%1$@ podcasts gesynchroniseerd</string>
-    <key>sync_progress_unknown_count_singular</key>
-    <string>1 podcast gesynchroniseerd</string>
     <key>syncing</key>
     <string>Synchroniseren...</string>
     <key>terms_of_use</key>
@@ -3790,8 +2548,6 @@ Je e-mailadres, wachtwoord en andere gevoelige gegevens worden nooit gedeeld.</s
     <string>Standaard Licht</string>
     <key>theme_light_contrast</key>
     <string>Licht contrast</string>
-    <key>theme_radioactivity</key>
-    <string>Radioactiviteit</string>
     <key>theme_rose</key>
     <string>Rosé</string>
     <key>time_format_never</key>
@@ -3822,188 +2578,14 @@ Je e-mailadres, wachtwoord en andere gevoelige gegevens worden nooit gedeeld.</s
     <string>Lees mee. Zelfs bij 2x.</string>
     <key>transcript_tap_to_seek_streaming_unavailable</key>
     <string>Download de aflevering om te zoeken</string>
-    <key>trial_finished</key>
-    <string>Proefperiode afgelopen</string>
     <key>trim_silence</key>
     <string>Stiltes wegfilteren</string>
     <key>try_again</key>
     <string>Probeer opnieuw</string>
     <key>try_it_now</key>
     <string>Probeer het nu</string>
-    <key>tv_banner_create_account_action_title</key>
-    <string>Een gratis account aanmaken</string>
-    <key>tv_banner_create_account_subtitle</key>
-    <string>Je volgers, je voortgang ... precies waar je ze hebt achtergelaten.</string>
-    <key>tv_banner_create_account_title</key>
-    <string>Eén account. Elk scherm</string>
-    <key>tv_banner_discover_more_action_title</key>
-    <string>Ontdek meer shows</string>
-    <key>tv_banner_discover_more_subtitle</key>
-    <string>Je volgende obsessie zit hier ergens.</string>
-    <key>tv_banner_discover_more_title</key>
-    <string>Je hebt nog lang niet alles gezien.</string>
-    <key>tv_create_account_come_back</key>
-    <string>Zodra je je account hebt aangemaakt, kom je terug en meld je je aan</string>
-    <key>tv_create_account_subtitle</key>
-    <string>Scan deze code om aan de slag te gaan op je telefoon, het duurt maar een minuut.</string>
-    <key>tv_create_account_title</key>
-    <string>Je gratis account aanmaken</string>
-    <key>tv_discover_featured_go_to_podcast</key>
-    <string>Naar podcast</string>
-    <key>tv_discover_featured_play_latest_episode</key>
-    <string>Nieuwste aflevering afspelen</string>
-    <key>tv_discover_play_episode</key>
-    <string>Aflevering afspelen</string>
-    <key>tv_episode_info</key>
-    <string>Informatie over aflevering</string>
-    <key>tv_home_browse_categories_section_title</key>
-    <string>Door categorieën bladeren</string>
-    <key>tv_home_featured_section_title</key>
-    <string>Uitgelicht op PodHopper</string>
-    <key>tv_home_keep_listening_title</key>
-    <string>Verdergaan waar je gebleven was</string>
-    <key>tv_home_new_releases</key>
-    <string>Nieuwe releases</string>
-    <key>tv_home_recently_played</key>
-    <string>Recent afgespeeld</string>
-    <key>tv_home_recommend_user_podcast_section_title</key>
-    <string>Geliefd bij luisteraars van %1$@</string>
-    <key>tv_home_recommended_for_you_title</key>
-    <string>Je zult deze waarschijnlijk willen</string>
-    <key>tv_home_trending_section_title</key>
-    <string>Wat iedereen deze week doet</string>
     <key>tv_home_video_section_title</key>
     <string>Gemaakt voor tv</string>
-    <key>tv_player_playback_effects</key>
-    <string>Afspeeleffecten</string>
-    <key>tv_player_playback_speed</key>
-    <string>Afspeelsnelheid</string>
-    <key>tv_player_playback_speed_set</key>
-    <string>Afspeelsnelheid ingesteld op %1$@</string>
-    <key>tv_player_trim_silence</key>
-    <string>Stiltes wegfilteren</string>
-    <key>tv_player_trim_silence_mad_max</key>
-    <string>Mad Max</string>
-    <key>tv_player_trim_silence_medium</key>
-    <string>Medium</string>
-    <key>tv_player_trim_silence_mild</key>
-    <string>Mild</string>
-    <key>tv_player_trim_silence_off</key>
-    <string>Uit</string>
-    <key>tv_player_trim_silence_set</key>
-    <string>Stiltes wegfilteren: %1$@</string>
-    <key>tv_player_volume_boost</key>
-    <string>Volumeboost</string>
-    <key>tv_player_volume_boost_off</key>
-    <string>Volumeboost uit</string>
-    <key>tv_player_volume_boost_on</key>
-    <string>Volumeboost aan</string>
-    <key>tv_playlist_detail_episode_count</key>
-    <string>%1$@ afleveringen</string>
-    <key>tv_playlist_detail_play_all</key>
-    <string>Alle afleveringen afspelen</string>
-    <key>tv_playlists_empty_action_title</key>
-    <string>Maak een afspeellijst aan</string>
-    <key>tv_playlists_empty_subtitle</key>
-    <string>Bouw er handmatig een of laat slimme regels het sorteren voor je doen.</string>
-    <key>tv_playlists_empty_title</key>
-    <string>Je afspeellijsten staan hier</string>
-    <key>tv_podcast_detail_about</key>
-    <string>Over</string>
-    <key>tv_podcast_detail_all_episodes</key>
-    <string>Alle afleveringen</string>
-    <key>tv_podcast_detail_follow_title</key>
-    <string>Volg deze podcast</string>
-    <key>tv_podcast_detail_following_title</key>
-    <string>Volgend</string>
-    <key>tv_podcast_detail_more_info_title</key>
-    <string>Meer informatie</string>
-    <key>tv_podcast_detail_network</key>
-    <string>Netwerk</string>
-    <key>tv_podcast_detail_next_episode</key>
-    <string>Nieuwe aflevering</string>
-    <key>tv_podcast_detail_schedule</key>
-    <string>Inplannen</string>
-    <key>tv_podcast_detail_start_here</key>
-    <string>De aflevering die je als eerste wilt proberen</string>
-    <key>tv_podcast_detail_start_here_subtitle</key>
-    <string>Dit is de aflevering die mensen aantrekt</string>
-    <key>tv_podcast_detail_website</key>
-    <string>Site</string>
-    <key>tv_podcasts_empty_action_title</key>
-    <string>Podcasts ontdekken</string>
-    <key>tv_podcasts_empty_subtitle</key>
-    <string>Gevolgde podcasts verschijnen hier, klaar om af te spelen.</string>
-    <key>tv_podcasts_empty_title</key>
-    <string>Tijd om dit in te vullen.</string>
-    <key>tv_profile_button_accessibility_hint</key>
-    <string>Opent profiel- en accountopties</string>
-    <key>tv_profile_button_accessibility_label</key>
-    <string>Profiel</string>
-    <key>tv_profile_menu_create_account</key>
-    <string>Account aanmaken</string>
-    <key>tv_profile_menu_log_in</key>
-    <string>Inloggen</string>
-    <key>tv_profile_menu_log_out</key>
-    <string>Uitloggen</string>
-    <key>tv_profile_menu_starred_episodes</key>
-    <string>Favoriete afleveringen</string>
-    <key>tv_search_failed</key>
-    <string>Zoekopdracht mislukt: %1$@</string>
-    <key>tv_search_prompt</key>
-    <string>Podcasts, shows, auteurs</string>
-    <key>tv_search_searching</key>
-    <string>Zoeken ...</string>
-    <key>tv_search_type_something</key>
-    <string>Typ iets ...</string>
-    <key>tv_sign_in_enter_code</key>
-    <string>of voer de volgende code in</string>
-    <key>tv_sign_in_enter_code_go_url</key>
-    <string>naar [%1$@](%2$@)</string>
-    <key>tv_sign_in_enter_code_in_url</key>
-    <string>of voer deze code in [%1$@](%2$@)</string>
-    <key>tv_sign_in_qr_code_error_title</key>
-    <string>Kon je inlogcode niet ophalen</string>
-    <key>tv_sign_in_subtitle</key>
-    <string>Open je camera en wijs naar deze QR-code</string>
-    <key>tv_sign_in_title</key>
-    <string>Log in bij PodHopper</string>
-    <key>tv_signing_in_subtitle</key>
-    <string>Je podcasts worden geladen.</string>
-    <key>tv_signing_in_title</key>
-    <string>Goed je te zien.</string>
-    <key>tv_tab_home</key>
-    <string>Home</string>
-    <key>tv_tab_playlists</key>
-    <string>Afspeellijsten</string>
-    <key>tv_tab_podcasts</key>
-    <string>Jouw podcasts</string>
-    <key>tv_tab_up_next</key>
-    <string>Hierna</string>
-    <key>tv_up_next_empty_action_title</key>
-    <string>Afleveringen toevoegen</string>
-    <key>tv_up_next_empty_subtitle</key>
-    <string>Voeg afleveringen toe aan Hierna en ze worden in volgorde afgespeeld, van achter naar achter</string>
-    <key>tv_up_next_empty_title</key>
-    <string>Niets in de wachtrij geplaatst</string>
-    <key>tv_user_profile_actions</key>
-    <string>Gebruikersinstellingen</string>
-    <key>tv_user_sign_in_login_type</key>
-    <string>Inlogtype</string>
-    <key>tv_user_sign_in_option_manual</key>
-    <string>Gebruiker/Pass</string>
-    <key>tv_user_sign_in_option_qr</key>
-    <string>QR</string>
-    <key>tv_welcome_browse_without_account</key>
-    <string>Browse zonder account</string>
-    <key>tv_welcome_create_free_account</key>
-    <string>Een gratis account aanmaken</string>
-    <key>tv_welcome_sign_in</key>
-    <string>Aanmelden</string>
-    <key>tv_welcome_subtitle</key>
-    <string>Je podcasts. Op het grote scherm. Duidelijk.</string>
-    <key>tv_welcome_title</key>
-    <string>Welkom bij PodHopper TV</string>
     <key>unarchive</key>
     <string>Dearchiveren</string>
     <key>unfollow</key>
@@ -4014,8 +2596,6 @@ Je e-mailadres, wachtwoord en andere gevoelige gegevens worden nooit gedeeld.</s
     <string>Uit favorieten verwijderen</string>
     <key>unsubscribe</key>
     <string>Uitschrijven</string>
-    <key>unsubscribe_all</key>
-    <string>Bij alle uitschrijven</string>
     <key>up_next</key>
     <string>Hierna</string>
     <key>up_next_empty_description</key>
@@ -4036,58 +2616,8 @@ Je e-mailadres, wachtwoord en andere gevoelige gegevens worden nooit gedeeld.</s
     <string>Shuffle staat aan. De afleveringen worden in willekeurige volgorde afgespeeld.</string>
     <key>upgrade_account</key>
     <string>Account upgraden</string>
-    <key>upgrade_account_info</key>
-    <string>Ontgrendel alle betaalde functies zoals mappen, shuffle, bladwijzers en nog veel meer</string>
-    <key>upgrade_account_timeline_charging_day</key>
-    <string>Je wordt op %1$@ gefactureerd. Zeg je abonnement op ieder moment voor deze datum op.</string>
-    <key>upgrade_account_timeline_day_1</key>
-    <string>Krijg toegang tot mappen, shuffle, bladwijzers en exclusieve content</string>
-    <key>upgrade_account_timeline_week_before</key>
-    <string>We laten je weten wanneer je proefabonnement afloopt.</string>
     <key>upgrade_account_title</key>
     <string>Superkrachten voor je podcasts</string>
-    <key>upgrade_experiment_discount_yearly_membership</key>
-    <string>50%% korting op je eerste jaar.</string>
-    <key>upgrade_experiment_free_membership_format</key>
-    <string>Gratis %1$@ Plus-proefperiode</string>
-    <key>upgrade_experiment_paywall_button</key>
-    <string>Neem PodHopper Plus</string>
-    <key>upgrade_experiment_reviews_app_store_button</key>
-    <string>Bekijk alle beoordelingen in App Store</string>
-    <key>upgrade_experiment_reviews_app_store_info</key>
-    <string>Beoordeling van %1$@ (%2$@K beoordelingen)</string>
-    <key>upgrade_experiment_reviews_review_text_0</key>
-    <string>Ik gebruik de app al een hele lange tijd en het is echt verbazingwekkend hoeveel functies en aanpassingen je in de gratis versie krijgt. Ik vind het geweldig dat de app op al je apparaten synchroniseert. Nu kan ik op mijn telefoon beginnen met luisteren en thuis verdergaan op Alexa. Ik wil deze app aanbevelen aan iedereen die maar naar podcasts luistert. De statistieken zijn ook een van mijn favo onderdelen!</string>
-    <key>upgrade_experiment_reviews_review_text_1</key>
-    <string>Al 8 jaar uitstekend en continu vernieuwend</string>
-    <key>upgrade_experiment_reviews_review_text_2</key>
-    <string>Ik gebruik PodHopper al sinds 2017.
-
-En dit is absoluut de beste app die er bestaat om podcasts mee te luisteren. Er zijn talloze functies en de app wordt actief verder ontwikkeld. Er hebben wat mensen geklaagd over de veranderde UI maar ik heb er zelf niet zoveel van gemerkt.
-
-Deze app kan zo eenvoudig of moeilijk te gebruiken zijn als je zelf maar wilt. Dus gebruik hem als plug-and-play of stel van alles in zoals outro's overslaan, timers voor intro's en andere kleine functies die je wilt inschakelen.</string>
-    <key>upgrade_experiment_reviews_review_text_3</key>
-    <string>De sync-functie is echt magisch. Ik weet niet wat voor tovenarij deze app gebruikt, maar deze app is beter dan welke andere app dan ook.</string>
-    <key>upgrade_experiment_reviews_review_text_4</key>
-    <string>Ik gebruik deze app al 6 jaar, of eigenlijk ik ben ermee begonnen op Android en gebruik hem nu bijna een jaar op iOS. De app werkt op beide platforms hetzelfde. Het is makkelijk om nieuwe podcasts te vinden, de app heeft een mooie UI en je kan zelf podcasts toevoegen via een rss feed-url. De horloge-app werkt ook, maar deze gebruik voornamelijk voor afspelen/pauzeren. Maak een account aan om op verschillende apparaten te kunnen synchroniseren, maar dit is niet verplicht.</string>
-    <key>upgrade_experiment_reviews_review_text_5</key>
-    <string>PC is al jaren mijn favoriet. Ik heb andere podcastapps geprobeerd, maar kwam altijd weer terug naar PC vanwege de eenvoud, UI en support. Deze app is het zeker waard om even te bekijken, vooral als je je huidige podcastapp zat bent geworden.</string>
-    <key>upgrade_experiment_reviews_review_title_0</key>
-    <string>Sowieso de beste podcastapp</string>
-    <key>upgrade_experiment_reviews_review_title_1</key>
-    <string>De essentiële podcastapp</string>
-    <key>upgrade_experiment_reviews_review_title_2</key>
-    <string>De beste podcastapp die er is</string>
-    <key>upgrade_experiment_reviews_review_title_3</key>
-    <string>Fantastische app.</string>
-    <key>upgrade_experiment_reviews_review_title_4</key>
-    <string>De app werkt geweldig en je kan gemakkelijk nieuwe pods vinden en toevoegen.</string>
-    <key>upgrade_experiment_reviews_review_title_5</key>
-    <string>Favoriete podcastapp</string>
-    <key>upgrade_experiment_reviews_text</key>
-    <string>Ontdek waarom anderen naar Plus hebben geüpgraded</string>
-    <key>upgrade_experiment_reviews_title</key>
-    <string>Simpelweg de beste manier om naar podcasts te luisteren</string>
     <key>upgrade_to_plan</key>
     <string>Upgrade naar %1$@</string>
     <key>upgrade_to_plus</key>
@@ -4132,8 +2662,6 @@ Deze app kan zo eenvoudig of moeilijk te gebruiken zijn als je zelf maar wilt. D
     <string>Effecten</string>
     <key>watch_episode_details</key>
     <string>Informatie over aflevering</string>
-    <key>watch_main_menu</key>
-    <string>Hoofdmenu</string>
     <key>watch_no_episodes</key>
     <string>Geen afleveringen</string>
     <key>watch_no_filters</key>
@@ -4152,16 +2680,8 @@ Je kunt geen verkeerde keuze maken. 🙂</string>
     <string>Bron afspelen</string>
     <key>watch_source_msg</key>
     <string>Podcast wordt afgespeeld via de speaker waarop het gekozen apparaat is aangesloten</string>
-    <key>watch_source_plus_info</key>
-    <string>Download direct op je smartwatch en luister ook zonder je telefoon. Ontdek PodHopper Plus met een app op je telefoon of op het web.</string>
-    <key>watch_source_refresh_account</key>
-    <string>Account vernieuwen</string>
-    <key>watch_source_refresh_account_info</key>
-    <string>Als je al een PodHopper Plus-account hebt, vernieuw je account dan om deze te proberen in te schakelen</string>
     <key>watch_source_refresh_data</key>
     <string>Gegevens vernieuwen</string>
-    <key>watch_source_sign_in_info</key>
-    <string>Log in of maak een account aan op je telefoon</string>
     <key>watch_tap_to_open</key>
     <string>Tik om te openen</string>
     <key>watch_up_next_no_items_subtitle</key>
@@ -4188,22 +2708,6 @@ Je kunt geen verkeerde keuze maken. 🙂</string>
     <string>Bedankt, laten we je aan het luisteren zetten!</string>
     <key>whats_new</key>
     <string>Wat is nieuw</string>
-    <key>whats_new_blog_more_link_text</key>
-    <string>Lees meer over deze update op onze blog</string>
-    <key>whats_new_in_version</key>
-    <string>Nieuw in %1$@</string>
-    <key>whats_new_page_one_7_20</key>
-    <string>Als je podcasts net zo leuk vindt als wij, dan luister je waarschijnlijk naar een heleboel. Als je een PodHopper Plus-abonnee bent, kan je nu je podcasts aan mappen toevoegen en in groepen sorteren.
-
-Dankzij jouw ondersteuning ziet je Startscherm er beter uit dan ooit!</string>
-    <key>whats_new_page_one_title_7_20</key>
-    <string>Mappen</string>
-    <key>whats_new_page_two_7_20</key>
-    <string>Je startscherm (waaronder je sorteeropties) wordt nu op al je apparaten gesynchroniseerd! En je kan nu ook slepen en neerzetten in de webspeler.
-
-Je kan nu dus met een gerust hart de lay-out van de pagina podcasts gaan aanpassen, want alle aangebrachte veranderingen worden met je account gesynchroniseerd.</string>
-    <key>whats_new_page_two_title_7_20</key>
-    <string>Startraster synchroniseren</string>
     <key>widgets_app_icon_description</key>
     <string>PodHopper snel lanceren</string>
     <key>widgets_app_icon_name</key>

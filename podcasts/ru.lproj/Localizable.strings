@@ -5,12 +5,8 @@
   <dict>
     <key>Settings_files_add_up_next_subtitle</key>
     <string>Автоматически добавлять новые файлы в очередь «Следующие»</string>
-    <key>about_a8c_family</key>
-    <string>Семейство Automattic</string>
     <key>about_acknowledgements</key>
     <string>Сведения об авторе и авторских правах</string>
-    <key>about_join_from_anywhere</key>
-    <string>Присоединяйтесь</string>
     <key>about_legal_and_more</key>
     <string>Юридическая информация и прочее</string>
     <key>about_privacy_policy</key>
@@ -23,8 +19,6 @@
     <string>Условия предоставления услуг</string>
     <key>about_website</key>
     <string>Сайт</string>
-    <key>about_work_with_us</key>
-    <string>Вакансии</string>
     <key>accessibility_cancel_multiselect</key>
     <string>Отменить множественный выбор</string>
     <key>accessibility_close_dialog</key>
@@ -37,8 +31,6 @@
     <string>Закрыть</string>
     <key>accessibility_episode_playback</key>
     <string>Воспроизведение выпуска</string>
-    <key>accessibility_hide_filter_details</key>
-    <string>Нажмите, чтобы скрыть сведения о фильтре</string>
     <key>accessibility_hint_player_navigate_to_podcast_label</key>
     <string>Нажмите, чтобы перейти на главную страницу с информацией о подкасте</string>
     <key>accessibility_hint_star</key>
@@ -57,8 +49,6 @@
     <string>Скорость воспроизведения %1$@х</string>
     <key>accessibility_playlist_add_episode</key>
     <string>Добавить выпуск</string>
-    <key>accessibility_playlist_color</key>
-    <string>Цвет списка воспроизведения %1$@</string>
     <key>accessibility_playlist_image</key>
     <string>Изображение плейлиста</string>
     <key>accessibility_plus_only</key>
@@ -67,82 +57,24 @@
     <string>Настройки PodHopper</string>
     <key>accessibility_select_episode</key>
     <string>Выбрать выпуск</string>
-    <key>accessibility_show_filter_details</key>
-    <string>Нажмите для отображения сведений о фильтре</string>
-    <key>accessibility_sign_in</key>
-    <string>Нажмите для просмотра или настройки учетной записи</string>
     <key>accessibility_sort_and_options</key>
     <string>Сортировка и опции</string>
     <key>account</key>
     <string>Учётная запись</string>
-    <key>account_change_email</key>
-    <string>Изменить адрес электронной почты</string>
-    <key>account_completion_nudge</key>
-    <string>Почти готово!</string>
-    <key>account_completion_nudge_msg</key>
-    <string>Выполните оплату, чтобы завершить обновление своей учетной записи.</string>
     <key>account_created</key>
     <string>Учетная запись создана.</string>
-    <key>account_creation_complete</key>
-    <string>Завершить создание учетной записи</string>
-    <key>account_delete_account</key>
-    <string>Удалить учётную запись</string>
-    <key>account_delete_account_conf</key>
-    <string>Да, удалить</string>
-    <key>account_delete_account_error</key>
-    <string>Не удалось удалить учетную запись</string>
-    <key>account_delete_account_error_msg</key>
-    <string>Не удается удалить учетную запись.</string>
-    <key>account_delete_account_final_alert_msg</key>
-    <string>Последний шанс отказаться: вы точно хотите удалить свою учетную запись? Вы навсегда потеряете все свои подписки и историю воспроизведений!</string>
-    <key>account_delete_account_first_alert_msg</key>
-    <string>Вы уверены, что хотите удалить свою учетную запись? Это действие невозможно отменить!</string>
-    <key>account_delete_account_title</key>
-    <string>Удалить учетную запись?</string>
-    <key>account_details_free_account</key>
-    <string>Бесплатная учётная запись</string>
-    <key>account_details_listened_for</key>
-    <string>Время прослушивания ― %1$@</string>
     <key>account_details_plus_title</key>
     <string>Получите доступ к эксклюзивным функциям и опциям настройки и выйдите на новый уровень прослушивания подкастов.</string>
-    <key>account_login</key>
-    <string>Войти</string>
     <key>account_payment_renews_monthly</key>
     <string>Ежемесячное автоматическое продление</string>
     <key>account_payment_renews_yearly</key>
     <string>Ежегодное автоматическое продление</string>
-    <key>account_privacy_policy</key>
-    <string>Политика конфиденциальности</string>
-    <key>account_registration_failed</key>
-    <string>Не удалось зарегистрироваться, повторите попытку позже</string>
-    <key>account_select_type</key>
-    <string>Выберите тип учетной записи</string>
-    <key>account_sign_out</key>
-    <string>Выйти</string>
-    <key>account_sign_out_alert_message</key>
-    <string>Ваши подкасты, сведения о прослушивании и данные будут здесь, когда вы вернётесь.</string>
-    <key>account_sign_out_alert_title</key>
-    <string>Выйти?</string>
-    <key>account_sign_out_supporter_prompt</key>
-    <string>При выходе с этого устройства будут удалены поддерживаемые подкасты (%1$@). Вы уверены?</string>
-    <key>account_sign_out_supporter_subtitle</key>
-    <string>Чтобы восстановить доступ, вы можете снова войти в систему.</string>
     <key>account_signed_out_alert_message</key>
     <string>Оказывается, если в Google ввести текст Google, можно сломать Интернет. 🫢 
 
 Коснитесь кнопки ниже, чтобы повторно войти в учётную запись PodHopper.</string>
     <key>account_signed_out_alert_title</key>
     <string>Вы вышли из системы.</string>
-    <key>account_sso_failed</key>
-    <string>Вход не выполнен. Повторите попытку.</string>
-    <key>account_title</key>
-    <string>Учетная запись PodHopper</string>
-    <key>account_upgraded</key>
-    <string>Учетная запись повышена</string>
-    <key>account_welcome</key>
-    <string>Добро пожаловать в PodHopper!</string>
-    <key>account_welcome_plus</key>
-    <string>Добро пожаловать в PodHopper Plus!</string>
     <key>add_bookmark</key>
     <string>Добавить закладку</string>
     <key>add_bookmark_subtitle</key>
@@ -157,12 +89,6 @@
     <string>Если в очереди «Следующие» ничего нет, после выпуска, который вы слушаете, автоматически запустится другой из этого шоу или списка.</string>
     <key>announcement_autoplay_title</key>
     <string>А вот и автовоспроизведение!</string>
-    <key>announcement_bookmarks_description</key>
-    <string>Теперь вы можете сохранять отметки времени выпусков, используя меню действий проигрывателя или настроив действие с наушниками.</string>
-    <key>announcement_bookmarks_title</key>
-    <string>Закладки уже готовы!</string>
-    <key>announcement_bookmarks_title_beta</key>
-    <string>Примите участие в бета-тестировании закладок!</string>
     <key>announcement_deselect_chapters_free</key>
     <string>Подпишитесь на Plus, и вы сможете предварительно выбирать и автоматически пропускать главы во всех выпусках, поддерживающих эту функцию.</string>
     <key>announcement_deselect_chapters_patron</key>
@@ -183,50 +109,6 @@
     <string>Мечтайте о большем</string>
     <key>app_badge</key>
     <string>Значок приложения</string>
-    <key>app_clip_placholder_message</key>
-    <string>Возможно, он удалён или ссылка не работает.
-Но в PodHopper есть ещё много интересного.
-Загрузите приложение, чтобы получить всё!</string>
-    <key>app_clip_placholder_title</key>
-    <string>К сожалению, не удалось найти этот выпуск</string>
-    <key>app_icon_classic</key>
-    <string>Классический</string>
-    <key>app_icon_dark</key>
-    <string>Тёмный</string>
-    <key>app_icon_default</key>
-    <string>По умолчанию</string>
-    <key>app_icon_electric_blue</key>
-    <string>Electric Blue</string>
-    <key>app_icon_electric_pink</key>
-    <string>Electric Pink</string>
-    <key>app_icon_halloween</key>
-    <string>Хэллоуин</string>
-    <key>app_icon_indigo</key>
-    <string>Indigo</string>
-    <key>app_icon_patron_chrome</key>
-    <string>Patron: хромированный</string>
-    <key>app_icon_patron_dark</key>
-    <string>Patron: темный</string>
-    <key>app_icon_patron_glow</key>
-    <string>Patron: сияющий</string>
-    <key>app_icon_patron_round</key>
-    <string>Patron: круглый</string>
-    <key>app_icon_plus</key>
-    <string>Plus</string>
-    <key>app_icon_pocket_cats</key>
-    <string>Pocket Cats</string>
-    <key>app_icon_radioactivity</key>
-    <string>Radioactivity</string>
-    <key>app_icon_red_velvet</key>
-    <string>Red Velvet</string>
-    <key>app_icon_rose</key>
-    <string>Rosé</string>
-    <key>app_icon_round_dark</key>
-    <string>Round Dark</string>
-    <key>app_icon_round_light</key>
-    <string>Round Light</string>
-    <key>app_share_text</key>
-    <string>Привет! Вот ссылка для загрузки приложения PodHopper. Мне оно нравится, рекомендую.</string>
     <key>app_version</key>
     <string>Версия %1$@ (%2$@)</string>
     <key>appearance_app_icon_header</key>
@@ -291,10 +173,6 @@
     <string>последний выпуск</string>
     <key>auto_download_limit_one_episode_show</key>
     <string>Последний выпуск программы</string>
-    <key>auto_download_off_subtitle</key>
-    <string>Включите для автоматического скачивания выпусков в этом фильтре</string>
-    <key>auto_download_on_plural_format</key>
-    <string>Первые выпуски (%1$@) в этом фильтре будут скачаны автоматически</string>
     <key>auto_download_prompt_first</key>
     <string>Первый</string>
     <key>auto_restart_sleep_timer</key>
@@ -303,28 +181,6 @@
     <string>В режиме «Включено» таймер сна будет автоматически перезапущен, если вы воспроизведёте выпуск в течение 5 минут после последней остановки.</string>
     <key>back</key>
     <string>Назад</string>
-    <key>banner_ads_info_label</key>
-    <string>Реклама</string>
-    <key>banner_ads_remove_ads</key>
-    <string>Отключить рекламу</string>
-    <key>banner_ads_report_ad</key>
-    <string>Пожаловаться на рекламу</string>
-    <key>banner_ads_report_ad_title</key>
-    <string>Почему вы хотите пожаловаться на эту рекламу?</string>
-    <key>banner_ads_report_broken</key>
-    <string>Похоже, эта реклама работает некорректно</string>
-    <key>banner_ads_report_confirmation</key>
-    <string>Вы пожаловались на эту рекламу.</string>
-    <key>banner_ads_report_malicious</key>
-    <string>Это вредоносная реклама</string>
-    <key>banner_ads_report_other</key>
-    <string>Другое</string>
-    <key>banner_ads_report_too_often</key>
-    <string>Я вижу эту рекламу слишком часто</string>
-    <key>beta_purchase_disabled</key>
-    <string>Загрузите PodHopper из App Store, чтобы приобрести %1$@.</string>
-    <key>beta_thank_you</key>
-    <string>Благодарим за участие в бета-тестировании!</string>
     <key>bookmark_added</key>
     <string>Закладка добавлена</string>
     <key>bookmark_added_button_title</key>
@@ -349,114 +205,16 @@
     <string>Закладки: %1$@</string>
     <key>bookmarks_count_singular</key>
     <string>1 закладка</string>
-    <key>bookmarks_early_access_locked_message</key>
-    <string>Разблокируйте эту и многие другие функции с PodHopper %1$@ и сохраняйте отметки времени для понравившихся вам эпизодов. Скоро станет доступно для подписчиков %2$@.</string>
-    <key>bookmarks_locked_message</key>
-    <string>Разблокируйте эту и многие другие функции с PodHopper %1$@ и сохраняйте отметки времени для понравившихся вам эпизодов.</string>
     <key>bottom</key>
     <string>Низ</string>
     <key>bulk_download_max_format</key>
     <string>Массовое скачивание ограничено %1$@.</string>
     <key>cancel</key>
     <string>Отмена</string>
-    <key>cancel_confirm_item_folders</key>
-    <string>Папки будут удалены, а их содержимое перемещено обратно на экран подкастов.</string>
-    <key>cancel_confirm_item_history</key>
-    <string>Ваши подкасты и история прослушиваний останутся доступными. </string>
-    <key>cancel_confirm_item_plus</key>
-    <string>После этой даты доступ к функциям Plus, таким как «Закладки», «Случайный выбор», «Портативные» и др., будет удалён.</string>
-    <key>cancel_confirm_item_uploads</key>
-    <string>Файлы, загруженные в вашу учётную запись PodHopper, будут удалены, но файлы, загруженные на ваши мобильные устройства, сохранятся.</string>
-    <key>cancel_confirm_sub_expiry</key>
-    <string>Ваша текущая подписка будет действовать до %1$@.</string>
-    <key>cancel_confirm_sub_expiry_date_fallback</key>
-    <string>срок действия</string>
-    <key>cancel_confirm_subtitle</key>
-    <string>При отмене подписки ваш тарифный план изменится на бесплатный.</string>
-    <key>cancel_confirm_title</key>
-    <string>Что следует знать до отмены</string>
     <key>cancel_download</key>
     <string>Отменить скачивание</string>
-    <key>cancel_failed</key>
-    <string>Не удается отменить</string>
     <key>cancel_subscription</key>
     <string>Отмена подписки</string>
-    <key>cancel_subscription_available_plans_best_value_badge</key>
-    <string>Оптимальная стоимость</string>
-    <key>cancel_subscription_available_plans_footer</key>
-    <string>Новый тарифный план будет активирован по окончании текущего расчётного периода.</string>
-    <key>cancel_subscription_available_plans_retry_screen_text</key>
-    <string>К сожалению, при получении ваших тарифных планов что-то пошло не так.</string>
-    <key>cancel_subscription_available_plans_title</key>
-    <string>Доступные тарифные планы</string>
-    <key>cancel_subscription_claim_offer_button</key>
-    <string>Воспользоваться предложением</string>
-    <key>cancel_subscription_continue_button</key>
-    <string>Отменить и продолжить</string>
-    <key>cancel_subscription_generic_error</key>
-    <string>Произошла ошибка. Повторите попытку позже.</string>
-    <key>cancel_subscription_help_description</key>
-    <string>Проблемы с определёнными функциями или неполадки?</string>
-    <key>cancel_subscription_help_title</key>
-    <string>Вам требуется помощь в работе с PodHopper?</string>
-    <key>cancel_subscription_new_plan_description</key>
-    <string>Выберите оптимальный тарифный план.</string>
-    <key>cancel_subscription_new_plan_title</key>
-    <string>Хотите перейти на другой тарифный план?</string>
-    <key>cancel_subscription_offer_success_view_description</key>
-    <string>Благодарим за то, что вы выбрали PodHopper. Бесплатный месяц будет добавлен к вашей текущей подписке.</string>
-    <key>cancel_subscription_offer_success_view_title</key>
-    <string>Пользуйтесь весь месяц бесплатно!</string>
-    <key>cancel_subscription_offer_yearly_success_view_description</key>
-    <string>Благодарим за то, что вы выбрали PodHopper. Ваш годовой тарифный план со скидкой начнёт действовать по истечении срока текущего тарифного плана.</string>
-    <key>cancel_subscription_offer_yearly_success_view_title</key>
-    <string>Скидка 50 %% на следующий год!</string>
-    <key>cancel_subscription_promotion_description_monthly</key>
-    <string>Сэкономьте %@ в начале следующего расчётного периода.</string>
-    <key>cancel_subscription_promotion_description_yearly</key>
-    <string>Уплатите %@ за следующий год со скидкой 50%% прямо сейчас</string>
-    <key>cancel_subscription_promotion_title</key>
-    <string>Следующий месяц бесплатно</string>
-    <key>cancel_subscription_survey_description</key>
-    <string>Мы хотели бы знать, почему вы отменили подписку. Ваши отзывы помогают нам совершенствовать сервис.</string>
-    <key>cancel_subscription_survey_row_better_app</key>
-    <string>У меня есть лучшее приложение</string>
-    <key>cancel_subscription_survey_row_cost</key>
-    <string>Причины, связанные с расходами</string>
-    <key>cancel_subscription_survey_row_not_enough</key>
-    <string>Я редко им пользуюсь</string>
-    <key>cancel_subscription_survey_row_other</key>
-    <string>Другое</string>
-    <key>cancel_subscription_survey_row_technical_issue</key>
-    <string>Технические проблемы</string>
-    <key>cancel_subscription_survey_submit_feedback</key>
-    <string>Отправить отзыв</string>
-    <key>cancel_subscription_survey_title</key>
-    <string>Спасибо, что попробовали
-PodHopper Plus</string>
-    <key>cancel_subscription_survey_toast_fail</key>
-    <string>Что-то пошло не так.</string>
-    <key>cancel_subscription_survey_toast_success</key>
-    <string>Спасибо за ваш отзыв!</string>
-    <key>cancel_subscription_title</key>
-    <string>Собираетесь уйти?
-Сначала позвольте вам помочь</string>
-    <key>cancel_subscription_winback_view_accept_offer_button</key>
-    <string>Принять предложение</string>
-    <key>cancel_subscription_winback_view_continue_cancellation_button</key>
-    <string>Отменить и продолжить</string>
-    <key>cancel_subscription_winback_view_description_montly</key>
-    <string>Пользуйтесь PodHopper Plus бесплатно в течение месяца! Предложение будет добавлено к вашей текущей подписке.</string>
-    <key>cancel_subscription_winback_view_description_yearly</key>
-    <string>Заплатите %@ сейчас, чтобы в течение года пользоваться PodHopper Plus за полцены. Ваш годовой тарифный план со скидкой начнёт действовать по истечении срока текущего тарифного плана.</string>
-    <key>cancel_subscription_winback_view_title_montly</key>
-    <string>Пользуйтесь весь следующий месяц бесплатно и сэкономьте %@</string>
-    <key>cancel_subscription_winback_view_title_yearly</key>
-    <string>Получите скидку 50%% на следующий год и сэкономьте %@</string>
-    <key>cancel_subscription_yearly_promotion_title</key>
-    <string>Получите скидку 50 %% на следующий год</string>
-    <key>canceling</key>
-    <string>Отмена...</string>
     <key>carplay_chapter_count</key>
     <string>%1$@ из %2$@. %3$@</string>
     <key>carplay_more</key>
@@ -465,30 +223,14 @@ PodHopper Plus</string>
     <string>Скорость воспроизведения</string>
     <key>carplay_up_next_queue</key>
     <string>Очередь «Следующие»</string>
-    <key>champion_description</key>
-    <string>Благодарим за то, что вы с нами с самого начала! Если вам нравится наше приложение, мы будем рады получить ваш отзыв.</string>
-    <key>champion_title</key>
-    <string>Вы просто чемпион PodHopper!</string>
-    <key>change_app_icon</key>
-    <string>Изменить значок приложения</string>
     <key>change_bookmark_subtitle</key>
     <string>Измените название этой закладки</string>
     <key>change_bookmark_title</key>
     <string>Изменение названия</string>
     <key>change_email</key>
     <string>Изменить электронный адрес</string>
-    <key>change_email_conf</key>
-    <string>Адрес эл. почты изменен</string>
     <key>change_password</key>
     <string>Изменить пароль</string>
-    <key>change_password_conf</key>
-    <string>Пароль изменен</string>
-    <key>change_password_error</key>
-    <string>Не удается изменить пароль. Неверный пароль.</string>
-    <key>change_password_error_mismatch</key>
-    <string>Пароли не совпадают</string>
-    <key>change_password_length_error</key>
-    <string>Должно быть не менее 6 символов</string>
     <key>chapters</key>
     <string>Главы</string>
     <key>check_internet_connection</key>
@@ -523,20 +265,6 @@ PodHopper Plus</string>
     <string>Сбой токена аутентификации</string>
     <key>clip</key>
     <string>Клип</string>
-    <key>clip_duration_label</key>
-    <string>Продолжительность: %@</string>
-    <key>clip_loading_label</key>
-    <string>Идёт создание клипа…</string>
-    <key>clip_start_label</key>
-    <string>Начало: %@</string>
-    <key>clips_end_time_accessibility_label</key>
-    <string>Конец клипа</string>
-    <key>clips_shareable_media_a11y_label</key>
-    <string>Опции совместного использования медиафайлов</string>
-    <key>clips_shareable_media_item_a11y_label</key>
-    <string>%1$@ формат, %2$@ из %3$@</string>
-    <key>clips_start_time_accessibility_label</key>
-    <string>Начало клипа</string>
     <key>clips_whats_new_button_title</key>
     <string>Понятно</string>
     <key>clips_whats_new_message</key>
@@ -549,36 +277,10 @@ PodHopper Plus</string>
     <string>Цвет</string>
     <key>confirm</key>
     <string>Подтвердить</string>
-    <key>confirm_new_password_prompt</key>
-    <string>Подтвердите новый пароль</string>
     <key>continue</key>
     <string>Продолжить</string>
     <key>copy</key>
     <string>Копирование</string>
-    <key>create_account</key>
-    <string>Создать учётную запись</string>
-    <key>create_account_app_store_error_message</key>
-    <string>Проблемы при подключении PodHopper к App Store. Проверьте подключение и повторите попытку.</string>
-    <key>create_account_app_store_error_title</key>
-    <string>Не удается подключиться к App Store</string>
-    <key>create_account_find_out_more_plus</key>
-    <string>Узнать больше о PodHopper Plus</string>
-    <key>create_account_free_account_type</key>
-    <string>Обычный</string>
-    <key>create_account_free_details</key>
-    <string>Почти все</string>
-    <key>create_account_free_price</key>
-    <string>Бесплатно</string>
-    <key>create_account_plus_details</key>
-    <string>Все разблокировано</string>
-    <key>create_audio_clip_description</key>
-    <string>Создать аудиофайл .m4a</string>
-    <key>create_audio_clip_title</key>
-    <string>Создать аудиофайл</string>
-    <key>create_clip</key>
-    <string>Создать клип</string>
-    <key>create_filter</key>
-    <string>Создать фильтр</string>
     <key>create_up_next_snapshot</key>
     <string>Создать моментальный снимок</string>
     <key>creator_pick_modal_description</key>
@@ -587,10 +289,6 @@ PodHopper Plus</string>
     <string>Подробнее</string>
     <key>creator_pick_modal_title</key>
     <string>Что такое Creator Pick?</string>
-    <key>current_email_prompt</key>
-    <string>Текущий адрес электронной почты</string>
-    <key>current_password_prompt</key>
-    <string>Текущий пароль</string>
     <key>custom_episode</key>
     <string>Пользовательский выпуск</string>
     <key>custom_episode_cancel_upload</key>
@@ -805,10 +503,6 @@ PodHopper Plus</string>
     <string>США</string>
     <key>discover_region_worldwide</key>
     <string>Весь мир</string>
-    <key>discover_search_error_msg</key>
-    <string>Введите не менее двух символов.</string>
-    <key>discover_search_error_title</key>
-    <string>Проблема с длиной</string>
     <key>discover_search_failed</key>
     <string>Не удалось выполнить поиск</string>
     <key>discover_search_failed_msg</key>
@@ -829,8 +523,6 @@ PodHopper Plus</string>
     <string>Скачать</string>
     <key>download_all</key>
     <string>Скачать все</string>
-    <key>download_data_warning</key>
-    <string>При скачивании будут использоваться данные.</string>
     <key>download_data_warning_with_settings_link</key>
     <string>Загрузка будет производиться по тарифу мобильной связи. Вы можете отключить это предупреждение в разделе [Настройки](%@).</string>
     <key>download_episode_plural_format</key>
@@ -901,181 +593,22 @@ PodHopper Plus</string>
     <string>Значок «Профиль»</string>
     <key>eac_informational_banner_profile_title</key>
     <string>Ваши шоу на любом устройстве</string>
-    <key>eac_informational_card_backups_description</key>
-    <string>Ваша библиотека и настройки надёжно сохраняются.</string>
-    <key>eac_informational_card_backups_title</key>
-    <string>Надёжное резервное копирование</string>
-    <key>eac_informational_card_recommendation_description</key>
-    <string>Получайте индивидуальные рекомендации по подкастам на основе ваших предпочтений.</string>
-    <key>eac_informational_card_recommendation_title</key>
-    <string>Индивидуальные рекомендации</string>
-    <key>eac_informational_card_sync_description</key>
-    <string>Синхронизируйте журнал прослушивания и шоу на всех устройствах.</string>
-    <key>eac_informational_card_sync_title</key>
-    <string>Синхронизация на всех устройствах</string>
-    <key>eac_informational_view_modal_description</key>
-    <string>Создайте учётную запись или выполните вход
-PodHopper на полную мощность.</string>
-    <key>eac_informational_view_modal_get_started_button</key>
-    <string>Начать</string>
-    <key>eac_informational_view_modal_title</key>
-    <string>Мы заметили, что вы не вошли в систему</string>
     <key>edit</key>
     <string>Править</string>
-    <key>edit_clip</key>
-    <string>Редактировать клип</string>
     <key>enable_it_now</key>
     <string>Включить</string>
-    <key>eoy_2024_epilogue_description</key>
-    <string>Не забудьте поделиться с друзьями и рассказать о любимых подкастах и подкастерах</string>
-    <key>eoy_2024_epilogue_title</key>
-    <string>Благодарим за то, что вы слушали вместе с нами в этом году.
-Увидимся в 2025 году!</string>
-    <key>eoy_card_description</key>
-    <string>Просмотрите свой топ подкастов, статистику прослушивания и другие показатели.</string>
-    <key>eoy_create_account_to_see</key>
-    <string>Сохраняйте свои подкасты в облаке, получайте отчёт за год и синхронизируйте данные о прослушивании с другими устройствами.</string>
-    <key>eoy_description</key>
-    <string>Просмотрите свой топ подкастов и рубрик, статистику прослушивания и другие показатели. Поделитесь ими с друзьями и поблагодарите любимых подкастеров.</string>
     <key>eoy_not_now</key>
     <string>Не сейчас</string>
-    <key>eoy_share</key>
-    <string>Поделитесь этим</string>
-    <key>eoy_share_this_story_message</key>
-    <string>Разместите это изображение в социальных сетях, чтобы рассказать о своих любимых шоу и авторах.</string>
-    <key>eoy_share_this_story_title</key>
-    <string>Поделиться этой историей?</string>
-    <key>eoy_small_title</key>
-    <string>Год в подкастах</string>
-    <key>eoy_start_your_free_trial</key>
-    <string>Начните пробный период</string>
-    <key>eoy_stories_failed</key>
-    <string>Не удалось загрузить истории.</string>
-    <key>eoy_story_epilogue_subtitle</key>
-    <string>Не забудьте поделиться с друзьями и рассказать о любимых подкастерах</string>
-    <key>eoy_story_epilogue_title</key>
-    <string>Благодарим за то, что вы слушали вместе с нами в этом году.
-До встречи в 2024 году!</string>
-    <key>eoy_story_intro_title</key>
-    <string>Давайте отметим ваш год прослушиваний...</string>
-    <key>eoy_story_listened_to</key>
-    <string>В 2022 году у вас ушло %1$@ на прослушивание подкастов</string>
-    <key>eoy_story_listened_to_categories</key>
-    <string>В этом году вы выбрали %1$@ рубрик (-и)</string>
-    <key>eoy_story_listened_to_categories_highlighted</key>
-    <string>Вы прослушали %1$@ в этом году</string>
-    <key>eoy_story_listened_to_categories_share_text</key>
-    <string>Я выбрал(а) %1$@ рубрик(и) в 2023 году</string>
-    <key>eoy_story_listened_to_categories_subtitle</key>
-    <string>Взглянем на самые популярные...</string>
-    <key>eoy_story_listened_to_categories_text</key>
-    <string>Различных рубрик: %1$@</string>
-    <key>eoy_story_listened_to_episodes_text</key>
-    <string>Выпусков: %1$@</string>
-    <key>eoy_story_listened_to_numbers</key>
-    <string>Вы слушали %1$@ шоу и %2$@ выпусков</string>
-    <key>eoy_story_listened_to_numbers_share_text</key>
-    <string>Я прослушал(а) %1$@ подкастов(а) и %2$@ выпусков(а) в этом году</string>
-    <key>eoy_story_listened_to_numbers_subtitle</key>
-    <string>Но было одно шоу, которое вы слушали снова и снова…</string>
-    <key>eoy_story_listened_to_numbers_updated</key>
-    <string>Вы слушали %1$@ и %2$@</string>
-    <key>eoy_story_listened_to_podcast_text</key>
-    <string>Различных подкастов: %1$@</string>
-    <key>eoy_story_listened_to_share_text</key>
-    <string>В этом году я провел(а) %1$@, слушая подкасты</string>
-    <key>eoy_story_listened_to_subtitle</key>
-    <string>Надеемся, что вам понравилось всё с начала до конца!</string>
-    <key>eoy_story_listened_to_title</key>
-    <string>Это ваше общее время прослушивания подкастов</string>
-    <key>eoy_story_listened_to_updated</key>
-    <string>В этом году вы провели %1$@, слушая подкасты</string>
-    <key>eoy_story_longest_episode</key>
-    <string>Самым длинным выпуском, который вы слушали, стал %1$@</string>
-    <key>eoy_story_longest_episode_duration</key>
-    <string>Этот выпуск длился %1$@</string>
-    <key>eoy_story_longest_episode_share_text</key>
-    <string>Самый продолжительный выпуск, прослушанный мною в этом году: %1$@</string>
-    <key>eoy_story_longest_episode_subtitle</key>
-    <string>И это не что иное, как «%1$@» из подкаста «%2$@»</string>
-    <key>eoy_story_longest_episode_time</key>
-    <string>Самый длинный выпуск,
-прослушанный вами:
-%1$@</string>
-    <key>eoy_story_replay</key>
-    <string>Прослушать ещё раз</string>
-    <key>eoy_story_top_categories</key>
-    <string>Ваши любимые рубрики</string>
-    <key>eoy_story_top_categories_share_text</key>
-    <string>Рубрики подкастов, которые я слушаю чаще всего</string>
-    <key>eoy_story_top_categories_subtitle</key>
-    <string>Вы прослушали %1$@ выпусков(а) общей продолжительностью %2$@</string>
-    <key>eoy_story_top_categories_title</key>
-    <string>Знаете ли вы, что вашей любимой рубрикой оказалась %1$@?</string>
-    <key>eoy_story_top_podcast</key>
-    <string>Шоу %1$@ набрало больше всего прослушиваний в 2023 году</string>
-    <key>eoy_story_top_podcast_share_text</key>
-    <string>Мой любимый подкаст в этом году! %1$@</string>
-    <key>eoy_story_top_podcast_subtitle</key>
-    <string>Вы прослушали %1$@ выпусков (-а) общей продолжительностью %2$@</string>
-    <key>eoy_story_top_podcasts</key>
-    <string>Ваши любимые подкасты</string>
-    <key>eoy_story_top_podcasts_list_title</key>
-    <string>Мои любимые подкасты этого года!</string>
-    <key>eoy_story_top_podcasts_share_text</key>
-    <string>Мои любимые подкасты этого года! %1$@</string>
-    <key>eoy_story_top_podcasts_subtitle</key>
-    <string>Эти 5 эпизодов вы слушали чаще всего в 2023 г.</string>
-    <key>eoy_story_top_podcasts_title</key>
-    <string>А ещё вы были на высоте в этих шоу!</string>
-    <key>eoy_subscribe_to_plus</key>
-    <string>Оформите подписку Plus и узнайте, как изменились ваши слушательские привычки по сравнению с 2022 годом, посмотрите другую любопытную статистику и ознакомьтесь с такими функциями тарифного плана Premium, как закладки и папки.</string>
-    <key>eoy_theres_more</key>
-    <string>Есть и многое другое!</string>
-    <key>eoy_title</key>
-    <string>Ваш год в подкастах</string>
-    <key>eoy_view_year</key>
-    <string>Моя статистика за 2023 год</string>
-    <key>eoy_year_completion_rate</key>
-    <string>процент завершения</string>
-    <key>eoy_year_completion_rate_share_text</key>
-    <string>Процент завершения %1$@</string>
-    <key>eoy_year_completion_rate_subtitle</key>
-    <string>Из %1$@ запущенных выпусков всего вы дослушали до конца %2$@</string>
-    <key>eoy_year_completion_rate_title</key>
-    <string>Ваш процент завершения в этом году равен %1$@</string>
-    <key>eoy_year_over_share_text</key>
-    <string>Время прослушивания в %1$@ году по сравнению с %2$@ годом</string>
-    <key>eoy_year_over_year_subtitle_flat</key>
-    <string>Говорят, постоянство — ключ к успеху… или что-то в этом роде!</string>
-    <key>eoy_year_over_year_subtitle_went_down</key>
-    <string>И… как, вам хватает времени на всё остальное?</string>
-    <key>eoy_year_over_year_subtitle_went_up</key>
-    <string>Готовы превзойти свой рекорд в 2024 году?</string>
-    <key>eoy_year_over_year_title_flat</key>
-    <string>Вы посвятили прослушиванию примерно столько же времени, сколько и в 2022 году.</string>
-    <key>eoy_year_over_year_title_skyrocketed</key>
-    <string>По сравнению с 2022 г. вы посвятили прослушиванию намного больше времени!</string>
-    <key>eoy_year_over_year_title_went_down</key>
-    <string>По сравнению с 2022 годом вы стали слушать немного меньше.</string>
-    <key>eoy_year_over_year_title_went_up</key>
-    <string>По сравнению с 2022 годом ваше время прослушивания возросло сразу на %1$@%</string>
-    <key>eoy_year_ratings_share_text</key>
-    <string>Подкасты (%1$@), которые я оценил(а) в %2$@. Самая частая оценка — %3$@.</string>
     <key>episode</key>
     <string>Выпуск</string>
     <key>episode_count_plural_format</key>
     <string>Выпусков: %1$@</string>
-    <key>episode_description_title</key>
-    <string>Описание выпуска</string>
     <key>episode_detail_add</key>
     <string>Добавить</string>
     <key>episode_details_title</key>
     <string>Детали</string>
     <key>episode_filter_by_duration_label</key>
     <string>Фильтровать по длительности</string>
-    <key>episode_filter_no_episodes_msg</key>
-    <string>У вас два варианта: порадоваться завершению этого списка или изменить настройки фильтра, чтобы его расширить.</string>
     <key>episode_filter_no_episodes_title</key>
     <string>Нет выпусков</string>
     <key>episode_indicator_bonus</key>
@@ -1098,16 +631,12 @@ PodHopper на полную мощность.</string>
     <string>Ошибка</string>
     <key>error_general_podcast_not_found</key>
     <string>Не удается найти подкаст. Свяжитесь с автором подкаста.</string>
-    <key>export_database</key>
-    <string>Экспортировать базу данных</string>
     <key>export_podcasts_description</key>
     <string>Экспортирует все ваши подкасты в файл OPML, который можно импортировать в другие приложения для подкастов.</string>
     <key>export_podcasts_option</key>
     <string>Экспорт подкастов</string>
     <key>export_podcasts_title</key>
     <string>ЭКСПОРТ</string>
-    <key>exporting_database</key>
-    <string>Экспорт базы данных…</string>
     <key>failed_recommendations</key>
     <string>Не удалось загрузить рекомендации</string>
     <key>feature_marketing_all_plus_features</key>
@@ -1136,12 +665,6 @@ PodHopper на полную мощность.</string>
     <string>Новый</string>
     <key>feature_tour_step_format</key>
     <string>%1$@ из %2$@</string>
-    <key>feedback_continue_with_mail</key>
-    <string>Открыть приложение Mail по умолчанию</string>
-    <key>feedback_mail_not_configured_msg</key>
-    <string>Чтобы отправить вложение для отладки, на телефоне нужно настроить приложение Apple Mail. Что вы планируете сделать?</string>
-    <key>feedback_mail_not_configured_title</key>
-    <string>Приложение Mail не настроено</string>
     <key>file_upload_add_file</key>
     <string>Добавить файл</string>
     <key>file_upload_add_image</key>
@@ -1180,56 +703,18 @@ PodHopper на полную мощность.</string>
     <string>Файлы не загружены</string>
     <key>files_sort</key>
     <string>Упорядочить файлы</string>
-    <key>filter_auto_add_subtitle</key>
-    <string>Новые подкасты, на которые вы подписаны, будут добавляться автоматически</string>
-    <key>filter_auto_add_subtitle_new</key>
-    <string>Новые подкасты, на которые вы подписаны, будут добавляться автоматически</string>
-    <key>filter_chips_all_podcasts</key>
-    <string>Все ваши подкасты</string>
     <key>filter_chips_duration</key>
     <string>Продолжительность</string>
     <key>filter_choose_podcasts</key>
     <string>Выбрать подкасты</string>
-    <key>filter_create_add_more</key>
-    <string>Добавьте дополнительные условия, чтобы уточнить фильтр.</string>
-    <key>filter_create_filter_by</key>
-    <string>ФИЛЬТРОВАТЬ ПО</string>
-    <key>filter_create_instructions</key>
-    <string>С помощью этих кнопок выберите условия фильтрации, чтобы создать актуальный плейлист выпусков.</string>
     <key>filter_create_no_episodes</key>
     <string>Нет соответствующих выпусков</string>
-    <key>filter_create_no_episodes_description_explanation</key>
-    <string>Ни один текущий выпуск в ваших подписках не соответствует заданным условиям.</string>
-    <key>filter_create_no_episodes_description_explanation_new</key>
-    <string>Ни один текущий выпуск в ваших подкастах не соответствует заданным условиям</string>
-    <key>filter_create_no_episodes_description_prompt</key>
-    <string>Измените условия или сохраните этот фильтр, если вы предполагаете появление соответствующих выпусков в будущем.</string>
-    <key>filter_create_podcasts_all_podcasts</key>
-    <string>Все подкасты</string>
-    <key>filter_create_preview</key>
-    <string>ПРЕДВАРИТЕЛЬНЫЙ ПРОСМОТР</string>
-    <key>filter_create_save</key>
-    <string>Сохранить фильтр</string>
-    <key>filter_details</key>
-    <string>Сведения о фильтре</string>
-    <key>filter_details_color_icon</key>
-    <string>ЦВЕТ И ЗНАЧОК</string>
-    <key>filter_details_color_selection</key>
-    <string>Селектор цвета</string>
-    <key>filter_details_icon_selection</key>
-    <string>Селектор значков</string>
-    <key>filter_details_name</key>
-    <string>НАЗВАНИЕ</string>
     <key>filter_download_status</key>
     <string>Статус скачивания</string>
     <key>filter_episode_status</key>
     <string>Статус выпуска</string>
     <key>filter_longer_than_label</key>
     <string>Длиннее</string>
-    <key>filter_manual_add_subtitle</key>
-    <string>Новые подкасты, на которые вы подписаны, не будут добавляться автоматически</string>
-    <key>filter_manual_add_subtitle_new</key>
-    <string>Новые подкасты, на которые вы подписаны, не будут добавляться автоматически</string>
     <key>filter_media_type</key>
     <string>Тип медиафайла</string>
     <key>filter_media_type_audio</key>
@@ -1242,8 +727,6 @@ PodHopper на полную мощность.</string>
     <string>Фильтрация эпизодов длиннее %1$@, но короче %2$@, разорвет наш пространственно-временной континуум. Извините!</string>
     <key>filter_option_episode_duration_error_title</key>
     <string>Похоже, но нет</string>
-    <key>filter_options</key>
-    <string>Настройки фильтра</string>
     <key>filter_release_date</key>
     <string>Сбросить дату</string>
     <key>filter_release_date_anytime</key>
@@ -1272,10 +755,6 @@ PodHopper на полную мощность.</string>
     <string>Новые выпуски</string>
     <key>filters_new_filter_button</key>
     <string>Добавить новый фильтр</string>
-    <key>filters_tip_view_description</key>
-    <string>Создавайте умные фильтры, чтобы упорядочивать выпуски. Фильтрация по продолжительности, дате выпуска, типу медиафайла и др.</string>
-    <key>filters_tip_view_title</key>
-    <string>Упорядочивайте выпуски</string>
     <key>folder</key>
     <string>Папка</string>
     <key>folder_add_podcasts_plural_format</key>
@@ -1338,24 +817,10 @@ PodHopper на полную мощность.</string>
     <string>Список подкастов, удалённых из папок в результате синхронизации.</string>
     <key>follow</key>
     <string>Подписаться</string>
-    <key>free_trial_detail_label</key>
-    <string>Пользуйтесь бесплатно или отмените в любой момент</string>
-    <key>free_trial_duration_free</key>
-    <string>%1$@ БЕСПЛАТНО</string>
-    <key>free_trial_duration_free_trial</key>
-    <string>ПРОБНЫЙ ПЕРИОД НА %1$@</string>
-    <key>free_trial_pricing_terms</key>
-    <string>%1$@ бесплатно, затем %2$@</string>
-    <key>free_trial_start_and_subscribe_button</key>
-    <string>Начать бесплатный пробный период и подписаться</string>
     <key>free_trial_start_button</key>
     <string>Запустить бесплатную пробную версию</string>
-    <key>free_trial_title_label</key>
-    <string>Попробуйте Plus, %1$@ бесплатно</string>
     <key>funding</key>
     <string>Финансирование</string>
-    <key>funny_conf_msg</key>
-    <string>Он очень идет к вашим глазам ✨.</string>
     <key>funny_time_not_enough</key>
     <string>Вы ведь и правда мало слушаете, да?</string>
     <key>funny_time_unit_airplane_takeoffs</key>
@@ -1398,8 +863,6 @@ PodHopper на полную мощность.</string>
     <string>Понятно</string>
     <key>group_episodes</key>
     <string>Группировать выпуски</string>
-    <key>hang_on</key>
-    <string>Подождите немного!</string>
     <key>history_clear_all</key>
     <string>Очистить все</string>
     <key>history_clear_all_details</key>
@@ -1412,12 +875,8 @@ PodHopper на полную мощность.</string>
     <string>час сохранён</string>
     <key>hours_listened</key>
     <string>часов прослушано</string>
-    <key>hours_plural_format</key>
-    <string>%1$@ ч</string>
     <key>hours_saved</key>
     <string>часов сохранено</string>
-    <key>hours_singular_format</key>
-    <string>1 ч</string>
     <key>how_to_upload_explanation</key>
     <string>Сначала откройте приложение, содержащее аудиофайлы, которые вы хотите сохранить.</string>
     <key>how_to_upload_share_action_image_center_text</key>
@@ -1434,22 +893,8 @@ PodHopper на полную мощность.</string>
     <string>Поделитесь этим файлом</string>
     <key>how_to_upload_summary</key>
     <string>Всё готово! Измените любые настройки по своему вкусу, нажмите «Сохранить» и слушайте!</string>
-    <key>iap_product_monthly_pricing_format</key>
-    <string>%1$@ в месяц</string>
-    <key>iap_product_weekly_pricing_format</key>
-    <string>%1$@ в неделю</string>
     <key>import</key>
     <string>Импорт</string>
-    <key>import_instructions_apple_podcasts_steps</key>
-    <string>Можно импортировать подкасты из Apple Podcasts с помощью встроенного приложения "Шорткаты".
-Примечание. Если вы удалили приложение "Шорткаты", появится запрос на его повторную установку.
-
-1. Нажмите кнопку "Установить шорткат" ниже.
-2. Когда появится запрос, нажмите кнопку "Добавить шорткат".
-3. Нажмите вкладку "Шорткаты".
-4. В списке найдите шорткат "Из Apple Podcasts в PodHopper".
-5. Нажмите её, чтобы начать импорт.
-6. После запуска шортката снова откроется PodHopper для завершения импорта.</string>
     <key>import_instructions_breaker</key>
     <string>1. Нажмите кнопку "Открыть Breaker" ниже.
 2. Нажмите "Настройки" на нижней панели вкладок.
@@ -1480,8 +925,6 @@ PodHopper на полную мощность.</string>
     <string>Установить шорткат</string>
     <key>import_instructions_open_in</key>
     <string>Открыть %1$@</string>
-    <key>import_instructions_other_apps_title</key>
-    <string>других приложений</string>
     <key>import_instructions_overcast</key>
     <string>1. Нажмите кнопку ниже, чтобы открыть Overcast.
 2. Нажмите значок шестерёнки в верхней части экрана приложения.
@@ -1506,14 +949,6 @@ PodHopper на полную мощность.</string>
 подкасты с собой</string>
     <key>in_progress</key>
     <string>Выполняется</string>
-    <key>interests_select_at_least</key>
-    <string>Выбрать хотя бы %1$@</string>
-    <key>interests_show_more_categories</key>
-    <string>Показать больше рубрик</string>
-    <key>interests_subtitle</key>
-    <string>Отличные подкасты, подобранные вручную, уже на пути к вам!</string>
-    <key>interests_title</key>
-    <string>Расскажите нам о своих любимых темах</string>
     <key>keycommand_close_player</key>
     <string>Закрыть плеер</string>
     <key>keycommand_decrease_speed</key>
@@ -1524,32 +959,6 @@ PodHopper на полную мощность.</string>
     <string>Открыть плеер</string>
     <key>keycommand_play_pause</key>
     <string>Воспроизведение/пауза</string>
-    <key>kids_profile_banner_badge</key>
-    <string>Уже скоро</string>
-    <key>kids_profile_banner_request_button</key>
-    <string>Запросить ранний доступ </string>
-    <key>kids_profile_banner_text</key>
-    <string>Новый профиль исключительно с детским контентом, не затрагивающий ваши подписки.</string>
-    <key>kids_profile_banner_title</key>
-    <string>Профиль «Дети»</string>
-    <key>kids_profile_submit_error</key>
-    <string>Что-то пошло не так. Попробуйте отправить отзыв ещё раз</string>
-    <key>kids_profile_submit_feedback_send_button</key>
-    <string>Отправить</string>
-    <key>kids_profile_submit_feedback_title</key>
-    <string>Что бы вы хотели видеть в профиле «Дети» PodHopper?</string>
-    <key>kids_profile_submit_success</key>
-    <string>Спасибо за ваш отзыв!</string>
-    <key>kids_profile_thankyou_button_close</key>
-    <string>Нет, спасибо</string>
-    <key>kids_profile_thankyou_button_send</key>
-    <string>Отправить отзыв</string>
-    <key>kids_profile_thankyou_text</key>
-    <string>Когда новый профиль «Дети» будет готов, вы получите уведомление в приложении. Желаете сообщить нам, что вы хотели бы увидеть?</string>
-    <key>kids_profile_thankyou_title</key>
-    <string>Благодарим за проявленный интерес!</string>
-    <key>learn_about_ratings</key>
-    <string>Подробнее об оценках</string>
     <key>learn_more</key>
     <string>Подробнее</string>
     <key>listening_history</key>
@@ -1562,20 +971,8 @@ PodHopper на полную мощность.</string>
     <string>Выпуски не найдены</string>
     <key>loading</key>
     <string>Загрузка…</string>
-    <key>login_landing_subtitle</key>
-    <string>Ваши подкасты всегда будут синхронизированы. Защитите свою библиотеку и пользуйтесь PodHopper в Интернете и на ПК.</string>
-    <key>login_landing_title</key>
-    <string>Создать учётную запись PodHopper</string>
-    <key>login_subtitle</key>
-    <string>Создайте учётную запись, чтобы синхронизировать и слушать любимый контент на всех устройствах.</string>
-    <key>login_title</key>
-    <string>Найдите ещё один любимый подкаст</string>
     <key>logs</key>
     <string>Журналы</string>
-    <key>logs_no_email_account_configured</key>
-    <string>Для отправки журналов необходимо настроить учётную запись электронной почты на устройстве.</string>
-    <key>logs_watch_os_not_available</key>
-    <string>Нет доступных журналов watchOS. Убедитесь, что установлены сопряжённые часы Apple Watch и приложение для часов PodHopper.</string>
     <key>manage_downloads_action</key>
     <string>Управлять скачиваниями</string>
     <key>manage_downloads_detail</key>
@@ -1668,18 +1065,12 @@ PodHopper на полную мощность.</string>
     <string>Удаление из избранного 1 выпуска</string>
     <key>name</key>
     <string>Название</string>
-    <key>new_email_address_prompt</key>
-    <string>Новый адрес электронной почты</string>
     <key>new_episodes</key>
     <string>Следующие выпуски</string>
-    <key>new_password_prompt</key>
-    <string>Новый пароль</string>
     <key>next</key>
     <string>Вперёд</string>
     <key>next_episode</key>
     <string>Следующий выпуск</string>
-    <key>next_payment_format</key>
-    <string>Следующий платеж: %1$@</string>
     <key>no_bookmarks_button_title</key>
     <string>Настройки наушников</string>
     <key>no_bookmarks_locked_button_title</key>
@@ -1694,10 +1085,6 @@ PodHopper на полную мощность.</string>
     <string>Пусто</string>
     <key>not_on_wifi</key>
     <string>Вы не подключены к WiFi</string>
-    <key>notifications_app_clip_body</key>
-    <string>Установите PodHopper, чтобы пользоваться всеми возможностями мощных инструментов воспроизведения и настройки.</string>
-    <key>notifications_app_clip_title</key>
-    <string>Готовы слушать новые подкасты?</string>
     <key>notifications_daily_reminders</key>
     <string>Ежедневные напоминания</string>
     <key>notifications_new_feature_suggested_folders_body</key>
@@ -1808,18 +1195,6 @@ PodHopper на полную мощность.</string>
     <string>OK</string>
     <key>on</key>
     <string>На</string>
-    <key>onboarding_quote_author</key>
-    <string>Пользователь PodHopper</string>
-    <key>onboarding_quote_best</key>
-    <string>Это лучшее приложение для подкастов. Безусловно</string>
-    <key>onboarding_quote_customization</key>
-    <string>Возможности настройки — просто с ума сойти</string>
-    <key>onboarding_quote_folders</key>
-    <string>Разложить подкасты по папкам — это гениально</string>
-    <key>onboarding_recommendations_subtitle</key>
-    <string>Вот несколько отличных шоу для начала. Нажмите, чтобы подписаться, искать или импортировать из других приложений.</string>
-    <key>onboarding_recommendations_title</key>
-    <string>Надеемся, вам понравятся эти предложения!</string>
     <key>only_on_unmetered_wifi</key>
     <string>Только в сетях Wi-Fi без тарификации</string>
     <key>only_on_unmetered_wifi_details</key>
@@ -1838,37 +1213,10 @@ PodHopper на полную мощность.</string>
     <string>Импорт подкастов...</string>
     <key>page_control_page_progress_format</key>
     <string>Стр. %1$@ из %2$@</string>
-    <key>paid_podcast_bundled_subscriptions</key>
-    <string>ПОДПИСКА НА %1$@ ИЗ %2$@</string>
-    <key>paid_podcast_cancel</key>
-    <string>Отменить взнос </string>
-    <key>paid_podcast_cancel_msg_plural</key>
-    <string>Статус спонсора действует до %1$@. После этого вы не сможете прослушивать эти подкасты.</string>
-    <key>paid_podcast_cancel_msg_retain_access</key>
-    <string>Статус спонсора действует до %1$@. Вы сможете прослушивать только те выпуски, которые вышли до этой даты.</string>
-    <key>paid_podcast_cancel_msg_singular</key>
-    <string>Статус спонсора действует до %1$@. После этого вы не сможете прослушивать этот подкаст.</string>
-    <key>paid_podcast_generic_error</key>
-    <string>Не удалось загрузить сведения</string>
-    <key>paid_podcast_manage</key>
-    <string>Управление</string>
     <key>paid_podcast_next_episode_format</key>
     <string>Следующий выпуск %1$@</string>
     <key>paid_podcast_release_frequency_format</key>
     <string>Выпущен %1$@</string>
-    <key>paid_podcast_signin_prompt_msg</key>
-    <string>ПОДПИСАТЬСЯ НА
-ОБНОВЛЕНИЯ</string>
-    <key>paid_podcast_signin_prompt_title</key>
-    <string>Подписаться на обновления </string>
-    <key>paid_podcast_subscription_ended</key>
-    <string>ЗАВЕРШЕНА: %1$@</string>
-    <key>paid_podcast_subscription_ends</key>
-    <string>ЗАВЕРШАЕТСЯ: %1$@</string>
-    <key>paid_podcast_supporter_only_msg</key>
-    <string>Лента только для спонсоров</string>
-    <key>paid_podcast_unsubscribe_msg</key>
-    <string>При отмене подписки на все эти подкасты все скачанные файлы будут удалены, продолжить?</string>
     <key>patron</key>
     <string>Patron</string>
     <key>patron_callout</key>
@@ -1883,20 +1231,8 @@ PodHopper на полную мощность.</string>
     <string>Значок профиля для спонсоров</string>
     <key>patron_feature_profile_icons</key>
     <string>Специальные значки приложения PodHopper</string>
-    <key>patron_purchase_promo_title</key>
-    <string>Станьте пользователем Patron и получите доступ ко всем возможностям PodHopper</string>
     <key>patron_subscribe_to</key>
     <string>Подписаться на Patron</string>
-    <key>patron_thank_you</key>
-    <string>Спасибо за вашу поддержку!</string>
-    <key>patron_unlock_instructions</key>
-    <string>Удерживайте кнопку разблокировки, чтобы получить токены как знак нашей благодарности.</string>
-    <key>patron_unlock_release</key>
-    <string>Отпустите, чтобы разблокировать</string>
-    <key>patron_unlock_word</key>
-    <string>разблокировать</string>
-    <key>patron_unlocking</key>
-    <string>Разблокировка</string>
     <key>pause</key>
     <string>Пауза</string>
     <key>paywall_dynamic_headline_banner_ad</key>
@@ -1927,143 +1263,6 @@ PodHopper на полную мощность.</string>
     <string>Воспроизвести следующий</string>
     <key>play_next_in_up_next</key>
     <string>Воспроизвести следующий в очереди «Следующие»</string>
-    <key>playback_2024_completion_rate_description</key>
-    <string>Из %1$@ запущенных выпусков всего вы дослушали до конца %2$@</string>
-    <key>playback_2024_completion_rate_title</key>
-    <string>Ваш процент завершения в этом году равен %1$@</string>
-    <key>playback_2024_description</key>
-    <string>Просмотрите свой топ подкастов и рубрик, статистику прослушивания и другие показатели. Поделитесь с друзьями и поблагодарите любимых подкастеров.</string>
-    <key>playback_2024_feature_description</key>
-    <string>Просмотрите свой топ подкастов, статистику прослушивания и другие показатели.</string>
-    <key>playback_2024_feature_title</key>
-    <string>Ваша история прослушиваний за 2024 год уже готова!</string>
-    <key>playback_2024_listening_time_description</key>
-    <string>Общее время прослушивания подкастов: %1$@</string>
-    <key>playback_2024_longest_episode_description</key>
-    <string>Это был выпуск «%1$@» подкаста «%2$@»</string>
-    <key>playback_2024_longest_episode_title</key>
-    <string>Самым длинным выпуском, который вы прослушали, стал %1$@</string>
-    <key>playback_2024_plus_upsell_button_title</key>
-    <string>Попробуйте PodHopper Plus</string>
-    <key>playback_2024_plus_upsell_description</key>
-    <string>Поддержите PodHopper, подписавшись на Plus, и пользуйтесь развёрнутой статистикой и премиум-функциями, например: закладками, папками и предварительным выбором глав!</string>
-    <key>playback_2024_plus_upsell_title</key>
-    <string>И это ещё не всё!</string>
-    <key>playback_2024_ratings_description_1_to_3</key>
-    <string>Благодарим за то, что поделились своим мнением с сообществом авторов</string>
-    <key>playback_2024_ratings_description_4_to_5</key>
-    <string>Ого, сколько %1$@-звёздных оценок! Благодарим за то, что вы выразили признательность своим любимым авторам.</string>
-    <key>playback_2024_ratings_empty_description</key>
-    <string>Знаете ли вы, что теперь можно оценивать шоу? Выразите признательность своим любимым авторам и помогите им стать популярнее!</string>
-    <key>playback_2024_ratings_empty_title</key>
-    <string>Ой! Оценок подкастов ещё нет</string>
-    <key>playback_2024_ratings_title</key>
-    <string>Давайте посмотрим ваши оценки!</string>
-    <key>playback_2024_top_spot_description</key>
-    <string>Вы прослушали %1$@ вып. Прослушано %2$@ из «%3$@»</string>
-    <key>playback_2024_top_spot_title</key>
-    <string>Это ваш любимый подкаст 2024 года</string>
-    <key>playback_2024_view_year</key>
-    <string>Посмотрите свою историю прослушиваний в 2024 году</string>
-    <key>playback_2024_year_over_year_compare_description_down</key>
-    <string>И… как, вам хватает времени на всё остальное?</string>
-    <key>playback_2024_year_over_year_compare_description_same</key>
-    <string>Говорят, постоянство — это ключ к успеху… или что-то в этом роде!</string>
-    <key>playback_2024_year_over_year_compare_description_up</key>
-    <string>Готовы превзойти свой рекорд в 2025 году?</string>
-    <key>playback_2024_year_over_year_compare_title_down_little</key>
-    <string>По сравнению с 2023 годом вы стали слушать немного меньше</string>
-    <key>playback_2024_year_over_year_compare_title_down_lot</key>
-    <string>По сравнению с 2023 годом ваше время прослушивания снизилось сразу на %1$@</string>
-    <key>playback_2024_year_over_year_compare_title_down_over_500</key>
-    <string>В сравнении с 2023 годом вы провели на %1$@ меньше времени, слушая подкасты.</string>
-    <key>playback_2024_year_over_year_compare_title_same</key>
-    <string>Вы посвятили прослушиванию примерно столько же времени, сколько и в 2023 году.</string>
-    <key>playback_2024_year_over_year_compare_title_up_above_maximum</key>
-    <string>В сравнении с 2023 годом вы провели на %1$@ больше времени, слушая подкасты.</string>
-    <key>playback_2024_year_over_year_compare_title_up_little</key>
-    <string>По сравнению с 2023 годом вы стали слушать немного больше</string>
-    <key>playback_2024_year_over_year_compare_title_up_lot</key>
-    <string>По сравнению с 2023 годом ваше время прослушивания возросло сразу на %1$@</string>
-    <key>playback_2024_year_over_year_compare_title_up_over_500</key>
-    <string>В сравнении с 2023 годом вы провели на %1$@ больше времени, слушая подкасты.</string>
-    <key>playback_2025_completion_rate_message</key>
-    <string>Из %1$@ начатых выпусков вы дослушали до конца %2$@. Куда регулярнее, чем большинство абонементов в спортзал</string>
-    <key>playback_2025_completion_rate_title</key>
-    <string>Ваш процент завершения равен %1$@</string>
-    <key>playback_2025_end_story_description</key>
-    <string>Поделитесь своей статистикой с друзьями и покажите подкастерам, с которыми вы провели весь этот год, как вы их любите</string>
-    <key>playback_2025_end_story_title</key>
-    <string>Спасибо, что провели весь год с PodHopper</string>
-    <key>playback_2025_failed_to_load</key>
-    <string>Не удалось загрузить ваш год в подкастах</string>
-    <key>playback_2025_feature_description</key>
-    <string>Просмотрите свой топ подкастов, статистику прослушивания и другие показатели.</string>
-    <key>playback_2025_feature_title</key>
-    <string>Ваш год в подкастах уже здесь!</string>
-    <key>playback_2025_intro_message</key>
-    <string>Ваш год в подкастах, уже под ёлкой в подарочной обёртке</string>
-    <key>playback_2025_listened_to_numbers</key>
-    <string>Вы слушали %1$@ подкастов(-а) и %2$@ выпусков(-а)</string>
-    <key>playback_2025_listening_time</key>
-    <string>мин прослушано</string>
-    <key>playback_2025_longest_episode_footer</key>
-    <string>Самым длинным выпуском был %1$@ из %2$@</string>
-    <key>playback_2025_longest_episode_message</key>
-    <string>Готовьтесь узнать новости!</string>
-    <key>playback_2025_longest_episode_title</key>
-    <string>Ваш марафон прослушивания: %1$@</string>
-    <key>playback_2025_plus_thanks_description</key>
-    <string>Преимущества %1$@ дают возможность пользоваться дополнительной статистикой и возможностями</string>
-    <key>playback_2025_plus_thanks_title</key>
-    <string>Благодарим за поддержку PodHopper!</string>
-    <key>playback_2025_plus_upsell_button_title</key>
-    <string>Приобретайте PodHopper Plus</string>
-    <key>playback_2025_plus_upsell_description</key>
-    <string>Подписывайтесь на PodHopper Plus и пользуйтесь расширенной статистикой, закладками, папками, выбором глав и множеством других инструментов для прослушивания</string>
-    <key>playback_2025_plus_upsell_title</key>
-    <string>Хотите больше возможностей?</string>
-    <key>playback_2025_ratings_description_1_to_3</key>
-    <string>Отзывы помогают лучшим шоу завоевать популярность</string>
-    <key>playback_2025_ratings_description_4_to_5</key>
-    <string>Все авторы ценят признание</string>
-    <key>playback_2025_ratings_empty_description</key>
-    <string>Помогите любимым авторам завоевать популярность — делитесь тем, что вы любите</string>
-    <key>playback_2025_ratings_empty_title</key>
-    <string>Оценок пока нет, но всё ещё впереди!</string>
-    <key>playback_2025_ratings_title_1_to_3</key>
-    <string>Благодарим за то, что поделились мнением.</string>
-    <key>playback_2025_ratings_title_4_to_5</key>
-    <string>%1$@-звёздный рейтинг посыпался, как конфетти!</string>
-    <key>playback_2025_top_5_podcasts_message</key>
-    <string>Больше любимых подкастов, больше удовольствия, больше индивидуальности</string>
-    <key>playback_2025_top_5_podcasts_title</key>
-    <string>Остальные ваши показатели</string>
-    <key>playback_2025_top_spot_description</key>
-    <string>Выпусков: %1$@, %2$@.
-Вот к чему мы стремимся!</string>
-    <key>playback_2025_top_spot_subtitle</key>
-    <string>Это говорит о вас очень многое</string>
-    <key>playback_2025_top_spot_title</key>
-    <string>Ваши любимые подкасты 2025 года</string>
-    <key>playback_2025_view_year</key>
-    <string>Просмотреть мою историю прослушиваний за 2025 год</string>
-    <key>playback_2025_year_over_year_comparison_down_message</key>
-    <string>Только учтите: качество важнее количества</string>
-    <key>playback_2025_year_over_year_comparison_down_title</key>
-    <string>В этом году вы слушали на %1$@ внимательнее</string>
-    <key>playback_2025_year_over_year_comparison_hero_message</key>
-    <string>В этом году вы прослушали на %1$@ больше — добро пожаловать в клуб</string>
-    <key>playback_2025_year_over_year_comparison_hero_title</key>
-    <string>С нуля — в чемпионы!</string>
-    <key>playback_2025_year_over_year_comparison_same_message</key>
-    <string>Верный и надёжный, как кофе, который вы всегда заказываете</string>
-    <key>playback_2025_year_over_year_comparison_same_title</key>
-    <string>В 2025 году вы посвятили прослушиванию столько же времени, сколько и в предыдущем.</string>
-    <key>playback_2025_year_over_year_comparison_up_message</key>
-    <string>Больше подкастов, больше радости</string>
-    <key>playback_2025_year_over_year_comparison_up_title</key>
-    <string>По сравнению с 2024 годом вы посвятили прослушиванию на %1$@ больше времени!</string>
     <key>playback_effect_all_podcasts</key>
     <string>Все подкасты</string>
     <key>playback_effect_this_podcast</key>
@@ -2078,8 +1277,6 @@ PodHopper на полную мощность.</string>
     <string>Эффекты воспроизведения</string>
     <key>playback_failed</key>
     <string>Не удалось воспроизвести</string>
-    <key>playback_not_available</key>
-    <string>Ваш год в подкастах недоступен</string>
     <key>playback_speed</key>
     <string>%1$@x</string>
     <key>player_accessibility_sleep_timer_on</key>
@@ -2108,8 +1305,6 @@ PodHopper на полную мощность.</string>
     <string>Тема %1$@</string>
     <key>player_chapter_count</key>
     <string>%1$@ из %2$@</string>
-    <key>player_decrement_time</key>
-    <string>Интервал перемотки назад</string>
     <key>player_effects_trim_silence_details</key>
     <string>Сокращает длину выпуска, вырезая паузы в разговорах.</string>
     <key>player_effects_trim_silence_progress</key>
@@ -2130,24 +1325,14 @@ PodHopper на полную мощность.</string>
     <string>Отсутствует подключение к Интернету</string>
     <key>player_error_short_playback_error</key>
     <string>Не удалось воспроизвести, повторите попытку</string>
-    <key>player_increment_time</key>
-    <string>Интервал перемотки вперед</string>
     <key>player_mark_as_played_confirmation</key>
     <string>Отметить этот эпизод как прослушанный?</string>
     <key>player_mark_as_played_confirmation_message</key>
     <string>Он будет перемещён из списка «Следующие» в вашу историю.</string>
-    <key>player_options_play_all_message</key>
-    <string>При этом текущая очередь «Следующие» будет очищена.</string>
-    <key>player_options_play_episode_singular</key>
-    <string>Слушать 1 выпуск</string>
-    <key>player_options_play_episodes_plural</key>
-    <string>Слушать выпуски (%1$@)</string>
     <key>player_options_shortcut_on_player</key>
     <string>ШОРТКАТ НА ПЛЕЕРЕ</string>
     <key>player_route_selection</key>
     <string>Селектор маршрута</string>
-    <key>player_share_header</key>
-    <string>ПОДЕЛИТЬСЯ ССЫЛКОЙ С</string>
     <key>player_show_notes_title</key>
     <string>Сведения</string>
     <key>player_user_episode_download_error</key>
@@ -2214,16 +1399,6 @@ PodHopper на полную мощность.</string>
     <string>Все выпуски архивированы. Чтобы начать воспроизведение, добавьте или распакуйте архив.</string>
     <key>playlist_options</key>
     <string>Настройки плейлиста</string>
-    <key>playlist_play_all_option_save_queue</key>
-    <string>Сохранить текущий список</string>
-    <key>playlist_play_all_picker_message</key>
-    <string>При воспроизведении этого плейлиста текущий список «Следующие» будет заменён. Сперва сохраните его, если он вам нужен.</string>
-    <key>playlist_play_all_picker_title</key>
-    <string>Сохранить список «Следующие»?</string>
-    <key>playlist_play_all_replace_picker_message</key>
-    <string>Текущий список «Следующие» будет сброшен, и начнётся воспроизведение этого плейлиста.</string>
-    <key>playlist_play_all_replace_picker_title</key>
-    <string>Заменить текущий список «Следующие»?</string>
     <key>playlist_play_all_sheet_button_title</key>
     <string>Заменить и воспроизвести</string>
     <key>playlist_play_all_sheet_description</key>
@@ -2246,8 +1421,6 @@ PodHopper на полную мощность.</string>
     <string>У вас два варианта: порадоваться завершению этого списка или изменить правила, чтобы его расширить.</string>
     <key>playlist_smart_preview_description</key>
     <string>Настройте умные правила, чтобы автоматически добавлять выпуски в свой умный плейлист.</string>
-    <key>playlist_smart_preview_enabled_rules</key>
-    <string>Включённые правила</string>
     <key>playlist_smart_preview_more_rules</key>
     <string>Другие правила</string>
     <key>playlist_smart_rule_podcasts_header_subtitle_auto_add</key>
@@ -2270,8 +1443,6 @@ PodHopper на полную мощность.</string>
     <string>Плейлисты</string>
     <key>playlists_auto_download_off_subtitle</key>
     <string>Включите, чтобы автоматически скачивать выпуски из этого плейлиста</string>
-    <key>playlists_auto_download_on_plural_format</key>
-    <string>Первые выпуски (%1$@) в этом плейлисте будут скачаны автоматически</string>
     <key>playlists_default_new_playlist</key>
     <string>Новый плейлист</string>
     <key>playlists_delete</key>
@@ -2302,58 +1473,10 @@ PodHopper на полную мощность.</string>
     <string>Попробуйте еще раз</string>
     <key>please_try_again_later</key>
     <string>Повторите попытку позже.</string>
-    <key>plus_account_required_prompt</key>
-    <string>Для PodHopper Plus требуется учетная запись PodHopper. Это позволяет беспрепятственно слушать подкасты на всех ваших устройствах.</string>
-    <key>plus_account_required_prompt_details</key>
-    <string>Создайте учетную запись или войдите в систему, чтобы получить доступ к PodHopper Plus.</string>
-    <key>plus_account_trial_details</key>
-    <string>По окончании пробного периода вы по-прежнему сможете пользоваться всеми преимуществами своей обычной учетной записи. Удачных подкастов!</string>
-    <key>plus_button_title_unlock_all</key>
-    <string>Разблокировать все функции</string>
-    <key>plus_cancel_terms</key>
-    <string>Можно отменить в любое время</string>
-    <key>plus_champion</key>
-    <string>Чемпион PodHopper</string>
-    <key>plus_champion_message</key>
-    <string>Благодарим за то, что вы с PodHopper с самого начала! Вы настоящий чемпион!</string>
     <key>plus_cloud_storage_limit_format</key>
     <string>Облачное хранилище %1$@ ГБ</string>
     <key>plus_discount_yearly_membership</key>
     <string>Скидка 50%% на первый год</string>
-    <key>plus_error_already_registered</key>
-    <string>У вас уже есть учетная запись PodHopper Plus</string>
-    <key>plus_error_already_registered_details</key>
-    <string>Спасибо за вашу поддержку, но, к сожалению, это означает, что вы не можете участвовать в этой акции.</string>
-    <key>plus_expiration_format</key>
-    <string>Истекает %1$@</string>
-    <key>plus_feature_card_text_bookmarks</key>
-    <string>Сохраняйте ваши любимые фрагменты любого выпуска и возвращайтесь к ним.</string>
-    <key>plus_feature_card_text_desktop</key>
-    <string>Слушайте повсюду: в приложениях для Windows, для macOS и в веб-приложении.</string>
-    <key>plus_feature_card_text_extra_themes</key>
-    <string>Покажите себя во всей красе. Эксклюзивные значки и темы для наших подписчиков.</string>
-    <key>plus_feature_card_text_folders</key>
-    <string>Распределите подкасты по папкам и синхронизируйте их на всех устройствах.</string>
-    <key>plus_feature_card_text_slumber_studio</key>
-    <string>Получите годовую подписку на премиум-контент от Slumber Studios.</string>
-    <key>plus_feature_card_text_storage</key>
-    <string>Загрузите аудиофайлы в облачное хранилище и пользуйтесь ими, где бы вы ни находились.</string>
-    <key>plus_feature_card_text_wear_os</key>
-    <string>Отправляйтесь на лёгкую пробежку без телефона.</string>
-    <key>plus_feature_card_title_bookmarks</key>
-    <string>Закладки</string>
-    <key>plus_feature_card_title_desktop</key>
-    <string>Приложения для ПК и веб-приложения</string>
-    <key>plus_feature_card_title_extra_themes</key>
-    <string>Дополнительные темы и значки</string>
-    <key>plus_feature_card_title_folders</key>
-    <string>Папки</string>
-    <key>plus_feature_card_title_slumber_studio</key>
-    <string>Slumber Studios — мы помогаем вам мечтать</string>
-    <key>plus_feature_card_title_storage</key>
-    <string>20 ГБ дискового пространства</string>
-    <key>plus_feature_card_title_wear_os</key>
-    <string>Воспроизведение на Apple Watch и Wear OS</string>
     <key>plus_feature_gratitude</key>
     <string>Бесконечная благодарность от всей команды PodHopper</string>
     <key>plus_feature_librofm</key>
@@ -2370,98 +1493,34 @@ PodHopper на полную мощность.</string>
     <string>Пробный период в течение %1$@</string>
     <key>plus_marketing_bookmarks_title</key>
     <string>Закладки</string>
-    <key>plus_marketing_desktop_apps_title</key>
-    <string>Приложения для ПК и веб-приложения</string>
-    <key>plus_marketing_folders_and_bookmarks_title</key>
-    <string>Папки и закладки</string>
-    <key>plus_marketing_folders_description</key>
-    <string>Создавайте папки для подкастов, чтобы навести порядок в своей коллекции.</string>
     <key>plus_marketing_folders_title</key>
     <string>Папки</string>
     <key>plus_marketing_generated_transcripts</key>
     <string>Автоматические расшифровки</string>
-    <key>plus_marketing_hide_ads_description</key>
-    <string>Без рекламы у вас будет больше того, что вам нравится, и меньше того, что вам не нравится.</string>
-    <key>plus_marketing_hide_ads_title</key>
-    <string>Скрыть рекламу</string>
     <key>plus_marketing_learn_more_button</key>
     <string>Подробнее о PodHopper Plus</string>
-    <key>plus_marketing_main_description</key>
-    <string>Личное пространство в открытом мире. Загрузите свои личные аудиофайлы на наши облачные серверы, зайдите в свою учетную запись через веб-плеер и пользуйтесь приложением.</string>
     <key>plus_marketing_no_banner_ads</key>
     <string>Никаких рекламных баннеров</string>
-    <key>plus_marketing_subtitle</key>
-    <string>Получите доступ к эксклюзивным функциям и опциям настройки</string>
-    <key>plus_marketing_themes_icons_title</key>
-    <string>Темы и значки</string>
     <key>plus_marketing_title</key>
     <string>Всё, что вам нравится в PodHopper, и ещё больше</string>
     <key>plus_marketing_up_next_shuffle</key>
     <string>Следующий, случайно выбранный элемент</string>
-    <key>plus_marketing_updated_cloud_storage_description</key>
-    <string>Загрузите файлы в облачное хранилище и пользуйтесь ими, где бы вы ни находились.</string>
-    <key>plus_marketing_updated_desktop_apps_description</key>
-    <string>Слушайте подкасты везде: в приложениях для Windows и macOS и веб-приложении.</string>
-    <key>plus_marketing_updated_folders_description</key>
-    <string>Распределите подкасты по папкам и синхронизируйте их на всех устройствах.</string>
     <key>plus_marketing_watch_playback_title</key>
     <string>Приложения для Apple Watch и Wear OS</string>
     <key>plus_monthly_frequency_pricing_format</key>
     <string>%1$@ в месяц</string>
-    <key>plus_payment_canceled</key>
-    <string>Оплата отменена</string>
-    <key>plus_payment_frequency_best_value</key>
-    <string>Максимальная выгода</string>
-    <key>plus_per_month</key>
-    <string>за месяц</string>
-    <key>plus_price_per_month</key>
-    <string>%1$@ в месяц</string>
     <key>plus_promo_paragraph</key>
     <string>Приобретите PodHopper Plus, чтобы разблокировать эту и множество других функций!</string>
-    <key>plus_promotion_expired</key>
-    <string>Срок промокода истек, или он недействителен</string>
-    <key>plus_promotion_expired_nudge</key>
-    <string>Вы все равно можете зарегистрироваться на PodHopper Plus, создать обычную учетную запись или просто погрузиться в прослушивание.</string>
-    <key>plus_promotion_used</key>
-    <string>Код уже использован</string>
-    <key>plus_purchase_failed</key>
-    <string>Похоже, что при обработке вашего платежа возникла проблема. Повторите попытку.</string>
-    <key>plus_purchase_promo_title</key>
-    <string>Станьте пользователем Plus и получите доступ ко всем возможностям PodHopper</string>
-    <key>plus_required_feature</key>
-    <string>Для работы этой функции требуется PodHopper Plus</string>
-    <key>plus_select_payment_frequency</key>
-    <string>Выбрать срок оплаты</string>
-    <key>plus_skip</key>
-    <string>Пропустить</string>
     <key>plus_start_my_free_trial</key>
     <string>Начать бесплатный пробный период</string>
-    <key>plus_start_trial_duration_price</key>
-    <string>Попробуйте в течение %1$@, затем %2$@</string>
     <key>plus_subscribe_to</key>
     <string>Подписаться на Plus</string>
-    <key>plus_subscription_apple</key>
-    <string>Ваша подписка управляется магазином Apple App Store</string>
-    <key>plus_subscription_apple_details</key>
-    <string>Чтобы аннулировать подписку, вам нужно отменить ее в настройках.</string>
-    <key>plus_subscription_expiration</key>
-    <string>PLUS ИСТЕКАЕТ %1$@</string>
-    <key>plus_subscription_google</key>
-    <string>Похоже, вы подписались на PodHopper Plus на устройстве Android</string>
-    <key>plus_subscription_google_details</key>
-    <string>Чтобы аннулировать подписку, вам нужно отменить ее в настройках.</string>
-    <key>plus_subscription_web</key>
-    <string>Похоже, вы подписались на PodHopper Plus через Интернет</string>
-    <key>plus_subscription_web_details</key>
-    <string>Чтобы аннулировать подписку, вам нужно отменить ее на сайте Pocketcasts.com.</string>
     <key>plus_upgrade_no_internet_message</key>
     <string>Проверьте подключение к Интернету и повторите попытку.</string>
     <key>plus_upgrade_no_internet_title</key>
     <string>Не удалось загрузить</string>
     <key>plus_yearly_frequency_pricing_format</key>
     <string>%1$@ в год</string>
-    <key>pocket_casts_logo</key>
-    <string>Логотип PodHopper</string>
     <key>pocket_casts_newsletter</key>
     <string>Новостная рассылка PodHopper</string>
     <key>pocket_casts_newsletter_description</key>
@@ -2585,20 +1644,8 @@ PodHopper на полную мощность.</string>
     <string>%1$@ удалён из %2$@</string>
     <key>podcast_season_format</key>
     <string>Выпуск %1$@</string>
-    <key>podcast_share_episode</key>
-    <string>Поделиться ссылкой на выпуск</string>
     <key>podcast_share_episode_error_msg</key>
     <string>У вас не установлены приложения, которые могли бы открыть этот файл</string>
-    <key>podcast_share_error_msg</key>
-    <string>Возможно, автор подкаста удалил его после того, как была опубликована эта ссылка.</string>
-    <key>podcast_share_error_title</key>
-    <string>Не удается найти выпуск</string>
-    <key>podcast_share_list_creating</key>
-    <string>Создание списка...</string>
-    <key>podcast_share_list_description</key>
-    <string>Описание (необязательно)</string>
-    <key>podcast_share_list_name</key>
-    <string>Имя списка</string>
     <key>podcast_share_open_file</key>
     <string>Открыть файл в...</string>
     <key>podcast_show_archived</key>
@@ -2631,8 +1678,6 @@ PodHopper на полную мощность.</string>
     <string>Обновления завершены: %1$@</string>
     <key>podcast_updates_ends</key>
     <string>Обновления завершаются: %1$@</string>
-    <key>podcast_upload_confirmation</key>
-    <string>Загрузить сейчас</string>
     <key>podcast_uploading</key>
     <string>Загрузка... %1$@</string>
     <key>podcast_view_changes_tip_details</key>
@@ -2689,8 +1734,6 @@ PodHopper на полную мощность.</string>
     <string>Список</string>
     <key>podcasts_plural</key>
     <string>Подкасты</string>
-    <key>podcasts_share</key>
-    <string>Поделиться подкастами </string>
     <key>podcasts_small_grid</key>
     <string>Маленькая сетка</string>
     <key>podcasts_sort</key>
@@ -2699,8 +1742,6 @@ PodHopper на полную мощность.</string>
     <string>Предварительный просмотр</string>
     <key>pricing_terms_after_discount</key>
     <string>Регулярные платежи: %1$@ после %2$@ (%3$@)</string>
-    <key>pricing_terms_after_trial</key>
-    <string>затем %1$@</string>
     <key>pricing_terms_after_trial_long</key>
     <string>Регулярные платежи начнутся после пробного периода продолжительностью %1$@ (с %2$@)</string>
     <key>profile</key>
@@ -2717,24 +1758,12 @@ PodHopper на полную мощность.</string>
     <string>Файлов: %1$@</string>
     <key>profile_percent_full</key>
     <string>Заполнено %1$@</string>
-    <key>profile_reset_password</key>
-    <string>Задать пароль</string>
-    <key>profile_sending_reset_email</key>
-    <string>Отправка письма для сброса...</string>
-    <key>profile_sending_reset_email_conf_msg</key>
-    <string>Проверьте свой адрес эл. почты!</string>
-    <key>profile_sending_reset_email_conf_title</key>
-    <string>Отправлена ссылка для сброса пароля</string>
-    <key>profile_sending_reset_email_failed</key>
-    <string>Не удалось отправить письмо для сброса, повторите попытку позже.</string>
     <key>profile_single_file</key>
     <string>1 файл</string>
     <key>profile_starred_no_episodes_desc</key>
     <string>Отмечайте понравившиеся выпуски и возвращайтесь к ним, когда захотите.</string>
     <key>profile_starred_no_episodes_title</key>
     <string>Сохраняйте то, что вам понравилось</string>
-    <key>purchase_terms</key>
-    <string>Продолжая, вы принимаете %1$@ и %2$@.</string>
     <key>queue_clear_episode_queue_plural</key>
     <string>Убрать выпуски (%1$@)</string>
     <key>queue_clear_episode_queue_singular</key>
@@ -2747,69 +1776,14 @@ PodHopper на полную мощность.</string>
     <string>Сейчас воспроизводится. %1$@</string>
     <key>queue_time_remaining</key>
     <string>Осталось %1$@</string>
-    <key>queue_total_time_remaining</key>
-    <string>Оставшееся время %1$@</string>
     <key>rate</key>
     <string>Оценить</string>
-    <key>rate_pocket_casts</key>
-    <string>Оценить PodHopper</string>
-    <key>rating_error</key>
-    <string>Ой! Произошла ошибка.</string>
-    <key>rating_listen_to_this_podcast_message</key>
-    <string>Только слушатели этого подкаста могут ставить оценки. Прослушайте несколько эпизодов и после этого поставьте оценку. Ждём ваших отзывов!</string>
-    <key>rating_listen_to_this_podcast_title</key>
-    <string>Сначала прослушайте подкаст</string>
-    <key>rating_login_required</key>
-    <string>Чтобы поставить оценку, необходимо войти в систему</string>
-    <key>rating_no_ratings</key>
-    <string>Нет оценок</string>
-    <key>rating_submitted</key>
-    <string>Ваша оценка учтена!</string>
-    <key>rating_thank_you</key>
-    <string>Благодарим за оценку!</string>
-    <key>rating_title</key>
-    <string>Оценить %1$@</string>
     <key>rating_whats_new_button_title</key>
     <string>Понятно</string>
     <key>rating_whats_new_message</key>
     <string>Оцените лучшие подкасты, чтобы авторы знали, как вам важна их работа. Кроме того, ваши оценки помогут остальным найти новые интересные материалы!</string>
     <key>rating_whats_new_title</key>
     <string>Уже доступно: оценки подкастов 🎉</string>
-    <key>referrals_claim_guest_pass_action</key>
-    <string>Активировать пропуск</string>
-    <key>referrals_claim_guest_pass_banner_detail</key>
-    <string>Откройте невероятные возможности прослушивания</string>
-    <key>referrals_claim_guest_pass_banner_title</key>
-    <string>Получите бесплатный гостевой пропуск в Plus на %1$@</string>
-    <key>referrals_claim_guest_pass_detail</key>
-    <string>Это предложение действительно только для новых участников. По истечении бесплатного периода будет автоматически списан ежегодный членский взнос в размере %1$@.</string>
-    <key>referrals_claim_guest_pass_title</key>
-    <string>Получите бесплатный гостевой пропуск на %1$@</string>
-    <key>referrals_claim_need_to_be_loggedin</key>
-    <string>Войдите или зарегистрируйтесь, чтобы предъявить ваш гостевой пропуск.</string>
-    <key>referrals_guest_pass_offer</key>
-    <string>Гостевой пропуск на %1$@</string>
-    <key>referrals_not_available_to_send</key>
-    <string>В данный момент гостевой пропуск недоступен</string>
-    <key>referrals_offer_not_available_detail</key>
-    <string>Гостевым пропуском могут воспользоваться только те, у кого нет подписки Plus или Patron, и только один раз. Благодарим за прослушивание!</string>
-    <key>referrals_offer_not_available_title</key>
-    <string>Это предложение недействительно</string>
-    <key>referrals_share_guest_pass</key>
-    <string>Поделиться гостевым пропуском</string>
-    <key>referrals_share_no_guest_pass_message</key>
-    <string>Спасибо, что поделились пропуском PodHopper! Мы сообщим, когда у вас появятся новые пропуска.</string>
-    <key>referrals_share_no_guest_pass_title</key>
-    <string>Вы потратили все гостевые пропуска!</string>
-    <key>referrals_share_pass_long_message</key>
-    <string>Здравствуйте!
-
-Это гостевой пропуск на %1$@ в PodHopper Plus — мой любимый плеер подкастов. В нём есть множество уникальных функций, которых больше нет нигде: закладки, папки и многое другое. Надеюсь, вам он тоже понравится!
-</string>
-    <key>referrals_share_pass_message</key>
-    <string>Привет! По ссылке ниже лежит ваш гостевой пропуск в PodHopper Plus сроком на %1$@. Воспользуйтесь им и слушайте подкасты на любом из ваших устройств!</string>
-    <key>referrals_share_pass_subject</key>
-    <string>Гостевой пропуск PodHopper Plus на %1$@</string>
     <key>referrals_tip_message</key>
     <string>%1$@ пользования PodHopper Plus в подарок!</string>
     <key>referrals_tip_title</key>
@@ -2824,8 +1798,6 @@ PodHopper на полную мощность.</string>
     <string>НЕ УДАЛОСЬ ОБНОВИТЬ :(</string>
     <key>refresh_control_refreshing_files</key>
     <string>ОБНОВЛЕНИЕ ФАЙЛОВ</string>
-    <key>refresh_control_release_to_refresh</key>
-    <string>ОТПУСТИТЕ ДЛЯ ОБНОВЛЕНИЯ</string>
     <key>refresh_control_sync_failed</key>
     <string>НЕ УДАЛОСЬ СИНХРОНИЗИРОВАТЬ :(</string>
     <key>refresh_control_syncing_podcasts</key>
@@ -2892,8 +1864,6 @@ PodHopper на полную мощность.</string>
     <string>Последний поиск</string>
     <key>search_results</key>
     <string>%1$@ из %2$@</string>
-    <key>search_results_empty_action</key>
-    <string>Отправить отзыв</string>
     <key>search_results_empty_message</key>
     <string>Попробуйте уточнить поиск, введя URL-адрес ленты подкаста</string>
     <key>search_results_empty_title</key>
@@ -2986,8 +1956,6 @@ PodHopper на полную мощность.</string>
     <string>О нас</string>
     <key>settings_allow_collection_first_party</key>
     <string>Разрешите нам собирать аналитические данные.</string>
-    <key>settings_allow_collection_third_party</key>
-    <string>Разрешите нам использовать доверенные сторонние службы для сбора анонимных данных.</string>
     <key>settings_analytics</key>
     <string>Аналитика</string>
     <key>settings_appearance</key>
@@ -3036,12 +2004,6 @@ PodHopper на полную мощность.</string>
     <string>Архивировать выпуски по прошествии установленного времени. При архивировании выпуска скачивания удаляются.</string>
     <key>settings_auto_download</key>
     <string>Автоматическое скачивание</string>
-    <key>settings_auto_downloads_filters_selected_format</key>
-    <string>Выбрано фильтров: %1$@</string>
-    <key>settings_auto_downloads_filters_selected_singular</key>
-    <string>Выбран 1 фильтр</string>
-    <key>settings_auto_downloads_no_filters_selected</key>
-    <string>Фильтры не выбраны</string>
     <key>settings_auto_downloads_no_playlists_selected</key>
     <string>Списки воспроизведения не выбраны</string>
     <key>settings_auto_downloads_no_podcasts_selected</key>
@@ -3056,16 +2018,12 @@ PodHopper на полную мощность.</string>
     <string>Выбрано подкастов: %1$@</string>
     <key>settings_auto_downloads_podcasts_selected_singular</key>
     <string>Выбран 1 подкаст</string>
-    <key>settings_auto_downloads_subtitle_filters</key>
-    <string>Скачивать первые выпуски в фильтре.</string>
     <key>settings_auto_downloads_subtitle_new_episodes</key>
     <string>Автоматически загружайте новые выпуски, сохраняйте выпуски новых шоу, на которые вы подписаны, и управляйте памятью, устанавливая ограничения на количество сохранённых выпусков.</string>
     <key>settings_auto_downloads_subtitle_playlists</key>
     <string>Загрузка популярных выпусков в списке воспроизведения.</string>
     <key>settings_auto_downloads_subtitle_up_next</key>
     <string>Скачивать выпуски, добавленные в «Следующие».</string>
-    <key>settings_badge_filter_header</key>
-    <string>СЧЕТЧИК ФИЛЬТРА ВЫПУСКОВ</string>
     <key>settings_badge_new_since_opened</key>
     <string>Новые выпуски с момента открытия</string>
     <key>settings_badge_smart_playlist_header</key>
@@ -3076,14 +2034,8 @@ PodHopper на полную мощность.</string>
     <string>Звук добавления в закладки</string>
     <key>settings_bookmark_sound_footer</key>
     <string>Звук подтверждения при создании закладки с помощью наушников.</string>
-    <key>settings_change_avatar</key>
-    <string>Изменить аватар</string>
-    <key>settings_collect_information</key>
-    <string>Сбор информации</string>
     <key>settings_collect_information_additional_information</key>
     <string>Разрешая собирать аналитические данные, вы помогаете нам улучшать приложение. Мы поймём, если вы решите не предоставлять эту информацию.</string>
-    <key>settings_connection_status</key>
-    <string>Состояние подключения</string>
     <key>settings_create_siri_shortcut</key>
     <string>Создать шорткат Siri</string>
     <key>settings_create_siri_shortcut_msg</key>
@@ -3196,10 +2148,6 @@ PodHopper на полную мощность.</string>
     <string>Публиковать названия глав</string>
     <key>settings_general_publish_chapter_titles_subtitle</key>
     <string>Если включить, вместо названия эпизода через Bluetooth и другие подключенные устройства будут передаваться названия глав.</string>
-    <key>settings_general_remote_skips_chapters</key>
-    <string>Удаленный пропуск глав</string>
-    <key>settings_general_remote_skips_chapters_subtitle</key>
-    <string>Если опция включена и в выпуске имеются главы, то, нажав кнопку пропуска в машине или наушниках, вы перейдете к следующей главе.</string>
     <key>settings_general_remove_groups_apply_all</key>
     <string>Хотите разгруппировать все существующие подкасты?</string>
     <key>settings_general_row_action</key>
@@ -3232,12 +2180,6 @@ PodHopper на полную мощность.</string>
     <string>Настройте действия для основных элементов управления наушников.</string>
     <key>settings_help</key>
     <string>Помощь и отзывы</string>
-    <key>settings_import_export</key>
-    <string>Импорт/экспорт</string>
-    <key>settings_in_filters_plural_format</key>
-    <string>Включен в несколько фильтров (%1$@)</string>
-    <key>settings_in_filters_singular</key>
-    <string>Включен в 1 фильтр</string>
     <key>settings_in_menu</key>
     <string>В МЕНЮ</string>
     <key>settings_in_smart_playlist_singular</key>
@@ -3248,24 +2190,16 @@ PodHopper на полную мощность.</string>
     <string>Неактивные выпуски — это выпуски, которые вы не прослушивали и не скачивали в течение указанного выше времени. При архивировании выпуска скачивания удаляются.</string>
     <key>settings_next_action</key>
     <string>Следующее действие</string>
-    <key>settings_not_in_filters</key>
-    <string>Не включен ни в один фильтр</string>
     <key>settings_not_in_smart_playlists</key>
     <string>Не входит ни в один умный список воспроизведения</string>
     <key>settings_notifications</key>
     <string>Уведомления</string>
-    <key>settings_notifications_filter_count</key>
-    <string>Счетчик фильтра </string>
     <key>settings_notifications_smart_playlist_count</key>
     <string>Счётчик умного плейлиста</string>
     <key>settings_notifications_subtitle</key>
     <string>Уведомляет вас о выходе нового выпуска. Также полезно для повышения надежности автоматического скачивания.</string>
-    <key>settings_opml</key>
-    <string>Импорт/экспорт OPML</string>
     <key>settings_play_speed</key>
     <string>Скорость воспроизведения</string>
-    <key>settings_plus_pricing_format</key>
-    <string>%1$@ в месяц/%2$@ в год</string>
     <key>settings_previous_action</key>
     <string>Предыдущее действие</string>
     <key>settings_privacy</key>
@@ -3274,8 +2208,6 @@ PodHopper на полную мощность.</string>
     <string>Позиция в очереди</string>
     <key>settings_read_privacy_policy</key>
     <string>Ознакомиться с политикой конфиденциальности</string>
-    <key>settings_select_filter_singular</key>
-    <string>Выбрать фильтр</string>
     <key>settings_select_filters_plural</key>
     <string>Выбрать фильтры</string>
     <key>settings_select_playlist_singular</key>
@@ -3284,8 +2216,6 @@ PodHopper на полную мощность.</string>
     <string>Выберите списки воспроизведения</string>
     <key>settings_select_smart_playlists_plural</key>
     <string>Выберите умные списки воспроизведения</string>
-    <key>settings_shortcuts_filter_open_filter</key>
-    <string>Открыть фильтр</string>
     <key>settings_shortcuts_filter_open_playlist</key>
     <string>Открыть плейлист</string>
     <key>settings_shortcuts_filter_play_all_episodes</key>
@@ -3302,8 +2232,6 @@ PodHopper на полную мощность.</string>
     <string>Доступные шорткаты</string>
     <key>settings_siri_shortcuts_enabled</key>
     <string>Включенные шорткаты</string>
-    <key>settings_siri_shortcuts_specific_filter</key>
-    <string>Шорткат для отдельного фильтра </string>
     <key>settings_siri_shortcuts_specific_playlist</key>
     <string>Шорткат отдельного подкаста</string>
     <key>settings_siri_shortcuts_specific_podcast</key>
@@ -3316,42 +2244,6 @@ PodHopper на полную мощность.</string>
     <string>Пропускайте вступительную и заключительную музыку как умудренный опытом слушатель.</string>
     <key>settings_stats</key>
     <string>Статистика</string>
-    <key>settings_status_account_service</key>
-    <string>Сервис учётной записи</string>
-    <key>settings_status_account_service_description</key>
-    <string>Этот сервис используется для хранения информации о состоянии прослушивания выпусков, подписках, фильтрах и т. д.</string>
-    <key>settings_status_description</key>
-    <string>Проверьте подключение к важным службам. Это помогает диагностировать проблемы с сетью, прокси-серверами, VPN, приложениями для блокировки рекламы и безопасности.</string>
-    <key>settings_status_discover</key>
-    <string>Поиск</string>
-    <key>settings_status_discover_description</key>
-    <string>Поисковый раздел приложения, включая поиск подкастов.</string>
-    <key>settings_status_expensive_network</key>
-    <string>Безлимитный Wi-Fi</string>
-    <key>settings_status_expensive_network_description</key>
-    <string>В случае успеха эта сеть будет использоваться для загрузок по безлимитному Wi-Fi.</string>
-    <key>settings_status_expensive_network_failure_message</key>
-    <string>Ваше текущее подключение помечено как дорогое. Попробуйте переключиться на Wi-Fi или отключить режим экономии трафика.</string>
-    <key>settings_status_host</key>
-    <string>Распространённые хостинги подкастов</string>
-    <key>settings_status_host_description</key>
-    <string>Авторы подкастов размещают файлы выпусков у различных хостинг-провайдеров, которые не контролируются PodHopper.</string>
-    <key>settings_status_host_failure_message</key>
-    <string>Чаще всего это связано с тем, что на вашем телефоне или в сети настроен блокировщик рекламы. Для скачивания подкастов вам потребуется разблокировать этот домен. Обратите внимание, что PodHopper не размещает подкасты на своих серверах и не выбирает место их размещения. Этим занимаются авторы программ, и мы не можем это контролировать.</string>
-    <key>settings_status_internet</key>
-    <string>Интернет</string>
-    <key>settings_status_internet_description</key>
-    <string>Проверьте статус своей сети.</string>
-    <key>settings_status_internet_failure_message</key>
-    <string>Не удаётся подключиться к Интернету. Попробуйте подключиться через другую сеть (например, мобильную).</string>
-    <key>settings_status_refresh_service</key>
-    <string>Сервис обновления</string>
-    <key>settings_status_refresh_service_description</key>
-    <string>Этот сервис используется для поиска новых выпусков.</string>
-    <key>settings_status_run</key>
-    <string>Запустить сейчас</string>
-    <key>settings_status_service_ad_blocker_help_singular</key>
-    <string>Чаще всего это связано с тем, что на вашем телефоне или в сети настроен блокировщик рекламы. Вам потребуется разблокировать домен %1$@</string>
     <key>settings_storage</key>
     <string>Использование хранилища и данных</string>
     <key>settings_storage_data_warning</key>
@@ -3364,8 +2256,6 @@ PodHopper на полную мощность.</string>
     <string>ИСПОЛЬЗОВАНИЕ ПАМЯТИ</string>
     <key>settings_storage_usage_footer</key>
     <string>Это может отличаться от хранилища в настройках iPhone. iOS автоматически управляет кешированными данными и освобождает их при необходимости.</string>
-    <key>settings_third_party_analytics</key>
-    <string>Сторонняя аналитика</string>
     <key>settings_title</key>
     <string>Настройки подкастов</string>
     <key>settings_trim_level</key>
@@ -3406,44 +2296,14 @@ PodHopper на полную мощность.</string>
     <string>В режиме «Включено» таймер сна будет перезапущен, если телефон станет двигаться.</string>
     <key>share</key>
     <string>Поделиться</string>
-    <key>share_clip</key>
-    <string>Поделиться клипом</string>
-    <key>share_copied_to_clipboard</key>
-    <string>Ссылка скопирована в буфер обмена</string>
-    <key>share_copy_link</key>
-    <string>Копировать ссылку</string>
     <key>share_current_position</key>
     <string>Текущее положение</string>
-    <key>share_description</key>
-    <string>Выбрать формат и платформу для публикации</string>
     <key>share_episode</key>
     <string>Поделиться выпуском</string>
-    <key>share_episode_at</key>
-    <string>Поделиться выпуском в %1$@</string>
-    <key>share_episode_title</key>
-    <string>Поделиться выпуском</string>
-    <key>share_instagram_stories</key>
-    <string>Истории</string>
-    <key>share_list_subscribing</key>
-    <string>Подписка...</string>
-    <key>share_more_actions</key>
-    <string>Ещё</string>
     <key>share_podcast</key>
     <string>Поделиться подкастом</string>
     <key>share_podcast_private_not_available</key>
     <string>Закрытыми подкастами нельзя поделиться</string>
-    <key>share_podcast_title</key>
-    <string>Поделиться подкастом</string>
-    <key>share_podcasts_all_selected</key>
-    <string>ВЫБРАНО ВСЕ</string>
-    <key>share_podcasts_create_list</key>
-    <string>Создать список</string>
-    <key>share_podcasts_sharing</key>
-    <string>Отправка...</string>
-    <key>share_podcasts_sharing_failed_msg</key>
-    <string>При создании общей страницы что-то пошло не так</string>
-    <key>share_podcasts_sharing_failed_title</key>
-    <string>Не удалось поделиться</string>
     <key>share_profile</key>
     <string>Опубликовать профиль</string>
     <key>share_profile_add_photo_and_name</key>
@@ -3488,38 +2348,10 @@ PodHopper на полную мощность.</string>
     <string>Чем вы хотите поделиться?</string>
     <key>share_select_podcasts</key>
     <string>Выбрать подкасты</string>
-    <key>shared_item_loading</key>
-    <string>Загрузка общего элемента...</string>
-    <key>shared_list</key>
-    <string>Общий список</string>
-    <key>shared_list_subscribe_conf_action</key>
-    <string>Да!</string>
-    <key>shared_list_subscribe_conf_msg</key>
-    <string>Вы действительно хотите подписаться на %1$@ подкастов?</string>
-    <key>shared_list_subscribe_conf_title</key>
-    <string>Это очень много подкастов!</string>
     <key>show_notes</key>
     <string>Заметки</string>
     <key>sign_in</key>
     <string>Войти</string>
-    <key>sign_in_continue_with_email</key>
-    <string>Чтобы продолжить, введите адрес электронной почты</string>
-    <key>sign_in_divider_label</key>
-    <string>ИЛИ</string>
-    <key>sign_in_email_address_prompt</key>
-    <string>Адрес электронной почты</string>
-    <key>sign_in_forgot_password</key>
-    <string>Я не помню свой пароль</string>
-    <key>sign_in_hide_password_label</key>
-    <string>Показать пароль</string>
-    <key>sign_in_message</key>
-    <string>Сохраняйте подписки на подкасты в облаке и синхронизируйте данные о прослушивании с другими устройствами.</string>
-    <key>sign_in_password_prompt</key>
-    <string>Пароль</string>
-    <key>sign_in_prompt</key>
-    <string>Войти или создать учетную запись</string>
-    <key>sign_in_show_password_label</key>
-    <string>Скрыть пароль</string>
     <key>signed_in_as</key>
     <string>ВЫПОЛНЕН ВХОД КАК</string>
     <key>signed_out</key>
@@ -3602,28 +2434,6 @@ PodHopper на полную мощность.</string>
     <string>Это поможет вам войти в курс дела. Они автоматически обновляются на основе ваших предпочтений.</string>
     <key>smart_playlists_tip_view_title</key>
     <string>Умные плейлисты готовы к работе</string>
-    <key>social_sign_in_continue_with_apple</key>
-    <string>Продолжить с Apple</string>
-    <key>social_sign_in_continue_with_google</key>
-    <string>Продолжить с помощью Google</string>
-    <key>sonos_connect_action</key>
-    <string>ПОДКЛЮЧИТЬСЯ</string>
-    <key>sonos_connect_prompt</key>
-    <string>Подключиться к Sonos</string>
-    <key>sonos_connecting</key>
-    <string>ПОДКЛЮЧЕНИЕ...</string>
-    <key>sonos_connection_failed_account_link</key>
-    <string>В данный момент не удается привязать учетную запись PodHopper. Повторите попытку позже.</string>
-    <key>sonos_connection_failed_app_missing</key>
-    <string>Не удается открыть приложение Sonos для завершения привязки.</string>
-    <key>sonos_connection_failed_title</key>
-    <string>Не удалось привязать</string>
-    <key>sonos_connection_privacy_notice</key>
-    <string>При подключении к Sonos приложение Sonos получит доступ к информации о вашем выпуске.
-
-Ваш адрес электронной почты, пароль и другие конфиденциальные данные никогда не разглашаются.</string>
-    <key>sonos_connection_sign_in_prompt</key>
-    <string>Для подключения к Sonos нужна учетная запись PodHopper.</string>
     <key>sort_by</key>
     <string>Приоритет сортировки</string>
     <key>sort_episodes</key>
@@ -3698,38 +2508,8 @@ PodHopper на полную мощность.</string>
     <string>Остановить скачивание</string>
     <key>subscribe</key>
     <string>Подписаться</string>
-    <key>subscribe_all</key>
-    <string>Подписаться на все</string>
     <key>subscribed</key>
     <string>Подписано</string>
-    <key>subscription_cancelled</key>
-    <string>Подписка аннулирована</string>
-    <key>subscription_cancelled_msg</key>
-    <string>Подписка завершается %1$@ </string>
-    <key>subscription_expires_in</key>
-    <string>Срок действия истекает %1$@</string>
-    <key>subscription_feature_custom_title_bookmarks</key>
-    <string>Закладки: лёгкий поиск подкастов</string>
-    <key>subscription_feature_custom_title_folders</key>
-    <string>Папки: каждый подкаст на своём месте</string>
-    <key>subscription_feature_custom_title_pre_selected_chapters</key>
-    <string>Предварительный выбор глав: выбирайте по своему вкусу</string>
-    <key>subscription_feature_custom_title_shuffle_upnext</key>
-    <string>В случайном порядке: приятные сюрпризы</string>
-    <key>subscription_frequency_pricing_format</key>
-    <string>%1$@ за %2$@</string>
-    <key>subscription_plan_features_info_link</key>
-    <string>Все преимущества Plus</string>
-    <key>subscription_plan_free_trial_info_link</key>
-    <string>Что такое бесплатный пробный период?</string>
-    <key>subscription_plan_month</key>
-    <string>Тарифный план с помесячной оплатой</string>
-    <key>subscription_plan_savings</key>
-    <string>Сэкономьте %1$@ </string>
-    <key>subscription_plan_year</key>
-    <string>Годовой тарифный план</string>
-    <key>subscriptions_thank_you</key>
-    <string>Спасибо за вашу поддержку!</string>
     <key>suggested_folders_create_custom_folder</key>
     <string>Создать пользовательскую папку</string>
     <key>suggested_folders_description</key>
@@ -3746,36 +2526,10 @@ PodHopper на полную мощность.</string>
     <string>Умные папки</string>
     <key>suggested_folders_use_suggested_folders</key>
     <string>Использовать эти папки</string>
-    <key>support_watch_help_message</key>
-    <string>Если у вас возникли проблемы с приложением PodHopper для часов, мы можем отправить журналы с носимого устройства, чтобы помочь вам. Для этого откройте PodHopper на часах.</string>
-    <key>support_watch_help_opened_app</key>
-    <string>Я открыл (-а) приложение для часов</string>
-    <key>support_watch_help_send_without_log</key>
-    <string>Отправить без журналов часов</string>
-    <key>support_watch_help_title</key>
-    <string>Нужна помощь с приложением для часов?</string>
     <key>supporter</key>
     <string>Спонсор</string>
-    <key>supporter_contributions</key>
-    <string>Взносы спонсоров</string>
-    <key>supporter_contributions_subtitle</key>
-    <string>Уточните сведения о взносах</string>
-    <key>supporter_payment_canceled</key>
-    <string>Спонсор: отменен</string>
-    <key>sync_account_error</key>
-    <string>Проверьте имя пользователя и пароль.</string>
-    <key>sync_account_login</key>
-    <string>Вход выполнен...</string>
     <key>sync_failed</key>
     <string>Не удалось синхронизировать</string>
-    <key>sync_in_progress</key>
-    <string>Синхронизация следующего подкаста и истории</string>
-    <key>sync_progress</key>
-    <string>Подкаст %1$@ из %2$@</string>
-    <key>sync_progress_unknown_count_plural_format</key>
-    <string>Синхронизировано подкастов: %1$@</string>
-    <key>sync_progress_unknown_count_singular</key>
-    <string>Синхронизирован 1 подкаст</string>
     <key>syncing</key>
     <string>Синхронизация...</string>
     <key>terms_of_use</key>
@@ -3796,8 +2550,6 @@ PodHopper на полную мощность.</string>
     <string>Светлая по умолчанию</string>
     <key>theme_light_contrast</key>
     <string>Light Contrast</string>
-    <key>theme_radioactivity</key>
-    <string>Radioactivity</string>
     <key>theme_rose</key>
     <string>Rosé</string>
     <key>time_format_never</key>
@@ -3828,188 +2580,14 @@ PodHopper на полную мощность.</string>
     <string>Слушайте и читайте. Даже в ускоренном режиме.</string>
     <key>transcript_tap_to_seek_streaming_unavailable</key>
     <string>Скачать выпуск, чтобы искать нажатием</string>
-    <key>trial_finished</key>
-    <string>Пробный период завершен</string>
     <key>trim_silence</key>
     <string>Удалить паузы</string>
     <key>try_again</key>
     <string>Попробуйте еще раз.</string>
     <key>try_it_now</key>
     <string>Попробовать</string>
-    <key>tv_banner_create_account_action_title</key>
-    <string>Создать бесплатную учётную запись</string>
-    <key>tv_banner_create_account_subtitle</key>
-    <string>Ваши подписки, ваши успехи… всё на своих местах.</string>
-    <key>tv_banner_create_account_title</key>
-    <string>Одна учётная запись. На всех экранах</string>
-    <key>tv_banner_discover_more_action_title</key>
-    <string>Посмотреть другие шоу</string>
-    <key>tv_banner_discover_more_subtitle</key>
-    <string>Ваше новое увлечение в двух шагах от вас.</string>
-    <key>tv_banner_discover_more_title</key>
-    <string>Вы не видели ещё и половины.</string>
-    <key>tv_create_account_come_back</key>
-    <string>Создайте учётную запись, а затем вернитесь и выполните вход</string>
-    <key>tv_create_account_subtitle</key>
-    <string>Отсканируйте этот код, чтобы начать работу с телефона. Это займёт всего минуту.</string>
-    <key>tv_create_account_title</key>
-    <string>Создать бесплатную учётную запись</string>
-    <key>tv_discover_featured_go_to_podcast</key>
-    <string>Перейти к подкасту</string>
-    <key>tv_discover_featured_play_latest_episode</key>
-    <string>Воспроизвести последний выпуск</string>
-    <key>tv_discover_play_episode</key>
-    <string>Воспроизвести выпуск</string>
-    <key>tv_episode_info</key>
-    <string>Информация о выпуске</string>
-    <key>tv_home_browse_categories_section_title</key>
-    <string>Просмотр рубрик</string>
-    <key>tv_home_featured_section_title</key>
-    <string>Популярное в PodHopper</string>
-    <key>tv_home_keep_listening_title</key>
-    <string>Продолжаем с того места, где вы остановились</string>
-    <key>tv_home_new_releases</key>
-    <string>Новые выпуски</string>
-    <key>tv_home_recently_played</key>
-    <string>Недавно прослушанные</string>
-    <key>tv_home_recommend_user_podcast_section_title</key>
-    <string>Нравится слушателям %1$@</string>
-    <key>tv_home_recommended_for_you_title</key>
-    <string>Это вам точно понравится</string>
-    <key>tv_home_trending_section_title</key>
-    <string>Тренды недели</string>
     <key>tv_home_video_section_title</key>
     <string>Создано для телевидения</string>
-    <key>tv_player_playback_effects</key>
-    <string>Эффекты воспроизведения</string>
-    <key>tv_player_playback_speed</key>
-    <string>Скорость воспроизведения</string>
-    <key>tv_player_playback_speed_set</key>
-    <string>Скорость воспроизведения: %1$@</string>
-    <key>tv_player_trim_silence</key>
-    <string>Обрезка тишины</string>
-    <key>tv_player_trim_silence_mad_max</key>
-    <string>Максимальная</string>
-    <key>tv_player_trim_silence_medium</key>
-    <string>Средняя</string>
-    <key>tv_player_trim_silence_mild</key>
-    <string>Низкая</string>
-    <key>tv_player_trim_silence_off</key>
-    <string>Выключена</string>
-    <key>tv_player_trim_silence_set</key>
-    <string>Обрезать тишину: %1$@</string>
-    <key>tv_player_volume_boost</key>
-    <string>Усилитель звука</string>
-    <key>tv_player_volume_boost_off</key>
-    <string>Усиление громкости выключено</string>
-    <key>tv_player_volume_boost_on</key>
-    <string>Усиление громкости включено</string>
-    <key>tv_playlist_detail_episode_count</key>
-    <string>Выпусков: %1$@</string>
-    <key>tv_playlist_detail_play_all</key>
-    <string>Воспроизвести все выпуски</string>
-    <key>tv_playlists_empty_action_title</key>
-    <string>Создать плейлист</string>
-    <key>tv_playlists_empty_subtitle</key>
-    <string>Создайте его самостоятельно или поручите это Smart Rules.</string>
-    <key>tv_playlists_empty_title</key>
-    <string>Ваши плейлисты находятся здесь</string>
-    <key>tv_podcast_detail_about</key>
-    <string>Сведения</string>
-    <key>tv_podcast_detail_all_episodes</key>
-    <string>Все выпуски</string>
-    <key>tv_podcast_detail_follow_title</key>
-    <string>Подписаться на этот подкаст</string>
-    <key>tv_podcast_detail_following_title</key>
-    <string>Подписка</string>
-    <key>tv_podcast_detail_more_info_title</key>
-    <string>Подробнее</string>
-    <key>tv_podcast_detail_network</key>
-    <string>Сеть</string>
-    <key>tv_podcast_detail_next_episode</key>
-    <string>Следующий выпуск</string>
-    <key>tv_podcast_detail_schedule</key>
-    <string>Планировать</string>
-    <key>tv_podcast_detail_start_here</key>
-    <string>Выпуск, который стоит прослушать первым</string>
-    <key>tv_podcast_detail_start_here_subtitle</key>
-    <string>Вот что привлекает людей</string>
-    <key>tv_podcast_detail_website</key>
-    <string>Веб-сайт</string>
-    <key>tv_podcasts_empty_action_title</key>
-    <string>Найти подкасты</string>
-    <key>tv_podcasts_empty_subtitle</key>
-    <string>Подкасты, на которые вы подписаны, появятся здесь и будут готовы к воспроизведению.</string>
-    <key>tv_podcasts_empty_title</key>
-    <string>Пора заполнить пустоту.</string>
-    <key>tv_profile_button_accessibility_hint</key>
-    <string>Открывает настройки профиля и учётной записи</string>
-    <key>tv_profile_button_accessibility_label</key>
-    <string>Профиль</string>
-    <key>tv_profile_menu_create_account</key>
-    <string>Создать учётную запись</string>
-    <key>tv_profile_menu_log_in</key>
-    <string>Войти</string>
-    <key>tv_profile_menu_log_out</key>
-    <string>Выйти</string>
-    <key>tv_profile_menu_starred_episodes</key>
-    <string>Отмеченные выпуски</string>
-    <key>tv_search_failed</key>
-    <string>Не удалось выполнить поиск: %1$@</string>
-    <key>tv_search_prompt</key>
-    <string>Подкасты, шоу, авторы</string>
-    <key>tv_search_searching</key>
-    <string>Идёт поиск...</string>
-    <key>tv_search_type_something</key>
-    <string>Напишите что-нибудь...</string>
-    <key>tv_sign_in_enter_code</key>
-    <string>либо введите следующий код</string>
-    <key>tv_sign_in_enter_code_go_url</key>
-    <string>переход к [%1$@](%2$@)</string>
-    <key>tv_sign_in_enter_code_in_url</key>
-    <string>или введите этот код в [%1$@](%2$@)</string>
-    <key>tv_sign_in_qr_code_error_title</key>
-    <string>Не удалось получить код для входа</string>
-    <key>tv_sign_in_subtitle</key>
-    <string>Откройте камеру и наведите на этот QR-код</string>
-    <key>tv_sign_in_title</key>
-    <string>Войти в PodHopper</string>
-    <key>tv_signing_in_subtitle</key>
-    <string>Мы загружаем ваши подкасты.</string>
-    <key>tv_signing_in_title</key>
-    <string>Рады вас видеть!</string>
-    <key>tv_tab_home</key>
-    <string>Главная</string>
-    <key>tv_tab_playlists</key>
-    <string>Плейлисты</string>
-    <key>tv_tab_podcasts</key>
-    <string>Ваши подкасты</string>
-    <key>tv_tab_up_next</key>
-    <string>Следующее</string>
-    <key>tv_up_next_empty_action_title</key>
-    <string>Добавить выпуски</string>
-    <key>tv_up_next_empty_subtitle</key>
-    <string>Добавьте выпуски в список «Следующие», и они будут воспроизводиться по порядку, один за другим</string>
-    <key>tv_up_next_empty_title</key>
-    <string>Очередь пуста</string>
-    <key>tv_user_profile_actions</key>
-    <string>Настройки пользователя</string>
-    <key>tv_user_sign_in_login_type</key>
-    <string>Тип входа</string>
-    <key>tv_user_sign_in_option_manual</key>
-    <string>Пользователь/пароль</string>
-    <key>tv_user_sign_in_option_qr</key>
-    <string>QR-код</string>
-    <key>tv_welcome_browse_without_account</key>
-    <string>Просмотр без учётной записи</string>
-    <key>tv_welcome_create_free_account</key>
-    <string>Создать бесплатную учётную запись</string>
-    <key>tv_welcome_sign_in</key>
-    <string>Вход</string>
-    <key>tv_welcome_subtitle</key>
-    <string>Ваши подкасты. На большом экране. Очевидно.</string>
-    <key>tv_welcome_title</key>
-    <string>Добро пожаловать в PodHopper TV!</string>
     <key>unarchive</key>
     <string>Из&amp;nbsp;архива</string>
     <key>unfollow</key>
@@ -4020,8 +2598,6 @@ PodHopper на полную мощность.</string>
     <string>Удалить из избранных</string>
     <key>unsubscribe</key>
     <string>Отменить подписку</string>
-    <key>unsubscribe_all</key>
-    <string>Отменить все подписки</string>
     <key>up_next</key>
     <string>Следующие</string>
     <key>up_next_empty_description</key>
@@ -4042,58 +2618,8 @@ PodHopper на полную мощность.</string>
     <string>Режим «В случайном порядке» включён. Выпуски будут воспроизводиться в случайном порядке.</string>
     <key>upgrade_account</key>
     <string>Перейти на платный план</string>
-    <key>upgrade_account_info</key>
-    <string>Пользуйтесь всеми платными функциями: папками, закладками, воспроизведением в случайном порядке и др.</string>
-    <key>upgrade_account_timeline_charging_day</key>
-    <string>Плата будет списана %1$@. Можно отменить в любой момент до этой даты.</string>
-    <key>upgrade_account_timeline_day_1</key>
-    <string>Пользуйтесь папками и закладками, прослушивайте подкасты в случайном порядке, в том числе эксклюзивный контент</string>
-    <key>upgrade_account_timeline_week_before</key>
-    <string>Мы уведомим вас об окончании пробного периода.</string>
     <key>upgrade_account_title</key>
     <string>Новый уровень подкастинга</string>
-    <key>upgrade_experiment_discount_yearly_membership</key>
-    <string>Скидка 50%% на первый год</string>
-    <key>upgrade_experiment_free_membership_format</key>
-    <string>Бесплатный пробный период Plus: %1$@</string>
-    <key>upgrade_experiment_paywall_button</key>
-    <string>Получите PodHopper Plus</string>
-    <key>upgrade_experiment_reviews_app_store_button</key>
-    <string>Читать другие отзывы в App Store</string>
-    <key>upgrade_experiment_reviews_app_store_info</key>
-    <string>Оценка: %1$@ (Отзывов: %2$@K)</string>
-    <key>upgrade_experiment_reviews_review_text_0</key>
-    <string>Как давний пользователь, я могу сказать, что набор функций и возможности настройки даже в бесплатной версии просто безграничны. Мне нравится, что приложение синхронизируется на всех устройствах, и я могу начать прослушивание с телефона, а затем продолжить при помощи Alexa. Я рекомендую его всем, кто слушает подкасты. А ещё здесь крутая статистика!</string>
-    <key>upgrade_experiment_reviews_review_text_1</key>
-    <string>Пользуюсь 8 лет, и за это время отличное приложение стало ещё лучше.</string>
-    <key>upgrade_experiment_reviews_review_text_2</key>
-    <string>Я пользуюсь PodHopper с 2017 года.
-
-Могу поклясться, что это лучшее приложение для прослушивания подкастов. В нём много полезных функций, и оно активно развивается. Были жалобы на то, что изменился интерфейс, но я не заметил никаких серьёзных изменений.
-
-Приложение может быть настолько простым или сложным, насколько это вам нужно. Так что вы можете либо пользоваться только функцией plug and play, либо настроить пропуск заставок, либо включить любую другую функцию, которая вам нравится.</string>
-    <key>upgrade_experiment_reviews_review_text_3</key>
-    <string>Синхронизация просто супер. Не знаю, что там за волшебство, но это приложение определённо лучше всех, которыми я пользовался.</string>
-    <key>upgrade_experiment_reviews_review_text_4</key>
-    <string>Пользуюсь приложением уже 6 лет или даже больше, начинал на Android, а теперь уже почти год — на iOS. Работает одинаково на обеих платформах. Легко искать и находить новые подкасты, отличный пользовательский интерфейс, можно добавлять подкасты по URL-адресу в RSS-ленте. Приложение в часах тоже работает, но я чаще всего пользуюсь им как кнопкой воспроизведения или паузы. Можно войти с данными учётной записи, чтобы синхронизировать приложение на всех устройствах, но это делать необязательно.</string>
-    <key>upgrade_experiment_reviews_review_text_5</key>
-    <string>PC уже много лет остаётся моим любимым приложением. Я пробовал другие приложения для подкастов, но всегда возвращался к PC: это самый простой вариант с лучшим пользовательским интерфейсом и поддержкой. Безусловно, стоит попробовать, особенно если вам надоело ваше нынешнее приложение для подкастов.</string>
-    <key>upgrade_experiment_reviews_review_title_0</key>
-    <string>САМОЕ лучшее приложение для подкастов</string>
-    <key>upgrade_experiment_reviews_review_title_1</key>
-    <string>Всё, что нужно любителям подкастов</string>
-    <key>upgrade_experiment_reviews_review_title_2</key>
-    <string>Лучшее приложение для подкастов</string>
-    <key>upgrade_experiment_reviews_review_title_3</key>
-    <string>Потрясающая штука.</string>
-    <key>upgrade_experiment_reviews_review_title_4</key>
-    <string>Работает отлично, легко находить и добавлять новые подкасты.</string>
-    <key>upgrade_experiment_reviews_review_title_5</key>
-    <string>Лучшее приложение для подкастов</string>
-    <key>upgrade_experiment_reviews_text</key>
-    <string>Почему люди переходят на версию Plus</string>
-    <key>upgrade_experiment_reviews_title</key>
-    <string>Просто это лучший способ слушать подкасты</string>
     <key>upgrade_to_plan</key>
     <string>Обновить до %1$@</string>
     <key>upgrade_to_plus</key>
@@ -4138,8 +2664,6 @@ PodHopper на полную мощность.</string>
     <string>Эффекты</string>
     <key>watch_episode_details</key>
     <string>Сведения о выпуске</string>
-    <key>watch_main_menu</key>
-    <string>Главное меню</string>
     <key>watch_no_episodes</key>
     <string>Нет выпусков</string>
     <key>watch_no_filters</key>
@@ -4158,16 +2682,8 @@ PodHopper на полную мощность.</string>
     <string>Воспроизвести источник</string>
     <key>watch_source_msg</key>
     <string>Подкасты будут воспроизводиться из динамика, к которому подключено выбранное устройство</string>
-    <key>watch_source_plus_info</key>
-    <string>Загрузите приложение на часы и слушайте без телефона. Попробуйте PodHopper Plus на телефоне или в веб-приложении.</string>
-    <key>watch_source_refresh_account</key>
-    <string>Обновить учетную запись</string>
-    <key>watch_source_refresh_account_info</key>
-    <string>Если у вас учетная запись PodHopper Plus, обновите ее, чтобы включить все возможности</string>
     <key>watch_source_refresh_data</key>
     <string>Обновить данные</string>
-    <key>watch_source_sign_in_info</key>
-    <string>Войдите или создайте учетную запись на телефоне</string>
     <key>watch_tap_to_open</key>
     <string>Нажмите, чтобы открыть</string>
     <key>watch_up_next_no_items_subtitle</key>
@@ -4194,22 +2710,6 @@ PodHopper на полную мощность.</string>
     <string>Спасибо. А теперь давайте что-нибудь послушаем!</string>
     <key>whats_new</key>
     <string>Что нового</string>
-    <key>whats_new_blog_more_link_text</key>
-    <string>Узнайте больше об этом обновлении в нашем блоге</string>
-    <key>whats_new_in_version</key>
-    <string>Новые возможности %1$@</string>
-    <key>whats_new_page_one_7_20</key>
-    <string>Если вы любите подкасты так же, как мы, то у вас их должно быть много. Теперь подписчики PodHopper Plus могут сортировать их по папкам и делить на удобные группы.
-
-Благодаря вашей поддержке ваш главный экран выглядит существенно лучше!</string>
-    <key>whats_new_page_one_title_7_20</key>
-    <string>Папки</string>
-    <key>whats_new_page_two_7_20</key>
-    <string>Теперь ваш главный экран (включая опции сортировки) синхронизирован на всех устройствах! Кроме того, теперь вы можете перетаскивать компоненты в веб-плеер.
-
-Это означает, что все ваши усилия по упорядочению страницы с подкастами не прошли зря и соответствующие данные синхронизированы с учётной записью.</string>
-    <key>whats_new_page_two_title_7_20</key>
-    <string>Синхронизация структуры домашней страницы</string>
     <key>widgets_app_icon_description</key>
     <string>Быстрый запуск PodHopper</string>
     <key>widgets_app_icon_name</key>

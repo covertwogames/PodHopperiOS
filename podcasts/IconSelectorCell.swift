@@ -8,9 +8,7 @@ protocol IconSelectorCellDelegate: AnyObject {
 
 enum IconType: Int, CaseIterable, AnalyticsDescribable {
     case primary, dark, roundLight, roundDark, indigo
-    case rose, pocketCats, redVelvet, pride, plus, classic, electricBlue
-    case electricPink, radioactivity, halloween
-    case patronChrome, patronRound, patronGlow, patronDark
+    case rose, pocketCats
 
     /// Finds the IconType for the given iconName or .primary if there isn't a match
     init(iconName: String) {
@@ -18,8 +16,8 @@ enum IconType: Int, CaseIterable, AnalyticsDescribable {
     }
 
     static var availableIcons: [IconType] {
-        // PodHopper: the seven PodHopper icons, all free (no Plus lock). These are the first seven
-        // enum cases (raw values 0-6), so the selector's rawValue-based indexing stays correct.
+        // PodHopper: the seven PodHopper icons, all free (no Plus lock). The selector indexes
+        // them by raw value (0-6), so keep these in the same order as the cases above.
         [.primary, .dark, .roundLight, .roundDark, .indigo, .rose, .pocketCats]
     }
 
@@ -39,30 +37,6 @@ enum IconType: Int, CaseIterable, AnalyticsDescribable {
             return "Cosmic"
         case .pocketCats:
             return "Cosmic Noir"
-        case .redVelvet:
-            return L10n.appIconRedVelvet
-        case .plus:
-            return L10n.appIconPlus
-        case .classic:
-            return L10n.appIconClassic
-        case .electricBlue:
-            return L10n.appIconElectricBlue
-        case .electricPink:
-            return L10n.appIconElectricPink
-        case .radioactivity:
-            return L10n.appIconRadioactivity
-        case .halloween:
-            return L10n.appIconHalloween
-        case .patronChrome:
-            return L10n.appIconPatronChrome
-        case .patronRound:
-            return L10n.appIconPatronRound
-        case .patronGlow:
-            return L10n.appIconPatronGlow
-        case .patronDark:
-            return L10n.appIconPatronDark
-        case .pride:
-            return "Pride"
         }
     }
 
@@ -82,30 +56,6 @@ enum IconType: Int, CaseIterable, AnalyticsDescribable {
             return "AppIcon-Round-Pink"
         case .pocketCats:
             return "AppIcon-Pocket-Cats"
-        case .redVelvet:
-            return "AppIcon-Red-Velvet"
-        case .plus:
-            return "AppIcon-Plus"
-        case .classic:
-            return "AppIcon-Classic"
-        case .electricBlue:
-            return "AppIcon-Electric-Blue"
-        case .electricPink:
-            return "AppIcon-Electric-Pink"
-        case .radioactivity:
-            return "AppIcon-Radioactive"
-        case .halloween:
-            return "AppIcon-Halloween"
-        case .patronChrome:
-            return "AppIcon-Patron-Chrome"
-        case .patronRound:
-            return "AppIcon-Patron-Round"
-        case .patronGlow:
-            return "AppIcon-Patron-Glow"
-        case .patronDark:
-            return "AppIcon-Patron-Dark"
-        case .pride:
-            return "AppIcon-Pride"
         }
     }
 
@@ -125,30 +75,6 @@ enum IconType: Int, CaseIterable, AnalyticsDescribable {
             return "AppIcon-Round-Pink"
         case .pocketCats:
             return "AppIcon-Pocket-Cats"
-        case .redVelvet:
-            return "AppIcon-Red-Velvet"
-        case .plus:
-            return "AppIcon-Plus"
-        case .classic:
-            return "AppIcon-Classic"
-        case .electricBlue:
-            return "AppIcon-Electric-Blue"
-        case .electricPink:
-            return "AppIcon-Electric-Pink"
-        case .radioactivity:
-            return "AppIcon-Radioactive"
-        case .halloween:
-            return "AppIcon-Halloween"
-        case .patronChrome:
-            return "AppIcon-Patron-Chrome"
-        case .patronRound:
-            return "AppIcon-Patron-Round"
-        case .patronGlow:
-            return "AppIcon-Patron-Glow"
-        case .patronDark:
-            return "AppIcon-Patron-Dark"
-        case .pride:
-            return "AppIcon-Pride"
         }
     }
 
@@ -168,30 +94,6 @@ enum IconType: Int, CaseIterable, AnalyticsDescribable {
             return "rose"
         case .pocketCats:
             return "pocket_cats"
-        case .redVelvet:
-            return "red_velvet"
-        case .plus:
-            return "plus"
-        case .classic:
-            return "classic"
-        case .electricBlue:
-            return "electric_blue"
-        case .electricPink:
-            return "electric_pink"
-        case .radioactivity:
-            return "radioactive"
-        case .halloween:
-            return "halloween"
-        case .patronChrome:
-            return "patron_chrome"
-        case .patronRound:
-            return "patron_round"
-        case .patronGlow:
-            return "patron_glow"
-        case .patronDark:
-            return "patron_dark"
-        case .pride:
-            return "pride_2023"
         }
     }
 
@@ -200,16 +102,9 @@ enum IconType: Int, CaseIterable, AnalyticsDescribable {
         SubscriptionHelper.activeTier >= subscription
     }
 
-    /// The minimum subscription level required to unlock the icon
+    /// The minimum subscription level required to unlock the icon. PodHopper: every icon is free.
     var subscription: SubscriptionTier {
-        switch self {
-        case .patronChrome, .patronRound, .patronGlow, .patronDark:
-            return .patron
-        case .plus, .classic, .electricBlue, .electricPink, .radioactivity, .halloween:
-            return .plus
-        default:
-            return .none
-        }
+        .none
     }
 }
 

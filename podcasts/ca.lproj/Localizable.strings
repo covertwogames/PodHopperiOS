@@ -5,12 +5,8 @@
   <dict>
     <key>Settings_files_add_up_next_subtitle</key>
     <string>Afegeix automàticament els nous arxius a la llista «Tot seguit»</string>
-    <key>about_a8c_family</key>
-    <string>Família d'Automattic</string>
     <key>about_acknowledgements</key>
     <string>Agraïments</string>
-    <key>about_join_from_anywhere</key>
-    <string>Uneix-te des de qualsevol lloc</string>
     <key>about_legal_and_more</key>
     <string>Legal i altres</string>
     <key>about_privacy_policy</key>
@@ -23,8 +19,6 @@
     <string>Condicions del servei</string>
     <key>about_website</key>
     <string>Pàgina web</string>
-    <key>about_work_with_us</key>
-    <string>Treballa amb nosaltres</string>
     <key>accessibility_cancel_multiselect</key>
     <string>Cancel·la la selecció múltiple</string>
     <key>accessibility_close_dialog</key>
@@ -37,8 +31,6 @@
     <string>Descarta</string>
     <key>accessibility_episode_playback</key>
     <string>Reproducció de l'episodi</string>
-    <key>accessibility_hide_filter_details</key>
-    <string>Toca per a amagar la informació del filtre</string>
     <key>accessibility_hint_player_navigate_to_podcast_label</key>
     <string>Pitja per a anar a la pàgina principal d'informació del pòdcast</string>
     <key>accessibility_hint_star</key>
@@ -57,8 +49,6 @@
     <string>Velocitat de reproducció  de %1$@ vegades</string>
     <key>accessibility_playlist_add_episode</key>
     <string>Afegeix un episodi</string>
-    <key>accessibility_playlist_color</key>
-    <string>Color de la llista de reproducció %1$@</string>
     <key>accessibility_playlist_image</key>
     <string>Imatge de la llista de reproducció</string>
     <key>accessibility_plus_only</key>
@@ -67,82 +57,24 @@
     <string>Configuració de PodHopper</string>
     <key>accessibility_select_episode</key>
     <string>Tria l'episodi</string>
-    <key>accessibility_show_filter_details</key>
-    <string>Clica per a mostrar la informació del filtre</string>
-    <key>accessibility_sign_in</key>
-    <string>Prem per a veure o configurar el compte</string>
     <key>accessibility_sort_and_options</key>
     <string>Ordre i opcions</string>
     <key>account</key>
     <string>Compte</string>
-    <key>account_change_email</key>
-    <string>Canvia l'adreça de correu electrònic</string>
-    <key>account_completion_nudge</key>
-    <string>Ja gairebé has acabat!</string>
-    <key>account_completion_nudge_msg</key>
-    <string>Acaba el pagament perquè el teu compte es pugui actualitzar.</string>
     <key>account_created</key>
     <string>Compte creat</string>
-    <key>account_creation_complete</key>
-    <string>Completa el compte</string>
-    <key>account_delete_account</key>
-    <string>Esborra el compte</string>
-    <key>account_delete_account_conf</key>
-    <string>Sí, esborra-ho</string>
-    <key>account_delete_account_error</key>
-    <string>Ha fallat quan s'ha volgut esborrar el compte</string>
-    <key>account_delete_account_error_msg</key>
-    <string>No es pot esborrar el compte.</string>
-    <key>account_delete_account_final_alert_msg</key>
-    <string>Darrera oportunitat: vols esborrar definitivament el compte? Perdràs totes les subscripcions i l'historial de reproduccions de manera permanent!</string>
-    <key>account_delete_account_first_alert_msg</key>
-    <string>Estàs segur que vols esborrar el compte? Si ho fas, no podràs tornar enrere!</string>
-    <key>account_delete_account_title</key>
-    <string>Vols esborrar el compte?</string>
-    <key>account_details_free_account</key>
-    <string>Compte gratuït</string>
-    <key>account_details_listened_for</key>
-    <string>Temps escoltat: %1$@</string>
     <key>account_details_plus_title</key>
     <string>Porta la teva experiència amb els pòdcasts a un altre nivell amb accés exclusiu a funcions i opcions de personalització.</string>
-    <key>account_login</key>
-    <string>Entra</string>
     <key>account_payment_renews_monthly</key>
     <string>Es renova automàticament cada mes</string>
     <key>account_payment_renews_yearly</key>
     <string>Es renova automàticament cada any</string>
-    <key>account_privacy_policy</key>
-    <string>Política de privacitat</string>
-    <key>account_registration_failed</key>
-    <string>Hi ha hagut un error en el registre. Torna-ho a provar més tard</string>
-    <key>account_select_type</key>
-    <string>Tria el tipus de compte</string>
-    <key>account_sign_out</key>
-    <string>Surt</string>
-    <key>account_sign_out_alert_message</key>
-    <string>Els teus pòdcasts, el progrés i les dades seran aquí quan tornis.</string>
-    <key>account_sign_out_alert_title</key>
-    <string>Vols tancar la sessió?</string>
-    <key>account_sign_out_supporter_prompt</key>
-    <string>Quan es tanqui la sessió, s'eliminaran %1$@ pòdcasts compatibles amb aquest dispositiu. Segur que vols continuar?</string>
-    <key>account_sign_out_supporter_subtitle</key>
-    <string>Per a recuperar l'accés, pots tornar a iniciar la sessió.</string>
     <key>account_signed_out_alert_message</key>
     <string>Si escrius Google a Google, pots trencar Internet.
 
  Prem el botó de baix per a tornar a accedir al teu compte de PodHopper.</string>
     <key>account_signed_out_alert_title</key>
     <string>La teva sessió s'ha tancat.</string>
-    <key>account_sso_failed</key>
-    <string>Ha fallat l'accés amb Apple. Prova-ho de nou.</string>
-    <key>account_title</key>
-    <string>Compte del PodHopper</string>
-    <key>account_upgraded</key>
-    <string>Compte actualitzat</string>
-    <key>account_welcome</key>
-    <string>Us donem la benvinguda a PodHopper!</string>
-    <key>account_welcome_plus</key>
-    <string>Us donem la benvinguda a PodHopper Plus!</string>
     <key>add_bookmark</key>
     <string>Afegeix un marcador</string>
     <key>add_bookmark_subtitle</key>
@@ -157,12 +89,6 @@
     <string>Si comences a escoltar un episodi i no en tens més a la cua, la reproducció automàtica continuarà reproduint episodis d'aquest programa o llista.</string>
     <key>announcement_autoplay_title</key>
     <string>Ja pots gaudir de la reproducció automàtica!</string>
-    <key>announcement_bookmarks_description</key>
-    <string>Ara pots guardar els marcadors dels episodis des del menú d'accions del reproductor o amb una acció dels auriculars.</string>
-    <key>announcement_bookmarks_title</key>
-    <string>Els marcadors són aquí!</string>
-    <key>announcement_bookmarks_title_beta</key>
-    <string>Uneix-te a nosaltres a la prova beta dels marcadors!</string>
     <key>announcement_deselect_chapters_free</key>
     <string>Subscriu-te a Plus ara perquè puguis triar i saltar capítols en qualsevol episodi que els suporti.</string>
     <key>announcement_deselect_chapters_patron</key>
@@ -183,50 +109,6 @@
     <string>Gran somni</string>
     <key>app_badge</key>
     <string>Insígnia de l'aplicació</string>
-    <key>app_clip_placholder_message</key>
-    <string>Potser s'ha eliminat o l'enllaç està trencat. 
-Però hi ha molt més a PodHopper. 
-Descarrega l'app per a una experiència completa!</string>
-    <key>app_clip_placholder_title</key>
-    <string>Ho sentim, no hem pogut trobar aquest episodi</string>
-    <key>app_icon_classic</key>
-    <string>Clàssic</string>
-    <key>app_icon_dark</key>
-    <string>Fosc</string>
-    <key>app_icon_default</key>
-    <string>Predeterminat</string>
-    <key>app_icon_electric_blue</key>
-    <string>Blau elèctric</string>
-    <key>app_icon_electric_pink</key>
-    <string>Rosat elèctric</string>
-    <key>app_icon_halloween</key>
-    <string>Halloween</string>
-    <key>app_icon_indigo</key>
-    <string>Índigo</string>
-    <key>app_icon_patron_chrome</key>
-    <string>Patron Cromat</string>
-    <key>app_icon_patron_dark</key>
-    <string>Patron Fosc</string>
-    <key>app_icon_patron_glow</key>
-    <string>Patron Clar</string>
-    <key>app_icon_patron_round</key>
-    <string>Patron Rodó</string>
-    <key>app_icon_plus</key>
-    <string>Plus</string>
-    <key>app_icon_pocket_cats</key>
-    <string>Pocket Cats</string>
-    <key>app_icon_radioactivity</key>
-    <string>Radioactivitat</string>
-    <key>app_icon_red_velvet</key>
-    <string>Vellut vermell</string>
-    <key>app_icon_rose</key>
-    <string>Rosat</string>
-    <key>app_icon_round_dark</key>
-    <string>Arrodonit fosc</string>
-    <key>app_icon_round_light</key>
-    <string>Arrodonit clar</string>
-    <key>app_share_text</key>
-    <string>Hola! A continuació trobaràs un enllaç per a descarregar PodHopper. Aquesta aplicació m'està agradant molt i crec que a tu també et pot interessar.</string>
     <key>app_version</key>
     <string>Versió %1$@ (%2$@)</string>
     <key>appearance_app_icon_header</key>
@@ -291,10 +173,6 @@ Descarrega l'app per a una experiència completa!</string>
     <string>Últim episodi</string>
     <key>auto_download_limit_one_episode_show</key>
     <string>Últim episodi per programa</string>
-    <key>auto_download_off_subtitle</key>
-    <string>Activa la descàrrega automàtica d'episodis per a aquest filtre</string>
-    <key>auto_download_on_plural_format</key>
-    <string>Es descarregaran automàticament els %1$@ primers episodis d'aquest filtre</string>
     <key>auto_download_prompt_first</key>
     <string>Primer</string>
     <key>auto_restart_sleep_timer</key>
@@ -303,28 +181,6 @@ Descarrega l'app per a una experiència completa!</string>
     <string>Si està activat, el temporitzador de son es reiniciarà automàticament si reprodueixes un episodi als  5 minuts següents a l'última pausa.</string>
     <key>back</key>
     <string>Enrere</string>
-    <key>banner_ads_info_label</key>
-    <string>Anunci</string>
-    <key>banner_ads_remove_ads</key>
-    <string>Esborra els anuncis</string>
-    <key>banner_ads_report_ad</key>
-    <string>Denuncia l'anunci</string>
-    <key>banner_ads_report_ad_title</key>
-    <string>Per què estàs denunciant aquest anunci?</string>
-    <key>banner_ads_report_broken</key>
-    <string>Aquest anunci sembla que no funciona bé</string>
-    <key>banner_ads_report_confirmation</key>
-    <string>Has denunciat aquest anunci.</string>
-    <key>banner_ads_report_malicious</key>
-    <string>Aquest és un anunci maliciós</string>
-    <key>banner_ads_report_other</key>
-    <string>Altres</string>
-    <key>banner_ads_report_too_often</key>
-    <string>Veig aquest anunci massa sovint</string>
-    <key>beta_purchase_disabled</key>
-    <string>Per favor, descarrega PodHopper des de l'App Store per a comprar  %1$@.</string>
-    <key>beta_thank_you</key>
-    <string>Gràcies per ser betatester!</string>
     <key>bookmark_added</key>
     <string>Marcador afegit</string>
     <key>bookmark_added_button_title</key>
@@ -349,114 +205,16 @@ Descarrega l'app per a una experiència completa!</string>
     <string>%1$@ marcadors</string>
     <key>bookmarks_count_singular</key>
     <string>1 marcador</string>
-    <key>bookmarks_early_access_locked_message</key>
-    <string>Desbloqueja aquesta funció i moltes més amb PodHopper %1$@ i desa les marques de temps dels teus episodis preferits.  Prest disponible per a %2$@ subscriptors.</string>
-    <key>bookmarks_locked_message</key>
-    <string>Desbloqueja aquesta funció i moltes més amb PodHopper %1$@ i desa els marcadors dels teus episodis preferits.</string>
     <key>bottom</key>
     <string>Darrer de la cua</string>
     <key>bulk_download_max_format</key>
     <string>Les descàrregues massives tenen un límit de %1$@.</string>
     <key>cancel</key>
     <string>Cancel·la</string>
-    <key>cancel_confirm_item_folders</key>
-    <string>Les carpetes s'eliminaran i els seus continguts es traslladaran a la pantalla Pòdcast.</string>
-    <key>cancel_confirm_item_history</key>
-    <string>Els teus pòdcasts i l'historial d'escolta seguiran sent accessibles.</string>
-    <key>cancel_confirm_item_plus</key>
-    <string>Després d'aquesta data, s'eliminarà l'accés a les funcions Plus com ara els marcadors, la reproducció aleatòria, els dispositius portables i més.</string>
-    <key>cancel_confirm_item_uploads</key>
-    <string>Tots els fitxers pujats al teu compte de PodHopper s'eliminaran (però els fitxers que has baixat al dispositiu mòbil es mantindran).</string>
-    <key>cancel_confirm_sub_expiry</key>
-    <string>La teva subscripció actual estarà activa fins al %1$@.</string>
-    <key>cancel_confirm_sub_expiry_date_fallback</key>
-    <string>la data de caducitat</string>
-    <key>cancel_confirm_subtitle</key>
-    <string>La cancel·lació canviarà el teu pla a un compte gratuït.</string>
-    <key>cancel_confirm_title</key>
-    <string>Coses que hauries de saber abans de cancel·lar</string>
     <key>cancel_download</key>
     <string>Cancel·la la descàrrega</string>
-    <key>cancel_failed</key>
-    <string>No es pot cancel·lar</string>
     <key>cancel_subscription</key>
     <string>Cancel·la la subscripció</string>
-    <key>cancel_subscription_available_plans_best_value_badge</key>
-    <string>Millor valorat</string>
-    <key>cancel_subscription_available_plans_footer</key>
-    <string>El teu nou pla s'activarà al final del teu període de facturació actual.</string>
-    <key>cancel_subscription_available_plans_retry_screen_text</key>
-    <string>Hi ha hagut un problema per obtenir els teus plans.</string>
-    <key>cancel_subscription_available_plans_title</key>
-    <string>Plans disponibles</string>
-    <key>cancel_subscription_claim_offer_button</key>
-    <string>Reclama l'oferta</string>
-    <key>cancel_subscription_continue_button</key>
-    <string>Continua amb la cancel·lació</string>
-    <key>cancel_subscription_generic_error</key>
-    <string>S'ha produït un error. Torneu-ho a provar.</string>
-    <key>cancel_subscription_help_description</key>
-    <string>Tenim problemes amb alguna funcionalitat o  dificultats.</string>
-    <key>cancel_subscription_help_title</key>
-    <string>Necessites ajuda amb PodHopper?</string>
-    <key>cancel_subscription_new_plan_description</key>
-    <string>Troba el pla que s'adequa per a tu.</string>
-    <key>cancel_subscription_new_plan_title</key>
-    <string>Busques un pla diferent?</string>
-    <key>cancel_subscription_offer_success_view_description</key>
-    <string>Gràcies per triar PodHopper. El mes gratuït s'afegirà a la teva subscripció actual.</string>
-    <key>cancel_subscription_offer_success_view_title</key>
-    <string>Gaudeix del teu mes gratuït!</string>
-    <key>cancel_subscription_offer_yearly_success_view_description</key>
-    <string>Gràcies per triar PodHopper. El teu pla amb descompte comença després del teu període de facturació actual.</string>
-    <key>cancel_subscription_offer_yearly_success_view_title</key>
-    <string>50%% de descompte en el teu any vinent!</string>
-    <key>cancel_subscription_promotion_description_monthly</key>
-    <string>Estalvia %@ al començament del teu pròxim cicle de facturació.</string>
-    <key>cancel_subscription_promotion_description_yearly</key>
-    <string>Paga %@ ara per un altre any amb un 50%% de descompte</string>
-    <key>cancel_subscription_promotion_title</key>
-    <string>Obtén el teu pròxim mes gratis</string>
-    <key>cancel_subscription_survey_description</key>
-    <string>Ens agradaria saber per què ho cancel·les. La teva opinió ens ajuda a millorar.</string>
-    <key>cancel_subscription_survey_row_better_app</key>
-    <string>He trobat una app millor</string>
-    <key>cancel_subscription_survey_row_cost</key>
-    <string>Raons relacionades amb els costos</string>
-    <key>cancel_subscription_survey_row_not_enough</key>
-    <string>No ho faig servir prou</string>
-    <key>cancel_subscription_survey_row_other</key>
-    <string>Altres</string>
-    <key>cancel_subscription_survey_row_technical_issue</key>
-    <string>Problemes tècnics</string>
-    <key>cancel_subscription_survey_submit_feedback</key>
-    <string>Envia</string>
-    <key>cancel_subscription_survey_title</key>
-    <string>Gràcies per provar
-PodHopper Plus</string>
-    <key>cancel_subscription_survey_toast_fail</key>
-    <string>Alguna cosa ha anat malament.</string>
-    <key>cancel_subscription_survey_toast_success</key>
-    <string>Gràcies pel teu comentari!</string>
-    <key>cancel_subscription_title</key>
-    <string>Penses a marxar?
-Deixa'ns ajudar-te primer</string>
-    <key>cancel_subscription_winback_view_accept_offer_button</key>
-    <string>Accepta l'oferta</string>
-    <key>cancel_subscription_winback_view_continue_cancellation_button</key>
-    <string>Continua amb la cancel·lació</string>
-    <key>cancel_subscription_winback_view_description_montly</key>
-    <string>Gaudeix d'un mes de PodHopper Plus! L'oferta s'afegirà a la teva subscripció actual.</string>
-    <key>cancel_subscription_winback_view_description_yearly</key>
-    <string>Paga %@ ara per assegurar un any de PodHopper Plus a meitat de preu. El teu any amb descompte comença després que acabi el teu pla actual.</string>
-    <key>cancel_subscription_winback_view_title_montly</key>
-    <string>Aconsegueix el teu pròxim mes gratis i estalvia %@</string>
-    <key>cancel_subscription_winback_view_title_yearly</key>
-    <string>Aconsegueix un 50%% de descompte el teu any vinent i estalvia %@</string>
-    <key>cancel_subscription_yearly_promotion_title</key>
-    <string>Aconsegueix un 50%% de descompte el teu any vinent</string>
-    <key>canceling</key>
-    <string>Cancel·lant...</string>
     <key>carplay_chapter_count</key>
     <string>%1$@ de %2$@. %3$@</string>
     <key>carplay_more</key>
@@ -465,30 +223,14 @@ Deixa'ns ajudar-te primer</string>
     <string>Velocitat de reproducció</string>
     <key>carplay_up_next_queue</key>
     <string>Llista «Tot seguit»</string>
-    <key>champion_description</key>
-    <string>Gràcies per estar amb nosaltres des del principi! Si t'agrada fer servir la nostra app, ens encantaria saber la teva opinió.</string>
-    <key>champion_title</key>
-    <string>Ets un veritable campió de PodHopper!</string>
-    <key>change_app_icon</key>
-    <string>Canvia la icona de l'app</string>
     <key>change_bookmark_subtitle</key>
     <string>Canvia el títol que identifica aquest marcador</string>
     <key>change_bookmark_title</key>
     <string>Canvia el títol</string>
     <key>change_email</key>
     <string>Canvia l'adreça de correu electrònic</string>
-    <key>change_email_conf</key>
-    <string>Adreça de correu electrònic canviada</string>
     <key>change_password</key>
     <string>Canvia la contrasenya</string>
-    <key>change_password_conf</key>
-    <string>Contrasenya canviada</string>
-    <key>change_password_error</key>
-    <string>No es pot canviar la contrasenya. No és vàlida.</string>
-    <key>change_password_error_mismatch</key>
-    <string>Les contrasenyes no coincideixen</string>
-    <key>change_password_length_error</key>
-    <string>Ha de tenir 6 caràcters com a mínim</string>
     <key>chapters</key>
     <string>Capítols</string>
     <key>check_internet_connection</key>
@@ -523,20 +265,6 @@ Deixa'ns ajudar-te primer</string>
     <string>Ha fallat l'autenticació.</string>
     <key>clip</key>
     <string>Clip</string>
-    <key>clip_duration_label</key>
-    <string>%@ Durada</string>
-    <key>clip_loading_label</key>
-    <string>Creant Clip...</string>
-    <key>clip_start_label</key>
-    <string>%@ Inici</string>
-    <key>clips_end_time_accessibility_label</key>
-    <string>Clip final</string>
-    <key>clips_shareable_media_a11y_label</key>
-    <string>Opcions de formats per a compartir</string>
-    <key>clips_shareable_media_item_a11y_label</key>
-    <string>%1$@ format %2$@ de %3$@</string>
-    <key>clips_start_time_accessibility_label</key>
-    <string>Inici del clip</string>
     <key>clips_whats_new_button_title</key>
     <string>Som-hi</string>
     <key>clips_whats_new_message</key>
@@ -549,36 +277,10 @@ Deixa'ns ajudar-te primer</string>
     <string>Color</string>
     <key>confirm</key>
     <string>Confirma</string>
-    <key>confirm_new_password_prompt</key>
-    <string>Confirma la nova contrasenya</string>
     <key>continue</key>
     <string>Segueix</string>
     <key>copy</key>
     <string>Copia</string>
-    <key>create_account</key>
-    <string>Crea un compte</string>
-    <key>create_account_app_store_error_message</key>
-    <string>PodHopper té problemes per a connectar-se a l'App Store. Comprova la connexió i torna-ho a provar.</string>
-    <key>create_account_app_store_error_title</key>
-    <string>No es pot contactar amb l'App Store</string>
-    <key>create_account_find_out_more_plus</key>
-    <string>Més informació sobre PodHopper Plus</string>
-    <key>create_account_free_account_type</key>
-    <string>Normal</string>
-    <key>create_account_free_details</key>
-    <string>Gairebé tot</string>
-    <key>create_account_free_price</key>
-    <string>De franc</string>
-    <key>create_account_plus_details</key>
-    <string>Tot desbloquejat</string>
-    <key>create_audio_clip_description</key>
-    <string>Crea un fitxer d'àudio .m4a</string>
-    <key>create_audio_clip_title</key>
-    <string>Crea un fitxer d'àudio</string>
-    <key>create_clip</key>
-    <string>Crea un clip</string>
-    <key>create_filter</key>
-    <string>Crea un filtre</string>
     <key>create_up_next_snapshot</key>
     <string>Crea una instantània</string>
     <key>creator_pick_modal_description</key>
@@ -587,10 +289,6 @@ Deixa'ns ajudar-te primer</string>
     <string>Més informació</string>
     <key>creator_pick_modal_title</key>
     <string>Què és una selecció del creador?</string>
-    <key>current_email_prompt</key>
-    <string>Adreça de correu electrònic actual</string>
-    <key>current_password_prompt</key>
-    <string>Contrasenya actual</string>
     <key>custom_episode</key>
     <string>Episodi personalitzat</string>
     <key>custom_episode_cancel_upload</key>
@@ -805,10 +503,6 @@ Deixa'ns ajudar-te primer</string>
     <string>els Estats Units</string>
     <key>discover_region_worldwide</key>
     <string>De tot el món</string>
-    <key>discover_search_error_msg</key>
-    <string>Introdueix 2 caràcters com a mínim.</string>
-    <key>discover_search_error_title</key>
-    <string>Longitud insuficient</string>
     <key>discover_search_failed</key>
     <string>Ha fallat la cerca</string>
     <key>discover_search_failed_msg</key>
@@ -829,8 +523,6 @@ Deixa'ns ajudar-te primer</string>
     <string>Descarrega</string>
     <key>download_all</key>
     <string>Descarrega-ho tot</string>
-    <key>download_data_warning</key>
-    <string>La descàrrega consumirà dades mòbils.</string>
     <key>download_data_warning_with_settings_link</key>
     <string>Aquesta descàrrega consumirà dades mòbils. Pots desactivar aquesta advertència a [Configuració](%@).</string>
     <key>download_episode_plural_format</key>
@@ -901,177 +593,22 @@ Deixa'ns ajudar-te primer</string>
     <string>Icona de perfil</string>
     <key>eac_informational_banner_profile_title</key>
     <string>Els teus pòdcasts, a qualsevol dispositiu</string>
-    <key>eac_informational_card_backups_description</key>
-    <string>La teva biblioteca i les teves preferències es guarden de manera segura.</string>
-    <key>eac_informational_card_backups_title</key>
-    <string>Còpies de seguretat fiables</string>
-    <key>eac_informational_card_recommendation_description</key>
-    <string>Rep suggeriments de pòdcasts personalitzats segons els teus hàbits d’escolta.</string>
-    <key>eac_informational_card_recommendation_title</key>
-    <string>Recomanacions personalitzades</string>
-    <key>eac_informational_card_sync_description</key>
-    <string>Sincronitza el teu progrés i els teus pòdcasts a tots els dispositius.</string>
-    <key>eac_informational_card_sync_title</key>
-    <string>Sincronitza entre els dispositius</string>
-    <key>eac_informational_view_modal_description</key>
-    <string>Crea un compte o inicia sessió per gaudir de PodHopper al màxim.</string>
-    <key>eac_informational_view_modal_get_started_button</key>
-    <string>Comença</string>
-    <key>eac_informational_view_modal_title</key>
-    <string>Hem detectat que no has iniciat sessió</string>
     <key>edit</key>
     <string>Edita</string>
-    <key>edit_clip</key>
-    <string>Edita el clip</string>
     <key>enable_it_now</key>
     <string>Activa-ho ara</string>
-    <key>eoy_2024_epilogue_description</key>
-    <string>No t'oblidis de compartir-ho amb els amics i fer un reconeixement als teus pòdcasts i creadors favorits.</string>
-    <key>eoy_2024_epilogue_title</key>
-    <string>Gràcies per escoltar amb nosaltres aquest any. Ens veiem el 2025!</string>
-    <key>eoy_card_description</key>
-    <string>Consulta les teves estadístiques d'escolta, els millors pòdcasts i molt més.</string>
-    <key>eoy_create_account_to_see</key>
-    <string>Guarda els teus pòdcasts al núvol, aconsegueix un resum al final de l'any i sincronitza el teu progrés amb altres dispositius.</string>
-    <key>eoy_description</key>
-    <string>Consulta quins han estat els pòdcasts i les categories que més has escoltat, les estadístiques d'escolta i molt més. Comparteix-ho amb els teus amics i fes que tothom sàpiga quins són els teus creadors favorits!</string>
     <key>eoy_not_now</key>
     <string>Ara no</string>
-    <key>eoy_share</key>
-    <string>Comparteix aquesta història</string>
-    <key>eoy_share_this_story_message</key>
-    <string>Copia aquesta imatge a les teves xarxes socials i fes una crida sobre els teus programes i creadors preferits</string>
-    <key>eoy_share_this_story_title</key>
-    <string>Vols compartir aquesta història?</string>
-    <key>eoy_small_title</key>
-    <string>L'any en pòdcasts</string>
-    <key>eoy_start_your_free_trial</key>
-    <string>Comença un període de prova</string>
-    <key>eoy_stories_failed</key>
-    <string>No s'han pogut carregar les històries.</string>
-    <key>eoy_story_epilogue_subtitle</key>
-    <string>No oblidis de compartir-los amb els teus amics i enviar una salutació als teus creadors de pòdcasts preferits</string>
-    <key>eoy_story_epilogue_title</key>
-    <string>Gràcies per a escoltar amb nosaltres aquest any.
-Ens veiem el 2024!</string>
-    <key>eoy_story_intro_title</key>
-    <string>Celebra l'any que has sentit pòdcasts…</string>
-    <key>eoy_story_listened_to</key>
-    <string>L'any 2022, has estat %1$@ escoltant pòdcasts</string>
-    <key>eoy_story_listened_to_categories</key>
-    <string>Has escoltat %1$@ categories diferents enguany</string>
-    <key>eoy_story_listened_to_categories_highlighted</key>
-    <string>Has escoltat %1$@ enguany</string>
-    <key>eoy_story_listened_to_categories_share_text</key>
-    <string>He escoltat %1$@ categories diferents el 2023</string>
-    <key>eoy_story_listened_to_categories_subtitle</key>
-    <string>Anem a fer un cop d'ull a alguns dels teus favorits...</string>
-    <key>eoy_story_listened_to_categories_text</key>
-    <string>%1$@ categories diferents</string>
-    <key>eoy_story_listened_to_episodes_text</key>
-    <string>%1$@ episodis</string>
-    <key>eoy_story_listened_to_numbers</key>
-    <string>Has escoltat %1$@ pòdcasts diferents i %2$@ episodis en total</string>
-    <key>eoy_story_listened_to_numbers_share_text</key>
-    <string>L'any 2022 vaig escoltar %1$@ pòdcasts diferents i %2$@ episodis</string>
-    <key>eoy_story_listened_to_numbers_subtitle</key>
-    <string>Així i tot, n'hi ha un que has escoltat una vegada i una altra...</string>
-    <key>eoy_story_listened_to_numbers_updated</key>
-    <string>Has escoltat %1$@ i %2$@</string>
-    <key>eoy_story_listened_to_podcast_text</key>
-    <string>%1$@ pòdcasts diferents</string>
-    <key>eoy_story_listened_to_share_text</key>
-    <string>Engunay  he gastat %1$@ escoltant pòdcasts</string>
-    <key>eoy_story_listened_to_subtitle</key>
-    <string>Esperem que t'agradés cada minut d'això!</string>
-    <key>eoy_story_listened_to_title</key>
-    <string>Aquest va ser el teu temps total escoltant pòdcasts</string>
-    <key>eoy_story_listened_to_updated</key>
-    <string>Enguany, has passat %1$@ escoltant pòdcasts</string>
-    <key>eoy_story_longest_episode</key>
-    <string>L'episodi més llarg que has sentit dura %1$@</string>
-    <key>eoy_story_longest_episode_duration</key>
-    <string>Aquest episodi va durar %1$@</string>
-    <key>eoy_story_longest_episode_share_text</key>
-    <string>L'episodi més llarg que vaig sentir enguany %1$@</string>
-    <key>eoy_story_longest_episode_subtitle</key>
-    <string>No era altre que “%1$@” de “%2$@”</string>
-    <key>eoy_story_longest_episode_time</key>
-    <string>L'episodi més llarg que has sentit dura %1$@</string>
-    <key>eoy_story_replay</key>
-    <string>Torna a reproduir-ho</string>
-    <key>eoy_story_top_categories</key>
-    <string>Les teves principals categories</string>
-    <key>eoy_story_top_categories_share_text</key>
-    <string>Les meves categories de pòdcasts més escoltades</string>
-    <key>eoy_story_top_categories_subtitle</key>
-    <string>Has escoltat %1$@ episodis d'un total de %2$@</string>
-    <key>eoy_story_top_categories_title</key>
-    <string>Sabies que %1$@ és la teva categoria preferida?</string>
-    <key>eoy_story_top_podcast</key>
-    <string>%1$@ ha estat el pòdcast que més has escoltat el 2023</string>
-    <key>eoy_story_top_podcast_share_text</key>
-    <string>El meu pòdcast favorit de 2022! %1$@</string>
-    <key>eoy_story_top_podcast_subtitle</key>
-    <string>Has escoltat %1$@ episodis d'un total de %2$@</string>
-    <key>eoy_story_top_podcasts</key>
-    <string>Els teus pòdcasts favorits</string>
-    <key>eoy_story_top_podcasts_list_title</key>
-    <string>Els meus pòdcasts principals de 2022!</string>
-    <key>eoy_story_top_podcasts_share_text</key>
-    <string>Els meus pòdcasts principals de l'any! %1$@</string>
-    <key>eoy_story_top_podcasts_subtitle</key>
-    <string>Aquest és el top 5 del més escoltat el 2023</string>
-    <key>eoy_story_top_podcasts_title</key>
-    <string>I tu també has estat gran en aquests pòdcasts!</string>
-    <key>eoy_subscribe_to_plus</key>
-    <string>Subscriu-te a Plus i descobreix el que has escoltat comparat amb el 2022, altres estadístiques divertides i funcions prèmium com els marcadors i carpetes.</string>
-    <key>eoy_theres_more</key>
-    <string>Encara hi ha més!</string>
-    <key>eoy_title</key>
-    <string>El teu any en pòdcasts</string>
-    <key>eoy_view_year</key>
-    <string>Mostra el meu 2023</string>
-    <key>eoy_year_completion_rate</key>
-    <string>taxa de finalització</string>
-    <key>eoy_year_completion_rate_share_text</key>
-    <string>La meva taxa de finalització %1$@</string>
-    <key>eoy_year_completion_rate_subtitle</key>
-    <string>Dels %1$@ episodis que has començat, n'has escoltat completament un total de %2$@</string>
-    <key>eoy_year_completion_rate_title</key>
-    <string>La teva taxa de finalització aquest any ha estat %1$@</string>
-    <key>eoy_year_over_share_text</key>
-    <string>El meu %1$@ temps d'escolta comparat amb %2$@</string>
-    <key>eoy_year_over_year_subtitle_flat</key>
-    <string>I diuen que la constància és la clau de l'èxit... o alguna cosa així!</string>
-    <key>eoy_year_over_year_subtitle_went_down</key>
-    <string>Aaaah... la vida s'ha de viure, no?</string>
-    <key>eoy_year_over_year_subtitle_went_up</key>
-    <string>Preparat per a superar-ho l'any 2024?</string>
-    <key>eoy_year_over_year_title_flat</key>
-    <string>Comparat amb el 2022, el teu temps d'escolta ha estat bastant consistent</string>
-    <key>eoy_year_over_year_title_skyrocketed</key>
-    <string>Comparat amb el 2022, el teu temps d'escolta ha pujat com un coet!</string>
-    <key>eoy_year_over_year_title_went_down</key>
-    <string>Comparat amb el 2022, el teu temps d'escolta ha baixat una mica</string>
-    <key>eoy_year_over_year_title_went_up</key>
-    <string>En comparació amb el 2022, el teu temps d'escolta va augmentar un %1$@%</string>
-    <key>eoy_year_ratings_share_text</key>
-    <string>He valorat %1$@ pòdcasts diferents del %2$@, amb %3$@ com la meva valoració més utilitzada</string>
     <key>episode</key>
     <string>Episodi</string>
     <key>episode_count_plural_format</key>
     <string>%1$@ episodis</string>
-    <key>episode_description_title</key>
-    <string>Descripció de l'episodi</string>
     <key>episode_detail_add</key>
     <string>Afegeix</string>
     <key>episode_details_title</key>
     <string>Notes</string>
     <key>episode_filter_by_duration_label</key>
     <string>Filtra per durada</string>
-    <key>episode_filter_no_episodes_msg</key>
-    <string>Ara, pots celebrar que la llista està acabada o modificar la configuració dels filtres per a trobar més episodis.</string>
     <key>episode_filter_no_episodes_title</key>
     <string>No hi ha episodis</string>
     <key>episode_indicator_bonus</key>
@@ -1094,16 +631,12 @@ Ens veiem el 2024!</string>
     <string>Error</string>
     <key>error_general_podcast_not_found</key>
     <string>No s'ha pogut trobar el pòdcast. Posa't en contacte amb l'autor.</string>
-    <key>export_database</key>
-    <string>Exporta la base de dades</string>
     <key>export_podcasts_description</key>
     <string>Exporta tots els teus pòdcasts a un fitxer OPML, que pots importar a altres aplicacions de pòdcasts.</string>
     <key>export_podcasts_option</key>
     <string>Exporta els pòdcasts</string>
     <key>export_podcasts_title</key>
     <string>EXPORTA</string>
-    <key>exporting_database</key>
-    <string>Exportant la base dades...</string>
     <key>failed_recommendations</key>
     <string>No s'han pogut carregar les recomanacions</string>
     <key>feature_marketing_all_plus_features</key>
@@ -1132,12 +665,6 @@ Ens veiem el 2024!</string>
     <string>NOU</string>
     <key>feature_tour_step_format</key>
     <string>%1$@ de %2$@</string>
-    <key>feedback_continue_with_mail</key>
-    <string>Obre l'aplicació de correu predeterminat</string>
-    <key>feedback_mail_not_configured_msg</key>
-    <string>Per a enviar un fitxer adjunt i corregir errors de programació, has de configurar l'aplicació Mail d'Apple al teu mòbil. Què vols fer?</string>
-    <key>feedback_mail_not_configured_title</key>
-    <string>No s'ha configurat un correu electrònic</string>
     <key>file_upload_add_file</key>
     <string>Afegeix un fitxer</string>
     <key>file_upload_add_image</key>
@@ -1176,56 +703,18 @@ Ens veiem el 2024!</string>
     <string>No s'han pujat fitxers</string>
     <key>files_sort</key>
     <string>Ordena els arxius</string>
-    <key>filter_auto_add_subtitle</key>
-    <string>Els nous pòdcasts als quals et subscriguis s'afegiran automàticament</string>
-    <key>filter_auto_add_subtitle_new</key>
-    <string>Els nous pòdcasts als quals et subscriguis s'afegiran automàticament</string>
-    <key>filter_chips_all_podcasts</key>
-    <string>Tots els pòdcasts</string>
     <key>filter_chips_duration</key>
     <string>Durada</string>
     <key>filter_choose_podcasts</key>
     <string>Tria pòdcasts</string>
-    <key>filter_create_add_more</key>
-    <string>Afegeix més paràmetres per a millorar el teu filtre.</string>
-    <key>filter_create_filter_by</key>
-    <string>FILTRAR PER</string>
-    <key>filter_create_instructions</key>
-    <string>Selecciona els filtres amb aquests botons per a crear una llista de reproducció d'episodis intel·ligent i actualitzada.</string>
     <key>filter_create_no_episodes</key>
     <string>No hi ha episodis que coincideixin</string>
-    <key>filter_create_no_episodes_description_explanation</key>
-    <string>Els paràmetres que has triat no coincideixen amb cap episodi en les teves subscripcions</string>
-    <key>filter_create_no_episodes_description_explanation_new</key>
-    <string>Els criteris que has seleccionat no coincideixen amb cap episodi actual dels teus pòdcasts</string>
-    <key>filter_create_no_episodes_description_prompt</key>
-    <string>Selecciona altres paràmetres o desa aquest filtre si creus que coincidirà amb algun episodi més endavant.</string>
-    <key>filter_create_podcasts_all_podcasts</key>
-    <string>Tots els pòdcasts</string>
-    <key>filter_create_preview</key>
-    <string>VISTA PRÈVIA</string>
-    <key>filter_create_save</key>
-    <string>Guarda el filtre</string>
-    <key>filter_details</key>
-    <string>Detalls del filtre</string>
-    <key>filter_details_color_icon</key>
-    <string>COLOR I ICONA</string>
-    <key>filter_details_color_selection</key>
-    <string>Selector de color</string>
-    <key>filter_details_icon_selection</key>
-    <string>Selector d'icones</string>
-    <key>filter_details_name</key>
-    <string>NOM</string>
     <key>filter_download_status</key>
     <string>Estat de la descàrrega</string>
     <key>filter_episode_status</key>
     <string>Estat de l'episodi</string>
     <key>filter_longer_than_label</key>
     <string>Més de</string>
-    <key>filter_manual_add_subtitle</key>
-    <string>Els nous pòdcasts als quals et subscriguis no s'afegiran automàticament</string>
-    <key>filter_manual_add_subtitle_new</key>
-    <string>Els nous pòdcasts als quals et subscriguis no s'afegiran automàticament</string>
     <key>filter_media_type</key>
     <string>Tipus d'arxiu multimèdia</string>
     <key>filter_media_type_audio</key>
@@ -1238,8 +727,6 @@ Ens veiem el 2024!</string>
     <string>Filtrar els episodis més llargs de %1$@, però més curts de %2$@ provocaria una fissura en el nostre continu espai-temps.</string>
     <key>filter_option_episode_duration_error_title</key>
     <string>Sí, però no</string>
-    <key>filter_options</key>
-    <string>Opcions del filtre</string>
     <key>filter_release_date</key>
     <string>Data de publicació</string>
     <key>filter_release_date_anytime</key>
@@ -1268,10 +755,6 @@ Ens veiem el 2024!</string>
     <string>Novetats</string>
     <key>filters_new_filter_button</key>
     <string>Afegeix un filtre nou</string>
-    <key>filters_tip_view_description</key>
-    <string>Crea filtres intel·ligents per organitzar els episodis. Filtra per durada, data de llançament, tipus de mitjà, i més.</string>
-    <key>filters_tip_view_title</key>
-    <string>Organitza els episodis</string>
     <key>folder</key>
     <string>Carpeta</string>
     <key>folder_add_podcasts_plural_format</key>
@@ -1334,24 +817,10 @@ Ens veiem el 2024!</string>
     <string>Una llista de pòdcasts s'ha eliminat de les carpetes com a resultat de la sincronització.</string>
     <key>follow</key>
     <string>Segueix</string>
-    <key>free_trial_detail_label</key>
-    <string>Sense pagament per avançat. Cancel·la en qualsevol moment</string>
-    <key>free_trial_duration_free</key>
-    <string>%1$@ GRATUÏT</string>
-    <key>free_trial_duration_free_trial</key>
-    <string>PROVA GRATUÏTA DE %1$@</string>
-    <key>free_trial_pricing_terms</key>
-    <string>%1$@ gratuït, i després %2$@</string>
-    <key>free_trial_start_and_subscribe_button</key>
-    <string>Comença una prova gratuïta i subscriure'm</string>
     <key>free_trial_start_button</key>
     <string>Començar la prova gratuïta</string>
-    <key>free_trial_title_label</key>
-    <string>Prova Plus durant %1$@ de franc</string>
     <key>funding</key>
     <string>Finançament</string>
-    <key>funny_conf_msg</key>
-    <string>Combina amb els teus ulls ✨</string>
     <key>funny_time_not_enough</key>
     <string>No has escoltat durant molt temps, no?</string>
     <key>funny_time_unit_airplane_takeoffs</key>
@@ -1394,8 +863,6 @@ Ens veiem el 2024!</string>
     <string>Entesos</string>
     <key>group_episodes</key>
     <string>Agrupa els episodis</string>
-    <key>hang_on</key>
-    <string>Espera!</string>
     <key>history_clear_all</key>
     <string>Esborra-ho tot</string>
     <key>history_clear_all_details</key>
@@ -1408,12 +875,8 @@ Ens veiem el 2024!</string>
     <string>Hores estalviades</string>
     <key>hours_listened</key>
     <string>Hores escoltades</string>
-    <key>hours_plural_format</key>
-    <string>%1$@ hores</string>
     <key>hours_saved</key>
     <string>Hores estalviades</string>
-    <key>hours_singular_format</key>
-    <string>1 hora</string>
     <key>how_to_upload_explanation</key>
     <string>Primer, obre una aplicació que tingui els arxius d'àudio que vols desar</string>
     <key>how_to_upload_share_action_image_center_text</key>
@@ -1430,21 +893,8 @@ Ens veiem el 2024!</string>
     <string>Per compartir aquest arxiu</string>
     <key>how_to_upload_summary</key>
     <string>Ja està. Canvia les dades que vulguis, prém desar i ja pots reproduir-los!</string>
-    <key>iap_product_monthly_pricing_format</key>
-    <string>%1$@/mes</string>
-    <key>iap_product_weekly_pricing_format</key>
-    <string>%1$@/setmana</string>
     <key>import</key>
     <string>Importa</string>
-    <key>import_instructions_apple_podcasts_steps</key>
-    <string>Podem importar els teus pòdcasts des d'Apple Podcasts mitjançant l'aplicació Dreceres incorporada.
-Nota: En cas que hagis eliminat l'aplicació Dreceres, se't demanarà que la torneu a instal·lar.
-1. Toca el botó Instal·lar drecera que apareix a continuació.
-2. Quan se't demani, toca el botó Afegeix drecera.
-3. Ves a la pestanya Dreceres. 
-4. A la llista, localitza la drecera "Apple Podcasts a PodHopper". 
-5. Toca aquesta opció per a iniciar el procés d'importació. 
-6. Quan la drecera estigui feta, en executar PodHopper es tornarà a obrir i es finalitzarà el procés d'importació.</string>
     <key>import_instructions_breaker</key>
     <string>1. Toca el botó Obrir a Breaker que apareix a sota. 
 2. Ves a Paràmetres a la barra de pestanyes inferior. 
@@ -1475,8 +925,6 @@ Nota: En cas que hagis eliminat l'aplicació Dreceres, se't demanarà que la tor
     <string>Instal·lar l'accés directe</string>
     <key>import_instructions_open_in</key>
     <string>Obre %1$@</string>
-    <key>import_instructions_other_apps_title</key>
-    <string>altres aplicacions</string>
     <key>import_instructions_overcast</key>
     <string>1. Toca el botó de sota per a obrir a Overcast. 
 2. Toca la icona d'engranatge que apareix a la part superior de l'aplicació. 
@@ -1500,14 +948,6 @@ Nota: Potser necessitaràs enviar-te per correu electrònic el fitxer OPML, mant
     <string>Emporta't els teus pòdcasts amb tu</string>
     <key>in_progress</key>
     <string>En progrés</string>
-    <key>interests_select_at_least</key>
-    <string>Selecciona almenys %1$@</string>
-    <key>interests_show_more_categories</key>
-    <string>Mostra més categories</string>
-    <key>interests_subtitle</key>
-    <string>Arriben grans pòdcasts, triats a mà per persones reals!</string>
-    <key>interests_title</key>
-    <string>Explica’ns quins són els teus temes preferits</string>
     <key>keycommand_close_player</key>
     <string>Tanca el reproductor</string>
     <key>keycommand_decrease_speed</key>
@@ -1518,32 +958,6 @@ Nota: Potser necessitaràs enviar-te per correu electrònic el fitxer OPML, mant
     <string>Obre el reproductor</string>
     <key>keycommand_play_pause</key>
     <string>Reprodueix / Posa en pausa</string>
-    <key>kids_profile_banner_badge</key>
-    <string>Aviat</string>
-    <key>kids_profile_banner_request_button</key>
-    <string>Sol·licita accés anticipat </string>
-    <key>kids_profile_banner_text</key>
-    <string>Un nou perfil només amb contingut per a infants per a mantenir les teves subscripcions ordenades.</string>
-    <key>kids_profile_banner_title</key>
-    <string>Perfil per a infants</string>
-    <key>kids_profile_submit_error</key>
-    <string>Alguna cosa ha anat malament. Prova de tornar a enviar un comentari</string>
-    <key>kids_profile_submit_feedback_send_button</key>
-    <string>Envia</string>
-    <key>kids_profile_submit_feedback_title</key>
-    <string>Què t'agradaria veure en un perfil d'infants per a PodHopper?</string>
-    <key>kids_profile_submit_success</key>
-    <string>Gràcies per la teva aportació!</string>
-    <key>kids_profile_thankyou_button_close</key>
-    <string>No, gràcies</string>
-    <key>kids_profile_thankyou_button_send</key>
-    <string>Envia comentaris</string>
-    <key>kids_profile_thankyou_text</key>
-    <string>Rebràs una notificació a través de l'app quan el nou perfil d'infants estigui llest! Vols fer-nos saber què t'agradaria veure?</string>
-    <key>kids_profile_thankyou_title</key>
-    <string>Gràcies pel teu interès</string>
-    <key>learn_about_ratings</key>
-    <string>Informa't sobre les valoracions</string>
     <key>learn_more</key>
     <string>Més informació</string>
     <key>listening_history</key>
@@ -1556,20 +970,8 @@ Nota: Potser necessitaràs enviar-te per correu electrònic el fitxer OPML, mant
     <string>No s'han trobat episodis</string>
     <key>loading</key>
     <string>Carregant...</string>
-    <key>login_landing_subtitle</key>
-    <string>Els teus pòdcasts, sempre sincronitzats. Mantingues la teva biblioteca segura i gaudeix de PodHopper a la web i escriptori.</string>
-    <key>login_landing_title</key>
-    <string>Crea un compte de PodHopper</string>
-    <key>login_subtitle</key>
-    <string>Crea un compte per a sincronitzar la teva experiència auditiva en tots els teus dispositius.</string>
-    <key>login_title</key>
-    <string>Descobreix el teu pròxim pòdcast favorit</string>
     <key>logs</key>
     <string>Registres</string>
-    <key>logs_no_email_account_configured</key>
-    <string>Has de configurar un compte de correu electrònic al dispositiu per poder enviar els registres</string>
-    <key>logs_watch_os_not_available</key>
-    <string>No hi ha registres de watchOS disponibles. Assegura't que tens un Apple Watch emparellat i l'aplicació de rellotge PodHopper instal·lada.</string>
     <key>manage_downloads_action</key>
     <string>Gestiona les descàrregues</string>
     <key>manage_downloads_detail</key>
@@ -1662,18 +1064,12 @@ Nota: Potser necessitaràs enviar-te per correu electrònic el fitxer OPML, mant
     <string>Eliminant 1 episodi dels destacats</string>
     <key>name</key>
     <string>Nom</string>
-    <key>new_email_address_prompt</key>
-    <string>Nova adreça de correu electrònic</string>
     <key>new_episodes</key>
     <string>Episodis nous</string>
-    <key>new_password_prompt</key>
-    <string>Contrasenya nova</string>
     <key>next</key>
     <string>Següent</string>
     <key>next_episode</key>
     <string>Episodi següent</string>
-    <key>next_payment_format</key>
-    <string>Pròxim pagament: %1$@</string>
     <key>no_bookmarks_button_title</key>
     <string>Configuració dels auriculars</string>
     <key>no_bookmarks_locked_button_title</key>
@@ -1688,10 +1084,6 @@ Nota: Potser necessitaràs enviar-te per correu electrònic el fitxer OPML, mant
     <string>Cap</string>
     <key>not_on_wifi</key>
     <string>No estàs connectat a una Wi-Fi</string>
-    <key>notifications_app_clip_body</key>
-    <string>Instal·la PodHopper per gaudir de l'experiència completa amb potents eines de reproducció i personalització.</string>
-    <key>notifications_app_clip_title</key>
-    <string>Preparat per a més pòdcasts?</string>
     <key>notifications_daily_reminders</key>
     <string>Recordatoris diaris</string>
     <key>notifications_new_feature_suggested_folders_body</key>
@@ -1802,18 +1194,6 @@ Nota: Potser necessitaràs enviar-te per correu electrònic el fitxer OPML, mant
     <string>D'acord</string>
     <key>on</key>
     <string>Activat</string>
-    <key>onboarding_quote_author</key>
-    <string>Usuari de PodHopper</string>
-    <key>onboarding_quote_best</key>
-    <string>La millor aplicació de pòdcasts. Amb diferència</string>
-    <key>onboarding_quote_customization</key>
-    <string>La quantitat de personalització és una bogeria</string>
-    <key>onboarding_quote_folders</key>
-    <string>Organitzar els meus pòdcasts per carpetes és genial</string>
-    <key>onboarding_recommendations_subtitle</key>
-    <string>Aquí tens alguns programes fantàstics per començar. Toca per seguir-los, cercar-ne més o importar-ne des d’altres aplicacions.</string>
-    <key>onboarding_recommendations_title</key>
-    <string>Esperem que t'agradin aquests suggeriments!</string>
     <key>only_on_unmetered_wifi</key>
     <string>Només amb Wi-Fi sense restriccions de dades</string>
     <key>only_on_unmetered_wifi_details</key>
@@ -1832,37 +1212,10 @@ Nota: Potser necessitaràs enviar-te per correu electrònic el fitxer OPML, mant
     <string>Important els pòdcasts...</string>
     <key>page_control_page_progress_format</key>
     <string>Pàgina %1$@ de %2$@</string>
-    <key>paid_podcast_bundled_subscriptions</key>
-    <string>%1$@ / %2$@ SUBSCRITS</string>
-    <key>paid_podcast_cancel</key>
-    <string>Cancel·la la contribució</string>
-    <key>paid_podcast_cancel_msg_plural</key>
-    <string>L'estat del seguidor seguirà actiu fins al %1$@. Després d'aquesta data, no podràs reproduir aquests pòdcasts.</string>
-    <key>paid_podcast_cancel_msg_retain_access</key>
-    <string>L'estat de col·laborador seguirà actiu fins al %1$@. Només podràs escoltar els episodis publicats abans d'aquesta data.</string>
-    <key>paid_podcast_cancel_msg_singular</key>
-    <string>L'estatus de col·laborador estarà actiu fins al %1$@. Després ja no podràs reproduir aquest pòdcast.</string>
-    <key>paid_podcast_generic_error</key>
-    <string>No s'ha pogut carregar la informació</string>
-    <key>paid_podcast_manage</key>
-    <string>Administra</string>
     <key>paid_podcast_next_episode_format</key>
     <string>Episodi següent: %1$@</string>
     <key>paid_podcast_release_frequency_format</key>
     <string>Freqüència de publicació: %1$@</string>
-    <key>paid_podcast_signin_prompt_msg</key>
-    <string>INICIA LA SESSIÓ PER A
-ACTUALITZACIONS</string>
-    <key>paid_podcast_signin_prompt_title</key>
-    <string>Inicia la sessió per a nous episodis</string>
-    <key>paid_podcast_subscription_ended</key>
-    <string>ACABAT: %1$@</string>
-    <key>paid_podcast_subscription_ends</key>
-    <string>ACABA: %1$@</string>
-    <key>paid_podcast_supporter_only_msg</key>
-    <string>Feed exclusiu per a subscriptors</string>
-    <key>paid_podcast_unsubscribe_msg</key>
-    <string>Estàs segur que vols cancel·lar la subscripció a tots aquests pòdcasts? Això eliminarà tots els seus arxius descarregats</string>
     <key>patron</key>
     <string>Patron</string>
     <key>patron_callout</key>
@@ -1877,20 +1230,8 @@ ACTUALITZACIONS</string>
     <string>Els subscriptors tenen una insígnia de perfil</string>
     <key>patron_feature_profile_icons</key>
     <string>Icones especials de l'aplicació PodHopper</string>
-    <key>patron_purchase_promo_title</key>
-    <string>Converteix-te en membre Patron i gaudeix de totes les funcions de PodHopper</string>
     <key>patron_subscribe_to</key>
     <string>Subscriu-te a Patron</string>
-    <key>patron_thank_you</key>
-    <string>Gràcies per la teva ajuda!</string>
-    <key>patron_unlock_instructions</key>
-    <string>Mantén premut el botó de desbloqueig que hi ha a continuació per a rebre algunes mostres del nostre agraïment.</string>
-    <key>patron_unlock_release</key>
-    <string>Prem per a desbloquejar</string>
-    <key>patron_unlock_word</key>
-    <string>desbloqueja</string>
-    <key>patron_unlocking</key>
-    <string>Desbloquejant</string>
     <key>pause</key>
     <string>Pausa</string>
     <key>paywall_dynamic_headline_banner_ad</key>
@@ -1921,143 +1262,6 @@ ACTUALITZACIONS</string>
     <string>Reprodueix a continuació</string>
     <key>play_next_in_up_next</key>
     <string>Reprodueix a continuació a «Tot seguit»</string>
-    <key>playback_2024_completion_rate_description</key>
-    <string>Dels %1$@ episodis que vas començar, has escoltat completament un total de %2$@.</string>
-    <key>playback_2024_completion_rate_title</key>
-    <string>La teva taxa de finalització dels episodis escolats aquest any ha estat del %1$@</string>
-    <key>playback_2024_description</key>
-    <string>Consulta els teus pòdcasts més destacats, categories, estadístiques d'escolta i molt més. Comparteix-ho amb amics i fes que tothom sàpiga quins són els teus creadors preferits!</string>
-    <key>playback_2024_feature_description</key>
-    <string>Mira les estadístiques d'escolta, els millors pòdcasts i més.</string>
-    <key>playback_2024_feature_title</key>
-    <string>El repàs a 2024 ja és aquí!</string>
-    <key>playback_2024_listening_time_description</key>
-    <string>%1$@ total escoltant pòdcasts</string>
-    <key>playback_2024_longest_episode_description</key>
-    <string>Ha estat "%1$@" de "%2$@".</string>
-    <key>playback_2024_longest_episode_title</key>
-    <string>L'episodi més llarg que has escoltat ha estat %1$@</string>
-    <key>playback_2024_plus_upsell_button_title</key>
-    <string>Consulta PodHopper Plus</string>
-    <key>playback_2024_plus_upsell_description</key>
-    <string>Ajuda PodHopper subscrivint-te a Plus i obtén més estadístiques, a més de funcions Prèmium com ara marcadors, carpetes o capítols preseleccionats!</string>
-    <key>playback_2024_plus_upsell_title</key>
-    <string>Encara hi ha més!</string>
-    <key>playback_2024_ratings_description_1_to_3</key>
-    <string>Gràcies per compartir els teus comentaris amb la comunitat de creadors</string>
-    <key>playback_2024_ratings_description_4_to_5</key>
-    <string>Uau, tantes %1$@ estrelles de valoració! Gràcies per compartir l'amor amb els teus creadors favorits.</string>
-    <key>playback_2024_ratings_empty_description</key>
-    <string>Sabies que ara pots valorar els teus programes? Comparteix l'amor pels teus creadors favorits i ajuda'ls a ser reconeguts!</string>
-    <key>playback_2024_ratings_empty_title</key>
-    <string>Oh-oh! Encara no hi ha valoracions del pòdcast per a mostrar encara.</string>
-    <key>playback_2024_ratings_title</key>
-    <string>Anem a veure les teves valoracions!</string>
-    <key>playback_2024_top_spot_description</key>
-    <string>Has escoltat %1$@ episodis per un total de %2$@ de "%3$@".</string>
-    <key>playback_2024_top_spot_title</key>
-    <string>Aquest va ser el teu pòdcast més sentit el 2024</string>
-    <key>playback_2024_view_year</key>
-    <string>Mostra el meu historial de reproducció de 2024</string>
-    <key>playback_2024_year_over_year_compare_description_down</key>
-    <string>Aaaah... la vida s'ha de viure, no?</string>
-    <key>playback_2024_year_over_year_compare_description_same</key>
-    <string>I diuen que la consistència és la clau de l'èxit... o alguna cosa així!</string>
-    <key>playback_2024_year_over_year_compare_description_up</key>
-    <string>Preparat per superar-ho el 2025?</string>
-    <key>playback_2024_year_over_year_compare_title_down_little</key>
-    <string>Comparat amb el 2023, el teu temps d'escolta ha baixat una mica</string>
-    <key>playback_2024_year_over_year_compare_title_down_lot</key>
-    <string>Comparat amb el 2023, el teu temps d'escolta ha baixat un impressionant %1$@</string>
-    <key>playback_2024_year_over_year_compare_title_down_over_500</key>
-    <string>Comparat amb el 2023, el teu temps d'escolta ha baixat més d'un %1$@</string>
-    <key>playback_2024_year_over_year_compare_title_same</key>
-    <string>Comparat amb el 2023, el teu temps d'escolta es va mantenir força consistent</string>
-    <key>playback_2024_year_over_year_compare_title_up_above_maximum</key>
-    <string>Comparat amb el 2023, el teu temps d'escolta ha augmentat més d'un %1$@</string>
-    <key>playback_2024_year_over_year_compare_title_up_little</key>
-    <string>En comparació amb el 2023, el teu temps d'escolta ha augmentat una mica</string>
-    <key>playback_2024_year_over_year_compare_title_up_lot</key>
-    <string>Comparat amb el 2023, el teu temps d'escolta ha augmentat un impressionant %1$@</string>
-    <key>playback_2024_year_over_year_compare_title_up_over_500</key>
-    <string>Comparat amb el 2023, el teu temps d'escolta ha augmentat més d'un %1$@</string>
-    <key>playback_2025_completion_rate_message</key>
-    <string>De %1$@ episodis començats, n'has acabat %2$@. Un seguiment més fort que la majoria de les subscripcions al gimnàs</string>
-    <key>playback_2025_completion_rate_title</key>
-    <string>La teva taxa de finalització va ser del %1$@</string>
-    <key>playback_2025_end_story_description</key>
-    <string>Comparteix la teva reproducció amb els amics i mostra afecte als podcasters que t’han acompanyat durant tot l’any</string>
-    <key>playback_2025_end_story_title</key>
-    <string>Gràcies per passar l'any amb PodHopper</string>
-    <key>playback_2025_failed_to_load</key>
-    <string>No s'ha pogut carregar el repàs</string>
-    <key>playback_2025_feature_description</key>
-    <string>Consulta les teves estadístiques d'escolta, els millors pòdcasts i molt més.</string>
-    <key>playback_2025_feature_title</key>
-    <string>El repàs de l'any ja és aquí!</string>
-    <key>playback_2025_intro_message</key>
-    <string>El teu any en pòdcasts, resumit i llest per reviure</string>
-    <key>playback_2025_listened_to_numbers</key>
-    <string>Has escoltat %1$@ pòdcasts i %2$@ episodis</string>
-    <key>playback_2025_listening_time</key>
-    <string>minuts escoltats</string>
-    <key>playback_2025_longest_episode_footer</key>
-    <string>L'episodi més llarg va ser “%1$@” de “%2$@”</string>
-    <key>playback_2025_longest_episode_message</key>
-    <string>Esperem que hagis estirat primer!</string>
-    <key>playback_2025_longest_episode_title</key>
-    <string>La teva escolta de marató: %1$@</string>
-    <key>playback_2025_plus_thanks_description</key>
-    <string>Els teus avantatges de %1$@ activen estadístiques addicionals i funcions avançades</string>
-    <key>playback_2025_plus_thanks_title</key>
-    <string>Gràcies per donar suport a PodHopper!</string>
-    <key>playback_2025_plus_upsell_button_title</key>
-    <string>Aconsegueix PodHopper Plus</string>
-    <key>playback_2025_plus_upsell_description</key>
-    <string>Subscriu-te a PodHopper Plus per a estadístiques ampliades, marcadors, carpetes, selecció de capítols i més maneres de millorar els teus hàbits d'escolta</string>
-    <key>playback_2025_plus_upsell_title</key>
-    <string>Vols aprofundir més?</string>
-    <key>playback_2025_ratings_description_1_to_3</key>
-    <string>Les ressenyes ajuden a trobar bons pòdcasts</string>
-    <key>playback_2025_ratings_description_4_to_5</key>
-    <string>Els creadors de tot arreu aprecien l'amor</string>
-    <key>playback_2025_ratings_empty_description</key>
-    <string>Ajuda els teus creadors preferits a donar-se a conèixer compartint allò que t’agrada</string>
-    <key>playback_2025_ratings_empty_title</key>
-    <string>Encara no hi ha valoracions, però encara hi ets a temps!</string>
-    <key>playback_2025_ratings_title_1_to_3</key>
-    <string>Gràcies per compartir els teus comentaris.</string>
-    <key>playback_2025_ratings_title_4_to_5</key>
-    <string>Has deixat valoracions de %1$@ estrelles com si fossin confeti</string>
-    <key>playback_2025_top_5_podcasts_message</key>
-    <string>Més favorits, més reproducció, més tu</string>
-    <key>playback_2025_top_5_podcasts_title</key>
-    <string>Els teus altres imprescindibles</string>
-    <key>playback_2025_top_spot_description</key>
-    <string>%1$@ episodis, %2$@.
-Això sí que és compromís!</string>
-    <key>playback_2025_top_spot_subtitle</key>
-    <string>No hi ha res que sigui més “tu” que això</string>
-    <key>playback_2025_top_spot_title</key>
-    <string>Els teus millors pòdcasts de 2025</string>
-    <key>playback_2025_view_year</key>
-    <string>Mostra el meu historial de reproducció de 2025</string>
-    <key>playback_2025_year_over_year_comparison_down_message</key>
-    <string>Però ei, qualitat abans que quantitat</string>
-    <key>playback_2025_year_over_year_comparison_down_title</key>
-    <string>La teva escolta ha baixat %1$@ enguany</string>
-    <key>playback_2025_year_over_year_comparison_hero_message</key>
-    <string>Has escoltat %1$@ més enguany: benvinguda al club</string>
-    <key>playback_2025_year_over_year_comparison_hero_title</key>
-    <string>De zero a heroi!</string>
-    <key>playback_2025_year_over_year_comparison_same_message</key>
-    <string>Consistent i fiable, com el teu cafè preferit</string>
-    <key>playback_2025_year_over_year_comparison_same_title</key>
-    <string>La teva escolta de 2025 es va mantenir estable</string>
-    <key>playback_2025_year_over_year_comparison_up_message</key>
-    <string>Més pòdcasts, més alegria</string>
-    <key>playback_2025_year_over_year_comparison_up_title</key>
-    <string>Comparat amb el 2024, el teu temps d'escolta s'ha disparat un %1$@</string>
     <key>playback_effect_all_podcasts</key>
     <string>Tots els pòdcasts</string>
     <key>playback_effect_this_podcast</key>
@@ -2072,8 +1276,6 @@ Això sí que és compromís!</string>
     <string>Efectes de reproducció</string>
     <key>playback_failed</key>
     <string>Error en reproduir</string>
-    <key>playback_not_available</key>
-    <string>Reproducció no disponible</string>
     <key>playback_speed</key>
     <string>%1$@x</string>
     <key>player_accessibility_sleep_timer_on</key>
@@ -2102,8 +1304,6 @@ Això sí que és compromís!</string>
     <string>Caràtula de %1$@</string>
     <key>player_chapter_count</key>
     <string>%1$@ de %2$@</string>
-    <key>player_decrement_time</key>
-    <string>Temps de disminució</string>
     <key>player_effects_trim_silence_details</key>
     <string>Redueix la durada de l'episodi retallant els silencis a les converses.</string>
     <key>player_effects_trim_silence_progress</key>
@@ -2124,24 +1324,14 @@ Això sí que és compromís!</string>
     <string>Estàs desconectat</string>
     <key>player_error_short_playback_error</key>
     <string>La reproducció ha fallat. Torna-ho a provar</string>
-    <key>player_increment_time</key>
-    <string>Temps addicional</string>
     <key>player_mark_as_played_confirmation</key>
     <string>Vols marcar aquest episodi com a reproduït?</string>
     <key>player_mark_as_played_confirmation_message</key>
     <string>Sortirà de «Tot seguit» i passarà al teu historial.</string>
-    <key>player_options_play_all_message</key>
-    <string>Això esborrarà la cua actual de la llista «Tot seguit».</string>
-    <key>player_options_play_episode_singular</key>
-    <string>Reprodueix 1 episodi</string>
-    <key>player_options_play_episodes_plural</key>
-    <string>Reprodueix %1$@ episodis</string>
     <key>player_options_shortcut_on_player</key>
     <string>ACCÉS DIRECTE AL REPRODUCTOR</string>
     <key>player_route_selection</key>
     <string>Selector de la ruta</string>
-    <key>player_share_header</key>
-    <string>COMPARTEIX L'ENLLAÇ A</string>
     <key>player_show_notes_title</key>
     <string>Notes</string>
     <key>player_user_episode_download_error</key>
@@ -2208,16 +1398,6 @@ Prova d'ajustar les regles, o desa aquesta llista de reproducció per a futurs e
     <string>Tots els episodis s'han arxivat. Afegeix o desarxiva per a reproduir.</string>
     <key>playlist_options</key>
     <string>Opcions de la llista de reproducció</string>
-    <key>playlist_play_all_option_save_queue</key>
-    <string>Desa la cua actual</string>
-    <key>playlist_play_all_picker_message</key>
-    <string>La llista actual de «Tot seguit» se substituirà quan reprodueixis aquesta llista de reproducció. Desa-ho primer per mantenir-ho.</string>
-    <key>playlist_play_all_picker_title</key>
-    <string>Vols desar la teva cua de «Tot seguit»?</string>
-    <key>playlist_play_all_replace_picker_message</key>
-    <string>Això esborrarà la teva cua actual de «Tot seguit» i començarà a reproduir aquesta llista de reproducció.</string>
-    <key>playlist_play_all_replace_picker_title</key>
-    <string>Substituir l'actual «Tot seguit»?</string>
     <key>playlist_play_all_sheet_button_title</key>
     <string>Substitueix i reprodueix</string>
     <key>playlist_play_all_sheet_description</key>
@@ -2240,8 +1420,6 @@ Prova d'ajustar les regles, o desa aquesta llista de reproducció per a futurs e
     <string>Arribats aquí, pots celebrar que la llista s'ha acabat o modificar la configuració dels filtres per trobar més episodis.</string>
     <key>playlist_smart_preview_description</key>
     <string>Configura regles intel·ligents per afegir automàticament episodis a la teva llista de reproducció intel·ligent.</string>
-    <key>playlist_smart_preview_enabled_rules</key>
-    <string>Regles activades</string>
     <key>playlist_smart_preview_more_rules</key>
     <string>Més regles</string>
     <key>playlist_smart_rule_podcasts_header_subtitle_auto_add</key>
@@ -2264,8 +1442,6 @@ Prova d'ajustar les regles, o desa aquesta llista de reproducció per a futurs e
     <string>Llistes</string>
     <key>playlists_auto_download_off_subtitle</key>
     <string>Activa la descàrrega automàtica d'episodis en aquesta llista</string>
-    <key>playlists_auto_download_on_plural_format</key>
-    <string>Els primers %1$@ episodis d'aquesta llista de reproducció es descarregaran automàticament</string>
     <key>playlists_default_new_playlist</key>
     <string>Llista de reproducció nova</string>
     <key>playlists_delete</key>
@@ -2296,58 +1472,10 @@ Prova d'ajustar les regles, o desa aquesta llista de reproducció per a futurs e
     <string>Torna-ho a intentar</string>
     <key>please_try_again_later</key>
     <string>Intenta-ho més tard.</string>
-    <key>plus_account_required_prompt</key>
-    <string>Es necessita un compte de PodHopper per a entrar a PodHopper Plus. Això garanteix una escolta perfecta a tots els dispositius.</string>
-    <key>plus_account_required_prompt_details</key>
-    <string>Crea un compte o inicia sessió per a canviar el teu accés a PodHopper Plus.</string>
-    <key>plus_account_trial_details</key>
-    <string>Quan acabi la prova, podràs continuar gaudint de tots els avantatges del teu compte de sempre. Gaudeix dels pòdcasts!</string>
-    <key>plus_button_title_unlock_all</key>
-    <string>Desbloqueja totes les funcions</string>
-    <key>plus_cancel_terms</key>
-    <string>Es pot cancel·lar en qualsevol moment</string>
-    <key>plus_champion</key>
-    <string>Campió de PodHopper</string>
-    <key>plus_champion_message</key>
-    <string>Gràcies per estar amb PodHopper des del principi. Ets un veritable campió!</string>
     <key>plus_cloud_storage_limit_format</key>
     <string>%1$@ GB d'emmagatzematge al núvol</string>
     <key>plus_discount_yearly_membership</key>
     <string>50%% de descompte el primer any</string>
-    <key>plus_error_already_registered</key>
-    <string>Ja tens un compte de PodHopper Plus</string>
-    <key>plus_error_already_registered_details</key>
-    <string>Gràcies pel teu suport, però lamentablement això significa que no pots participar en aquesta promoció.</string>
-    <key>plus_expiration_format</key>
-    <string>Caduca %1$@</string>
-    <key>plus_feature_card_text_bookmarks</key>
-    <string>Desa els teus fragments favorits de qualsevol episodi i recupera'ls.</string>
-    <key>plus_feature_card_text_desktop</key>
-    <string>Escolta en més llocs amb les nostres aplicacions per a Windows, macOS i Web.</string>
-    <key>plus_feature_card_text_extra_themes</key>
-    <string>Mostra't tal com ets. Icones i temes exclusius per als nostres subscriptors.</string>
-    <key>plus_feature_card_text_folders</key>
-    <string>Organitza els teus pòdcasts en carpetes i mantingues-los sincronitzats en tots els teus dispositius.</string>
-    <key>plus_feature_card_text_slumber_studio</key>
-    <string>Aconsegueix 1 any de contingut prèmium de Slumber Studios.</string>
-    <key>plus_feature_card_text_storage</key>
-    <string>Carrega els teus arxius a l'emmagatzematge al núvol per a poder accedir-hi des de qualsevol lloc.</string>
-    <key>plus_feature_card_text_wear_os</key>
-    <string>Deixa el telèfon i ves a córrer.</string>
-    <key>plus_feature_card_title_bookmarks</key>
-    <string>Marcadors</string>
-    <key>plus_feature_card_title_desktop</key>
-    <string>Aplicacions d'escriptori i web</string>
-    <key>plus_feature_card_title_extra_themes</key>
-    <string>Temes extra i imatges d'icones</string>
-    <key>plus_feature_card_title_folders</key>
-    <string>Carpetes</string>
-    <key>plus_feature_card_title_slumber_studio</key>
-    <string>Somnia amb Slumber Studios</string>
-    <key>plus_feature_card_title_storage</key>
-    <string>20 GB d'emmagatzematge</string>
-    <key>plus_feature_card_title_wear_os</key>
-    <string>Reproducció d'Apple Watch i Wear OS</string>
     <key>plus_feature_gratitude</key>
     <string>L'etern agraïment de l'equip de PodHopper</string>
     <key>plus_feature_librofm</key>
@@ -2364,98 +1492,34 @@ Prova d'ajustar les regles, o desa aquesta llista de reproducció per a futurs e
     <string>Prova gratuïta de %1$@</string>
     <key>plus_marketing_bookmarks_title</key>
     <string>Marcadors</string>
-    <key>plus_marketing_desktop_apps_title</key>
-    <string>Aplicacions d'escriptori i web</string>
-    <key>plus_marketing_folders_and_bookmarks_title</key>
-    <string>Carpetes i marcadors</string>
-    <key>plus_marketing_folders_description</key>
-    <string>Crea carpetes per a organitzar la teva col·lecció de pòdcasts.</string>
     <key>plus_marketing_folders_title</key>
     <string>Carpetes</string>
     <key>plus_marketing_generated_transcripts</key>
     <string>Transcripcions generades</string>
-    <key>plus_marketing_hide_ads_description</key>
-    <string>L'experiència sense anuncis que et dona més del que t'encanta i menys del que et desagrada</string>
-    <key>plus_marketing_hide_ads_title</key>
-    <string>Amaga els anuncis</string>
     <key>plus_marketing_learn_more_button</key>
     <string>Més informació sobre PodHopper Plus</string>
-    <key>plus_marketing_main_description</key>
-    <string>Personal i organitzat, tot a la vegada. Puja els teus arxius d'àudio personals als nostres servidors al núvol, accedeix al teu compte a través del nostre reproductor web i personalitza l'aplicació.</string>
     <key>plus_marketing_no_banner_ads</key>
     <string>Sense anuncis publicitaris</string>
-    <key>plus_marketing_subtitle</key>
-    <string>Accedeix a funcions i opcions de personalització exclusives</string>
-    <key>plus_marketing_themes_icons_title</key>
-    <string>Temes i icones</string>
     <key>plus_marketing_title</key>
     <string>Tot el que t'agrada de PodHopper, i molt més</string>
     <key>plus_marketing_up_next_shuffle</key>
     <string>Reproducció aleatòria</string>
-    <key>plus_marketing_updated_cloud_storage_description</key>
-    <string>Carrega els teus arxius a l'emmagatzematge al núvol per a poder accedir-hi des de qualsevol lloc</string>
-    <key>plus_marketing_updated_desktop_apps_description</key>
-    <string>Escolta els teus pòdcasts a més llocs amb les nostres aplicacions per a Windows, macOS i web</string>
-    <key>plus_marketing_updated_folders_description</key>
-    <string>Organitza els teus pòdcasts en carpetes i així els podràs tenir sincronitzats en tots els teus dispositius.</string>
     <key>plus_marketing_watch_playback_title</key>
     <string>Aplicacions d'Apple Watch i de Wear OS</string>
     <key>plus_monthly_frequency_pricing_format</key>
     <string>%1$@ al mes</string>
-    <key>plus_payment_canceled</key>
-    <string>Pagament cancel·lat</string>
-    <key>plus_payment_frequency_best_value</key>
-    <string>Millor oferta</string>
-    <key>plus_per_month</key>
-    <string>al mes</string>
-    <key>plus_price_per_month</key>
-    <string>%1$@ / al mes</string>
     <key>plus_promo_paragraph</key>
     <string>Aconsegueix PodHopper Plus per a desbloquejar aquesta funció i moltes més!</string>
-    <key>plus_promotion_expired</key>
-    <string>Promoció caducada o no vàlida</string>
-    <key>plus_promotion_expired_nudge</key>
-    <string>De tota manera, pots registrar-te a PodHopper Plus, crear un compte normal o simplement començar a emprar-ho ara mateix.</string>
-    <key>plus_promotion_used</key>
-    <string>Aquest codi ja s'ha emprat</string>
-    <key>plus_purchase_failed</key>
-    <string>Sembla que s'ha produït un error en processar el pagament. Torneu-ho a provar.</string>
-    <key>plus_purchase_promo_title</key>
-    <string>Passa't a membre Plus i gaudeix de totes les funcions de PodHopper</string>
-    <key>plus_required_feature</key>
-    <string>Aquesta funció necessita PodHopper Plus</string>
-    <key>plus_select_payment_frequency</key>
-    <string>Selecciona la freqüència de pagament</string>
-    <key>plus_skip</key>
-    <string>Salta</string>
     <key>plus_start_my_free_trial</key>
     <string>Comença el període de prova</string>
-    <key>plus_start_trial_duration_price</key>
-    <string>Prova-ho de franc durant %1$@, i després paga %2$@</string>
     <key>plus_subscribe_to</key>
     <string>Subscriu-te a Plus</string>
-    <key>plus_subscription_apple</key>
-    <string>La teva subscripció s'administra a través de l'App Store d'Apple</string>
-    <key>plus_subscription_apple_details</key>
-    <string>Per a cancel·lar la subscripció, ho hauràs de fer anant a Configuració.</string>
-    <key>plus_subscription_expiration</key>
-    <string>PLUS CADUCA EL %1$@</string>
-    <key>plus_subscription_google</key>
-    <string>Sembla que t'has subscrit a PodHopper Plus des d'un dispositiu Android</string>
-    <key>plus_subscription_google_details</key>
-    <string>Per a cancel·lar la subscripció, ho hauràs de fer anant a Configuració.</string>
-    <key>plus_subscription_web</key>
-    <string>Sembla que t'has subscrit a PodHopper Plus des de la web</string>
-    <key>plus_subscription_web_details</key>
-    <string>Per a cancel·lar la subscripció, ho hauràs de fer anant a  Pocketcasts.com.</string>
     <key>plus_upgrade_no_internet_message</key>
     <string>Revisa la teva connexió a la xarxa i prova-ho de nou.</string>
     <key>plus_upgrade_no_internet_title</key>
     <string>No es pot carregar</string>
     <key>plus_yearly_frequency_pricing_format</key>
     <string>%1$@ a l'any</string>
-    <key>pocket_casts_logo</key>
-    <string>Logotip de PodHopper</string>
     <key>pocket_casts_newsletter</key>
     <string>Butlletí de PodHopper</string>
     <key>pocket_casts_newsletter_description</key>
@@ -2578,20 +1642,8 @@ Si vols noves idees, ves a la pestanya Descobreix.</string>
     <string>%1$@ eliminat de %2$@</string>
     <key>podcast_season_format</key>
     <string>Temporada %1$@</string>
-    <key>podcast_share_episode</key>
-    <string>Comparteix un enllaç de l'episodi</string>
     <key>podcast_share_episode_error_msg</key>
     <string>No tens cap aplicació instal·lada que accepti aquest tipus d'arxiu</string>
-    <key>podcast_share_error_msg</key>
-    <string>És possible que l'autor del pòdcast l'hagi eliminat des que es va compartir l'enllaç.</string>
-    <key>podcast_share_error_title</key>
-    <string>No s'ha pogut trobar l'episodi</string>
-    <key>podcast_share_list_creating</key>
-    <string>Creant llista...</string>
-    <key>podcast_share_list_description</key>
-    <string>Descripció (opcional)</string>
-    <key>podcast_share_list_name</key>
-    <string>Nom de la llista</string>
     <key>podcast_share_open_file</key>
     <string>Obre l'arxiu a...</string>
     <key>podcast_show_archived</key>
@@ -2624,8 +1676,6 @@ Si vols noves idees, ves a la pestanya Descobreix.</string>
     <string>Actualitzacions finalitzades: %1$@</string>
     <key>podcast_updates_ends</key>
     <string>Les actualitzacions acaben: %1$@</string>
-    <key>podcast_upload_confirmation</key>
-    <string>Puja ara</string>
     <key>podcast_uploading</key>
     <string>Pujant... %1$@</string>
     <key>podcast_view_changes_tip_details</key>
@@ -2682,8 +1732,6 @@ Si vols noves idees, ves a la pestanya Descobreix.</string>
     <string>Llista</string>
     <key>podcasts_plural</key>
     <string>Pòdcasts</string>
-    <key>podcasts_share</key>
-    <string>Comparteix els pòdcasts</string>
     <key>podcasts_small_grid</key>
     <string>Graella petita</string>
     <key>podcasts_sort</key>
@@ -2692,8 +1740,6 @@ Si vols noves idees, ves a la pestanya Descobreix.</string>
     <string>Vista prèvia</string>
     <key>pricing_terms_after_discount</key>
     <string>Pagaments recurrents a %1$@ i després a %2$@ (%3$@)</string>
-    <key>pricing_terms_after_trial</key>
-    <string>i després %1$@</string>
     <key>pricing_terms_after_trial_long</key>
     <string>Els pagaments recurrents començaran després del teu període de prova gratuït de %1$@ (%2$@)</string>
     <key>profile</key>
@@ -2710,24 +1756,12 @@ Si vols noves idees, ves a la pestanya Descobreix.</string>
     <string>%1$@ arxius</string>
     <key>profile_percent_full</key>
     <string>%1$@ completat</string>
-    <key>profile_reset_password</key>
-    <string>Restableix la contrasenya</string>
-    <key>profile_sending_reset_email</key>
-    <string>Enviant el correu electrònic de recuperació</string>
-    <key>profile_sending_reset_email_conf_msg</key>
-    <string>Comprova el teu correu electrònic :)</string>
-    <key>profile_sending_reset_email_conf_title</key>
-    <string>S'ha enviat l'enllaç per a recuperar la contrasenya</string>
-    <key>profile_sending_reset_email_failed</key>
-    <string>No s'ha pogut enviar el correu electrònic de recuperació. Intenta-ho més tard.</string>
     <key>profile_single_file</key>
     <string>1 arxiu</string>
     <key>profile_starred_no_episodes_desc</key>
     <string>Marca com a favorits els episodis que t'agraden i torna a ells quan vulguis.</string>
     <key>profile_starred_no_episodes_title</key>
     <string>Desa els teus favorits</string>
-    <key>purchase_terms</key>
-    <string>En continuar, acceptes la nostra %1$@ i %2$@</string>
     <key>queue_clear_episode_queue_plural</key>
     <string>Esborra %1$@ episodis</string>
     <key>queue_clear_episode_queue_singular</key>
@@ -2740,69 +1774,14 @@ Si vols noves idees, ves a la pestanya Descobreix.</string>
     <string>Ara sona. %1$@</string>
     <key>queue_time_remaining</key>
     <string>Queden %1$@</string>
-    <key>queue_total_time_remaining</key>
-    <string>Queda en total: %1$@</string>
     <key>rate</key>
     <string>Valora</string>
-    <key>rate_pocket_casts</key>
-    <string>Valora PodHopper</string>
-    <key>rating_error</key>
-    <string>Ep! Hi ha hagut un error.</string>
-    <key>rating_listen_to_this_podcast_message</key>
-    <string>Només els oients d'aquest pòdcast poden valorar-lo. Escolta alguns episodis i torna per deixar la teva valoració. Estem desitjant saber què t'ha semblat!</string>
-    <key>rating_listen_to_this_podcast_title</key>
-    <string>Escolta aquest pòdcast primer abans de valorar-lo</string>
-    <key>rating_login_required</key>
-    <string>Has d'iniciar sessió per a deixar una valoració</string>
-    <key>rating_no_ratings</key>
-    <string>Sense valoracions</string>
-    <key>rating_submitted</key>
-    <string>La teva valoració s'ha enviat!</string>
-    <key>rating_thank_you</key>
-    <string>Gràcies per la valoració!</string>
-    <key>rating_title</key>
-    <string>Valora  %1$@</string>
     <key>rating_whats_new_button_title</key>
     <string>Entesos</string>
     <key>rating_whats_new_message</key>
     <string>Valora els teus pòdcasts preferits i fes saber als creadors com valores la seva feina. A més, les teves valoracions ajuden altres a trobar nous programes favorits!</string>
     <key>rating_whats_new_title</key>
     <string>Ja està disponible: Valoracions dels pòdcasts 🎉</string>
-    <key>referrals_claim_guest_pass_action</key>
-    <string>Activa la meva invitació</string>
-    <key>referrals_claim_guest_pass_banner_detail</key>
-    <string>Desbloqueja l'experiència d'escolta completa</string>
-    <key>referrals_claim_guest_pass_banner_title</key>
-    <string>Reclama la teva invitació de convidat a Plus de  %1$@</string>
-    <key>referrals_claim_guest_pass_detail</key>
-    <string>Aquesta oferta és només per a nous membres. La subscripció es renovarà automàticament a una subscripció anual de pagament a %1$@.</string>
-    <key>referrals_claim_guest_pass_title</key>
-    <string>Reclama la teva invitació de convidat de %1$@</string>
-    <key>referrals_claim_need_to_be_loggedin</key>
-    <string>Inicia sessió o registra't per a reclamar la teva invitació.</string>
-    <key>referrals_guest_pass_offer</key>
-    <string>Invitació de %1$@</string>
-    <key>referrals_not_available_to_send</key>
-    <string>L'accés com a convidat no està disponible ara mateix</string>
-    <key>referrals_offer_not_available_detail</key>
-    <string>La invitació només es pot bescanviar una vegada i està disponible per a aquells sense una subscripció Plus o Patron activa. Gràcies per escoltar!</string>
-    <key>referrals_offer_not_available_title</key>
-    <string>Aquesta oferta no està disponible</string>
-    <key>referrals_share_guest_pass</key>
-    <string>Comparteix les invitacions per a convidats</string>
-    <key>referrals_share_no_guest_pass_message</key>
-    <string>Gràcies per a compartir PodHopper! Et farem saber quan tinguis més invitacions per a donar.</string>
-    <key>referrals_share_no_guest_pass_title</key>
-    <string>Has compartit totes les teves invitacions!</string>
-    <key>referrals_share_pass_long_message</key>
-    <string>Hola!
-
-Aquí tens una invitació de  %1$@ per a PodHopper Plus, el meu reproductor de pòdcasts favorit. Està ple de funcions úniques com ara marcadors, carpetes i molt més que no trobaràs enlloc més. Crec que també t'encantarà!
-</string>
-    <key>referrals_share_pass_message</key>
-    <string>Ei! Utilitza l'enllaç a continuació per a reclamar la teva %1$@ invitació per a PodHopper Plus i gaudeix de pòdcasts a tots els teus dispositius!</string>
-    <key>referrals_share_pass_subject</key>
-    <string>%1$@ accés convidat a PodHopper Plus!</string>
     <key>referrals_tip_message</key>
     <string>Regala %1$@ de PodHopper Plus!</string>
     <key>referrals_tip_title</key>
@@ -2817,8 +1796,6 @@ Aquí tens una invitació de  %1$@ per a PodHopper Plus, el meu reproductor de p
     <string>ERROR EN ACTUALITZAR:(</string>
     <key>refresh_control_refreshing_files</key>
     <string>ACTUALITZANT ELS ARXIUS</string>
-    <key>refresh_control_release_to_refresh</key>
-    <string>ESPERA MENTRE S'ACTUALITZA</string>
     <key>refresh_control_sync_failed</key>
     <string>HA FALLAT LA SINCRONITZACIÓ:(</string>
     <key>refresh_control_syncing_podcasts</key>
@@ -2885,8 +1862,6 @@ Aquí tens una invitació de  %1$@ per a PodHopper Plus, el meu reproductor de p
     <string>Darreres cerques</string>
     <key>search_results</key>
     <string>%1$@ de %2$@</string>
-    <key>search_results_empty_action</key>
-    <string>Envia'ns els teus comentaris</string>
     <key>search_results_empty_message</key>
     <string>Prova una cerca nova, o afegint un URL del feed del pòdcast</string>
     <key>search_results_empty_title</key>
@@ -2979,8 +1954,6 @@ Aquí tens una invitació de  %1$@ per a PodHopper Plus, el meu reproductor de p
     <string>Quant a</string>
     <key>settings_allow_collection_first_party</key>
     <string>Permet-nos recopilar dades analítiques.</string>
-    <key>settings_allow_collection_third_party</key>
-    <string>Permet-nos utilitzar serveis de tercers de confiança per a recollir dades anònimes.</string>
     <key>settings_analytics</key>
     <string>Analítica</string>
     <key>settings_appearance</key>
@@ -3029,12 +2002,6 @@ Aquí tens una invitació de  %1$@ per a PodHopper Plus, el meu reproductor de p
     <string>Arxiva els episodis després dels límits de temps establerts. Les descàrregues s'eliminaran quan s'arxiva l'episodi.</string>
     <key>settings_auto_download</key>
     <string>Descarregar automàticament</string>
-    <key>settings_auto_downloads_filters_selected_format</key>
-    <string>%1$@ filtres seleccionats</string>
-    <key>settings_auto_downloads_filters_selected_singular</key>
-    <string>1 filtre seleccionat</string>
-    <key>settings_auto_downloads_no_filters_selected</key>
-    <string>Cap filtre seleccionat</string>
     <key>settings_auto_downloads_no_playlists_selected</key>
     <string>No s'han seleccionat llistes de reproducció</string>
     <key>settings_auto_downloads_no_podcasts_selected</key>
@@ -3049,16 +2016,12 @@ Aquí tens una invitació de  %1$@ per a PodHopper Plus, el meu reproductor de p
     <string>%1$@ pòdcasts seleccionats</string>
     <key>settings_auto_downloads_podcasts_selected_singular</key>
     <string>1 pòdcast seleccionat</string>
-    <key>settings_auto_downloads_subtitle_filters</key>
-    <string>Descarrega els primers episodis d'un filtre.</string>
     <key>settings_auto_downloads_subtitle_new_episodes</key>
     <string>Descarrega automàticament episodis nous, desa episodis de pòdcasts que segueixes des de fa poc i gestiona l'emmagatzematge establint un límit de quants episodis es guarden.</string>
     <key>settings_auto_downloads_subtitle_playlists</key>
     <string>Descarrega els primers episodis de la llista de reproducció.</string>
     <key>settings_auto_downloads_subtitle_up_next</key>
     <string>Descarrega els episodis afegits a la cua.</string>
-    <key>settings_badge_filter_header</key>
-    <string>NÚMERO DE FILTRES D'EPISODIS</string>
     <key>settings_badge_new_since_opened</key>
     <string>Nous episodis des que s'ha obert l'aplicació</string>
     <key>settings_badge_smart_playlist_header</key>
@@ -3069,14 +2032,8 @@ Aquí tens una invitació de  %1$@ per a PodHopper Plus, el meu reproductor de p
     <string>So de confirmació de marcadors</string>
     <key>settings_bookmark_sound_footer</key>
     <string>Reprodueix un so de confirmació en crear un marcador amb els auriculars.</string>
-    <key>settings_change_avatar</key>
-    <string>Canvia l'avatar</string>
-    <key>settings_collect_information</key>
-    <string>Recopila la informació</string>
     <key>settings_collect_information_additional_information</key>
     <string>Si ens permets recopilar analítiques podrem millorar l'aplicació. Tanmateix, entenem que prefereixis no compartir aquesta informació.</string>
-    <key>settings_connection_status</key>
-    <string>Estat de la connexió</string>
     <key>settings_create_siri_shortcut</key>
     <string>Crea una drecera de Siri</string>
     <key>settings_create_siri_shortcut_msg</key>
@@ -3189,10 +2146,6 @@ Aquí tens una invitació de  %1$@ per a PodHopper Plus, el meu reproductor de p
     <string>Publica títol de capítols</string>
     <key>settings_general_publish_chapter_titles_subtitle</key>
     <string>Si aquesta opció està activada, s'enviarà el títol dels capítols (en lloc del títol d'episodi) mitjançant Bluetooth i altres dispositius connectats.</string>
-    <key>settings_general_remote_skips_chapters</key>
-    <string>El control remot permet saltar els capítols</string>
-    <key>settings_general_remote_skips_chapters_subtitle</key>
-    <string>Quan el botó del salt està activat i un episodi té capítols, en prémer-lo al cotxe o els auriculars permet saltar al següent capítol.</string>
     <key>settings_general_remove_groups_apply_all</key>
     <string>Vols canviar tots els teus pòdcasts actuals perquè no s'agrupin?</string>
     <key>settings_general_row_action</key>
@@ -3225,12 +2178,6 @@ Aquí tens una invitació de  %1$@ per a PodHopper Plus, el meu reproductor de p
     <string>Personalitza les accions que duen a terme els controls més habituals dels auriculars.</string>
     <key>settings_help</key>
     <string>Ajuda i comentaris</string>
-    <key>settings_import_export</key>
-    <string>Importa / exporta</string>
-    <key>settings_in_filters_plural_format</key>
-    <string>Inclòs a %1$@ filtres</string>
-    <key>settings_in_filters_singular</key>
-    <string>Inclòs en 1 filtre</string>
     <key>settings_in_menu</key>
     <string>AL MENÚ</string>
     <key>settings_in_smart_playlist_singular</key>
@@ -3241,24 +2188,16 @@ Aquí tens una invitació de  %1$@ per a PodHopper Plus, el meu reproductor de p
     <string>Els episodis inactius són aquells que no has reproduït o descarregat en el temps que vas especificar anteriorment. Les descàrregues s'eliminen quan l'episodi s'arxiva.</string>
     <key>settings_next_action</key>
     <string>Acció següent</string>
-    <key>settings_not_in_filters</key>
-    <string>No està inclòs a cap filtre</string>
     <key>settings_not_in_smart_playlists</key>
     <string>No s'ha inclòs en cap llista de reproducció intel·ligent</string>
     <key>settings_notifications</key>
     <string>Notificacions</string>
-    <key>settings_notifications_filter_count</key>
-    <string>Nombre de filtres</string>
     <key>settings_notifications_smart_playlist_count</key>
     <string>Recompte de llista de reproducció intel·ligent</string>
     <key>settings_notifications_subtitle</key>
     <string>Notifica quan hi ha un nou episodi disponible. També és útil per a millorar la fiabilitat de les descàrregues automàtiques.</string>
-    <key>settings_opml</key>
-    <string>Importa/exporta OPML</string>
     <key>settings_play_speed</key>
     <string>Velocitat de reproducció</string>
-    <key>settings_plus_pricing_format</key>
-    <string>%1$@ al mes / %2$@ a l'any</string>
     <key>settings_previous_action</key>
     <string>Acció anterior</string>
     <key>settings_privacy</key>
@@ -3267,8 +2206,6 @@ Aquí tens una invitació de  %1$@ per a PodHopper Plus, el meu reproductor de p
     <string>Posició a la cua</string>
     <key>settings_read_privacy_policy</key>
     <string>Llegeix la política de privacitat</string>
-    <key>settings_select_filter_singular</key>
-    <string>Selecciona un filtre</string>
     <key>settings_select_filters_plural</key>
     <string>Selecciona filtres</string>
     <key>settings_select_playlist_singular</key>
@@ -3277,8 +2214,6 @@ Aquí tens una invitació de  %1$@ per a PodHopper Plus, el meu reproductor de p
     <string>Selecciona llistes de reproducció</string>
     <key>settings_select_smart_playlists_plural</key>
     <string>Selecciona llistes de reproducció intel·ligents</string>
-    <key>settings_shortcuts_filter_open_filter</key>
-    <string>Obre el filtre</string>
     <key>settings_shortcuts_filter_open_playlist</key>
     <string>Obre la llista de reproducció</string>
     <key>settings_shortcuts_filter_play_all_episodes</key>
@@ -3295,8 +2230,6 @@ Aquí tens una invitació de  %1$@ per a PodHopper Plus, el meu reproductor de p
     <string>Accessos directes disponibles</string>
     <key>settings_siri_shortcuts_enabled</key>
     <string>Accessos directes activats</string>
-    <key>settings_siri_shortcuts_specific_filter</key>
-    <string>Accés directe a un filtre concret</string>
     <key>settings_siri_shortcuts_specific_playlist</key>
     <string>Drecera a una llista de reproducció específica</string>
     <key>settings_siri_shortcuts_specific_podcast</key>
@@ -3309,42 +2242,6 @@ Aquí tens una invitació de  %1$@ per a PodHopper Plus, el meu reproductor de p
     <string>Salta't la música de la introducció i del final com a bon usuari experimentat que ets.</string>
     <key>settings_stats</key>
     <string>Estadístiques</string>
-    <key>settings_status_account_service</key>
-    <string>Servei del compte</string>
-    <key>settings_status_account_service_description</key>
-    <string>El servei es fa servir per a emmagatzemar el progrés dels episodis, les subscripcions, els filtres, etc.</string>
-    <key>settings_status_description</key>
-    <string>Comprova la teva connexió amb serveis importants. T'ajudem a diagnosticar problemes de xarxes, proxies, VPN, bloquejadors de publicitat i aplicacions de seguretat.</string>
-    <key>settings_status_discover</key>
-    <string>Descobreix i cerca</string>
-    <key>settings_status_discover_description</key>
-    <string>La secció Descobreix: l'aplicació i la cerca de pòdcast.</string>
-    <key>settings_status_expensive_network</key>
-    <string>Wi-Fi sense límit de dades</string>
-    <key>settings_status_expensive_network_description</key>
-    <string>Si té èxit, aquesta xarxa s’utilitzarà per a les descàrregues en Wi-Fi sense límit de dades.</string>
-    <key>settings_status_expensive_network_failure_message</key>
-    <string>La teva xarxa actual està marcada com a cara. Prova de canviar a Wi-Fi o de desactivar el mode de baix consum de dades.</string>
-    <key>settings_status_host</key>
-    <string>Proveïdors d'allotjament més comuns de pòdcasts</string>
-    <key>settings_status_host_description</key>
-    <string>Els autors de pòdcast allotgen fitxers d'episodi en diversos proveïdors d'allotjament no gestionats per PodHopper.</string>
-    <key>settings_status_host_failure_message</key>
-    <string>La causa més comuna és que tens un bloquejador d'anuncis configurat al teu telèfon o xarxa. Has de desbloquejar aquest domini per a baixar pòdcasts. Tingues en compte que PodHopper no allotja ni tria on s'allotgen els pòdcasts, això depèn de l'autor del programa i està fora del nostre control.</string>
-    <key>settings_status_internet</key>
-    <string>Internet</string>
-    <key>settings_status_internet_description</key>
-    <string>Comprova l'estat de la xarxa.</string>
-    <key>settings_status_internet_failure_message</key>
-    <string>No és possible connectar-se a Internet. Prova de connectar a una xarxa diferent, per exemple a les dades mòbils.</string>
-    <key>settings_status_refresh_service</key>
-    <string>Servei d'actualització</string>
-    <key>settings_status_refresh_service_description</key>
-    <string>Aquest servei s'empra per a cercar episodis nous.</string>
-    <key>settings_status_run</key>
-    <string>Executa ara</string>
-    <key>settings_status_service_ad_blocker_help_singular</key>
-    <string>La causa més comuna és que tens un bloquejador d'anuncis configurat al teu telèfon o xarxa. Has de desbloquejar el domini %1$@</string>
     <key>settings_storage</key>
     <string>Emmagatzematge i ús de dades</string>
     <key>settings_storage_data_warning</key>
@@ -3357,8 +2254,6 @@ Aquí tens una invitació de  %1$@ per a PodHopper Plus, el meu reproductor de p
     <string>ÚS</string>
     <key>settings_storage_usage_footer</key>
     <string>Pot diferir de l'emmagatzematge que es mostra a la Configuració de l'iPhone. iOS gestiona les dades en memòria cau automàticament i les allibera quan cal.</string>
-    <key>settings_third_party_analytics</key>
-    <string>Analítiques de tercers</string>
     <key>settings_title</key>
     <string>Configuració del pòdcast</string>
     <key>settings_trim_level</key>
@@ -3399,44 +2294,14 @@ Aquí tens una invitació de  %1$@ per a PodHopper Plus, el meu reproductor de p
     <string>Si està activat, el temporitzador de son es reiniciarà quan moguis el telèfon.</string>
     <key>share</key>
     <string>Comparteix</string>
-    <key>share_clip</key>
-    <string>Comparteix el clip</string>
-    <key>share_copied_to_clipboard</key>
-    <string>S'ha copiat l'enllaç al porta-retalls</string>
-    <key>share_copy_link</key>
-    <string>Copia l'enllaç</string>
     <key>share_current_position</key>
     <string>Posició actual</string>
-    <key>share_description</key>
-    <string>Tria un format i una plataforma per a compartir</string>
     <key>share_episode</key>
     <string>Comparteix l'episodi</string>
-    <key>share_episode_at</key>
-    <string>Comparteix l'episodi a %1$@</string>
-    <key>share_episode_title</key>
-    <string>Comparteix l'episodi</string>
-    <key>share_instagram_stories</key>
-    <string>Històries</string>
-    <key>share_list_subscribing</key>
-    <string>Subscrivint-te…</string>
-    <key>share_more_actions</key>
-    <string>Més</string>
     <key>share_podcast</key>
     <string>Comparteix el pòdcast</string>
     <key>share_podcast_private_not_available</key>
     <string>Els pòdcasts privats no es poden compartir</string>
-    <key>share_podcast_title</key>
-    <string>Comparteix el pòdcast</string>
-    <key>share_podcasts_all_selected</key>
-    <string>TOT SELECCIONAT</string>
-    <key>share_podcasts_create_list</key>
-    <string>Crea una llista</string>
-    <key>share_podcasts_sharing</key>
-    <string>Compartint...</string>
-    <key>share_podcasts_sharing_failed_msg</key>
-    <string>S'ha produït un error en crear la teva pàgina compartida</string>
-    <key>share_podcasts_sharing_failed_title</key>
-    <string>S'ha produït un error en compartir</string>
     <key>share_profile</key>
     <string>Comparteix el perfil</string>
     <key>share_profile_add_photo_and_name</key>
@@ -3481,38 +2346,10 @@ Aquí tens una invitació de  %1$@ per a PodHopper Plus, el meu reproductor de p
     <string>Què vols compartir?</string>
     <key>share_select_podcasts</key>
     <string>Selecciona pòdcasts</string>
-    <key>shared_item_loading</key>
-    <string>Carregant un element compartit...</string>
-    <key>shared_list</key>
-    <string>Llista compartida</string>
-    <key>shared_list_subscribe_conf_action</key>
-    <string>És clar que sí!</string>
-    <key>shared_list_subscribe_conf_msg</key>
-    <string>Estàs segur que et vols subscriure a %1$@ pòdcasts?</string>
-    <key>shared_list_subscribe_conf_title</key>
-    <string>Són molts pòdcasts!</string>
     <key>show_notes</key>
     <string>Notes</string>
     <key>sign_in</key>
     <string>Inicia sessió</string>
-    <key>sign_in_continue_with_email</key>
-    <string>Continua amb el correu electrònic</string>
-    <key>sign_in_divider_label</key>
-    <string>O</string>
-    <key>sign_in_email_address_prompt</key>
-    <string>Adreça de correu electrònic</string>
-    <key>sign_in_forgot_password</key>
-    <string>He oblidat la contrasenya</string>
-    <key>sign_in_hide_password_label</key>
-    <string>Mostra la contrasenya</string>
-    <key>sign_in_message</key>
-    <string>Desa les teves subscripcions a pòdcasts al núvol i sincronitza el progrés amb altres dispositius.</string>
-    <key>sign_in_password_prompt</key>
-    <string>Contrasenya</string>
-    <key>sign_in_prompt</key>
-    <string>Inicia sessió o crea un compte</string>
-    <key>sign_in_show_password_label</key>
-    <string>Amaga la contrasenya</string>
     <key>signed_in_as</key>
     <string>HAS INICIAT LA SESSIÓ COM A</string>
     <key>signed_out</key>
@@ -3595,27 +2432,6 @@ Aquí tens una invitació de  %1$@ per a PodHopper Plus, el meu reproductor de p
     <string>Ho hem fet per ajudar-te a començar. S'actualitzen automàticament segons la teva escolta.</string>
     <key>smart_playlists_tip_view_title</key>
     <string>Llistes intel·ligents, llestes per començar</string>
-    <key>social_sign_in_continue_with_apple</key>
-    <string>Inicia sessió amb un compte d'Apple</string>
-    <key>social_sign_in_continue_with_google</key>
-    <string>Inicia sessió amb un compte de Google</string>
-    <key>sonos_connect_action</key>
-    <string>CONNECTA</string>
-    <key>sonos_connect_prompt</key>
-    <string>Connectar amb Sonos</string>
-    <key>sonos_connecting</key>
-    <string>CONNECTANT...</string>
-    <key>sonos_connection_failed_account_link</key>
-    <string>Ara mateix no es pot vincular el compte de PodHopper. Torna-ho a provar més tard.</string>
-    <key>sonos_connection_failed_app_missing</key>
-    <string>No s'ha pogut obrir l'aplicació Sonos per a completar el procés de vinculació.</string>
-    <key>sonos_connection_failed_title</key>
-    <string>S'ha produït un error a la vinculació</string>
-    <key>sonos_connection_privacy_notice</key>
-    <string>En connectar-te a Sonos, permetràs que l'aplicació accedeixi a la informació de l'episodi. 
-Mai es compartirà la teva adreça de correu electrònic, ni la contrasenya ni cap altra informació confidencial.</string>
-    <key>sonos_connection_sign_in_prompt</key>
-    <string>Per a poder connectar-ne amb Sonos, necessites un compte de PodHopper.</string>
     <key>sort_by</key>
     <string>Ordena per</string>
     <key>sort_episodes</key>
@@ -3690,38 +2506,8 @@ Mai es compartirà la teva adreça de correu electrònic, ni la contrasenya ni c
     <string>Atura la descàrrega</string>
     <key>subscribe</key>
     <string>Subscriu-me</string>
-    <key>subscribe_all</key>
-    <string>Subscriu-te a tot</string>
     <key>subscribed</key>
     <string>Subscrit</string>
-    <key>subscription_cancelled</key>
-    <string>Has cancel·lat la teva subscripció</string>
-    <key>subscription_cancelled_msg</key>
-    <string>La teva subscripció es cancel·larà el %1$@ </string>
-    <key>subscription_expires_in</key>
-    <string>Expira en %1$@</string>
-    <key>subscription_feature_custom_title_bookmarks</key>
-    <string>Marcadors: ja només “on era això?”</string>
-    <key>subscription_feature_custom_title_folders</key>
-    <string>Carpetes: els teus pòdcasts, perfectament al seu lloc</string>
-    <key>subscription_feature_custom_title_pre_selected_chapters</key>
-    <string>Preselecciona capítols: directe al més interessant</string>
-    <key>subscription_feature_custom_title_shuffle_upnext</key>
-    <string>Reproducció aleatòria: la joia de triar</string>
-    <key>subscription_frequency_pricing_format</key>
-    <string>%1$@ per %2$@</string>
-    <key>subscription_plan_features_info_link</key>
-    <string>Mostra totes les funcions Plus</string>
-    <key>subscription_plan_free_trial_info_link</key>
-    <string>Com funciona la prova gratuïta?</string>
-    <key>subscription_plan_month</key>
-    <string>Pla mensual</string>
-    <key>subscription_plan_savings</key>
-    <string>Estalvia %1$@</string>
-    <key>subscription_plan_year</key>
-    <string>Pla anual</string>
-    <key>subscriptions_thank_you</key>
-    <string>Gràcies pel teu suport!</string>
     <key>suggested_folders_create_custom_folder</key>
     <string>Crea una carpeta personalitzada</string>
     <key>suggested_folders_description</key>
@@ -3738,36 +2524,10 @@ Mai es compartirà la teva adreça de correu electrònic, ni la contrasenya ni c
     <string>Carpetes intel·ligents</string>
     <key>suggested_folders_use_suggested_folders</key>
     <string>Utilitza aquestes carpetes</string>
-    <key>support_watch_help_message</key>
-    <string>Si tens problemes amb l'aplicació PodHopper Watch, podem enviar-te els teus registres del rellotge per a ajudar-te millor. Per a fer-ho, obre PodHopper al teu rellotge.</string>
-    <key>support_watch_help_opened_app</key>
-    <string>He obert l'app al Watch</string>
-    <key>support_watch_help_send_without_log</key>
-    <string>Envia sense els logs del Watch</string>
-    <key>support_watch_help_title</key>
-    <string>Busques ajuda per a l'aplicació Watch?</string>
     <key>supporter</key>
     <string>Col·laborador</string>
-    <key>supporter_contributions</key>
-    <string>Contribucions dels col·laboradors</string>
-    <key>supporter_contributions_subtitle</key>
-    <string>Per a més informació, consulta les contribucions</string>
-    <key>supporter_payment_canceled</key>
-    <string>Seguidor: cancel·lat</string>
-    <key>sync_account_error</key>
-    <string>Comprova el teu nom d'usuari i contrasenya.</string>
-    <key>sync_account_login</key>
-    <string>Connectat...</string>
     <key>sync_failed</key>
     <string>Ha fallat la sincronització</string>
-    <key>sync_in_progress</key>
-    <string>Sincronitzant la llista «Tot seguit» i l'historial</string>
-    <key>sync_progress</key>
-    <string>Pòdcast %1$@ de %2$@</string>
-    <key>sync_progress_unknown_count_plural_format</key>
-    <string>S'han sincronitzat %1$@ pòdcasts</string>
-    <key>sync_progress_unknown_count_singular</key>
-    <string>S'ha sincronitzat 1 pòdcast</string>
     <key>syncing</key>
     <string>Sincronitzant...</string>
     <key>terms_of_use</key>
@@ -3788,8 +2548,6 @@ Mai es compartirà la teva adreça de correu electrònic, ni la contrasenya ni c
     <string>Predeterminat clar</string>
     <key>theme_light_contrast</key>
     <string>Contrast clar</string>
-    <key>theme_radioactivity</key>
-    <string>Radioactivitat</string>
     <key>theme_rose</key>
     <string>Rosa</string>
     <key>time_format_never</key>
@@ -3820,188 +2578,14 @@ Mai es compartirà la teva adreça de correu electrònic, ni la contrasenya ni c
     <string>Llegeix mentre escoltes. Fins i tot a 2x.</string>
     <key>transcript_tap_to_seek_streaming_unavailable</key>
     <string>Descarrega l'episodi per moure't per la transcripció</string>
-    <key>trial_finished</key>
-    <string>Prova acabada</string>
     <key>trim_silence</key>
     <string>Retalla els silencis</string>
     <key>try_again</key>
     <string>Tornar-ho a provar</string>
     <key>try_it_now</key>
     <string>Prova-ho ara</string>
-    <key>tv_banner_create_account_action_title</key>
-    <string>Crea un compte gratuït</string>
-    <key>tv_banner_create_account_subtitle</key>
-    <string>Els teus seguiments, el teu progrés... exactament on els vas deixar.</string>
-    <key>tv_banner_create_account_title</key>
-    <string>Un compte. Totes les pantalles</string>
-    <key>tv_banner_discover_more_action_title</key>
-    <string>Descobreix més programes</string>
-    <key>tv_banner_discover_more_subtitle</key>
-    <string>La teva propera obsessió és aquí, en algun lloc.</string>
-    <key>tv_banner_discover_more_title</key>
-    <string>Encara no n'has vist ni la meitat.</string>
-    <key>tv_create_account_come_back</key>
-    <string>Un cop hagis creat el compte, torna i inicia la sessió</string>
-    <key>tv_create_account_subtitle</key>
-    <string>Escaneja aquest codi per començar al teu telèfon, només triga un minut.</string>
-    <key>tv_create_account_title</key>
-    <string>Crea el teu compte gratuït</string>
-    <key>tv_discover_featured_go_to_podcast</key>
-    <string>Ves al pòdcast</string>
-    <key>tv_discover_featured_play_latest_episode</key>
-    <string>Reprodueix l'últim episodi</string>
-    <key>tv_discover_play_episode</key>
-    <string>Reprodueix l'episodi</string>
-    <key>tv_episode_info</key>
-    <string>Informació de l'episodi</string>
-    <key>tv_home_browse_categories_section_title</key>
-    <string>Explora les categories</string>
-    <key>tv_home_featured_section_title</key>
-    <string>Destacats a PodHopper</string>
-    <key>tv_home_keep_listening_title</key>
-    <string>Continuem on ho vau deixar</string>
-    <key>tv_home_new_releases</key>
-    <string>Novetats</string>
-    <key>tv_home_recently_played</key>
-    <string>Reproduïts recentment</string>
-    <key>tv_home_recommend_user_podcast_section_title</key>
-    <string>Estimat pels oients de %1$@</string>
-    <key>tv_home_recommended_for_you_title</key>
-    <string>Probablement t'agradaran aquests</string>
-    <key>tv_home_trending_section_title</key>
-    <string>El que tothom escolta aquesta setmana</string>
     <key>tv_home_video_section_title</key>
     <string>Fet per a la TV</string>
-    <key>tv_player_playback_effects</key>
-    <string>Efectes de reproducció</string>
-    <key>tv_player_playback_speed</key>
-    <string>Velocitat de reproducció</string>
-    <key>tv_player_playback_speed_set</key>
-    <string>Velocitat de reproducció establerta a %1$@</string>
-    <key>tv_player_trim_silence</key>
-    <string>Retall de silenci</string>
-    <key>tv_player_trim_silence_mad_max</key>
-    <string>Màxim</string>
-    <key>tv_player_trim_silence_medium</key>
-    <string>Mitjana</string>
-    <key>tv_player_trim_silence_mild</key>
-    <string>Suau</string>
-    <key>tv_player_trim_silence_off</key>
-    <string>Desactivat</string>
-    <key>tv_player_trim_silence_set</key>
-    <string>Retall de silenci: %1$@</string>
-    <key>tv_player_volume_boost</key>
-    <string>Potenciació del volum</string>
-    <key>tv_player_volume_boost_off</key>
-    <string>Potenciació del volum desactivada</string>
-    <key>tv_player_volume_boost_on</key>
-    <string>Potenciació del volum activada</string>
-    <key>tv_playlist_detail_episode_count</key>
-    <string>%1$@ episodis</string>
-    <key>tv_playlist_detail_play_all</key>
-    <string>Reprodueix tots els episodis</string>
-    <key>tv_playlists_empty_action_title</key>
-    <string>Crea una llista de reproducció</string>
-    <key>tv_playlists_empty_subtitle</key>
-    <string>Crea-la manualment o deixa que les Regles intel·ligents l'organitzin per tu.</string>
-    <key>tv_playlists_empty_title</key>
-    <string>Aquí viuran les teves llistes de reproducció</string>
-    <key>tv_podcast_detail_about</key>
-    <string>Quant a</string>
-    <key>tv_podcast_detail_all_episodes</key>
-    <string>Tots els episodis</string>
-    <key>tv_podcast_detail_follow_title</key>
-    <string>Segueix aquest pòdcast</string>
-    <key>tv_podcast_detail_following_title</key>
-    <string>Seguit</string>
-    <key>tv_podcast_detail_more_info_title</key>
-    <string>Més informació</string>
-    <key>tv_podcast_detail_network</key>
-    <string>Xarxa</string>
-    <key>tv_podcast_detail_next_episode</key>
-    <string>Episodi següent</string>
-    <key>tv_podcast_detail_schedule</key>
-    <string>Programació</string>
-    <key>tv_podcast_detail_start_here</key>
-    <string>L'episodi per on començar</string>
-    <key>tv_podcast_detail_start_here_subtitle</key>
-    <string>Aquest és el que enganxa la gent</string>
-    <key>tv_podcast_detail_website</key>
-    <string>Lloc web</string>
-    <key>tv_podcasts_empty_action_title</key>
-    <string>Descobreix pòdcasts</string>
-    <key>tv_podcasts_empty_subtitle</key>
-    <string>Els pòdcasts que segueixes apareixeran aquí, a punt per reproduir.</string>
-    <key>tv_podcasts_empty_title</key>
-    <string>És hora d'omplir-ho.</string>
-    <key>tv_profile_button_accessibility_hint</key>
-    <string>Obre les opcions de perfil i compte</string>
-    <key>tv_profile_button_accessibility_label</key>
-    <string>Perfil</string>
-    <key>tv_profile_menu_create_account</key>
-    <string>Crea un compte</string>
-    <key>tv_profile_menu_log_in</key>
-    <string>Inicia sessió</string>
-    <key>tv_profile_menu_log_out</key>
-    <string>Tanca la sessió</string>
-    <key>tv_profile_menu_starred_episodes</key>
-    <string>Episodis destacats</string>
-    <key>tv_search_failed</key>
-    <string>La cerca ha fallat: %1$@</string>
-    <key>tv_search_prompt</key>
-    <string>Pòdcasts, programes, autors</string>
-    <key>tv_search_searching</key>
-    <string>Cercant...</string>
-    <key>tv_search_type_something</key>
-    <string>Escriu alguna cosa...</string>
-    <key>tv_sign_in_enter_code</key>
-    <string>o introdueix el codi següent</string>
-    <key>tv_sign_in_enter_code_go_url</key>
-    <string>anant a [%1$@](%2$@)</string>
-    <key>tv_sign_in_enter_code_in_url</key>
-    <string>o introdueix aquest codi a [%1$@](%2$@)</string>
-    <key>tv_sign_in_qr_code_error_title</key>
-    <string>No s'ha pogut obtenir el codi d'accés</string>
-    <key>tv_sign_in_subtitle</key>
-    <string>Obre la càmera i apunta-la a aquest codi QR</string>
-    <key>tv_sign_in_title</key>
-    <string>Inicia sessió a PodHopper</string>
-    <key>tv_signing_in_subtitle</key>
-    <string>Carregant els teus pòdcasts.</string>
-    <key>tv_signing_in_title</key>
-    <string>Benvingut de nou.</string>
-    <key>tv_tab_home</key>
-    <string>Inici</string>
-    <key>tv_tab_playlists</key>
-    <string>Llistes de reproducció</string>
-    <key>tv_tab_podcasts</key>
-    <string>Els teus pòdcasts</string>
-    <key>tv_tab_up_next</key>
-    <string>Tot seguit</string>
-    <key>tv_up_next_empty_action_title</key>
-    <string>Afegeix episodis</string>
-    <key>tv_up_next_empty_subtitle</key>
-    <string>Afegeix episodis a «Tot seguit» i es reproduiran en ordre, un darrere l'altre</string>
-    <key>tv_up_next_empty_title</key>
-    <string>No hi ha res a la cua</string>
-    <key>tv_user_profile_actions</key>
-    <string>Configuració de l'usuari</string>
-    <key>tv_user_sign_in_login_type</key>
-    <string>Tipus d'inici de sessió</string>
-    <key>tv_user_sign_in_option_manual</key>
-    <string>Usuari/Contrasenya</string>
-    <key>tv_user_sign_in_option_qr</key>
-    <string>QR</string>
-    <key>tv_welcome_browse_without_account</key>
-    <string>Navega sense un compte</string>
-    <key>tv_welcome_create_free_account</key>
-    <string>Crea un compte gratuït</string>
-    <key>tv_welcome_sign_in</key>
-    <string>Inicia sessió</string>
-    <key>tv_welcome_subtitle</key>
-    <string>Els teus pòdcasts. A la pantalla gran. És clar.</string>
-    <key>tv_welcome_title</key>
-    <string>Us donem la benvinguda a PodHopper TV</string>
     <key>unarchive</key>
     <string>Desarxiva</string>
     <key>unfollow</key>
@@ -4012,8 +2596,6 @@ Mai es compartirà la teva adreça de correu electrònic, ni la contrasenya ni c
     <string>Treu de destacats</string>
     <key>unsubscribe</key>
     <string>Cancel·la la subscripció</string>
-    <key>unsubscribe_all</key>
-    <string>Cancel·la totes les subscripcions</string>
     <key>up_next</key>
     <string>Tot seguit</string>
     <key>up_next_empty_description</key>
@@ -4034,58 +2616,8 @@ Mai es compartirà la teva adreça de correu electrònic, ni la contrasenya ni c
     <string>Shuffle està activat. Els episodis es reproduiran en ordre aleatori.</string>
     <key>upgrade_account</key>
     <string>Actualitza el compte</string>
-    <key>upgrade_account_info</key>
-    <string>Desbloqueja totes les funcions de pagament com ara les carpetes, mode aleatori, marques de temps i moltes més</string>
-    <key>upgrade_account_timeline_charging_day</key>
-    <string>Se't cobrarà el %1$@. Cancel·la en qualsevol moment abans.</string>
-    <key>upgrade_account_timeline_day_1</key>
-    <string>Accedeix a carpetes, mode aleatori, marcadors i contingut exclusiu</string>
-    <key>upgrade_account_timeline_week_before</key>
-    <string>T'informarem del final del teu període gratuït.</string>
     <key>upgrade_account_title</key>
     <string>Superpoders per als teus pòdcasts</string>
-    <key>upgrade_experiment_discount_yearly_membership</key>
-    <string>Estalvia un 50%% en el teu primer any</string>
-    <key>upgrade_experiment_free_membership_format</key>
-    <string>Prova gratuïta de %1$@ Plus</string>
-    <key>upgrade_experiment_paywall_button</key>
-    <string>Aconsegueix PodHopper Plus</string>
-    <key>upgrade_experiment_reviews_app_store_button</key>
-    <string>Mostra totes les ressenyes a l'App Store</string>
-    <key>upgrade_experiment_reviews_app_store_info</key>
-    <string>%1$@ Puntuació (%2$@K ressenyes)</string>
-    <key>upgrade_experiment_reviews_review_text_0</key>
-    <string>He estat un usuari durant molt de temps i la quantitat de funcionalitats i personalització que es té amb la versió gratuïta és sorprenent. M'encanta que se sincronitzi entre dispositius, així puc començar a escoltar al meu telèfon i després continuar en un dispositiu Alexa. És la meva recomanació per a qualsevol que escolti pòdcasts. També m'encanten les estadístiques!</string>
-    <key>upgrade_experiment_reviews_review_text_1</key>
-    <string>8 anys d'excel·lència i millora contínua</string>
-    <key>upgrade_experiment_reviews_review_text_2</key>
-    <string>He estat usuari de PodHopper des del 2017.
-
-Aquesta és, sense dubte, la millor app per a escoltar pòdcasts. Té moltes funcions i es desenvolupa activament. Hi ha hagut algunes queixes sobre el canvi d'interfície, però jo no ho he notat massa.
-
-Aquesta app pot ser tan senzilla o difícil d'utilitzar com tu vulguis. Així que pots fer que sigui un 'plug and play' o configurar temporitzadors per a saltar les intros i els temps finals i qualsevol altra petita funció que vulguis activar.</string>
-    <key>upgrade_experiment_reviews_review_text_3</key>
-    <string>La funció de sincronització és màgica. No sé quina màgia especial té aquesta app, però és millor que qualsevol altra app que he utilitzat.</string>
-    <key>upgrade_experiment_reviews_review_text_4</key>
-    <string>He estat utilitzant aquesta app durant 6 anys o més, vaig començar amb Android i ara fa gairebé un any que estic a iOS. Funciona igual a les dues plataformes. És fàcil trobar nous pòdcasts per a escoltar, té una interfície molt bonica, també es poden afegir pòdcasts mitjançant l'URL del feed RSS. L'app per a rellotge és funcional, però la faig servir sobretot per a reproduir/posar en pausa. Inicia sessió amb un compte per a sincronitzar entre dispositius, però no és obligatori fer-ho.</string>
-    <key>upgrade_experiment_reviews_review_text_5</key>
-    <string>El PC ha estat el meu preferit durant anys. He provat altres aplicacions de pòdcast i sempre torno a PC per la seva simplicitat, interfície i suport. Definitivament, val la pena provar-ho, especialment si t'has cansat de la teva actual aplicació de pòdcast.</string>
-    <key>upgrade_experiment_reviews_review_title_0</key>
-    <string>La millor aplicació de pòdcast DE LLUNY</string>
-    <key>upgrade_experiment_reviews_review_title_1</key>
-    <string>L'aplicació de pòdcast essencial</string>
-    <key>upgrade_experiment_reviews_review_title_2</key>
-    <string>La millor app de pòdcasts que hi ha</string>
-    <key>upgrade_experiment_reviews_review_title_3</key>
-    <string>Una aplicació fantàstica</string>
-    <key>upgrade_experiment_reviews_review_title_4</key>
-    <string>Funciona genial i és fàcil trobar o afegir nous pòdcasts</string>
-    <key>upgrade_experiment_reviews_review_title_5</key>
-    <string>Ves a l'aplicació de Pòdcasts</string>
-    <key>upgrade_experiment_reviews_text</key>
-    <string>Mostra per què la gent ha actualitzat a Plus</string>
-    <key>upgrade_experiment_reviews_title</key>
-    <string>Simplement la millor manera d'escoltar pòdcasts</string>
     <key>upgrade_to_plan</key>
     <string>Actualitza a %1$@</string>
     <key>upgrade_to_plus</key>
@@ -4130,8 +2662,6 @@ Aquesta app pot ser tan senzilla o difícil d'utilitzar com tu vulguis. Així qu
     <string>Efectes</string>
     <key>watch_episode_details</key>
     <string>Informació de l'episodi</string>
-    <key>watch_main_menu</key>
-    <string>Menú principal</string>
     <key>watch_no_episodes</key>
     <string>No hi ha episodis</string>
     <key>watch_no_filters</key>
@@ -4150,16 +2680,8 @@ Sincerament, totes dues són bones decisions. 🙂</string>
     <string>Reprodueix des de</string>
     <key>watch_source_msg</key>
     <string>Els pòdcasts es reproduiran a través de l'altaveu en el qual està connectat el dispositiu triat</string>
-    <key>watch_source_plus_info</key>
-    <string>Descarrega el contingut directament al rellotge i escolta'l sense el mòbil. Fes una ullada a PodHopper Plus a l'aplicació mòbil o a la web.</string>
-    <key>watch_source_refresh_account</key>
-    <string>Actualitza el compte</string>
-    <key>watch_source_refresh_account_info</key>
-    <string>Si tens un compte de PodHopper Plus, actualitza per a intentar activar-la</string>
     <key>watch_source_refresh_data</key>
     <string>Actualitza les dades</string>
-    <key>watch_source_sign_in_info</key>
-    <string>Inicia sessió o crea un compte des del teu telèfon</string>
     <key>watch_tap_to_open</key>
     <string>Toca per a obrir</string>
     <key>watch_up_next_no_items_subtitle</key>
@@ -4186,22 +2708,6 @@ Sincerament, totes dues són bones decisions. 🙂</string>
     <string>Gràcies. I ara, comença a escoltar contingut!</string>
     <key>whats_new</key>
     <string>Novetats</string>
-    <key>whats_new_blog_more_link_text</key>
-    <string>Per a tenir més informació sobre aquesta actualització, consulta el nostre blog</string>
-    <key>whats_new_in_version</key>
-    <string>Què hi ha de nou a %1$@</string>
-    <key>whats_new_page_one_7_20</key>
-    <string>Si t'agraden els pòdcasts la meitat del que ens agraden a nosaltres, probablement en segueixes molts. Ara, amb la subscripció a PodHopper Plus, pots classificar-los en carpetes i arxivar-los en grups ordenats. 
-
-Gràcies al teu suport, la teva pantalla d'inici té un aspecte fantàstic!</string>
-    <key>whats_new_page_one_title_7_20</key>
-    <string>Carpetes</string>
-    <key>whats_new_page_two_7_20</key>
-    <string>Ara, sincronitzem la teva pantalla inicial (i les opcions d'ordenació) a tots els dispositius. A més, també pots arrossegar i deixar anar al reproductor web. 
-
-Amb aquesta funció, la feina que has fet per a organitzar la teva pàgina de pòdcasts se sincronitza amb el teu compte, així que et pots relaxar.</string>
-    <key>whats_new_page_two_title_7_20</key>
-    <string>Sincronització de la pantalla d'inici</string>
     <key>widgets_app_icon_description</key>
     <string>Inicia ràpidament PodHopper</string>
     <key>widgets_app_icon_name</key>

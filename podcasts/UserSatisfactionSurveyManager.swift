@@ -93,7 +93,6 @@ public class UserSatisfactionSurveyManager: NSObject {
                     "user_type": SubscriptionHelper.hasActiveSubscription() ? "plus" : "free"
                 ])
                 Settings.setSurveyNotReallyResponse()
-                EmailHelper().presentSupportDialog(source, type: .satisfactionSurvey)
                 self?.currentEvent = nil
             }
         }

@@ -54,7 +54,6 @@ let package = Package(
         .package(url: "https://github.com/Automattic/google-cast", from: "1.0.1"),
         .package(url: "https://github.com/ksemianov/WrappingHStack", from: "0.2.0"),
         .package(url: "https://github.com/Automattic/pocket-casts-ios-fingerprint", branch: "trunk"),
-        .package(url: "https://github.com/scinfu/SwiftSoup.git", from: "2.7.0"),
         .package(url: "https://github.com/nmdias/FeedKit.git", from: "10.4.0"),
     ],
     targets: XcodeSupport.targets + [
@@ -126,7 +125,6 @@ let package = Package(
             dependencies: [
                 .product(name: "SwiftProtobuf", package: "swift-protobuf"),
                 .product(name: "Swime", package: "Swime"),
-                .product(name: "SwiftSoup", package: "SwiftSoup"),
                 .product(name: "FeedKit", package: "FeedKit"),
                 "PocketCastsDataModel",
                 "PocketCastsUtils",
@@ -179,27 +177,23 @@ let package = Package(
 //   multiple targets and decides when to use dynamic frameworks.
 
 enum XcodeTargetNames {
-    static let appClip = "Pocket Casts App Clip"
     static let notificationExtension = "NotificationExtension"
     static let podcasts = "podcasts"
     static let pocketCastsWatchApp = "Pocket Casts Watch App"
     static let podcastsIntents = "PodcastsIntents"
     static let podcastsIntentsUI = "PodcastsIntentsUI"
     static let widgetExtension = "WidgetExtension"
-    static let pocketCastsTvApp = "Pocket Casts TV App"
 }
 
 enum XcodeSupport {
     static var products: [Product] {
         [
-            XcodeTargetNames.appClip,
             XcodeTargetNames.notificationExtension,
             XcodeTargetNames.podcasts,
             XcodeTargetNames.pocketCastsWatchApp,
             XcodeTargetNames.podcastsIntents,
             XcodeTargetNames.podcastsIntentsUI,
             XcodeTargetNames.widgetExtension,
-            XcodeTargetNames.pocketCastsTvApp,
         ].map { .supportingProduct(forXcodeTarget: $0) }
     }
 
@@ -224,17 +218,6 @@ enum XcodeSupport {
                     .product(name: "WrappingHStack", package: "WrappingHStack"),
                     .product(name: "Fingerprint", package: "pocket-casts-ios-fingerprint"),
                     "EndOfYear",
-                ]
-            ),
-            .xcodeTarget(
-                XcodeTargetNames.appClip,
-                dependencies: [
-                    "PocketCastsDataModel",
-                    "PocketCastsServer",
-                    "PocketCastsUtils",
-                    "PocketCastsDependencyInjection",
-                    .product(name: "Kingfisher", package: "Kingfisher"),
-                    .product(name: "Lottie", package: "lottie-ios"),
                 ]
             ),
             .xcodeTarget(
@@ -269,18 +252,6 @@ enum XcodeSupport {
                 XcodeTargetNames.widgetExtension,
                 dependencies: [
                     "PocketCastsUtils",
-                ]
-            ),
-            .xcodeTarget(
-                XcodeTargetNames.pocketCastsTvApp,
-                dependencies: [
-                    "PocketCastsUtils",
-                    "PocketCastsDataModel",
-                    "PocketCastsServer",
-                    "PocketCastsDependencyInjection",
-                    .product(name: "Kingfisher", package: "Kingfisher"),
-                    .product(name: "SwiftSubtitles", package: "SwiftSubtitles"),
-                    .product(name: "DifferenceKit", package: "DifferenceKit"),
                 ]
             ),
         ]

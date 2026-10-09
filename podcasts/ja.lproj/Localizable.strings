@@ -5,12 +5,8 @@
   <dict>
     <key>Settings_files_add_up_next_subtitle</key>
     <string>次のエピソードに自動的に新しいファイルを追加</string>
-    <key>about_a8c_family</key>
-    <string>Automattic ファミリー</string>
     <key>about_acknowledgements</key>
     <string>謝辞</string>
-    <key>about_join_from_anywhere</key>
-    <string>どこからでも参加可能</string>
     <key>about_legal_and_more</key>
     <string>法的情報およびその他</string>
     <key>about_privacy_policy</key>
@@ -23,8 +19,6 @@
     <string>利用規約</string>
     <key>about_website</key>
     <string>サイト</string>
-    <key>about_work_with_us</key>
-    <string>求人情報</string>
     <key>accessibility_cancel_multiselect</key>
     <string>複数選択をキャンセル</string>
     <key>accessibility_close_dialog</key>
@@ -37,8 +31,6 @@
     <string>非表示</string>
     <key>accessibility_episode_playback</key>
     <string>エピソードの再生</string>
-    <key>accessibility_hide_filter_details</key>
-    <string>タップしてフィルターの詳細を非表示</string>
     <key>accessibility_hint_player_navigate_to_podcast_label</key>
     <string>タップしてメインのポッドキャスト情報ページに移動します</string>
     <key>accessibility_hint_star</key>
@@ -57,8 +49,6 @@
     <string>再生速度%1$@倍</string>
     <key>accessibility_playlist_add_episode</key>
     <string>エピソードを追加</string>
-    <key>accessibility_playlist_color</key>
-    <string>プレイリストの色%1$@</string>
     <key>accessibility_playlist_image</key>
     <string>プレイリスト画像</string>
     <key>accessibility_plus_only</key>
@@ -67,82 +57,24 @@
     <string>PodHopper の設定</string>
     <key>accessibility_select_episode</key>
     <string>エピソードを選択</string>
-    <key>accessibility_show_filter_details</key>
-    <string>タップしてフィルターの詳細を表示</string>
-    <key>accessibility_sign_in</key>
-    <string>タップして表示またはアカウントを開設</string>
     <key>accessibility_sort_and_options</key>
     <string>並び替えとオプション</string>
     <key>account</key>
     <string>アカウント</string>
-    <key>account_change_email</key>
-    <string>メールアドレスを変更</string>
-    <key>account_completion_nudge</key>
-    <string>あともう少しです。</string>
-    <key>account_completion_nudge_msg</key>
-    <string>支払を最終処理して、アカウントのアップグレードを完了します。</string>
     <key>account_created</key>
     <string>アカウントを作成済み</string>
-    <key>account_creation_complete</key>
-    <string>アカウントを完了</string>
-    <key>account_delete_account</key>
-    <string>アカウントを削除</string>
-    <key>account_delete_account_conf</key>
-    <string>はい、削除します</string>
-    <key>account_delete_account_error</key>
-    <string>アカウントの削除に失敗</string>
-    <key>account_delete_account_error_msg</key>
-    <string>アカウトを削除できません。</string>
-    <key>account_delete_account_final_alert_msg</key>
-    <string>最後の確認です。アカウントを削除してもよろしいですか ? すべてのサブスクリプションと再生履歴が永久に失われます。</string>
-    <key>account_delete_account_first_alert_msg</key>
-    <string>アカウントを削除してもよろしいですか ? この操作は元に戻せません。</string>
-    <key>account_delete_account_title</key>
-    <string>アカウントを削除しますか ?</string>
-    <key>account_details_free_account</key>
-    <string>無料アカウント</string>
-    <key>account_details_listened_for</key>
-    <string>%1$@視聴しました</string>
     <key>account_details_plus_title</key>
     <string>専用の機能やカスタマイズオプションを使用して、あなたのポッドキャスト体験をさらなるレベルに引き上げることができます。</string>
-    <key>account_login</key>
-    <string>ログイン</string>
     <key>account_payment_renews_monthly</key>
     <string>毎月自動更新</string>
     <key>account_payment_renews_yearly</key>
     <string>毎年自動更新</string>
-    <key>account_privacy_policy</key>
-    <string>プライバシーポリシー</string>
-    <key>account_registration_failed</key>
-    <string>登録に失敗しました。後ほど、もう一度お試しください</string>
-    <key>account_select_type</key>
-    <string>アカウントタイプを選択</string>
-    <key>account_sign_out</key>
-    <string>ログアウト</string>
-    <key>account_sign_out_alert_message</key>
-    <string>戻った際、ポッドキャスト、進捗、データがこちらに表示されます。</string>
-    <key>account_sign_out_alert_title</key>
-    <string>サインアウトしますか ?</string>
-    <key>account_sign_out_supporter_prompt</key>
-    <string>ログアウトすると、サポートされている%1$@件のポッドキャストがこの端末から削除されます。 よろしいですか ?</string>
-    <key>account_sign_out_supporter_subtitle</key>
-    <string>もう一度ログインして、アクセス権を再取得できます。</string>
     <key>account_signed_out_alert_message</key>
     <string>Google に「Google」と入力すると、インターネットが壊れることがわかっています。
 
 下のボタンをタップして、PodHopper アカウントに再度ログインしてください。</string>
     <key>account_signed_out_alert_title</key>
     <string>ログアウトされました。</string>
-    <key>account_sso_failed</key>
-    <string>ログインに失敗しました。 もう一度お試しください。</string>
-    <key>account_title</key>
-    <string>PodHopper アカウント</string>
-    <key>account_upgraded</key>
-    <string>アカウントをアップグレード済み</string>
-    <key>account_welcome</key>
-    <string>PodHopper へようこそ !</string>
-    <key>account_welcome_plus</key>
-    <string>PodHopper Plus へようこそ !</string>
     <key>add_bookmark</key>
     <string>ブックマークを追加</string>
     <key>add_bookmark_subtitle</key>
@@ -157,12 +89,6 @@
     <string>「次のエピソード」の待機リストが空の場合にエピソードの視聴を開始すると、自動再生機能により表示またはリストされているエピソードの再生が続行します。</string>
     <key>announcement_autoplay_title</key>
     <string>自動再生機能が登場</string>
-    <key>announcement_bookmarks_description</key>
-    <string>プレーヤーのアクションメニューから、またはヘッドフォンでアクションにより、エピソードのタイムスタンプを保存できるようになりました。</string>
-    <key>announcement_bookmarks_title</key>
-    <string>ブックマークはこちら !</string>
-    <key>announcement_bookmarks_title_beta</key>
-    <string>ブックマークのベータテストに参加してください !</string>
     <key>announcement_deselect_chapters_free</key>
     <string>今すぐ Plus に登録すると、チャプターに対応するどのエピソードでも、事前に選択したチャプターを自動でスキップできます。</string>
     <key>announcement_deselect_chapters_patron</key>
@@ -183,50 +109,6 @@
     <string>夢は大きく</string>
     <key>app_badge</key>
     <string>アプリバッジ</string>
-    <key>app_clip_placholder_message</key>
-    <string>削除されたか、リンクが壊れている可能性があります。
-しかし、PodHopper ではさらに多くをご利用いただけます。
-アプリをダウンロードしてフル活用しましょう !</string>
-    <key>app_clip_placholder_title</key>
-    <string>対象のエピソードは見つかりませんでした</string>
-    <key>app_icon_classic</key>
-    <string>クラシック</string>
-    <key>app_icon_dark</key>
-    <string>ダーク</string>
-    <key>app_icon_default</key>
-    <string>デフォルト</string>
-    <key>app_icon_electric_blue</key>
-    <string>鮮やかなブルー</string>
-    <key>app_icon_electric_pink</key>
-    <string>鮮やかなピンク</string>
-    <key>app_icon_halloween</key>
-    <string>Halloween</string>
-    <key>app_icon_indigo</key>
-    <string>インディゴ</string>
-    <key>app_icon_patron_chrome</key>
-    <string>Patron クロム</string>
-    <key>app_icon_patron_dark</key>
-    <string>Patron ダーク</string>
-    <key>app_icon_patron_glow</key>
-    <string>Patron グロー</string>
-    <key>app_icon_patron_round</key>
-    <string>Patron ラウンド</string>
-    <key>app_icon_plus</key>
-    <string>Plus</string>
-    <key>app_icon_pocket_cats</key>
-    <string>Pocket Cats</string>
-    <key>app_icon_radioactivity</key>
-    <string>放射能</string>
-    <key>app_icon_red_velvet</key>
-    <string>レッドベルベット</string>
-    <key>app_icon_rose</key>
-    <string>ロゼ</string>
-    <key>app_icon_round_dark</key>
-    <string>ラウンドダーク</string>
-    <key>app_icon_round_light</key>
-    <string>ラウンドライト</string>
-    <key>app_share_text</key>
-    <string>注目! このリンクから PodHopper アプリをダウンロードできます。とても楽しく、どなたにも気に入ってもらえると思います。</string>
     <key>app_version</key>
     <string>バージョン%1$@ (%2$@)</string>
     <key>appearance_app_icon_header</key>
@@ -291,10 +173,6 @@
     <string>最新エピソード</string>
     <key>auto_download_limit_one_episode_show</key>
     <string>番組ごとの最新エピソード</string>
-    <key>auto_download_off_subtitle</key>
-    <string>有効化するとこのフィルターのエピソードを自動ダウンロードできます</string>
-    <key>auto_download_on_plural_format</key>
-    <string>このフィルターの最初の%1$@件のエピソードが自動的にダウンロードされます</string>
     <key>auto_download_prompt_first</key>
     <string>最初</string>
     <key>auto_restart_sleep_timer</key>
@@ -303,28 +181,6 @@
     <string>オンにすると、最後の一時停止から5分以内にエピソードを再生した際にスリープタイマーが自動的に再開されます。</string>
     <key>back</key>
     <string>戻る</string>
-    <key>banner_ads_info_label</key>
-    <string>広告</string>
-    <key>banner_ads_remove_ads</key>
-    <string>広告を削除する</string>
-    <key>banner_ads_report_ad</key>
-    <string>広告を報告する</string>
-    <key>banner_ads_report_ad_title</key>
-    <string>この広告を報告する理由</string>
-    <key>banner_ads_report_broken</key>
-    <string>この広告は表示に不具合がある</string>
-    <key>banner_ads_report_confirmation</key>
-    <string>この広告を報告しました。</string>
-    <key>banner_ads_report_malicious</key>
-    <string>この広告には悪意がある</string>
-    <key>banner_ads_report_other</key>
-    <string>その他</string>
-    <key>banner_ads_report_too_often</key>
-    <string>この広告の表示頻度が高すぎる</string>
-    <key>beta_purchase_disabled</key>
-    <string>%1$@ を購入するには App Store から PodHopper をダウンロードしてください。</string>
-    <key>beta_thank_you</key>
-    <string>ベータテストお疲れ様でした !</string>
     <key>bookmark_added</key>
     <string>ブックマークを追加しました</string>
     <key>bookmark_added_button_title</key>
@@ -349,114 +205,16 @@
     <string>%1$@件のブックマーク</string>
     <key>bookmarks_count_singular</key>
     <string>1件のブックマーク</string>
-    <key>bookmarks_early_access_locked_message</key>
-    <string>PodHopper %1$@ でこの機能やその他の機能のロックを解除し、お気に入りのエピソードのタイムスタンプを保存します。 %2$@ にご登録の方はまもなくご利用いただけるようになります。</string>
-    <key>bookmarks_locked_message</key>
-    <string>PodHopper %1$@ でこの機能やその他の機能のロックを解除し、お気に入りのエピソードのタイムスタンプを保存します。</string>
     <key>bottom</key>
     <string>一番下</string>
     <key>bulk_download_max_format</key>
     <string>一括ダウンロードの上限は%1$@件です。</string>
     <key>cancel</key>
     <string>キャンセル</string>
-    <key>cancel_confirm_item_folders</key>
-    <string>フォルダーは消去され、保存されているコンテンツは再びポッドキャスト画面に移動します。</string>
-    <key>cancel_confirm_item_history</key>
-    <string>ポッドキャストと聴取履歴は引き続き利用できます。 </string>
-    <key>cancel_confirm_item_plus</key>
-    <string>この日付以降、ブックマーク、シャッフル、ウェアラブルなどの Plus 機能が利用できなくなります。</string>
-    <key>cancel_confirm_item_uploads</key>
-    <string>PodHopper アカウントにアップロードされたファイルはすべて削除されます (ただし、モバイルデバイスにダウンロードされたファイルは残ります)。</string>
-    <key>cancel_confirm_sub_expiry</key>
-    <string>現在のサブスクリプションは%1$@まで有効です。</string>
-    <key>cancel_confirm_sub_expiry_date_fallback</key>
-    <string>有効期限</string>
-    <key>cancel_confirm_subtitle</key>
-    <string>解約すると、お客様のプランが無料アカウントに変更されます。</string>
-    <key>cancel_confirm_title</key>
-    <string>解約前に知っておくべきこと</string>
     <key>cancel_download</key>
     <string>ダウンロードをキャンセル</string>
-    <key>cancel_failed</key>
-    <string>キャンセルできません</string>
     <key>cancel_subscription</key>
     <string>サブスクリプションをキャンセル</string>
-    <key>cancel_subscription_available_plans_best_value_badge</key>
-    <string>最もお得</string>
-    <key>cancel_subscription_available_plans_footer</key>
-    <string>新しいプランは現在の請求期間の終了時に有効化されます。</string>
-    <key>cancel_subscription_available_plans_retry_screen_text</key>
-    <string>申し訳ありません、プランの取得中にエラーが発生しました。</string>
-    <key>cancel_subscription_available_plans_title</key>
-    <string>利用可能なプラン</string>
-    <key>cancel_subscription_claim_offer_button</key>
-    <string>オファーを獲得</string>
-    <key>cancel_subscription_continue_button</key>
-    <string>キャンセルを続行</string>
-    <key>cancel_subscription_generic_error</key>
-    <string>エラーが発生しました。 後でもう一度お試しください。</string>
-    <key>cancel_subscription_help_description</key>
-    <string>機能に不便がある、または問題が発生しています。</string>
-    <key>cancel_subscription_help_title</key>
-    <string>PodHopper のサポートが必要ですか ?</string>
-    <key>cancel_subscription_new_plan_description</key>
-    <string>自分にぴったりのプランを見つけましょう。</string>
-    <key>cancel_subscription_new_plan_title</key>
-    <string>別のプランをお探しですか ?</string>
-    <key>cancel_subscription_offer_success_view_description</key>
-    <string>PodHopper をお選びいただきありがとうございます。 現在のサブスクリプションに1か月の無料期間が追加されます。</string>
-    <key>cancel_subscription_offer_success_view_title</key>
-    <string>1か月の無料期間をお楽しみください !</string>
-    <key>cancel_subscription_offer_yearly_success_view_description</key>
-    <string>PodHopper をお選びいただきありがとうございます。 年間割引は現在のプランが終了した後に開始します。</string>
-    <key>cancel_subscription_offer_yearly_success_view_title</key>
-    <string>次年度が50%% オフ !</string>
-    <key>cancel_subscription_promotion_description_monthly</key>
-    <string>次の請求期間の開始時に%@を節約します。</string>
-    <key>cancel_subscription_promotion_description_yearly</key>
-    <string>今すぐ%@を支払うと、もう1年が50%% オフになります。</string>
-    <key>cancel_subscription_promotion_title</key>
-    <string>来月分を無料で利用</string>
-    <key>cancel_subscription_survey_description</key>
-    <string>キャンセルの理由をお知らせください。 皆さまからのフィードバックが改善につながります。</string>
-    <key>cancel_subscription_survey_row_better_app</key>
-    <string>もっと良いアプリが見つかった</string>
-    <key>cancel_subscription_survey_row_cost</key>
-    <string>コストに関する理由</string>
-    <key>cancel_subscription_survey_row_not_enough</key>
-    <string>あまり使用していない</string>
-    <key>cancel_subscription_survey_row_other</key>
-    <string>その他</string>
-    <key>cancel_subscription_survey_row_technical_issue</key>
-    <string>技術的な問題</string>
-    <key>cancel_subscription_survey_submit_feedback</key>
-    <string>フィードバックを送信</string>
-    <key>cancel_subscription_survey_title</key>
-    <string>お試しいただきありがとうございました
-PodHopper Plus</string>
-    <key>cancel_subscription_survey_toast_fail</key>
-    <string>エラーが発生しました。</string>
-    <key>cancel_subscription_survey_toast_success</key>
-    <string>フィードバックをいただきありがとうございます。</string>
-    <key>cancel_subscription_title</key>
-    <string>解約をお考えですか ?
-まずはサポートをご利用ください</string>
-    <key>cancel_subscription_winback_view_accept_offer_button</key>
-    <string>オファーを受理</string>
-    <key>cancel_subscription_winback_view_continue_cancellation_button</key>
-    <string>キャンセルを続行</string>
-    <key>cancel_subscription_winback_view_description_montly</key>
-    <string>PodHopper Plus を1か月間無料でお楽しみください。 現在のサブスクリプションにオファーが追加されます。</string>
-    <key>cancel_subscription_winback_view_description_yearly</key>
-    <string>今すぐ%@を支払うと PodHopper Plus を1年間半額でご利用いただけます。 年間割引は現在のプランが終了した後に開始します。</string>
-    <key>cancel_subscription_winback_view_title_montly</key>
-    <string>来月分を無料で利用して%@節約</string>
-    <key>cancel_subscription_winback_view_title_yearly</key>
-    <string>次年度50%% オフを獲得して%@節約</string>
-    <key>cancel_subscription_yearly_promotion_title</key>
-    <string>次年度が50%% オフ</string>
-    <key>canceling</key>
-    <string>キャンセルしています...</string>
     <key>carplay_chapter_count</key>
     <string>%1$@ / %2$@チャプター(現在のチャプター: %3$@)</string>
     <key>carplay_more</key>
@@ -465,30 +223,14 @@ PodHopper Plus</string>
     <string>再生速度</string>
     <key>carplay_up_next_queue</key>
     <string>次のエピソード待機リスト</string>
-    <key>champion_description</key>
-    <string>最初からご利用いただきありがとうございます ! アプリを気に入っていただけましたら、ぜひフィードバックをお寄せください。</string>
-    <key>champion_title</key>
-    <string>あなたは PodHopper の真のサポーターです !</string>
-    <key>change_app_icon</key>
-    <string>アプリアイコンを変更</string>
     <key>change_bookmark_subtitle</key>
     <string>このブックマークを特定するタイトルを変更します</string>
     <key>change_bookmark_title</key>
     <string>タイトルを変更</string>
     <key>change_email</key>
     <string>メールアドレスを変更</string>
-    <key>change_email_conf</key>
-    <string>メールアドレスを変更済み</string>
     <key>change_password</key>
     <string>パスワードを変更</string>
-    <key>change_password_conf</key>
-    <string>パスワードを変更済み</string>
-    <key>change_password_error</key>
-    <string>パスワードを変更できません。 パスワードが無効です。</string>
-    <key>change_password_error_mismatch</key>
-    <string>パスワードが一致しません</string>
-    <key>change_password_length_error</key>
-    <string>6文字以上にしてください</string>
     <key>chapters</key>
     <string>チャプター</string>
     <key>check_internet_connection</key>
@@ -523,20 +265,6 @@ PodHopper Plus</string>
     <string>トークンを認証できませんでした。</string>
     <key>clip</key>
     <string>クリップ</string>
-    <key>clip_duration_label</key>
-    <string>%@ 所要時間</string>
-    <key>clip_loading_label</key>
-    <string>クリップを作成中…</string>
-    <key>clip_start_label</key>
-    <string>%@ 開始</string>
-    <key>clips_end_time_accessibility_label</key>
-    <string>クリップの終了</string>
-    <key>clips_shareable_media_a11y_label</key>
-    <string>共有可能メディアのオプション</string>
-    <key>clips_shareable_media_item_a11y_label</key>
-    <string>%1$@ 形式 %2$@ / %3$@</string>
-    <key>clips_start_time_accessibility_label</key>
-    <string>クリップの開始</string>
     <key>clips_whats_new_button_title</key>
     <string>OK</string>
     <key>clips_whats_new_message</key>
@@ -549,36 +277,10 @@ PodHopper Plus</string>
     <string>色</string>
     <key>confirm</key>
     <string>確認</string>
-    <key>confirm_new_password_prompt</key>
-    <string>新しいパスワードを確認</string>
     <key>continue</key>
     <string>次へ</string>
     <key>copy</key>
     <string>コピー</string>
-    <key>create_account</key>
-    <string>アカウントを作成</string>
-    <key>create_account_app_store_error_message</key>
-    <string>PodHopper は App Store への接続を確認できません。 接続を確認して、もう一度お試しください。</string>
-    <key>create_account_app_store_error_title</key>
-    <string>App Store に接続できません</string>
-    <key>create_account_find_out_more_plus</key>
-    <string>PodHopper Plus の詳細を確認</string>
-    <key>create_account_free_account_type</key>
-    <string>標準</string>
-    <key>create_account_free_details</key>
-    <string>ほぼすべて</string>
-    <key>create_account_free_price</key>
-    <string>無料</string>
-    <key>create_account_plus_details</key>
-    <string>すべてのロックを解除済み</string>
-    <key>create_audio_clip_description</key>
-    <string>.m4a 音声ファイルを作成</string>
-    <key>create_audio_clip_title</key>
-    <string>音声ファイルを作成</string>
-    <key>create_clip</key>
-    <string>クリップを作成</string>
-    <key>create_filter</key>
-    <string>フィルターを作成</string>
     <key>create_up_next_snapshot</key>
     <string>スナップショットを作成</string>
     <key>creator_pick_modal_description</key>
@@ -587,10 +289,6 @@ PodHopper Plus</string>
     <string>さらに詳しく</string>
     <key>creator_pick_modal_title</key>
     <string>Creator Pick とは何ですか ?</string>
-    <key>current_email_prompt</key>
-    <string>現在のメール</string>
-    <key>current_password_prompt</key>
-    <string>現在のパスワード</string>
     <key>custom_episode</key>
     <string>カスタムエピソード</string>
     <key>custom_episode_cancel_upload</key>
@@ -805,10 +503,6 @@ PodHopper Plus</string>
     <string>米国</string>
     <key>discover_region_worldwide</key>
     <string>全世界</string>
-    <key>discover_search_error_msg</key>
-    <string>2文字以上を入力してください。</string>
-    <key>discover_search_error_title</key>
-    <string>検索用語が短すぎます</string>
     <key>discover_search_failed</key>
     <string>検索に失敗</string>
     <key>discover_search_failed_msg</key>
@@ -829,8 +523,6 @@ PodHopper Plus</string>
     <string>ダウンロード</string>
     <key>download_all</key>
     <string>すべてをダウンロード</string>
-    <key>download_data_warning</key>
-    <string>ダウンロードするとデータが消費されます。</string>
     <key>download_data_warning_with_settings_link</key>
     <string>このダウンロードにはモバイルデータが使用されます。 [Settings](%@) でこの警告をオフにできます。</string>
     <key>download_episode_plural_format</key>
@@ -901,181 +593,22 @@ PodHopper Plus</string>
     <string>プロフィールアイコン</string>
     <key>eac_informational_banner_profile_title</key>
     <string>あらゆる端末で番組を楽しむ</string>
-    <key>eac_informational_card_backups_description</key>
-    <string>ライブラリと設定が安全に保存されます。</string>
-    <key>eac_informational_card_backups_title</key>
-    <string>信頼できるバックアップ</string>
-    <key>eac_informational_card_recommendation_description</key>
-    <string>聴取習慣に基づいてカスタマイズされたポッドキャストの提案を受け取ります。</string>
-    <key>eac_informational_card_recommendation_title</key>
-    <string>パーソナライズされたおすすめ</string>
-    <key>eac_informational_card_sync_description</key>
-    <string>進捗を同期して、すべての端末で表示します。</string>
-    <key>eac_informational_card_sync_title</key>
-    <string>端末間で同期</string>
-    <key>eac_informational_view_modal_description</key>
-    <string>アカウントを作成またはログインして楽しむ
-PodHopper を最大限に活用しましょう。</string>
-    <key>eac_informational_view_modal_get_started_button</key>
-    <string>開始する</string>
-    <key>eac_informational_view_modal_title</key>
-    <string>ログインしていないようです</string>
     <key>edit</key>
     <string>編集する</string>
-    <key>edit_clip</key>
-    <string>クリップを編集</string>
     <key>enable_it_now</key>
     <string>すぐに有効化</string>
-    <key>eoy_2024_epilogue_description</key>
-    <string>友達と共有したり、お気に入りのポッドキャストやクリエイターにエールを送ったりしましょう</string>
-    <key>eoy_2024_epilogue_title</key>
-    <string>本年もお聴きいただきありがとうございました。
-2025年にお会いしましょう !</string>
-    <key>eoy_card_description</key>
-    <string>視聴統計、人気のポッドキャストなどを確認します。</string>
-    <key>eoy_create_account_to_see</key>
-    <string>ポッドキャストをクラウドに保存して、年末レビューを取得し、他の端末と進捗を同期します。</string>
-    <key>eoy_description</key>
-    <string>人気のポッドキャスト、カテゴリー、視聴統計などを確認します。 友達と共有したり、お気に入りのクリエイターにエールを送ったりしましょう。</string>
     <key>eoy_not_now</key>
     <string>後で</string>
-    <key>eoy_share</key>
-    <string>このストーリーを共有</string>
-    <key>eoy_share_this_story_message</key>
-    <string>この画像をソーシャルに貼り付けて、お気に入りのショーや作成者を応援しましょう</string>
-    <key>eoy_share_this_story_title</key>
-    <string>このストーリーを共有しませんか ?</string>
-    <key>eoy_small_title</key>
-    <string>ポッドキャストで振り返る1年</string>
-    <key>eoy_start_your_free_trial</key>
-    <string>無料お試しを開始する</string>
-    <key>eoy_stories_failed</key>
-    <string>ストーリーの読み込みに失敗しました。</string>
-    <key>eoy_story_epilogue_subtitle</key>
-    <string>友達と共有したりお気に入りのポッドキャストクリエイターにエールを送ったりしましょう</string>
-    <key>eoy_story_epilogue_title</key>
-    <string>本年もご視聴いただきありがとうございました。
-2024年もよろしくお願いいたします。</string>
-    <key>eoy_story_intro_title</key>
-    <string>今年聴いたポッドキャストを振り返ってみましょう...</string>
-    <key>eoy_story_listened_to</key>
-    <string>2022年、ポッドキャストを聴いた時間は合計%1$@時間です</string>
-    <key>eoy_story_listened_to_categories</key>
-    <string>今年、%1$@個のカテゴリーを聴きました</string>
-    <key>eoy_story_listened_to_categories_highlighted</key>
-    <string>今年は%1$@を聴きました</string>
-    <key>eoy_story_listened_to_categories_share_text</key>
-    <string>2023年は%1$@個のカテゴリーを聴きました</string>
-    <key>eoy_story_listened_to_categories_subtitle</key>
-    <string>お気に入りをいくつか振り返りましょう...</string>
-    <key>eoy_story_listened_to_categories_text</key>
-    <string>%1$@種類のカテゴリー</string>
-    <key>eoy_story_listened_to_episodes_text</key>
-    <string>%1$@件のエピソード</string>
-    <key>eoy_story_listened_to_numbers</key>
-    <string>%1$@個のショーで%合計%2$@話のエピソードを聴きました</string>
-    <key>eoy_story_listened_to_numbers_share_text</key>
-    <string>今年は%1$@個のポッドキャストで%2$@話のエピソードを聴きました</string>
-    <key>eoy_story_listened_to_numbers_subtitle</key>
-    <string>何度も聴いたエピソードもありました...</string>
-    <key>eoy_story_listened_to_numbers_updated</key>
-    <string>%1$@と%2$@を聴きました</string>
-    <key>eoy_story_listened_to_podcast_text</key>
-    <string>%1$@種類のポッドキャスト</string>
-    <key>eoy_story_listened_to_share_text</key>
-    <string>今年ポッドキャストを聴いた時間は%1$@時間でした</string>
-    <key>eoy_story_listened_to_subtitle</key>
-    <string>いつもお楽しみいただけましたら幸いです。</string>
-    <key>eoy_story_listened_to_title</key>
-    <string>これはポッドキャストの合計聴取時間です</string>
-    <key>eoy_story_listened_to_updated</key>
-    <string>今年ポッドキャストを聴いた時間は%1$@時間でした</string>
-    <key>eoy_story_longest_episode</key>
-    <string>お聴きになった最長のエピソードは %1$@ でした</string>
-    <key>eoy_story_longest_episode_duration</key>
-    <string>このエピソードの時間は%1$@です</string>
-    <key>eoy_story_longest_episode_share_text</key>
-    <string>今年聴いた最長のエピソード: %1$@</string>
-    <key>eoy_story_longest_episode_subtitle</key>
-    <string>「%2$@」の「%1$@」を超えるものはありません</string>
-    <key>eoy_story_longest_episode_time</key>
-    <string>お聴きになった
-最長のエピソードは
-%1$@でした</string>
-    <key>eoy_story_replay</key>
-    <string>もう一度再生</string>
-    <key>eoy_story_top_categories</key>
-    <string>トップカテゴリー</string>
-    <key>eoy_story_top_categories_share_text</key>
-    <string>最もよく聴いたポッドキャストカテゴリー</string>
-    <key>eoy_story_top_categories_subtitle</key>
-    <string>%1$@個のエピソードで合計%2$@話聴きました</string>
-    <key>eoy_story_top_categories_title</key>
-    <string>%1$@ があなたのお気に入りのカテゴリーだとお気づきでしたか ?</string>
-    <key>eoy_story_top_podcast</key>
-    <string>%1$@ は2023年で最も視聴されたショーでした</string>
-    <key>eoy_story_top_podcast_share_text</key>
-    <string>今年お気に入りのポッドキャスト: %1$@</string>
-    <key>eoy_story_top_podcast_subtitle</key>
-    <string>%1$@個のエピソードで合計%2$@聴きました</string>
-    <key>eoy_story_top_podcasts</key>
-    <string>人気のポッドキャスト</string>
-    <key>eoy_story_top_podcasts_list_title</key>
-    <string>今年再生数が多かったポッドキャストはこちら !</string>
-    <key>eoy_story_top_podcasts_share_text</key>
-    <string>今年私が一番よく聴いたポッドキャスト ! %1$@</string>
-    <key>eoy_story_top_podcasts_subtitle</key>
-    <string>2023年に最も視聴されたトップ5です</string>
-    <key>eoy_story_top_podcasts_title</key>
-    <string>そしてこれらのショーも大変気に入っていただけました !</string>
-    <key>eoy_subscribe_to_plus</key>
-    <string>Plus に登録すると、2022年と比較した視聴内容、その他の楽しい統計、ブックマークやフォルダーなどのプレミアム機能をご利用いただけます。</string>
-    <key>eoy_theres_more</key>
-    <string>その他にもございます !</string>
-    <key>eoy_title</key>
-    <string>ポッドキャストで振り返る1年</string>
-    <key>eoy_view_year</key>
-    <string>マイ2023を表示</string>
-    <key>eoy_year_completion_rate</key>
-    <string>完了率</string>
-    <key>eoy_year_completion_rate_share_text</key>
-    <string>%1$@の完了率</string>
-    <key>eoy_year_completion_rate_subtitle</key>
-    <string>開始した%1$@件のエピソードから合計%2$@件を最後まで聴きました</string>
-    <key>eoy_year_completion_rate_title</key>
-    <string>今年の完了率は%1$@ です</string>
-    <key>eoy_year_over_share_text</key>
-    <string>%1$@と%2$@の聴取時間の比較</string>
-    <key>eoy_year_over_year_subtitle_flat</key>
-    <string>一貫性が成功の鍵であるとかなんとか言われています。</string>
-    <key>eoy_year_over_year_subtitle_went_down</key>
-    <string>…生きてこその人生ですね。</string>
-    <key>eoy_year_over_year_subtitle_went_up</key>
-    <string>2024年でこの記録を上回る準備はできていますか ?</string>
-    <key>eoy_year_over_year_title_flat</key>
-    <string>2022年と比較して、聴取時間は一定していました</string>
-    <key>eoy_year_over_year_title_skyrocketed</key>
-    <string>2022年と比較して、聴取時間が急増しました !</string>
-    <key>eoy_year_over_year_title_went_down</key>
-    <string>2022年と比較して、聴取時間が少し減りました</string>
-    <key>eoy_year_over_year_title_went_up</key>
-    <string>2022年と比較して、聴取時間が%1$@% に急増しました</string>
-    <key>eoy_year_ratings_share_text</key>
-    <string>%2$@は%1$@個のポッドキャストを評価し、最もよく使った評価は%3$@でした</string>
     <key>episode</key>
     <string>エピソード</string>
     <key>episode_count_plural_format</key>
     <string>%1$@件のエピソード</string>
-    <key>episode_description_title</key>
-    <string>エピソードの説明</string>
     <key>episode_detail_add</key>
     <string>追加</string>
     <key>episode_details_title</key>
     <string>詳細</string>
     <key>episode_filter_by_duration_label</key>
     <string>再生時間でフィルター</string>
-    <key>episode_filter_no_episodes_msg</key>
-    <string>リストにあるすべてのエピソードを再生しました。フィルター設定を編集してさらに追加しますか ?</string>
     <key>episode_filter_no_episodes_title</key>
     <string>エピソードなし</string>
     <key>episode_indicator_bonus</key>
@@ -1098,16 +631,12 @@ PodHopper を最大限に活用しましょう。</string>
     <string>エラー</string>
     <key>error_general_podcast_not_found</key>
     <string>ポッドキャストが見つかりません。 ポッドキャストの作成者に連絡してください。</string>
-    <key>export_database</key>
-    <string>データベースをエクスポート</string>
     <key>export_podcasts_description</key>
     <string>すべてのポッドキャストを OPML ファイルとしてエクスポートして、他のポッドキャストアプリにインポートできます。</string>
     <key>export_podcasts_option</key>
     <string>ポッドキャストのエクスポート</string>
     <key>export_podcasts_title</key>
     <string>エクスポート</string>
-    <key>exporting_database</key>
-    <string>データベースをエクスポート中...</string>
     <key>failed_recommendations</key>
     <string>おすすめを読み込めませんでした</string>
     <key>feature_marketing_all_plus_features</key>
@@ -1136,12 +665,6 @@ PodHopper を最大限に活用しましょう。</string>
     <string>新規</string>
     <key>feature_tour_step_format</key>
     <string>%1$@ / %2$@</string>
-    <key>feedback_continue_with_mail</key>
-    <string>デフォルトのメールアプリを開く</string>
-    <key>feedback_mail_not_configured_msg</key>
-    <string>デバッグ添付ファイルを送信するには、Apple Mail アプリをスマートフォンに設定する必要があります。 何がご希望ですか ?</string>
-    <key>feedback_mail_not_configured_title</key>
-    <string>メールが未設定</string>
     <key>file_upload_add_file</key>
     <string>ファイルを追加</string>
     <key>file_upload_add_image</key>
@@ -1180,56 +703,18 @@ PodHopper を最大限に活用しましょう。</string>
     <string>アップロードされたファイルがありません</string>
     <key>files_sort</key>
     <string>ファイルを並び替え</string>
-    <key>filter_auto_add_subtitle</key>
-    <string>新たにフォローするポッドキャストは自動的に追加されます</string>
-    <key>filter_auto_add_subtitle_new</key>
-    <string>新たにフォローするポッドキャストは自動的に追加されます</string>
-    <key>filter_chips_all_podcasts</key>
-    <string>すべてのポッドキャスト</string>
     <key>filter_chips_duration</key>
     <string>時間</string>
     <key>filter_choose_podcasts</key>
     <string>ポッドキャストを選択</string>
-    <key>filter_create_add_more</key>
-    <string>条件をさらに追加してフィルターの絞り込みを完了します。</string>
-    <key>filter_create_filter_by</key>
-    <string>絞り込み条件</string>
-    <key>filter_create_instructions</key>
-    <string>これらのボタンを使用してフィルター条件を選択し、エピソードの最新のスマートプレイリストを作成します。</string>
     <key>filter_create_no_episodes</key>
     <string>一致するエピソードがありません</string>
-    <key>filter_create_no_episodes_description_explanation</key>
-    <string>選択した基準に一致する最新エピソードがサブスクリプションにありません</string>
-    <key>filter_create_no_episodes_description_explanation_new</key>
-    <string>選択した基準に一致する最新エピソードがポッドキャストにありません</string>
-    <key>filter_create_no_episodes_description_prompt</key>
-    <string>別の基準を選択してください。将来のエピソードと一致すると思われる場合はこのフィルターを保存してください。</string>
-    <key>filter_create_podcasts_all_podcasts</key>
-    <string>すべてのポッドキャスト</string>
-    <key>filter_create_preview</key>
-    <string>プレビュー</string>
-    <key>filter_create_save</key>
-    <string>フィルターを保存</string>
-    <key>filter_details</key>
-    <string>フィルターの詳細</string>
-    <key>filter_details_color_icon</key>
-    <string>色とアイコン</string>
-    <key>filter_details_color_selection</key>
-    <string>カラーセレクタ</string>
-    <key>filter_details_icon_selection</key>
-    <string>アイコンセレクタ</string>
-    <key>filter_details_name</key>
-    <string>名前</string>
     <key>filter_download_status</key>
     <string>ダウンロードのステータス</string>
     <key>filter_episode_status</key>
     <string>エピソードのステータス</string>
     <key>filter_longer_than_label</key>
     <string>次の再生時間より長い</string>
-    <key>filter_manual_add_subtitle</key>
-    <string>新たにフォローするポッドキャストは自動的に追加されません</string>
-    <key>filter_manual_add_subtitle_new</key>
-    <string>新たにフォローするポッドキャストは自動的に追加されません</string>
     <key>filter_media_type</key>
     <string>メディアの種類</string>
     <key>filter_media_type_audio</key>
@@ -1242,8 +727,6 @@ PodHopper を最大限に活用しましょう。</string>
     <string>%1$@より長く%2$@より短いエピソードを絞り込むことは、時間の仕組みに逆らうことになるのでできません。 残念です。</string>
     <key>filter_option_episode_duration_error_title</key>
     <string>今一度ご確認ください</string>
-    <key>filter_options</key>
-    <string>フィルターオプション</string>
     <key>filter_release_date</key>
     <string>リリース日</string>
     <key>filter_release_date_anytime</key>
@@ -1272,10 +755,6 @@ PodHopper を最大限に活用しましょう。</string>
     <string>新規リリース</string>
     <key>filters_new_filter_button</key>
     <string>+ 新規フィルター</string>
-    <key>filters_tip_view_description</key>
-    <string>スマートフィルターを作成してエピソードを整理します。 期間、リリース日、メディアタイプなどで絞り込みます。</string>
-    <key>filters_tip_view_title</key>
-    <string>エピソードを整理</string>
     <key>folder</key>
     <string>フォルダー</string>
     <key>folder_add_podcasts_plural_format</key>
@@ -1338,24 +817,10 @@ PodHopper を最大限に活用しましょう。</string>
     <string>同期の結果としてフォルダーから削除されたポッドキャストのリスト。</string>
     <key>follow</key>
     <string>フォロー</string>
-    <key>free_trial_detail_label</key>
-    <string>無料でお試ししていつでもキャンセル可能</string>
-    <key>free_trial_duration_free</key>
-    <string>%1$@無料</string>
-    <key>free_trial_duration_free_trial</key>
-    <string>%1$@無料お試し</string>
-    <key>free_trial_pricing_terms</key>
-    <string>%1$@無料で以降 %2$@</string>
-    <key>free_trial_start_and_subscribe_button</key>
-    <string>無料お試しとサブスクリプションを開始</string>
     <key>free_trial_start_button</key>
     <string>無料お試しを開始する</string>
-    <key>free_trial_title_label</key>
-    <string>Plus が今なら%1$@無料</string>
     <key>funding</key>
     <string>資金調達</string>
-    <key>funny_conf_msg</key>
-    <string>あなたの目によくお似合いです ✨</string>
     <key>funny_time_not_enough</key>
     <string>熱心なリスナーではありませんね ?</string>
     <key>funny_time_unit_airplane_takeoffs</key>
@@ -1398,8 +863,6 @@ PodHopper を最大限に活用しましょう。</string>
     <string>OK</string>
     <key>group_episodes</key>
     <string>エピソードをグループ化</string>
-    <key>hang_on</key>
-    <string>しばらくお待ちください。</string>
     <key>history_clear_all</key>
     <string>すべてクリア</string>
     <key>history_clear_all_details</key>
@@ -1412,12 +875,8 @@ PodHopper を最大限に活用しましょう。</string>
     <string>節約時間数</string>
     <key>hours_listened</key>
     <string>聴取時間数</string>
-    <key>hours_plural_format</key>
-    <string>%1$@時間</string>
     <key>hours_saved</key>
     <string>節約時間数</string>
-    <key>hours_singular_format</key>
-    <string>1時間</string>
     <key>how_to_upload_explanation</key>
     <string>まず、保存する音声ファイルがあるアプリを開きます</string>
     <key>how_to_upload_share_action_image_center_text</key>
@@ -1434,22 +893,8 @@ PodHopper を最大限に活用しましょう。</string>
     <string>そのファイルを共有するように選択</string>
     <key>how_to_upload_summary</key>
     <string>これで操作は完了です。 必要に応じて詳細を変更し「保存」をクリックして再生してみましょう。</string>
-    <key>iap_product_monthly_pricing_format</key>
-    <string>%1$@/ 月</string>
-    <key>iap_product_weekly_pricing_format</key>
-    <string>%1$@ / 週</string>
     <key>import</key>
     <string>インポート</string>
-    <key>import_instructions_apple_podcasts_steps</key>
-    <string>内蔵のショートカットアプリを使用して Apple Podcasts からポッドキャストをインポートできます。
-注: 以前にショートカットアプリを削除した場合、再度インストールするようメッセージが表示されます。
-
-1. 下の「ショートカットをインストール」ボタンをタップします。
-2. メッセージが表示されたら「ショートカットを追加」ボタンをタップします。
-3. 「ショートカット」タブをタップします。
-4. リストで「Apple Podcasts から PodHopper」のショートカットを探します。
-5. タップしてインポートプロセスを開始します。
-6. ショートカットが完了すると、PodHopper の実行が再開し、インポートプロセスが完了します。</string>
     <key>import_instructions_breaker</key>
     <string>1. 下の「Breaker を開く」ボタンをタップします
 2. 下部のタブバーの「設定」をタップします
@@ -1480,8 +925,6 @@ PodHopper を最大限に活用しましょう。</string>
     <string>ショートカットをインストール</string>
     <key>import_instructions_open_in</key>
     <string>%1$@ を開く</string>
-    <key>import_instructions_other_apps_title</key>
-    <string>その他のアプリ</string>
     <key>import_instructions_overcast</key>
     <string>1. 下のボタンをタップして Overcast を開きます
 2. アプリの上隅にある歯車アイコンをタップします
@@ -1506,14 +949,6 @@ PodHopper を最大限に活用しましょう。</string>
 移すことができます</string>
     <key>in_progress</key>
     <string>進行中</string>
-    <key>interests_select_at_least</key>
-    <string>%1$@件以上を選択</string>
-    <key>interests_show_more_categories</key>
-    <string>カテゴリーをさらに表示</string>
-    <key>interests_subtitle</key>
-    <string>人間が選んだ素晴らしいポッドキャストをお届けします !</string>
-    <key>interests_title</key>
-    <string>お気に入りのトピックについて教えてください</string>
     <key>keycommand_close_player</key>
     <string>プレーヤーを閉じる</string>
     <key>keycommand_decrease_speed</key>
@@ -1524,32 +959,6 @@ PodHopper を最大限に活用しましょう。</string>
     <string>プレーヤーを開く</string>
     <key>keycommand_play_pause</key>
     <string>再生 / 一時停止</string>
-    <key>kids_profile_banner_badge</key>
-    <string>すぐに</string>
-    <key>kids_profile_banner_request_button</key>
-    <string>早期アクセスをリクエスト </string>
-    <key>kids_profile_banner_text</key>
-    <string>子ども向けコンテンツのみのプロフィールを新規に作成して、サブスクリプションを整理しておくことができます。</string>
-    <key>kids_profile_banner_title</key>
-    <string>キッズプロフィール</string>
-    <key>kids_profile_submit_error</key>
-    <string>問題が発生しました。 フィードバックをもう一度送信してください</string>
-    <key>kids_profile_submit_feedback_send_button</key>
-    <string>送信</string>
-    <key>kids_profile_submit_feedback_title</key>
-    <string>PodHopper のキッズプロフィールに表示したいものは何ですか ?</string>
-    <key>kids_profile_submit_success</key>
-    <string>フィードバックをありがとうございます。</string>
-    <key>kids_profile_thankyou_button_close</key>
-    <string>結構です</string>
-    <key>kids_profile_thankyou_button_send</key>
-    <string>フィードバックを送る</string>
-    <key>kids_profile_thankyou_text</key>
-    <string>新しいキッズプロフィールの準備ができたら、アプリから通知が届きます ! ご覧になりたいものは何ですか ?</string>
-    <key>kids_profile_thankyou_title</key>
-    <string>ご検討いただきありがとうございます</string>
-    <key>learn_about_ratings</key>
-    <string>評価について</string>
     <key>learn_more</key>
     <string>もっと詳しく知る</string>
     <key>listening_history</key>
@@ -1562,20 +971,8 @@ PodHopper を最大限に活用しましょう。</string>
     <string>エピソードがありません</string>
     <key>loading</key>
     <string>読み込み中...</string>
-    <key>login_landing_subtitle</key>
-    <string>ポッドキャストは常に同期されます。 ライブラリを安全に保ち、ウェブとデスクトップで PodHopper をお楽しみください。</string>
-    <key>login_landing_title</key>
-    <string>PodHopper アカウントを作成</string>
-    <key>login_subtitle</key>
-    <string>アカウントを作成すると、すべての端末で視聴内容を同期させることができます。</string>
-    <key>login_title</key>
-    <string>次のお気に入りのポッドキャストを見つける</string>
     <key>logs</key>
     <string>ログ</string>
-    <key>logs_no_email_account_configured</key>
-    <string>ログを送信するには、端末にメールアドレスアカウントを設定する必要があります</string>
-    <key>logs_watch_os_not_available</key>
-    <string>利用可能な watchOS ログはありません。 Apple Watch がペアリングされており、PodHopper ウォッチアプリがインストールされていることを確認してください。</string>
     <key>manage_downloads_action</key>
     <string>ダウンロードを管理</string>
     <key>manage_downloads_detail</key>
@@ -1668,18 +1065,12 @@ PodHopper を最大限に活用しましょう。</string>
     <string>1件のエピソードの星を取り消しています</string>
     <key>name</key>
     <string>名前</string>
-    <key>new_email_address_prompt</key>
-    <string>新しいメールアドレス</string>
     <key>new_episodes</key>
     <string>新規エピソード</string>
-    <key>new_password_prompt</key>
-    <string>新規パスワード</string>
     <key>next</key>
     <string>次へ</string>
     <key>next_episode</key>
     <string>次のエピソード</string>
-    <key>next_payment_format</key>
-    <string>次の支払い日: %1$@</string>
     <key>no_bookmarks_button_title</key>
     <string>ヘッドフォン設定</string>
     <key>no_bookmarks_locked_button_title</key>
@@ -1694,10 +1085,6 @@ PodHopper を最大限に活用しましょう。</string>
     <string>なし</string>
     <key>not_on_wifi</key>
     <string>Wi-Fi に接続していません</string>
-    <key>notifications_app_clip_body</key>
-    <string>PodHopper をインストールすると、パワフルな再生ツールとカスタマイズツールをすべて利用できます。</string>
-    <key>notifications_app_clip_title</key>
-    <string>もっとポッドキャストを楽しみませんか ?</string>
     <key>notifications_daily_reminders</key>
     <string>毎日のリマインダー</string>
     <key>notifications_new_feature_suggested_folders_body</key>
@@ -1808,18 +1195,6 @@ PodHopper を最大限に活用しましょう。</string>
     <string>OK</string>
     <key>on</key>
     <string>ON</string>
-    <key>onboarding_quote_author</key>
-    <string>PodHopper ユーザー</string>
-    <key>onboarding_quote_best</key>
-    <string>これまでで最高のポッドキャストアプリ 断然</string>
-    <key>onboarding_quote_customization</key>
-    <string>カスタマイズの幅は驚くほど広い</string>
-    <key>onboarding_quote_folders</key>
-    <string>ポッドキャストをフォルダー別に整理できるのがすばらしい</string>
-    <key>onboarding_recommendations_subtitle</key>
-    <string>初めてのご利用にぴったりの番組を紹介します。 タップしてフォロー、検索、他のアプリからインポートします。</string>
-    <key>onboarding_recommendations_title</key>
-    <string>おすすめの番組をぜひお楽しみください。</string>
     <key>only_on_unmetered_wifi</key>
     <string>従量制課金が行われない Wi-Fi のみ</string>
     <key>only_on_unmetered_wifi_details</key>
@@ -1838,37 +1213,10 @@ PodHopper を最大限に活用しましょう。</string>
     <string>ポッドキャストをインポートしています...</string>
     <key>page_control_page_progress_format</key>
     <string>%1$@ / %2$@ページ</string>
-    <key>paid_podcast_bundled_subscriptions</key>
-    <string>%1$@ / %2$@件をフォロー済み</string>
-    <key>paid_podcast_cancel</key>
-    <string>寄付をキャンセル</string>
-    <key>paid_podcast_cancel_msg_plural</key>
-    <string>サポーターステータスは%1$@まで有効です。 その後はこれらのポッドキャストを再生できなくなります。</string>
-    <key>paid_podcast_cancel_msg_retain_access</key>
-    <string>サポーターステータスは%1$@まで有効です。 この日までにリリースされたエピソードのみ聴取できます。</string>
-    <key>paid_podcast_cancel_msg_singular</key>
-    <string>サポーターステータスは%1$@まで有効です。 その後はこのポッドキャストを再生できなくなります。</string>
-    <key>paid_podcast_generic_error</key>
-    <string>情報を読み込めません</string>
-    <key>paid_podcast_manage</key>
-    <string>管理</string>
     <key>paid_podcast_next_episode_format</key>
     <string>次のリリース予定日: %1$@</string>
     <key>paid_podcast_release_frequency_format</key>
     <string>リリース日: %1$@</string>
-    <key>paid_podcast_signin_prompt_msg</key>
-    <string>ログインして
-を表示更新</string>
-    <key>paid_podcast_signin_prompt_title</key>
-    <string>ログインして新しいエピソードを表示</string>
-    <key>paid_podcast_subscription_ended</key>
-    <string>終了日: %1$@</string>
-    <key>paid_podcast_subscription_ends</key>
-    <string>終了予定日: %1$@</string>
-    <key>paid_podcast_supporter_only_msg</key>
-    <string>サポーター限定フィード</string>
-    <key>paid_podcast_unsubscribe_msg</key>
-    <string>これらすべてのポッドキャストのフォローを解除すると、ダウンロードされたファイルは削除されます。よろしいですか ?</string>
     <key>patron</key>
     <string>Patron</string>
     <key>patron_callout</key>
@@ -1883,20 +1231,8 @@ PodHopper を最大限に活用しましょう。</string>
     <string>サポーターのプロフィールバッジ</string>
     <key>patron_feature_profile_icons</key>
     <string>特別な PodHopper アプリのアイコン</string>
-    <key>patron_purchase_promo_title</key>
-    <string>Patron のメンバーになると、すべての PodHopper 機能を利用できるようになります</string>
     <key>patron_subscribe_to</key>
     <string>Patron に登録</string>
-    <key>patron_thank_you</key>
-    <string>ご支援いただきありがとうございます。</string>
-    <key>patron_unlock_instructions</key>
-    <string>下のロック解除ボタンを長押しすると、お礼のトークンをいくつか受け取ることができます。</string>
-    <key>patron_unlock_release</key>
-    <string>リリースしてロックを解除</string>
-    <key>patron_unlock_word</key>
-    <string>ロック解除</string>
-    <key>patron_unlocking</key>
-    <string>ロックを解除中</string>
     <key>pause</key>
     <string>一時停止</string>
     <key>paywall_dynamic_headline_banner_ad</key>
@@ -1927,143 +1263,6 @@ PodHopper を最大限に活用しましょう。</string>
     <string>次に再生</string>
     <key>play_next_in_up_next</key>
     <string>「次に再生」で次に再生</string>
-    <key>playback_2024_completion_rate_description</key>
-    <string>開始した%1$@件のエピソードから合計%2$@件を最後まで聴きました</string>
-    <key>playback_2024_completion_rate_title</key>
-    <string>今年の完了率は%1$@ です</string>
-    <key>playback_2024_description</key>
-    <string>人気のポッドキャスト、カテゴリー、聴取統計などを確認します。 友達と共有したり、お気に入りのクリエイターにエールを送ったりしましょう。</string>
-    <key>playback_2024_feature_description</key>
-    <string>聴取統計、人気のポッドキャストなどを確認します。</string>
-    <key>playback_2024_feature_title</key>
-    <string>プレイバック2024はこちら !</string>
-    <key>playback_2024_listening_time_description</key>
-    <string>ポッドキャストを聴いた合計: %1$@</string>
-    <key>playback_2024_longest_episode_description</key>
-    <string>「%2$@」の「%1$@」でした</string>
-    <key>playback_2024_longest_episode_title</key>
-    <string>お聴きになった最長のエピソードは %1$@ でした</string>
-    <key>playback_2024_plus_upsell_button_title</key>
-    <string>PodHopper Plus をチェック</string>
-    <key>playback_2024_plus_upsell_description</key>
-    <string>Plus にサブスクリプションして PodHopper をサポートし、より多くの統計情報や、ブックマーク、フォルダー、チャプターの事前選択などのプレミアム機能を手に入れましょう。</string>
-    <key>playback_2024_plus_upsell_title</key>
-    <string>多くの機能をチェック !</string>
-    <key>playback_2024_ratings_description_1_to_3</key>
-    <string>クリエイターコミュニティにフィードバックを共有していただき、ありがとうございます</string>
-    <key>playback_2024_ratings_description_4_to_5</key>
-    <string>%1$@つ星評価がとても多いですね ! お気に入りのクリエイターへの熱い思いを共有していただき、ありがとうございます。</string>
-    <key>playback_2024_ratings_empty_description</key>
-    <string>番組を評価できるようになったことをご存知ですか ? お気に入りのクリエイターへの熱い思いを共有し、そのクリエイターが注目されるよう支援しましょう。</string>
-    <key>playback_2024_ratings_empty_title</key>
-    <string>おっと ! 表示するポッドキャストの評価はまだありません</string>
-    <key>playback_2024_ratings_title</key>
-    <string>あなたの評価を確認しましょう。</string>
-    <key>playback_2024_top_spot_description</key>
-    <string>「%3$@」の合計%2$@件のエピソードで計%1$@件を聴きました</string>
-    <key>playback_2024_top_spot_title</key>
-    <string>こちらが2024年にあなたが一番再生したポッドキャストです</string>
-    <key>playback_2024_view_year</key>
-    <string>マイプレイバック2024を表示</string>
-    <key>playback_2024_year_over_year_compare_description_down</key>
-    <string>…生きてこその人生ですね。</string>
-    <key>playback_2024_year_over_year_compare_description_same</key>
-    <string>一貫性が成功の鍵であるとかなんとか言われています。</string>
-    <key>playback_2024_year_over_year_compare_description_up</key>
-    <string>2025年でこの記録を上回る準備はできていますか ?</string>
-    <key>playback_2024_year_over_year_compare_title_down_little</key>
-    <string>2023年と比較して、聴取時間が少し減りました</string>
-    <key>playback_2024_year_over_year_compare_title_down_lot</key>
-    <string>2023年と比較して、聴取時間が%1$@急減しました</string>
-    <key>playback_2024_year_over_year_compare_title_down_over_500</key>
-    <string>2023年と比較して、聴取時間が%1$@以上減少しました</string>
-    <key>playback_2024_year_over_year_compare_title_same</key>
-    <string>2023年と比較して、聴取時間は一定していました</string>
-    <key>playback_2024_year_over_year_compare_title_up_above_maximum</key>
-    <string>2023年と比較して、聴取時間が%1$@以上増加しました</string>
-    <key>playback_2024_year_over_year_compare_title_up_little</key>
-    <string>2023年と比較して、聴取時間が少し増えました</string>
-    <key>playback_2024_year_over_year_compare_title_up_lot</key>
-    <string>2023年と比較して、聴取時間が%1$@急増しました</string>
-    <key>playback_2024_year_over_year_compare_title_up_over_500</key>
-    <string>2023年と比較して、聴取時間が%1$@以上増加しました</string>
-    <key>playback_2025_completion_rate_message</key>
-    <string>開始した%1$@件のエピソードのうち、%2$@件が完了しました。 ほとんどのジム会員よりも強力に継続しています</string>
-    <key>playback_2025_completion_rate_title</key>
-    <string>完了率は%1$@です</string>
-    <key>playback_2025_end_story_description</key>
-    <string>プレイバックを友達と共有しましょう。1年間あなたを盛り上げてくれたポッドキャスターたちに感謝の気持ちを伝えましょう</string>
-    <key>playback_2025_end_story_title</key>
-    <string>1年間 PodHopper をご愛顧いただきありがとうございます</string>
-    <key>playback_2025_failed_to_load</key>
-    <string>振り返りを読み込めませんでした</string>
-    <key>playback_2025_feature_description</key>
-    <string>聴取統計、人気のポッドキャストなどをご覧ください。</string>
-    <key>playback_2025_feature_title</key>
-    <string>振り返りが到着 !</string>
-    <key>playback_2025_intro_message</key>
-    <string>ポッドキャストで1年を振り返り、まとめて思い出に残す準備ができました</string>
-    <key>playback_2025_listened_to_numbers</key>
-    <string>%1$@個のポッドキャストで%2$@話のエピソードを聴きました</string>
-    <key>playback_2025_listening_time</key>
-    <string>聴取分数</string>
-    <key>playback_2025_longest_episode_footer</key>
-    <string>最長エピソードは「%2$@」の「%1$@」でした</string>
-    <key>playback_2025_longest_episode_message</key>
-    <string>ストレッチは済ませましたね ?</string>
-    <key>playback_2025_longest_episode_title</key>
-    <string>マラソン聴取時間: %1$@</string>
-    <key>playback_2025_plus_thanks_description</key>
-    <string>%1$@ の特典でさらなる統計情報やパワフルな機能を利用できます</string>
-    <key>playback_2025_plus_thanks_title</key>
-    <string>PodHopper をご利用いただきありがとうございます。</string>
-    <key>playback_2025_plus_upsell_button_title</key>
-    <string>PodHopper Plus を入手</string>
-    <key>playback_2025_plus_upsell_description</key>
-    <string>PodHopper Plus に登録すると、詳細な統計情報、ブックマーク、フォルダー、チャプターの選択などの機能で、聴取習慣を詳しく知ることができます</string>
-    <key>playback_2025_plus_upsell_title</key>
-    <string>詳しく知りたいですか ?</string>
-    <key>playback_2025_ratings_description_1_to_3</key>
-    <string>レビューによって魅力的な番組が広まります</string>
-    <key>playback_2025_ratings_description_4_to_5</key>
-    <string>世界中のクリエイターが愛に感謝しています</string>
-    <key>playback_2025_ratings_empty_description</key>
-    <string>何が好きかを共有して、お気に入りのクリエイターを見つけてもらいましょう</string>
-    <key>playback_2025_ratings_empty_title</key>
-    <string>まだ評価はありませんが、まだ時間はあります !</string>
-    <key>playback_2025_ratings_title_1_to_3</key>
-    <string>フィードバックを共有していただきありがとうございます。</string>
-    <key>playback_2025_ratings_title_4_to_5</key>
-    <string>まるで紙吹雪のように%1$@つ星評価をつけました !</string>
-    <key>playback_2025_top_5_podcasts_message</key>
-    <string>お気に入りを増やし、再生時間を増やして、よりあなたらしく</string>
-    <key>playback_2025_top_5_podcasts_title</key>
-    <string>他の頼りになる人</string>
-    <key>playback_2025_top_spot_description</key>
-    <string>%1$@件のエピソード、%2$@。
-これはコミットメントです。</string>
-    <key>playback_2025_top_spot_subtitle</key>
-    <string>これ以上に「あなたらしい」ものはありません</string>
-    <key>playback_2025_top_spot_title</key>
-    <string>2025年の人気ポッドキャスト</string>
-    <key>playback_2025_view_year</key>
-    <string>マイプレイバック2025を表示</string>
-    <key>playback_2025_year_over_year_comparison_down_message</key>
-    <string>でも、量より質が大事ですよね</string>
-    <key>playback_2025_year_over_year_comparison_down_title</key>
-    <string>今年の聴取時間が%1$@減少しました</string>
-    <key>playback_2025_year_over_year_comparison_hero_message</key>
-    <string>今年はさらに%1$@多く聴いたんですね – クラブへようこそ</string>
-    <key>playback_2025_year_over_year_comparison_hero_title</key>
-    <string>ゼロからヒーローへ !</string>
-    <key>playback_2025_year_over_year_comparison_same_message</key>
-    <string>コーヒーショップでの注文のように、いつも変わらず、頼りになる存在です</string>
-    <key>playback_2025_year_over_year_comparison_same_title</key>
-    <string>2025年の聴取時間は変わりませんでした</string>
-    <key>playback_2025_year_over_year_comparison_up_message</key>
-    <string>より多くのポッドキャスト、より多くの喜び</string>
-    <key>playback_2025_year_over_year_comparison_up_title</key>
-    <string>2024年と比較して、聴取時間が%1$@ 急増しました</string>
     <key>playback_effect_all_podcasts</key>
     <string>すべてのポッドキャスト</string>
     <key>playback_effect_this_podcast</key>
@@ -2078,8 +1277,6 @@ PodHopper を最大限に活用しましょう。</string>
     <string>再生エフェクト</string>
     <key>playback_failed</key>
     <string>再生に失敗</string>
-    <key>playback_not_available</key>
-    <string>振り返りを利用できません</string>
     <key>playback_speed</key>
     <string>%1$@倍</string>
     <key>player_accessibility_sleep_timer_on</key>
@@ -2108,8 +1305,6 @@ PodHopper を最大限に活用しましょう。</string>
     <string>%1$@のアートワーク</string>
     <key>player_chapter_count</key>
     <string>%1$@ / %2$@</string>
-    <key>player_decrement_time</key>
-    <string>巻き戻す時間幅</string>
     <key>player_effects_trim_silence_details</key>
     <string>会話の間にある沈黙時間をカットしてエピソードを短縮します。</string>
     <key>player_effects_trim_silence_progress</key>
@@ -2130,24 +1325,14 @@ PodHopper を最大限に活用しましょう。</string>
     <string>オフラインになっています</string>
     <key>player_error_short_playback_error</key>
     <string>再生できませんでした。もう一度お試しください</string>
-    <key>player_increment_time</key>
-    <string>早送りする時間幅</string>
     <key>player_mark_as_played_confirmation</key>
     <string>このエピソードを再生済みとしてマークしますか ?</string>
     <key>player_mark_as_played_confirmation_message</key>
     <string>「次のエピソード」から履歴に移動します。</string>
-    <key>player_options_play_all_message</key>
-    <string>この選択により、現在の次のエピソード待機リストの項目はクリアされます。</string>
-    <key>player_options_play_episode_singular</key>
-    <string>1件のエピソードを再生</string>
-    <key>player_options_play_episodes_plural</key>
-    <string>%1$@件のエピソードを再生</string>
     <key>player_options_shortcut_on_player</key>
     <string>プレーヤーのショートカット</string>
     <key>player_route_selection</key>
     <string>ルーティング端末セレクタ</string>
-    <key>player_share_header</key>
-    <string>リンクを共有</string>
     <key>player_show_notes_title</key>
     <string>詳細</string>
     <key>player_user_episode_download_error</key>
@@ -2214,16 +1399,6 @@ PodHopper を最大限に活用しましょう。</string>
     <string>全エピソードをアーカイブしました。 再生するには、追加またはアーカイブを解除してください。</string>
     <key>playlist_options</key>
     <string>プレイリストのオプション</string>
-    <key>playlist_play_all_option_save_queue</key>
-    <string>現在のキューを保存</string>
-    <key>playlist_play_all_picker_message</key>
-    <string>このプレイリストを再生すると、現在の「次のエピソード」が置き換えられます。 保持するには、まず保存します。</string>
-    <key>playlist_play_all_picker_title</key>
-    <string>「次のエピソード」のキューを保存しますか ?</string>
-    <key>playlist_play_all_replace_picker_message</key>
-    <string>これにより、現在の「次のエピソード」待機リストがクリアされ、このプレイリストの再生が開始されます。</string>
-    <key>playlist_play_all_replace_picker_title</key>
-    <string>現在の「次のエピソード」を置き換えますか ?</string>
     <key>playlist_play_all_sheet_button_title</key>
     <string>置換して再生</string>
     <key>playlist_play_all_sheet_description</key>
@@ -2246,8 +1421,6 @@ PodHopper を最大限に活用しましょう。</string>
     <string>リストにあるすべてのエピソードを再生しました。ルールを編集してさらに追加しますか ?</string>
     <key>playlist_smart_preview_description</key>
     <string>スマートルールを設定して、スマートプレイリストにエピソードを自動的に追加します。</string>
-    <key>playlist_smart_preview_enabled_rules</key>
-    <string>有効なルール</string>
     <key>playlist_smart_preview_more_rules</key>
     <string>その他のルール</string>
     <key>playlist_smart_rule_podcasts_header_subtitle_auto_add</key>
@@ -2270,8 +1443,6 @@ PodHopper を最大限に活用しましょう。</string>
     <string>プレイリスト</string>
     <key>playlists_auto_download_off_subtitle</key>
     <string>有効化すると、このプレイリストのエピソードを自動ダウンロードできます</string>
-    <key>playlists_auto_download_on_plural_format</key>
-    <string>このプレイリストの最初の%1$@件のエピソードが自動的にダウンロードされます</string>
     <key>playlists_default_new_playlist</key>
     <string>新しいプレイリスト</string>
     <key>playlists_delete</key>
@@ -2302,58 +1473,10 @@ PodHopper を最大限に活用しましょう。</string>
     <string>もう一度お試しください</string>
     <key>please_try_again_later</key>
     <string>後ほど、もう一度お試しください。</string>
-    <key>plus_account_required_prompt</key>
-    <string>PodHopper Plus アカウントに登録するには PodHopper が必要です。 すべての端末でシームレスにポッドキャストを再生できます。</string>
-    <key>plus_account_required_prompt_details</key>
-    <string>アカウントを作成するか、ログインして PodHopper Plus へアクセスしてください。</string>
-    <key>plus_account_trial_details</key>
-    <string>トライアルが終了しても、標準アカウントのすべてのメリットを受けることができます。 ポッドキャストをお楽しみください !</string>
-    <key>plus_button_title_unlock_all</key>
-    <string>すべての機能のロックを解除</string>
-    <key>plus_cancel_terms</key>
-    <string>いつでもキャンセルできます</string>
-    <key>plus_champion</key>
-    <string>PodHopper の真のサポーター</string>
-    <key>plus_champion_message</key>
-    <string>PodHopper を最初からご利用いただきありがとうございます。 あなたは真のサポーターです !</string>
     <key>plus_cloud_storage_limit_format</key>
     <string>%1$@GB のクラウドストレージ</string>
     <key>plus_discount_yearly_membership</key>
     <string>初年度は50%% オフ</string>
-    <key>plus_error_already_registered</key>
-    <string>お客様はすでに PodHopper Plus アカウントを保有しています</string>
-    <key>plus_error_already_registered_details</key>
-    <string>ご支援をありがとうございます。このプロモーションには残念ながらご参加いただけません。</string>
-    <key>plus_expiration_format</key>
-    <string>%1$@に期限切れ</string>
-    <key>plus_feature_card_text_bookmarks</key>
-    <string>どのエピソードでもお気に入りの部分を保存して、後で見返すことができます。</string>
-    <key>plus_feature_card_text_desktop</key>
-    <string>PodHopper の Windows 版、macOS 版、ウェブ版アプリを使用して、さらに多くの場所で聴きましょう。</string>
-    <key>plus_feature_card_text_extra_themes</key>
-    <string>あなたの個性を表現しましょう。 購読者限定のアイコンとテーマです。</string>
-    <key>plus_feature_card_text_folders</key>
-    <string>ポッドキャストをフォルダーに整理し、すべての端末間で同期させます。</string>
-    <key>plus_feature_card_text_slumber_studio</key>
-    <string>Slumber Studios のプレミアムコンテンツ1年分をご利用ください。</string>
-    <key>plus_feature_card_text_storage</key>
-    <string>音声ファイルをクラウドストレージにアップロードしてどこからでも利用できるようにします。</string>
-    <key>plus_feature_card_text_wear_os</key>
-    <string>スマートフォンを手放してランニングに出かけましょう。</string>
-    <key>plus_feature_card_title_bookmarks</key>
-    <string>ブックマーク</string>
-    <key>plus_feature_card_title_desktop</key>
-    <string>デスクトップアプリとウェブアプリ</string>
-    <key>plus_feature_card_title_extra_themes</key>
-    <string>追加のテーマとアイコン</string>
-    <key>plus_feature_card_title_folders</key>
-    <string>フォルダー</string>
-    <key>plus_feature_card_title_slumber_studio</key>
-    <string>Slumber Studios でぐっすり眠る</string>
-    <key>plus_feature_card_title_storage</key>
-    <string>20GB のストレージ</string>
-    <key>plus_feature_card_title_wear_os</key>
-    <string>Apple Watch と Wear OS での再生</string>
     <key>plus_feature_gratitude</key>
     <string>PodHopper をお使いの皆さまに感謝の気持ちを込めて</string>
     <key>plus_feature_librofm</key>
@@ -2370,98 +1493,34 @@ PodHopper を最大限に活用しましょう。</string>
     <string>%1$@ の無料お試し</string>
     <key>plus_marketing_bookmarks_title</key>
     <string>ブックマーク</string>
-    <key>plus_marketing_desktop_apps_title</key>
-    <string>デスクトップアプリとウェブアプリ</string>
-    <key>plus_marketing_folders_and_bookmarks_title</key>
-    <string>フォルダーとブックマーク</string>
-    <key>plus_marketing_folders_description</key>
-    <string>フォルダーを作成してポッドキャストのコレクションを整理できます。</string>
     <key>plus_marketing_folders_title</key>
     <string>フォルダー</string>
     <key>plus_marketing_generated_transcripts</key>
     <string>生成されたトランスクリプト</string>
-    <key>plus_marketing_hide_ads_description</key>
-    <string>広告非表示の操作環境では気に入ったコンテンツを増やし、気に入らないコンテンツは減らすことができます</string>
-    <key>plus_marketing_hide_ads_title</key>
-    <string>広告を非表示</string>
     <key>plus_marketing_learn_more_button</key>
     <string>PodHopper Plus の詳細</string>
-    <key>plus_marketing_main_description</key>
-    <string>パーソナルにいろんな仲間とつながる。 個人的な音声ファイルをクラウドサーバーにアップロード。ウェブプレーヤーからアカウントにアクセスして、アプリを自分好みにカスタマイズしましょう。</string>
     <key>plus_marketing_no_banner_ads</key>
     <string>バナー広告なし</string>
-    <key>plus_marketing_subtitle</key>
-    <string>限定機能とカスタマイズオプションへのアクセス権を取得しましょう</string>
-    <key>plus_marketing_themes_icons_title</key>
-    <string>テーマとアイコン</string>
     <key>plus_marketing_title</key>
     <string>お気に入りの PodHopper の機能に加え、さらなる機能を利用できます</string>
     <key>plus_marketing_up_next_shuffle</key>
     <string>次のシャッフル</string>
-    <key>plus_marketing_updated_cloud_storage_description</key>
-    <string>ファイルをクラウドストレージにアップロードしてどこからでも利用できるようにします</string>
-    <key>plus_marketing_updated_desktop_apps_description</key>
-    <string>PodHopper の Windows 版、macOS 版、ウェブ版アプリでさらに多くの場所で聞きましょう</string>
-    <key>plus_marketing_updated_folders_description</key>
-    <string>ポッドキャストをフォルダーに整理し、すべてのデバイス間で同期させます。</string>
     <key>plus_marketing_watch_playback_title</key>
     <string>Apple Watch アプリと Wear OS アプリ</string>
     <key>plus_monthly_frequency_pricing_format</key>
     <string>%1$@/ 月</string>
-    <key>plus_payment_canceled</key>
-    <string>支払いをキャンセル済み</string>
-    <key>plus_payment_frequency_best_value</key>
-    <string>最もお得</string>
-    <key>plus_per_month</key>
-    <string>/月</string>
-    <key>plus_price_per_month</key>
-    <string>月額%1$@</string>
     <key>plus_promo_paragraph</key>
     <string>PodHopper Plus を取得してこれらの機能をフルに利用しましょう !</string>
-    <key>plus_promotion_expired</key>
-    <string>プロモーションが期限切れまたは無効</string>
-    <key>plus_promotion_expired_nudge</key>
-    <string>そのまま PodHopper Plus に登録するか、標準アカウントを作成するか、すぐに使用を開始するかご自由にお選びください。</string>
-    <key>plus_promotion_used</key>
-    <string>使用済みコード</string>
-    <key>plus_purchase_failed</key>
-    <string>支払の処理で問題が発生したようです。 もう一度お試しください。</string>
-    <key>plus_purchase_promo_title</key>
-    <string>Plus のメンバーになると、すべての PodHopper 機能を利用できるようになります</string>
-    <key>plus_required_feature</key>
-    <string>この機能は PodHopper Plus が必要です</string>
-    <key>plus_select_payment_frequency</key>
-    <string>支払頻度を選択</string>
-    <key>plus_skip</key>
-    <string>スキップ</string>
     <key>plus_start_my_free_trial</key>
     <string>無料お試しを開始</string>
-    <key>plus_start_trial_duration_price</key>
-    <string>%1$@のお試し後、%2$@</string>
     <key>plus_subscribe_to</key>
     <string>Plus に登録</string>
-    <key>plus_subscription_apple</key>
-    <string>サブスクリプションは Apple App Store によって管理されます</string>
-    <key>plus_subscription_apple_details</key>
-    <string>サブスクリプションは「設定」からキャンセルする必要があります。</string>
-    <key>plus_subscription_expiration</key>
-    <string>Plus 契約はあと%1$@で期限切れです</string>
-    <key>plus_subscription_google</key>
-    <string>Android 端末から PodHopper Plus に登録したようです</string>
-    <key>plus_subscription_google_details</key>
-    <string>サブスクリプションは「設定」からキャンセルする必要があります。</string>
-    <key>plus_subscription_web</key>
-    <string>ウェブから PodHopper Plus に登録したようです</string>
-    <key>plus_subscription_web_details</key>
-    <string>サブスクリプションは Pocketcasts.com からキャンセルする必要があります。</string>
     <key>plus_upgrade_no_internet_message</key>
     <string>ネットワーク接続を確認して、もう一度お試しください。</string>
     <key>plus_upgrade_no_internet_title</key>
     <string>読み込めません</string>
     <key>plus_yearly_frequency_pricing_format</key>
     <string>%1$@/ 年</string>
-    <key>pocket_casts_logo</key>
-    <string>PodHopper ロゴ</string>
     <key>pocket_casts_newsletter</key>
     <string>PodHopper ニュースレター</string>
     <key>pocket_casts_newsletter_description</key>
@@ -2585,20 +1644,8 @@ PodHopper を最大限に活用しましょう。</string>
     <string>%1$@ が %2$@ から削除されました</string>
     <key>podcast_season_format</key>
     <string>シーズン%1$@</string>
-    <key>podcast_share_episode</key>
-    <string>エピソードへのリンクを共有</string>
     <key>podcast_share_episode_error_msg</key>
     <string>このファイルを受け入れ可能なアプリがインストールされていません</string>
-    <key>podcast_share_error_msg</key>
-    <string>このリンクが共有されてから、ポッドキャストの作成者が削除した可能性があります。</string>
-    <key>podcast_share_error_title</key>
-    <string>エピソードが見つかりません</string>
-    <key>podcast_share_list_creating</key>
-    <string>リストを作成しています...</string>
-    <key>podcast_share_list_description</key>
-    <string>詳細説明 (オプション)</string>
-    <key>podcast_share_list_name</key>
-    <string>リスト名</string>
     <key>podcast_share_open_file</key>
     <string>ファイルを別のアプリで開く</string>
     <key>podcast_show_archived</key>
@@ -2631,8 +1678,6 @@ PodHopper を最大限に活用しましょう。</string>
     <string>更新終了日: %1$@</string>
     <key>podcast_updates_ends</key>
     <string>更新終了予定日: %1$@</string>
-    <key>podcast_upload_confirmation</key>
-    <string>今すぐアップロード</string>
     <key>podcast_uploading</key>
     <string>アップロードしています... %1$@が完了</string>
     <key>podcast_view_changes_tip_details</key>
@@ -2689,8 +1734,6 @@ PodHopper を最大限に活用しましょう。</string>
     <string>リスト</string>
     <key>podcasts_plural</key>
     <string>ポッドキャスト</string>
-    <key>podcasts_share</key>
-    <string>ポッドキャストを共有</string>
     <key>podcasts_small_grid</key>
     <string>小型グリッド</string>
     <key>podcasts_sort</key>
@@ -2699,8 +1742,6 @@ PodHopper を最大限に活用しましょう。</string>
     <string>プレビュー</string>
     <key>pricing_terms_after_discount</key>
     <string>%2$@ (%3$@) 経過後に %1$@ の定期支払いが発生します</string>
-    <key>pricing_terms_after_trial</key>
-    <string>以降 %1$@</string>
     <key>pricing_terms_after_trial_long</key>
     <string>%1$@ のお試し期間 (%2$@) 後に定期支払いが発生します</string>
     <key>profile</key>
@@ -2717,24 +1758,12 @@ PodHopper を最大限に活用しましょう。</string>
     <string>%1$@件のファイル</string>
     <key>profile_percent_full</key>
     <string>使用容量: %1$@</string>
-    <key>profile_reset_password</key>
-    <string>パスワードをリセット</string>
-    <key>profile_sending_reset_email</key>
-    <string>リセットメールを送信する準備中です</string>
-    <key>profile_sending_reset_email_conf_msg</key>
-    <string>メールをご確認ください :)</string>
-    <key>profile_sending_reset_email_conf_title</key>
-    <string>パスワードのリセットリンクを送信しました</string>
-    <key>profile_sending_reset_email_failed</key>
-    <string>リセット用メールの送信に失敗しました。後ほど、もう一度お試しください。</string>
     <key>profile_single_file</key>
     <string>1件のファイル</string>
     <key>profile_starred_no_episodes_desc</key>
     <string>お気に入りのエピソードに星を付けると、いつでも戻ることができます。</string>
     <key>profile_starred_no_episodes_title</key>
     <string>お気に入りを保存</string>
-    <key>purchase_terms</key>
-    <string>続行すると、%1$@と%2$@に同意したことになります。</string>
     <key>queue_clear_episode_queue_plural</key>
     <string>%1$@件のエピソードをクリア</string>
     <key>queue_clear_episode_queue_singular</key>
@@ -2747,69 +1776,14 @@ PodHopper を最大限に活用しましょう。</string>
     <string>再生中。%1$@</string>
     <key>queue_time_remaining</key>
     <string>残り時間: %1$@</string>
-    <key>queue_total_time_remaining</key>
-    <string>合計残り時間: %1$@</string>
     <key>rate</key>
     <string>評価する</string>
-    <key>rate_pocket_casts</key>
-    <string>PodHopper を評価</string>
-    <key>rating_error</key>
-    <string>エラー。 エラーが発生しました。</string>
-    <key>rating_listen_to_this_podcast_message</key>
-    <string>このポッドキャストを評価できるのは、リスナーのみです。 いくつかエピソードを聴いた後、こちらで評価してください。 ご意見をお待ちしています。</string>
-    <key>rating_listen_to_this_podcast_title</key>
-    <string>まずこちらのポッドキャストをお聴きください</string>
-    <key>rating_login_required</key>
-    <string>評価を残すにはログインする必要があります</string>
-    <key>rating_no_ratings</key>
-    <string>評価なし</string>
-    <key>rating_submitted</key>
-    <string>評価を送信しました。</string>
-    <key>rating_thank_you</key>
-    <string>ご評価いただきありがとうございます !</string>
-    <key>rating_title</key>
-    <string>%1$@ を評価</string>
     <key>rating_whats_new_button_title</key>
     <string>OK</string>
     <key>rating_whats_new_message</key>
     <string>お気に入りのポッドキャストを評価して、作品をどの程度気に入っているかをクリエイターに伝えましょう。 さらに、あなたの評価は他のユーザーが新しいお気に入り番組を見つけるのに役立ちます !</string>
     <key>rating_whats_new_title</key>
     <string>ポッドキャストの評価が利用可能になりました 🎉</string>
-    <key>referrals_claim_guest_pass_action</key>
-    <string>パスを有効化</string>
-    <key>referrals_claim_guest_pass_banner_detail</key>
-    <string>リスニング体験をすべてご利用いただけます</string>
-    <key>referrals_claim_guest_pass_banner_title</key>
-    <string>Plus の%1$@のゲストパスを取得しましょう</string>
-    <key>referrals_claim_guest_pass_detail</key>
-    <string>このオファーは新規メンバーのみが対象です。 メンバーシップは%1$@の有料年間メンバーシップに自動的に更新されます。</string>
-    <key>referrals_claim_guest_pass_title</key>
-    <string>%1$@のゲストパスを取得しましょう</string>
-    <key>referrals_claim_need_to_be_loggedin</key>
-    <string>ゲストパスを取得するには、ログインまたはサインアップしてください。</string>
-    <key>referrals_guest_pass_offer</key>
-    <string>%1$@のゲストパス</string>
-    <key>referrals_not_available_to_send</key>
-    <string>ゲストパスは現在利用できません</string>
-    <key>referrals_offer_not_available_detail</key>
-    <string>このゲストパスは Plus または Patron のサブスクリプションがアクティブでないユーザーが対象で、1回に限りご利用いただけます。 お聴きいただきありがとうございます !</string>
-    <key>referrals_offer_not_available_title</key>
-    <string>このオファーは利用できません</string>
-    <key>referrals_share_guest_pass</key>
-    <string>ゲストパスを共有</string>
-    <key>referrals_share_no_guest_pass_message</key>
-    <string>PodHopper を共有いただきありがとうございます。 プレゼントできるパスが増えたらお知らせします。</string>
-    <key>referrals_share_no_guest_pass_title</key>
-    <string>ゲストパスをすべて共有しました !</string>
-    <key>referrals_share_pass_long_message</key>
-    <string>こんにちは。
-
-こちらは、私のお気に入りのポッドキャストプレイヤー、PodHopper Plus を利用できる%1$@のゲストパスです。 ブックマークやフォルダーなど、他にはないユニークな機能が満載です。 きっと気に入ってもらえると思います。
-</string>
-    <key>referrals_share_pass_message</key>
-    <string>こんにちは。 以下のリンクを使用して PodHopper Plus の%1$@のゲストパスを取得し、お使いの全端末でポッドキャストをお楽しみください !</string>
-    <key>referrals_share_pass_subject</key>
-    <string>PodHopper Plus の%1$@のゲストパス !</string>
     <key>referrals_tip_message</key>
     <string>PodHopper Plus を%1$@プレゼント !</string>
     <key>referrals_tip_title</key>
@@ -2824,8 +1798,6 @@ PodHopper を最大限に活用しましょう。</string>
     <string>再読み込みに失敗しました :(</string>
     <key>refresh_control_refreshing_files</key>
     <string>ファイルを再読み込みしています</string>
-    <key>refresh_control_release_to_refresh</key>
-    <string>リリースして再読み込み</string>
     <key>refresh_control_sync_failed</key>
     <string>同期に失敗しました :(</string>
     <key>refresh_control_syncing_podcasts</key>
@@ -2892,8 +1864,6 @@ PodHopper を最大限に活用しましょう。</string>
     <string>最近の検索</string>
     <key>search_results</key>
     <string>%1$@ / %2$@</string>
-    <key>search_results_empty_action</key>
-    <string>フィードバックを送信</string>
     <key>search_results_empty_message</key>
     <string>新しい検索を試すか、ポッドキャストフィードの URL を追加してください</string>
     <key>search_results_empty_title</key>
@@ -2986,8 +1956,6 @@ PodHopper を最大限に活用しましょう。</string>
     <string>アプリについて</string>
     <key>settings_allow_collection_first_party</key>
     <string>アナリティクスの収集を許可します。</string>
-    <key>settings_allow_collection_third_party</key>
-    <string>信頼できるサードパーティのサービスを使用した当社による匿名のデータ収集を許可します。</string>
     <key>settings_analytics</key>
     <string>アナリティクス</string>
     <key>settings_appearance</key>
@@ -3036,12 +2004,6 @@ PodHopper を最大限に活用しましょう。</string>
     <string>設定した制限時間後にエピソードをアーカイブ エピソードがアーカイブされるとダウンロードファイルは削除されます。</string>
     <key>settings_auto_download</key>
     <string>自動ダウンロード</string>
-    <key>settings_auto_downloads_filters_selected_format</key>
-    <string>%1$@件のフィルターを選択済み</string>
-    <key>settings_auto_downloads_filters_selected_singular</key>
-    <string>1件のフィルターを選択済み</string>
-    <key>settings_auto_downloads_no_filters_selected</key>
-    <string>選択済みフィルターなし</string>
     <key>settings_auto_downloads_no_playlists_selected</key>
     <string>プレイリストが選択されていません</string>
     <key>settings_auto_downloads_no_podcasts_selected</key>
@@ -3056,16 +2018,12 @@ PodHopper を最大限に活用しましょう。</string>
     <string>%1$@件のポッドキャストを選択済み</string>
     <key>settings_auto_downloads_podcasts_selected_singular</key>
     <string>1件のポッドキャストを選択済み</string>
-    <key>settings_auto_downloads_subtitle_filters</key>
-    <string>フィルターの上位エピソードをダウンロードします。</string>
     <key>settings_auto_downloads_subtitle_new_episodes</key>
     <string>新しいエピソードを自動でダウンロードしたり、新しくフォローした番組からエピソードを保存したり、保存するエピソード数に制限を設定してストレージを管理したりできます。</string>
     <key>settings_auto_downloads_subtitle_playlists</key>
     <string>プレイリストの上位エピソードをダウンロードします。</string>
     <key>settings_auto_downloads_subtitle_up_next</key>
     <string>次のエピソードに追加された項目をダウンロードします。</string>
-    <key>settings_badge_filter_header</key>
-    <string>エピソードのフィルター数</string>
     <key>settings_badge_new_since_opened</key>
     <string>アプリ開始後の新エピソード</string>
     <key>settings_badge_smart_playlist_header</key>
@@ -3076,14 +2034,8 @@ PodHopper を最大限に活用しましょう。</string>
     <string>確認音声をブックマーク</string>
     <key>settings_bookmark_sound_footer</key>
     <string>ヘッドフォンでブックマークを作成したら、確認音声を再生します。</string>
-    <key>settings_change_avatar</key>
-    <string>アバターを変更</string>
-    <key>settings_collect_information</key>
-    <string>情報を収集</string>
     <key>settings_collect_information_additional_information</key>
     <string>アナリティクスの収集を許可することで、より優れたアプリを構築できます。この情報を共有したくない場合は考慮されます。</string>
-    <key>settings_connection_status</key>
-    <string>接続状況</string>
     <key>settings_create_siri_shortcut</key>
     <string>Siri ショートカットを作成</string>
     <key>settings_create_siri_shortcut_msg</key>
@@ -3196,10 +2148,6 @@ PodHopper を最大限に活用しましょう。</string>
     <string>チャプタータイトルを投稿</string>
     <key>settings_general_publish_chapter_titles_subtitle</key>
     <string>オンの場合、エピソードのタイトルではなくチャプターのタイトルが Bluetooth とその他の接続済みの端末に送信されます。</string>
-    <key>settings_general_remote_skips_chapters</key>
-    <string>チャプターをリモートスキップ</string>
-    <key>settings_general_remote_skips_chapters_subtitle</key>
-    <string>チャプターがあるエピソードで有効化すると、自動車やヘッドフォンで「スキップ」ボタンを押したときに次のチャプターにスキップします。</string>
     <key>settings_general_remove_groups_apply_all</key>
     <string>既存ポッドキャストもグループ化されないように変更しますか ?</string>
     <key>settings_general_row_action</key>
@@ -3232,12 +2180,6 @@ PodHopper を最大限に活用しましょう。</string>
     <string>よく使用されるヘッドフォン操作で実行されるアクションをカスタマイズします。</string>
     <key>settings_help</key>
     <string>ヘルプ &amp; フィードバック</string>
-    <key>settings_import_export</key>
-    <string>インポート / エクスポート</string>
-    <key>settings_in_filters_plural_format</key>
-    <string>%1$@件のフィルターに含まれます</string>
-    <key>settings_in_filters_singular</key>
-    <string>1件のフィルターに含まれます</string>
     <key>settings_in_menu</key>
     <string>メニューに表示</string>
     <key>settings_in_smart_playlist_singular</key>
@@ -3248,24 +2190,16 @@ PodHopper を最大限に活用しましょう。</string>
     <string>非アクティブエピソードとは上記指定時間に再生またはダウンロードされていないエピソードです。 エピソードがアーカイブされるとダウンロードファイルは削除されます。</string>
     <key>settings_next_action</key>
     <string>次のアクション</string>
-    <key>settings_not_in_filters</key>
-    <string>どのフィルターにも含まれていません</string>
     <key>settings_not_in_smart_playlists</key>
     <string>どのスマートプレイリストにも含まれない</string>
     <key>settings_notifications</key>
     <string>通知</string>
-    <key>settings_notifications_filter_count</key>
-    <string>フィルター数</string>
     <key>settings_notifications_smart_playlist_count</key>
     <string>スマートプレイリスト数</string>
     <key>settings_notifications_subtitle</key>
     <string>新規エピソードが追加されたら通知します。 自動ダウンロードの信頼度向上にも貢献します。</string>
-    <key>settings_opml</key>
-    <string>OPML をインポート / エクスポート</string>
     <key>settings_play_speed</key>
     <string>再生速度</string>
-    <key>settings_plus_pricing_format</key>
-    <string>月額%1$@ / 年額%2$@</string>
     <key>settings_previous_action</key>
     <string>前のアクション</string>
     <key>settings_privacy</key>
@@ -3274,8 +2208,6 @@ PodHopper を最大限に活用しましょう。</string>
     <string>待機リストでの位置</string>
     <key>settings_read_privacy_policy</key>
     <string>個人情報保護方針を読む</string>
-    <key>settings_select_filter_singular</key>
-    <string>フィルターを選択</string>
     <key>settings_select_filters_plural</key>
     <string>フィルターを選択</string>
     <key>settings_select_playlist_singular</key>
@@ -3284,8 +2216,6 @@ PodHopper を最大限に活用しましょう。</string>
     <string>プレイリストを選択</string>
     <key>settings_select_smart_playlists_plural</key>
     <string>スマートプレイリストを選択</string>
-    <key>settings_shortcuts_filter_open_filter</key>
-    <string>フィルターを開く</string>
     <key>settings_shortcuts_filter_open_playlist</key>
     <string>プレイリストを開く</string>
     <key>settings_shortcuts_filter_play_all_episodes</key>
@@ -3302,8 +2232,6 @@ PodHopper を最大限に活用しましょう。</string>
     <string>利用可能なショートカット</string>
     <key>settings_siri_shortcuts_enabled</key>
     <string>有効化済みショートカット</string>
-    <key>settings_siri_shortcuts_specific_filter</key>
-    <string>特定のフィルターへのショートカット</string>
     <key>settings_siri_shortcuts_specific_playlist</key>
     <string>特定のポッドキャストへのショートカット</string>
     <key>settings_siri_shortcuts_specific_podcast</key>
@@ -3316,42 +2244,6 @@ PodHopper を最大限に活用しましょう。</string>
     <string>パワーユーザーにふさわしく、冒頭と最後の音楽をスキップします。</string>
     <key>settings_stats</key>
     <string>統計</string>
-    <key>settings_status_account_service</key>
-    <string>アカウントサービス</string>
-    <key>settings_status_account_service_description</key>
-    <string>エピソードの進捗やサブスクリプション、フィルターなどを保存するのに使用するサービス。</string>
-    <key>settings_status_description</key>
-    <string>重要なサービスとの接続を確認してください。 これは、ネットワーク、プロキシ、VPN、広告ブロックアプリ、セキュリティアプリの問題を診断するのに役立ちます。</string>
-    <key>settings_status_discover</key>
-    <string>検出と検索</string>
-    <key>settings_status_discover_description</key>
-    <string>ポッドキャスト検索を含む、アプリの検出セクション。</string>
-    <key>settings_status_expensive_network</key>
-    <string>従量制課金でない Wi-Fi</string>
-    <key>settings_status_expensive_network_description</key>
-    <string>成功した場合、このネットワークは従量制課金でない Wi-Fi でダウンロードに使用されます。</string>
-    <key>settings_status_expensive_network_failure_message</key>
-    <string>現在のネットワークは費用が高くつくと判定されています。 Wi-Fi に切り替えるか、低データモードを無効にしてみてください。</string>
-    <key>settings_status_host</key>
-    <string>一般的なポッドキャストホスト</string>
-    <key>settings_status_host_description</key>
-    <string>ポッドキャストの作成者は、PodHopper が管理していないさまざまなホスティングプロバイダーでエピソードファイルをホストします。</string>
-    <key>settings_status_host_failure_message</key>
-    <string>最も一般的な原因は、スマートフォンかネットワークで広告ブロッカーを設定していることです。 ポッドキャストをダウンロードするにはこのドメインのブロックを解除する必要があります。 PodHopper はポッドキャストをホストすることも、ポッドキャストのホスト先を選択することもありません。これらはショーの作成者が判断するものであり、PodHopper の管轄外となっています。</string>
-    <key>settings_status_internet</key>
-    <string>インターネット</string>
-    <key>settings_status_internet_description</key>
-    <string>ネットワークのステータスを確認してください。</string>
-    <key>settings_status_internet_failure_message</key>
-    <string>インターネットに接続できません。 別のネットワーク (モバイルデータなど) に接続してみてください。</string>
-    <key>settings_status_refresh_service</key>
-    <string>サービスの再読み込み</string>
-    <key>settings_status_refresh_service_description</key>
-    <string>新しいエピソードを見つけるのに使用するサービス。</string>
-    <key>settings_status_run</key>
-    <string>今すぐ実行</string>
-    <key>settings_status_service_ad_blocker_help_singular</key>
-    <string>最も一般的な原因は、スマートフォンかネットワークで広告ブロッカーを設定していることです。 ドメイン %1$@ のブロックを解除する必要があります</string>
     <key>settings_storage</key>
     <string>ストレージとデータ使用量</string>
     <key>settings_storage_data_warning</key>
@@ -3364,8 +2256,6 @@ PodHopper を最大限に活用しましょう。</string>
     <string>使用量</string>
     <key>settings_storage_usage_footer</key>
     <string>これは iPhone の設定に表示されるストレージとは異なる場合があります。iOS はキャッシュされたデータを自動的に管理し、必要に応じて解放します。</string>
-    <key>settings_third_party_analytics</key>
-    <string>サードパーティのアナリティクス</string>
     <key>settings_title</key>
     <string>ポッドキャストの設定</string>
     <key>settings_trim_level</key>
@@ -3406,44 +2296,14 @@ PodHopper を最大限に活用しましょう。</string>
     <string>オンにすると、スマートフォンをシェイクした際にスリープタイマーが再開されます。</string>
     <key>share</key>
     <string>共有</string>
-    <key>share_clip</key>
-    <string>クリップを共有</string>
-    <key>share_copied_to_clipboard</key>
-    <string>リンクがクリップボードにコピーされました</string>
-    <key>share_copy_link</key>
-    <string>リンクをコピー</string>
     <key>share_current_position</key>
     <string>現在の再生位置</string>
-    <key>share_description</key>
-    <string>フォーマットおよび共有先のプラットフォームを選択</string>
     <key>share_episode</key>
     <string>エピソードを共有</string>
-    <key>share_episode_at</key>
-    <string>%1$@ でエピソードを共有</string>
-    <key>share_episode_title</key>
-    <string>エピソードを共有</string>
-    <key>share_instagram_stories</key>
-    <string>ストーリー</string>
-    <key>share_list_subscribing</key>
-    <string>フォローしています...</string>
-    <key>share_more_actions</key>
-    <string>共有</string>
     <key>share_podcast</key>
     <string>ポッドキャストを共有</string>
     <key>share_podcast_private_not_available</key>
     <string>プライベートなポッドキャストでは共有できません</string>
-    <key>share_podcast_title</key>
-    <string>ポッドキャストを共有</string>
-    <key>share_podcasts_all_selected</key>
-    <string>すべて選択済み</string>
-    <key>share_podcasts_create_list</key>
-    <string>リストを作成</string>
-    <key>share_podcasts_sharing</key>
-    <string>共有しています...</string>
-    <key>share_podcasts_sharing_failed_msg</key>
-    <string>共有ページの作成中に問題が発生しました</string>
-    <key>share_podcasts_sharing_failed_title</key>
-    <string>共有に失敗</string>
     <key>share_profile</key>
     <string>プロフィールを共有</string>
     <key>share_profile_add_photo_and_name</key>
@@ -3488,38 +2348,10 @@ PodHopper を最大限に活用しましょう。</string>
     <string>何を共有しますか ?</string>
     <key>share_select_podcasts</key>
     <string>ポッドキャストを選択</string>
-    <key>shared_item_loading</key>
-    <string>共有アイテムを読み込んでいます...</string>
-    <key>shared_list</key>
-    <string>共有リスト</string>
-    <key>shared_list_subscribe_conf_action</key>
-    <string>はい !</string>
-    <key>shared_list_subscribe_conf_msg</key>
-    <string>%1$@件のポッドキャストをフォローしてもよろしいですか ?</string>
-    <key>shared_list_subscribe_conf_title</key>
-    <string>多数のポッドキャストが選択されています。</string>
     <key>show_notes</key>
     <string>メモ</string>
     <key>sign_in</key>
     <string>ログイン</string>
-    <key>sign_in_continue_with_email</key>
-    <string>メールで続ける</string>
-    <key>sign_in_divider_label</key>
-    <string>または</string>
-    <key>sign_in_email_address_prompt</key>
-    <string>メールアドレス</string>
-    <key>sign_in_forgot_password</key>
-    <string>パスワードを忘れた場合</string>
-    <key>sign_in_hide_password_label</key>
-    <string>パスワードを表示</string>
-    <key>sign_in_message</key>
-    <string>ポッドキャストのサブスクリプションをクラウドに保存して、他の端末と進捗を同期します。</string>
-    <key>sign_in_password_prompt</key>
-    <string>パスワード</string>
-    <key>sign_in_prompt</key>
-    <string>ログインまたはアカウントを作成</string>
-    <key>sign_in_show_password_label</key>
-    <string>パスワードを隠す</string>
     <key>signed_in_as</key>
     <string>ログインアカウント:</string>
     <key>signed_out</key>
@@ -3598,28 +2430,6 @@ PodHopper を最大限に活用しましょう。</string>
     <string>ご利用開始をサポートするよう作られています。 聴取内容に基づいて自動更新されます。</string>
     <key>smart_playlists_tip_view_title</key>
     <string>すぐに使えるスマートプレイリスト</string>
-    <key>social_sign_in_continue_with_apple</key>
-    <string>Apple で続ける</string>
-    <key>social_sign_in_continue_with_google</key>
-    <string>Google で続ける</string>
-    <key>sonos_connect_action</key>
-    <string>接続</string>
-    <key>sonos_connect_prompt</key>
-    <string>Sonos に接続</string>
-    <key>sonos_connecting</key>
-    <string>接続しています...</string>
-    <key>sonos_connection_failed_account_link</key>
-    <string>現在、PodHopper アカウントとの接続に問題が生じています。 後ほど、もう一度お試しください。</string>
-    <key>sonos_connection_failed_app_missing</key>
-    <string>Sonos アプリが開かないためリンク処理を完了できません。</string>
-    <key>sonos_connection_failed_title</key>
-    <string>リンクに失敗</string>
-    <key>sonos_connection_privacy_notice</key>
-    <string>Sonos に接続すると Sonos アプリがエピソード情報にアクセスできるようになります。
-
-お客様のメールアドレス、パスワード、その他の機密情報が共有されることはありません。</string>
-    <key>sonos_connection_sign_in_prompt</key>
-    <string>PodHopper アカウントを作成してから Sonos に接続してください。</string>
     <key>sort_by</key>
     <string>並び替えオプション</string>
     <key>sort_episodes</key>
@@ -3694,38 +2504,8 @@ PodHopper を最大限に活用しましょう。</string>
     <string>ダウンロードを停止</string>
     <key>subscribe</key>
     <string>フォロー</string>
-    <key>subscribe_all</key>
-    <string>すべてをフォロー</string>
     <key>subscribed</key>
     <string>フォロー済み</string>
-    <key>subscription_cancelled</key>
-    <string>サブスクリプションをキャンセル済み</string>
-    <key>subscription_cancelled_msg</key>
-    <string>%1$@にサブスクリプションをキャンセル済み </string>
-    <key>subscription_expires_in</key>
-    <string>%1$@に期限切れ</string>
-    <key>subscription_feature_custom_title_bookmarks</key>
-    <string>ブックマーク: お気に入りの箇所を保存します</string>
-    <key>subscription_feature_custom_title_folders</key>
-    <string>フォルダー: ポッドキャストをわかりやすく整理します</string>
-    <key>subscription_feature_custom_title_pre_selected_chapters</key>
-    <string>チャプターを事前に選択: 選択したチャプターに移動します</string>
-    <key>subscription_feature_custom_title_shuffle_upnext</key>
-    <string>シャッフル: 自動選出を楽しむことができます</string>
-    <key>subscription_frequency_pricing_format</key>
-    <string>%1$@ / %2$@</string>
-    <key>subscription_plan_features_info_link</key>
-    <string>Plus のすべての機能を確認</string>
-    <key>subscription_plan_free_trial_info_link</key>
-    <string>無料お試しの仕組みは ?</string>
-    <key>subscription_plan_month</key>
-    <string>月額プラン</string>
-    <key>subscription_plan_savings</key>
-    <string>%1$@ 節約 </string>
-    <key>subscription_plan_year</key>
-    <string>年額プラン</string>
-    <key>subscriptions_thank_you</key>
-    <string>ご支援いただきありがとうございます。</string>
     <key>suggested_folders_create_custom_folder</key>
     <string>カスタムフォルダーを作成</string>
     <key>suggested_folders_description</key>
@@ -3742,36 +2522,10 @@ PodHopper を最大限に活用しましょう。</string>
     <string>スマートフォルダー</string>
     <key>suggested_folders_use_suggested_folders</key>
     <string>これらのフォルダーを使用</string>
-    <key>support_watch_help_message</key>
-    <string>PodHopper Watch アプリで問題が発生した場合は、ウェアラブルログを送信するとサポートの際に役立ちます。 これを行うには、Watch で PodHopper を開いてください。</string>
-    <key>support_watch_help_opened_app</key>
-    <string>Watch アプリを開きました</string>
-    <key>support_watch_help_send_without_log</key>
-    <string>Watch ログなしで送信</string>
-    <key>support_watch_help_title</key>
-    <string>Watch アプリのヘルプをお探しですか ?</string>
     <key>supporter</key>
     <string>サポーター</string>
-    <key>supporter_contributions</key>
-    <string>サポーターの寄付</string>
-    <key>supporter_contributions_subtitle</key>
-    <string>寄付の詳細を確認</string>
-    <key>supporter_payment_canceled</key>
-    <string>サポーター: キャンセル済み</string>
-    <key>sync_account_error</key>
-    <string>ユーザー名とパスワードを確認してください。</string>
-    <key>sync_account_login</key>
-    <string>ログイン中...</string>
     <key>sync_failed</key>
     <string>同期に失敗</string>
-    <key>sync_in_progress</key>
-    <string>次のエピソードと履歴を同期しています</string>
-    <key>sync_progress</key>
-    <string>%1$@ / %2$@件のポッドキャスト</string>
-    <key>sync_progress_unknown_count_plural_format</key>
-    <string>%1$@件のポッドキャストを同期しました</string>
-    <key>sync_progress_unknown_count_singular</key>
-    <string>1件のポッドキャストを同期しました</string>
     <key>syncing</key>
     <string>同期しています...</string>
     <key>terms_of_use</key>
@@ -3792,8 +2546,6 @@ PodHopper を最大限に活用しましょう。</string>
     <string>初期設定ライト</string>
     <key>theme_light_contrast</key>
     <string>ライトコントラスト</string>
-    <key>theme_radioactivity</key>
-    <string>放射能</string>
     <key>theme_rose</key>
     <string>ロゼ</string>
     <key>time_format_never</key>
@@ -3824,188 +2576,14 @@ PodHopper を最大限に活用しましょう。</string>
     <string>併せて読む。 2倍速でも。</string>
     <key>transcript_tap_to_seek_streaming_unavailable</key>
     <string>エピソードをダウンロードし、タップして検索</string>
-    <key>trial_finished</key>
-    <string>トライアルが終了しました</string>
     <key>trim_silence</key>
     <string>無音時間をカット</string>
     <key>try_again</key>
     <string>もう一度お試しください</string>
     <key>try_it_now</key>
     <string>今すぐお試しください</string>
-    <key>tv_banner_create_account_action_title</key>
-    <string>無料アカウントを作成</string>
-    <key>tv_banner_create_account_subtitle</key>
-    <string>お気に入りの番組も、再生した内容も...中断したまさにその場所から。</string>
-    <key>tv_banner_create_account_title</key>
-    <string>1つのアカウント。 すべての画面</string>
-    <key>tv_banner_discover_more_action_title</key>
-    <string>番組をもっと見る</string>
-    <key>tv_banner_discover_more_subtitle</key>
-    <string>こちらで次のお気に入りを見つけましょう。</string>
-    <key>tv_banner_discover_more_title</key>
-    <string>まだ半分も見ていませんよ。</string>
-    <key>tv_create_account_come_back</key>
-    <string>アカウントを作成したら、戻ってログインしてください</string>
-    <key>tv_create_account_subtitle</key>
-    <string>このコードをスキャンして、スマートフォンで開始できます。わずか1分で完了します。</string>
-    <key>tv_create_account_title</key>
-    <string>無料アカウントを作成</string>
-    <key>tv_discover_featured_go_to_podcast</key>
-    <string>ポッドキャストに移動</string>
-    <key>tv_discover_featured_play_latest_episode</key>
-    <string>最新エピソードを再生</string>
-    <key>tv_discover_play_episode</key>
-    <string>エピソードを再生</string>
-    <key>tv_episode_info</key>
-    <string>エピソード情報</string>
-    <key>tv_home_browse_categories_section_title</key>
-    <string>カテゴリーを表示</string>
-    <key>tv_home_featured_section_title</key>
-    <string>PodHopper で特集されました</string>
-    <key>tv_home_keep_listening_title</key>
-    <string>前回の続きから開始</string>
-    <key>tv_home_new_releases</key>
-    <string>新規リリース</string>
-    <key>tv_home_recently_played</key>
-    <string>最近再生済み</string>
-    <key>tv_home_recommend_user_podcast_section_title</key>
-    <string>%1$@ のリスナーから高い評価を得ています</string>
-    <key>tv_home_recommended_for_you_title</key>
-    <string>あなたにきっと必要なポッドキャスト</string>
-    <key>tv_home_trending_section_title</key>
-    <string>今週の人気ポッドキャスト</string>
     <key>tv_home_video_section_title</key>
     <string>テレビ向け</string>
-    <key>tv_player_playback_effects</key>
-    <string>再生エフェクト</string>
-    <key>tv_player_playback_speed</key>
-    <string>再生速度</string>
-    <key>tv_player_playback_speed_set</key>
-    <string>再生速度を %1$@ に設定</string>
-    <key>tv_player_trim_silence</key>
-    <string>無音時間をカット</string>
-    <key>tv_player_trim_silence_mad_max</key>
-    <string>最大限</string>
-    <key>tv_player_trim_silence_medium</key>
-    <string>中</string>
-    <key>tv_player_trim_silence_mild</key>
-    <string>控えめ</string>
-    <key>tv_player_trim_silence_off</key>
-    <string>オフ</string>
-    <key>tv_player_trim_silence_set</key>
-    <string>無音時間をカット: %1$@</string>
-    <key>tv_player_volume_boost</key>
-    <string>ボリュームブースト</string>
-    <key>tv_player_volume_boost_off</key>
-    <string>ボリュームブースト: オフ</string>
-    <key>tv_player_volume_boost_on</key>
-    <string>ボリュームブースト: オン</string>
-    <key>tv_playlist_detail_episode_count</key>
-    <string>%1$@件のエピソード</string>
-    <key>tv_playlist_detail_play_all</key>
-    <string>すべてのエピソードを再生</string>
-    <key>tv_playlists_empty_action_title</key>
-    <string>プレイリストを作成</string>
-    <key>tv_playlists_empty_subtitle</key>
-    <string>手動で作成するか、スマートルールで並べ替えを行います。</string>
-    <key>tv_playlists_empty_title</key>
-    <string>プレイリストはこちらに表示されます</string>
-    <key>tv_podcast_detail_about</key>
-    <string>概要</string>
-    <key>tv_podcast_detail_all_episodes</key>
-    <string>すべてのエピソード</string>
-    <key>tv_podcast_detail_follow_title</key>
-    <string>このポッドキャストをフォロー</string>
-    <key>tv_podcast_detail_following_title</key>
-    <string>フォロー中</string>
-    <key>tv_podcast_detail_more_info_title</key>
-    <string>詳細情報</string>
-    <key>tv_podcast_detail_network</key>
-    <string>ネットワーク</string>
-    <key>tv_podcast_detail_next_episode</key>
-    <string>次のエピソード</string>
-    <key>tv_podcast_detail_schedule</key>
-    <string>スケジュール</string>
-    <key>tv_podcast_detail_start_here</key>
-    <string>まず試すのにぴったりなエピソード</string>
-    <key>tv_podcast_detail_start_here_subtitle</key>
-    <string>みんなが夢中です</string>
-    <key>tv_podcast_detail_website</key>
-    <string>サイト</string>
-    <key>tv_podcasts_empty_action_title</key>
-    <string>ポッドキャストをディスカバー</string>
-    <key>tv_podcasts_empty_subtitle</key>
-    <string>フォロー済みのポッドキャストがここに表示され、再生できます。</string>
-    <key>tv_podcasts_empty_title</key>
-    <string>ここを埋めてみましょう。</string>
-    <key>tv_profile_button_accessibility_hint</key>
-    <string>プロフィールとアカウントのオプションを開く</string>
-    <key>tv_profile_button_accessibility_label</key>
-    <string>プロフィール</string>
-    <key>tv_profile_menu_create_account</key>
-    <string>アカウントを作成</string>
-    <key>tv_profile_menu_log_in</key>
-    <string>ログイン</string>
-    <key>tv_profile_menu_log_out</key>
-    <string>ログアウト</string>
-    <key>tv_profile_menu_starred_episodes</key>
-    <string>星付きエピソード</string>
-    <key>tv_search_failed</key>
-    <string>検索に失敗: %1$@</string>
-    <key>tv_search_prompt</key>
-    <string>ポッドキャスト、番組、作成者</string>
-    <key>tv_search_searching</key>
-    <string>検索中…</string>
-    <key>tv_search_type_something</key>
-    <string>入力してください…</string>
-    <key>tv_sign_in_enter_code</key>
-    <string>または、次のコードを入力</string>
-    <key>tv_sign_in_enter_code_go_url</key>
-    <string>[%1$@](%2$@) に移動</string>
-    <key>tv_sign_in_enter_code_in_url</key>
-    <string>または [%1$@](%2$@) にこのコードを入力</string>
-    <key>tv_sign_in_qr_code_error_title</key>
-    <string>ログインコードを取得できませんでした</string>
-    <key>tv_sign_in_subtitle</key>
-    <string>カメラを開き、この QR コードに向けます</string>
-    <key>tv_sign_in_title</key>
-    <string>PodHopper にログイン</string>
-    <key>tv_signing_in_subtitle</key>
-    <string>ポッドキャストを読み込んでいます。</string>
-    <key>tv_signing_in_title</key>
-    <string>お会いできて嬉しいです。</string>
-    <key>tv_tab_home</key>
-    <string>ホーム</string>
-    <key>tv_tab_playlists</key>
-    <string>プレイリスト</string>
-    <key>tv_tab_podcasts</key>
-    <string>あなたのポッドキャスト</string>
-    <key>tv_tab_up_next</key>
-    <string>次のエピソード</string>
-    <key>tv_up_next_empty_action_title</key>
-    <string>すべてのエピソード</string>
-    <key>tv_up_next_empty_subtitle</key>
-    <string>エピソードを「次のエピソード」に追加すると、順番に再生されます</string>
-    <key>tv_up_next_empty_title</key>
-    <string>待機がありません</string>
-    <key>tv_user_profile_actions</key>
-    <string>ユーザー設定</string>
-    <key>tv_user_sign_in_login_type</key>
-    <string>ログインタイプ</string>
-    <key>tv_user_sign_in_option_manual</key>
-    <string>ユーザー / パス</string>
-    <key>tv_user_sign_in_option_qr</key>
-    <string>QR</string>
-    <key>tv_welcome_browse_without_account</key>
-    <string>アカウントなしで閲覧</string>
-    <key>tv_welcome_create_free_account</key>
-    <string>無料アカウントを作成</string>
-    <key>tv_welcome_sign_in</key>
-    <string>ログイン</string>
-    <key>tv_welcome_subtitle</key>
-    <string>ポッドキャストを 大画面で お楽しみください</string>
-    <key>tv_welcome_title</key>
-    <string>PodHopper TV へようこそ</string>
     <key>unarchive</key>
     <string>アーカイブを解除</string>
     <key>unfollow</key>
@@ -4016,8 +2594,6 @@ PodHopper を最大限に活用しましょう。</string>
     <string>星を取り消す</string>
     <key>unsubscribe</key>
     <string>フォロー解除</string>
-    <key>unsubscribe_all</key>
-    <string>すべてのフォローを解除</string>
     <key>up_next</key>
     <string>次のエピソード</string>
     <key>up_next_empty_description</key>
@@ -4038,58 +2614,8 @@ PodHopper を最大限に活用しましょう。</string>
     <string>シャッフルはオンです。 エピソードはランダムな順序で再生されます。</string>
     <key>upgrade_account</key>
     <string>アカウントをアップグレード</string>
-    <key>upgrade_account_info</key>
-    <string>フォルダー、シャッフル、ブックマークなどの有料機能をすべて利用</string>
-    <key>upgrade_account_timeline_charging_day</key>
-    <string>%1$@に請求されます。 その前にいつでもキャンセルできます。</string>
-    <key>upgrade_account_timeline_day_1</key>
-    <string>フォルダー、シャッフル、ブックマーク、限定コンテンツにアクセス</string>
-    <key>upgrade_account_timeline_week_before</key>
-    <string>お試し期間の終了をお知らせします。</string>
     <key>upgrade_account_title</key>
     <string>ポッドキャストをパワーアップ</string>
-    <key>upgrade_experiment_discount_yearly_membership</key>
-    <string>初年度は50%% オフ。</string>
-    <key>upgrade_experiment_free_membership_format</key>
-    <string>%1$@ の Plus 無料トライアル</string>
-    <key>upgrade_experiment_paywall_button</key>
-    <string>PodHopper Plus を入手</string>
-    <key>upgrade_experiment_reviews_app_store_button</key>
-    <string>App ストアのレビューをすべて見る</string>
-    <key>upgrade_experiment_reviews_app_store_info</key>
-    <string>%1$@ 評価 (%2$@千件のレビュー)</string>
-    <key>upgrade_experiment_reviews_review_text_0</key>
-    <string>長い間愛用していますが、無料版の機能性とカスタマイズの多さには驚かされます。 端末間で同期されるので、スマートフォンで聴き始めたあとに Alexa 端末で続きを聴くことができるのも気に入っています。 ポッドキャストを聴く人全員におすすめのアプリです。 また、統計機能も気に入っています !</string>
-    <key>upgrade_experiment_reviews_review_text_1</key>
-    <string>8年間の卓越性と継続的な改善</string>
-    <key>upgrade_experiment_reviews_review_text_2</key>
-    <string>2017年から PodHopper のユーザーです。
-
-PodHopper は間違いなく、ポッドキャストを聴くための最高のアプリです。 機能が豊富で、積極的な開発が行われています。 Ul の変更について不満の声があるようですが、私はあまり気になっていません。
-
-このアプリは自分の思いどおりにシンプルにも複雑にもできます。 すぐに使い始めることも、アウトロのスキップやイントロのタイマーを設定することも、その他の細かい機能を有効にすることも可能です。</string>
-    <key>upgrade_experiment_reviews_review_text_3</key>
-    <string>同期機能は魔法のようです。 このアプリでどんな特別な魔法が使われているかはわかりませんが、今まで使ったどのアプリよりも優れています。</string>
-    <key>upgrade_experiment_reviews_review_text_4</key>
-    <string>このアプリを6年以上使っています。使い始めたのは Android 版で、今は iOS 版を1年近く使っています。 両方のプラットフォームで同じように動作します。 新しいポッドキャストを簡単に見つけて再生できます。Ul が使いやすく、RSS フィードの URL でもポッドキャストを追加できます。 Watch アプリも便利ですが、私はほとんど再生や一時停止のために使っています。 端末間での同期にはアカウントでサインインする必要がありますが、そうしなくても使えます。</string>
-    <key>upgrade_experiment_reviews_review_text_5</key>
-    <string>PC は長年のお気に入りです。他のポッドキャストアプリも試しましたが、PC はシンプルさ、Ul、サポートが優れているため、いつも PC に戻ってきます。 特に、今使っているポッドキャストアプリに飽きてしまった人は、PC をチェックする価値があります。</string>
-    <key>upgrade_experiment_reviews_review_title_0</key>
-    <string>今までで一番のポッドキャストアプリ</string>
-    <key>upgrade_experiment_reviews_review_title_1</key>
-    <string>必須のポッドキャストアプリ</string>
-    <key>upgrade_experiment_reviews_review_title_2</key>
-    <string>最高のポッドキャストアプリ</string>
-    <key>upgrade_experiment_reviews_review_title_3</key>
-    <string>素晴らしいアプリ</string>
-    <key>upgrade_experiment_reviews_review_title_4</key>
-    <string>使いやすく、新しいポッドキャストを簡単に見つけて再生できる</string>
-    <key>upgrade_experiment_reviews_review_title_5</key>
-    <string>お気に入りのポッドキャストアプリ</string>
-    <key>upgrade_experiment_reviews_text</key>
-    <string>Plus にアップグレードした理由を見る</string>
-    <key>upgrade_experiment_reviews_title</key>
-    <string>ポッドキャストを聴くのにまさに最適な方法</string>
     <key>upgrade_to_plan</key>
     <string>%1$@ にアップグレード</string>
     <key>upgrade_to_plus</key>
@@ -4134,8 +2660,6 @@ PodHopper は間違いなく、ポッドキャストを聴くための最高の�
     <string>効果</string>
     <key>watch_episode_details</key>
     <string>エピソードの詳細</string>
-    <key>watch_main_menu</key>
-    <string>メインメニュー</string>
     <key>watch_no_episodes</key>
     <string>エピソードなし</string>
     <key>watch_no_filters</key>
@@ -4154,16 +2678,8 @@ PodHopper は間違いなく、ポッドキャストを聴くための最高の�
     <string>再生元</string>
     <key>watch_source_msg</key>
     <string>ポッドキャストは選択デバイスが接続しているスピーカーで再生されます</string>
-    <key>watch_source_plus_info</key>
-    <string>スマートウォッチに直接ダウンロードして、スマートフォンなしでお聞きいただけます。 スマートフォンアプリやウェブで PodHopper Plus をお試しください。</string>
-    <key>watch_source_refresh_account</key>
-    <string>アカウントを更新</string>
-    <key>watch_source_refresh_account_info</key>
-    <string>PodHopper Plus アカウントを保有している場合は、アカウントを更新して有効になるかご確認ください</string>
     <key>watch_source_refresh_data</key>
     <string>データを更新</string>
-    <key>watch_source_sign_in_info</key>
-    <string>スマートフォンでログインまたはアカウントを作成する</string>
     <key>watch_tap_to_open</key>
     <string>タップして開く</string>
     <key>watch_up_next_no_items_subtitle</key>
@@ -4190,22 +2706,6 @@ PodHopper は間違いなく、ポッドキャストを聴くための最高の�
     <string>ありがとうございます。どうぞお聞きください !</string>
     <key>whats_new</key>
     <string>新着情報</string>
-    <key>whats_new_blog_more_link_text</key>
-    <string>今回の更新の詳細については、ブログをご覧ください</string>
-    <key>whats_new_in_version</key>
-    <string>%1$@ の新機能</string>
-    <key>whats_new_page_one_7_20</key>
-    <string>私たちの半分ほどでも、ポッドキャストを愛好している方なら、おそらくたくさんポットキャスト保存していることでしょう。 PodHopper Plus に登録すれば、これらをフォルダーに分類し、わかりやすく整理できるようになります。
-
-サポートのおかげで、ホーム画面が見違えるほどよくなりました。</string>
-    <key>whats_new_page_one_title_7_20</key>
-    <string>フォルダー</string>
-    <key>whats_new_page_two_7_20</key>
-    <string>ホーム画面 (並べ替えオプションを含む) をデバイス間で同期できるようになりました。 また、ウェブプレーヤーのドラッグ &amp; ドロップもできるようになりました。
-
-これにより、ポッドキャストページを配置し、アカウントに同期するために費やす手間がなくなるので安心です。</string>
-    <key>whats_new_page_two_title_7_20</key>
-    <string>ホームグリッドの同期</string>
     <key>widgets_app_icon_description</key>
     <string>PodHopper をクイック起動</string>
     <key>widgets_app_icon_name</key>

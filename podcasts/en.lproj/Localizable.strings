@@ -13,9 +13,6 @@
 /* A common string used throughout the app. Accessibility hint to inform that the control dismisses the current window. */
 "accessibility_dismiss" = "Dismiss";
 
-/* An accessibility label to direct the user tap to get access to filter details. */
-"accessibility_hide_filter_details" = "Tap to hide filter details";
-
 /* Accessibility hint to inform the user how to star (favorite) for an episode. */
 "accessibility_hint_star" = "Double tap to star episode";
 
@@ -31,9 +28,6 @@
 /* Accessibility text listing the current value for the playback speed. '%1$@' is a placeholder for the playback speed. */
 "accessibility_player_effects_playback_speed" = "Playback speed %1$@ times";
 
-/* Accessibility hint to inform the user which filter color flag is being used. '%1$@' is a placeholder for the filter color number. */
-"accessibility_playlist_color" = "Playlist color %1$@";
-
 /* A common string used throughout the app. An accessibility label to inform the user that the selected item is locked behind PodHopper Plus subscription. */
 "accessibility_plus_only" = "Locked, Plus Feature";
 
@@ -46,12 +40,6 @@
 /* A common string used throughout the app. Accessibility hint to inform the user that this control will select the episode. */
 "accessibility_select_episode" = "Select Episode";
 
-/* An accessibility label to direct the user tap to get access to filter details. */
-"accessibility_show_filter_details" = "Tap to show filter details";
-
-/* An accessibility hint to prompt the user to tap to open their account details or sign in. */
-"accessibility_sign_in" = "Tap to view or setup account";
-
 /* A common string used throughout the app. An accessibility label to direct the user to sort and option menus. */
 "accessibility_sort_and_options" = "Sort and Options";
 
@@ -61,89 +49,14 @@
 /* Accessibility label for episode playback scrubber */
 "accessibility_episode_playback" = "Episode Playback";
 
-/* Prompt to allow the user to update the email associated to their account. */
-"account_change_email" = "Change Email";
-
-/* Nudge to inform the user that they are nearly done with the account set up steps. */
-"account_completion_nudge" = "Almost There!";
-
-/* Message portion of the nudge to inform the user that they are nearly done with the account set up steps. */
-"account_completion_nudge_msg" = "Finalize your payment to finish upgrading your account.";
-
 /* Title informing the user that their account has been successfully created */
 "account_created" = "Account Created";
-
-/* Title for the final screen in the account creation flow. */
-"account_creation_complete" = "Complete Account";
-
-/* Prompt to allow the user to delete their account. */
-"account_delete_account" = "Delete Account";
-
-/* Confirmation option for deleting the user account. */
-"account_delete_account_conf" = "Yes, Delete It";
-
-/* Error title for when the delete account process has failed. */
-"account_delete_account_error" = "Delete Account Failed";
-
-/* Error message for when the delete account process has failed. */
-"account_delete_account_error_msg" = "Unable to delete account.";
-
-/* The final alert message for the confirmation dialog asking the user to confirm they want to delete their account. */
-"account_delete_account_final_alert_msg" = "Last chance, you definitely want to delete your account? You will lose all your subscriptions and play history permanently!";
-
-/* The first message for the confirmation dialog asking the user to confirm they want to delete their account. */
-"account_delete_account_first_alert_msg" = "Are you sure you want to delete your account, there's no way to undo this!";
-
-/* Title for the confirmation dialog asking the user to confirm they want to delete their account. */
-"account_delete_account_title" = "Delete Account?";
-
-/* Button title to prompt a user to login. */
-"account_login" = "Log in";
 
 /* Informs the user that their purchase will be automatically renewed monthly */
 "account_payment_renews_monthly" = "Renews automatically monthly";
 
 /* Informs the user that their purchase will be automatically renewed yearly */
 "account_payment_renews_yearly" = "Renews automatically yearly";
-
-/* Allows the user to ope a screen to review the Privacy Policy */
-"account_privacy_policy" = "Privacy Policy";
-
-/* Error message for when the account registration request has failed. */
-"account_registration_failed" = "Registration failed, please try again later";
-
-/* Prompt to allow the user to choose their account time when setting up their account. */
-"account_select_type" = "Select Account Type";
-
-/* Prompt to allow the user to sign out of their account. */
-"account_sign_out" = "Sign Out";
-
-/* Confirmation dialog informing the user that signing out will remove the given number of supported podcasts. '%1$@' is a placeholder for the number of supported podcasts. */
-"account_sign_out_supporter_prompt" = "Signing out will remove %1$@ supported podcasts from this device. Are you sure?";
-
-/* Subtitle to the Confirmation dialog informing the user that signing out will remove the given number of supported podcasts. */
-"account_sign_out_supporter_subtitle" = "You can sign in again to regain access.";
-
-/* Title of the confirmation alert shown before signing the user out of their account. */
-"account_sign_out_alert_title" = "Sign Out?";
-
-/* Message of the confirmation alert shown before signing the user out of their account, reassuring them their data will still be available when they sign back in. */
-"account_sign_out_alert_message" = "Your podcasts, progress, and data will be here when you are back.";
-
-/* Error message for when the account registration request has failed. */
-"account_sso_failed" = "Sign in failed. Please try again.";
-
-/* Title for the account screen for the user's PodHopper Account. 'PodHopper's refers to the app name and is treated as a proper noun so it shouldn't be localized. */
-"account_title" = "PodHopper Account";
-
-/* Title informing the user that their account has been successfully upgraded to PodHopper Plus */
-"account_upgraded" = "Account Upgraded";
-
-/* Welcome message presented after a user has signed up for PodHopper */
-"account_welcome" = "Welcome to PodHopper!";
-
-/* Welcome message presented after a user has signed up for PodHopper Plus */
-"account_welcome_plus" = "Welcome to PodHopper Plus!";
 
 /* Title of an alert that informs the user that they have been signed out of their account */
 "account_signed_out_alert_title" = "You've been signed out.";
@@ -159,60 +72,6 @@
 
 /* A common string used throughout the app. References to Badge settings for the app. */
 "app_badge" = "App Badge";
-
-/* The name for the Classic App Icon */
-"app_icon_classic" = "Classic";
-
-/* The name for the Dark App Icon */
-"app_icon_dark" = "Dark";
-
-/* The name for the Default App Icon */
-"app_icon_default" = "Default";
-
-/* The name for the Electric Blue App Icon */
-"app_icon_electric_blue" = "Electric Blue";
-
-/* The name for the Electric Pink App Icon */
-"app_icon_electric_pink" = "Electric Pink";
-
-/* The name for the Indigo App Icon */
-"app_icon_indigo" = "Indigo";
-
-/* The name for the PodHopper Plus App Icon */
-"app_icon_plus" = "Plus";
-
-/* The name for the Pocket Cats App Icon. The name for this one is meant to be a play on the App name PodHopper and the icon includes a cat image. */
-"app_icon_pocket_cats" = "Pocket Cats";
-
-/* The name for the Radioactivity App Icon */
-"app_icon_radioactivity" = "Radioactivity";
-
-/* The name for the Red Velvet App Icon */
-"app_icon_red_velvet" = "Red Velvet";
-
-/* The name for the Rosé App Icon */
-"app_icon_rose" = "Rosé";
-
-/* The name for the Round Dark App Icon */
-"app_icon_round_dark" = "Round Dark";
-
-/* The name for the Round Light App Icon */
-"app_icon_round_light" = "Round Light";
-
-/* Halloween app icon name */
-"app_icon_halloween" = "Halloween";
-
-/* The name for the Patron Chrome App Icon - Do not translate Patron */
-"app_icon_patron_chrome" = "Patron Chrome";
-
-/* The name for the Patron Round App Icon - Do not translate Patron */
-"app_icon_patron_round" = "Patron Round";
-
-/* The name for the Patron Glow App Icon - Do not translate Patron */
-"app_icon_patron_glow" = "Patron Glow";
-
-/* The name for the Patron Dark App Icon - Do not translate Patron */
-"app_icon_patron_dark" = "Patron Dark";
 
 /* App version label in the about controller. `%1$@` is a placeholder for the version number and %2$@ is a placeholder for the build number */
 "app_version" = "Version %1$@ (%2$@)";
@@ -292,12 +151,6 @@
 /* Title for the dialog box that presents the available options for how many episodes for auto download from a filter. */
 "auto_download_first" = "Auto Download First";
 
-/* Subtitle for the auto download setting. This is displayed when the option is turned off. */
-"auto_download_off_subtitle" = "Enable to auto download episodes in this filter";
-
-/* Subtitle for the auto download setting. This is displayed when the option is turned on. '%1$@' is a placeholder for the number of episodes, this will be more than one. */
-"auto_download_on_plural_format" = "The first %1$@ episodes in this filter will be automatically downloaded";
-
 /* Provides hint text to auto download the a the first of a configurable amount of episodes. Accompanied by a label indicating how many episodes will be auto downloaded. */
 "auto_download_prompt_first" = "First";
 
@@ -313,14 +166,8 @@
 /* A common string used throughout the app. Prompt to cancel the current flow. */
 "cancel" = "Cancel";
 
-/* An activity message indicating that the process to cancel is running. */
-"canceling" = "Canceling...";
-
 /* A common string used throughout the app. Prompt to cancel the download for the selected item(s). */
 "cancel_download" = "Cancel Download";
-
-/* Message title indicating that the cancel process has failed. */
-"cancel_failed" = "Unable To Cancel";
 
 /* Prompt to allow the user to cancel their PodHopper Plus subscription. */
 "cancel_subscription" = "Cancel Subscription";
@@ -340,23 +187,8 @@
 /* Prompt to allow the user to update their email address. */
 "change_email" = "Change Email Address";
 
-/* Confirmation message title informing the user that their email has been successfully updated. */
-"change_email_conf" = "Email Address Changed";
-
 /* Prompt to allow the user to Update their password. */
 "change_password" = "Change Password";
-
-/* Confirmation message title informing the user that their password has been successfully updated. */
-"change_password_conf" = "Password Changed";
-
-/* Error message informing the user that the change password process failed. */
-"change_password_error" = "Unable to change password. Invalid password.";
-
-/* Error message informing the user that the change password process failed because they failed to enter matching passwords. */
-"change_password_error_mismatch" = "Passwords do not match";
-
-/* Error message informing the user that they need to choose a longer password. */
-"change_password_length_error" = "Must be at least 6 characters";
 
 /* A common string used throughout the app. Often refers to the Chapters list or Chapters tab in the player. */
 "chapters" = "Chapters";
@@ -405,33 +237,6 @@
 
 /* A common string used throughout the app. A prompt to move to the next step of a flow. */
 "continue" = "Continue";
-
-/* Prompt to open the create account options. */
-"create_account" = "Create Account";
-
-/* Error title shown when PodHopper can't connect to the App Store to retrieve in app purchase details */
-"create_account_app_store_error_title" = "Unable to contact App Store";
-
-/* Error message shown when PodHopper can't connect to the App Store to retrieve in app purchase details */
-"create_account_app_store_error_message" = "PodHopper is having trouble connecting to the App Store. Please check your connection and try again.";
-
-/* Price shown for the free tier. "Free" in this case meaning the cost is free */
-"create_account_free_price" = "Free";
-
-/* Account type shown on the select account page. Regular as in the normal or default option */
-"create_account_free_account_type" = "Regular";
-
-/* Shown under the create account type to indicate what you get with a free PodHopper account */
-"create_account_free_details" = "Almost everything";
-
-/* Shown under the create account type to indicate what you get in PodHopper Plus */
-"create_account_plus_details" = "Everything unlocked";
-
-/* Button title to find out more about PodHopper Plus. Note that "PodHopper Plus" shouldn't be translated as it's a product name */
-"create_account_find_out_more_plus" = "Find out more about PodHopper Plus";
-
-/* Title for the screen where a user starts creating a filter */
-"create_filter" = "Create Filter";
 
 /* An indicator that the current episode is a user generated episode */
 "custom_episode" = "Custom Episode";
@@ -516,9 +321,6 @@
 
 /* Title for the podcast category Health & Fitness */
 "discover_browse_by_category_health_and_fitness" = "Health & Fitness";
-
-/* Abbreviation for the podcast category Health & Fitness, using only "Health" */
-"discover_browse_by_category_health" = "Health";
 
 /* Title for the podcast category Kids & Family */
 "discover_browse_by_category_kids_and_family" = "Kids & Family";
@@ -733,12 +535,6 @@
 /* Region name used in the Discover Section for a generic global setting instead of a specific region. */
 "discover_region_worldwide" = "Worldwide";
 
-/* Error message when a user performs a search using a search term that's too short. */
-"discover_search_error_msg" = "Please enter at least 2 characters.";
-
-/* Error title when a user performs a search using a search term that's too short. */
-"discover_search_error_title" = "Length Challenged";
-
 /* Informational title informing the users that the search has failed. */
 "discover_search_failed" = "Search Failed";
 
@@ -771,9 +567,6 @@
 
 /* A common string used throughout the app. Prompt to download all of the selected item(s). */
 "download_all" = "Download All";
-
-/* A common string used throughout the app. Prompt to warn the user that continuing with the download will consume data. Used in tandem with a notice that the user is not on WiFi. */
-"download_data_warning" = "Downloading will use data.";
 
 /* A common string used throughout the app. Prompt to warn the user that continuing with the download will consume data. Used in tandem with a notice that the user is not on WiFi. The word Settings will be linked to an internal URL which redirects the user to the correct Settings. The %@ is the placeholder for the URL */
 "download_data_warning_with_settings_link" = "This download will use mobile data. You can turn off this warning in [Settings](%@).";
@@ -850,9 +643,6 @@
 /* A common string used throughout the app. Display configurable options related to a number of episodes. '%1$@' is a placeholder for the number of episodes, the value will be more than one. */
 "episode_count_plural_format" = "%1$@ episodes";
 
-/* Message shown when you have no episodes in an episode filter */
-"episode_filter_no_episodes_msg" = "Either it's time to celebrate completing this list, or edit your filter settings to get some more.";
-
 /* Title shown when you have no episodes in an episode filter */
 "episode_filter_no_episodes_title" = "No Episodes";
 
@@ -897,15 +687,6 @@
 
 /* Indicator during the new feature tour. Used as a navigation indicator as the user progresses through the tour. '%1$@' is a placeholder for the current position. '%2$@' is a placeholder for the total number of steps. */
 "feature_tour_step_format" = "%1$@ of %2$@";
-
-/* Option to continue with a Third-Party Mail app when the default Apple mail app isn't available. */
-"feedback_continue_with_mail" = "Open Default Mail App";
-
-/* Error message for when the user has a mail app configured that's not the default mail app. */
-"feedback_mail_not_configured_msg" = "To send a debug attachment, the Apple Mail app has to be configured on your phone. What would you like to do?";
-
-/* Error title for when the user has a mail app configured that's not the default mail app. */
-"feedback_mail_not_configured_title" = "Mail Not Configured";
 
 /* Title for the file upload settings screen. This is used when a user is uploading a new file. */
 "file_upload_add_file" = "Add File";
@@ -961,47 +742,17 @@
 /* Title for the screen that details how to add a file to PodHopper. */
 "files_how_to_title" = "How to save a file";
 
-/* Subtitle informing the user that new podcasts will be automatically added to this filter. */
-"filter_auto_add_subtitle" = "New podcasts you subscribe to will be automatically added";
-
-/* Subtitle informing the user that new podcasts will be automatically added to this filter. */
-"filter_auto_add_subtitle_new" = "New podcasts you follow to will be automatically added";
-
-/* Title for the filter option that indicates all podcasts will be included. */
-"filter_chips_all_podcasts" = "All Your Podcasts";
-
 /* Title for the filter option that that opens the episode duration options. */
 "filter_chips_duration" = "Duration";
 
 /* Filter option to select podcasts that will be included in the filter. */
 "filter_choose_podcasts" = "Choose Podcasts";
 
-/* Used on the screen to create a new filter. Provides a prompt to continue refining the filter selections. */
-"filter_create_add_more" = "Add more criteria to finish refining your filter.";
-
-/* Used on the screen to create a new filter. The section header for the list of options to use with the filter. */
-"filter_create_filter_by" = "FILTER BY";
-
-/* Used on the screen to create a new filter. Provides instructions on how to set up a new filter. */
-"filter_create_instructions" = "Select your filter criteria using these buttons to create an up to date smart playlist of episodes.";
-
 /* Used on the screen to create a new filter. Title for the state where their selection doesn't include any content. */
 "filter_create_no_episodes" = "No Matching Episodes";
 
-/* Used on the screen to create a new filter. The description about why the list of filtered episodes is empty. */
-"filter_create_no_episodes_description_explanation" = "The criteria you selected doesn’t match any current episodes in your subscriptions";
-
-/* Used on the screen to create a new filter. The description about why the list of filtered episodes is empty. */
-"filter_create_no_episodes_description_explanation_new" = "The criteria you selected doesn’t match any current episodes in your podcasts";
-
-/* Used on the screen to create a new filter. The prompt about what they can do in order to make sure their filter returns results. */
-"filter_create_no_episodes_description_prompt" = "Choose different criteria, or save this filter if you think it will match episodes in the future.";
-
 /* Used on the screen to create a new playlist. The description about why the list of filtered episodes is empty. The \n represent a new line */
 "playlist_create_no_episodes_description" = "None of the episodes in your podcasts match these rules.\n\nTry adjusting the rules, or save this playlist for future episodes that might fit.";
-
-/* Used on the screen to create a new filter. The section that shows a preview of what podcast episodes will be included in the filter. */
-"filter_create_preview" = "PREVIEW";
 
 /* Used on the screen to create a new playlist. The %@ represent the placeholder for the playlist name. */
 "playlist_preview_title" = "Preview %@";
@@ -1009,38 +760,11 @@
 /* Button title used to create a new smart playlist */
 "playlist_preview_create_smart_playlist" = "Create smart playlist";
 
-/* Used on the screen to create a new filter. Title for the toggle to include all podcasts in the filter. */
-"filter_create_podcasts_all_podcasts" = "All Podcasts";
-
-/* Used on the screen to create a new filter. Title for the button to save the filter. */
-"filter_create_save" = "Save Filter";
-
-/* Title for the screen where a user can set the initial details for a new filter. */
-"filter_details" = "Filter Details";
-
-/* Hint text above the sections for the user to select the filter color and icon. */
-"filter_details_color_icon" = "COLOUR & ICON";
-
-/* Accessibility hint text for color selection on filters. */
-"filter_details_color_selection" = "Colour Selector";
-
-/* Accessibility hint text for icon selection on filters. */
-"filter_details_icon_selection" = "Icon Selector";
-
-/* Hint text above the dialog box to enter the filter's name. */
-"filter_details_name" = "NAME";
-
 /* Title for filter options related to Download Status. */
 "filter_download_status" = "Download Status";
 
 /* Title for filter sections that relate to episode status. */
 "filter_episode_status" = "Episode Status";
-
-/* Subtitle informing the user that new podcasts will not be automatically added to this filter. */
-"filter_manual_add_subtitle" = "New podcasts you subscribe to will not be automatically added";
-
-/* Subtitle informing the user that new podcasts will not be automatically added to this filter. */
-"filter_manual_add_subtitle_new" = "New podcasts you follow to will not be automatically added";
 
 /* Title for filter options related to media type settings. */
 "filter_media_type" = "Media Type";
@@ -1065,9 +789,6 @@
 
 /* Error title for when the user attempts to set a filter where the minimal duration is higher than the max duration. Meant to be a fun/funny message. */
 "filter_option_episode_duration_error_title" = "Yes, But No";
-
-/* Menu prompt to open the Filter options. Also used for the title of the filter options screen. */
-"filter_options" = "Filter Options";
 
 /* Menu prompt to open the Playlist options. Also used for the title of the playlist options screen. */
 "playlist_options" = "Playlist Options";
@@ -1110,15 +831,6 @@
 
 /* The title for the auto generated 'New Release' filter. */
 "filters_default_new_releases" = "New Releases";
-
-/* The title shown in a Tip View when the user hasn't yet added a filter */
-"filters_tip_view_title" = "Organize your episodes";
-
-/* The description shown in a Tip View when the user hasn't yet added a filter */
-"filters_tip_view_description" = "Create smart filters to organize your episodes. Filter by duration, release date, media type, and more.";
-
-/* Funny confirmation message accompanying several descriptive dialogs */
-"funny_conf_msg" = "It really matches your eyes ✨";
 
 /* The default value when the user has listened for under one minute. */
 "funny_time_not_enough" = "You really don't listen much, do you?";
@@ -1176,12 +888,6 @@
 
 /* Message for the details prompt to confirm the user wants to clear their listening history. */
 "history_clear_all_details_msg" = "This action cannot be undone.";
-
-/* Time format to display a set number of hours. '%1$@' is a placeholder for a number of hours, this value will be more than one. */
-"hours_plural_format" = "%1$@ hours";
-
-/* Time format to display 1 hour. */
-"hours_singular_format" = "1 hour";
 
 /* The initial informational text explaining how to upload a file */
 "how_to_upload_explanation" = "First, open an app that has the audio files you'd like to save";
@@ -1384,9 +1090,6 @@
 /* A common string used throughout the app. Prompt to move to the next episode. */
 "next_episode" = "Next Episode";
 
-/* A common string used throughout the app. Format used to call out when the associated subscription will be renewed. '%1$@' is a placeholder for a localized date indicating when the renewal will process. */
-"next_payment_format" = "Next payment: %1$@";
-
 /* A common string used throughout the app. Default 'not set' option mostly used with group settings. */
 "none" = "None";
 
@@ -1438,53 +1141,11 @@
 /* Format used to indicate the current page and total in a custom page control. '%1$@' is a placeholder for the current page. '%2$@' is a placeholder for the total pages. */
 "page_control_page_progress_format" = "Page %1$@ of %2$@";
 
-/* A label indicating the number of podcasts the user has subscribed to compared to the total number of podcasts in the bundle. '%1$@' is a placeholder for the number of subscribed podcasts. '%2$@' is a placeholder for the number of podcasts in the bundle. */
-"paid_podcast_bundled_subscriptions" = "%1$@ / %2$@ SUBSCRIBED";
-
-/* Option to allow the user to cancel their subscription to a paid podcast feed. */
-"paid_podcast_cancel" = "Cancel Contribution";
-
-/* Message displayed when the user selects to cancel their paid podcast subscription. This message is used when the user is canceling multiple subscriptions. '%1$@' is a placeholder for the last date that the current subscriptions will remain active. */
-"paid_podcast_cancel_msg_plural" = "Supporter status will remain active until %1$@. After that you won't be able to play these podcast anymore.";
-
-/* Message displayed when the user selects to cancel their paid podcast subscription. This message is used when the podcast allows the user to access episodes that were available to them during their subscription window. '%1$@' is a placeholder for the last date that the current subscription will remain active. */
-"paid_podcast_cancel_msg_retain_access" = "Supporter status will remain active until %1$@. You will only be able to listen to episodes released before this date.";
-
-/* Message displayed when the user selects to cancel their paid podcast subscription. This message is used when the user is only canceling a singular subscription. '%1$@' is a placeholder for the last date that the current subscription will remain active. */
-"paid_podcast_cancel_msg_singular" = "Supporter status will remain active until %1$@. After that you won't be able to play this podcast anymore.";
-
-/* A generic error indicating that the app failed to load information about the paid feed. */
-"paid_podcast_generic_error" = "Unable to load info";
-
-/* Prompt to open settings to adjust settings for a paid feed. */
-"paid_podcast_manage" = "Manage";
-
 /* Informational label informing the user when to expect the next episode. '%1$@' is a placeholder for the next upcoming release date. */
 "paid_podcast_next_episode_format" = "Next episode %1$@";
 
 /* Informational label informing the user when the latest episode was released. '%1$@' is a placeholder for the latest release date. */
 "paid_podcast_release_frequency_format" = "Released %1$@";
-
-/* Prompt to get the user to sign in to see updates. This acts as the details message for a section. '\n' is the new line character to cause a line wrap. */
-"paid_podcast_signin_prompt_msg" = "SIGN IN FOR\nUPDATES";
-
-/* Prompt to get the user to sign in to see updates. This acts as the title for a section. */
-"paid_podcast_signin_prompt_title" = "Sign in for new episodes";
-
-/* Format used to indicate the subscription for the paid podcast has ended. '%1$@' is a placeholder for the date that the subscription ended on. */
-"paid_podcast_subscription_ended" = "ENDED: %1$@";
-
-/* Format used to indicate the subscription for the paid podcast will end on the specified date. '%1$@' is a placeholder for the date that the subscription will end. */
-"paid_podcast_subscription_ends" = "ENDS: %1$@";
-
-/* A label used to inform the user that the selected podcast feed is for paid supporters only. */
-"paid_podcast_supporter_only_msg" = "Supporter-only feed";
-
-/* Prompt to get the user to sign in after selecting to support a podcast while signed out. '%1$@' is a placeholder for the name of the podcast the user has subscribed to. */
-"paid_podcast_supporter_signin_prompt" =  "Thanks for signing up as a %1$@ supporter. To access your special content, you’ll need to sign in.";
-
-/* A confirmation message for when a user has selected too unsubscribe and has downloaded files. */
-"paid_podcast_unsubscribe_msg" = "Unsubscribing from all these podcasts will delete any downloaded files they have, are you sure?";
 
 /* A common string used throughout the app. Prompt to pause the playback. */
 "pause" = "Pause";
@@ -1570,9 +1231,6 @@
 /* Information label that includes the current chapter and total chapter count example '1 of 3'. '%1$@' is a placeholder for the current chapter. '%2$@' is a placeholder for the total chapters. */
 "player_chapter_count" = "%1$@ of %2$@";
 
-/* Accessibility label for the player control that rewinds the current playback position by a customizable time. */
-"player_decrement_time" = "Decrement time";
-
 /* Detail text explaining that trim silence feature. */
 "player_effects_trim_silence_details" = "Reduces the length of an episode by trimming silence in conversations.";
 
@@ -1585,32 +1243,17 @@
 /* Generic error used when playback fails while streaming. Asks the user to verify their internet connection. */
 "player_error_internet_connection" = "Check your Internet connection and try again.";
 
-/* Accessibility label for the player control that fast-forwards the current playback position by a customizable time. */
-"player_increment_time" = "Increment time";
-
 /* Confirmation prompt for marking an episode as played. */
 "player_mark_as_played_confirmation" = "Mark this episode as played?";
 
 /* Message body shown in the confirmation prompt for marking an episode as played. */
 "player_mark_as_played_confirmation_message" = "It'll move out of Up Next and into your history.";
 
-/* Warning that comes along with selecting to play all. Informs the user that their queue will be cleared. */
-"player_options_play_all_message" = "This will clear your current Up Next queue.";
-
-/* Prompt to play a single episode from a multi-select screen. */
-"player_options_play_episode_singular" = "Play 1 Episode";
-
-/* Prompt to play a multiple episodes from a multi-select screen. '%1$@' is a placeholder for the number of episodes; the value will be more than one. */
-"player_options_play_episodes_plural" = "Play %1$@ Episodes";
-
 /* Section header for organizing which options will show in the player vs in the menu. */
 "player_options_shortcut_on_player" = "SHORTCUT ON PLAYER";
 
 /* Accessibility label for the Route selector control. Opens the Apple menu for selecting the playback device such as headphones or a Bluetooth speaker. */
 "player_route_selection" = "Route Selector";
-
-/* Header for the share menu where the user selects to share the podcast, episode, or episode at the current position */
-"player_share_header" = "SHARE LINK TO";
 
 /* Error title when there is a download error. */
 "player_user_episode_download_error" = "Download Error";
@@ -1663,29 +1306,11 @@
 /* A common string used throughout the app. Catch all prompt to suggest to the user to try the task again later. */
 "please_try_again_later" = "Please try again later.";
 
-/* Prompt informing the user that an account is required in order to sign up for PodHopper Plus */
-"plus_account_required_prompt" = "A PodHopper account is required for PodHopper Plus. This ensures seamless listening across all your devices.";
-
-/* Details prompt informing the user that an account is required in order to sign up for PodHopper Plus */
-"plus_account_required_prompt_details" = "Create an account or sign in to redeem your access to PodHopper Plus.";
-
-/* Details message informing the user that they'll return to a free account at the end of their trial */
-"plus_account_trial_details" = "When your trial is over you’ll still have all the great benefits of your regular account. Happy podcasting!";
-
 /* The available cloud storage limit available to PodHopper Plus Subscribers. '%1$@' is a placeholder for the available storage. */
 "plus_cloud_storage_limit_format" = "%1$@ GB Cloud Storage";
 
 /* Account detail message informing the user that they have been granted 50% discount. */
 "plus_discount_yearly_membership" = "50%% off your first year";
-
-/* Error message informing the user that they have already signed up for plus with this account. */
-"plus_error_already_registered" = "You already have a PodHopper Plus account";
-
-/* Error message details informing the user that they have already signed up for plus with this account so they can't take advantage of the entered promotion. */
-"plus_error_already_registered_details" = "Thanks for your support, but unfortunately this means you can’t take part in this promotion.";
-
-/* Account detail message informing the user when their Plus account will expire. '%1$@' is a placeholder for when the account will expire. */
-"plus_expiration_format" = "Expires %1$@";
 
 /* A common string used throughout the app. often used as a section header to divide settings related to PodHopper Plus vs free features. 'PLUS' refers to PodHopper Plus. */
 "plus_features" = "PLUS FEATURES";
@@ -1693,41 +1318,17 @@
 /* Account detail message informing the user that they have been granted a limited free membership. '%1$@' is a placeholder for a localized string for the free time period. */
 "plus_free_membership_format" = "%1$@ Free Trial";
 
-/* Account detail message informing the user that they have been granted a lifetime membership, don't translate "PodHopper Champion" */
-"plus_champion" = "PodHopper Champion";
-
-/* Message displayed when the user taps "PodHopper Champion" button */
-"plus_champion_message" = "Thanks for being with PodHopper from the start. You're a real champion!";
-
 /* PodHopper Plus marketing page, description of generated transcriptsg */
 "plus_marketing_generated_transcripts" = "Generated Transcripts";
 
 /* PodHopper Plus marketing page, description of removing banner ads */
 "plus_marketing_no_banner_ads" = "No Banner Ads";
 
-/* PodHopper Plus marketing page, description of the Cloud Storage feature */
-"plus_marketing_updated_cloud_storage_description" = "Upload your files to cloud storage and have it available everywhere";
-
-/* PodHopper Plus marketing page, description of the Desktop Apps feature */
-"plus_marketing_updated_desktop_apps_description" = "Listen in more places with our Windows, macOS and Web apps";
-
-/* PodHopper Plus marketing page, title of the Desktop and web apps feature */
-"plus_marketing_desktop_apps_title" = "Desktop & web apps";
-
 /* PodHopper Plus marketing page, learn more button. Note that PodHopper is a proper noun and shouldn't be translated */
 "plus_marketing_learn_more_button" = "Learn more about PodHopper Plus";
 
-/* PodHopper Plus marketing page, the main description of PodHopper Plus */
-"plus_marketing_main_description" = "Get personal, and get distributed, all at once. Upload your personal audio files to our cloud servers, access your account via our web player, and make the app yours.";
-
-/* PodHopper Plus marketing page, title of the Themes & Icons feature */
-"plus_marketing_themes_icons_title" = "Themes & Icons";
-
 /* PodHopper Plus marketing page, title of the Apple Watch & Wear OS apps feature */
 "plus_marketing_watch_playback_title" = "Apple Watch & Wear OS apps";
-
-/* PodHopper Plus marketing page, title of the Folders and Bookmarks feature */
-"plus_marketing_folders_and_bookmarks_title" = "Folders & Bookmarks";
 
 /* PodHopper Plus marketing page, title of the Bookmarks feature */
 "plus_marketing_bookmarks_title" = "Bookmarks";
@@ -1735,67 +1336,8 @@
 /* PodHopper Plus marketing page, title of the Folders feature */
 "plus_marketing_folders_title" = "Folders";
 
-/* PodHopper Plus marketing page, description of the Folders feature */
-"plus_marketing_folders_description" = "Create folders to organise your podcast collection.";
-
-/* PodHopper Plus marketing page, description of the Folders feature */
-"plus_marketing_updated_folders_description" = "Organise your podcasts in folders, and keep them in sync across all your devices.";
-
-/* PodHopper Plus marketing page, title of the hide ads feature */
-"plus_marketing_hide_ads_title" = "Hide Ads";
-
-/* PodHopper Plus marketing page, description of the hide ads feature */
-"plus_marketing_hide_ads_description" = "Ad-free experience which gives you more of what you love and less of what you don't";
-
 /* PodHopper Plus marketing page, description of the Up Next Shuffle feature */
 "plus_marketing_up_next_shuffle" = "Up Next Shuffle";
-
-/* Informational message informing the user that their recurring payments for Plus have been canceled. */
-"plus_payment_canceled" = "Payment Cancelled";
-
-/* Label that goes along with the yearly subscription used to indicate that the yearly plan is the best overall value. */
-"plus_payment_frequency_best_value" = "Best Value";
-
-/* Informational label that's below the monthly price of PodHopper Plus. This label sits below a localized price. */
-"plus_per_month" = "per month";
-
-/* The price of PodHopper Plus per month. '%1$@' is a localized monthly price. */
-"plus_price_per_month" = "%1$@ / monthly";
-
-/* Error message informing the user the promotion code has expired */
-"plus_promotion_expired" = "Promotion Expired or Invalid";
-
-/* A nudge to ask the user to continue the sign up process even though they encountered an error. */
-"plus_promotion_expired_nudge" = "You’re welcome to sign up for PodHopper Plus anyway, create a regular account, or just dive right in.";
-
-/* Error message informing the user the promotion code has already been used */
-"plus_promotion_used" = "Code already used";
-
-/* Title for the screen to allow the user to choose between a monthly or yearly subscription. */
-"plus_select_payment_frequency" = "Select Payment Frequency";
-
-/* Message informing the user that their PodHopper Plus subscription is managed by Apple's system and needs to be managed there. */
-"plus_subscription_apple" = "Your subscription is managed by the Apple App Store";
-
-/* Message informing the user where to manage their PodHopper Plus subscription managed by Apple. */
-"plus_subscription_apple_details" = "To cancel your subscription, you’ll need to cancel via Settings.";
-
-/* Message informing the user when their PodHopper Plus subscription will expire. %1$@ is a placeholder for the expiration date. */
-"plus_subscription_expiration" = "PLUS EXPIRES IN %1$@";
-
-"subscription_expires_in" = "Expires in %1$@";
-
-/* Message informing the user that their PodHopper Plus subscription is managed by Google's system and needs to be managed there. */
-"plus_subscription_google" = "It looks like you subscribed to PodHopper Plus from an Android device";
-
-/* Message informing the user where to manage their PodHopper Plus subscription managed by Google. */
-"plus_subscription_google_details" = "To cancel your subscription, you’ll need to cancel via Settings.";
-
-/* Message informing the user that their PodHopper Plus subscription is managed by Web's system and needs to be managed there. */
-"plus_subscription_web" = "It looks like you subscribed to PodHopper Plus from the web";
-
-/* Message informing the user where to manage their PodHopper Plus subscription managed by Web. */
-"plus_subscription_web_details" = "To cancel your subscription, you’ll need to cancel via Pocketcasts.com.";
 
 /* Feature of PodHopper plus, Themes and icons. Themes for changing the way the app looks, icons to change the icon shown on your home screen */
 "plus_feature_themes_icons" = "Extra themes & icons";
@@ -1815,14 +1357,8 @@
 /* Label of a button to subscribe to Patron. Do not translate "Plus". */
 "plus_subscribe_to" = "Subscribe to Plus";
 
-/* Label of a button to skip subscring to any plan */
-"plus_skip" = "Skip";
-
 /* Label of a button prompting the user to start free trial */
 "plus_start_my_free_trial" = "Start my free trial";
-
-/* Sublabel of a button informing the trial duration and the price after. Eg.: "Try 1 month, then $99.99 per year" */
-"plus_start_trial_duration_price" = "Try %1$@, then %2$@";
 
 /* Description of the Patron plan. Do not translate "Patron". */
 "patron_description" = "Become a PodHopper Patron and help us continue to deliver the best podcasting experience available.";
@@ -2007,26 +1543,8 @@
 /* Format used to show the Season number of a podcast. '%1$@' is a placeholder for the Season number. */
 "podcast_season_format" = "Season %1$@";
 
-/* Prompt to allow the user to share the currently selected episode. */
-"podcast_share_episode" = "Share Link to Episode";
-
 /* Error message used when there are no available apps that can accept the podcast file. */
 "podcast_share_episode_error_msg" = "You don't have any apps installed that will accept this file";
-
-/* Error message for when a podcast can't be found after it has been shared. */
-"podcast_share_error_msg" = "The podcast author may have removed it since this link was shared.";
-
-/* Error title for when a podcast can't be found after it has been shared. */
-"podcast_share_error_title" = "Unable To Find Episode";
-
-/* Progress message shown while the users curated list is being synced to the server. */
-"podcast_share_list_creating" = "Creating list...";
-
-/* Placeholder for the description of the podcast list. Used when users create a curated list of podcasts. This item is optional. */
-"podcast_share_list_description" = "Description (optional)";
-
-/* Placeholder for the name of the podcast list. Used when users create a curated list of podcasts. */
-"podcast_share_list_name" = "List Name";
 
 /* Option to share the episode file to other apps. */
 "podcast_share_open_file" = "Open File in...";
@@ -2066,9 +1584,6 @@
 
 /* Indicates that the updates to the podcast will end on the specified date. '%1$@' is a placeholder for date that the updates will end. */
 "podcast_updates_ends" = "Updates ends: %1$@";
-
-/* Confirmation option to upload the selected file. Used in tandem with a notice that the user is not on WiFi. */
-"podcast_upload_confirmation" = "Upload Now";
 
 /* Indicates that a file is being uploaded and includes the completed percentage. '%1$@' is a placeholder for a localized percentage that has been uploaded so far. */
 "podcast_uploading" = "Uploading... %1$@";
@@ -2145,9 +1660,6 @@
 /* A common string used throughout the app. Refers to Podcasts in the plural form as well as the Podcasts screen. */
 "podcasts_plural" = "Podcasts";
 
-/* Prompt to open the menu to share your podcasts list. */
-"podcasts_share" = "Share Podcasts";
-
 /* Presents the podcasts with small podcast artwork tiles. */
 "podcasts_small_grid" = "Small Grid";
 
@@ -2166,22 +1678,7 @@
 /* The percentage of file storage space that is currently being used. '%1$@' is a placeholder for a localized percentage. */
 "profile_percent_full" = "%1$@ Full";
 
-/* Prompt to allow the user to reset their account password. */
-"profile_reset_password" = "Reset Password";
-
-/* Notice informing the user that the email to reset their password is being prepared to be sent. */
-"profile_sending_reset_email" = "Sending Reset Email";
-
-/* Notice informing the user that the email to reset their password has been successfully sent. This serves as the message body for an alert accompanied with a title. ':)' is meant to be ASCII art for a happy face. */
-"profile_sending_reset_email_conf_msg" = "Check your email :)";
-
 /* */
-/* Notice informing the user that the email to reset their password has been successfully sent. This serves as the title for an alert. */
-"profile_sending_reset_email_conf_title" = "Password Reset Link Sent";
-
-/* Notice informing the user that the attempt to send the password reset email has failed. */
-"profile_sending_reset_email_failed" = "Failed to send reset email, please try again later.";
-
 /* Displays the number of files for when there is a single file. */
 "profile_single_file" = "1 File";
 
@@ -2238,9 +1735,6 @@
 
 /* Hint text in the pull to refresh custom control. Provides a notice that files are being synced with the server. */
 "refresh_control_refreshing_files" = "REFRESHING FILES";
-
-/* Hint text in the pull to refresh custom control. Provides a prompt to release the control to trigger the refresh. */
-"refresh_control_release_to_refresh" = "RELEASE TO REFRESH";
 
 /* Hint text in the pull to refresh custom control. Informs the user that the sync has failed. ':(' is meant as sad face ASCII art. */
 "refresh_control_sync_failed" = "SYNC FAILED :(";
@@ -2464,15 +1958,6 @@
 /* A common string used throughout the app. Refers to the Auto Download settings menu */
 "settings_auto_download" = "Auto Download";
 
-/* Label indicating the number of selected filters. '%1$@' is a placeholder for the number of filters selected. */
-"settings_auto_downloads_filters_selected_format" = "%1$@ filters selected";
-
-/* Label indicating the number of selected filters. This is the singular form for an accompanying plural option. */
-"settings_auto_downloads_filters_selected_singular" = "1 filter selected";
-
-/* Label indicating no filters have been selected. */
-"settings_auto_downloads_no_filters_selected" = "No Filters Selected";
-
 /* Label indicating the number of selected playlists. '%1$@' is a placeholder for the number of playlists selected. */
 "settings_auto_downloads_playlists_selected_format" = "%1$@ Playlists Selected";
 
@@ -2491,9 +1976,6 @@
 /* Label indicating the number of selected podcasts. This is the singular form for an accompanying plural option. */
 "settings_auto_downloads_podcasts_selected_singular" = "1 podcast selected";
 
-/* Subtitle explaining the toggle to auto download the top episodes of a filter. */
-"settings_auto_downloads_subtitle_filters" = "Download the top episodes in a filter.";
-
 /* Subtitle explaining the toggle to auto download the top episodes of a playlist. */
 "settings_auto_downloads_subtitle_playlists" = "Download the top episodes in a playlist.";
 
@@ -2502,9 +1984,6 @@
 
 /* Subtitle explaining the toggle to auto download items in the Up Next Queue. */
 "settings_auto_downloads_subtitle_up_next" = "Download episodes added to Up Next.";
-
-/* Section Header for selecting the options for setting the app badge based on the user's filters. */
-"settings_badge_filter_header" = "EPISODE FILTER COUNT";
 
 /* Section Header for selecting the options for setting the app badge based on the user's smart playlists. */
 "settings_badge_smart_playlist_header" = "SMART PLAYLIST EPISODE COUNT";
@@ -2674,12 +2153,6 @@
 /* Subtitle explaining the toggle to publish chapter titles. */
 "settings_general_publish_chapter_titles_subtitle" = "If on, this will send chapter titles over Bluetooth and other connected devices instead of the episode title.";
 
-/* Setting toggle to change the behavior of the skip button on external devices. */
-"settings_general_remote_skips_chapters" = "Remote Skips Chapters";
-
-/* Subtitle explaining the toggle to change the behavior of the skip button on external devices. */
-"settings_general_remote_skips_chapters_subtitle" = "When enabled and an episode has chapters, pressing the skip button in your car or headphones will skip to the next chapter.";
-
 /* Prompt to ask the user if they'd like to remove the grouping from all podcasts. */
 "settings_general_remove_groups_apply_all" = "Would you like to change all your existing podcasts to be not be grouped as well?";
 
@@ -2725,15 +2198,6 @@
 /* A common string used throughout the app. Refers to the Help & Feedback settings menu */
 "settings_help" = "Help & Feedback";
 
-/* Title for the screen that manages the importing and exporting of podcasts. */
-"settings_import_export" = "Import / Export";
-
-/* Informs the user that the current podcast is included in one filter. '%1$@' is a placeholder for the number of filters this podcast is included in. */
-"settings_in_filters_plural_format" = "Included In %1$@ Filters";
-
-/* Informs the user that the current podcast is included in one filter. This is the singular form of an accompanying plural string. */
-"settings_in_filters_singular" = "Included In 1 Filter";
-
 /* Informs the user that the current podcast is included in more Smart Playlists. '%1$@' is a placeholder for the number of filters this podcast is included in. */
 "settings_in_smart_playlists_plural_format" = "Included In %1$@ Smart Playlists";
 
@@ -2746,17 +2210,11 @@
 /* A message accompanying the settings for inactive episodes explaining what is considered an inactive episode. */
 "settings_inactive_episodes_msg" = "Inactive episodes are episodes you haven't played or downloaded in the time you specify above. Downloads are removed when the episode is archived.";
 
-/* Informs the user that the current podcast isn't included in any filters. */
-"settings_not_in_filters" = "Not Included In Any Filters";
-
 /* Informs the user that the current podcast isn't included in any playlists. */
 "settings_not_in_smart_playlists" = "Not Included In Any Smart Playlists";
 
 /* A common string used throughout the app. Refers to the Notifications settings menu. */
 "settings_notifications" = "Notifications";
-
-/* App badge choice to have the badge reflect the filter count */
-"settings_notifications_filter_count" = "Filter count";
 
 /* App badge choice to have the badge reflect the smart playlist count */
 "settings_notifications_smart_playlist_count" = "Smart Playlist count";
@@ -2764,20 +2222,11 @@
 /* Subtitle explaining what notifications to expect when you enable notifications. */
 "settings_notifications_subtitle" = "Notifies you when a new episode is available. Also useful for improving the reliability of auto downloads.";
 
-/* A common string used throughout the app. Refers to the Import/Export OPML settings menu */
-"settings_opml" = "Import/Export OPML";
-
 /* Provides a prompt for the user to configure the playback speed options. */
 "settings_play_speed" = "Play Speed";
 
-/* Informational label breaking down the pricing structure for PodHopper Plus. '%1$@' is a placeholder for the localized price if paid per month, '%2$@' is a placeholder for the localized price if paid per year */
-"settings_plus_pricing_format" = "%1$@ per month / %2$@ per year";
-
 /* Title for the options to configure the queue position when a podcast is set to be auto added to the up next queue. */
 "settings_queue_position" = "Position in Queue";
-
-/* Prompt to select a filter */
-"settings_select_filter_singular" = "Select Filter";
 
 /* Prompt to select a playlist */
 "settings_select_playlist_singular" = "Select Playlist";
@@ -2790,9 +2239,6 @@
 
 /* Prompt to select smart playlists */
 "settings_select_smart_playlists_plural" = "Select Smart Playlists";
-
-/* Option for the filter Siri Shortcut. This sets the app to open the filter when the shortcut is triggered. */
-"settings_shortcuts_filter_open_filter" = "Open Filter";
 
 /* Option for the filter Siri Shortcut. This sets the app to open the playlist when the shortcut is triggered. */
 "settings_shortcuts_filter_open_playlist" = "Open Playlist";
@@ -2818,9 +2264,6 @@
 /* Section header for the enabled Siri shortcuts. */
 "settings_siri_shortcuts_enabled" = "Enabled shortcuts";
 
-/* Option to create a Siri Shortcut to a specific filter. */
-"settings_siri_shortcuts_specific_filter" = "Shortcut to a specific filter";
-
 /* Option to create a Siri Shortcut to a specific playlist. */
 "settings_siri_shortcuts_specific_playlist" = "Shortcut to a specific playlist";
 
@@ -2835,9 +2278,6 @@
 
 /* Fun informational message about the skip options available in the settings. */
 "settings_skip_msg" = "Skip intro and outro music like the power user you were born to be.";
-
-/* Title for the button that open a page to change the avatar(a.k.a. profile picture). */
-"settings_change_avatar" = "Change Avatar";
 
 /* A common string used throughout the app. Refers to the Stats settings menu */
 "settings_stats" = "Stats";
@@ -2902,17 +2342,11 @@
 /* Prompt for the option format to select the number of episodes to auto downloads for the Apple Watch app. '%1$@' is a placeholder for the number of items to download */
 "settings_watch_episode_number_option_format" = "Top %1$@";
 
-/* Label displayed right next the button to opt-in/out for Analytics tracking */
-"settings_collect_information" = "Collect information";
-
 /* Label displayed next to the toggle to opt-in/out for First-Party Analytics tracking */
 "settings_first_party_analytics" = "First-party analytics";
 
 /* Section header for analytics in privacy settings */
 "settings_analytics" = "Analytics";
-
-/* Label displayed next to the toggle to opt-in/out for First-Party Analytics tracking */
-"settings_third_party_analytics" = "Third-party analytics";
 
 /* Additional information about how the information collected is and how it's used */
 "settings_collect_information_additional_information" = "Allowing us to collect analytics helps us build a better app. We understand if you would prefer not to share this information.";
@@ -2920,68 +2354,8 @@
 /* Label displayed below the toggle to opt-in/out for First-Party Analytics tracking */
 "settings_allow_collection_first_party" = "Allow us to collect analytics.";
 
-/* Label displayed below the toggle to opt-in/out for Third-Party Analytics tracking */
-"settings_allow_collection_third_party" = "Allow us to use trusted third-party services to collect anonymous data.";
-
 /* Label for an input that takes the user to the privacy policy */
 "settings_read_privacy_policy" = "Read privacy policy";
-
-/* Title of the status page, to check the status of the user's connection. */
-"settings_connection_status" = "Connection Status";
-
-/* Label explaining the purpose of the Status Page */
-"settings_status_description" = "Check your connection with important services. This helps diagnose issues with your network, proxies, VPN, ad-blocking and security apps.";
-
-/* Button that starts the diagnostic in the Status Page */
-"settings_status_run" = "Run now";
-
-/* Title for the service being checked, in this case, the Internet connection. */
-"settings_status_internet" = "Internet";
-
-/* Description for the Internet check. */
-"settings_status_internet_description" = "Check the status of your network.";
-
-/* Failure message for the Internet check. */
-"settings_status_internet_failure_message" = "Unable to connect to the internet. Try connecting on a different network (e.g. mobile data).";
-
-/* Title for the service being checked, in this case, whether the network is considered expensive. */
-"settings_status_expensive_network" = "Unmetered Wifi";
-
-/* Description for the expensive network check. */
-"settings_status_expensive_network_description" = "If successful, this network will be used for downloads on Unmetered Wifi.";
-
-/* Failure message for the expensive network check. */
-"settings_status_expensive_network_failure_message" = "Your current network is marked as expensive. Try switching to Wi-Fi or disabling Low Data Mode.";
-
-/* Title for the service being checked, in this case, the Pocket Cast's Refresh Service. */
-"settings_status_refresh_service" = "Refresh Service";
-
-/* Description for the Refresh Service check. */
-"settings_status_refresh_service_description" = "The service used to find new episodes.";
-
-/* Failure message for a service check. */
-"settings_status_service_ad_blocker_help_singular" = "The most common cause is that you have an ad-blocker configured on your phone or network. You’ll need to unblock the domain %1$@";
-
-/* Title for the service being checked, in this case, the Pocket Cast's Account Service. */
-"settings_status_account_service" = "Account Service";
-
-/* Description for the Account Service check. */
-"settings_status_account_service_description" = "The service used to store episode progress, subscriptions, filters, etc.";
-
-/* Title for the service being checked, in this case, the Pocket Cast's Discover & Search. */
-"settings_status_discover" = "Discover & Search";
-
-/* Description for the Discover & Search check. */
-"settings_status_discover_description" = "The discover section of the app, including podcast search.";
-
-/* Title for the service being checked, in this case, a podcast host URL. */
-"settings_status_host" = "Common Podcast Hosts";
-
-/* Description for the podcast host check. */
-"settings_status_host_description" = "Podcast authors host episode files in various hosting providers not managed by PodHopper.";
-
-/* Failure message for the podcast host check. */
-"settings_status_host_failure_message" = "The most common cause is that you have an ad-blocker configured on your phone or network. You’ll need to unblock this domain to download podcasts. Please note PodHopper doesn’t host or choose where podcasts are hosted, that’s up to the author of the show and is out of our control.";
 
 /* Title for the options for the user to configure their account. */
 "setup_account" = "Set Up Account";
@@ -2994,27 +2368,6 @@
 
 /* A common string used throughout the app. Option to share the episode at the current playback position. */
 "share_current_position" = "Current Position";
-
-/* A common string used throughout the app. Option to share the episode at the current playback position. */
-"share_episode_at" = "Share episode at %1$@";
-
-/* A message shown when a share link is copied to the clipboard */
-"share_copied_to_clipboard" = "Link copied to clipboard";
-
-/* A title shown for the share action which displays the system share sheet */
-"share_more_actions" = "More";
-
-/* Message indicating that the process to subscribe to a podcast list is in progress. */
-"share_list_subscribing" = "Subscribing...";
-
-/* Message indicating that all of the podcasts have been selected. */
-"share_podcasts_all_selected" = "ALL SELECTED";
-
-/* Title for the screen to finalize options to create a list of podcasts to share. */
-"share_podcasts_create_list" = "Create List";
-
-/* Message indicating that the process to share a podcast list is in progress. */
-"share_podcasts_sharing" = "Sharing...";
 
 /* A message shown when trying to share a private podcast, which is disabled. */
 "share_podcast_private_not_available" = "Sharing is not available for private podcasts";
@@ -3082,59 +2435,14 @@
 /* Generic save button */
 "share_profile_save" = "Save";
 
-/* Error message for when sharing fails. */
-"share_podcasts_sharing_failed_msg" = "Something went wrong creating your share page";
-
-/* Title indicating that sharing has failed. */
-"share_podcasts_sharing_failed_title" = "Sharing Failed";
-
 /* A common string used throughout the app. Title for the screen to select multiple podcasts to share. */
 "share_select_podcasts" = "Select Podcasts";
-
-/* Progress indicator informing the user that the item that has been sent to them via share is loading. */
-"shared_item_loading" = "Loading Shared Item...";
-
-/* Title for the screen that shows the podcasts from a shared list of podcasts. */
-"shared_list" = "Shared List";
-
-/* Confirmation option presented when a user selects to subscribe to all podcasts in a list. */
-"shared_list_subscribe_conf_action" = "Heck Yes!";
-
-/* Message for a dialog presented when a user selects to subscribe to all podcasts in a list. '%1$@' is a placeholder for the number of podcasts that will be subscribed to. */
-"shared_list_subscribe_conf_msg" = "Are you sure you want to subscribe to %1$@ podcasts?";
-
-/* Title for a dialog presented when a user selects to subscribe to all podcasts in a list. */
-"shared_list_subscribe_conf_title" = "That's a lot of podcasts!";
 
 /* A common string used throughout the app. Refers to the Notes (show notes) tab in the player. */
 "show_notes" = "Notes";
 
 /* A common string used throughout the app. Prompt for the user to sign into their account. */
 "sign_in" = "Sign In";
-
-/* Prompt for the user to sign into their account or create an account */
-"sign_in_prompt" = "Sign in or create account";
-
-/* Message shown below the sign in prompt to give users more details about what it does */
-"sign_in_message" = "Save your podcast subscriptions in the cloud and sync your progress with other devices.";
-
-/* Button text to go to the forgot password page */
-"sign_in_forgot_password" = "I forgot my password";
-
-/* Email address field prompt */
-"sign_in_email_address_prompt" = "Email Address";
-
-/* Password field prompt */
-"sign_in_password_prompt" = "Password";
-
-/* A label dividing the email with social login options. Indicating a separation of two separate sections. */
-"sign_in_divider_label" = "OR";
-
-/* Label for option to show the password contents in the log in form. */
-"sign_in_show_password_label" = "Hide Password";
-
-/* Label for option to hide the password contents in the log in form. */
-"sign_in_hide_password_label" = "Show Password";
 
 /* Label indicating which account the user is signed into. The accounts email address is displayed in close proximity to this label. */
 "signed_in_as" = "SIGNED IN AS";
@@ -3238,30 +2546,6 @@
 /* Label showing that Sleep Timer will activate after a given number of episodes. %1$@ is the number of episodes and it's always bigger than 1. */
 "sleep_timer_sleeping_after" = "Sleeping in %1$@ episodes";
 
-/* Prompt to confirm when presented with a connection prompt. Used when connecting to a Sonos speaker. */
-"sonos_connect_action" = "CONNECT";
-
-/* Prompt to connect to a Sonos speaker. 'Sonos' refers the the speaker manufacturer. */
-"sonos_connect_prompt" = "Connect To Sonos";
-
-/* Notice indicating that the app is attempting to make a connection to a Sonos device. 'Sonos' refers the the speaker manufacturer. */
-"sonos_connecting" = "CONNECTING...";
-
-/* Notice indicating that the app failed to make a connection to a Sonos device because the accounts weren't successfully linked. 'Sonos' refers the the speaker manufacturer. */
-"sonos_connection_failed_account_link" = "Unable to link PodHopper account at this time. Please try again later.";
-
-/* Notice indicating that the app failed to make a connection to a Sonos device because because it couldn't detect the Sonos App. 'Sonos' refers the the speaker manufacturer. */
-"sonos_connection_failed_app_missing" = "Unable to open Sonos app to complete linking process.";
-
-/* Notice indicating that the app failed to make a connection to a Sonos device. 'Sonos' refers the the speaker manufacturer. */
-"sonos_connection_failed_title" = "Linking Failed";
-
-/* Notice informing the users about what data will be provided to the Sonos speaker upon connection. 'Sonos' refers the the speaker manufacturer. */
-"sonos_connection_privacy_notice" = "Connecting to Sonos will allow the Sonos app to access your episode information.\n\nYour email address, password and other sensitive items are never shared.";
-
-/* Notice informing the users they need PodHopper account and need to sign in before connecting to the Sonos speaker. 'Sonos' refers the the speaker manufacturer. */
-"sonos_connection_sign_in_prompt" = "You need to have a PodHopper account before you can connect with Sonos.";
-
 /* A common string used throughout the app. Prompt for the sort option menus. */
 "sort_by" = "Sort By";
 
@@ -3352,50 +2636,11 @@
 /* Label indicating that the user is currently following to the selected podcast. */
 "unfollow" = "Unfollow";
 
-/* Prompt to subscribe to all of the selected podcast. */
-"subscribe_all" = "Subscribe All";
-
-/* Title for the subscription details page informing the users that the selected subscription has been canceled. */
-"subscription_cancelled" = "Subscription Cancelled";
-
-/* Message on the subscription details page informing the users when the canceled subscription will officially end. '%1$@' is a placeholder for the date in which the subscription expires. */
-"subscription_cancelled_msg" = "Subscription Cancelled %1$@ ";
-
-/* A common string used throughout the app. Thanks the user for their support. Used for paid feeds and PodHopper Plus. */
-"subscriptions_thank_you" = "Thanks for your support!";
-
 /* A label used to identify that a user is a supporter of the selected podcast. */
 "supporter" = "Supporter";
 
-/* Menu option to open details on available podcast supporter contribution options. */
-"supporter_contributions" = "Supporter Contributions";
-
-/* Subtitle to prompt the user to review their supports contribution details for more information. */
-"supporter_contributions_subtitle" = "Check contributions for details";
-
-/* Informational message informing the user that their recurring payments for supporter contributions have been canceled. */
-"supporter_payment_canceled" = "Supporter: Cancelled";
-
-/* Notice the sync failed due to an account error. */
-"sync_account_error" = "Check your username and password.";
-
-/* Sync status update notifying the user that the app is logged in. */
-"sync_account_login" = "Logged in...";
-
 /* A common string used throughout the app. Used to indicate that the sync process has failed. */
 "sync_failed" = "Sync failed";
-
-/* Notice that the app is syncing the up next and history for the account. */
-"sync_in_progress" = "Syncing Up Next and History";
-
-/* Progress message indicating the total number of podcasts being synced. '%1$@' serves as a placeholder for the current number of synced podcasts. '%2$@' serves as a placeholder for the total number of podcasts to sync. */
-"sync_progress" = "Podcast %1$@ of %2$@";
-
-/* Progress message indicating the total number of podcasts that have been synced. '%1$@' serves as a placeholder for the current number of synced podcasts, will be more than one. */
-"sync_progress_unknown_count_plural_format" = "Synced %1$@ podcasts";
-
-/* Progress message indicating the total number of podcasts that have been synced. Used in the singular case. */
-"sync_progress_unknown_count_singular" = "Synced 1 podcast";
 
 /* A common string used throughout the app. Used to indicate that the sync process in running. */
 "syncing" = "Syncing...";
@@ -3427,9 +2672,6 @@
 /* Theme name for the Light Contrast theme. */
 "theme_light_contrast" = "Light Contrast";
 
-/* Theme name for the Radioactivity theme. */
-"theme_radioactivity" = "Radioactivity";
-
 /* Theme name for the Rosé theme. */
 "theme_rose" = "Rosé";
 
@@ -3445,9 +2687,6 @@
 /* A common string used throughout the app. Title option to place the item at the top of the queue. */
 "top" = "Top";
 
-/* Label indicating that the trial period for the subscription or promotion has ended. */
-"trial_finished" = "Trial Finished";
-
 /* A common string used throughout the app. Catch all prompt to suggest to the user to try the the task again. */
 "try_again" = "Try Again";
 
@@ -3462,9 +2701,6 @@
 
 /* A common string used throughout the app. Prompt to unsubscribe from the selected podcast(s). */
 "unsubscribe" = "Unsubscribe";
-
-/* A common string used throughout the app. Prompt to unsubscribe from all of the selected podcast. */
-"unsubscribe_all" = "Unsubscribe All";
 
 /* A common string used throughout the app. Title for the prompt to display the queue of episodes to play next. */
 "up_next" = "Up Next";
@@ -3508,9 +2744,6 @@
 /* Prompt in the Apple Watch App to open episode details. */
 "watch_episode_details" = "Episode Details";
 
-/* Prompt in the Apple Watch app to return to the Main Menu */
-"watch_main_menu" = "Main Menu";
-
 /* Label in the Apple Watch app informing the user that they don't have any episodes in their selected list. */
 "watch_no_episodes" = "No Episodes";
 
@@ -3529,23 +2762,11 @@
 /* Subtitle text used on the now playing screen in the Watch App. Indicates there is nothing palying or paused in the app. Please leave the "\\n\\n" part in there, that's a new line indicator. */
 "watch_nothing_playing_subtitle" = "Enjoy the silence, or find something new to play.\n\nHonestly both are solid choices. 🙂";
 
-/* Information label providing a brief explanation of PodHopper Plus. */
-"watch_source_plus_info" = "Download direct to your watch and listen without your phone. Check out PodHopper Plus on your phone app, or on the web.";
-
 /* Message detailing where the audio will play from when selecting the source on the Apple Watch */
 "watch_source_msg" = "Podcasts will play from the speaker that the chosen device is connected to";
 
-/* Button that allows the user to manually trigger a refresh of their profile from the watch app. */
-"watch_source_refresh_account" = "Refresh Account";
-
-/* Information label accompanying the Refresh Account button. */
-"watch_source_refresh_account_info" = "If you have a PodHopper Plus account, refresh account to attempt to enable it";
-
 /* Button that allows the user to manually trigger a refresh of their data from the watch app. */
 "watch_source_refresh_data" = "Refresh Data";
-
-/* Information label informing users if they want to sign in to the Watch app they need to do that from the phone app. */
-"watch_source_sign_in_info" = "Sign in or create an account on your phone";
 
 /* Apple Watch complication prompt to tap the control to open the watch app. */
 "watch_tap_to_open" = "Tap to open";
@@ -3555,9 +2776,6 @@
 
 /* Subtitle for the up next screen when a user has no episode queued up to play. */
 "watch_up_next_no_items_subtitle" = "You can queue episodes to play next from the episode details screen, or adding them on your phone.";
-
-/* Text on the about page button to tell people's what's new in this version. %1$@ is placeholder for the version number, for example 7.1. */
-"whats_new_in_version" = "What's New In %1$@";
 
 /* Title for the announcement screen that calls out new features. */
 "whats_new" = "What's New";
@@ -3643,21 +2861,6 @@
 /* The heading shown for the PodHopper Newsletter */
 "pocket_casts_welcome_newsletter_title" = "Get the Newsletter";
 
-/* Title for page one of the 7.20 what's new dialog. */
-"whats_new_page_one_title_7_20" = "Folders";
-
-/* What's new for 7.20 description for page one. Please leave the "\\n\\n" part in there, these are new line indicator. */
-"whats_new_page_one_7_20" = "If you love podcasts half as much as we do, you probably have a lot of them. If you're a PodHopper Plus subscriber, you can now sort these into folders and file them into neat groups.\n\nThanks to your support, your Home Screen has never looked better!";
-
-/* Title for page two of the 7.20 what's new dialog. */
-"whats_new_page_two_title_7_20" = "Home Grid Syncing";
-
-/* What's new for 7.20 description for page two. Please leave the "\\n\\n" part in there, these are new line indicator.*/
-"whats_new_page_two_7_20" = "We now sync your Home Screen (including your sort options) across devices! And you can drag and drop in the Web Player now as well.\n\nThis means you can rest easier, knowing the hard work you put in to arranging your podcasts page is being synced to your account.";
-
-/* Text for a link that goes to our blog where people can read more about the current update */
-"whats_new_blog_more_link_text" = "Read more about this update on our blog";
-
 /* Promotional information for PodHopper Plus. Please note that "PodHopper Plus" should not be translated because it's a product name */
 "plus_promo_paragraph" = "Get PodHopper Plus to unlock this feature, plus lots more!";
 
@@ -3668,9 +2871,6 @@
 /* Text for a button where you learn more about a feature */
 "learn_more" = "Learn More";
 
-/* Heading for things that require PodHopper Plus to work. Please note that "PodHopper Plus" should not be translated because it's a product name */
-"plus_required_feature" = "This feature requires PodHopper Plus";
-
 /* About page text to ask the user to rate our app in the App Store */
 "about_rate_us" = "Rate Us";
 
@@ -3679,15 +2879,6 @@
 
 /* Button that takes people to our website */
 "about_website" = "Website";
-
-/* Button that takes you to other Automattic apps, eg: our Automattic family of apps */
-"about_a8c_family" = "Automattic Family";
-
-/* Main callout to come get a job with Automattic */
-"about_work_with_us" = "Work With Us";
-
-/* Secondary text on our come with with us call out */
-"about_join_from_anywhere" = "Join From Anywhere";
 
 /* Button that takes the user to legal and more screen */
 "about_legal_and_more" = "Legal and More";
@@ -3700,24 +2891,6 @@
 
 /* Button that takes the user to the Acknowledgements screen */
 "about_acknowledgements" = "Acknowledgements";
-
-/* Text sent when sharing a link to our app with other people */
-"app_share_text" = "Hey! Here is a link to download the PodHopper app. I'm really enjoying it and thought you might too.";
-
-/* Email change form current email label */
-"current_email_prompt" = "Current Email";
-
-/* Email change form new email address field prompt */
-"new_email_address_prompt" = "New Email Address";
-
-/* Password change form new password field prompt */
-"new_password_prompt" = "New Password";
-
-/* Password change form confirm new password field prompt */
-"confirm_new_password_prompt" = "Confirm New Password";
-
-/* Password change form current password field prompt */
-"current_password_prompt" = "Current Password";
 
 /* Voiceover label for creating a new folder */
 "folder_create_new" = "Create New Folder";
@@ -3830,29 +3003,8 @@
 /* A button title for the empty folder state which will open the Add Podcasts screen */
 "folder_empty_button_title" = "Add podcasts";
 
-/* Upsell dialog title label when a free trial is active, %1$@ refers to the duration of the trial (1 month) */
-"free_trial_title_label" = "Try Plus with %1$@ free";
-
-/* Upsell dialog free trial detail label that informs the user that they no payment is needed, and can cancel at anytime */
-"free_trial_detail_label" = "No Payment Now – Cancel Anytime";
-
 /* Upsell dialog confirmation button title when a free trial is active */
 "free_trial_start_button" = "Start Free Trial";
-
-/* Free trial terms where %1$@ refers to the trial duration (30 days) and %2$@ is the price after the trial ($0.99 / month) */
-"free_trial_pricing_terms" = "%1$@ free then %2$@";
-
-/* Free trial duration with the word free emphasized, %1$@ is the localize trial duration (1 month) */
-"free_trial_duration_free" = "%1$@ FREE";
-
-/* Pricing terms explaining how much will be charged after a free trial ends, %1$@ is the price ($0.99 / month) */
-"pricing_terms_after_trial" = "then %1$@";
-
-/* Free trial duration with the word free trial emphasized, %1$@ is the localized trial duration (1 month) */
-"free_trial_duration_free_trial" = "%1$@ FREE TRIAL";
-
-/* Title for a button that allows the user to subscrbe with a free trial */
-"free_trial_start_and_subscribe_button" = "Start Free Trial & Subscribe";
 
 /* Pricing terms explaining that the user will be charged after their free trial ends, %1$@ is the free trial duration (1 month), %2$@ is the start date of payments */
 "pricing_terms_after_trial_long" = "Recurring payments will begin after your %1$@ free trial (%2$@)";
@@ -3860,313 +3012,14 @@
 /* Pricing terms explaining that the user will have a discount in the first period then will pay full price, %1$@ is the full price, %2$@ the discount duration, %3$@ the date the user will pay full price */
 "pricing_terms_after_discount" = "Recurring payments at %1$@ after %2$@ (%3$@)";
 
-/* Subscription pricing format, %1$@ is the price, %2$@ is the subscription period */
-"subscription_frequency_pricing_format" = "%1$@ per %2$@";
-
 /* Monthly pricing format, %1$@ is the price */
 "plus_monthly_frequency_pricing_format" = "%1$@ per month";
 
 /* Yearly pricing format, %1$@ is the price */
 "plus_yearly_frequency_pricing_format" = "%1$@ per year";
 
-/* Payment failed error message */
-"plus_purchase_failed" = "It looks like there was a problem processing your payment. Please try again.";
-
-/* The title of the purchase promo */
-"plus_purchase_promo_title" = "Become a Plus member and unlock all PodHopper features";
-
-/* The title of the purchase promo for Patron. Do not translate Patron. */
-"patron_purchase_promo_title" = "Become a Patron member and unlock all PodHopper features";
-
-/* The purchase agreement terms, the %1$@, %2$@ are intended to be "Privacy Policy" and "Terms of Use" */
-"purchase_terms" = "By continuing, you agree to our %1$@ and %2$@";
-
-/* Title for the End of Year feature */
-"eoy_title" = "Your Year in Podcasts";
-
-/* A smaller title for the End of Year feature */
-"eoy_small_title" = "Year in Podcasts";
-
-/* A description of the End of Year feature */
-"eoy_description" = "See your top podcasts, categories, listening stats, and more. Share with friends and shout out your favorite creators!";
-
-/* Label of the End of Year call to action button */
-"eoy_view_year" = "View My 2023";
-
-/* Title for the Playback 2024 feature */
-"playback_2024_feature_title" = "Playback 2024 is here!";
-
-/* Description for the Playback 2024 feature */
-"playback_2024_feature_description" = "See your listening stats, top podcasts, and more.";
-
-/* A description of the Playback 2024 feature */
-"playback_2024_description" = "See your top podcasts, categories, listening stats and more. Share with friends and shout out your favourite creators!";
-
-/* Label of the Playback 2024 call to action buton */
-"playback_2024_view_year" = "View My Playback 2024";
-
-/* A description used to indicate the number of days and hours spent listening to podcasts in the last year */
-"playback_2024_listening_time_description" = "%1$@ total listening to podcasts";
-
-/* A title shown with the amount of time listened on the Longest Episode screen of Playback 2024 */
-"playback_2024_longest_episode_title" = "The longest episode you listened to was %1$@";
-
-/* A description shown on the Longest Episode screen of Playback 2024 with the episode title and podcast title */
-"playback_2024_longest_episode_description" = "It was \"%1$@\" from \"%2$@\".";
-
-/* A title shown in the button on the upsell screen to check out PodHopper Plus */
-"playback_2024_plus_upsell_button_title" = "Check out PodHopper Plus";
-
-/* A title shown in the upsell screen for PodHopper Plus subscription */
-"playback_2024_plus_upsell_title" = "There's more!";
-
-/* A description shown in the upsell screen for PodHopper Plus subscription */
-"playback_2024_plus_upsell_description" = "Support PodHopper subscribing to Plus and get more stats, plus Premium features like bookmarks, folders or preselect chapters!";
-
-/* A title shown in the Completion Rate screen for Playback 2024 */
-"playback_2024_completion_rate_title" = "You completion rate this year was %1$@";
-
-/* A description shown in the Completion Rate screen for Playback 2024 */
-"playback_2024_completion_rate_description" = "From the %1$@ episodes you started you listened fully to a total of %2$@.";
-
-/*A title used for the Playback 2024 Top Podcast screen */
-"playback_2024_top_spot_title" = "This was your top podcast in 2024";
-
-/* A title shown on the Ratings Playback 2024 screen showing a bar chart of your ratings */
-"playback_2024_ratings_title" = "Let’s see your ratings!";
-
-/* A description shown in Playback 2024 when the user has made ratings of 4-5/5 for Podcasts */
-"playback_2024_ratings_description_4_to_5" = "Wow, so many %1$@ star ratings! Thanks for sharing the love with your favorite creators.";
-
-/* A description shown in Playback 2024 when the user has only made ratings of 1-3/5 for Podcasts */
-"playback_2024_ratings_description_1_to_3" = "Thanks for sharing your feedback with the creator community";
-
-"playback_2024_top_spot_description" = "You listened to %1$@ episodes for a total of %2$@ of \"%3$@\".";
-
-/* A title shown on the Year over Year Comparison screen for a small decrease in listening time from 2023 in Playback 2024 */
-"playback_2024_year_over_year_compare_title_down_little" = "Compared to 2023, your listening time went down a little";
-
-/* A title shown on the Year over Year Comparison screen for a small increase in listening time from 2023 in Playback 2024 */
-"playback_2024_year_over_year_compare_title_up_little" = "Compared to 2023, your listening time went up a little";
-
-/* A title shown on the Year over Year Comparison screen for a large increase in listening time from 2023 in Playback 2024 */
-"playback_2024_year_over_year_compare_title_up_lot" = "Compared to 2023, your listening time went up a whopping %1$@";
-
-/* A title shown on the Year over Year Comparison screen for a large decrease in listening time from 2023 in Playback 2024 */
-"playback_2024_year_over_year_compare_title_down_lot" = "Compared to 2023, your listening time went down a whopping %1$@";
-
-/* A title shown on the Year over Year Comparison screen for a large increase in listening time from 2023 which exceeds 500% in Playback 2024 */
-"playback_2024_year_over_year_compare_title_up_over_500" = "Compared to 2023, your listening time went up more than %1$@";
-
-/* A title shown on the Year over Year Comparison screen for a large decrease in listening time from 2023 which exceeds 500% in Playback 2024 */
-"playback_2024_year_over_year_compare_title_down_over_500" = "Compared to 2023, your listening time went down more than %1$@";
-
-/* A title shown on the Year over Year Comparison screen for listening time which stayed the same from 2023 in Playback 2024 */
-"playback_2024_year_over_year_compare_title_same" = "Compared to 2023, your listening time stayed pretty consistent";
-
-/* A description shown on the Year over Year Comparison screen for listening time which stayed the same from 2023 in Playback 2024 */
-"playback_2024_year_over_year_compare_description_same" = "And they say consistency is the key to success... or something like that!";
-
-/* A title shown on the Year over Year Comparison screen for listening time which stayed the same from 2023 in Playback 2024 */
-"playback_2024_year_over_year_compare_description_down" = "Aaaah... there’s a life to be lived, right?";
-
-/* A title shown on the Year over Year Comparison screen for listening time which stayed the same from 2023 in Playback 2024 */
-"playback_2024_year_over_year_compare_description_up" = "Ready to top it in 2025?";
-
-/* A title shown in Playback 2024 when the user has not made any ratings. */
-"playback_2024_ratings_empty_title" = "Oh-oh! No podcast ratings to show you yet.";
-
-/* A description shown in Playback 2024 to describe the new Podcast Ratings feature */
-"playback_2024_ratings_empty_description" = "Did you know that you can rate shows now? Share the love for your favorite creators and help them get noticed!";
-
-/* A title shown on the Year over Year Comparison screen for a increase more than 500$ in listening time from 2023 in Playback 2024 */
-"playback_2024_year_over_year_compare_title_up_above_maximum" = "Compared to 2023, your listening time went up more than %1$@";
-
 /* Label of the End of Year dismiss button */
 "eoy_not_now" = "Not Now";
-
-/* End of Year card description that appears under Profile */
-"eoy_card_description" = "See your listening stats, top podcasts, and more.";
-
-/* Description that appears on the first story of the 2022 PodHopper wrap up (End of Year) */
-"eoy_story_intro_title" = "Let's celebrate your year of listening...";
-
-/* String telling the user how much time they listened to podcasts in 2022, %1$@ is a placeholder for the amount of time. */
-"eoy_story_listened_to" = "In 2022, you spent %1$@ listening to podcasts";
-
-/* Title of the listening time Story. */
-"eoy_story_listened_to_title" = "This was your total time listening to podcasts";
-
-/* Title of the listening time Story. */
-"eoy_story_listened_to_subtitle" = "We hope you loved every minute of it!";
-
-/* String telling the user how much time they listened to podcasts in 2022, %1$@ is a placeholder for the amount of time. */
-"eoy_story_listened_to_updated" = "This year, you spent %1$@ listening to podcasts";
-
-/* Text that appears when someone shares the listened to story to Twitter, for example. %1$@ is a placeholder for the amount of time. */
-"eoy_story_listened_to_share_text" = "I spent %1$@ listening to podcasts this year";
-
-/* String telling the user how much podcast categories they listened to podcasts in 2022, %1$@ is a placeholder a segment of text that contains the number of categories . */
-"eoy_story_listened_to_categories" = "You listened to %1$@ different categories this year";
-
-/* String telling the user how much podcast categories they listened to podcasts in 2022, %1$@ is a placeholder a segment of text that contains the number of categories . */
-"eoy_story_listened_to_categories_highlighted" = "You listened to %1$@ this year";
-
-/* String telling the user how much podcast categories they listened to podcasts in 2022, %1$@ is a placeholder for the number of different categories. */
-"eoy_story_listened_to_categories_text" = "%1$@ different categories";
-
-/* String prompting the user for the next story to check the most listened categories. */
-"eoy_story_listened_to_categories_subtitle" = "Let's take a look at some of your favorites...";
-
-/* Text that appears when someone shares the listened categories to story to Twitter, for example. %1$@ is a placeholder for the number of categories. */
-"eoy_story_listened_to_categories_share_text" = "I listened to %1$@ different categories in 2023";
-
-/* String telling the user how many podcasts and episodes they listened to this year, %1$@ is a placeholder for the number of podcasts and %2$@ is a placeholder for the number of episodes. */
-"eoy_story_listened_to_numbers" = "You listened to %1$@ different shows and %2$@ episodes in total";
-
-/* String telling the user how many podcasts and episodes they listened to this year, %1$@ is a placeholder for the number of podcasts and %2$@ is a placeholder for the number of episodes. */
-"eoy_story_listened_to_numbers_updated" = "You listened to %1$@ and %2$@";
-
-/* String telling the user how many podcasts they listened to this year, %1$@ is a placeholder for the number of podcasts*/
-"eoy_story_listened_to_podcast_text" = "%1$@ different podcasts";
-
-/* String telling the user how many episodes they listened to this year, %1$@ is a placeholder for the number number of episodes. */
-"eoy_story_listened_to_episodes_text" = "%1$@ episodes";
-
-/* Subtitle for the story containing number of podcasts and episodes played this year. Segway for the next story. */
-"eoy_story_listened_to_numbers_subtitle" = "But there was one you kept coming to...";
-
-/* Text that appear when someone share the listened numbers story to Twitter. %1$@ is a placeholder for the number of podcasts listened and %2$@ for the number of episodes. */
-"eoy_story_listened_to_numbers_share_text" = "I listened to %1$@ different podcasts and %2$@ episodes this year";
-
-/* Title for the story that display the most listened podcast by the user this year. %1$@ is a placeholder for the podcast title and %2$@ is a placeholder for the author. */
-"eoy_story_top_podcast" = "%1$@ was your most listened show in 2023";
-
-/* Subtitle for the story that display the most listened podcast by the user this year. %1$@ is a placeholder for the number of episodes and %2$@ is a placeholder for the listened time. */
-"eoy_story_top_podcast_subtitle" = "You listened to %1$@ episodes for a total of %2$@";
-
-/* Text that appear when someone share the top podcast of the year story to Twitter. %1$@ is the URL to the podcast. */
-"eoy_story_top_podcast_share_text" = "My favorite podcast this year! %1$@";
-
-/* Title for the story showing the top podcasts for the user in the current year. */
-"eoy_story_top_podcasts" = "Your Top Podcasts";
-
-/* Title for the story showing the top podcasts for the user in the current year. */
-"eoy_story_top_podcasts_title" = "And you were big on these shows too!";
-
-/* Subtitle for the story showing the top podcasts for the user in the current year. */
-"eoy_story_top_podcasts_subtitle" = "This is your top 5 most listened to in 2023";
-
-/* Text that appear when someone share the top 5 podcasts of the year story to Twitter. %1$@ is a link to the list of the top podcasts. */
-"eoy_story_top_podcasts_share_text" = "My top podcasts of the year! %1$@";
-
-/* Title of a list of podcasts created containing the user's top 5 podcasts of 2022. */
-"eoy_story_top_podcasts_list_title" = "My top podcasts of the year!";
-
-/* Title for the story showing the longest episode listened for the user in the current year. %1$@ is a placeholder for the episode title and %2$@ is a placeholder for the podcast title. */
-"eoy_story_longest_episode" = "The longest episode you listened to was %1$@";
-
-/* Title for the story showing the longest episode listened for the user in the current year. %1$@ is a placeholder for the duration of the episode. */
-"eoy_story_longest_episode_time" = "The longest episode\nyou listened to was\n%1$@";
-
-/* Title for the story showing the longest episode listened for the user in the current year. %1$@ is a placeholder for the title of the podcast for the longest episode. */
-"eoy_story_longest_episode_subtitle" = "It was none other than “%1$@” from “%2$@”";
-
-/* Subtitle for the story showing the longest episode listened for the user in the current year. %1$@ is a placeholder for the episode length. */
-"eoy_story_longest_episode_duration" = "This episode was %1$@ long";
-
-/* Text that appear when someone share the longest episode they listened to story to Twitter. %1$@ is the URL to the episode. */
-"eoy_story_longest_episode_share_text" = "The longest episode I listened to this year %1$@";
-
-/* Title for the epilogue story */
-"eoy_story_epilogue_title" = "Thank you for listening with us this year.\nSee you in 2024!";
-
-/* Subtitle for the epilogue story */
-"eoy_story_epilogue_subtitle" = "Don't forget to share with your friends and give a shout out to your favorite podcast creators";
-
-/* Label for the replay button, which when tapped started the end of year stories from the first one. */
-"eoy_story_replay" = "Play again";
-
-/* Title of the top categories story. */
-"eoy_story_top_categories" = "Your Top Categories";
-
-/* Text that appear when someone share the top categories story to Twitter. */
-"eoy_story_top_categories_share_text" = "My most listened to podcast categories";
-
-/* Title of the top categories story. %1$@ being the name of the most listened category. */
-"eoy_story_top_categories_title" = "Did you know that %1$@ was your favorite category?";
-
-/* Subtitle of the top categories story. %1$@ is the total number of episodes and %2$@ is the total listened time. */
-"eoy_story_top_categories_subtitle" = "You listened to %1$@ episodes for a total of %2$@";
-
-/* Description to why the user needs to create an account to see their end of year stats. */
-"eoy_create_account_to_see" = "Save your podcasts in the cloud, get your end of year review and sync your progress with other devices.";
-
-/* When loading the End of Year stats stories fails. */
-"eoy_stories_failed" = "Failed to load stories.";
-
-/* Label of a button to share the current story (similar to Instagram stories) */
-"eoy_share" = "Share this story";
-
-/* Title of the story when this year's listening time is way bigger than previous year. */
-"eoy_year_over_year_title_skyrocketed" = "Compared to 2022, your listening time skyrocketed!";
-
-/* Title of the story when this year's listening time is bigger than previous year. %1$@ is the percentage */
-"eoy_year_over_year_title_went_up" = "Compared to 2022, your listening time went up a whopping %1$@%";
-
-/* Subtitle of the story that compares year listening time when this year's listening time is bigger than last's year */
-"eoy_year_over_year_subtitle_went_up" = "Ready to top it in 2024?";
-
-/* Title of the story when this year's listening time is almost the same as the previous year. %1$@ is the percentage */
-"eoy_year_over_year_title_flat" = "Compared to 2022, your listening time stayed pretty consistent";
-
-/* Subtitle of the story that compares year listening time when this year's listening time is almost the same as last's year */
-"eoy_year_over_year_subtitle_flat" = "And they say consistency is the key to success... or something like that!";
-
-/* Title of the story when this year's listening time is less than the previous year. %1$@ is the percentage */
-"eoy_year_over_year_title_went_down" = "Compared to 2022, your listening time went down a little";
-
-/* Subtitle of the story that compares year listening time when this year's listening time is less than last's year */
-"eoy_year_over_year_subtitle_went_down" = "Aaaah... there’s a life to be lived, right?";
-
-/* Text for when a user shares the story comparing the 2022 and 2023 listening time. */
-"eoy_year_over_share_text" = "My %1$@ listening time compared to %2$@";
-
-/* Title for the completion rate. %1$@ is the percentage. */
-"eoy_year_completion_rate_title" = "Your completion rate this year was %1$@";
-
-/* Title for when sharing the completion rate story to social media. */
-"eoy_year_completion_rate_share_text" = "My %1$@ completion rate";
-
-/* Title for the completion rate. %1$@ is the total of episodes listened this year, %2$@ is the total of episodes fully listened to. */
-"eoy_year_completion_rate_subtitle" = "From the %1$@ episodes you started you listened fully to a total of %2$@";
-
-/* Text for when a user shares the Ratings story summarizing their podcast ratings from the last year */
-"eoy_year_ratings_share_text" = "I rated %1$@ different podcasts in %2$@, with %3$@ as my most used rating";
-
-/* Title of the story paywall. Telling the users that there are more stories to check. */
-"eoy_theres_more" = "There’s more!";
-
-/* Subtitle explaining the user why they should subscribe to Plus in the context of the end of year stories. */
-"eoy_subscribe_to_plus" = "Subscribe to Plus and find out how your listening compares to 2022, other fun stats, and Premium features like bookmarks and folders.";
-
-/* Subtitle explaining the user why they should subscribe to Plus in the context of the end of year stories. */
-"eoy_start_your_free_trial" = "Start your Free Trial";
-
-/* Title of an alert displayed to the user asking if they want to share the current story */
-"eoy_share_this_story_title" = "Share this story?";
-
-/* Title shown on the final End of Year story for 2024 */
-"eoy_2024_epilogue_title" = "Thank you for listening with us this year.\nSee you in 2025!";
-
-/* Description shown on the final End of Year story for 2024 */
-"eoy_2024_epilogue_description" = "Don’t forget to share with friends and give a shout out to your favourite podcasts and creators.";
-
-/* Message of an alert displayed to the user asking if they want to share the current story */
-"eoy_share_this_story_message" = "Paste this image to your socials and give a shout out to your favorite shows and creators";
-
-/* Subtitle when displaying the user episode completion rate, all in lowercase. */
-"eoy_year_completion_rate" = "completion rate";
 
 /* Title of the view displayed after a user successfully upgrades to plus */
 "welcome_plus_title" = "Thank you, now let's get you listening!";
@@ -4192,12 +3045,6 @@
 /* Title of a button prompting the user find new podcasts in discover */
 "welcome_discover_button" = "Find My Next Podcast";
 
-/* Label that informs the user they have a free account */
-"account_details_free_account" = "Free Account";
-
-/* Label that shows the user how much time they have listened to podcasts for, %1$@ is the localized formatted time, ie: 2 hours */
-"account_details_listened_for" = "Listened for %1$@";
-
 /* Marketing text that promotes the plus feature to the user */
 "account_details_plus_title" = "Take your podcasting experience to the next level with exclusive access to features and customisation options.";
 
@@ -4219,12 +3066,6 @@
 /* Step by Step instructions on how to import from the app Castbox. \n are new lines and Castbox is a proper noun and should not be translated. */
 "import_instructions_castbox" = "1. Tap the Open Castbox button below\n2. Tap the Personal tab\n3. Swipe down until you see the Settings option, then tap on it\n4. Swipe down until you see the OPML Export option, then tap on it\n5. If prompted, tap \"Open in PodHopper\"\n6. If the file opens in Safari, tap the Download button\n7. Once the download is complete, tap the download icon in the URL bar\n8. Tap the Downloads item\n9. Tap the castbox_opml file \n10. If needed, tap the Share icon, then open the file using PodHopper\n11. When the share dialog opens, locate the PodHopper icon, then tap on it";
 
-/* Step by Step instructions on how to import from the app Apple Podcasts. \n are new lines and Apple Podcasts is a proper noun and should not be translated. */
-"import_instructions_apple_podcasts_steps" = "We can import your podcasts from Apple Podcasts by using the built-in Shortcuts app.\nNote: If you previously deleted the shortcuts app you will be prompted to reinstall it.\n\n1. Tap the Install Shortcut button below.\n2. When prompted tap the Add Shortcut button.\n3. Tap on the Shortcuts tab.\n4. Locate the \"Apple Podcasts to PodHopper\" shortcut in the list.\n5. Tap it to start the import process.\n6. Once the shortcut is done running PodHopper will reopen and finish the import process.";
-
-/* Title of an option to import from other apps */
-"import_instructions_other_apps_title" = "other apps";
-
 /* Button title to install a shortcut */
 "import_instructions_install_shortcut" = "Install Shortcut";
 
@@ -4240,71 +3081,8 @@
 /* Title of a view explaining the import feature */
 "import_subtitle" = "Coming from another app? Import your podcasts and get listening. You can always do this later in settings.";
 
-/* Title of the login marketing view */
-"login_title" = "Discover your next favorite podcast";
-
-/* Subtitle of the login marketing view */
-"login_subtitle" = "Create an account to sync your listening experience across all your devices.";
-
-/* Title of the login view */
-"login_landing_title" = "Create your PodHopper account";
-
-/* Subtitle of the login view */
-"login_landing_subtitle" = "Your podcasts, always in sync. Keep your library safe, and enjoy PodHopper on web and desktop.";
-
 /* Title of the plus marketing view */
 "plus_marketing_title" = "Everything you love about PodHopper, plus more";
-
-/* Subtitle of the plus marketing view */
-"plus_marketing_subtitle" = "Get access to exclusive features and customisation options";
-
-/* Title of the button that informs the user they can unlock all the features in plus */
-"plus_button_title_unlock_all" = "Unlock All Features";
-
-/* Title of a label informing the user they can cancel their subscription at any time */
-"plus_cancel_terms" = "Can be canceled at any time";
-
-/* Title of a view that informs the user what will happen if they cancel their subscription */
-"cancel_confirm_title" = "Things you should know before you cancel";
-
-/* Sub title of a view that informs the user what will happen if they cancel their subscription */
-"cancel_confirm_subtitle" = "Canceling will change your plan to a free account.";
-
-/* Title of a list item that informs the user the date their subscription will expire. %1$@ is the date of expiration */
-"cancel_confirm_sub_expiry" = "Your current subscription will remain active until %1$@.";
-
-/* Item that appears in place of the user's missing expiration date if it's not available. */
-"cancel_confirm_sub_expiry_date_fallback" = "your expiration date";
-
-/* Title of a list item that informs the user their plus features will be locked if they cancel */
-"cancel_confirm_item_plus" = "After this date, access to Plus features like bookmarks, shuffle, wearables and more will be removed.";
-
-/* Title of a list item that informs the user their folders will be removed if they cancel */
-"cancel_confirm_item_folders" = "Your folders will be removed and their contents will move back to the Podcasts screen.";
-
-/* Title of a list item that informs the user uploaded files will be removed if they cancel */
-"cancel_confirm_item_uploads" = "All files uploaded to your PodHopper account will be deleted, but downloads on your mobile devices will remain.";
-
-/* Title of a list item that informs the user they will no longer be able to access plus on the web if they cancel */
-"cancel_confirm_item_web_player" =  "You will no longer be able to access PodHopper using your web browser, or desktop computer.";
-
-/* Title of a list item that informs the user will continue access listening history and podcasts */
-"cancel_confirm_item_history" = "Your podcasts and listening history will continue to be accessible. ";
-
-/* Button title that lets the user stop the cancellation process */
-"cancel_confirm_stay_button_title" =  "Keep my subscription";
-
-/* Button title that lets the user continue the cancellation process */
-"cancel_confirm_cancel_button_title" =  "Cancel my subscription";
-
-/* Label of a button that lets the user login/signup with Apple */
-"social_sign_in_continue_with_apple" = "Continue with Apple";
-
-/* Label of a button that lets the user login/signup with Google */
-"social_sign_in_continue_with_google" = "Continue with Google";
-
-/* Label of a button that lets the user login/signup with Email */
-"sign_in_continue_with_email" = "Continue with Email";
 
 /* Label describing the recent searches */
 "search_recent" = "Recent searches";
@@ -4312,38 +3090,8 @@
 /* Button label prompting the user to renew their subscription */
 "renew_subscription" = "Renew your Subscription";
 
-/* Button label that changes the users chosen app icon */
-"change_app_icon" = "Change App Icon";
-
-/* Title of a label that thanks the user for their purchase */
-"patron_thank_you" = "Thank you for your support!";
-
-/* Label that instructs the user to hold a button to unlock some gifts */
-"patron_unlock_instructions" = "Hold the unlock button below to receive some tokens of our appreciation.";
-
-/* The word unlock that is used to highlight the word unlock in the */
-"patron_unlock_word" = "unlock";
-
-/* A button label that indicates a feature is being unlocked */
-"patron_unlocking" = "Unlocking";
-
-/* A button label that informs the user to release a button press to finish */
-"patron_unlock_release" = "Release to Unlock";
-
 /* The string for the act of Copy (from Copy & Paste) */
 "copy" = "Copy";
-
-/* Title of an alert shown to the user */
-"support_watch_help_title" = "Looking for Watch app help?";
-
-/* Description of an alert shown to the user */
-"support_watch_help_message" = "If you're having issues with the PodHopper Watch app we can send your wearable logs to better assist you. In order to do so, please open PodHopper on your Watch.";
-
-/* Button that the user can press if they opened the Watch app */
-"support_watch_help_opened_app" = "I've opened the Watch app";
-
-/* Button that the user can press if they want to request help without the Apple Watch logs */
-"support_watch_help_send_without_log" = "Send without Watch logs";
 
 /* Title of a tab in the player that shows the episode description (show notes). */
 "player_show_notes_title" = "Details";
@@ -4380,15 +3128,6 @@
 
 /* An action that the user want to postpone and maybe do later */
 "maybe_later" = "Maybe later";
-
-/* Bookmarks feature announcement title */
-"announcement_bookmarks_title" = "Bookmarks are here!";
-
-/* Bookmarks feature announcement description */
-"announcement_bookmarks_description" = "You can now save timestamps of episodes from the actions menu in the player or with a headphones action.";
-
-/* Bookmarks feature announcement title */
-"announcement_bookmarks_title_beta" = "Join us in the beta testing for bookmarks!";
 
 /* Button label for a feature that the user can enable */
 "try_it_now" = "Try It Now";
@@ -4486,53 +3225,14 @@
 /* Label for the Add button on the episode detail page. Opens a bottom sheet with options to add to Up Next or playlist. */
 "episode_detail_add" = "Add";
 
-/* Title of the Episode description */
-"episode_description_title" = "Episode Description";
-
-/* A message informing the user a feature is locked. %1$@ is the name of the tier (Plus or Patron) */
-"bookmarks_locked_message" = "Unlock this feature and many more with PodHopper %1$@ and save timestamps of your favorite episodes.";
-
-/* A message informing the user a feature is locked while in early access. %1$@ and %2$@ are the names of the tier (Plus or Patron) */
-"bookmarks_early_access_locked_message" = "Unlock this feature and many more with PodHopper %1$@ and save timestamps of your favorite episodes. Available for %2$@ subscribers soon.";
-
 /* A button title that prompts the user to upgrade their plan. %1$@ is the name of the tier (Plus or Patron) */
 "upgrade_to_plan" = "Upgrade to %1$@";
 
 /* A button title that prompts the user upgrade to redeem a free trial */
 "start_free_trial" = "Start Free Trial";
 
-/* Title of a message thanking the user for being a beta tester */
-"beta_thank_you" = "Thank you for beta testing!";
-
-/* Message of an alert that informs the user purchasing is disabled in the beta. 'PodHopper's is treated as a proper noun and hasn't been localized in other places of the app. %1$@ is the name of the tier (Plus or Patron)*/
-"beta_purchase_disabled" = "Please download PodHopper from the App Store to purchase %1$@.";
-
-/* Title displayed when an user want to rate a podcast but hasn't listened enough to it */
-"rating_listen_to_this_podcast_title" = "Please listen to this podcast first";
-
-/* Message displayed when an user want to rate a podcast but hasn't listened enough to it */
-"rating_listen_to_this_podcast_message" = "Only listeners of this podcast can give it a rating. Have a listen to a few episodes and then come back to give your rating. We look forward to hearing what you think!";
-
-/* Title displayed when an user want to rate a podcast. %1$@ is the podcast title. */
-"rating_title" = "Rate %1$@";
-
-/* Confirmation message that a user rating for a podcast was submitted */
-"rating_submitted" = "Your rating was submitted!";
-
-/* Thank you message that a user rating for a podcast was submitted */
-"rating_thank_you" = "Thank you for rating!";
-
-/* Error message when a user rating for a podcast couldn't be submitted */
-"rating_error" = "Ops! There was an error.";
-
-/* No ratings label message */
-"rating_no_ratings" = "No ratings";
-
 /* Title of a button that takes the user to a screen to rate a podcast */
 "rate" = "Rate";
-
-/* Toast message to alert a user to log in to leave a rating */
-"rating_login_required" = "You must log in to leave a rating";
 
 /* What's New sheet title */
 "rating_whats_new_title" = "Now Available: Podcast Ratings 🎉";
@@ -4542,12 +3242,6 @@
 
 /* What's New sheet button title */
 "rating_whats_new_button_title" = "Got it";
-
-/* Title of a message shown when the users data is being exported */
-"exporting_database" = "Exporting Database...";
-
-/* Title of an option to export the users data */
-"export_database" = "Export Database";
 
 /* Title of a setting that lets the user use dark mode for the up next */
 "settings_up_next_dark_mode_title" = "Use Dark Up Next Theme";
@@ -4621,9 +3315,6 @@
 /* Message explaining why the sleep timer was restarted after the user shook the device */
 "device_shake_sleep_timer" = "Sleep timer restarted due to device shake";
 
-/* Displayed when doing a heavy task the user has to wait */
-"hang_on" = "Hang on!";
-
 /* Message displayed when doing heavy database operations */
 "database_migration" = "We're moving a few bits and bytes so the app runs faster...";
 
@@ -4684,99 +3375,15 @@
 /* A title shown when sharing a podcast */
 "share_podcast" = "Share podcast";
 
-/* A message shown when sharing an image representation of a podcast or episode to social media platforms */
-"share_description" = "Choose a format and a platform to share to";
-
-/* A title used when sharing artwork and link to a podcast episode */
-"share_episode_title" = "Share episode";
-
-/* A title used when sharing artwork and link to a podcast */
-"share_podcast_title" = "Share podcast";
-
-/* A title shown for a share option which copies a link to a podcast or episode */
-"share_copy_link" = "Copy link";
-
-/* A button title shown for a share option which shares a image or video clip to Instagram Stories */
-"share_instagram_stories" = "Stories";
-
 /* A common string used throughout the app. Often refers to the Transcript tab in the player. */
 "transcript" = "Transcript";
 
 /* Current search results being displayed and the total number of results. Eg.: 1 of 10. %1$@ is the current result being shown, %2$@ is the total number of results */
 "search_results" = "%1$@ of %2$@";
 
-/* A title shown for a share option which creates an animated video clip with audio of an episode */
-"create_clip" = "Create clip";
-
-/* A title shown for a share option which creates an audio clip of an episode */
-"create_audio_clip_title" = "Create audio file";
-
-
-/* A description shown for a share option which creates an audio clip of an episode. This produces a ".m4a" file which is like an mp3 */
-"create_audio_clip_description" = "Create a .m4a audio file";
 
 /* Shown in a button when creating a shareable audio clip of an episode */
 "clip" = "Clip";
-
-/* A title shown for a button to return to editing a clip */
-"edit_clip" = "Edit clip";
-
-/* A title shown after editing a clip but before sharing */
-"share_clip" = "Share clip";
-
-/* A label shown with the clip start time */
-"clip_start_label" = "%@ Start";
-
-/* A label shown with the duration time of a clip */
-"clip_duration_label" = "%@ Duration";
-
-/* A label shown while the clip is being created */
-"clip_loading_label" = "Creating Clip...";
-
-/* Title of the PodHopper champion screen, greeting an user that has been using PodHopper for a long time */
-"champion_title" = "You’re a true champion of PodHopper!";
-
-/* Subtitle of the PodHopper champion screen */
-"champion_description" = "Thanks for being with us since the beginning! If you enjoy using our app, we’d love to hear your feedback.";
-
-/* Title of a button that allows the user to rate the app */
-"rate_pocket_casts" = "Rate PodHopper";
-
-/* Kids Profile banner title */
-"kids_profile_banner_title" = "Kids Profile";
-
-/* Kids Profile banner badge title */
-"kids_profile_banner_badge" = "Soon";
-
-/* Kids Profile banner text */
-"kids_profile_banner_text" = "A new profile with only content for kids to keep your subscriptions tidy.";
-
-/* Kids Profile banner action button title */
-"kids_profile_banner_request_button" = "Request Early Access ";
-
-/* Kids Profile Thank You screen title*/
-"kids_profile_thankyou_title" = "Thank you for your interest";
-
-/* Kids Profile Thank You screen text*/
-"kids_profile_thankyou_text" = "You’ll get a notification via the app when the new Kids profile is ready! Want to let us know what you’d like to see?";
-
-/* Kids Profile Thank You screen send button title */
-"kids_profile_thankyou_button_send" = "Send Feedback";
-
-/* Kids Profile Thank You screen close button title */
-"kids_profile_thankyou_button_close" = "No, thank you";
-
-/* Kids Profile Submit screen title */
-"kids_profile_submit_feedback_title" = "What would you like to see in a Kids profile for PodHopper?";
-
-/* Kids Profile Submit screen send button title */
-"kids_profile_submit_feedback_send_button" = "Send";
-
-/* Kids Profile Toast message if feedback sent succeeded */
-"kids_profile_submit_success" = "Thank you for your feedback!";
-
-/* Kids Profile Toast message if feedback sent failed */
-"kids_profile_submit_error" = "Something went wrong. Please try submitting your feedback again";
 
 /* Transcript error message when a transcript is not available*/
 "transcript_error_not_available" = "Sorry, but this episode has no transcript available";
@@ -4808,105 +3415,6 @@
 /* Title of the Transcript excerpt in Episode detail */
 "view_transcript" = "View Transcript";
 
-/* Upgrade Experiment Paywall button title */
-"upgrade_experiment_paywall_button" = "Get PodHopper Plus";
-
-/* Upgrade Experiment message informing the user that they have been granted a limited free membership. '%1$@' is a placeholder for a localized string for the free time period. */
-"upgrade_experiment_free_membership_format" = "Free %1$@ Plus trial";
-
-/* Upgrade Experiment message informing the user that they have been granted 50% discount. */
-"upgrade_experiment_discount_yearly_membership" = "Save 50%% off your first year";
-
-/* Upgrade Experiment - Features Variation: Desktop feature card title*/
-"plus_feature_card_title_desktop" = "Desktop and web apps";
-
-/* Upgrade Experiment - Features Variation: Folders feature card title*/
-"plus_feature_card_title_folders" = "Folders";
-
-/* Upgrade Experiment - Features Variation: Bokmarks feature card title*/
-"plus_feature_card_title_bookmarks" = "Bookmarks";
-
-/* Upgrade Experiment - Features Variation: Wear OS feature card title*/
-"plus_feature_card_title_wear_os" = "Apple Watch and Wear OS playback";
-
-/* Upgrade Experiment - Features Variation: Slumber Studio feature card title*/
-"plus_feature_card_title_slumber_studio" = "Dream with Slumber Studios";
-
-/* Upgrade Experiment - Features Variation: Storage feature card title*/
-"plus_feature_card_title_storage" = "20 GB of storage";
-
-/* Upgrade Experiment - Features Variation: Extra feature card title*/
-"plus_feature_card_title_extra_themes" = "Extra themes and icons";
-
-/* Upgrade Experiment - Features Variation: Desktop feature card text*/
-"plus_feature_card_text_desktop" = "Listen in more places with our Windows, macOS and Web apps.";
-
-/* Upgrade Experiment - Features Variation: Folders feature card text*/
-"plus_feature_card_text_folders" = "Organize your podcasts in folders, and keep them in sync across all your devices.";
-
-/* Upgrade Experiment - Features Variation: Bokmarks feature card text*/
-"plus_feature_card_text_bookmarks" = "Save your favorite bits from any episode and go back to them.";
-
-/* Upgrade Experiment - Features Variation: Wear OS feature card text*/
-"plus_feature_card_text_wear_os" = "Ditch the phone and go for a run.";
-
-/* Upgrade Experiment - Features Variation: Slumber Studio feature card text*/
-"plus_feature_card_text_slumber_studio" = "Get 1 year of premium content from Slumber Studios.";
-
-/* Upgrade Experiment - Features Variation: Storage feature card text*/
-"plus_feature_card_text_storage" = "Upload your audio files to cloud storage and have them available everywhere.";
-
-/* Upgrade Experiment - Features Variation: Extra feature card text*/
-"plus_feature_card_text_extra_themes" = "Fly your true colors. Exclusive icons and themes for our subscribers.";
-
-/* Upgrade Experiment - Reviews Variation: Screen title*/
-"upgrade_experiment_reviews_title" = "Quite simply the best way to listen to podcasts";
-
-/* Upgrade Experiment - Reviews Variation: Screen text*/
-"upgrade_experiment_reviews_text" = "See why people have upgraded to Plus";
-
-/* Upgrade Experiment - Reviews Variation: Title for the button that redirects the user to the AppStore page */
-"upgrade_experiment_reviews_app_store_button" = "See all reviews in the App Store";
-
-/* Upgrade Experiment - Reviews Variation: the text that represents the avg stars rating and the number of reviews. The %1$@ placeholder indicates the avg rating, like 4.3. The %2$@ placeholder indicates the abbreviated number of reviews, like 5.7K. */
-"upgrade_experiment_reviews_app_store_info" = "%1$@ Rating (%2$@K Reviews)";
-
-/* Upgrade Experiment - Reviews Variation: title for Review card 0 */
-"upgrade_experiment_reviews_review_title_0" = "Best Podcast App By FAR";
-
-/* Upgrade Experiment - Reviews Variation: text for Review card 0 */
-"upgrade_experiment_reviews_review_text_0" = "I've been a long time user and the amount of functionality and customization you get with the free version is astounding. I love that it syncs across devices so I can start listening on my phone and then pick up on an Alexa device. It's my recommendation for anyone who listens to podcasts. Also love the stats!";
-
-/* Upgrade Experiment - Reviews Variation: title for Review card 1 */
-"upgrade_experiment_reviews_review_title_1" = "The essential podcast app";
-
-/* Upgrade Experiment - Reviews Variation: text for Review card 1 */
-"upgrade_experiment_reviews_review_text_1" = "8 years of excellence and continuous improvement";
-
-/* Upgrade Experiment - Reviews Variation: title for Review card 2 */
-"upgrade_experiment_reviews_review_title_2" = "Best podcasat app out there";
-
-/* Upgrade Experiment - Reviews Variation: text for Review card 2 */
-"upgrade_experiment_reviews_review_text_2" = "I've been a PodHopper user since 2017.\n\nThis is hands down the best app to listen to podcasts. It's feature rich and actively developed. There have been some complaints about the Ul change but I haven't really noticed it too much.\n\nThis app can be as simple or difficult to use as you'd like it to be. So either let it be a plug and play or set up skip outro and intro timers and any other little feature you want to enable.";
-
-/* Upgrade Experiment - Reviews Variation: title for Review card 3 */
-"upgrade_experiment_reviews_review_title_3" = "Fantastic app";
-
-/* Upgrade Experiment - Reviews Variation: text for Review card 3 */
-"upgrade_experiment_reviews_review_text_3" = "The sync function is magic. Don't know what special magic this app has going on but it's better than any other app l've used.";
-
-/* Upgrade Experiment - Reviews Variation: title for Review card 4 */
-"upgrade_experiment_reviews_review_title_4" = "Works great and easy to find or add new pods";
-
-/* Upgrade Experiment - Reviews Variation: text for Review card 4 */
-"upgrade_experiment_reviews_review_text_4" = "Been using this app for 6 years or better, started on android and now l've been on iOS for almost a year. Works the same on both platforms. Easy to find new podcasts to listen to, very nice Ul, can add podcasts by rss feed url too. The watch app is functional, but I mostly use for my play/pause. Sign in with an account to sync across devices but no requirement to do so.";
-
-/* Upgrade Experiment - Reviews Variation: title for Review card 5 */
-"upgrade_experiment_reviews_review_title_5" = "Go-To Podcast App";
-
-/* Upgrade Experiment - Reviews Variation: text for Review card 5 */
-"upgrade_experiment_reviews_review_text_5" = "PC has been my go-to for years. l've tried other podcast apps and always come back to PC for their simplicity, Ul and support. Definitely worth checking it out, especially if you have grown tired of your current podcast app.";
-
 /* Clips - Title to show in What's New screen announcing the Clips feature */
 "clips_whats_new_title" = "Clip sharing available now!";
 
@@ -4916,71 +3424,11 @@
 /* Clips - Button title to show in What's New screen announcing the Clips feature */
 "clips_whats_new_button_title" = "Got it";
 
-/* Clips - A label used for Voice Over to indicate the start time of a clip. The time will be read as a localized version of "20 minutes 30 seconds" after this label */
-"clips_start_time_accessibility_label" = "Clip start";
-
-/* Clips - A label used for Voice Over to indicate the end time of a clip. The time will be read as a localized version of "20 minutes 30 seconds" after this label */
-"clips_end_time_accessibility_label" = "Clip end";
-
-/* A Voice Over label for element which represents the PodHopper Logo */
-"pocket_casts_logo" = "PodHopper logo";
-
-/* A Voice Over label used to identify a shareable media. This represents different image and video sizes such as "large, medium, small" as well as the "audio" format */
-"clips_shareable_media_a11y_label" = "Shareable media options";
-
-/* A Voice Over label used to identify the container for the shareable media options. This contains different image and video sizes such as "large, medium, small" as well as the "audio" format */
-"clips_shareable_media_item_a11y_label" = "%1$@ format %2$@ of %3$@";
-
 /* Referrals - Tip Title. '%1$@' is a placeholder for the number of referrals passes available to share*/
 "referrals_tip_title" = "You have %1$@ passes to share";
 
 /* Referrals - Tip Message '%1$@' is a placeholder for the duration of free period on the Plus subscription*/
 "referrals_tip_message" = "Gift %1$@ of PodHopper Plus!";
-
-/* Referrals - Guest Pass Offer Message '%1$@' is a placeholder for the duration of free days on the Plus subscription. Ex: 2-Month Guest Pass*/
-"referrals_guest_pass_offer" = "%1$@ Guest Pass";
-
-/* Referrals - Share Guest Pass button title*/
-"referrals_share_guest_pass" = "Share Guest Pass";
-
-/* Referrals - Share Guest Pass no more passes title*/
-"referrals_share_no_guest_pass_title" = "You've shared all yours guest passes!";
-
-/* Referrals - Share Guest Pass no more passes message*/
-"referrals_share_no_guest_pass_message" = "Thanks for sharing PodHopper! We'll let you know when you have more passes to give.";
-
-/* Referrals - Claim Guest Pass screen title. `%1$@' is a placeholder for the offer duration on the Plus subscription*/
-"referrals_claim_guest_pass_title" = "Claim your %1$@ Guest Pass";
-
-/* Referrals - Claim Guest Pass screen detail message. `%1$@' is a placeholder for the localized cost of the subscription after the free day period*/
-"referrals_claim_guest_pass_detail" = "This offer is for new members only. Membership will automatically renew to a paid annual membership at %1$@.";
-
-/* Referrals - Claim Guest Pass action button title*/
-"referrals_claim_guest_pass_action" = "Activate my pass";
-
-/* Referrals - Claim Guest Pass banner title. `%1$@' is a placeholder for the duration of free period offered on the Plus subscription*/
-"referrals_claim_guest_pass_banner_title" = "Claim your %1$@ Guest Pass to Plus";
-
-/* Referrals - Claim Guest Pass banner message.*/
-"referrals_claim_guest_pass_banner_detail" = "Unlock the full listening experience";
-
-/* Referrals - Share Pass message. `%1$@' is a placeholder for the duration of free period offered on the Plus subscription*/
-"referrals_share_pass_message" = "Hey! Use the link below to claim your %1$@ guest pass for PodHopper Plus and enjoy podcasts across all your devices!";
-
-/* Referrals - Share Pass subject title for sharing to email. `%1$@' is a placeholder for the duration of free period offered on the Plus subscription*/
-"referrals_share_pass_subject" = "%1$@ Guest Pass for PodHopper Plus!";
-
-/* Referrals - Title for screen saying that referral offer isn't available for user*/
-"referrals_offer_not_available_title" = "This offer isn’t available";
-
-/* Referrals - Detail message for screen saying that referral offer isn't available for user*/
-"referrals_offer_not_available_detail" = "This guest pass can only be redeemed once and is available for those without an active Plus or Patron subscription. Thanks for listening!";
-
-/* Referrals - Guest Pass not available*/
-"referrals_not_available_to_send" = "Guest Pass not available at the moment";
-
-/* Referrals - You need to be logged in before you can claim your guest pass*/
-"referrals_claim_need_to_be_loggedin" = "Please log in or sign up to claim your guest pass.";
 
 /* day */
 "day" = "day";
@@ -5014,9 +3462,6 @@
 
 /* Toast message when episode download is cancelled*/
 "player_episode_download_cancelled" = "Episode download cancelled";
-
-/* A title shown on a button to open information about the Podcast Ratings feature */
-"learn_about_ratings" = "Learn about ratings";
 
 /* Paywall header for when the view is presented from the folder source */
 "paywall_dynamic_headline_folder" = "Organize your podcasts with PodHopper Plus, and more";
@@ -5075,134 +3520,11 @@
 /* Button title for manage downloads file space usage banner and modal. */
 "manage_downloads_action" = "Manage downloads";
 
-/* Title of the cancel subscription view, '\n' is a line break format to allow a clean wrapping of text */
-"cancel_subscription_title" = "Thinking of leaving?\nLet us help first";
-
-/* Title for the continue button */
-"cancel_subscription_continue_button" = "Continue with cancellation";
-
-/* Generic error if the product loading fails */
-"cancel_subscription_generic_error" = "An error occurred. Please try again later.";
-
-/* Cancel subscription: title for the promotion row */
-"cancel_subscription_promotion_title" = "Get your next month free";
-
-/* Cancel subscription: title for the yearly promotion row */
-"cancel_subscription_yearly_promotion_title" = "Get 50%% off your next year";
-
-/* Cancel subscription: description for the monthly promotion row. The %@ represents the price. */
-"cancel_subscription_promotion_description_monthly" = "Save %@ at the start of your next billing cycle.";
-
-/* Cancel subscription: description for the yearly promotion row. The %@ represents the price. */
-"cancel_subscription_promotion_description_yearly" = "Pay %@ now for another year at 50%% off";
-
-/* Cancel subscription: title for the new plan row */
-"cancel_subscription_new_plan_title" = "Looking for a different plan?";
-
-/* Cancel subscription: description for the new plan row */
-"cancel_subscription_new_plan_description" = "Find the plan that’s right for you.";
-
-/* Cancel subscription: title for the help row */
-"cancel_subscription_help_title" = "Need help with PodHopper?";
-
-/* Cancel subscription: description for the help row */
-"cancel_subscription_help_description" = "Struggling with any features or having issues.";
-
-/* Title for the claim offer button */
-"cancel_subscription_claim_offer_button" = "Claim offer";
-
-/* Offer view: title for the yearly promotion. The %@ represents the price. */
-"cancel_subscription_winback_view_title_yearly" = "Get 50%% off your next year and save %@";
-
-/* Offer view: title for the monthly promotion. The %@ represents the price. */
-"cancel_subscription_winback_view_title_montly" = "Get your next month free and save %@";
-
-/* Offer view: description for the yearly promotion. The %@ represents the price. */
-"cancel_subscription_winback_view_description_yearly" = "Pay %@ now to lock in a year of PodHopper Plus at half price. Your discounted year begins after your current plan ends.";
-
-/* Offer view: description for the monthly promotion. */
-"cancel_subscription_winback_view_description_montly" = "Enjoy one month of PodHopper Plus on us! The offer will be added to your current subscription.";
-
-/* Offer view: button used to accept the offer */
-"cancel_subscription_winback_view_accept_offer_button" = "Accept offer";
-
-/* Offer view: button used to prompt the system cancellation view */
-"cancel_subscription_winback_view_continue_cancellation_button" = "Continue with cancellation";
-
-/* Title of the Available Plans screen accessible from the Cancel Subscription view */
-"cancel_subscription_available_plans_title" = "Available Plans";
-
-/* Footer of the Available Plans screen accessible from the Cancel Subscription view */
-"cancel_subscription_available_plans_footer" = "Your new plan will activate at the end of your current billing period.";
-
-/* Badge that appears over the best value plan in the available plans list */
-"cancel_subscription_available_plans_best_value_badge" = "Best Value";
-
-/* Title of the survey screen that appears when a user cancels the subscription. \n forces PodHopper to be on a new line */
-"cancel_subscription_survey_title" = "Thanks for trying\nPodHopper Plus";
-
-/* Description of the survey screen that appears when a user cancels the subscription */
-"cancel_subscription_survey_description" = "We'd love to know why you canceled. Your feedback helps us improve.";
-
-/* Title of the Send Button in the survey screen that appears when a user cancels the subscription */
-"cancel_subscription_survey_submit_feedback" = "Submit feedback";
-
-/* Option in the in the survey screen that appears when a user cancels the subscription */
-"cancel_subscription_survey_row_better_app" = "I found a better app";
-
-/* Option in the in the survey screen that appears when a user cancels the subscription */
-"cancel_subscription_survey_row_technical_issue" = "Technical issues";
-
-/* Option in the in the survey screen that appears when a user cancels the subscription */
-"cancel_subscription_survey_row_cost" = "Cost-related reasons";
-
-/* Option in the in the survey screen that appears when a user cancels the subscription */
-"cancel_subscription_survey_row_not_enough" = "I don’t use it enough";
-
-/* Option in the in the survey screen that appears when a user cancels the subscription */
-"cancel_subscription_survey_row_other" = "Other";
-
-/* Toast message that appears if the survey submission goes well */
-"cancel_subscription_survey_toast_success" = "Thanks for your feedback!";
-
-/* Toast message that appears if the survey submission goes wrong */
-"cancel_subscription_survey_toast_fail" = "Sorry, something went wrong.";
-
-/* For yealry plans, we show the weekly price. %1$@ is the price. For example: $0.70/week */
-"iap_product_weekly_pricing_format" = "%1$@/week";
-
-/* For yealry plans, we show the monthly price. %1$@ is the price. For example: $3.33/month */
-"iap_product_monthly_pricing_format" = "%1$@/month";
-
-/* Text displayed when the retry screen is visible */
-"cancel_subscription_available_plans_retry_screen_text" = "Sorry, but something went wrong fetching your plans.";
-
-/* Title of the success screen when the cancel subscription offer is applied */
-"cancel_subscription_offer_success_view_title" = "Enjoy your free month!";
-
-/* Title of the success screen when the cancel yearly subscription offer is applied */
-"cancel_subscription_offer_yearly_success_view_title" = "50%% off your next year!";
-
-/* Description of the success screen when the cancel subscription offer is applied */
-"cancel_subscription_offer_success_view_description" = "Thanks for choosing PodHopper. Your free month will be added to your current subscription.";
-
-/* Description of the success screen when the cancel yearly subscription offer is applied */
-"cancel_subscription_offer_yearly_success_view_description" = "Thanks for choosing PodHopper. Your discounted year begins after your current plan ends.";
-
-/* Referrals - Share Pass message. `%1$@' is a placeholder for the duration of free period offered on the Plus subscription*/
-"referrals_share_pass_long_message" = "Hi there!\n\nHere is a %1$@ guest pass for PodHopper Plus - my favorite podcast player. It's packed with unique features like bookmarks, folders, and more that you won't find anywhere else. I think you'll love it too!\n";
-
 /* Auto Downloads Setting - Auto download on follow of a blog*/
 "settings_auto_downloads_on_follow" = "On Follow";
 
 /* Title of an option to see the users logs */
 "logs" = "Logs";
-
-/* Message when no email account is configured to be able to send the logs*/
-"logs_no_email_account_configured" = "You need to configure an email account on the device in order to send the logs";
-
-/* Message shown when watchOS logs are not available */
-"logs_watch_os_not_available" = "No watchOS logs available. Make sure you have an Apple Watch paired and the PodHopper watch app installed.";
 
 /* Title for action to remove episode from listening history */
 "listening_history_remove" = "Remove from history";
@@ -5248,12 +3570,6 @@
 
 /* Suggested Folder replace confirmation action button title */
 "suggested_folders_replace_confirmation_button " = "Replace folders";
-
-/* App Clip Placeholder view title for when the episode link parsing fails */
-"app_clip_placholder_title" = "Sorry, we couldn't find that episode";
-
-/* App Clip Placeholder view message for when the episode link parsing fails */
-"app_clip_placholder_message" = "It may have been removed or the link is broken.\nBut there's plenty more on PodHopper.\nDownload the app for the full experience!";
 
 /* Notifications On*/
 "notifications_on" = "Notifications On";
@@ -5367,53 +3683,8 @@
 /* Notification title for weekly reengagement message */
 "notifications_reengagement_weekly_title" = "We miss you!";
 
-/* Title shown for the recommendations sreen during onboarding */
-"onboarding_recommendations_title" = "We hope you love these suggestions!";
-
-/* Subtitle shown for the recommendations sreen during onboarding */
-"onboarding_recommendations_subtitle" = "Here are some great shows to start with. Tap to follow, search or import from other apps.";
-
-/* A user review quote shown during onboarding */
-"onboarding_quote_best" = "The best podcast app out there. By far";
-
-/* A user review quote shown during onboarding alongside an image of the playback effects */
-"onboarding_quote_customization" = "The amount of customization is insane";
-
-/* A user review quote shown during onboarding alongside an image of podcast folders */
-"onboarding_quote_folders" = "Organizing my podcasts by folders is genius";
-
-/* A generic label representing the authour of the onboarding quotes describing users of the app */
-"onboarding_quote_author" = "PodHopper user";
-
 /* Notification body for weekly reengagement message */
 "notifications_reengagement_weekly_body" = "It’s been awhile since you’ve listened. Jump back in and enjoy!";
-
-/* Encourage Account Creation: modal title */
-"eac_informational_view_modal_title" = "We noticed you’re not logged in";
-
-/* Encourage Account Creation: modal description */
-"eac_informational_view_modal_description" = "Create an account or log in to enjoy\nPodHopper to the fullest.";
-
-/* Encourage Account Creation: Get Started button */
-"eac_informational_view_modal_get_started_button" = "Get Started";
-
-/* Encourage Account Creation: card title for sync feature */
-"eac_informational_card_sync_title" = "Sync across devices";
-
-/* Encourage Account Creation: card title for backups feature */
-"eac_informational_card_backups_title" = "Reliable backups";
-
-/* Encourage Account Creation: card title for recommendations feature */
-"eac_informational_card_recommendation_title" = "Personalized recommendations";
-
-/* Encourage Account Creation: card description for sync feature */
-"eac_informational_card_sync_description" = "Sync your progress, and shows across all your devices.";
-
-/* Encourage Account Creation: card description for backups feature */
-"eac_informational_card_backups_description" = "Your library and preferences are securely saved.";
-
-/* Encourage Account Creation: card description for recommendations feature */
-"eac_informational_card_recommendation_description" = "Get tailored podcast suggestions based on your listening habits.";
 
 /* Encourage Account Creation: title of the button used to start the login flow  */
 "eac_informational_banner_create_account" = "Create a free account";
@@ -5454,21 +3725,6 @@
 /* Encourage Account Creation: accessibility label for the banner in the listening history view */
 "eac_informational_banner_listening_history_icon_accessibility" = "Listening History Icon";
 
-/* Notification permission banner title*/
-"notitifications_permission_banner_title" = "Allow Push Notifications";
-
-/* Notification permission banner message*/
-"notitifications_permission_banner_message" = "To get notifications from PodHopper, you’ll need to turn them on in your device settings.";
-
-/* Notification permission banner action*/
-"notitifications_permission_banner_action" = "Go to device settings";
-
-/* Notification title for weekly reengagement message */
-"notifications_reengagement_weekly_title" = "We miss you!";
-
-/* Notification body for weekly reengagement message */
-"notifications_reengagement_weekly_body" = "It’s been awhile since you’ve listened. Jump back in and enjoy!";
-
 /* Notification title for recommendations trending message */
 "notifications_recommendations_trending_title" = "Trending this week";
 
@@ -5492,12 +3748,6 @@
 
 /* Notification body for recommendations you might like message */
 "notifications_recommendations_you_might_like_body" = "Wondering what to listen to next? Check out these shows!";
-
-/* Notification title for App Clip reminder*/
-"notifications_app_clip_title" = "Ready for more podcasts?";
-
-/* Notification body for App Clip reminder*/
-"notifications_app_clip_body" = "Install PodHopper to get the full experience with powerful playback and customization tools.";
 
 /* Notifications permissions screen title text*/
 "notifications_permissions_title" = "Stay up to date!";
@@ -5532,32 +3782,6 @@
 /* Notification button title to open device notification settings*/
 "notifications_permissions_open_settings" = "Open Settings";
 
-/* Banner Ads label. This needs to be an extremely short version of "advertisement" to indicate an ad in a tiny space. */
-"banner_ads_info_label" = "AD";
-
-/* The title of an option to remove banner ads. This will take the user to a page to purchase plus. */
-"banner_ads_remove_ads" = "Remove ads";
-
-/* The title of an option to report a specific banner ad for one of several reasons. */
-"banner_ads_report_ad" = "Report ad";
-
-/* The title shown after a user selects "report ad" which sits over the options of why they wanted to report the ad. */
-"banner_ads_report_ad_title" = "Why are you reporting this ad?";
-
-/* The title of an option to report a specific banner ad for one of several reasons. */
-"banner_ads_report_broken" = "This ad seems broken";
-
-/* The title of an option to report a banner ad as malicious. */
-"banner_ads_report_malicious" = "This is a malicious ad";
-
-/* The title of an option to report a banner ad as occurring too often. */
-"banner_ads_report_too_often" = "See this ad too often";
-
-/* The title shown in a Toast after reporting a banner ad. */
-"banner_ads_report_confirmation" = "You reported this ad.";
-
-/* The title of an option to report a banner ad as "other". */
-"banner_ads_report_other" = "Other";
 /* Episodes will be displayed in based on season and episode numbers*/
 "podcasts_episode_sort_serial" = "Serial";
 
@@ -5566,21 +3790,6 @@
 
 /* Upgrade account Title for onboarding banner*/
 "upgrade_account_title" = "Superpowers for your podcasts";
-
-/* Upgrade account information for onboarding banner*/
-"upgrade_account_info" = "Unlock all paid features like Folders, Shuffle, Bookmarks and many more";
-
-/* Subscription Yearly*/
-"subscription_plan_year" = "Yearly Plan";
-
-/* Subscription Monthly*/
-"subscription_plan_month" = "Monthly Plan";
-
-/* Subscription Savings on a Yearly Plan. The %1$@ argument is the amount of saving in percentage. Ex: Save 16%*/
-"subscription_plan_savings" = "Save %1$@ ";
-
-/* Subscription Plan text linking to free trial detail information */
-"subscription_plan_free_trial_info_link" = "How does the free trial work?";
 
 /* Folders feature marketing message */
 "feature_marketing_folders" = "Tidy your collection with Folders";
@@ -5612,9 +3821,6 @@
 /* Patron early access to new features marketing message*/
 "feature_marketing_early_access" = "Early access to new features";
 
-/* Patron early access to new features marketing message*/
-"feature_marketing_early_access" = "Early access to new features";
-
 /* A common string used throughout the app. Often refers to the Playlists screen. */
 "playlists" = "Playlists";
 
@@ -5638,9 +3844,6 @@
 
 /* Subtitle for the auto download setting. This is displayed when the option is turned off. */
 "playlists_auto_download_off_subtitle" = "Enable to auto download episodes in this playlist";
-
-/* Subtitle for the auto download setting. This is displayed when the option is turned on. '%1$@' is a placeholder for the number of episodes, this will be more than one. */
-"playlists_auto_download_on_plural_format" = "The first %1$@ episodes in this playlist will be automatically downloaded";
 
 /* A common string used throughout the app. Often refers to the Smart Playlist. */
 "smart_playlist" = "Smart playlist";
@@ -5716,9 +3919,6 @@
 
 /* Smart Playlist preview: description that appears when initially there are no rules set */
 "playlist_smart_preview_description" = "Set up smart rules to automatically add episodes to your smart playlist.";
-
-/* Smart Playlist preview: title for the enabled rules section */
-"playlist_smart_preview_enabled_rules" = "Enabled rules";
 
 /* Smart Playlist preview: title for the available rules section */
 "playlist_smart_preview_more_rules" = "More rules";
@@ -5804,21 +4004,6 @@
 /* Toast message displayed in case something goes wrong with the manual creation */
 "playlist_manual_create_error_message" = "Sorry, something went wrong while creating your playlist.";
 
-/* Picker option showed when tapping Play all */
-"playlist_play_all_option_save_queue" = "Save current queue";
-
-/* Picker title showed when tapping Play all */
-"playlist_play_all_picker_title" = "Save your Up Next queue?";
-
-/* Picker message showed when tapping Play all */
-"playlist_play_all_picker_message" = "Your current Up Next will be replaced when you play this playlist. Save it first to keep it.";
-
-/* Picker title showed when tapping replace after showing the first Play all picker */
-"playlist_play_all_replace_picker_title" = "Replace current Up Next?";
-
-/* Picker message showed when tapping replace after showing the first Play all picker */
-"playlist_play_all_replace_picker_message" = "This will clear your current Up Next queue and start playing this playlist.";
-
 /* Toast message displayed when the current Up Next is saved */
 "playlist_play_all_up_next_saved" = "Up Next saved as playlist";
 
@@ -5849,125 +4034,8 @@
 /* An option to say "yes" when when asked if the user enjoys the app. */
 "user_satisfaction_survey_yes_response" = "Yes!";
 
-/* Upgrade account timeline day 1 of free trial message. */
-"upgrade_account_timeline_day_1" = "Get access to Folders, Shuffle, Bookmarks, and exclusive content";
-
-/* Upgrade account timeline one week before charging message. */
-"upgrade_account_timeline_week_before" = "We’ll notify you about your trial ending.";
-
-/* Upgrade account timeline charging day message. The %1$@ argument is the day of the charge. Ex: You’ll be charged on September 31th Cancel anytime before.*/
-"upgrade_account_timeline_charging_day" = "You’ll be charged on %1$@. Cancel anytime before.";
-
-/* Subscription Plan text linking to feaures information */
-"subscription_plan_features_info_link" = "See all Plus features";
-
-/* Subscription Plan title for custom upgrade screen for the preselected chapters feature */
-"subscription_feature_custom_title_pre_selected_chapters" = "Preselect Chapters: cut to the good stuff";
-
-/* Subscription Plan title for custom upgrade screen for the shuffle upnext feature */
-"subscription_feature_custom_title_shuffle_upnext" = "Shuffle: The joy of not choosing";
-
-/* Subscription Plan title for custom upgrade screen for the bookmarks feature */
-"subscription_feature_custom_title_bookmarks" = "Bookmarks: no more “where was that?”";
-
-/* Subscription Plan title for custom upgrade screen for the folders feature */
-"subscription_feature_custom_title_folders" = "Folders: your podcasts, perfectly placed";
-
-/* Interests screen title */
-"interests_title" = "Tell us about your favorite topics";
-
-/* Interests screen subtitle */
-"interests_subtitle" = "Great podcasts, handpicked by real people, are coming your way!";
-
-/* Interests screen show more categories button text */
-"interests_show_more_categories" = "Show more categories";
-
-/* Interests screen button title for interests confirmation. The %1$@ argument is the minimum number of interests you need to select. Ex: Select at least 3*/
-"interests_select_at_least" = "Select at least %1$@";
-
 /* Search Results filter option */
 "all_results" = "Top Results";
-
-/// A description of the Playback 2025 feature
-"playback_2025_description" =  "See your top podcasts, categories, listening stats and more. Share with friends and shout out your favourite creators!";
-
-/// Description for the Playback 2025 feature
-"playback_2025_feature_description" = "See your listening stats, top podcasts, and more.";
-
-/// Title for the Playback 2025 feature
-"playback_2025_feature_title" = "Playback is here!";
-
-/// Label of the Playback 2025 call to action buton
-"playback_2025_view_year" = "View My Playback 2025";
-
-/// Label of the Playback 2025 call to action buton
-"playback_2025_intro_message" = "Your year in podcasts, wrapped and ready to relive";
-
-/// Text for playback 2025 listened to numbers story
-"playback_2025_listened_to_numbers" = "You tuned in to %1$@ podcasts and %2$@ episodes";
-
-/* Playback 2025: Title for the last story */
-"playback_2025_end_story_title" = "Thanks for spending your year with PodHopper";
-
-/* Playback 2025: Description for the last story */
-"playback_2025_end_story_description" = "Share your Playback with friends and show some love to the podcasters who kept you company all year";
-
-/// Text for playback 2025 listening time in minutes
-"playback_2025_listening_time" = "minutes listened";
-
-/// Text for playback 2025 top stop title
-"playback_2025_top_spot_title" = "Your top podcast of 2025";
-
-/// Text for playback 2025 top stop subtitle
-"playback_2025_top_spot_subtitle" = "It doesn’t get more “you” than this";
-
-/// Text for playback 2025 top description. %1$@ is the number of episodes and %1 is the listening time. Ex: 66 episodes, 2 days, and 3 hours. That’s commitment!
-"playback_2025_top_spot_description" = "%1$@ episodes, %2$@.\nThat’s commitment!";
-
-/* Playback 2025: Title for the top 5 podcasts story */
-"playback_2025_top_5_podcasts_title" = "Your other go-to's";
-
-/* Playback 2025: Description for the top 5 podcasts story */
-"playback_2025_top_5_podcasts_message" = "More favorites, more play, more you";
-
-/* Playback 2025: Title for the longest episode story: %1$@ represent the time */
-"playback_2025_longest_episode_title" = "Your marathon listen: %1$@";
-
-/* Playback 2025: Description for the longest episode story */
-"playback_2025_longest_episode_message" = "Hope you stretched first!";
-
-/* Playback 2025: Footer description for the longest episode story: %1$@ represent the episode title and %2$@ the podcast title */
-"playback_2025_longest_episode_footer" = "The longest episode was “%1$@” from “%2$@”";
-
-/* Playback 2025: Title for the completion rate story: %1$@ represent the percentage of completion rate, like 10% */
-"playback_2025_completion_rate_title" = "Your completion rate was %1$@";
-
-/* Playback 2025: Description for the completion rate story: %1$@ represent the started episodes count and %2$@ the finished episodes count */
-"playback_2025_completion_rate_message" = "Out of %1$@ episodes started, you finished %2$@. A stronger follow‑through than most gym memberships";
-
-/* Playback 2025: Title showed in the Year Over Year Comparison story when the percentage is down compared to the last year. %1$@ represent a placeholder for the formatted percentage. */
-"playback_2025_year_over_year_comparison_down_title" = "Your listening dipped %1$@ this year";
-
-/* Playback 2025: Message showed in the Year Over Year Comparison story when the percentage is down compared to the last year. */
-"playback_2025_year_over_year_comparison_down_message" = "But hey, quality over quantity";
-
-/* Playback 2025: Title showed in the Year Over Year Comparison story when the percentage is more than 500% compared to the last year. */
-"playback_2025_year_over_year_comparison_hero_title" = "From zero to hero!";
-
-/* Playback 2025: Message showed in the Year Over Year Comparison story when the percentage is more than 500% to the last year. %1$@ represent a placeholder for the formatted percentage. */
-"playback_2025_year_over_year_comparison_hero_message" = "You listened %1$@ more this year — welcome to the club";
-
-/* Playback 2025: Title showed in the Year Over Year Comparison story when the percentage is up compared to the last year. %1$@ represent a placeholder for the formatted percentage. */
-"playback_2025_year_over_year_comparison_up_title" = "Compared to 2024, your listening time skyrocketed %1$@";
-
-/* Playback 2025: Message showed in the Year Over Year Comparison story when the percentage is up compared to the last year. */
-"playback_2025_year_over_year_comparison_up_message" = "More podcasts, more joy";
-
-/* Playback 2025: Title showed in the Year Over Year Comparison story when the percentage is the same compared to the last year. */
-"playback_2025_year_over_year_comparison_same_title" = "Your 2025 listening held steady";
-
-/* Playback 2025: Message showed in the Year Over Year Comparison story when the percentage is the same compared to the last year. */
-"playback_2025_year_over_year_comparison_same_message" = "Consistent, dependable, like your coffee shop order";
 
 /// Search results screen: title for no results found
 "search_results_empty_title" = "No Results";
@@ -5975,49 +4043,8 @@
 /// Search results screen: message for no results found
 "search_results_empty_message" = "Try a new search, or by adding a podcast feed URL";
 
-/// Search results screen: action for sending feedback when no results found
-"search_results_empty_action" = "Send Us Feedback";
-
 /// Search results screen: action for doing full search on term. %1$@ argument is the term being searched. Ex: "View all results for "cautionary" "
 "search_results_view_all" = "View all results for \"%1$@\"";
-
-/* A title shown in the button on the upsell screen to get  PodHopper Plus */
-"playback_2025_plus_upsell_button_title" = "Get PodHopper Plus";
-
-/* A title shown in the upsell screen for PodHopper Plus subscription */
-"playback_2025_plus_upsell_title" = "Want the deep dive?";
-
-/* A description shown in the upsell screen for PodHopper Plus subscription */
-"playback_2025_plus_upsell_description" = "Subscribe to PodHopper Plus for extended stats, bookmarks, folders, chapter selection, and more ways to dig into your listening habits";
-
-/* A title shown on the Ratings Playback 2025 screen showing a bar chart of your ratings */
-"playback_2025_ratings_description_4_to_5" = "Creators everywhere appreciate the love";
-
-"playback_2025_ratings_description_1_to_3" = "Reviews help great shows get found";
-
-/* A description shown in Playback 2025 when the user has made ratings of 4-5/5 for Podcasts */
-"playback_2025_ratings_title_4_to_5" = "You dropped %1$@-star ratings like confetti";
-
-/* A description shown in Playback 2025 when the user has only made ratings of 1-3/5 for Podcasts */
-"playback_2025_ratings_title_1_to_3" = "Thanks for sharing your feedback.";
-
-/* A title shown in Playback 2025 when the user has not made any ratings. */
-"playback_2025_ratings_empty_title" = "No ratings yet, but there's still time!";
-
-/* A description shown in Playback 2025 to describe the new Podcast Ratings feature */
-"playback_2025_ratings_empty_description" = "Help your favorite creators get discovered by sharing what you love";
-
-/* A title shown in the Playback thanks screen for PodHopper Plus subscription */
-"playback_2025_plus_thanks_title" = "Thanks for supporting PodHopper!";
-
-/* A description shown in the Playback thanks screen for PodHopper Plus subscribers. %1$@ argument is your subscription Tier. Ex:  Your Plus perks unlock extra stats and power features" */
-"playback_2025_plus_thanks_description" = "Your %1$@ perks unlock extra stats and power features";
-
-/* Message to shown when playback 2025 failed to load */
-"playback_2025_failed_to_load" = "Sorry, we couldn’t load Playback";
-
-/* Message to shown then trying to open playback from deep link but it's not available */
-"playback_not_available" = "Playback unavailable";
 
 /* Message when the user didn't upload any files */
 "files_not_uploaded" = "No files uploaded";
@@ -6031,315 +4058,6 @@
 /* Generic error used when playback fails. */
 "player_error_short_playback_error" = "Playback failed, please try again";
 
-/* tv app home tab */
-"tv_tab_home" = "Home";
-
-/* tv app podcasts tab */
-"tv_tab_podcasts" = "Your Podcasts";
-
-/* tv app Playlists tab */
-"tv_tab_playlists" = "Playlists";
-
-/* tv app Up Next tab */
-"tv_tab_up_next" = "Up Next";
-
-/* tv welcome title */
-"tv_welcome_title" = "Welcome to PodHopper TV";
-
-/* tv welcome subtitle */
-"tv_welcome_subtitle" = "Your podcasts. On the big screen. Obviously.";
-
-/* tv welcome log in */
-"tv_welcome_log_in" = "Log in";
-
-/* tv welcome create free account */
-"tv_welcome_create_free_account" = "Create free account";
-
-/* tv welcome browse without account */
-"tv_welcome_browse_without_account" = "Browse without an account";
-
-/* tv sign in title */
-"tv_sign_in_title" = "Log in to PodHopper";
-
-/* tv sign in subtitle */
-"tv_sign_in_subtitle" = "Open your camera and point to this QR code";
-
-/* tv sign enter code. '%1$@' is the visible (white, underlined) pair URL, '%2$@' is the full URL to navigate to. */
-"tv_sign_in_enter_code_in_url" = "or enter this code in [%1$@](%2$@)";
-
-/* tv sign enter code */
-"tv_sign_in_enter_code" = "or enter the following code";
-
-/* tv sign enter code go url.  %1$@ is the visible url and %2$@ the full url to enter the code*/
-"tv_sign_in_enter_code_go_url" = "going to [%1$@](%2$@)";
-
-/* tv log in error title shown when the app fails to fetch the QR log in code */
-"tv_log_in_qr_code_error_title" = "Couldn't get your log in code";
-
-/* tv create account title */
-"tv_create_account_title" = "Create your free account";
-
-/* tv create account subtitle */
-"tv_create_account_subtitle" = "Scan this code to get started on your phone, it only takes a minute.";
-
-/* tv create account screen subtitle telling the viewer to point their phone camera at the QR code */
-"tv_create_account_qr_instruction" = "Open the camera and point to this QR code.";
-
-/* tv create account enter code */
-"tv_create_account_come_back" = "Once you’ve created your account, come back and sign in";
-
-/* tv create account modal title */
-"tv_create_account_modal_title" = "Your podcasts deserve a home";
-
-/* tv create account modal subtitle */
-"tv_create_account_modal_subtitle" = "Create a free account to follow podcasts, build your Up Next, and pick up right where you left off, on any device.";
-
-/* tv create account modal step - scan the QR code */
-"tv_create_account_modal_step_scan" = "Scan the QR code";
-
-/* tv create account modal step - create your account */
-"tv_create_account_modal_step_create" = "Create your account";
-
-/* tv create account modal step - the TV logs you in automatically */
-"tv_create_account_modal_step_log_in" = "The TV will log you in";
-
-/* tv signing in title */
-"tv_signing_in_title" = "Good to see you.";
-
-/* tv signing in subtitle */
-"tv_signing_in_subtitle" = "Loading your podcasts now.";
-
-/* tv data loss resync — subtle spinner label shown when the local database was purged (e.g. by tvOS) and we re-fetch everything before entering the app */
-"tv_resync_fetching_episodes" = "Fetching latest episodes";
-
-/* tv podcasts empty title */
-"tv_podcasts_empty_title" = "Time to fill this up.";
-
-/* tv podcasts empty subtitle */
-"tv_podcasts_empty_subtitle" = "Followed podcasts show up here, ready to play.";
-
-/* tv podcasts empty button action title */
-"tv_podcasts_empty_action_title" = "Discover podcasts";
-
-/* tv podcast details follow button title */
-"tv_podcast_detail_follow_title" = "Follow this podcast";
-
-/* tv podcast details following button title */
-"tv_podcast_detail_following_title" = "Following";
-
-/* tv podcast details more info button title */
-"tv_podcast_detail_more_info_title" = "More info";
-
-/* tv podcast more info network label */
-"tv_podcast_detail_network" = "Network";
-
-/* tv podcast more info website label */
-"tv_podcast_detail_website" = "Website";
-
-/* tv podcast more info schedule label */
-"tv_podcast_detail_schedule" = "Schedule";
-
-/* tv podcast more info about section title */
-"tv_podcast_detail_about" = "About";
-
-/* tv podcast more info next episode label */
-"tv_podcast_detail_next_episode" = "Next episode";
-
-/* tv episode row action that opens the episode details modal. The leading ⓘ glyph stands in for an SF Symbol since tvOS .confirmationDialog strips Labels' images. */
-"tv_episode_show_notes_action" = "ⓘ  Episode details";
-
-/* tv title shown above the rendered HTML episode description inside the episode details modal */
-"tv_episode_show_notes_title" = "Episode details";
-
-/* tv fallback message shown inside the episode details modal while the show notes are being fetched */
-"tv_episode_show_notes_loading" = "Loading episode details…";
-
-/* tv podcast detail recommended episode section title */
-"tv_podcast_detail_start_here" = "The episode to try first";
-
-/* tv podcast detail recommended episode section subtitle */
-"tv_podcast_detail_start_here_subtitle" = "This is the one that gets people hooked";
-
-/* tv podcast detail all episodes section title */
-"tv_podcast_detail_all_episodes" = "All episodes";
-
-/* tv podcast detail archive filter label */
-"tv_podcast_detail_archived_filter" = "Archived episodes";
-
-/* tv podcast detail option to hide archived episodes from the list */
-"tv_podcast_detail_hide_archived" = "Hide archived";
-
-/* tv podcast detail option to show archived episodes in the list */
-"tv_podcast_detail_show_archived" = "Show archived";
-
-/* tv podcast detail empty state title shown when a podcast has no episodes */
-"tv_podcast_detail_no_episodes_title" = "No Episodes";
-
-/* tv podcast detail empty state subtitle shown when a podcast has no episodes */
-"tv_podcast_detail_no_episodes_subtitle" = "Episodes from this podcast will show up here.";
-
-/* tv episode action to view episode info */
-"tv_episode_info" = "Episode info";
-
-/* tv playlist detail episode count. '%1$@' is a placeholder for the number of episodes. */
-"tv_playlist_detail_episode_count" = "%1$@ episodes";
-
-/* tv playlist detail play all button title */
-"tv_playlist_detail_play_all" = "Play all episodes";
-
-/* tv playlists empty title */
-"tv_playlists_empty_title" = "Your playlists live here";
-
-/* tv playlists empty subtitle */
-"tv_playlists_empty_subtitle" = "Build one manually or let Smart Rules do the sorting for you.";
-
-/* tv playlists empty button action title */
-"tv_playlists_empty_action_title" = "Create a playlist";
-
-/* tv playlists download modal title */
-"tv_playlists_download_title" = "Create playlists on your phone";
-
-/* tv playlists download modal subtitle */
-"tv_playlists_download_subtitle" = "They'll be waiting here when you're done. Scan to get the app";
-
-/* tv keep listening title */
-"tv_home_keep_listening_title" = "Picking up where you left off";
-
-/* tv home recommended for you title */
-"tv_home_recommended_for_you_title" = "You'll probably want these";
-
-/* tv home recently played section title */
-"tv_home_recently_played" = "Recently played";
-
-/* tv home new releases section title */
-"tv_home_new_releases" = "New releases";
-
-/* tv player playback speed menu title */
-"tv_player_playback_speed" = "Playback speed";
-
-/* tv player playback effects menu title */
-"tv_player_playback_effects" = "Playback effects";
-
-/* tv player volume boost toggle title */
-"tv_player_volume_boost" = "Volume boost";
-
-/* tv player trim silence section title */
-"tv_player_trim_silence" = "Trim silence";
-
-/* tv player trim silence off option */
-"tv_player_trim_silence_off" = "Off";
-
-/* tv player trim silence mild option */
-"tv_player_trim_silence_mild" = "Mild";
-
-/* tv player trim silence medium option */
-"tv_player_trim_silence_medium" = "Medium";
-
-/* tv player trim silence mad max option */
-"tv_player_trim_silence_mad_max" = "Mad Max";
-
-/* tv player toast shown when playback speed changes. %1$@ is the speed value like 1.5x */
-"tv_player_playback_speed_set" = "Playback speed set to %1$@";
-
-/* tv player toast shown when volume boost is turned off */
-"tv_player_volume_boost_off" = "Volume boost off";
-
-/* tv player toast shown when volume boost is turned on */
-"tv_player_volume_boost_on" = "Volume boost on";
-
-/* tv player toast shown when trim silence setting changes. %1$@ is the selected option name */
-"tv_player_trim_silence_set" = "Trim silence: %1$@";
-
-/* tv toast confirming an episode was marked as played */
-"tv_episode_marked_as_played" = "Marked as played";
-
-/* tv toast confirming an episode was archived */
-"tv_episode_archived" = "Archived";
-
-/* tv toast confirming an episode was unarchived */
-"tv_episode_unarchived" = "Unarchived";
-
-/* tv toast confirming an episode was removed from the Up Next queue */
-"tv_episode_removed_from_up_next" = "Removed from Up Next";
-
-/* tv toast confirming an episode was queued to play next in Up Next */
-"tv_episode_will_play_next" = "Will play next";
-
-/* tv toast confirming an episode was queued to play last in Up Next */
-"tv_episode_will_play_last" = "Will play last";
-
-/* tv up next empty title */
-"tv_up_next_empty_title" = "Nothing queued up";
-
-/* tv up next empty subtitle */
-"tv_up_next_empty_subtitle" = "Add episodes to Up Next and they'll play in order, back to back";
-
-/* tv up next empty button action title */
-"tv_up_next_empty_action_title" = "Add episodes";
-
-/* tv starred episodes empty title */
-"tv_starred_empty_title" = "No starred episodes";
-
-/* tv starred episodes empty subtitle */
-"tv_starred_empty_subtitle" = "Star episodes to keep them handy, and they'll show up here";
-
-/* tv listening history empty title */
-"tv_history_empty_title" = "No listening history";
-
-/* tv listening history empty subtitle */
-"tv_history_empty_subtitle" = "Episodes you play will show up here";
-
-/* tv User Profile actions title */
-"tv_user_profile_actions" = "User settings";
-
-/* tv Profile button — VoiceOver label for the image-only profile button shown in the top bar of the main tab view */
-"tv_profile_button_accessibility_label" = "Profile";
-
-/* tv Profile button — VoiceOver hint describing what happens when activating the profile button in the top bar of the main tab view */
-"tv_profile_button_accessibility_hint" = "Opens profile and account options";
-
-/* tv Profile menu — opens the Starred Episodes list */
-"tv_profile_menu_starred_episodes" = "Starred Episodes";
-
-/* tv Profile menu — log out action */
-"tv_profile_menu_log_out" = "Log out";
-
-/* tv Profile menu — title of the confirmation shown before logging out */
-"tv_profile_menu_log_out_confirmation_title" = "Log out?";
-
-/* tv Profile menu — message warning that logging out erases all locally stored data from this Apple TV */
-"tv_profile_menu_log_out_confirmation_message_version_2" = "This removes all downloaded podcasts and data from this Apple TV. You can log in again to restore them.";
-
-/* tv Profile menu — log in action (signed-out state) */
-"tv_profile_menu_log_in" = "Log in";
-
-/* tv Profile menu — create account action (signed-out state) */
-"tv_profile_menu_create_account" = "Create account";
-
-/* tv Sign In Login Type title */
-"tv_user_sign_in_login_type" = "Login Type";
-
-/* tv Sign In Option QR */
-"tv_user_sign_in_option_qr" = "QR";
-
-/* tv Sign In Option Username and Password */
-"tv_user_sign_in_option_manual" = "User/Pass";
-
-/* tv Sign In manual login username text field placeholder */
-"tv_user_sign_in_username_placeholder" = "Username";
-
-/* tv search field placeholder prompt */
-"tv_search_prompt" = "Podcasts, shows, authors";
-
-/* tv search in-progress indicator label */
-"tv_search_searching" = "Searching...";
-
-/* tv search initial placeholder shown before any query is entered */
-"tv_search_type_something" = "Type something...";
-
-/* tv search error label. '%1$@' is a placeholder for a localized error description. */
-"tv_search_failed" = "Search failed: %1$@";
-
 /* info message when authorization is pending on server */
 "server_error_login_auth_pending" = "Authorization pending";
 
@@ -6352,59 +4070,8 @@
 /* info message when authorization is invalid on server */
 "server_error_login_invalid_grant" = "The provided grant is invalid, expired or has been revoked.";
 
-/* tv home recommendations for listeners of podcast title. Ex: Loved by listeners of The Daily */
-"tv_home_recommend_user_podcast_section_title" = "Loved by listeners of %1$@";
-
-/* tv home Trending section title */
-"tv_home_trending_section_title" = "What everyone's on this week";
-
-/* tv home Featured section title */
-"tv_home_featured_section_title" = "Featured on PodHopper";
-
-/* tv home Browse Categories section title */
-"tv_home_browse_categories_section_title" = "Browse categories";
-
-/* tv create account banner title */
-"tv_banner_create_account_title" = "One account. Every screen";
-
-/* tv create account banner subtitle */
-"tv_banner_create_account_subtitle" = "Your follows and progress exactly where you left them";
-
-/* tv create account banner action button title */
-"tv_banner_create_account_action_title" = "Create a free account";
-
-/* tv discover more banner title */
-"tv_banner_discover_more_title" = "You haven't seen the half of it";
-
-/* tv discover more banner subtitle */
-"tv_banner_discover_more_subtitle" = "Your next obsession is in here somewhere";
-
-/* tv discover more banner action button title */
-"tv_banner_discover_more_action_title" = "Discover more shows";
-
-/* Discover - Button title on a featured podcast card that plays the podcast's most recent episode. */
-"tv_discover_featured_play_latest_episode" = "Play latest episode";
-
-/* Discover - Button title on a featured podcast card that opens the podcast. */
-"tv_discover_featured_go_to_podcast" = "Go to podcast";
-
-/* Discover - Button title on a discover episode that makes it play. */
-"tv_discover_play_episode" = "Play episode";
-
 /* tv home Video section title */
 "tv_home_video_section_title" = "Made for TV";
-
-/* tv Sponsored Podcast Title */
-"tv_sponsored_podcast_section_title" = "PodHopper recommends";
-
-/* tv Discover failed to load title*/
-"tv_discover_failed_to_load_title" = "Discover failed to load.";
-
-/* tv Discover failed to load subtitle*/
-"tv_discover_failed_to_load_subtitle" = "Make sure you are connected to the internet and try again.";
-
-/* tv app Now Playing tab */
-"tv_tab_now_playing" = "Now Playing";
 
 /* Title on the screen prompting the user to approve pairing their account with an Apple TV. */
 "device_approve_title" = "Connect to Apple TV";
@@ -6438,13 +4105,4 @@
 
 /* Title of the alert shown when approval failed. */
 "device_approve_generic_error_alert_title" = "Device approval failed";
-
-/* Title of an alert that informs the user that they have been signed out of their account */
-"tv_account_signed_out_alert_title" = "You've been logged out.";
-
-/* Message/Body of an alert that explains that the user should tap a button and sign in again */
-"tv_account_signed_out_alert_message" = "There was a problem and you've been logged out.\nTap the button below to log in to your PodHopper account again.";
-
-/* Message shown on the empty folder view in the TV app, directing the user to add podcasts to the folder using the mobile app */
-"tv_folder_empty_message" = "Edit your folder in the mobile app, they'll be waiting here when you're done.";
 
