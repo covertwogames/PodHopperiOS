@@ -2578,8 +2578,6 @@
     <string>Читайте, чтобы ничего не упустить. Имя, которое вы не расслышали, книга, на которую ссылаются, нужная для статистики цифра — просто нажмите на слово и прослушайте заново.</string>
     <key>transcript_highlight_announcement_title</key>
     <string>Слушайте и читайте. Даже в ускоренном режиме.</string>
-    <key>transcript_tap_to_seek_streaming_unavailable</key>
-    <string>Скачать выпуск, чтобы искать нажатием</string>
     <key>trim_silence</key>
     <string>Удалить паузы</string>
     <key>try_again</key>

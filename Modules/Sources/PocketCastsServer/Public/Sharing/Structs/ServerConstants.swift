@@ -42,10 +42,6 @@ public enum ServerConstants {
             production() ? "https://search.pocketcasts.com/" : "https://search.pocketcasts.net/"
         }
 
-        public static var generatedTranscripts: String {
-            production() ? "https://shownotes.pocketcasts.com/generated_transcripts/" : "https://shownotes.pocketcasts.net/generated_transcripts/"
-        }
-
         public static var tvPair: String {
             production() ? "https://pocketcasts.com/pair" : "https://pocketcasts.net/pair"
         }

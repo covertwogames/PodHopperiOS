@@ -2578,8 +2578,6 @@ Om du behöver inspiration så kan du Upptäcka nya podcasts nedan.</string>
     <string>Läs snabbt, missa ingenting. Namnet du svepte förbi, boken de rekommenderade, statistiken du ville ha — tryck på ordet och hoppa tillbaka.</string>
     <key>transcript_highlight_announcement_title</key>
     <string>Läs med. Även vid 2x.</string>
-    <key>transcript_tap_to_seek_streaming_unavailable</key>
-    <string>Ladda ner avsnittet och tryck för att söka</string>
     <key>trim_silence</key>
     <string>Trimma tystnad</string>
     <key>try_again</key>

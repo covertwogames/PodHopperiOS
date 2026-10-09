@@ -2578,8 +2578,6 @@ Se stai cercando ispirazione, prova la scheda Scopri.</string>
     <string>Leggi velocemente, non perderti nulla. Il nome che ti è sfuggito, il libro che ti hanno consigliato, il dato che cercavi: tocca la parola e torna indietro.</string>
     <key>transcript_highlight_announcement_title</key>
     <string>Segui leggendo. Anche a velocità 2x.</string>
-    <key>transcript_tap_to_seek_streaming_unavailable</key>
-    <string>Scarica l'episodio per abilitare lo scorrimento tramite tocco</string>
     <key>trim_silence</key>
     <string>Elimina i silenzi</string>
     <key>try_again</key>

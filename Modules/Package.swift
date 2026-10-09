@@ -53,7 +53,6 @@ let package = Package(
         .package(url: "https://github.com/dagronf/SwiftSubtitles", from: "1.8.3"),
         .package(url: "https://github.com/Automattic/google-cast", from: "1.0.1"),
         .package(url: "https://github.com/ksemianov/WrappingHStack", from: "0.2.0"),
-        .package(url: "https://github.com/Automattic/pocket-casts-ios-fingerprint", branch: "trunk"),
         .package(url: "https://github.com/nmdias/FeedKit.git", from: "10.4.0"),
     ],
     targets: XcodeSupport.targets + [
@@ -216,7 +215,6 @@ enum XcodeSupport {
                     .product(name: "SwiftSubtitles", package: "SwiftSubtitles"),
                     .product(name: "GoogleCast", package: "google-cast"),
                     .product(name: "WrappingHStack", package: "WrappingHStack"),
-                    .product(name: "Fingerprint", package: "pocket-casts-ios-fingerprint"),
                     "EndOfYear",
                 ]
             ),

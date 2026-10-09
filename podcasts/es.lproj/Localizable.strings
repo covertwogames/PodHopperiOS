@@ -2578,8 +2578,6 @@ Si quieres nuevas ideas, ve a la pestaña Descubrir.</string>
     <string>Lee rápido, no te pierdas nada. El nombre que dejaste atrás, el libro que te recomendaron, la estadística que querías: toca la palabra y vuelve atrás.</string>
     <key>transcript_highlight_announcement_title</key>
     <string>Sigue la lectura. Incluso al doble de velocidad.</string>
-    <key>transcript_tap_to_seek_streaming_unavailable</key>
-    <string>Descarga el episodio para pulsar para buscar</string>
     <key>trim_silence</key>
     <string>Recortar silencio</string>
     <key>try_again</key>

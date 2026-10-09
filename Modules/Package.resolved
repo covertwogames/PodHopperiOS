@@ -92,15 +92,6 @@
       }
     },
     {
-      "identity" : "pocket-casts-ios-fingerprint",
-      "kind" : "remoteSourceControl",
-      "location" : "https://github.com/Automattic/pocket-casts-ios-fingerprint",
-      "state" : {
-        "branch" : "trunk",
-        "revision" : "b696bd9a4a495604532b1b7a484ab140c144eccc"
-      }
-    },
-    {
       "identity" : "swift-protobuf",
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/apple/swift-protobuf.git",

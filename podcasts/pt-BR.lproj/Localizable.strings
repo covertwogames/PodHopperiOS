@@ -2578,8 +2578,6 @@ Se você estiver buscando inspiração, experimente a guia Explorar.</string>
     <string>Leia rápido sem perder nada. Aquele nome que você deixou passar, o livro que indicaram, o dado que você queria conferir — toque na palavra e volte na hora.</string>
     <key>transcript_highlight_announcement_title</key>
     <string>Leia mais. Mesmo na velocidade 2x.</string>
-    <key>transcript_tap_to_seek_streaming_unavailable</key>
-    <string>Baixe o episódio para tocar e procurar</string>
     <key>trim_silence</key>
     <string>Cortar momentos de silêncio</string>
     <key>try_again</key>

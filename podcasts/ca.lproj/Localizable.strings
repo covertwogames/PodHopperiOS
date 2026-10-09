@@ -2576,8 +2576,6 @@ Si vols noves idees, ves a la pestanya Descobreix.</string>
     <string>Llegeix ràpid, no et perdis res. El nom que vas passar per alt, el llibre que van recomanar, la dada que volies: toca la paraula i torna enrere.</string>
     <key>transcript_highlight_announcement_title</key>
     <string>Llegeix mentre escoltes. Fins i tot a 2x.</string>
-    <key>transcript_tap_to_seek_streaming_unavailable</key>
-    <string>Descarrega l'episodi per moure't per la transcripció</string>
     <key>trim_silence</key>
     <string>Retalla els silencis</string>
     <key>try_again</key>

@@ -112,6 +112,23 @@ checked a second time by an independent review. Removed:
   AutomatticTracks and stopped the unit test target from compiling. Other stale tests may remain;
   the test target has not been built since.
 
+**Transcript fingerprint sync (October 2026):** removed podcasts/Fingerprint (6 files) and its tests,
+Automattic's pocket-casts-ios-fingerprint package, the generatedTranscripts server address, the
+transcript_tap_to_seek_streaming_unavailable string, and the parts of TranscriptViewController that
+ran on fingerprint timing: the follow-along highlight (display link and playback observers), the
+scroll-back after a manual scroll, tap-to-seek and its tap recognizer, the DEBUG overlay bar, and
+the synced analytics properties. It only ever worked for Pocket Casts' auto-generated transcripts,
+which it matched against reference files on Pocket Casts' servers, and PodHopper never receives
+those. It was not completely inert, though: the player's "..." menu always offers Transcript (it
+opens the screen, which says no transcript is available), and closing that screen created
+FingerprintTimingManager. From then until the app quit, whenever the playing episode finished
+downloading it asked shownotes.pocketcasts.com for that episode's reference file (with the podcast
+and episode ids, up to three tries). That contact is gone. Transcript search, sharing, and the
+generated-transcript banner code are unchanged. Still unused after this, left alone: the
+syncedTranscripts analytics event cases, TranscriptModel.firstCue(containing:),
+TranscriptManager.isDisplayingGeneratedTranscript, and three TranscriptPlaybackManaging
+requirements (canSeek, currentTime, seekTo) that nothing calls through the protocol any more.
+
 ## Current architecture
 
 Refresh, discovery, search, and subscriptions all run on PodHopper's own layer in
@@ -183,15 +200,14 @@ pin. bulkMarkAsPlayed routes the current episode through markAsPlayed, so it inh
 
 - **Vestigial Pocket Casts constants.** The service host functions in ServerConstants (main,
   api, cache, discover, image, files, share, lists, search) now have no live callers.
-  generatedTranscripts is still read by FingerprintReferenceRetriever.
-- **Fingerprint (transcript timing sync).** podcasts/Fingerprint (6 files, plus its tests) and
-  Automattic's pocket-casts-ios-fingerprint package. TranscriptViewController still calls it, but
-  it only runs for Pocket Casts' auto-generated transcripts, which PodHopper can never receive, so
-  it never does anything. Removing it means editing TranscriptViewController.
 - **Transcripts never appear (feature gap, not cleanup).** ShowInfoCoordinator.loadTranscriptsMetadata
   always returns an empty list, because the list used to come from the Pocket Casts server. The
   feed parser does not read podcast:transcript tags. Fixing this means saving those links per
-  episode and returning them there; the transcript screen already loads and shows the files.
+  episode and returning them there; the transcript screen already loads and shows the files. The
+  follow-along highlighting, scroll-back and tap-to-seek went with the fingerprint code (see
+  Completed), because they only ever ran on fingerprint timing. A transcript fix that wants them
+  back would drive them from the playback position directly; git history before the fingerprint
+  removal has the old implementation.
 - **Bigger code-edit leftovers (deferred, Android skipped this tier too).** Share Profile (debug
   flag), SlumberViews and the announcement screens, the old DiscoverCollectionViewController
   screens, the OnboardingFlow and upsell husks, the user satisfaction survey (flag off), and the
@@ -210,6 +226,9 @@ pin. bulkMarkAsPlayed routes the current episode through markAsPlayed, so it inh
 - **Unused leftovers.** ServerHelper's colorUrl, playerUrl, and bundleUrl still name Pocket Casts
   addresses but have no live callers. ServerCredentials.sharing is set at launch but nothing reads
   it any more, and MainServerHandler.securityDateFormatter has no callers.
+- **Transcript menu item.** The player's "..." menu always offers Transcript, and it can only ever
+  say that no transcript is available (see the transcripts gap above). The shelf button version
+  shows the same message as a toast. Hide it, or fix transcripts.
 - **Small pre-existing oddities.** PodcastViewController registers a NoSearchResultsCell nib that
   does not exist (never dequeued, so harmless). The "Add podcast by URL" option asks for an "add"
   icon that is not in any catalog, so it shows without an icon. The acknowledgements page has not
