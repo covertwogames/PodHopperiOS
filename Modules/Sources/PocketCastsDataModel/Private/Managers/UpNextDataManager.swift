@@ -216,7 +216,8 @@ class UpNextDataManager {
     }
 
     func movePlaylistEpisode(from: Int, to: Int, dbQueue: PCDBQueue) {
-        var resortedItems = cachedItems
+        // Read under the queue that guards writes; Up Next sync can replace the cached list at any time.
+        var resortedItems = cachedItemsQueue.sync { cachedItems }
 
         if from == -1, to == 0 {
             // special case where we just added a new episode to the top, nothing needs to be done just redo the ordering below
@@ -278,7 +279,7 @@ class UpNextDataManager {
 
     private func saveOrdering(dbQueue: PCDBQueue) {
         cacheEpisodes(dbQueue: dbQueue)
-        let sortedItems = cachedItems
+        let sortedItems = cachedItemsQueue.sync { cachedItems }
         dbQueue.write { db in
             do {
                 for (index, episode) in sortedItems.enumerated() {

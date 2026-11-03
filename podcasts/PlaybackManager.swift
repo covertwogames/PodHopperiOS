@@ -69,6 +69,10 @@ class PlaybackManager: ServerPlaybackDelegate {
     // A synced position is only worth moving to when it is meaningfully ahead.
     private static let syncedPositionMinAhead: TimeInterval = 30
     private var latePositionCheckToken: UUID?
+    // PodHopper: the play request waiting on the cross-device position check and then on the audio
+    // session. A pause, a newer play, the player being torn down or a change of episode in the meantime
+    // replaces it, so it doesn't start playback late. Main thread only.
+    private var pendingPlayToken: UUID?
     // The episode whose position was moved by a seek (user or sync) since the late check started.
     private var positionMovedEpisodeUuid: String?
 
@@ -259,12 +263,16 @@ class PlaybackManager: ServerPlaybackDelegate {
         if let podcastEpisode = episode as? Episode, podcastEpisode.archived {
             EpisodeManager.unarchiveEpisode(episode: podcastEpisode, fireNotification: true)
         }
+        // Save where the old episode is while it's still current and still in the player, as load
+        // would normally do before switching.
+        recordPlaybackPosition(sendToServerImmediately: false, fireNotifications: false)
         // Make this the current episode while preserving Up Next (the old current drops into the
         // queue), then prepare the player paused at the synced position. After the push the episode
         // is already current, so load sees episodeIsChanging == false and neither auto-plays nor
-        // clears the queue.
+        // clears the queue. saveCurrentEpisode is false for the same reason: load's save would read
+        // the old episode's time from the player and write it onto this one, over the synced position.
         queue.pushNewCurrentlyPlaying(episode: episode)
-        load(episode: episode, autoPlay: false, overrideUpNext: false)
+        load(episode: episode, autoPlay: false, overrideUpNext: false, saveCurrentEpisode: false)
     }
 
     // MARK: - PodHopper late position check
@@ -398,8 +406,25 @@ class PlaybackManager: ServerPlaybackDelegate {
         // starts where another device left off instead of from the stale local position. The pull
         // runs off the main thread and is time bounded; the real play then runs on the main thread.
         // This mirrors Android, which applies the position at the top of its own play().
+        let playToken = UUID()
+        pendingPlayToken = playToken
         PodHopperPositionSync.shared.applyRemotePositionBeforePlay(episode: currEpisode) { pullResult in
-            self.performPlayAfterRemoteSync(currEpisode: currEpisode, completion: completion, userInitiated: userInitiated)
+            // PodHopper: the check can take a few seconds. If the user paused or played something else
+            // in the meantime, this request is stale: starting it would play over their choice.
+            guard self.pendingPlayToken == playToken else {
+                FileLog.shared.addMessage("PlaybackManager: dropping a play request replaced while the position check ran")
+                return
+            }
+            guard self.currentEpisode()?.uuid == currEpisode.uuid else {
+                FileLog.shared.addMessage("PlaybackManager: dropping a play request for an episode that is no longer current")
+                self.pendingPlayToken = nil
+                self.aboutToPlay.value = false
+                // Screens drew the play button as "playing" while the request was pending.
+                NotificationCenter.postOnMainThread(notification: Constants.Notifications.playbackPaused)
+                return
+            }
+
+            self.performPlayAfterRemoteSync(currEpisode: currEpisode, playToken: playToken, completion: completion, userInitiated: userInitiated)
             // PodHopper: the check could not reach the server, so playback starts from this
             // device's own position, which may be stale. Keep checking until it answers.
             if pullResult == .failed {
@@ -408,7 +433,7 @@ class PlaybackManager: ServerPlaybackDelegate {
         }
     }
 
-    private func performPlayAfterRemoteSync(currEpisode: BaseEpisode, completion: (() -> Void)?, userInitiated: Bool) {
+    private func performPlayAfterRemoteSync(currEpisode: BaseEpisode, playToken: UUID, completion: (() -> Void)?, userInitiated: Bool) {
         FileLog.shared.addMessage("PlaybackManager Play \(currentEpisode()?.title ?? "unknown episode") userInitiated: \(userInitiated)")
 
         if userInitiated {
@@ -424,6 +449,20 @@ class PlaybackManager: ServerPlaybackDelegate {
         }
 
         activateAudioSession(completion: { activated in
+            // PodHopper: activating the audio session finishes a moment later on another queue, and a
+            // pause (or a newer play) can land in between. That replaces this request.
+            guard self.pendingPlayToken == playToken else {
+                FileLog.shared.addMessage("PlaybackManager: dropping a play request replaced while the audio session activated")
+                return
+            }
+            self.pendingPlayToken = nil
+            guard self.currentEpisode()?.uuid == currEpisode.uuid else {
+                FileLog.shared.addMessage("PlaybackManager: dropping a play request for an episode that is no longer current")
+                self.aboutToPlay.value = false
+                NotificationCenter.postOnMainThread(notification: Constants.Notifications.playbackPaused)
+                return
+            }
+
             if !activated {
                 self.aboutToPlay.value = false
                 return
@@ -451,6 +490,14 @@ class PlaybackManager: ServerPlaybackDelegate {
     func pause(userInitiated: Bool = true) {
         guard let episode = currentEpisode() else { return }
 
+        // PodHopper: a play still waiting on the cross-device position check is called off, so it can't
+        // start playback after this pause. Until now the player reported playing during that wait, so
+        // the pause button did nothing and playback started a moment later anyway.
+        if pendingPlayToken != nil {
+            pendingPlayToken = nil
+            aboutToPlay.value = false
+        }
+
         // Only trigger the event if we are already playing
         if playing(), userInitiated == true {
             analyticsPlaybackHelper.pause()
@@ -464,9 +511,10 @@ class PlaybackManager: ServerPlaybackDelegate {
         recordPlaybackPosition(sendToServerImmediately: playing(), fireNotifications: true)
 
         // PodHopper: immediate position push on pause so other devices resume exactly here.
-        let pausePositionMs = Int(currentTime() * 1000)
+        // Int(safeDouble:) because the player can report NaN or infinity, which Int(_:) crashes on.
+        let pausePositionMs = Int(safeDouble: currentTime() * 1000)
         if pausePositionMs > 0 {
-            PodHopperPositionSync.shared.pushPosition(episode: episode, positionMs: pausePositionMs, durationMs: Int(duration() * 1000), immediate: true)
+            PodHopperPositionSync.shared.pushPosition(episode: episode, positionMs: pausePositionMs, durationMs: Int(safeDouble: duration() * 1000), immediate: true)
         }
 
         if let player {
@@ -1441,6 +1489,12 @@ class PlaybackManager: ServerPlaybackDelegate {
         if let episode = currentEpisode() {
             autoplayIfNeeded(publishPick: !PodHopperPositionSync.shared.isApplyingRemote(uuid: episode.uuid))
 
+            // PodHopper: the finished episode leaves the queue below, so publish that, the same as a
+            // removal. Without it the account's queue kept the finished episode, and the next sync put
+            // it back into Up Next on every device. Recorded after autoplay's pick, which the backend
+            // places behind the head, so removing the head afterwards leaves the pick at the front.
+            PodHopperUpNextSync.shared.remove(episodeUuid: episode.uuid)
+
             FileLog.shared.addMessage("Finished playing \(episode.displayableTitle())")
             Analytics.track(.playerEpisodeCompleted, properties: [
                 "podcast_uuid": episode.parentIdentifier(),
@@ -1658,7 +1712,15 @@ class PlaybackManager: ServerPlaybackDelegate {
             player.endPlayback(permanent: permanent)
         }
 
-        if permanent { aboutToPlay.value = false }
+        if permanent {
+            aboutToPlay.value = false
+            // PodHopper: a play request still pending for the player being torn down is called off too,
+            // and screens that showed it as playing are told it isn't.
+            if pendingPlayToken != nil {
+                pendingPlayToken = nil
+                NotificationCenter.postOnMainThread(notification: Constants.Notifications.playbackPaused)
+            }
+        }
         currentEffects = nil
 
         // DefaultPlayer and EffectsPlayer both have issues if you discard them immediately after stopping them. DefaultPlayer will crash while trying to render more audio and EffectsPlayer has internal issues as well.
@@ -1686,10 +1748,18 @@ class PlaybackManager: ServerPlaybackDelegate {
         player = nil
     }
 
+    /// Activates the audio session, calling `completion` on the main queue once it has.
     func activateAudioSession(completion: ((Bool) -> Void)?) {
+        // The completion starts the player, timers and remote command setup, all of which must run on
+        // the main thread, but activation itself finishes on a background queue (or AVAudioSession's own
+        // queue on the watch). Always hand the result back on the main queue.
+        let completeOnMain: (Bool) -> Void = { activated in
+            DispatchQueue.main.async { completion?(activated) }
+        }
+
         #if !os(watchOS) && !APPCLIP && !os(tvOS)
             if GoogleCastManager.sharedManager.connectedOrConnectingToDevice() {
-                completion?(true)
+                completeOnMain(true)
                 return
             }
         #endif
@@ -1700,24 +1770,24 @@ class PlaybackManager: ServerPlaybackDelegate {
             do {
                 try setAudioSessionProperties()
                 AVAudioSession.sharedInstance().activate(options: []) { activated, _ in
-                    completion?(activated)
+                    completeOnMain(activated)
                 }
             } catch {
                 FileLog.shared.addMessage("activating audio session failed \(error.localizedDescription)")
-                completion?(false)
+                completeOnMain(false)
             }
         #else
         if FeatureFlag.activateAudioSessionInBackground.enabled {
             // Perform audio session activation on a background queue to avoid blocking the main thread
             DispatchQueue.global(qos: .userInitiated).async { [weak self] in
                 guard let self else {
-                    completion?(false)
+                    completeOnMain(false)
                     return
                 }
-                self.activateSession(completion: completion)
+                self.activateSession(completion: completeOnMain)
             }
         } else {
-            self.activateSession(completion: completion)
+            self.activateSession(completion: completeOnMain)
         }
         #endif
     }
@@ -1878,7 +1948,7 @@ class PlaybackManager: ServerPlaybackDelegate {
         // PodHopper: periodic cross-device position push while playing. The engine throttles to one
         // network write every few seconds, so pushing on every tick is fine.
         if playing() {
-            PodHopperPositionSync.shared.pushPosition(episode: episode, positionMs: Int(currentTime() * 1000), durationMs: Int(duration() * 1000), immediate: false)
+            PodHopperPositionSync.shared.pushPosition(episode: episode, positionMs: Int(safeDouble: currentTime() * 1000), durationMs: Int(safeDouble: duration() * 1000), immediate: false)
         }
 
         // here (as above) we're assuming that in general the timer fires around once a second. Might have to investigate this though as it might not always be the case
@@ -2763,7 +2833,7 @@ extension PlaybackManager {
         Analytics.track(.bookmarkCreated, source: source, properties: [
             "episode_uuid": episode.uuid,
             "podcast_uuid": (episode as? Episode)?.podcastUuid ?? "user_file",
-            "time": Int(currentTime)
+            "time": Int(safeDouble: currentTime)
         ])
     }
 

@@ -33,6 +33,11 @@ public final class PodHopperFeedManager {
     private let dataManager: DataManager
     private let parseFeed: (String) -> PodHopperFeedParser.ParsedFeed?
 
+    /// PodHopper: podcasts whose episodes are being filled in right now. Two fills of the same stub at
+    /// once each inserted the whole feed, leaving every episode in it twice.
+    private let fillLock = NSLock()
+    private var fillsInFlight = Set<String>()
+
     /// - Parameters:
     ///   - dataManager: the data store. Defaults to the shared instance; tests inject a temp one.
     ///   - parseFeed: turns a feed URL into a parsed feed. Defaults to a real network fetch and
@@ -190,6 +195,18 @@ public final class PodHopperFeedManager {
     public func fillFeedUrlEpisodes(_ feedUrl: String) {
         let uuid = PodHopperUUID.podcastUuid(forFeed: feedUrl)
 
+        fillLock.lock()
+        let isAlreadyFilling = !fillsInFlight.insert(uuid).inserted
+        fillLock.unlock()
+        if isAlreadyFilling {
+            return
+        }
+        defer {
+            fillLock.lock()
+            fillsInFlight.remove(uuid)
+            fillLock.unlock()
+        }
+
         if let current = dataManager.findPodcast(uuid: uuid, includeUnsubscribed: true),
            dataManager.findEpisodeCount(podcastId: current.id) > 0 {
             return
@@ -198,16 +215,23 @@ public final class PodHopperFeedManager {
         guard let parsed = parseFeed(feedUrl) else { return }
 
         if let current = dataManager.findPodcast(uuid: uuid, includeUnsubscribed: true) {
-            parsed.podcast.id = current.id
-            parsed.podcast.subscribed = current.subscribed
-            parsed.podcast.addedDate = current.addedDate
-            if current.imageURL != nil {
-                parsed.podcast.imageURL = current.imageURL
+            // PodHopper: update the row that's there with what the feed provides, rather than replacing
+            // it with the parsed one. Replacing it reset anything set on it while the feed downloaded,
+            // such as the auto download setting chosen when subscribing.
+            current.title = parsed.podcast.title
+            current.podcastUrl = parsed.podcast.podcastUrl
+            current.podcastDescription = parsed.podcast.podcastDescription
+            current.author = parsed.podcast.author
+            if current.imageURL == nil {
+                current.imageURL = parsed.podcast.imageURL
             }
+            current.latestEpisodeUuid = parsed.podcast.latestEpisodeUuid
+            current.latestEpisodeDate = parsed.podcast.latestEpisodeDate
+            persist(podcast: current, episodes: parsed.episodes)
         } else {
             parsed.podcast.subscribed = 0
+            persist(parsed)
         }
-        persist(parsed)
     }
 
     // MARK: Persistence
@@ -215,14 +239,25 @@ public final class PodHopperFeedManager {
     /// Saves the podcast, then its episodes with the foreign keys wired to the saved podcast, the
     /// same order `ServerPodcastManager.addPodcast` uses.
     private func persist(_ parsed: PodHopperFeedParser.ParsedFeed) {
-        let podcast = parsed.podcast
+        persist(podcast: parsed.podcast, episodes: parsed.episodes)
+    }
+
+    private func persist(podcast: PocketCastsDataModel.Podcast, episodes: [PocketCastsDataModel.Episode]) {
         dataManager.save(podcast: podcast)
 
-        for episode in parsed.episodes {
+        for episode in episodes {
             episode.podcastUuid = podcast.uuid
             episode.podcast_id = podcast.id
         }
-        dataManager.bulkSave(episodes: parsed.episodes)
+        dataManager.bulkSave(episodes: episodes)
+    }
+
+    /// PodHopper: for subscribe paths that mark a podcast that's already stored as subscribed themselves,
+    /// such as a podcast page or a search result's subscribe button. Announces it exactly as
+    /// `subscribeToFeedUrl` does, so the app updates and the subscription syncs to the user's other
+    /// devices. Before this, those paths never told the sync, so the show stayed on this device only.
+    public func announceSubscribed(podcastUuid: String) {
+        announceSubscribed(uuid: podcastUuid)
     }
 
     private func announceSubscribed(uuid: String) {

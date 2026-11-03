@@ -55,6 +55,9 @@ public final class PodHopperFeedParser {
     private static let userAgent = "PodHopper/1.0"
     private static let accept = "application/rss+xml, application/atom+xml, application/xml;q=0.9, text/xml;q=0.8, */*;q=0.5"
 
+    /// The longest a single feed download may take before it's abandoned.
+    private static let maxFetchDuration: DispatchTimeInterval = .seconds(180)
+
     /// Download and parse the feed at `feedUrl`. Runs blocking, so call it off the main thread.
     ///
     /// PodHopper: pass `conditional: true` from refresh paths. The request then carries whatever the
@@ -90,7 +93,7 @@ public final class PodHopperFeedParser {
         var notModified = false
         var validators: PodHopperFeedValidators.Validators?
         let semaphore = DispatchSemaphore(value: 0)
-        URLSession.shared.dataTask(with: request) { responseData, response, error in
+        let task = URLSession.shared.dataTask(with: request) { responseData, response, error in
             if let error = error {
                 failureReason = error.localizedDescription
             } else if let http = response as? HTTPURLResponse, http.statusCode == 304 {
@@ -107,8 +110,19 @@ public final class PodHopperFeedParser {
                 }
             }
             semaphore.signal()
-        }.resume()
-        semaphore.wait()
+        }
+        task.resume()
+
+        // PodHopper: timeoutInterval above only limits how long the connection may sit idle, so a host
+        // that keeps trickling bytes could hold this fetch, and the refresh waiting on it, open for days.
+        // Give up after a few minutes, far longer than any healthy feed takes (Android allows 15 seconds
+        // on the phone and 3 minutes on the watch). Cancelling still calls the handler above, so wait for
+        // it before reading what it set.
+        if semaphore.wait(timeout: .now() + Self.maxFetchDuration) == .timedOut {
+            task.cancel()
+            semaphore.wait()
+            return .failure(reason: "Timed out")
+        }
 
         if notModified {
             return .notModified
@@ -276,7 +290,7 @@ public final class PodHopperFeedParser {
         episode.downloadUrl = downloadUrl
         episode.sizeInBytes = sizeInBytes
         episode.fileType = fileType
-        episode.duration = duration
+        episode.duration = Self.plausibleDuration(duration)
         episode.publishedDate = publishedDate
         episode.addedDate = Date()
         episode.playingStatus = PlayingStatus.notPlayed.rawValue
@@ -313,6 +327,17 @@ public final class PodHopperFeedParser {
             if let date = formatter.date(from: trimmed) { return date }
         }
         return nil
+    }
+
+    /// About 31 years: far longer than any real episode, and still small enough for an `Int32`.
+    private static let maxPlausibleDuration: Double = 1_000_000_000
+
+    /// A feed's duration can be anything, including "nan", "inf" or a huge number, and those crash later
+    /// wherever the duration is turned into an integer. Anything that isn't a plausible length is stored
+    /// as 0, which the app already treats as an unknown duration.
+    static func plausibleDuration(_ duration: Double) -> Double {
+        guard duration.isFinite, duration >= 0, duration <= maxPlausibleDuration else { return 0 }
+        return duration
     }
 
     static func parseDuration(_ value: String) -> Double {

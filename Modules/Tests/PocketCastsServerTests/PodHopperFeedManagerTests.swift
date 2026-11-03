@@ -96,6 +96,25 @@ final class PodHopperFeedManagerTests: XCTestCase {
         XCTAssertEqual(dataManager.findEpisodeCount(podcastId: filled!.id), 2)
     }
 
+    func testFillKeepsChangesMadeToTheStubWhileItDownloaded() {
+        let manager = makeManager()
+        manager.addFeedUrlStub(feedUrl: feedUrl, title: "Stub Title", author: "Stub Author", imageURL: nil)
+
+        // Subscribed with auto download on before the episodes arrived.
+        let stub = dataManager.findPodcast(uuid: uuid, includeUnsubscribed: true)!
+        stub.subscribed = 1
+        stub.autoDownloadSetting = AutoDownloadSetting.latest.rawValue
+        dataManager.save(podcast: stub)
+
+        manager.fillFeedUrlEpisodes(feedUrl)
+
+        let filled = dataManager.findPodcast(uuid: uuid, includeUnsubscribed: true)!
+        XCTAssertEqual(filled.id, stub.id)
+        XCTAssertTrue(filled.isSubscribed())
+        XCTAssertEqual(filled.autoDownloadSetting, AutoDownloadSetting.latest.rawValue)
+        XCTAssertEqual(dataManager.findEpisodeCount(podcastId: filled.id), 2)
+    }
+
     func testFillIsNoOpWhenEpisodesAlreadyExist() {
         let manager = makeManager()
         manager.subscribeToFeedUrl(feedUrl) // now subscribed with 2 episodes

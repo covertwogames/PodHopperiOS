@@ -92,8 +92,9 @@ final class PodHopperPlaybackBridge: PodHopperPositionSyncDelegate {
 
     func currentEpisodeForPush() -> (episode: BaseEpisode, positionMs: Int, durationMs: Int)? {
         guard let episode = PlaybackManager.shared.currentEpisode() else { return nil }
-        let positionMs = Int(PlaybackManager.shared.currentTime() * 1000)
-        let durationMs = Int(PlaybackManager.shared.duration() * 1000)
+        // Int(safeDouble:) because the player can report NaN or infinity, which Int(_:) crashes on.
+        let positionMs = Int(safeDouble: PlaybackManager.shared.currentTime() * 1000)
+        let durationMs = Int(safeDouble: PlaybackManager.shared.duration() * 1000)
         return (episode, positionMs, durationMs)
     }
 
@@ -174,8 +175,18 @@ enum PodHopperSyncSetup {
         PodHopperPositionSync.shared.delegate = PodHopperPlaybackBridge.shared
 
         PodHopperSubscriptionSync.shared.unsubscribeHandler = { uuid in
-            if let podcast = DataManager.sharedManager.findPodcast(uuid: uuid, includeUnsubscribed: true) {
-                PodcastManager.shared.unsubscribe(podcast: podcast)
+            // Called on the sync engine's background queue. Unsubscribing takes the podcast's episodes
+            // out of Up Next and can stop the player, so it runs on the main thread. Synchronously,
+            // because the engine holds its echo guard across this call, the same as markAsPlayed.
+            let unsubscribe = {
+                if let podcast = DataManager.sharedManager.findPodcast(uuid: uuid, includeUnsubscribed: true) {
+                    PodcastManager.shared.unsubscribe(podcast: podcast)
+                }
+            }
+            if Thread.isMainThread {
+                unsubscribe()
+            } else {
+                DispatchQueue.main.sync(execute: unsubscribe)
             }
         }
 

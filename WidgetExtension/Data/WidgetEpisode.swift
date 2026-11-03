@@ -1,4 +1,5 @@
 import Foundation
+import PocketCastsUtils
 import SwiftUI
 
 class WidgetEpisode: ObservableObject, Hashable {
@@ -24,8 +25,17 @@ class WidgetEpisode: ObservableObject, Hashable {
     func loadImageData() {
         guard let imageUrl else { return }
 
-        imageData = try? Data(contentsOf: imageUrl)
+        guard let data = try? Data(contentsOf: imageUrl) else {
+            imageData = nil
+            return
+        }
+
+        // Feed artwork is often 3000x3000, which takes about 36 MB to decode, and widgets are killed at around
+        // 30 MB. Shrink it to a size that's still sharp at the largest artwork a widget shows.
+        imageData = ImageDownsampler.downsampledData(from: data, maxPixelSize: Self.maxArtworkPixelSize) ?? data
     }
+
+    private static let maxArtworkPixelSize: CGFloat = 480
 
     static func == (lhs: WidgetEpisode, rhs: WidgetEpisode) -> Bool {
         lhs.episodeUuid == rhs.episodeUuid

@@ -108,6 +108,14 @@ public struct PodcastRefreshResponse: Decodable {
 
 public struct RefreshResult: Decodable {
     public var podcastUpdates: [String: [RefreshEpisode]]?
+    /// PodHopper: what each fetched feed's host said about it during this refresh, keyed by feed url.
+    /// `RefreshOperation` saves them once this refresh's episodes are stored. Each refresh carries its
+    /// own, so refreshes that overlap can't save or discard each other's. Filled in on device, never decoded.
+    public var feedValidators: [String: PodHopperFeedValidators.Validators] = [:]
+
+    private enum CodingKeys: String, CodingKey {
+        case podcastUpdates
+    }
 }
 
 public struct RefreshEpisode: Decodable {

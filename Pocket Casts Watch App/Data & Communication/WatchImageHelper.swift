@@ -49,4 +49,45 @@ class WatchImageHelper {
 
         return podcastImageURL(podcastUuid: episode.parentIdentifier(), size: 340)
     }
+
+    /// The watch never shows artwork larger than this many pixels, which is also the largest podcast artwork
+    /// size it downloaded before it switched to feed artwork. Feed artwork is often 3000x3000, about 36 MB
+    /// once decoded, which is more than the watch app is allowed to use.
+    static let maxArtworkPixelSize: CGFloat = 340
+}
+
+/// Decodes downloaded artwork at no more than `WatchImageHelper.maxArtworkPixelSize` pixels on its longest
+/// side. It keeps the default processor's empty identifier on purpose, so Kingfisher's cache keys stay the
+/// same and artwork already cached on the watch is still found.
+struct WatchArtworkImageProcessor: ImageProcessor {
+    static let shared = WatchArtworkImageProcessor()
+
+    let identifier = DefaultImageProcessor.default.identifier
+
+    func process(item: ImageProcessItem, options: KingfisherParsedOptionsInfo) -> KFCrossPlatformImage? {
+        switch item {
+        case .image:
+            return DefaultImageProcessor.default.process(item: item, options: options)
+        case .data(let data):
+            return ImageDownsampler.downsampledImage(from: data, maxPixelSize: WatchImageHelper.maxArtworkPixelSize, scale: options.scaleFactor)
+                ?? DefaultImageProcessor.default.process(item: item, options: options)
+        }
+    }
+}
+
+/// Reads artwork back from the disk cache at no more than `WatchImageHelper.maxArtworkPixelSize`, including
+/// full size artwork cached before that limit existed. Writes to disk the way Kingfisher always has, which
+/// now saves the smaller copy, so the watch's small disk cache holds more artwork. If that copy can't be
+/// encoded, the downloaded file is saved instead.
+struct WatchArtworkCacheSerializer: CacheSerializer {
+    static let shared = WatchArtworkCacheSerializer()
+
+    func data(with image: KFCrossPlatformImage, original: Data?) -> Data? {
+        DefaultCacheSerializer.default.data(with: image, original: original) ?? original
+    }
+
+    func image(with data: Data, options: KingfisherParsedOptionsInfo) -> KFCrossPlatformImage? {
+        ImageDownsampler.downsampledImage(from: data, maxPixelSize: WatchImageHelper.maxArtworkPixelSize, scale: options.scaleFactor)
+            ?? DefaultCacheSerializer.default.image(with: data, options: options)
+    }
 }

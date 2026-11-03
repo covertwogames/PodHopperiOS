@@ -209,7 +209,11 @@ enum PodHopperArtworkColor {
         let url = artworkURL(forPodcast: uuid)
 
         URLSession.shared.dataTask(with: url) { data, _, _ in
-            guard let data, let image = UIImage(data: data), let colors = deriveColors(from: image) else {
+            // The colors come from a 48x48 sample, so decode a small copy rather than the full artwork, which
+            // can be 3000x3000 and about 36 MB decoded. This also runs on the watch.
+            guard let data,
+                  let image = ImageDownsampler.image(from: data, maxPixelSize: 256),
+                  let colors = deriveColors(from: image) else {
                 completion(nil, nil, nil)
                 return
             }

@@ -71,7 +71,6 @@ class PlaylistCellViewModel: ObservableObject {
     private let dataManager: DataManager
     private let imageManager: ImageManager
     private let episodesDataManager: EpisodesDataManager
-    private let episodeArtWork: EpisodeArtwork
 
     let displayType: DisplayType
 
@@ -86,7 +85,6 @@ class PlaylistCellViewModel: ObservableObject {
         self.displayType = displayType
         self.dataManager = dataManager
         self.imageManager = imageManager
-        self.episodeArtWork = .init(imageManager: imageManager)
         self.episodesDataManager = episodesDataManager
     }
 
@@ -171,8 +169,10 @@ class PlaylistCellViewModel: ObservableObject {
                 results.append(item)
             }
 
-            let mapEpisodes = Dictionary(uniqueKeysWithValues: episodes.enumerated().map { ($1.episode.uuid, $0) })
-            let mapPodcasts = Dictionary(uniqueKeysWithValues: episodes.enumerated().map { ($1.episode.podcastUuid, $0) })
+            // Two episodes can share a uuid (the same feed item in two podcasts), so keep the first position
+            // for a repeated key rather than trapping on it.
+            let mapEpisodes = Dictionary<String, Int>(episodes.enumerated().map { ($0.element.episode.uuid, $0.offset) }, uniquingKeysWith: { first, _ in first })
+            let mapPodcasts = Dictionary<String, Int>(episodes.enumerated().map { ($0.element.episode.podcastUuid, $0.offset) }, uniquingKeysWith: { first, _ in first })
 
             return results.sorted { lhs, rhs in
                 let lhsIndex = (mapEpisodes[lhs.id] ?? mapPodcasts[lhs.id]) ?? Int.max

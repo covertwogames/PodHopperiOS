@@ -17,6 +17,8 @@ struct CachedImage: View {
         KFImage
             .url(url)
             .targetCache(WatchImageHelper.shared.mainCache)
+            .setProcessor(WatchArtworkImageProcessor.shared)
+            .serialize(by: WatchArtworkCacheSerializer.shared)
             .placeholder { _ in
                 Image.placeholder
             }

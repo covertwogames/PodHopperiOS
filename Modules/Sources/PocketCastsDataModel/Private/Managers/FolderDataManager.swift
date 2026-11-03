@@ -33,9 +33,11 @@ class FolderDataManager {
     }
 
     func allFolders(includeDeleted: Bool, dbQueue: PCDBQueue) -> [Folder] {
-        if includeDeleted { return cachedFolders }
+        // Read under the queue that guards writes, so a refresh replacing the array can't race this read.
+        let folders = cachedFolderQueue.sync { cachedFolders }
+        if includeDeleted { return folders }
 
-        return cachedFolders.filter { $0.wasDeleted == false }
+        return folders.filter { $0.wasDeleted == false }
     }
 
     func save(folder: Folder, dbQueue: PCDBQueue) {
@@ -56,7 +58,7 @@ class FolderDataManager {
             // Legacy path
             dbQueue.write { db in
                 do {
-                    if self.cachedFolders.contains(where: { $0.uuid == folder.uuid }) {
+                    if self.cachedFolderQueue.sync(execute: { self.cachedFolders.contains(where: { $0.uuid == folder.uuid }) }) {
                         let setStatement = "\(self.columnNames.joined(separator: " = ?, ")) = ?"
                         try db.executeUpdate("UPDATE \(DataManager.folderTableName) SET \(setStatement) WHERE uuid = ?", values: self.createValuesFrom(folder, includeUuidForWhere: true))
                     } else {

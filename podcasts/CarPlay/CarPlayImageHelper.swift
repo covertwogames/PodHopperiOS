@@ -2,9 +2,14 @@ import CarPlay
 import Foundation
 import Kingfisher
 import PocketCastsDataModel
+import PocketCastsUtils
 
 class CarPlayImageHelper {
-    static var imageCache = ImageCache(name: "carplay_cache")
+    static var imageCache: ImageCache = {
+        let cache = ImageCache(name: "carplay_cache")
+        cache.memoryStorage.config.totalCostLimit = 20.megabytes
+        return cache
+    }()
     static var carTraitCollection: UITraitCollection?
 
     class func imageForPodcast(_ podcast: Podcast, maxSize: CGSize = CPListItem.maximumImageSize) -> UIImage {
@@ -100,7 +105,7 @@ class CarPlayImageHelper {
     private static func cacheImage(_ image: UIImage, for key: String, maxSize: CGSize) {
         let cacheKey = "\(key)_\(maxSize.width)"
 
-        imageCache.store(image, forKey: cacheKey)
+        ImageManager.sharedManager.store(image, forKey: cacheKey, in: imageCache)
     }
 
     private enum Constants {

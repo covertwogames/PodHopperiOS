@@ -59,7 +59,7 @@ class DownloadManager: NSObject, FilePathProtocol {
         }
     }()
 
-    var taskFailure: [String: FailureReason] = [:]
+    let taskFailure = ThreadSafeDictionary<String, FailureReason>()
 
     // MARK: - Download Retry Tracking
     struct DownloadAttempt {
@@ -76,16 +76,15 @@ class DownloadManager: NSObject, FilePathProtocol {
         }
     }
 
-    var downloadAttempts: [Int: DownloadAttempt] = [:]
+    let downloadAttempts = ThreadSafeDictionary<Int, DownloadAttempt>()
 
     #if os(watchOS)
         var pendingWatchBackgroundTask: WKURLSessionRefreshBackgroundTask?
     #endif
 
     #if !os(watchOS)
-         private lazy var episodeArtwork: EpisodeArtwork = {
-             EpisodeArtwork()
-         }()
+    @MainActor
+    private lazy var episodeArtwork = EpisodeArtwork()
     #endif
 
     /// Eagerly initializes all URLSessions to avoid race conditions.
@@ -285,7 +284,11 @@ class DownloadManager: NSObject, FilePathProtocol {
 
         // try and cache the episode embedded artwork
         #if !os(watchOS)
-        episodeArtwork.loadEmbeddedImage(asset: nil, podcastUuid: episode.parentIdentifier(), episodeUuid: episode.uuid)
+        let artworkPodcastUuid = episode.parentIdentifier()
+        let artworkEpisodeUuid = episode.uuid
+        Task { @MainActor in
+            episodeArtwork.loadEmbeddedImage(asset: nil, podcastUuid: artworkPodcastUuid, episodeUuid: artworkEpisodeUuid)
+        }
         #endif
 
         // download requested for something we already have buferred, just move it

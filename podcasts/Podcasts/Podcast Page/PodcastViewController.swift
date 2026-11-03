@@ -773,6 +773,8 @@ class PodcastViewController: PCViewController, PodcastActionsDelegate, MultiSele
         podcast.syncStatus = SyncStatus.notSynced.rawValue
         podcast.autoDownloadSetting = (FeatureFlag.autoDownloadOnSubscribe.enabled && Settings.autoDownloadEnabled() && Settings.autoDownloadOnFollow() ? AutoDownloadSetting.latest : AutoDownloadSetting.off).rawValue
         DataManager.sharedManager.save(podcast: podcast)
+        // PodHopper: announce it like every other subscribe, so it syncs to the user's other devices.
+        PodHopperFeedManager.shared.announceSubscribed(podcastUuid: podcast.uuid)
         // PodHopper: setDefaults is false so this only refreshes the latest-episode pointer from the
         // locally parsed feed. It does not trigger a Pocket Casts metadata fetch.
         ServerPodcastManager.shared.updateLatestEpisodeInfo(podcast: podcast, setDefaults: false, autoDownloadLimit: Settings.autoDownloadOnFollow() ? Settings.autoDownloadLimits().rawValue : 0)

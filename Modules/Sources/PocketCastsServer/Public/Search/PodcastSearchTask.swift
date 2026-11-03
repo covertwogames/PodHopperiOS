@@ -84,6 +84,13 @@ public struct PodcastFolderSearchResult: Codable, Hashable {
     public static func ==(lhs: PodcastFolderSearchResult, rhs: PodcastFolderSearchResult) -> Bool {
         lhs.kind == rhs.kind && lhs.uuid == rhs.uuid
     }
+
+    // Hash exactly the fields == compares. The synthesized hash covered every field, so two results that
+    // compare equal could hash differently, which breaks Set, Dictionary and SwiftUI diffing.
+    public func hash(into hasher: inout Hasher) {
+        hasher.combine(kind)
+        hasher.combine(uuid)
+    }
 }
 
 extension PodcastFolderSearchResult: Identifiable {

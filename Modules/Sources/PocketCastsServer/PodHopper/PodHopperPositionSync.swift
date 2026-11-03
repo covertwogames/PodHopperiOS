@@ -414,7 +414,7 @@ public final class PodHopperPositionSync {
             (
                 key: episode.uuid,
                 url: episode.downloadUrl,
-                totalSec: Int(episode.duration > 0 ? episode.duration : episode.playedUpTo),
+                totalSec: Int(safeDouble: episode.duration > 0 ? episode.duration : episode.playedUpTo),
                 podcastUuid: (episode as? Episode)?.podcastUuid
             )
         }

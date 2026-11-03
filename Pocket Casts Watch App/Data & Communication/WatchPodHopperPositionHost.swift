@@ -104,8 +104,9 @@ final class WatchPodHopperPositionHost: PodHopperPositionSyncDelegate {
         // phone with the Watch's old one. Nothing to push unless the Watch is the player.
         guard SourceManager.shared.isWatch() else { return nil }
         guard let episode = PlaybackManager.shared.currentEpisode() else { return nil }
-        let positionMs = Int(PlaybackManager.shared.currentTime() * 1000)
-        let durationMs = Int(PlaybackManager.shared.duration() * 1000)
+        // Int(safeDouble:) because the player can report NaN or infinity, which Int(_:) crashes on.
+        let positionMs = Int(safeDouble: PlaybackManager.shared.currentTime() * 1000)
+        let durationMs = Int(safeDouble: PlaybackManager.shared.duration() * 1000)
         return (episode, positionMs, durationMs)
     }
 

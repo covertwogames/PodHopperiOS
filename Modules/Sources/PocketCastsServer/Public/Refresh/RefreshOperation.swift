@@ -7,6 +7,12 @@ class RefreshOperation: Operation, @unchecked Sendable {
 
     private var completionHandler: ((RefreshFetchResult) -> Void)?
 
+    // PodHopper: the completion handler is called exactly once on every path, including when the refresh is
+    // cancelled, because callers depend on it: a background task that isn't completed gets the app ended,
+    // and `RefreshManager` won't start the next refresh until this one reports back.
+    private let completionLock = NSLock()
+    private var hasCalledCompletion = false
+
     private lazy var apiQueue: OperationQueue = {
         let queue = OperationQueue()
         queue.maxConcurrentOperationCount = 1
@@ -18,12 +24,28 @@ class RefreshOperation: Operation, @unchecked Sendable {
         refreshResult = result
         self.completionHandler = completionHandler
         super.init()
+
+        // Runs once the operation has finished, including when it was cancelled before it started and
+        // `main` never ran. After any other path the completion has already been called, so this does nothing.
+        completionBlock = {
+            self.callCompletion(.failed)
+        }
+    }
+
+    private func callCompletion(_ result: RefreshFetchResult) {
+        completionLock.lock()
+        let handler: ((RefreshFetchResult) -> Void)? = hasCalledCompletion ? nil : completionHandler
+        hasCalledCompletion = true
+        completionLock.unlock()
+
+        handler?(result)
     }
 
     override func main() {
         autoreleasepool {
             if isCancelled {
                 cleanupAfterCancel()
+                callCompletion(.failed)
 
                 return
             }
@@ -38,7 +60,7 @@ class RefreshOperation: Operation, @unchecked Sendable {
             if refreshResult == .failed || refreshResult == .cancelled {
                 FileLog.shared.addMessage("Refresh \(refreshResult == .failed ? "failed" : "was cancelled")")
                 ServerNotificationsHelper.shared.firePodcastRefreshFailed()
-                completionHandler?(.failed)
+                callCompletion(.failed)
                 return
             }
 
@@ -47,6 +69,7 @@ class RefreshOperation: Operation, @unchecked Sendable {
 
             if isCancelled {
                 cleanupAfterCancel()
+                callCompletion(.failed)
 
                 return
             }
@@ -78,10 +101,10 @@ class RefreshOperation: Operation, @unchecked Sendable {
                 // we use the sync task as the main indication of whether the sync has failed
                 let syncResult = syncTask.status
                 if syncResult == .failed || syncResult == .cancelled {
-                    completionHandler?(.failed)
+                    callCompletion(.failed)
                 } else {
                     // however we use the refresh to indicate to iOS whether we found new stuff or not
-                    completionHandler?(refreshResult == .successNewData ? .newData : .noData)
+                    callCompletion(refreshResult == .successNewData ? .newData : .noData)
 
                     FileLog.shared.addMessage("Sync succeeded")
 
@@ -89,7 +112,7 @@ class RefreshOperation: Operation, @unchecked Sendable {
                     ServerConfig.shared.syncDelegate?.playlistChanged()
                 }
             } else { // no sync required, we're done
-                completionHandler?(refreshResult == .successNewData ? .newData : .noData)
+                callCompletion(refreshResult == .successNewData ? .newData : .noData)
             }
 
             ServerConfig.shared.syncDelegate?.applyAutoArchivingToAllPodcasts()
@@ -114,7 +137,10 @@ class RefreshOperation: Operation, @unchecked Sendable {
         let updatedPodcasts = refreshResult.podcastUpdates
         var metadataRequestsQueued = 0
         for podcast in podcasts {
-            guard let podcastEpisodes = updatedPodcasts?[podcast.uuid], !podcastEpisodes.isEmpty else { continue }
+            // PodHopper: the on-device refresh already leaves out episodes that are stored, so a feed that
+            // changed with nothing new arrives as an empty list. It still goes through here, as it did when
+            // the full feed was passed along, so the podcast's latest episode info is still checked below.
+            guard let podcastEpisodes = updatedPodcasts?[podcast.uuid] else { continue }
 
             let episodes: [Episode] = podcastEpisodes.reversed().compactMap({ episode in
                 guard let episodeUuid = episode.uuid else { return nil }
@@ -162,7 +188,13 @@ class RefreshOperation: Operation, @unchecked Sendable {
 
         // PodHopper: the episodes from this refresh are saved, so it is now safe to remember what
         // each host told us about its feed. Until this point the validators are only held in memory.
-        PodHopperFeedValidators.shared.commitStaged()
+        // Only for podcasts still followed, the ones processed above: a show unsubscribed while the
+        // refresh ran has had its validators cleared, and writing them back would leave it answered
+        // "not modified" with no episodes if it's followed again.
+        let followedFeedUrls = Set(podcasts.compactMap(\.podcastUrl))
+        for (feedUrl, validators) in refreshResult.feedValidators where followedFeedUrls.contains(feedUrl) {
+            PodHopperFeedValidators.shared.store(validators, for: feedUrl)
+        }
 
         ServerConfig.shared.syncDelegate?.checkForUnusedPodcasts()
         ServerConfig.shared.syncDelegate?.cleanupAllUnusedEpisodeBuffers()
@@ -175,10 +207,8 @@ class RefreshOperation: Operation, @unchecked Sendable {
     }
 
     private func cleanupAfterCancel() {
-        // PodHopper: a cancelled refresh may have saved some episodes but not others, so throw the
-        // staged validators away and let the next refresh fetch those feeds in full.
-        PodHopperFeedValidators.shared.discardStaged()
-
+        // PodHopper: a cancelled refresh may have saved some episodes but not others, so its feed
+        // validators are never saved, and the next refresh fetches those feeds in full.
         apiQueue.cancelAllOperations()
     }
 

@@ -3,19 +3,41 @@ import UIKit
 extension UIImage {
 
     public var isDark: Bool {
-        guard let cgImage = self.cgImage,
-              let data = cgImage.dataProvider?.data,
-              let ptr = CFDataGetBytePtr(data) else { return false }
-        let length = CFDataGetLength(data)
-        var totalLuminance = 0.0
+        guard let cgImage = self.cgImage else { return false }
+
+        // Average a small copy drawn in a known RGBA layout. Reading the source's own pixel buffer gave
+        // results that depended on how the image happened to be stored (RGBA or BGRA, row padding, 16 bit
+        // channels), and copied every pixel of large artwork just to work out one average.
+        let width = min(cgImage.width, 64)
+        let height = min(cgImage.height, 64)
+        guard width > 0, height > 0 else { return false }
+
         let bytesPerPixel = 4
-        for i in stride(from: 0, to: length, by: bytesPerPixel) {
-            let r = Double(ptr[i])
-            let g = Double(ptr[i + 1])
-            let b = Double(ptr[i + 2])
+        var pixels = [UInt8](repeating: 0, count: width * height * bytesPerPixel)
+        let didDraw = pixels.withUnsafeMutableBytes { buffer -> Bool in
+            guard let context = CGContext(data: buffer.baseAddress,
+                                          width: width,
+                                          height: height,
+                                          bitsPerComponent: 8,
+                                          bytesPerRow: width * bytesPerPixel,
+                                          space: CGColorSpaceCreateDeviceRGB(),
+                                          bitmapInfo: CGImageAlphaInfo.premultipliedLast.rawValue | CGBitmapInfo.byteOrder32Big.rawValue) else {
+                return false
+            }
+            context.interpolationQuality = .high
+            context.draw(cgImage, in: CGRect(x: 0, y: 0, width: width, height: height))
+            return true
+        }
+        guard didDraw else { return false }
+
+        var totalLuminance = 0.0
+        for i in stride(from: 0, to: pixels.count, by: bytesPerPixel) {
+            let r = Double(pixels[i])
+            let g = Double(pixels[i + 1])
+            let b = Double(pixels[i + 2])
             totalLuminance += 0.299 * r + 0.587 * g + 0.114 * b
         }
-        let pixelCount = length / bytesPerPixel
+        let pixelCount = pixels.count / bytesPerPixel
         let avgLuminance = totalLuminance / Double(pixelCount)
         return avgLuminance < 150
     }

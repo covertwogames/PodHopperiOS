@@ -50,15 +50,16 @@ class SearchResultCellModel: ObservableObject, MainEpisodeActionViewDelegate {
             NotificationCenter.default.publisher(for: Constants.Notifications.playbackPaused),
         )
         .receive(on: OperationQueue.main)
-        .sink(receiveValue: { [unowned self] _ in
-            self.refreshTrigger.toggle()
+        .sink(receiveValue: { [weak self] _ in
+            self?.refreshTrigger.toggle()
         })
         .store(in: &cancellables)
 
         NotificationCenter.default.publisher(for: Constants.Notifications.playbackProgress)
             .receive(on: OperationQueue.main)
-            .sink(receiveValue: { [unowned self] notification in
-                guard let episodeUUID = notification.object as? String ?? PlaybackManager.shared.currentEpisode()?.uuid,
+            .sink(receiveValue: { [weak self] notification in
+                guard let self,
+                      let episodeUUID = notification.object as? String ?? PlaybackManager.shared.currentEpisode()?.uuid,
                       episodeUUID == episode.uuid
                 else {
                     return

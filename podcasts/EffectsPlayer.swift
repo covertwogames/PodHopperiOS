@@ -45,13 +45,18 @@ class EffectsPlayer: PlaybackProtocol, Hashable {
 
     private let serialSeekQueue = DispatchQueue(label: "effectsplayer.serial.queue")
 
+    @MainActor
     private lazy var episodeArtwork = EpisodeArtwork()
 
     // MARK: - PlaybackProtocol Impl
 
     func loadEpisode(_ episode: BaseEpisode) {
         episodePath = episode.pathToDownloadedFile(pathFinder: DownloadManager.shared)
-        episodeArtwork.loadEmbeddedImage(asset: nil, podcastUuid: episode.parentIdentifier(), episodeUuid: episode.uuid)
+        let podcastUuid = episode.parentIdentifier()
+        let episodeUuid = episode.uuid
+        Task { @MainActor in
+            episodeArtwork.loadEmbeddedImage(asset: nil, podcastUuid: podcastUuid, episodeUuid: episodeUuid)
+        }
         self.episode = episode
     }
 
@@ -153,7 +158,13 @@ class EffectsPlayer: PlaybackProtocol, Hashable {
             // Store sample rate for AudioReadTask (useVoiceBoostN already set above)
             strongSelf.audioFileSampleRate = strongSelf.audioFile!.fileFormat.sampleRate
 
-            strongSelf.startReadAndPlayThreads()
+            do {
+                try strongSelf.startReadAndPlayThreads()
+            } catch {
+                strongSelf.playerLock.unlock()
+                PlaybackManager.shared.playbackDidFail(error: .fileCorrupted(logMessage: error.localizedDescription), fallbackToDefaultPlayer: true)
+                return
+            }
             do {
                 strongSelf.engine?.prepare()
                 try strongSelf.engine?.start()
@@ -170,7 +181,17 @@ class EffectsPlayer: PlaybackProtocol, Hashable {
                 return
             }
 
-            strongSelf.playAndCatchExceptionIfNeeded()
+            do {
+                try SJCommonUtils.catchException {
+                    strongSelf.player?.play()
+                }
+            } catch {
+                FileLog.shared.addMessage("EffectsPlayer: failed to start playback: \(error)")
+                strongSelf.playerLock.unlock()
+                PlaybackManager.shared.pause(userInitiated: false)
+                completion?()
+                return
+            }
 
             strongSelf.playerLock.unlock()
 
@@ -183,21 +204,6 @@ class EffectsPlayer: PlaybackProtocol, Hashable {
             }
 
             self?.aboutToPlay.value = false
-        }
-    }
-
-    // MARK: - Play
-
-    /// Try to play. If an exception happens, just pause it.
-    func playAndCatchExceptionIfNeeded() {
-        do {
-            try SJCommonUtils.catchException {
-                self.player?.play()
-            }
-        } catch {
-            FileLog.shared.addMessage("EffectsPlayer: failed to start playback: \(error)")
-            self.playerLock.unlock()
-            PlaybackManager.shared.pause(userInitiated: false)
         }
     }
 
@@ -365,14 +371,14 @@ class EffectsPlayer: PlaybackProtocol, Hashable {
 
     // MARK: - Helper methods
 
-    private func startReadAndPlayThreads() {
+    private func startReadAndPlayThreads() throws {
         // just in case there are any running
         audioReadTask?.shutdown()
         audioPlayTask?.shutdown()
 
         guard let audioFile, let player, let playBufferManager else { return }
         let requiredStartTime = PlaybackManager.shared.requiredStartingPosition()
-        audioReadTask = AudioReadTask(trimSilence: effects.trimSilence, audioFile: audioFile, outputFormat: audioFile.processingFormat, bufferManager: playBufferManager, playPositionHint: requiredStartTime, frameCount: cachedFrameCount, useVoiceBoostN: useVoiceBoostN, sampleRate: audioFileSampleRate)
+        audioReadTask = try AudioReadTask(trimSilence: effects.trimSilence, audioFile: audioFile, outputFormat: audioFile.processingFormat, bufferManager: playBufferManager, playPositionHint: requiredStartTime, frameCount: cachedFrameCount, useVoiceBoostN: useVoiceBoostN, sampleRate: audioFileSampleRate)
         audioPlayTask = AudioPlayTask(player: player, bufferManager: playBufferManager)
 
         audioReadTask?.startup()

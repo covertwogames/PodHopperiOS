@@ -25,6 +25,9 @@ public final class PodHopperUpNextSync {
 
     private let workQueue = DispatchQueue(label: "au.com.podhopper.upnextsync", qos: .utility)
     private let stateLock = NSLock()
+    /// PodHopper: one sync at a time. `sync()` runs on the position sync's queue and `syncSoon()` on
+    /// this one's, and two applies running together wrote the same queue rows over each other.
+    private let syncLock = NSLock()
 
     public init(
         supabase: PodHopperSupabaseClient = .shared,
@@ -183,6 +186,9 @@ public final class PodHopperUpNextSync {
     }
 
     private func syncBlocking() {
+        syncLock.lock()
+        defer { syncLock.unlock() }
+
         stateLock.lock()
         let sending = readActions()
         stateLock.unlock()
@@ -265,15 +271,18 @@ public final class PodHopperUpNextSync {
     private func applyRemoteQueue(_ remoteEntries: [Entry]) -> [String] {
         guard let playback = ServerConfig.shared.playbackDelegate else { return [] }
 
+        // PodHopper: the player's state is read and changed on the main thread, which uses it all the
+        // time. This runs on a sync queue, so those parts hop over.
+        let (isPlaying, episodePlayingBefore) = Self.onMain { (playback.playing(), playback.currentEpisode()) }
+
         let localUuids = playback.allEpisodesInQueue(includeNowPlaying: true).map { $0.uuid }
-        let entries = preservePlayingEpisode(remoteEntries, playback: playback)
+        let entries = preservePlayingEpisode(remoteEntries, isPlaying: isPlaying, playingEpisode: episodePlayingBefore)
 
         // Identical lists mean every entry resolved, so nothing is outstanding.
         if entries.map({ $0.uuid }) == localUuids { return [] }
 
         dataManager.snapshotUpNext()
 
-        let episodePlayingBefore = playback.currentEpisode()
         var resolvedUuids = [String]()
         var unresolvedUuids = [String]()
 
@@ -322,15 +331,19 @@ public final class PodHopperUpNextSync {
 
         dataManager.deleteAllUpNextEpisodesNotIn(uuids: resolvedUuids)
 
-        playback.queueRefreshList(checkForAutoDownload: true)
-        playback.upNextQueueChanged()
+        // Waits for the main thread, so the next apply can't start until this one is in place.
+        let anyResolved = !resolvedUuids.isEmpty
+        Self.onMain { () -> Void in
+            playback.queueRefreshList(checkForAutoDownload: true)
+            playback.upNextQueueChanged()
 
-        if let episodePlayingBefore, playback.isNowPlayingEpisode(episodeUuid: episodePlayingBefore.uuid) == false {
-            playback.playingEpisodeChangedExternally()
-        } else if episodePlayingBefore == nil, !resolvedUuids.isEmpty {
-            playback.playingEpisodeChangedExternally()
-        } else if episodePlayingBefore != nil, resolvedUuids.isEmpty {
-            playback.playingEpisodeChangedExternally()
+            if let episodePlayingBefore, playback.isNowPlayingEpisode(episodeUuid: episodePlayingBefore.uuid) == false {
+                playback.playingEpisodeChangedExternally()
+            } else if episodePlayingBefore == nil, anyResolved {
+                playback.playingEpisodeChangedExternally()
+            } else if episodePlayingBefore != nil, !anyResolved {
+                playback.playingEpisodeChangedExternally()
+            }
         }
 
         let note = unresolvedUuids.isEmpty ? "" : ", \(unresolvedUuids.count) could not be built yet and will be retried when their episodes arrive"
@@ -341,13 +354,22 @@ public final class PodHopperUpNextSync {
 
     /// Keeps the episode playing right now at the head, applying the backend's order behind it, so a
     /// remote queue can never move the scrubber out from under a listener.
-    private func preservePlayingEpisode(_ entries: [Entry], playback: ServerPlaybackDelegate) -> [Entry] {
-        guard playback.playing(), let playing = playback.currentEpisode() else { return entries }
+    private func preservePlayingEpisode(_ entries: [Entry], isPlaying: Bool, playingEpisode: BaseEpisode?) -> [Entry] {
+        guard isPlaying, let playing = playingEpisode else { return entries }
         if entries.first?.uuid == playing.uuid { return entries }
 
         var list = entries.filter { $0.uuid != playing.uuid }
         list.insert(Entry(episode: playing, dataManager: dataManager), at: 0)
         return list
+    }
+
+    /// Runs `work` on the main thread and waits for it. Never called while holding `stateLock`, and
+    /// nothing on the main thread waits on `syncLock`, so this can't deadlock.
+    private static func onMain<T>(_ work: () -> T) -> T {
+        if Thread.isMainThread {
+            return work()
+        }
+        return DispatchQueue.main.sync(execute: work)
     }
 
     // MARK: Local state

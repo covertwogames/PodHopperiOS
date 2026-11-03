@@ -276,12 +276,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     private func handleAppRefresh(task: BGTask) {
         scheduleNextBackgroundRefresh()
 
-        task.expirationHandler = {
+        // PodHopper: iOS ends the app if a background task hasn't been marked complete by the time it
+        // expires, so mark it complete there when the refresh hasn't finished in time. The refresh keeps
+        // going whenever the app next runs.
+        // The refresh's completion holds the completer; the task only holds it weakly, so they don't keep
+        // each other alive once the refresh has reported back.
+        let completer = BackgroundTaskCompleter(task: task)
+        task.expirationHandler = { [weak completer] in
             FileLog.shared.addMessage("Background refresh timed out")
+            completer?.complete(success: false)
         }
 
         RefreshManager.shared.refreshPodcasts(completion: { refreshFetchResult in
-            task.setTaskCompleted(success: refreshFetchResult != .failed)
+            completer.complete(success: refreshFetchResult != .failed)
         })
         badgeHelper.updateBadge()
     }
@@ -388,5 +395,27 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 struct FileErrorLogger: ErrorLogger {
     func log(error: Error, context: [String: String]?) {
         FileLog.shared.addMessage("Error: \(error.localizedDescription). Context: \(context?.debugDescription ?? "none")")
+    }
+}
+
+/// Marks a background task complete once, whichever happens first: the work finishing or the task expiring.
+private final class BackgroundTaskCompleter {
+    private let task: BGTask
+    private let lock = NSLock()
+    private var isComplete = false
+
+    init(task: BGTask) {
+        self.task = task
+    }
+
+    func complete(success: Bool) {
+        lock.lock()
+        let shouldComplete = !isComplete
+        isComplete = true
+        lock.unlock()
+
+        if shouldComplete {
+            task.setTaskCompleted(success: success)
+        }
     }
 }

@@ -29,6 +29,8 @@ struct AsyncImageView: View {
         let resource = KF.ImageResource(downloadURL: url, cacheKey: cacheKey)
 
         KFImage.resource(resource)
+            .setProcessor(ArtworkImageProcessor.shared)
+            .serialize(by: ArtworkCacheSerializer.shared)
             .placeholder { _ in
                 if let placeholder {
                     placeholder

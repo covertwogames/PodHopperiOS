@@ -94,6 +94,14 @@ final class PodHopperFeedParserTests: XCTestCase {
         XCTAssertEqual(PodHopperFeedParser.parseDuration(""), 0, accuracy: 0.001)
     }
 
+    func testImplausibleDurationsAreStoredAsUnknown() {
+        XCTAssertEqual(PodHopperFeedParser.plausibleDuration(PodHopperFeedParser.parseDuration("nan")), 0)
+        XCTAssertEqual(PodHopperFeedParser.plausibleDuration(PodHopperFeedParser.parseDuration("inf")), 0)
+        XCTAssertEqual(PodHopperFeedParser.plausibleDuration(PodHopperFeedParser.parseDuration("1e30")), 0)
+        XCTAssertEqual(PodHopperFeedParser.plausibleDuration(-5), 0)
+        XCTAssertEqual(PodHopperFeedParser.plausibleDuration(3723), 3723)
+    }
+
     func testParsePubDate() throws {
         let date = try XCTUnwrap(PodHopperFeedParser.parsePubDate("Wed, 01 Jan 2025 10:00:00 +0000"))
         XCTAssertEqual(date.timeIntervalSince1970, 1735725600, accuracy: 1)

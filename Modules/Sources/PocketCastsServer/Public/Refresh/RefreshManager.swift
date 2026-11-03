@@ -52,15 +52,20 @@ public class RefreshManager {
 
     public func refresh(podcast: Podcast, from episodeUuid: String) async {
         podcast.forceRefreshEpisodeFrom = episodeUuid
-        await withCheckedContinuation { continuation in
+        // The continuation's type is spelled out because its only resume is inside a defer, and Swift
+        // doesn't look inside a defer when it works out a closure's types.
+        await withCheckedContinuation { (continuation: CheckedContinuation<Void, Never>) in
             refresh(podcasts: [podcast]) {
+                // PodHopper: resume however this ends. Returning early without resuming left the caller
+                // (the podcast page's pull to refresh) waiting forever.
+                defer { continuation.resume() }
+
                 if SyncManager.isUserLoggedIn() {
                     guard let episodes = ApiServerHandler.shared.retrieveEpisodeTaskSynchronouusly(podcastUuid: podcast.uuid) else { return }
 
                     DataManager.sharedManager.saveBulkEpisodeSyncInfo(episodes: DataConverter.convert(syncInfoEpisodes: episodes))
                     podcast.forceRefreshEpisodeFrom = nil
                 }
-                continuation.resume()
             }
         }
     }
@@ -80,85 +85,159 @@ public class RefreshManager {
             }
         }
 
-        refresh(podcasts: DataManager.sharedManager.allPodcasts(includeUnsubscribed: false))
+        // A forced refresh is asked for after something changed, such as signing in, so it doesn't join a
+        // refresh that started before the change. It can still join one that's waiting to start.
+        requestFullRefresh(recordsStartTime: true, canJoinRunningRefresh: !forceEvenIfRefreshedRecently, completion: nil)
     }
 
-    #if !os(watchOS)
+    /// Refreshes particular podcasts, such as the one a podcast page asks for. It starts straight away
+    /// rather than waiting for a refresh of everything to finish: each refresh keeps its own feed
+    /// validators, so running alongside one is safe, and it's only a feed or two.
     private func refresh(podcasts: [Podcast], completion: (() -> Void)? = nil) {
-        UserDefaults.standard.set(Date(), forKey: ServerConstants.UserDefaults.lastRefreshStartTime)
-
-        DispatchQueue.global().async {
-            MainServerHandler.shared.refresh(podcasts: podcasts) { [weak self] refreshResponse in
-                guard let self else { return }
-
-                self.processPodcastRefreshResponse(refreshResponse) { _ in
-                    completion?()
-                }
-            }
+        let request = RefreshRequest(podcasts: podcasts, recordsStartTime: true) { _ in
+            completion?()
         }
+        start(request)
     }
-    #endif
 
-    #if os(watchOS)
-    // Watch OS 10 has a very very very weird issue that happened after using Xcode 16:
-    // if the refresh call uses a [weak self] the system kills the app.
-    // I'm not entirely sure why that happens but removing the weak part fixes the issue.
-    // We can safely remove this method once we remove support to watchOS 10.
-    private func refresh(podcasts: [Podcast], completion: (() -> Void)? = nil) {
-        UserDefaults.standard.set(Date(), forKey: ServerConstants.UserDefaults.lastRefreshStartTime)
-
-        DispatchQueue.global().async {
-            let watchOsMajorVersion = WKInterfaceDevice.current().systemVersion.split(separator: ".")[safe: 0]
-
-            if watchOsMajorVersion == "10" {
-                // Let's not use [weak self] so the app is not killed
-                MainServerHandler.shared.refresh(podcasts: podcasts) { refreshResponse in
-                    self.processPodcastRefreshResponse(refreshResponse) { _ in
-                        completion?()
-                    }
-                }
-
-                return
-            }
-
-            MainServerHandler.shared.refresh(podcasts: podcasts) { [weak self] refreshResponse in
-                guard let self else { return }
-
-                self.processPodcastRefreshResponse(refreshResponse) { _ in
-                    completion?()
-                }
-            }
-        }
-    }
-    #endif
-
-    public func refreshPodcasts(completion: @escaping (RefreshFetchResult) -> Void) {
-        DispatchQueue.global().async {
-            let podcasts = DataManager.sharedManager.allPodcasts(includeUnsubscribed: false)
-            MainServerHandler.shared.refresh(podcasts: podcasts) { [weak self] refreshResponse in
-                guard let self else { return }
-
-                self.processPodcastRefreshResponse(refreshResponse, completion: completion)
-            }
-        }
+    /// Refreshes every subscribed podcast and reports the result. By default it joins a refresh that's
+    /// already running; pass false when the caller needs one that starts after this call.
+    public func refreshPodcasts(canJoinRunningRefresh: Bool = true, completion: @escaping (RefreshFetchResult) -> Void) {
+        requestFullRefresh(recordsStartTime: false, canJoinRunningRefresh: canJoinRunningRefresh, completion: completion)
     }
 
     public func cancelAllRefreshes() {
         refreshQueue.cancelAllOperations()
     }
 
-    private func processPodcastRefreshResponse(_ refreshResponse: PodcastRefreshResponse?, completion: ((RefreshFetchResult) -> Void)?) {
+    // MARK: - One refresh of every podcast at a time
+
+    /// A refresh that's running or waiting to run, and everyone waiting for it to finish.
+    private final class RefreshRequest {
+        /// The podcasts to refresh, or nil for every subscribed podcast, read when the refresh starts.
+        let podcasts: [Podcast]?
+        var recordsStartTime: Bool
+        var completions: [(RefreshFetchResult) -> Void]
+
+        init(podcasts: [Podcast]?, recordsStartTime: Bool, completion: ((RefreshFetchResult) -> Void)?) {
+            self.podcasts = podcasts
+            self.recordsStartTime = recordsStartTime
+            if let completion {
+                completions = [completion]
+            } else {
+                completions = []
+            }
+        }
+    }
+
+    private let refreshStateLock = NSLock()
+    /// The refresh of every podcast that's running, and the one waiting to start after it.
+    private var runningRefresh: RefreshRequest?
+    private var waitingRefresh: RefreshRequest?
+
+    /// PodHopper: refreshes of every podcast run one at a time. Two at once fetched and parsed every
+    /// feed twice, doubling the memory and network used. A new one joins one that's waiting to start,
+    /// or one that's already running when `canJoinRunningRefresh` allows, instead of running again
+    /// straight after it. Every completion is called once, when the refresh it's attached to finishes.
+    private func requestFullRefresh(recordsStartTime: Bool, canJoinRunningRefresh: Bool, completion: ((RefreshFetchResult) -> Void)?) {
+        refreshStateLock.lock()
+
+        if canJoinRunningRefresh, let running = runningRefresh {
+            if let completion {
+                running.completions.append(completion)
+            }
+            refreshStateLock.unlock()
+            FileLog.shared.addMessage("Refresh - Joined the refresh already running")
+            return
+        }
+
+        if let waiting = waitingRefresh {
+            waiting.recordsStartTime = waiting.recordsStartTime || recordsStartTime
+            if let completion {
+                waiting.completions.append(completion)
+            }
+            refreshStateLock.unlock()
+            FileLog.shared.addMessage("Refresh - Joined the refresh waiting to start")
+            return
+        }
+
+        let request = RefreshRequest(podcasts: nil, recordsStartTime: recordsStartTime, completion: completion)
+        let startNow = runningRefresh == nil
+        if startNow {
+            runningRefresh = request
+        } else {
+            waitingRefresh = request
+            FileLog.shared.addMessage("Refresh - Waiting for the refresh already running")
+        }
+        refreshStateLock.unlock()
+
+        if startNow {
+            start(request)
+        }
+    }
+
+    private func start(_ request: RefreshRequest) {
+        refreshStateLock.lock()
+        let recordsStartTime = request.recordsStartTime
+        refreshStateLock.unlock()
+
+        if recordsStartTime {
+            UserDefaults.standard.set(Date(), forKey: ServerConstants.UserDefaults.lastRefreshStartTime)
+        }
+
+        // Holds on to the manager strongly. It's a singleton, and on watchOS 10 a weak reference here got
+        // the app killed by the system.
+        DispatchQueue.global().async {
+            let podcasts = request.podcasts ?? DataManager.sharedManager.allPodcasts(includeUnsubscribed: false)
+            MainServerHandler.shared.refresh(podcasts: podcasts) { refreshResponse in
+                self.processPodcastRefreshResponse(refreshResponse) { result in
+                    self.finish(request, result: result)
+                }
+            }
+        }
+    }
+
+    private func finish(_ request: RefreshRequest, result: RefreshFetchResult) {
+        refreshStateLock.lock()
+        let completions = request.completions
+        request.completions = []
+        var next: RefreshRequest?
+        if runningRefresh === request {
+            next = waitingRefresh
+            waitingRefresh = nil
+            runningRefresh = next
+        }
+        refreshStateLock.unlock()
+
+        if let next {
+            start(next)
+        }
+
+        for completion in completions {
+            completion(result)
+        }
+    }
+
+    private func processPodcastRefreshResponse(_ refreshResponse: PodcastRefreshResponse?, completion: @escaping (RefreshFetchResult) -> Void) {
         guard let response = refreshResponse, response.success() else {
             FileLog.shared.addMessage("Podcast refresh failed with message: \(refreshResponse?.message ?? "none"). See previous log for more details.")
             ServerNotificationsHelper.shared.firePodcastRefreshFailed()
-            completion?(.failed)
+            completion(.failed)
 
             return
         }
 
-        if let result = response.result {
-            let refreshOperation = RefreshOperation(result: result, completionHandler: completion)
-            refreshQueue.addOperation(refreshOperation)
+        guard let result = response.result else {
+            // PodHopper: a successful response always carries a result, but if one ever didn't, still
+            // report back so nothing waits on this refresh forever.
+            FileLog.shared.addMessage("Podcast refresh returned no result")
+            ServerNotificationsHelper.shared.firePodcastRefreshFailed()
+            completion(.failed)
+
+            return
         }
+
+        let refreshOperation = RefreshOperation(result: result, completionHandler: completion)
+        refreshQueue.addOperation(refreshOperation)
     }
 }

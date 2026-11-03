@@ -89,6 +89,8 @@ struct PodcastPreviewImage: View {
                 .opacity(0.5)
             if let podcastUuid {
                 KFImage(ImageManager.podcastImageURL(uuid: podcastUuid, size: 130))
+                    .setProcessor(ArtworkImageProcessor.shared)
+                    .serialize(by: ArtworkCacheSerializer.shared)
                     .resizable()
                     .frame(width: 40, height: 40)
                     .aspectRatio(2, contentMode: .fit)

@@ -12,6 +12,8 @@ struct PodcastPickerRow: View {
     var body: some View {
         HStack {
             KFImage(ImageManager.podcastImageURL(uuid: podcast.uuid, size: 280))
+                .setProcessor(ArtworkImageProcessor.shared)
+                .serialize(by: ArtworkCacheSerializer.shared)
                 .resizable()
                 .frame(width: 56, height: 56)
                 .aspectRatio(1, contentMode: .fit)

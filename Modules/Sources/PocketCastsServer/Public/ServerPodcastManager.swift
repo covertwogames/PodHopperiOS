@@ -76,6 +76,8 @@ public class ServerPodcastManager: NSObject {
                 podcast.autoDownloadSetting = Int32(autoDownloads)
             }
             DataManager.sharedManager.save(podcast: podcast)
+            // PodHopper: announce it like every other subscribe, so it syncs to the user's other devices.
+            PodHopperFeedManager.shared.announceSubscribed(podcastUuid: podcast.uuid)
         }
 
         completion?(true)

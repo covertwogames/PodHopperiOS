@@ -217,7 +217,9 @@ class NotificationsHelper: NSObject, UNUserNotificationCenterDelegate {
         if let existingEpisode = DataManager.sharedManager.findEpisode(uuid: episodeUuid) {
             action(existingEpisode)
         } else {
-            RefreshManager.shared.refreshPodcasts(completion: { _ in
+            // A refresh that's already running may have read this feed before the episode existed, so
+            // ask for one that starts after it rather than joining it.
+            RefreshManager.shared.refreshPodcasts(canJoinRunningRefresh: false, completion: { _ in
                 if let episode = DataManager.sharedManager.findEpisode(uuid: episodeUuid) {
                     DispatchQueue.main.async {
                         action(episode)

@@ -34,16 +34,18 @@ class PodcastHeaderCell: UITableViewCell {
         guard let viewController = self.viewController else { return }
         self.backgroundColor = .clear
         self.selectionStyle = .none
-        configureCellFromSwiftUIView(cell: self, viewController: viewController, rootView: {
+        // The SwiftUI view and its size callback are kept alive by the hosting controller, which is a child
+        // of the podcast page, so neither may hold the cell or the page strongly or every visit leaks the page.
+        configureCellFromSwiftUIView(cell: self, viewController: viewController, rootView: { [weak self, viewModel] in
             ContentSizeGeometryReader { _ in
-                PodcastHeaderView(viewModel: self.viewModel)
+                PodcastHeaderView(viewModel: viewModel)
                     .setupDefaultEnvironment()
                     .ignoresSafeArea()//Needs to be done in order to allow expansion of the view to navigation area when scrolling up
             } contentSizeUpdated: { [weak self] size in
-                guard let self else { return }
-                calculatedHeight = size.height
-                if firstTime {
-                    firstTime = false
+                guard let self, let viewController = self.viewController else { return }
+                self.calculatedHeight = size.height
+                if self.firstTime {
+                    self.firstTime = false
                     viewController.reloadData()
                 } else {
                     // the following code allows the table to refresh the row height in a animated way

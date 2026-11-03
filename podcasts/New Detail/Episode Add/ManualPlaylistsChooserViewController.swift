@@ -100,7 +100,6 @@ class ManualPlaylistsChooserViewController: PCViewController {
             ]
             navigationController?.navigationBar.scrollEdgeAppearance = appearance
             navigationController?.navigationBar.standardAppearance = appearance
-            navigationController?.navigationBar.sizeToFit()
         }
     }
 
@@ -136,8 +135,6 @@ class ManualPlaylistsChooserViewController: PCViewController {
             tableView.topAnchor.constraint(equalTo: view.topAnchor, constant: 0),
             tableView.bottomAnchor.constraint(equalTo: footerView.topAnchor, constant: 0)
         ])
-
-        view.layoutSubviews()
 
         manualPlaylists = dataManager.allManualPlaylists(includeDeleted: false)
 
@@ -270,7 +267,7 @@ extension ManualPlaylistsChooserViewController: UITableViewDelegate, UITableView
         default:
             let playlist = manualPlaylists[indexPath.row]
             let episodeIsInPlaylist = initialSelectedPlaylists.contains(playlist.uuid)
-            let onToggleChange: (Bool) -> Void = { [weak self] selected in
+            let onToggleChange: (Bool) -> Void = { [weak self, weak tableView] selected in
                 guard let self else { return }
 
                 if selected {
@@ -283,7 +280,7 @@ extension ManualPlaylistsChooserViewController: UITableViewDelegate, UITableView
                 } else {
                     self.newSelectedPlaylists.remove(playlist.uuid)
                 }
-                tableView.reloadRows(at: [indexPath], with: .none)
+                tableView?.reloadRows(at: [indexPath], with: .none)
             }
             let isSelected = Binding<Bool>(
                 get: { [weak self] in

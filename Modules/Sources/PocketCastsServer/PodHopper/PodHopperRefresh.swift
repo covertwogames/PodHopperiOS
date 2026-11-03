@@ -12,8 +12,13 @@ import PocketCastsUtils
 enum PodHopperRefresh {
 
     /// How many feeds to fetch at once. Bounded so the network waits overlap instead of stacking up
-    /// one podcast at a time, while not opening an unbounded number of connections. Matches Android.
-    private static let maxConcurrentFeedRefreshes = 6
+    /// one podcast at a time, while only a few whole feeds are held in memory at once: a long running
+    /// show's feed can parse into thousands of episodes. Matches Android.
+    private static let maxConcurrentFeedRefreshes = 3
+
+    /// How many episode uuids go into each "already stored?" database lookup, keeping each query small
+    /// however long the feed is.
+    private static let storedEpisodeLookupBatchSize = 500
 
     /// PodHopper: the watch keeps only the newest episodes of each podcast, so a feed with thousands
     /// of them costs it a handful of episode objects instead of thousands. The phone and car keep
@@ -26,23 +31,22 @@ enum PodHopperRefresh {
         #endif
     }
 
-    /// Parse each podcast's feed and build a refresh response keyed by podcast uuid containing every
-    /// episode found in the feed. Blocking until all feeds are parsed, so call it off the main thread.
-    /// Podcasts without a feed url, or whose feed cannot be fetched or parsed, are simply skipped and
-    /// contribute no updates rather than failing the whole refresh. Returning all episodes per podcast
-    /// is intentional: the downstream `RefreshOperation` discards the ones already stored.
+    /// Parse each podcast's feed and build a refresh response keyed by podcast uuid containing the
+    /// feed's episodes that aren't stored yet. Blocking until all feeds are parsed, so call it off the
+    /// main thread. Podcasts without a feed url, or whose feed cannot be fetched or parsed, are simply
+    /// skipped and contribute no updates rather than failing the whole refresh. A feed that changed but
+    /// has nothing new still gets an (empty) entry, so `RefreshOperation` handles that podcast exactly
+    /// as it did when every episode was passed along, and it still checks each episode it's given.
     static func refreshResponse(for podcasts: [Podcast]) -> PodcastRefreshResponse {
-        // PodHopper: drop anything staged by an earlier refresh that never reached the save step, so
-        // this run can only ever commit validators for feeds it fetched itself. Without this, a
-        // refresh that was abandoned before saving could have its validators committed later by an
-        // unrelated refresh, and those feeds would be treated as up to date without their episodes.
-        PodHopperFeedValidators.shared.discardStaged()
-
         let parser = PodHopperFeedParser()
         let permits = DispatchSemaphore(value: maxConcurrentFeedRefreshes)
         let group = DispatchGroup()
         let lock = NSLock()
         var updates = [String: [RefreshEpisode]]()
+        // PodHopper: the validators this refresh received travel with its result and are saved by
+        // `RefreshOperation` only after the episodes are, so a refresh that never gets that far saves
+        // nothing, and refreshes running alongside each other keep their validators apart.
+        var feedValidators = [String: PodHopperFeedValidators.Validators]()
 
         for podcast in podcasts {
             guard let feedUrl = podcast.podcastUrl, !feedUrl.isEmpty else { continue }
@@ -58,18 +62,25 @@ enum PodHopperRefresh {
 
                 // PodHopper: ask the host whether the feed changed. An unchanged feed costs nothing
                 // beyond the round trip: no body, no parse, no database work. Validators are only
-                // staged here; `RefreshOperation` commits them once the episodes are saved.
+                // collected here; `RefreshOperation` saves them once the episodes are saved.
                 switch parser.fetch(feedUrl: feedUrl, conditional: true, maxEpisodes: episodeLimit) {
                 case .notModified:
                     return
                 case .failure:
                     return
                 case let .success(parsed, validators):
-                    if let validators = validators {
-                        PodHopperFeedValidators.shared.stage(validators, for: feedUrl)
+                    if let validators = validators, !validators.isEmpty {
+                        lock.lock()
+                        feedValidators[feedUrl] = validators
+                        lock.unlock()
                     }
                     guard !parsed.episodes.isEmpty else { return }
-                    let refreshEpisodes = parsed.episodes.map(refreshEpisode(from:))
+                    // PodHopper: keep only the episodes that aren't stored yet as each feed finishes,
+                    // instead of holding every episode of every changed feed until all feeds are done.
+                    let storedUuids = storedEpisodeUuids(among: parsed.episodes)
+                    let refreshEpisodes = parsed.episodes
+                        .filter { !storedUuids.contains($0.uuid) }
+                        .map(refreshEpisode(from:))
 
                     lock.lock()
                     updates[uuid] = refreshEpisodes
@@ -82,8 +93,23 @@ enum PodHopperRefresh {
 
         var response = PodcastRefreshResponse()
         response.status = "ok"
-        response.result = RefreshResult(podcastUpdates: updates)
+        response.result = RefreshResult(podcastUpdates: updates, feedValidators: feedValidators)
         return response
+    }
+
+    /// The uuids among `episodes` that are already in the database, using the same check as
+    /// `RefreshOperation` (an episode with that uuid exists anywhere). If a lookup fails it finds
+    /// nothing, so nothing is dropped here and `RefreshOperation` still does the final check.
+    private static func storedEpisodeUuids(among episodes: [Episode]) -> Set<String> {
+        let uuids = episodes.map(\.uuid).filter { !$0.isEmpty }
+        var stored = Set<String>()
+        var start = 0
+        while start < uuids.count {
+            let end = min(start + storedEpisodeLookupBatchSize, uuids.count)
+            stored.formUnion(DataManager.sharedManager.findMatchingEpisodes(uuids: Array(uuids[start ..< end])))
+            start = end
+        }
+        return stored
     }
 
     /// Map a parsed feed episode onto the response DTO the refresh pipeline consumes. The published

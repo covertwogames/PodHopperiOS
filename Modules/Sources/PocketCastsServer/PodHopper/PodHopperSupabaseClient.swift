@@ -28,11 +28,18 @@ public final class PodHopperSupabaseClient {
     public static let shared = PodHopperSupabaseClient()
 
     private let session: URLSession
+    /// Serializes sign-in and token refreshes, which hold it across their network calls.
     private let lock = NSRecursiveLock()
+    /// PodHopper: guards the cached session below and the stored tokens. It's only ever held briefly and
+    /// never across a network call, so signing out never has to wait for the network.
+    private let stateLock = NSRecursiveLock()
 
     private var cachedAccessToken: String?
     private var cachedUserId: String?
     private var tokenExpiresAtMs: Int64 = 0
+    /// Bumped on sign-out, so a token refresh that was already out when the user signed out throws
+    /// its result away instead of storing a fresh token and quietly signing them back in.
+    private var sessionGeneration = 0
 
     private let loginStateSubject: CurrentValueSubject<Bool, Never>
 
@@ -65,10 +72,9 @@ public final class PodHopperSupabaseClient {
 
     public func login(email: String, password: String) throws {
         lock.lock(); defer { lock.unlock() }
+        let generation = currentGeneration
         let json = try authCall(path: "/auth/v1/token?grant_type=password", body: ["email": email, "password": password])
-        try applySession(json)
-        setRefreshToken(json["refresh_token"] as? String ?? "")
-        setEmail(email)
+        try storeSignInSession(json, generation: generation, refreshToken: json["refresh_token"] as? String ?? "", email: email)
     }
 
     /// Creates a new account. When the project does not require email confirmation, Supabase returns
@@ -78,11 +84,10 @@ public final class PodHopperSupabaseClient {
     @discardableResult
     public func signUp(email: String, password: String) throws -> Bool {
         lock.lock(); defer { lock.unlock() }
+        let generation = currentGeneration
         let json = try authCall(path: "/auth/v1/signup", body: ["email": email, "password": password])
         if json["access_token"] != nil {
-            try applySession(json)
-            setRefreshToken(json["refresh_token"] as? String ?? "")
-            setEmail(email)
+            try storeSignInSession(json, generation: generation, refreshToken: json["refresh_token"] as? String ?? "", email: email)
             return true
         }
         return false
@@ -96,12 +101,18 @@ public final class PodHopperSupabaseClient {
     @discardableResult
     public func ensureSession() throws -> String {
         lock.lock(); defer { lock.unlock() }
-        if let cached = cachedAccessToken, nowMs() < tokenExpiresAtMs - Self.tokenSafetyMarginMs {
+        let cachedSession: (token: String?, generation: Int) = withStateLock { () -> (token: String?, generation: Int) in
+            if let cached = cachedAccessToken, nowMs() < tokenExpiresAtMs - Self.tokenSafetyMarginMs {
+                return (cached, sessionGeneration)
+            }
+            return (nil, sessionGeneration)
+        }
+        if let cached = cachedSession.token {
             return cached
         }
         let refreshToken = Self.keychainString(Self.refreshTokenKey)
         if !refreshToken.isEmpty {
-            return try refreshSession(refreshToken)
+            return try refreshSession(refreshToken, generation: cachedSession.generation)
         }
         throw SupabaseError.notSignedIn
     }
@@ -109,14 +120,20 @@ public final class PodHopperSupabaseClient {
     public func getUserId() throws -> String? {
         lock.lock(); defer { lock.unlock() }
         _ = try ensureSession()
-        return cachedUserId
+        return withStateLock { cachedUserId }
     }
 
+    /// PodHopper: doesn't take `lock`. A token refresh holds that across a network call, and signing
+    /// out, which the app does on the main thread, used to wait for it, freezing the app for as long as
+    /// the request took. Bumping the generation makes a refresh that's still out discard its result.
     public func logout() {
-        lock.lock(); defer { lock.unlock() }
-        clearSessionCache()
-        setRefreshToken("")
-        setEmail("")
+        withStateLock { () -> Void in
+            sessionGeneration += 1
+            clearSessionCache()
+            storeRefreshToken("")
+            setEmail("")
+        }
+        loginStateSubject.send(false)
     }
 
     // MARK: PostgREST
@@ -206,34 +223,50 @@ public final class PodHopperSupabaseClient {
     /// normal sign-in. Storing the refresh token is what flips `isLoggedIn` to true. Blocking.
     public func claimPairingSession(tokenHash: String) throws {
         lock.lock(); defer { lock.unlock() }
+        let generation = currentGeneration
         clearSessionCache()
         let json = try authCall(path: "/auth/v1/verify", body: ["type": "magiclink", "token_hash": tokenHash])
-        try applySession(json)
         let refreshToken = json["refresh_token"] as? String ?? ""
-        if !refreshToken.isEmpty {
-            setRefreshToken(refreshToken)
+        var email: String?
+        if let user = json["user"] as? [String: Any], let userEmail = user["email"] as? String, !userEmail.isEmpty {
+            email = userEmail
         }
-        if let user = json["user"] as? [String: Any], let email = user["email"] as? String, !email.isEmpty {
-            setEmail(email)
-        }
+        try storeSignInSession(json, generation: generation, refreshToken: refreshToken.isEmpty ? nil : refreshToken, email: email)
     }
 
     // MARK: Session internals
 
-    private func refreshSession(_ refreshToken: String) throws -> String {
+    /// `generation` is the session generation when the refresh began. If the user signed out while the
+    /// request was out, the result is thrown away rather than stored.
+    private func refreshSession(_ refreshToken: String, generation: Int) throws -> String {
         let json: [String: Any]
         do {
             json = try authCall(path: "/auth/v1/token?grant_type=refresh_token", body: ["refresh_token": refreshToken])
         } catch SupabaseError.authRejected(let message) {
-            setRefreshToken("")
+            let isCurrentSession: Bool = withStateLock { () -> Bool in
+                guard generation == sessionGeneration else { return false }
+                storeRefreshToken("")
+                return true
+            }
+            if isCurrentSession {
+                loginStateSubject.send(false)
+            }
             throw SupabaseError.requestFailed("PodHopper sign-in expired. Sign in again. (\(message))")
         }
-        try applySession(json)
         let rotated = json["refresh_token"] as? String ?? ""
-        if !rotated.isEmpty {
-            setRefreshToken(rotated)
+        // The rotated token is stored without announcing it: the user was already signed in, and an
+        // announcement sent after this lock is released could land after a sign-out's and undo it.
+        let token: String? = try withStateLock { () throws -> String? in
+            guard generation == sessionGeneration else {
+                throw SupabaseError.notSignedIn
+            }
+            try applySession(json)
+            if !rotated.isEmpty {
+                storeRefreshToken(rotated)
+            }
+            return cachedAccessToken
         }
-        guard let token = cachedAccessToken else {
+        guard let token else {
             throw SupabaseError.requestFailed("PodHopper sync: missing access token")
         }
         return token
@@ -243,20 +276,51 @@ public final class PodHopperSupabaseClient {
         guard let accessToken = json["access_token"] as? String else {
             throw SupabaseError.requestFailed("PodHopper auth: missing access token in response")
         }
-        cachedAccessToken = accessToken
-        let expiresInSec = (json["expires_in"] as? NSNumber)?.int64Value ?? 3600
-        tokenExpiresAtMs = nowMs() + expiresInSec * 1000
-        if let user = json["user"] as? [String: Any], let userId = user["id"] as? String, !userId.isEmpty {
-            cachedUserId = userId
-        } else {
-            cachedUserId = nil
+        withStateLock { () -> Void in
+            cachedAccessToken = accessToken
+            let expiresInSec = (json["expires_in"] as? NSNumber)?.int64Value ?? 3600
+            tokenExpiresAtMs = nowMs() + expiresInSec * 1000
+            if let user = json["user"] as? [String: Any], let userId = user["id"] as? String, !userId.isEmpty {
+                cachedUserId = userId
+            } else {
+                cachedUserId = nil
+            }
         }
     }
 
     private func clearSessionCache() {
-        cachedAccessToken = nil
-        cachedUserId = nil
-        tokenExpiresAtMs = 0
+        withStateLock { () -> Void in
+            cachedAccessToken = nil
+            cachedUserId = nil
+            tokenExpiresAtMs = 0
+        }
+    }
+
+    private var currentGeneration: Int {
+        withStateLock { sessionGeneration }
+    }
+
+    /// Applies a session from sign-in, sign-up or pairing, unless the user signed out after the request
+    /// went out, in which case the result is thrown away instead of signing them back in. Called with
+    /// `lock` held, so the announcement made here can't be reordered with another sign-in or a refresh.
+    private func storeSignInSession(_ json: [String: Any], generation: Int, refreshToken: String?, email: String?) throws {
+        try withStateLock { () throws -> Void in
+            guard generation == sessionGeneration else {
+                throw SupabaseError.notSignedIn
+            }
+            try applySession(json)
+            if let refreshToken {
+                setRefreshToken(refreshToken)
+            }
+            if let email {
+                setEmail(email)
+            }
+        }
+    }
+
+    private func withStateLock<T>(_ body: () throws -> T) rethrows -> T {
+        stateLock.lock(); defer { stateLock.unlock() }
+        return try body()
     }
 
     // MARK: Request construction (testable, no network)
@@ -378,12 +442,17 @@ public final class PodHopperSupabaseClient {
     }
 
     private func setRefreshToken(_ token: String) {
+        storeRefreshToken(token)
+        loginStateSubject.send(!token.isEmpty)
+    }
+
+    /// Writes or removes the stored refresh token without announcing the change.
+    private func storeRefreshToken(_ token: String) {
         if token.isEmpty {
             _ = KeychainHelper.removeKey(Self.refreshTokenKey)
         } else {
             _ = KeychainHelper.save(string: token, key: Self.refreshTokenKey, accessibility: kSecAttrAccessibleAfterFirstUnlock)
         }
-        loginStateSubject.send(!token.isEmpty)
     }
 
     private func setEmail(_ email: String) {

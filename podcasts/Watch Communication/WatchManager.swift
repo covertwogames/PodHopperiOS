@@ -140,14 +140,20 @@ class WatchManager: NSObject, WCSessionDelegate {
             if let episodeUuid = payload[WatchConstants.Messages.PlayEpisodeRequest.episodeUuid] as? String {
                 let playlist = getPlaylist(from: payload)
 
-                handlePlayRequest(episodeUuid: episodeUuid, playlist: playlist)
+                // PodHopper: watch messages arrive on a background queue, and starting or pausing
+                // playback must happen on the main thread, as skip back already does below.
+                DispatchQueue.main.async {
+                    self.handlePlayRequest(episodeUuid: episodeUuid, playlist: playlist)
+                }
             }
         } else if WatchConstants.Messages.PlayPauseRequest.type == messageType {
             AnalyticsPlaybackHelper.shared.currentSource = .watch
-            if PlaybackManager.shared.playing() {
-                PlaybackManager.shared.pause()
-            } else {
-                PlaybackManager.shared.play()
+            DispatchQueue.main.async {
+                if PlaybackManager.shared.playing() {
+                    PlaybackManager.shared.pause()
+                } else {
+                    PlaybackManager.shared.play()
+                }
             }
         } else if WatchConstants.Messages.SkipBackRequest.type == messageType {
             AnalyticsPlaybackHelper.shared.currentSource = .watch
@@ -568,7 +574,9 @@ class WatchManager: NSObject, WCSessionDelegate {
         let upNextCount = upNextInfo.count
 
         applicationDict[WatchConstants.Keys.filters] = serializePlaylists()
-        applicationDict[WatchConstants.Keys.nowPlayingInfo] = serializeNowPlaying()
+        // Typed, so the sync that returns the dictionary is the one used, not the one that returns nothing.
+        let nowPlayingInfo: [String: Any] = DispatchQueue.main.sync { serializeNowPlaying() }
+        applicationDict[WatchConstants.Keys.nowPlayingInfo] = nowPlayingInfo
         applicationDict[WatchConstants.Keys.upNextInfo] = upNextInfo
         applicationDict[WatchConstants.Keys.autoArchivePlayedAfter] = Settings.autoArchivePlayedAfter()
         applicationDict[WatchConstants.Keys.autoArchiveStarredEpisodes] = Settings.archiveStarredEpisodes()
