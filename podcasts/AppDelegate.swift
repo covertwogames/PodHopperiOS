@@ -42,6 +42,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
         appInstallState = appLifecycleAnalytics.checkApplicationInstalledOrUpgraded()
 
+        // PodHopper: iOS keeps an app's saved sign-in after the app is deleted. On the first launch
+        // of a new install, forget any sign-in an earlier install left behind, before anything uses
+        // it, so a reinstalled app starts signed out like any new install.
+        if appInstallState == .installed {
+            PodHopperSupabaseClient.shared.forgetSignInLeftByEarlierInstall()
+        }
+
         if let appInstallState {
             switch appInstallState {
             case .updated:

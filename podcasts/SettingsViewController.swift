@@ -9,7 +9,7 @@ class SettingsViewController: PCViewController, UITableViewDataSource, UITableVi
         case general, notifications, appearance, storageAndDataUse
         case autoArchive, autoDownload, autoAddToUpNext, siriShortcuts
         case watch, customFiles, importSteps, opml
-        case about, pocketCastsPlus, privacy, syncAccountToCar, deleteAccount
+        case about, pocketCastsPlus, privacy, syncAccountToCar, signedInDevices, deleteAccount
         case upNextHistory, foldersHistory
         case headphoneControls
         case developer, beta
@@ -65,6 +65,8 @@ class SettingsViewController: PCViewController, UITableViewDataSource, UITableVi
                 return (L10n.settingsPrivacy, UIImage(named: "privacy"))
             case .syncAccountToCar:
                 return ("Sync Account to Car or Watch", UIImage(systemName: "car"))
+            case .signedInDevices:
+                return (PodHopperDevicesCopy.title, UIImage(systemName: "laptopcomputer.and.iphone"))
             case .deleteAccount:
                 return ("Delete Account", UIImage(systemName: "trash"))
             case .developer:
@@ -98,7 +100,7 @@ class SettingsViewController: PCViewController, UITableViewDataSource, UITableVi
             [.storageAndDataUse, .siriShortcuts, .headphoneControls, .watch],
             [.importSteps, .opml],
             [.upNextHistory, .foldersHistory],
-            [.syncAccountToCar, .privacy, .about, .deleteAccount]
+            [.syncAccountToCar, .signedInDevices, .privacy, .about, .deleteAccount]
         ]
     }()
 
@@ -205,6 +207,11 @@ class SettingsViewController: PCViewController, UITableViewDataSource, UITableVi
             let controller = ThemedHostingController(rootView: PodHopperCarSyncView())
             controller.title = "Sync Account to Car or Watch"
             navigationController?.pushViewController(controller, animated: true)
+        case .signedInDevices:
+            // PodHopper: every device signed in to the account, with Sign out for each.
+            let controller = ThemedHostingController(rootView: PodHopperDevicesView())
+            controller.title = PodHopperDevicesCopy.title
+            navigationController?.pushViewController(controller, animated: true)
         case .deleteAccount:
             let alert = UIAlertController(
                 title: "Delete Account",
@@ -250,7 +257,9 @@ class SettingsViewController: PCViewController, UITableViewDataSource, UITableVi
         DispatchQueue.global(qos: .userInitiated).async { [weak self] in
             do {
                 try PodHopperSupabaseClient.shared.deleteAccount()
-                PodHopperSupabaseClient.shared.logout()
+                // PodHopper: the account and its sign-ins are already gone on the server, so there is
+                // nothing to tell it. The sync bookkeeping is reset, as on any sign-out.
+                PodHopperDevices.shared.signOut(tellServer: false)
                 DispatchQueue.main.async {
                     self?.reloadTable()
                     let done = UIAlertController(title: "Account Deleted", message: "Your PodHopper account has been deleted.", preferredStyle: .alert)

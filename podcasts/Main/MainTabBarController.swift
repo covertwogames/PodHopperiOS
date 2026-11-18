@@ -129,6 +129,9 @@ class MainTabBarController: UITabBarController, NavigationProtocol {
         NotificationCenter.default.addObserver(self, selector: #selector(textEditingDidEnd), name: Constants.Notifications.textEditingDidEnd, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(handleFollowSystemThemeTurnedOn), name: Constants.Notifications.followSystemThemeTurnedOn, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(willEnterForeground), name: UIApplication.willEnterForegroundNotification, object: nil)
+        // PodHopper: offer the Log in screen as soon as this device has dealt with a sign-in the server
+        // ended (and cleared itself, if it was removed from the account's list of signed-in devices).
+        NotificationCenter.default.addObserver(self, selector: #selector(podHopperSignInEnded), name: PodHopperDevices.signInEndedNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(refreshProfileTabAvatar), name: .userLoginDidChange, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(refreshProfileTabAvatarForcingReload), name: Constants.Notifications.avatarNeedsRefreshing, object: nil)
         refreshProfileTabAvatar()
@@ -172,9 +175,10 @@ class MainTabBarController: UITabBarController, NavigationProtocol {
         }
 
         // PodHopper: first-run setup ends with the Terms of Service agreed to, so the one-time Terms
-        // screen is only for people who are past first-run setup.
+        // screen, and the Log in screen for a device that was signed out, are only for people who are
+        // past first-run setup.
         if !showInitialOnboardingIfNeeded() {
-            showTermsPromptIfNeeded()
+            showLaunchPromptsIfNeeded()
         }
 
         updateDatabaseIndexes()
@@ -243,38 +247,65 @@ class MainTabBarController: UITabBarController, NavigationProtocol {
         return true
     }
 
-    /// PodHopper: people who were already using the app before the Terms of Service existed never
-    /// passed the create account box or the first-run notices, so they are asked once, here. Called
-    /// when the main screen appears and whenever the app comes back to the front, so the screen
-    /// returns if anything closed it before they agreed.
-    private func showTermsPromptIfNeeded() {
-        guard PodHopperTerms.shared.needsAgreement else {
+    /// PodHopper: the screens the app opens by itself, in order. Called when the main screen appears,
+    /// whenever the app comes back to the front, and when this device has dealt with a sign-in the
+    /// server ended.
+    ///
+    ///  1. The one-time Terms of Service screen. People who were already using the app before the
+    ///     Terms existed never passed the create account box or the first-run notices, so they are
+    ///     asked once. It comes back if anything closed it before they agreed.
+    ///  2. The Log in screen, once, for a device that was signed out without the person choosing it:
+    ///     a new device restored from a backup, an expired sign-in, or removed from the list. The app
+    ///     works without an account and would otherwise give no sign of it. Closing it carries on
+    ///     without an account and it is not offered again for that sign-out.
+    private func showLaunchPromptsIfNeeded() {
+        let needsTerms = PodHopperTerms.shared.needsAgreement
+        let offerSignIn = !needsTerms && PodHopperDevices.shared.shouldOfferSignIn
+        guard needsTerms || offerSignIn else {
             return
         }
 
-        // Find whatever is on top, so the Terms screen goes over it.
+        // Find whatever is on top, so the screen goes over it.
         var top: UIViewController = self
         while let shown = top.presentedViewController, !shown.isBeingDismissed {
-            // Nothing to do while the Terms screen is already up, or while first-run setup is:
-            // every way through first-run setup ends with the Terms agreed to.
-            if shown is PodHopperTermsPromptHostingController || shown is PodHopperOnboardingHostingController {
+            // Nothing to do while one of these screens is already up, or while first-run setup is:
+            // every way through first-run setup ends with the Terms agreed to and a chance to log in.
+            if shown is PodHopperTermsPromptHostingController || shown is PodHopperOnboardingHostingController || shown is PodHopperAuthHostingController {
                 return
             }
             // An alert is in the way. A screen shown over an alert is closed along with it, so
             // look again in a moment instead.
             if shown is UIAlertController {
                 DispatchQueue.main.asyncAfter(deadline: .now() + 2) { [weak self] in
-                    self?.showTermsPromptIfNeeded()
+                    self?.showLaunchPromptsIfNeeded()
                 }
                 return
             }
             top = shown
         }
 
-        let prompt = PodHopperTermsPromptHostingController()
-        prompt.modalPresentationStyle = .fullScreen
-        prompt.isModalInPresentation = true
-        top.present(prompt, animated: true)
+        if needsTerms {
+            let prompt = PodHopperTermsPromptHostingController()
+            prompt.modalPresentationStyle = .fullScreen
+            prompt.isModalInPresentation = true
+            // Once they agree, the Log in screen follows if this device needs it.
+            prompt.onFinished = { [weak self] in
+                self?.showLaunchPromptsIfNeeded()
+            }
+            top.present(prompt, animated: true)
+            return
+        }
+
+        PodHopperDevices.shared.signInOffered()
+        let login = PodHopperAuthHostingController(onFinished: { [weak self] in
+            self?.updateProfileTabAfterSignIn()
+        }, signedOutNotice: true)
+        top.present(login, animated: true)
+    }
+
+    /// The Profile tab shows the account, so it refreshes after the Log in screen closes.
+    private func updateProfileTabAfterSignIn() {
+        NotificationCenter.default.post(name: .userLoginDidChange, object: nil)
     }
 
     private func fixTarBarTraitCollectionOnIpadForiOS18() {
@@ -781,11 +812,16 @@ class MainTabBarController: UITabBarController, NavigationProtocol {
         tabBar.scrollEdgeAppearance = appearance
     }
 
+    @objc private func podHopperSignInEnded() {
+        showLaunchPromptsIfNeeded()
+    }
+
     @objc private func willEnterForeground() {
         fireSystemThemeMayHaveChanged()
         checkSubscriptionStatusChanged()
-        // PodHopper: bring the one-time Terms screen back if something closed it before they agreed.
-        showTermsPromptIfNeeded()
+        // PodHopper: bring the one-time Terms screen back if something closed it before they agreed,
+        // and offer the Log in screen to a device that was signed out.
+        showLaunchPromptsIfNeeded()
     }
 
     // The window's `overrideUserInterfaceStyle` masks system appearance changes

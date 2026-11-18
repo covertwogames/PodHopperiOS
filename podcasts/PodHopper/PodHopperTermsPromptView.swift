@@ -93,6 +93,9 @@ struct PodHopperTermsPromptView: View {
 /// Presents the one-time Terms screen full screen. Records the agreement and closes itself when the
 /// person taps Agree and continue.
 class PodHopperTermsPromptHostingController: ThemedHostingController<PodHopperTermsPromptView> {
+    /// Called once the screen has closed after Agree and continue.
+    var onFinished: (() -> Void)?
+
     init() {
         let finisher = PodHopperTermsPromptFinisher()
         super.init(rootView: PodHopperTermsPromptView(onAgree: {
@@ -102,7 +105,9 @@ class PodHopperTermsPromptHostingController: ThemedHostingController<PodHopperTe
         finisher.onAgree = { [weak self] in
             PodHopperTerms.shared.recordAgreement(method: .prompt)
             PodHopperTerms.shared.syncToAccountAsync()
-            self?.dismiss(animated: true)
+            self?.dismiss(animated: true) { [weak self] in
+                self?.onFinished?()
+            }
         }
     }
 

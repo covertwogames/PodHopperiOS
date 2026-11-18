@@ -127,6 +127,7 @@ final class PodHopperPlaybackBridge: PodHopperPositionSyncDelegate {
         // yet (agreed while signed out or offline, or the last attempt did not get through). Does
         // nothing when signed out, when nothing has been agreed to, or when it was already sent.
         PodHopperTerms.shared.syncToAccountAsync()
+        PodHopperDevices.shared.appBecameActive()
     }
 
     @objc private func appWillEnterForeground() {
@@ -193,6 +194,13 @@ enum PodHopperSyncSetup {
                 DispatchQueue.main.sync(execute: unsubscribe)
             }
         }
+
+        // PodHopper: this device's place on the account's list of signed-in devices, and clearing
+        // it if it is removed from that list on another device. Set up before anything else reacts
+        // to the sign-in state.
+        PodHopperDevices.shared.clearLibraryHandler = { PodHopperLocalData.clearLibrary() }
+        PodHopperDevices.shared.removeDownloadedFilesHandler = { PodHopperLocalData.removeDownloadedFiles() }
+        PodHopperDevices.shared.start()
 
         PodHopperPlaybackBridge.shared.startObservingLifecycle()
         // Cold launch counts as entering the foreground, but willEnterForeground does not fire on

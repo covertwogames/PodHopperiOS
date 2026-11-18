@@ -145,7 +145,10 @@ class SourceInterfaceModel: ObservableObject {
     func logout() {
         WKInterfaceDevice.current().play(.success)
         PodHopperSubscriptionSync.shared.stopPeriodicSync()
-        PodHopperSupabaseClient.shared.logout()
+        // PodHopper: ends the sign-in on the server too, so the watch drops off the account's list of
+        // signed-in devices, and resets the sync bookkeeping. Once the sign-out is seen, the library
+        // this watch stored is cleared (see PodHopperDevices).
+        PodHopperDevices.shared.signOut(tellServer: true)
         SourceManager.shared.setSource(newSource: .phone)
         reload()
     }

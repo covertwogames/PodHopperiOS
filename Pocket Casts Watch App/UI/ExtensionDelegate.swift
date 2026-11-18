@@ -12,6 +12,11 @@ class ExtensionDelegate: NSObject, WKApplicationDelegate {
         // PodHopper: give the position sync its Watch host, so positions from other devices are
         // applied here. Without it nothing was ever applied on the Watch.
         WatchPodHopperPositionHost.shared.install()
+        // PodHopper: this watch's place on the account's list of signed-in devices, and clearing the
+        // library it stored whenever it ends up signed out.
+        PodHopperDevices.shared.clearLibraryHandler = { WatchLocalData.clearLibrary() }
+        PodHopperDevices.shared.removeDownloadedFilesHandler = { WatchLocalData.removeDownloadedFiles() }
+        PodHopperDevices.shared.start()
         restorePreviousStateIfRequired()
     }
 
@@ -21,6 +26,7 @@ class ExtensionDelegate: NSObject, WKApplicationDelegate {
             scheduleNextRefresh()
         }
         WatchPodHopperPositionHost.shared.becameActive()
+        PodHopperDevices.shared.appBecameActive()
     }
 
     func applicationWillResignActive() {

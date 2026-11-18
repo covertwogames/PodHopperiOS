@@ -62,6 +62,11 @@ private struct PodHopperLoginForm: View {
                 subtitle: "Sign in with your PodHopper account. Use the same account on every device to keep them in sync."
             )
 
+            // PodHopper: why the app opened this screen by itself, when it did.
+            if let notice = viewModel.notice {
+                PodHopperInfoPanel(title: "Signed out", message: notice)
+            }
+
             VStack(spacing: 12) {
                 PodHopperAuthField(systemIcon: "envelope", placeholder: "Email Address", text: $email, isEmail: true, contentType: .username)
                 PodHopperAuthField(systemIcon: "key", placeholder: "Password", text: $password, isSecure: true, contentType: .password)

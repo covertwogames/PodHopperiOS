@@ -6,8 +6,14 @@ class PodHopperAuthHostingController: ThemedHostingController<PodHopperAuthRootV
     private let viewModel: PodHopperAuthViewModel
     private let onFinished: (() -> Void)?
 
-    init(onFinished: (() -> Void)? = nil) {
+    /// `signedOutNotice`: PodHopper opens the Log in screen by itself once when this device was signed
+    /// out without the person choosing it (a new device restored from a backup, an expired sign-in, or
+    /// removed from the list on another device). The screen then says so at the top.
+    init(onFinished: (() -> Void)? = nil, signedOutNotice: Bool = false) {
         let viewModel = PodHopperAuthViewModel()
+        if signedOutNotice {
+            viewModel.notice = "You've been signed out on this device. Log in to keep syncing."
+        }
         self.viewModel = viewModel
         self.onFinished = onFinished
         super.init(rootView: PodHopperAuthRootView(viewModel: viewModel))

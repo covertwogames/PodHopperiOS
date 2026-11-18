@@ -27,6 +27,9 @@ final class PodHopperAuthViewModel: ObservableObject {
 
     @Published var mode: Mode
     @Published var status: Status = .idle
+    /// PodHopper: a line shown at the top of the Log in screen, used when the app opens it because this
+    /// device was signed out without the person choosing it.
+    @Published var notice: String?
 
     private let supabase = PodHopperSupabaseClient.shared
 
@@ -134,11 +137,9 @@ final class PodHopperAuthViewModel: ObservableObject {
     }
 
     func logout() {
-        supabase.logout()
-        // Clear both sync engines so the next account starts clean.
-        PodHopperPositionSync.shared.clearLocalSyncState()
-        PodHopperSubscriptionSync.shared.clearLocalSyncState()
-        PodHopperUpNextSync.shared.clearLocalSyncState()
+        // PodHopper: signs out here and on the server, so this device drops off the account's list of
+        // signed-in devices, and resets the sync bookkeeping so the next account starts clean.
+        PodHopperDevices.shared.signOut(tellServer: true)
         onClose?()
     }
 

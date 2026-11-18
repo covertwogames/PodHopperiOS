@@ -19,6 +19,10 @@ public enum SupabaseError: Error {
 /// cached in memory. The refresh token and signed-in email are persisted in the Keychain, so the
 /// user stays signed in across launches and the access token is silently refreshed when it expires.
 ///
+/// PodHopper: the sign-in is kept on this device only. It is not copied to a new iPhone by a backup
+/// or a phone-to-phone transfer, so a new device signs in for itself and gets its own place on the
+/// account's list of signed-in devices.
+///
 /// Every method that hits the network is blocking; call it off the main thread. Header discipline is
 /// deliberate and matters for the backend to accept the call: auth calls send only `apikey`; the
 /// car pairing calls (made before the car has a user session) send `apikey` plus the anon key as a
@@ -43,9 +47,21 @@ public final class PodHopperSupabaseClient {
 
     private let loginStateSubject: CurrentValueSubject<Bool, Never>
 
+    /// PodHopper: small facts about this device's sign-in (see the keys at the bottom). App settings
+    /// storage, so they come along with a backup or transfer to a new device, which is the point of
+    /// the "was signed in" note: a new device knows to offer the Log in screen.
+    private let deviceDefaults: UserDefaults
+
     public init(session: URLSession = .shared) {
         self.session = session
-        self.loginStateSubject = CurrentValueSubject<Bool, Never>(!Self.keychainString(Self.refreshTokenKey).isEmpty)
+        let defaults = UserDefaults(suiteName: Self.deviceSuiteName) ?? .standard
+        Self.keepSignInOnThisDeviceOnly(defaults)
+        let signedIn = !Self.keychainString(Self.refreshTokenKey).isEmpty
+        if signedIn {
+            defaults.set(true, forKey: Self.expectsSignedInKey)
+        }
+        self.deviceDefaults = defaults
+        self.loginStateSubject = CurrentValueSubject<Bool, Never>(signedIn)
     }
 
     // MARK: Sign-in state
@@ -71,6 +87,8 @@ public final class PodHopperSupabaseClient {
     // MARK: Auth
 
     public func login(email: String, password: String) throws {
+        // PodHopper: never sign in while this device is being cleared after a sign-out.
+        PodHopperWipeGate.shared.awaitIdle()
         lock.lock(); defer { lock.unlock() }
         let generation = currentGeneration
         let json = try authCall(path: "/auth/v1/token?grant_type=password", body: ["email": email, "password": password])
@@ -83,6 +101,7 @@ public final class PodHopperSupabaseClient {
     /// surfaces as "check your email to confirm".
     @discardableResult
     public func signUp(email: String, password: String) throws -> Bool {
+        PodHopperWipeGate.shared.awaitIdle()
         lock.lock(); defer { lock.unlock() }
         let generation = currentGeneration
         let json = try authCall(path: "/auth/v1/signup", body: ["email": email, "password": password])
@@ -123,17 +142,117 @@ public final class PodHopperSupabaseClient {
         return withStateLock { cachedUserId }
     }
 
+    /// Signs this device out because the person chose to (Log out, Sign out, or deleting the account).
+    ///
     /// PodHopper: doesn't take `lock`. A token refresh holds that across a network call, and signing
     /// out, which the app does on the main thread, used to wait for it, freezing the app for as long as
     /// the request took. Bumping the generation makes a refresh that's still out discard its result.
-    public func logout() {
-        withStateLock { () -> Void in
+    ///
+    /// The device forgets its sign-in straight away. With `tellServer`, the server is then told in the
+    /// background, so the sign-in ends there too and drops off the account's list of signed-in devices.
+    /// Pass false when the server has already ended it, as when the account was just deleted.
+    public func logout(tellServer: Bool = true) {
+        let ending = withStateLock { () -> (accessToken: String?, refreshToken: String) in
+            let accessToken = nowMs() < tokenExpiresAtMs - 5000 ? cachedAccessToken : nil
+            let refreshToken = Self.keychainString(Self.refreshTokenKey)
             sessionGeneration += 1
             clearSessionCache()
             storeRefreshToken("")
             setEmail("")
+            // Chosen by the person, so not a sign-out the server forced, and nothing to offer a
+            // Log in screen for.
+            deviceDefaults.removeObject(forKey: Self.endedByServerKey)
+            deviceDefaults.removeObject(forKey: Self.expectsSignedInKey)
+            return (accessToken, refreshToken)
         }
         loginStateSubject.send(false)
+        if tellServer, ending.accessToken != nil || !ending.refreshToken.isEmpty {
+            endSessionOnServer(accessToken: ending.accessToken, refreshToken: ending.refreshToken)
+        }
+    }
+
+    /// PodHopper: called once, on the first launch after PodHopper is installed. iOS keeps an app's
+    /// saved sign-in after the app is deleted, so a reinstalled app would otherwise start out signed
+    /// in. Whatever sign-in an earlier install left behind is forgotten here, and ended on the server
+    /// so it does not linger on the account's list, and the app starts signed out like any new
+    /// install.
+    public func forgetSignInLeftByEarlierInstall() {
+        let leftover = withStateLock { () -> String in
+            let refreshToken = Self.keychainString(Self.refreshTokenKey)
+            sessionGeneration += 1
+            clearSessionCache()
+            storeRefreshToken("")
+            setEmail("")
+            deviceDefaults.removeObject(forKey: Self.endedByServerKey)
+            deviceDefaults.removeObject(forKey: Self.expectsSignedInKey)
+            return refreshToken
+        }
+        loginStateSubject.send(false)
+        if !leftover.isEmpty {
+            FileLog.shared.addMessage("PodHopper: forgot a sign-in left by an earlier install")
+            endSessionOnServer(accessToken: nil, refreshToken: leftover)
+        }
+    }
+
+    /// PodHopper: true only when this device has certainly no sign-in stored. False while the stored
+    /// sign-in cannot be read, which happens when the app runs in the background before the device
+    /// has been unlocked since it was turned on. Anything that deletes data because the device is
+    /// signed out checks this, never `isLoggedIn`, which cannot tell the two apart.
+    public func signInDefinitelyAbsent() -> Bool {
+        do {
+            let token = try KeychainHelper.string(for: Self.refreshTokenKey)
+            return (token ?? "").isEmpty
+        } catch {
+            return false
+        }
+    }
+
+    /// PodHopper: true when this device was signed in and has not been signed out by the person since.
+    /// Signed out now with this still true means the sign-in ended some other way: it expired, it was
+    /// signed out from another device, or this is a new device restored from a backup.
+    public var expectsSignedIn: Bool {
+        deviceDefaults.bool(forKey: Self.expectsSignedInKey)
+    }
+
+    /// PodHopper: marks the "was signed in" note as dealt with, once the Log in screen has been offered.
+    public func clearExpectsSignedIn() {
+        deviceDefaults.removeObject(forKey: Self.expectsSignedInKey)
+    }
+
+    /// PodHopper: true when the sign-in service itself refused this device's sign-in, so it was ended
+    /// on the server rather than by the person on this device.
+    public func wasEndedByServer() -> Bool {
+        deviceDefaults.bool(forKey: Self.endedByServerKey)
+    }
+
+    public func clearEndedByServer() {
+        deviceDefaults.removeObject(forKey: Self.endedByServerKey)
+    }
+
+    /// Tells the server this sign-in is over, in the background. A refresh token can still be swapped
+    /// for a short-lived access token for this one call when no valid access token is cached. Never
+    /// throws; a failure only means the sign-in lingers on the server until it is removed from the
+    /// list or expires.
+    private func endSessionOnServer(accessToken: String?, refreshToken: String) {
+        DispatchQueue.global(qos: .utility).async {
+            do {
+                var token = accessToken
+                if token == nil, !refreshToken.isEmpty {
+                    let json = try self.authCall(path: "/auth/v1/token?grant_type=refresh_token", body: ["refresh_token": refreshToken])
+                    token = json["access_token"] as? String
+                }
+                guard let token, !token.isEmpty else {
+                    return
+                }
+                var request = self.makeRestRequest(url: PodHopperConfig.supabaseURL + "/auth/v1/logout?scope=local", token: token)
+                request.httpMethod = "POST"
+                let (_, response) = try self.performRequest(request)
+                let code = (response as? HTTPURLResponse)?.statusCode ?? -1
+                FileLog.shared.addMessage("PodHopper: sign-out sent to the server: HTTP \(code)")
+            } catch {
+                FileLog.shared.addMessage("PodHopper: sign-out could not reach the server: \(error)")
+            }
+        }
     }
 
     // MARK: PostgREST
@@ -171,6 +290,22 @@ public final class PodHopperSupabaseClient {
         request.httpMethod = "POST"
         request.httpBody = try JSONSerialization.data(withJSONObject: body)
         return try executeExpectingSuccess(request, retryOnAuthError: true)
+    }
+
+    /// PodHopper: calls a Postgres function that anyone may call, with no sign-in, and hands the reply
+    /// back as text. Used by a device that has just been signed out to ask whether it was removed from
+    /// the account's list. Blocking; throws when the call fails.
+    public func rpcAnonText(function: String, body: [String: Any]) throws -> String {
+        var request = makeAnonRestRequest(url: PodHopperConfig.supabaseURL + "/rest/v1/rpc/" + function)
+        request.httpMethod = "POST"
+        request.httpBody = try JSONSerialization.data(withJSONObject: body)
+        let (data, response) = try performRequest(request)
+        let code = (response as? HTTPURLResponse)?.statusCode ?? -1
+        let bodyStr = String(data: data, encoding: .utf8) ?? ""
+        if !(200...299).contains(code) {
+            throw SupabaseError.requestFailed("PodHopper request failed: HTTP \(code) \(bodyStr)")
+        }
+        return bodyStr
     }
 
     public func select(table: String, query: String) throws -> [[String: Any]] {
@@ -235,6 +370,7 @@ public final class PodHopperSupabaseClient {
     /// magiclink verify endpoint (anon key, no bearer), then applies and persists that session like a
     /// normal sign-in. Storing the refresh token is what flips `isLoggedIn` to true. Blocking.
     public func claimPairingSession(tokenHash: String) throws {
+        PodHopperWipeGate.shared.awaitIdle()
         lock.lock(); defer { lock.unlock() }
         let generation = currentGeneration
         clearSessionCache()
@@ -252,20 +388,35 @@ public final class PodHopperSupabaseClient {
     /// `generation` is the session generation when the refresh began. If the user signed out while the
     /// request was out, the result is thrown away rather than stored.
     private func refreshSession(_ refreshToken: String, generation: Int) throws -> String {
-        let json: [String: Any]
-        do {
-            json = try authCall(path: "/auth/v1/token?grant_type=refresh_token", body: ["refresh_token": refreshToken])
-        } catch SupabaseError.authRejected(let message) {
+        let request = try makeAuthRequest(path: "/auth/v1/token?grant_type=refresh_token", body: ["refresh_token": refreshToken])
+        let (data, response) = try performRequest(request)
+        let code = (response as? HTTPURLResponse)?.statusCode ?? -1
+        let bodyStr = String(data: data, encoding: .utf8) ?? ""
+        if code == 400 || code == 401 || code == 403 {
+            // PodHopper: only the sign-in service itself can end a sign-in. A refusal from something
+            // on the way (a network filter's block page, a gateway error) says nothing about this
+            // sign-in, so it is kept and the next attempt tries again. Ending it there would sign the
+            // device out, and on a watch clear its library, over a passing network problem.
+            guard Self.isAuthServerError(bodyStr) else {
+                throw SupabaseError.requestFailed("PodHopper sync: session refresh was refused before reaching the sign-in service: HTTP \(code)")
+            }
             let isCurrentSession: Bool = withStateLock { () -> Bool in
                 guard generation == sessionGeneration else { return false }
+                // Written before the token is removed, so nothing sees one without the other.
+                deviceDefaults.set(true, forKey: Self.endedByServerKey)
                 storeRefreshToken("")
+                clearSessionCache()
                 return true
             }
             if isCurrentSession {
                 loginStateSubject.send(false)
             }
-            throw SupabaseError.requestFailed("PodHopper sign-in expired. Sign in again. (\(message))")
+            throw SupabaseError.requestFailed("PodHopper sign-in expired. Sign in again. (HTTP \(code) \(bodyStr))")
         }
+        if !(200...299).contains(code) {
+            throw SupabaseError.requestFailed("PodHopper auth failed: HTTP \(code) \(bodyStr)")
+        }
+        let json = parseObject(data)
         let rotated = json["refresh_token"] as? String ?? ""
         // The rotated token is stored without announcing it: the user was already signed in, and an
         // announcement sent after this lock is released could land after a sign-out's and undo it.
@@ -369,6 +520,26 @@ public final class PodHopperSupabaseClient {
         return request
     }
 
+    /// PodHopper: REST request made with no sign-in: `apikey` plus the anon key as bearer, the same as
+    /// the pairing calls.
+    func makeAnonRestRequest(url: String) -> URLRequest {
+        var request = URLRequest(url: URL(string: url)!)
+        request.setValue(PodHopperConfig.supabaseAnonKey, forHTTPHeaderField: "apikey")
+        request.setValue("Bearer " + PodHopperConfig.supabaseAnonKey, forHTTPHeaderField: "Authorization")
+        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        return request
+    }
+
+    /// PodHopper: whether a refusal came from the sign-in service itself. Its refusals are always a
+    /// JSON object carrying an error code or message; anything else came from something on the way.
+    static func isAuthServerError(_ body: String) -> Bool {
+        guard let data = body.data(using: .utf8),
+              let object = (try? JSONSerialization.jsonObject(with: data)) as? [String: Any] else {
+            return false
+        }
+        return object["error_code"] != nil || object["error"] != nil || object["msg"] != nil
+    }
+
     private func authedRestRequest(url: String) throws -> URLRequest {
         let token = try ensureSession()
         return makeRestRequest(url: url, token: token)
@@ -450,12 +621,48 @@ public final class PodHopperSupabaseClient {
     private static let refreshTokenKey = "PodHopperRefreshToken"
     private static let emailKey = "PodHopperEmail"
 
+    /// PodHopper: readable once the device has been unlocked after it was turned on, like before, and
+    /// kept on this device only: never copied into a backup that can be restored onto another device,
+    /// or moved to a new phone by a transfer.
+    static let keychainAccessibility = kSecAttrAccessibleAfterFirstUnlockThisDeviceOnly
+
     private static func keychainString(_ key: String) -> String {
         ((try? KeychainHelper.string(for: key)) ?? nil) ?? ""
     }
 
+    /// PodHopper: sign-ins saved by earlier versions were stored in a way that can be copied to a new
+    /// device. Each is saved again, once, so it stays on this device only. Done before anything reads
+    /// it. When the stored sign-in cannot be read yet (the app was started in the background before
+    /// the device was unlocked), this waits for a later launch instead of guessing.
+    private static func keepSignInOnThisDeviceOnly(_ defaults: UserDefaults) {
+        if defaults.bool(forKey: keptOnThisDeviceKey) {
+            return
+        }
+        let token: String?
+        let email: String?
+        do {
+            token = try KeychainHelper.string(for: refreshTokenKey)
+            email = try KeychainHelper.string(for: emailKey)
+        } catch {
+            return
+        }
+        if let token, !token.isEmpty {
+            _ = KeychainHelper.save(string: token, key: refreshTokenKey, accessibility: keychainAccessibility)
+        }
+        if let email, !email.isEmpty {
+            _ = KeychainHelper.save(string: email, key: emailKey, accessibility: keychainAccessibility)
+        }
+        defaults.set(true, forKey: keptOnThisDeviceKey)
+    }
+
     private func setRefreshToken(_ token: String) {
         storeRefreshToken(token)
+        if !token.isEmpty {
+            // PodHopper: a fresh sign-in. Remember the device is signed in, so a sign-in that later
+            // ends without the person choosing it can be noticed, and forget any older ending.
+            deviceDefaults.set(true, forKey: Self.expectsSignedInKey)
+            deviceDefaults.removeObject(forKey: Self.endedByServerKey)
+        }
         loginStateSubject.send(!token.isEmpty)
     }
 
@@ -464,7 +671,7 @@ public final class PodHopperSupabaseClient {
         if token.isEmpty {
             _ = KeychainHelper.removeKey(Self.refreshTokenKey)
         } else {
-            _ = KeychainHelper.save(string: token, key: Self.refreshTokenKey, accessibility: kSecAttrAccessibleAfterFirstUnlock)
+            _ = KeychainHelper.save(string: token, key: Self.refreshTokenKey, accessibility: Self.keychainAccessibility)
         }
     }
 
@@ -472,9 +679,19 @@ public final class PodHopperSupabaseClient {
         if email.isEmpty {
             _ = KeychainHelper.removeKey(Self.emailKey)
         } else {
-            _ = KeychainHelper.save(string: email, key: Self.emailKey, accessibility: kSecAttrAccessibleAfterFirstUnlock)
+            _ = KeychainHelper.save(string: email, key: Self.emailKey, accessibility: Self.keychainAccessibility)
         }
     }
+
+    // MARK: Device facts (PodHopper)
+
+    static let deviceSuiteName = "podhopper_device"
+    /// The sign-in was saved again to stay on this device only (see `keepSignInOnThisDeviceOnly`).
+    private static let keptOnThisDeviceKey = "sign_in_kept_on_device"
+    /// This device was signed in and the person has not signed it out since.
+    private static let expectsSignedInKey = "expects_signed_in"
+    /// The sign-in service itself ended this device's sign-in.
+    private static let endedByServerKey = "ended_by_server"
 
     // MARK: Helpers
 

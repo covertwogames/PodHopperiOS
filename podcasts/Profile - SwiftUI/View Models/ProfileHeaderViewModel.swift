@@ -35,9 +35,10 @@ class ProfileHeaderViewModel: ProfileDataViewModel {
         navigationController?.present(authController, animated: true)
     }
 
-    /// Signs out of the PodHopper account and refreshes the header.
+    /// Signs out of the PodHopper account and refreshes the header. PodHopper: the same sign-out as the
+    /// account screen's Logout: ended on the server too, with the sync bookkeeping reset.
     func logout() {
-        PodHopperSupabaseClient.shared.logout()
+        PodHopperDevices.shared.signOut(tellServer: true)
         update()
     }
 
