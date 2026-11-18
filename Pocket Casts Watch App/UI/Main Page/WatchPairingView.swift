@@ -30,6 +30,13 @@ struct WatchPairingView: View {
                     Text("Waiting for approval...")
                         .font(.footnote)
                         .foregroundStyle(.gray)
+                    // PodHopper: signing in means agreeing to the Terms and Privacy Policy. The watch
+                    // has no browser, so the line says where to read them.
+                    Text("By signing in you agree to our Terms and Privacy Policy. Read them at podhopper.app/terms")
+                        .font(.footnote)
+                        .foregroundStyle(.gray)
+                        .multilineTextAlignment(.center)
+                        .padding(.top, 4)
                 case .success:
                     Image(systemName: "checkmark.circle.fill")
                         .font(.title)

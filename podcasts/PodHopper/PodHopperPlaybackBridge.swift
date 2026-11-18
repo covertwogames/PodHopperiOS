@@ -123,6 +123,10 @@ final class PodHopperPlaybackBridge: PodHopperPositionSyncDelegate {
         PodHopperPositionSync.shared.reconcileNowPlaying()
         PodHopperSubscriptionSync.shared.startPeriodicSync()
         startReconcileTimer()
+        // PodHopper: copy this device's Terms agreement onto the account if that has not happened
+        // yet (agreed while signed out or offline, or the last attempt did not get through). Does
+        // nothing when signed out, when nothing has been agreed to, or when it was already sent.
+        PodHopperTerms.shared.syncToAccountAsync()
     }
 
     @objc private func appWillEnterForeground() {

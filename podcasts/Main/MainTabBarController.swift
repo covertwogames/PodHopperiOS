@@ -171,7 +171,11 @@ class MainTabBarController: UITabBarController, NavigationProtocol {
             selectedIndex = DataManager.sharedManager.podcastCount() > 0 ? Tab.podcasts.rawValue: Tab.discover.rawValue
         }
 
-        showInitialOnboardingIfNeeded()
+        // PodHopper: first-run setup ends with the Terms of Service agreed to, so the one-time Terms
+        // screen is only for people who are past first-run setup.
+        if !showInitialOnboardingIfNeeded() {
+            showTermsPromptIfNeeded()
+        }
 
         updateDatabaseIndexes()
         optimizeDatabaseIfNeeded()
@@ -220,10 +224,11 @@ class MainTabBarController: UITabBarController, NavigationProtocol {
         }
     }
 
-    private func showInitialOnboardingIfNeeded() {
+    /// Returns true when first-run setup was shown by this call.
+    private func showInitialOnboardingIfNeeded() -> Bool {
         // Show if the user is not logged in and has never seen the prompt before
         if SyncManager.isUserLoggedIn() || (Settings.shouldShowInitialOnboardingFlow == false && Settings.hasSeenInitialOnboardingBefore == true) {
-            return
+            return false
         }
 
         // PodHopper: present the PodHopper onboarding (welcome, then login or sign up, then
@@ -235,6 +240,41 @@ class MainTabBarController: UITabBarController, NavigationProtocol {
 
         // Set the flag so the user won't see the on launch flow again
         Settings.shouldShowInitialOnboardingFlow = false
+        return true
+    }
+
+    /// PodHopper: people who were already using the app before the Terms of Service existed never
+    /// passed the create account box or the first-run notices, so they are asked once, here. Called
+    /// when the main screen appears and whenever the app comes back to the front, so the screen
+    /// returns if anything closed it before they agreed.
+    private func showTermsPromptIfNeeded() {
+        guard PodHopperTerms.shared.needsAgreement else {
+            return
+        }
+
+        // Find whatever is on top, so the Terms screen goes over it.
+        var top: UIViewController = self
+        while let shown = top.presentedViewController, !shown.isBeingDismissed {
+            // Nothing to do while the Terms screen is already up, or while first-run setup is:
+            // every way through first-run setup ends with the Terms agreed to.
+            if shown is PodHopperTermsPromptHostingController || shown is PodHopperOnboardingHostingController {
+                return
+            }
+            // An alert is in the way. A screen shown over an alert is closed along with it, so
+            // look again in a moment instead.
+            if shown is UIAlertController {
+                DispatchQueue.main.asyncAfter(deadline: .now() + 2) { [weak self] in
+                    self?.showTermsPromptIfNeeded()
+                }
+                return
+            }
+            top = shown
+        }
+
+        let prompt = PodHopperTermsPromptHostingController()
+        prompt.modalPresentationStyle = .fullScreen
+        prompt.isModalInPresentation = true
+        top.present(prompt, animated: true)
     }
 
     private func fixTarBarTraitCollectionOnIpadForiOS18() {
@@ -744,6 +784,8 @@ class MainTabBarController: UITabBarController, NavigationProtocol {
     @objc private func willEnterForeground() {
         fireSystemThemeMayHaveChanged()
         checkSubscriptionStatusChanged()
+        // PodHopper: bring the one-time Terms screen back if something closed it before they agreed.
+        showTermsPromptIfNeeded()
     }
 
     // The window's `overrideUserInterfaceStyle` masks system appearance changes

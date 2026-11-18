@@ -52,8 +52,9 @@ struct LegalAndMore: View {
     }
 
     private enum Constants {
-        static let termsOfUseURL = URL(string: "https://covertwogames.com/podhopperprivacy.html")!
-        static let privacyPolicyURL = URL(string: "https://covertwogames.com/podhopperprivacy.html")!
+        // PodHopper: each row opens its own page. Both used to open the same older privacy page.
+        static let termsOfUseURL = PodHopperTerms.termsURL
+        static let privacyPolicyURL = PodHopperTerms.privacyURL
         static let acknowledgementsURL = Bundle.main.url(forResource: "acknowledgements", withExtension: "html")!
     }
 }

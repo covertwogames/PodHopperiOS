@@ -4,6 +4,9 @@ import SwiftUI
 /// with a login or skip choice, the reused PodHopper auth screen for login and sign up, and a
 /// notifications screen. This replaces the old Pocket Casts intro, interests, and recommendations
 /// onboarding.
+///
+/// Every way through ends with the Terms of Service agreed to and recorded: creating an account or
+/// logging in on the auth screen, or confirming "Continue without account" here.
 struct PodHopperOnboardingRootView: View {
     @EnvironmentObject var theme: Theme
 
@@ -58,13 +61,16 @@ struct PodHopperOnboardingRootView: View {
             )
             .alert("Skip account setup?", isPresented: $showSkipWarning) {
                 Button("Continue without account") {
+                    // PodHopper: the pop-up they just confirmed says continuing means agreeing to
+                    // the Terms. Recorded on this device; it goes onto an account if they make one.
+                    PodHopperTerms.shared.recordAgreement(method: .notice)
                     withAnimation {
                         step = .notifications
                     }
                 }
                 Button("Back to login", role: .cancel) {}
             } message: {
-                Text("You are welcome to use PodHopper without an account, however, syncing between devices will not work.")
+                Text("You are welcome to use PodHopper without an account, however, syncing between devices will not work.\n\n" + PodHopperTermsCopy.continueNoticePlain)
             }
         case .auth:
             PodHopperAuthRootView(viewModel: authViewModel)
@@ -121,6 +127,12 @@ private struct PodHopperWelcomeStep: View {
                     .foregroundColor(AppTheme.color(for: .primaryInteractive01, theme: theme))
             }
             .padding(.top, 8)
+
+            // PodHopper: going on, with or without an account, means agreeing to the Terms of Service
+            // and Privacy Policy. The pop-up that Skip opens says so too, but a pop-up cannot hold
+            // links, so the links to both pages are here.
+            PodHopperTermsLinksText(PodHopperTermsCopy.continueNotice)
+                .padding(.top, 24)
         }
     }
 }

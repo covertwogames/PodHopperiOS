@@ -160,6 +160,19 @@ public final class PodHopperSupabaseClient {
         return (parsed as? [String: Any]) ?? [:]
     }
 
+    /// PodHopper: calls a Postgres function whose reply is not a JSON object, and hands the reply
+    /// back as text. `rpc` above can only read an object, so it throws on a function that returns
+    /// nothing at all, a list, or a bare true, false or number, even though the call itself went
+    /// through. Blocking; throws when the call fails.
+    @discardableResult
+    public func rpcText(function: String, body: [String: Any]) throws -> String {
+        let url = PodHopperConfig.supabaseURL + "/rest/v1/rpc/" + function
+        var request = try authedRestRequest(url: url)
+        request.httpMethod = "POST"
+        request.httpBody = try JSONSerialization.data(withJSONObject: body)
+        return try executeExpectingSuccess(request, retryOnAuthError: true)
+    }
+
     public func select(table: String, query: String) throws -> [[String: Any]] {
         let url = PodHopperConfig.supabaseURL + "/rest/v1/" + table + "?" + query
         var request = try authedRestRequest(url: url)

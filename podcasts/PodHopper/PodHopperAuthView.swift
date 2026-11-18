@@ -69,8 +69,13 @@ private struct PodHopperLoginForm: View {
 
             PodHopperStatusText(status: viewModel.status)
 
-            PodHopperPrimaryButton(title: "Log in", busy: viewModel.status == .busy) {
-                viewModel.signIn(email: email, password: password)
+            VStack(spacing: 12) {
+                PodHopperPrimaryButton(title: "Log in", busy: viewModel.status == .busy) {
+                    viewModel.signIn(email: email, password: password)
+                }
+
+                // PodHopper: logging in means agreeing to the Terms of Service and Privacy Policy.
+                PodHopperTermsLinksText(PodHopperTermsCopy.loginNotice)
             }
 
             VStack(spacing: 18) {
@@ -96,6 +101,8 @@ private struct PodHopperSignupForm: View {
 
     @State private var email = ""
     @State private var password = ""
+    /// PodHopper: an account cannot be created until this box is ticked.
+    @State private var agreedToTerms = false
 
     var body: some View {
         VStack(spacing: 24) {
@@ -119,10 +126,17 @@ private struct PodHopperSignupForm: View {
                     PodHopperAuthField(systemIcon: "key", placeholder: "Password", text: $password, isSecure: true, contentType: .newPassword)
                 }
 
+                PodHopperTermsCheckbox(isOn: $agreedToTerms) {
+                    // A message left over from the last attempt no longer applies once the box changes.
+                    if case .error = viewModel.status {
+                        viewModel.resetStatus()
+                    }
+                }
+
                 PodHopperStatusText(status: viewModel.status)
 
                 PodHopperPrimaryButton(title: "Create account", busy: viewModel.status == .busy) {
-                    viewModel.signUp(email: email, password: password)
+                    viewModel.signUp(email: email, password: password, agreedToTerms: agreedToTerms)
                 }
 
                 PodHopperLinkButton(title: "Back to login") {
@@ -279,6 +293,37 @@ private struct PodHopperAuthField: View {
                     lineWidth: focused ? 2 : 1
                 )
         )
+    }
+}
+
+/// PodHopper: the "I agree" box on the create account screen. The square is the tick box; the words
+/// beside it carry the links to the Terms of Service and Privacy Policy, so tapping a link opens the
+/// page instead of ticking the box.
+private struct PodHopperTermsCheckbox: View {
+    @EnvironmentObject var theme: Theme
+    @Binding var isOn: Bool
+    let onToggle: () -> Void
+
+    var body: some View {
+        let spokenState = isOn ? "Ticked" : "Not ticked"
+        HStack(alignment: .center, spacing: 4) {
+            Button {
+                isOn.toggle()
+                onToggle()
+            } label: {
+                Image(systemName: isOn ? "checkmark.square.fill" : "square")
+                    .font(.system(size: 24))
+                    .foregroundColor(AppTheme.color(for: isOn ? .primaryInteractive01 : .primaryIcon02, theme: theme))
+                    .frame(width: 44, height: 44)
+                    .contentShape(Rectangle())
+            }
+            .accessibilityLabel(PodHopperTermsCopy.checkboxSpoken)
+            .accessibilityValue(spokenState)
+
+            PodHopperTermsLinksText(PodHopperTermsCopy.checkbox, alignment: .leading)
+
+            Spacer(minLength: 0)
+        }
     }
 }
 

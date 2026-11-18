@@ -52,8 +52,8 @@ public enum ServerConstants {
 
         public static let support = "https://covertwogames.com"
         public static let cancelSubscription = "https://covertwogames.com"
-        public static let termsOfUse = "https://covertwogames.com/podhopperprivacy.html"
-        public static let privacyPolicy = "https://covertwogames.com/podhopperprivacy.html"
+        public static let termsOfUse = "https://podhopper.app/terms"
+        public static let privacyPolicy = "https://podhopper.app/privacy"
         public static let plusInfo = "https://covertwogames.com"
         public static let pocketcastsDotCom = "https://covertwogames.com"
         public static let automatticDotCom = "https://covertwogames.com"

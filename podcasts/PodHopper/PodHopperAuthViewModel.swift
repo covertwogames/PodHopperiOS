@@ -5,6 +5,10 @@ import PocketCastsServer
 /// Drives PodHopper's sign-in / sign-up / password-recovery / account screens. Mirrors the Android
 /// PodHopperOnboardingViewModel: the same actions, the same state transitions, and the same
 /// extraction of Supabase's human-readable error message.
+///
+/// Both ways through these screens end with the Terms of Service agreed to and recorded: creating
+/// an account (the box on that screen must be ticked) and logging in (the screen says logging in
+/// means agreeing).
 final class PodHopperAuthViewModel: ObservableObject {
     enum Mode {
         case login
@@ -52,6 +56,11 @@ final class PodHopperAuthViewModel: ObservableObject {
         DispatchQueue.global(qos: .userInitiated).async {
             do {
                 try self.supabase.login(email: trimmed, password: password)
+                // Logged in on a screen that says logging in means agreeing to the Terms. Saving it
+                // to the account happens in the background, so it can never slow down or fail the
+                // login.
+                PodHopperTerms.shared.recordAgreement(method: .signIn)
+                PodHopperTerms.shared.syncToAccountAsync()
                 DispatchQueue.main.async {
                     self.status = .idle
                     self.onAuthenticated?()
@@ -66,16 +75,29 @@ final class PodHopperAuthViewModel: ObservableObject {
         }
     }
 
-    func signUp(email: String, password: String) {
+    /// PodHopper: an account cannot be created until the box agreeing to the Terms of Service and
+    /// Privacy Policy is ticked. `agreedToTerms` is that box.
+    func signUp(email: String, password: String, agreedToTerms: Bool) {
         let trimmed = email.trimmingCharacters(in: .whitespacesAndNewlines)
         guard !trimmed.isEmpty, !password.isEmpty else {
             status = .error("Enter your email and password.")
             return
         }
+        guard agreedToTerms else {
+            status = .error(PodHopperTermsCopy.checkboxRequired)
+            return
+        }
         status = .busy
         DispatchQueue.global(qos: .userInitiated).async {
             do {
+                // The box was ticked. Record that now, so it is kept even when the account has to be
+                // confirmed by email before the first login, and copy it to the account as soon as
+                // there is a session.
+                PodHopperTerms.shared.recordAgreement(method: .checkbox)
                 let sessionActive = try self.supabase.signUp(email: trimmed, password: password)
+                if sessionActive {
+                    PodHopperTerms.shared.syncToAccountAsync()
+                }
                 DispatchQueue.main.async {
                     if sessionActive {
                         self.status = .idle
